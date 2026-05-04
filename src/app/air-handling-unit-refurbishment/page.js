@@ -153,16 +153,16 @@ export default function AHURefurbishmentPage() {
     <div>
 
       {/* ── 1. HERO ──────────────────────────────────────────────────── */}
-      <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900">
+      <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900 ">
         <Image
           src="/belt-driven-fan.png"
           alt="belt driven fan replacement"
           fill
           priority
-          className="object-cover opacity-30"
+          className="object-cover opacity-30 "
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-slate-500/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 via-[45%] to-transparent" />
 
         <Container className="relative flex min-h-[580px] items-end py-20 pb-28">
           <div className="max-w-2xl">
