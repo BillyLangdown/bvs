@@ -201,6 +201,11 @@ export function Navigation() {
     closeTimerRef.current = null;
   }
 
+  function closeDropdown() {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    setActiveKey(null);
+  }
+
   return (
     <header className={`relative ${headerClass}`}>
       <Container className="flex h-16 items-center gap-6">
@@ -228,6 +233,7 @@ export function Navigation() {
                 onOpen={() => { cancelClose(); setActiveKey(item.href); }}
                 onClose={scheduleClose}
                 onKeepOpen={cancelClose}
+                onItemClick={closeDropdown}
               />
             ) : item.children?.length ? (
               <NavDropdown
@@ -238,6 +244,7 @@ export function Navigation() {
                 onOpen={() => { cancelClose(); setActiveKey(item.href); }}
                 onClose={scheduleClose}
                 onKeepOpen={cancelClose}
+                onItemClick={closeDropdown}
               />
             ) : (
               <Link key={item.href} href={item.href} className={linkClass}>
@@ -380,7 +387,7 @@ export function Navigation() {
 
 /* ── MEGA DROPDOWN (Services — two columns) ─────────────────────────── */
 
-function MegaDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen }) {
+function MegaDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen, onItemClick }) {
   return (
     <div className="static" onMouseEnter={onOpen} onMouseLeave={onClose}>
       <button
@@ -410,6 +417,7 @@ function MegaDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen }
                   <Link
                     href={col.href}
                     className="mb-3 block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-emerald-700"
+                    onClick={onItemClick}
                   >
                     {col.heading} →
                   </Link>
@@ -419,6 +427,7 @@ function MegaDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen }
                         key={child.href}
                         href={child.href}
                         className="group flex items-start gap-3 border-l-2 border-transparent px-3 py-3 transition-all hover:border-[#297858] hover:bg-slate-50"
+                        onClick={onItemClick}
                       >
                         <span className="mt-0.5 shrink-0 text-emerald-700 transition-colors group-hover:text-emerald-600">
                           {child.icon()}
@@ -446,7 +455,7 @@ function MegaDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen }
 
 /* ── STANDARD DROPDOWN ──────────────────────────────────────────────── */
 
-function NavDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen }) {
+function NavDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen, onItemClick }) {
   return (
     <div className="static" onMouseEnter={onOpen} onMouseLeave={onClose}>
       <button
@@ -476,6 +485,7 @@ function NavDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen })
                   key={child.href}
                   href={child.href}
                   className="group flex w-full min-w-0 items-start gap-3 overflow-hidden border-l-2 border-transparent px-4 py-4 transition-all hover:border-[#297858] hover:bg-slate-50 md:px-5"
+                  onClick={onItemClick}
                 >
                   <span className="mt-0.5 shrink-0 text-emerald-700 transition-colors group-hover:text-emerald-600">
                     {child.icon()}

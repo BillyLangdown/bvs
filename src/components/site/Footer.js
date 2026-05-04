@@ -32,7 +32,7 @@ const companyLinks = [
 export function Footer() {
   return (
     <footer>
-      {/* Top border + main footer - clearly distinct from slate-900 page sections */}
+      {/* Main footer */}
       <div className="border-t-[3px] border-emerald-600 bg-zinc-950">
         <Container className="py-12">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
@@ -50,7 +50,7 @@ export function Footer() {
               </Link>
 
               <p className="text-sm leading-6 text-zinc-400">
-                40+ years of AHU expertise - refurbishment, manufacturing, installation,
+                40+ years of AHU expertise — refurbishment, manufacturing, installation,
                 and controls. Nationwide.
               </p>
 
@@ -117,57 +117,50 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Company + Newsletter */}
-            <div className="flex flex-col gap-7">
-              <div>
-                <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-500">
-                  Company
-                </p>
-                <ul className="flex flex-col gap-2">
-                  {companyLinks.map((l) => (
-                    <li key={l.href}>
-                      <Link href={l.href} className="text-sm text-zinc-400 transition-colors hover:text-white">
-                        {l.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="border-t border-zinc-800 pt-6">
-                <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-500">
-                  Newsletter
-                </p>
-                <p className="mb-3 text-xs text-zinc-500">HVAC insights. No spam.</p>
-                <NewsletterForm source="footer" compact />
-              </div>
+            {/* Company */}
+            <div>
+              <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-500">
+                Company
+              </p>
+              <ul className="flex flex-col gap-2">
+                {companyLinks.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="text-sm text-zinc-400 transition-colors hover:text-white">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
           </div>
         </Container>
 
-        {/* Bottom bar */}
-        <div className="border-t border-zinc-800">
-          <Container className="flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex flex-wrap items-center gap-3">
-              {[
-                { src: "/Gas_Safe_Register_logo.png", alt: "Gas Safe Registered" },
-                { src: "/constructionline-gold-logo.png", alt: "Constructionline Gold" },
-                { src: "/safeContractor-approved.png", alt: "SafeContractor Approved" },
-              ].map((logo) => (
-                <div key={logo.alt} className="flex items-center justify-center rounded bg-white px-2.5 py-1.5" title={logo.alt}>
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    height={28}
-                    width={90}
-                    unoptimized
-                    className="h-7 w-auto object-contain"
-                    style={{ height: "28px", width: "auto", maxWidth: "72px" }}
-                  />
-                </div>
-              ))}
+        {/* Newsletter band */}
+        <div className="border-t border-zinc-800 bg-[#111418]">
+          <Container className="py-8">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="max-w-md">
+                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+                  Engineer Insights
+                </p>
+                <p className="mt-1 text-base font-semibold text-white">
+                  Technical guides from 40 years in the field.
+                </p>
+                <p className="mt-1 text-sm text-zinc-400">
+                  Maintenance tips, industry news, and AHU insights — straight from our engineers. No spam.
+                </p>
+              </div>
+              <div className="w-full sm:w-auto sm:min-w-[320px]">
+                <NewsletterForm source="footer" compact />
+              </div>
             </div>
+          </Container>
+        </div>
+
+        {/* Copyright bar */}
+        <div className="border-t border-zinc-800">
+          <Container className="py-4">
             <p className="text-xs text-zinc-600">
               &copy; {new Date().getFullYear()} Building Ventilation Solutions Ltd.
             </p>
