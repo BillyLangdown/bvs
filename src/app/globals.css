@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  /* Exact BVS logo green */
+  --brand: #297858;
+  --brand-dark: #1d5c42;
+  --brand-mid: #1d5c42;
+  --muted: #f1f5f9;
+  --muted-2: #e5e7eb;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface-2: #f7f6f5;
+  /* Expose brand green as a Tailwind utility (bg-brand, text-brand, etc.) */
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-mid: var(--brand-mid);
+  --font-display: var(--font-playfair), "Playfair Display", Georgia,
+    "Times New Roman", serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+a {
+  text-underline-offset: 2px;
+}
+
+/* Playfair Display in uppercase needs a little breathing room */
+.font-display {
+  letter-spacing: 0.04em;
+}
+
+/* WordPress content rendering */
+.wp-content {
+  color: #111827;
+}
+.wp-content :where(p, ul, ol, blockquote, pre, table) {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.wp-content :where(h1, h2, h3) {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+.wp-content h1 {
+  font-size: 2rem;
+  line-height: 1.15;
+}
+.wp-content h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+.wp-content h3 {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+.wp-content :where(a) {
+  color: #065f46;
+  text-decoration: underline;
+}
+.wp-content :where(ul, ol) {
+  padding-left: 1.25rem;
+}
+.wp-content :where(li) {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.wp-content :where(img, video, iframe) {
+  max-width: 100%;
+  height: auto;
+}

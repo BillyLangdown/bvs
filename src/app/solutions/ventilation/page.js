@@ -1,0 +1,150 @@
+import Link from "next/link";
+import { Container } from "@/components/site/Container";
+
+export const metadata = {
+  title: "Ventilation Services",
+  description:
+    "Expert ventilation services from BVS - troubleshooting, validation surveys, and consultancy to keep your HVAC systems performing at their best.",
+};
+
+const services = [
+  {
+    href: "/solutions/ventilation/troubleshooting",
+    title: "Troubleshooting & Solutions",
+    body: "Our engineers identify the root cause of performance issues quickly - airflow imbalance, component failure, controls faults - and restore your system with minimal disruption.",
+  },
+  {
+    href: "/solutions/ventilation/validation-surveys",
+    title: "Validation & Surveys",
+    body: "Detailed condition surveys of your AHU assets with prioritised, costed recommendations. Know exactly what your plant needs and plan maintenance budgets with confidence.",
+  },
+];
+
+export default function VentilationServicesPage() {
+  return (
+    <div>
+      {/* Hero */}
+      <section className="bg-slate-900 py-20">
+        <Container>
+          <div className="max-w-3xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400">
+              Building Ventilation Solutions
+            </p>
+            <h1 className="font-display text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
+              Ventilation Services
+            </h1>
+            <div className="mt-4 h-[3px] w-14 bg-emerald-500" />
+            <p className="mt-6 max-w-2xl text-base leading-7 text-white/75">
+              From fault diagnosis to formal validation surveys, our ventilation
+              services help you maintain healthy indoor air quality, comply with
+              regulations, and extend the life of your HVAC assets.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/get-a-quote"
+                className="inline-flex items-center gap-2 bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-500"
+              >
+                Get a quote
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+              >
+                Contact us
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Services */}
+      <section className="bg-white py-16">
+        <Container>
+          <div className="mb-10">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
+              Our ventilation services
+            </p>
+            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">
+              How we can help
+            </h2>
+            <div className="mt-2 h-[3px] w-10 bg-emerald-700" />
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2">
+            {services.map((s) => (
+              <Link
+                key={s.href}
+                href={s.href}
+                className="group border border-slate-200 bg-white p-8 transition-all duration-200 hover:border-emerald-200 hover:shadow-md"
+              >
+                <div className="h-[3px] w-8 bg-emerald-700 transition-all duration-300 group-hover:w-16" />
+                <h3 className="mt-5 font-display text-lg font-bold uppercase text-slate-900">
+                  {s.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{s.body}</p>
+                <span className="mt-6 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-emerald-700">
+                  Find out more →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-emerald-950 py-14">
+        <Container>
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="font-display text-xl font-extrabold uppercase text-white">
+                Speak to our ventilation team
+              </p>
+              <p className="mt-1 text-sm text-white/65">
+                Call us on{" "}
+                <a href="tel:01256518170" className="underline hover:text-white">
+                  01256 518170
+                </a>{" "}
+                or get a quote online.
+              </p>
+            </div>
+            <Link
+              href="/get-a-quote"
+              className="inline-flex shrink-0 items-center gap-2 bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-500"
+            >
+              Get a quote
+            </Link>
+          </div>
+        </Container>
+      </section>
+
+      {/* Related */}
+      <section className="bg-surface-2 py-14">
+        <Container>
+          <h2 className="font-display text-xl font-extrabold uppercase text-slate-900">
+            Related Services
+          </h2>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { href: "/solutions/ahu", label: "AHU Solutions" },
+              { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
+              { href: "/solutions/mechanical", label: "Mechanical Solutions" },
+              { href: "/case-studies", label: "Case Studies" },
+            ].map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="flex items-center justify-between border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-900 transition-colors hover:border-emerald-200 hover:bg-emerald-50"
+              >
+                {l.label}
+                <span className="ml-3 shrink-0 text-emerald-700">→</span>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+    </div>
+  );
+}
