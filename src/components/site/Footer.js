@@ -41,7 +41,7 @@ export function Footer() {
             <div className="flex flex-col gap-5">
               <Link href="/" className="inline-block w-fit transition-opacity hover:opacity-80">
                 <Image
-                  src="/BVS-logo.webp"
+                  src="/bvs-logo.webp"
                   alt="BVS Building Ventilation Solutions"
                   width={120}
                   height={65}

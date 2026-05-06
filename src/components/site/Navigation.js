@@ -215,7 +215,7 @@ export function Navigation() {
   className="flex items-center gap-4 shrink-0 transition-opacity hover:opacity-80"
 >
   <Image
-    src="/BVS-logo.webp"
+    src="/bvs-logo.webp"
     alt="BVS Building Ventilation Solutions"
     width={148}
     height={80}

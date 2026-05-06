@@ -7,16 +7,16 @@ import { getCaseStudies } from "@/lib/wordpress/api";
 /* ── DATA ───────────────────────────────────────────────────────────── */
 
 const accreditationLogos = [
-  { src: "/Gas_Safe_Register_logo.png", alt: "Gas Safe Registered" },
-  { src: "/constructionline-gold-logo.png", alt: "Constructionline Gold" },
-  { src: "/safeContractor-approved.png", alt: "SafeContractor Approved" },
+  { src: "/gas-safe-register-logo.png", alt: "Gas Safe Registered" },
+  { src: "/constructionline-gold-logo.png", alt: "Constructionline Gold Member" },
+  { src: "/safe-contractor-logo.png", alt: "SafeContractor Approved Contractor" },
 ];
 
 const clientLogos = [
   { src: "/nhs-logo.png", alt: "NHS" },
   { src: "/disney-logo.png", alt: "Disney" },
-  { src: "/marriott-logo (1).png", alt: "Marriott" },
-  { src: "/moorfeilds-logo (2).png", alt: "Moorfields Eye Hospital" },
+  { src: "/marriott-logo.png", alt: "Marriott Hotels" },
+  { src: "/moorfields-logo.png", alt: "Moorfields Eye Hospital" },
   { src: "/ihg-logo.png", alt: "IHG Hotels & Resorts" },
   { src: "/travelodge-logo.png", alt: "Travelodge" },
   { src: "/waitrose-logo.png", alt: "Waitrose" },
@@ -30,62 +30,88 @@ const clientLogos = [
 const services = [
   {
     title: "EC Fan Upgrades",
-    plain: "Replace old inefficient fan motors with modern energy-saving ones - fitted into your existing unit.",
-    outcome: "30–50% reduction in fan energy consumption",
-    context: "Retrofit EC motors into your existing AHU casing. Payback typically within 2–3 years.",
-    signs: ["Energy bills keep climbing with no explanation", "Fans running loud or at full speed constantly", "Old belt-driven motors due for replacement"],
+    plain: "Retrofit EC fans into existing AHU casings without structural modification.",
+    outcome: "Reduce fan energy use by 30–50%",
+    context: "Improves efficiency, enables variable speed control, and supports Part L compliance. Typical payback 2–3 years.",
+    signs: [
+      "High fan energy use or failure to meet efficiency targets",
+      "Constant-speed or belt-driven motors still in operation",
+      "No variable speed control on current system"
+    ],
     href: "/ec-fan-upgrades-and-retrofits-for-hvac",
     highlight: true,
     tag: "Most Requested",
     photo: "/ec-fan-upgrade.png",
+    photoAlt: "EC fan retrofit installed in existing AHU casing",
   },
   {
-    title: "Coil Replacement & Repair",
-    plain: "Replace the heat exchanger inside your unit so it heats or cools properly again.",
-    outcome: "Full performance restored - without full AHU replacement",
-    context: "We measure on-site and manufacture to fit. Minimal downtime, significant cost saving.",
-    signs: ["Rooms not reaching the right temperature", "Visible leaks, corrosion, or scale on the unit", "Heating or cooling capacity has noticeably dropped"],
+    title: "Coil Replacement",
+    plain: "On-site measurement and direct replacement of heating, cooling, or heat recovery coils.",
+    outcome: "Restore full heating and cooling performance",
+    context: "Manufactured to exact dimensions with staged replacement available to maintain system operation.",
+    signs: [
+      "Air temperatures not reaching design levels",
+      "Leaks, corrosion, or scaling on coil faces",
+      "Reduced heating or cooling capacity"
+    ],
     href: "/air-handling-unit-coil-replacement",
     highlight: true,
     tag: "Most Requested",
     photo: "/ahu-coil-replacement.png",
+    photoAlt: "Replacement coil being fitted into air handling unit on-site",
   },
   {
     title: "AHU Refurbishment",
-    plain: "A full overhaul of your ventilation unit - restoring it instead of replacing it.",
-    outcome: "Extend asset life by 10–15 years",
-    context: "Survey, condition report, and full restoration. Often a fraction of the cost of replacement.",
-    signs: ["Unit is ageing, noisy, or breaking down frequently", "You've been quoted for a full replacement", "Poor air quality or damaged filter housing"],
+    plain: "On-site refurbishment improving performance without full system replacement.",
+    outcome: "Extend asset life and reduce replacement cost",
+    context: "Supports efficiency improvements, compliance targets, and decarbonisation goals.",
+    signs: [
+      "Unit is ageing or underperforming",
+      "Replacement has been quoted but structure is sound",
+      "Airflow, heating, or cooling is inconsistent"
+    ],
     href: "/air-handling-unit-refurbishment",
     highlight: false,
     tag: null,
   },
   {
     title: "AHU Manufacturing",
-    plain: "We design and build a brand new ventilation unit made specifically for your building.",
-    outcome: "Bespoke units built to your exact specification",
-    context: "UK manufactured, delivered and installed. Any size, any configuration.",
-    signs: ["Your unit is beyond economic repair", "You need a non-standard size or layout", "Extending a building or replacing obsolete equipment"],
+    plain: "Custom-built air handling units for replacement or new installation.",
+    outcome: "New units built to specification for performance and compliance",
+    context: "Full replacement solution when existing systems are beyond repair or no longer suitable.",
+    signs: [
+      "Unit is beyond economic repair",
+      "Non-standard size or specification required",
+      "New build or system replacement project"
+    ],
     href: "/air-handling-unit-manufacturing",
     highlight: false,
     tag: null,
   },
   {
     title: "AHU Installation",
-    plain: "We manage everything - survey, supply, installation, and commissioning - under one roof.",
-    outcome: "Survey to commissioning, fully managed in-house",
-    context: "No subcontractors. One point of contact, full accountability.",
-    signs: ["Installing new or replacement ventilation equipment", "Need a single contractor for the whole project", "New build, extension, or major refurbishment"],
+    plain: "Complete supply and installation of air handling systems from survey to commissioning.",
+    outcome: "Single point delivery from design through to handover",
+    context: "Managed installation for new builds, upgrades, or full system replacement projects.",
+    signs: [
+      "New or replacement system required",
+      "Full project delivery needed",
+      "No existing installation contractor in place"
+    ],
     href: "/air-handling-unit-installation",
     highlight: false,
     tag: null,
   },
   {
     title: "Controller Upgrades",
-    plain: "Upgrade the controls so your system runs smarter, integrates with your building, and wastes less energy.",
-    outcome: "Lower energy bills, BMS integration, compliance",
-    context: "Upgrade controls for smarter scheduling and real-time energy monitoring.",
-    signs: ["Can't connect to your building management system", "Energy wasted from poor or outdated scheduling", "Controls are obsolete, failing, or non-compliant"],
+    plain: "Upgrade obsolete AHU controls to modern energy-efficient systems.",
+    outcome: "Improved efficiency, control, and compliance capability",
+    context: "Supports energy reduction targets and integration with modern building management systems.",
+    signs: [
+      "Controls are outdated or failing",
+      "Energy usage is not optimised",
+      "BMS integration is required"
+    ],
     href: "/air-handling-unit-controller-solutions-upgrades",
     highlight: false,
     tag: null,
@@ -95,46 +121,47 @@ const services = [
 const additionalServices = [
   {
     title: "Validation Surveys",
-    desc: "Due for a compliance check or HTM audit? We inspect your system, document its condition, and provide a full report.",
+    desc: "HTM 03-01 audits, Part L compliance checks, and system condition assessments. Full documented report with prioritised findings.",
     href: "/solutions/ventilation",
   },
   {
     title: "Ducting Repair",
-    desc: "Uneven airflow, strange noises, or visible duct damage? We repair or replace the channels that move air around your building.",
+    desc: "Uneven airflow, pressure loss, or visible duct damage? We repair or replace ductwork sections with minimal disruption to operations.",
     href: "/solutions/ventilation",
   },
   {
     title: "Boiler & Pipework",
-    desc: "Gas Safe registered. Boiler servicing, installation, and pipework - handled by the same team as your ventilation.",
+    desc: "Gas Safe registered. Boiler servicing, installation, and associated pipework managed by the same engineering team as your AHU works.",
     href: "/solutions/ventilation",
   },
 ];
 
 const sectors = [
-  { label: "Healthcare & NHS", desc: "HTM 03-01 compliant. Critical environments.", href: "/industries/hospital", photo: "/hospital.png" },
-  { label: "Education", desc: "Around term times. CIBSE-compliant.", href: "/industries/education", photo: "/school.png" },
-  { label: "Hotel & Hospitality", desc: "Out-of-hours. Minimum guest disruption.", href: "/industries/hotel", photo: "/hotel.png" },
-  { label: "Defence", desc: "Security cleared. Restricted access sites.", href: "/industries/defence", photo: "/defence.jpg" },
-  { label: "Leisure Centres", desc: "High-humidity. Corrosion-resistant spec.", href: "/industries/leisure-centre", photo: "/swimming-pool.png" },
-  { label: "Retail & Commercial", desc: "Around trading hours. Reactive support.", href: "/industries/retail", photo: "/mall.png" },
+  { label: "Healthcare & NHS", desc: "HTM 03-01 compliant. Critical environments.", href: "/industries/hospital", photo: "/hospital.png", photoAlt: "NHS hospital corridor — BVS ventilation works in live clinical environments" },
+  { label: "Education", desc: "Around term times. CIBSE-compliant.", href: "/industries/education", photo: "/school.png", photoAlt: "School building — BVS AHU works scheduled around term times" },
+  { label: "Hotel & Hospitality", desc: "Out-of-hours. Minimum guest disruption.", href: "/industries/hotel", photo: "/hotel.png", photoAlt: "Hotel interior — BVS ventilation services with out-of-hours delivery" },
+  { label: "Defence", desc: "Security cleared. Restricted access sites.", href: "/industries/defence", photo: "/defence.jpg", photoAlt: "Defence facility — BVS security-cleared engineers for restricted-access sites" },
+  { label: "Leisure Centres", desc: "High-humidity. Corrosion-resistant spec.", href: "/industries/leisure-centre", photo: "/swimming-pool.png", photoAlt: "Swimming pool leisure centre — BVS high-humidity AHU specification" },
+  { label: "Retail & Commercial", desc: "Around trading hours. Reactive support.", href: "/industries/retail", photo: "/mall.png", photoAlt: "Shopping centre retail environment — BVS ventilation works around trading hours" },
 ];
 
 const casePlaceholders = [
   {
     type: "EC Fan Upgrade",
     sector: "Leisure Centre",
-    outcome: "Pool AHU failure caused airflow loss and uncontrolled humidity, putting the building at risk. BVS installed direct-drive EC fans, restoring full airflow (6 m³/s), stabilising humidity, cutting energy use, and eliminating belt-driven maintenance.",
+    outcome: "AHU failure caused airflow loss and uncontrolled humidity across a pool hall. Direct-drive EC fans installed, restoring full airflow (6 m/s), stabilising humidity, and eliminating belt-driven maintenance overhead.",
     photo: "/ec-fan-before-after.png",
+    photoAlt: "Before and after EC fan upgrade on a leisure centre AHU",
   },
   {
     type: "AHU Refurbishment",
     sector: "Healthcare",
-    outcome: "12 hospital AHUs refurbished to full compliance - on programme, no disruption to wards.",
+    outcome: "12 hospital AHUs refurbished to full HTM 03-01 compliance. Delivered on programme with no clinical service interruption.",
   },
   {
     type: "Coil Replacement",
-    sector: "Hospitality",
-    outcome: "Cooling coils replaced overnight at a 4-star hotel. Rooms back in service by morning.",
+    sector: "Commercial",
+    outcome: "Chilled water coils on a commercial AHU failed during peak season. Replacement coils manufactured and fitted within 48 hours, restoring full cooling capacity.",
   },
 ];
 
@@ -147,11 +174,11 @@ export default function Home() {
       {/* ── 1. HERO ──────────────────────────────────────────────────── */}
       <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
         <Image
-          src="/AHU-manufacturing.png"
-          alt="London skyline - BVS covers nationwide"
+          src="/ahu-manufacturing.png"
+          alt="BVS air handling unit manufacturing workshop"
           fill
           priority
-          className="object-cover object-[10%_15%]"
+          className="object-cover object-[65%_15%] sm:object-[40%_55%]"
         />
         {/* Mobile: solid dark base so text is always legible */}
         <div className="absolute inset-0 bg-black/55 sm:hidden" />
@@ -179,15 +206,14 @@ export default function Home() {
 </div>
           
             <h1
-              className="font-display text-3xl font-extrabold uppercase leading-[1.08] text-white sm:text-5xl lg:text-6xl"
+              className="font-display text-3xl font-extrabold uppercase leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
            Better Airflow,<br/> Lower Energy Costs.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
-            From EC fan upgrades and coil replacement to full AHU installation, refurbishment, and repair.<br />
-              Trusted by NHS, Disney and Marriott. Nationwide, fully in-house.
+              AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls. Trusted by NHS, Disney, and Marriott. Nationwide, fixed price, fast response.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -201,7 +227,7 @@ export default function Home() {
                 href="#services"
                 className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
-                Our Serivces
+                Our Services
                 <ArrowIcon />
               </Link>
             </div>
@@ -211,15 +237,15 @@ export default function Home() {
         {/* Stats strip */}
         <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-black/60 backdrop-blur-sm">
           <Container>
-            <div className="grid grid-cols-3 divide-x divide-white/15 py-3">
+            <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
               {[
                 { stat: "40+", label: "Years Experience" },
                 { stat: "Nationwide", label: "UK Coverage" },
-                { stat: "In-house", label: "No Subcontractors" },
+                { stat: "All Project Sizes", label: "Supported" },
               ].map((s) => (
-                <div key={s.label} className="px-3 text-center sm:px-6">
-                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{s.stat}</p>
-                  <p className="mt-0.5 text-[10px] uppercase tracking-wide text-white/55 sm:text-[11px]">{s.label}</p>
+                <div key={s.label} className="px-2 text-center sm:px-6">
+                  <p className="font-display text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -234,20 +260,29 @@ export default function Home() {
       Trusted by leading UK organisations
     </p>
 
-    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-6 place-items-center">
+    <div className="relative">
+  {/* Left fade */}
+  <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
+
+  {/* Right fade */}
+  <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
+
+  <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
+    <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
       {clientLogos.map((logo) => (
         <Image
           key={logo.alt}
           src={logo.src}
           alt={logo.alt}
-          height={60}
           width={120}
+          height={60}
           unoptimized
-          className="h-10 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100"
-          style={{ height: "60px", width: "auto", maxWidth: "120px" }}
+          className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
         />
       ))}
     </div>
+  </div>
+</div>
   </Container>
 </section>
 
@@ -261,10 +296,10 @@ export default function Home() {
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
             <p className="mt-3 max-w-lg text-sm leading-7 text-white/55">
-              All works managed in-house from survey to handover. No subcontractor chains — one team, full accountability.
+              AHU specialists covering refurbishment, EC fan upgrades, coil replacement, new installation, and controls. One team, one contract, full accountability from survey to handover.
             </p>
             <p className="mt-3 text-xs text-white/35">
-              Not sure which service applies? Each one below lists the signs to look for — or{" "}
+              Working on a specification or responding to a client brief? Each service below lists the key diagnostic indicators, or{" "}
               <Link href="/contact" className="font-semibold text-white/55 underline-offset-2 hover:text-white hover:underline">
                 speak to an engineer and we&apos;ll advise →
               </Link>
@@ -280,7 +315,7 @@ export default function Home() {
                   className="group flex h-full flex-col overflow-hidden rounded-t-2xl bg-white shadow-[0_8px_40px_rgba(0,0,0,0.38)] transition-all duration-200 hover:shadow-[0_20px_56px_rgba(0,0,0,0.5)]"
                 >
                   <div className="relative h-56 overflow-hidden bg-slate-200">
-                    <Image src={s.photo} alt={s.title} fill unoptimized className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <Image src={s.photo} alt={s.photoAlt || s.title} fill unoptimized className="object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     <div className="absolute bottom-4 left-4">
                       <span className="bg-[#297858] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">{s.tag}</span>
@@ -353,30 +388,71 @@ export default function Home() {
 
           {/* Additional services */}
           <div className="mt-8">
-            <div className="mb-5 flex items-center gap-4">
-              <p className="shrink-0 text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Additional services</p>
-              <div className="h-px flex-1 bg-white/10" />
+  <div className="mb-5 flex items-center gap-4">
+    <p className="shrink-0 text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">
+      Additional services
+    </p>
+    <div className="h-px flex-1 bg-white/10" />
+  </div>
+
+  {/* Mobile accordion */}
+  <div className="lg:hidden">
+    <details className="group">
+      <summary className="flex cursor-pointer items-center justify-between border border-white/10 bg-white/5 p-4 text-sm font-semibold text-white/70">
+        View additional services
+        <span className="transition-transform group-open:rotate-180">⌄</span>
+      </summary>
+
+      <div className="mt-3 grid gap-3">
+        {additionalServices.map((s, i) => (
+          <Link
+            key={s.title}
+            href={s.href}
+            className="flex items-center gap-4 border border-white/10 bg-white/5 p-4 transition hover:border-white/20"
+          >
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#111418] text-white/60">
+              <AdditionalServiceIcon index={i} />
             </div>
-            <div className="grid gap-3 sm:grid-cols-3">
-              {additionalServices.map((s, i) => (
-                <ScrollReveal key={s.title} delay={i * 60} className="h-full">
-                  <Link
-                    href={s.href}
-                    className="group flex h-full items-center gap-4 border border-slate-200 bg-white p-4 transition-all duration-200 hover:border-slate-300 hover:shadow-sm"
-                  >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#111418] text-white/60 transition-colors group-hover:bg-[#1d5c42] group-hover:text-white">
-                      <AdditionalServiceIcon index={i} />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-sm font-bold text-slate-900 group-hover:text-slate-700">{s.title}</p>
-                      <p className="mt-0.5 text-xs leading-4 text-slate-400">{s.desc}</p>
-                    </div>
-                    <ArrowIcon className="shrink-0 text-slate-300 transition-colors group-hover:text-[#297858]" />
-                  </Link>
-                </ScrollReveal>
-              ))}
+
+            <div className="min-w-0 flex-1">
+              <p className="text-sm font-bold text-white/80">{s.title}</p>
+              <p className="mt-0.5 text-xs text-white/40">{s.desc}</p>
             </div>
+
+            <ArrowIcon className="shrink-0 text-white/30" />
+          </Link>
+        ))}
+      </div>
+    </details>
+  </div>
+
+  {/* Desktop stays as grid */}
+  <div className="hidden lg:grid lg:grid-cols-3 lg:gap-3">
+    {additionalServices.map((s, i) => (
+      <ScrollReveal key={s.title} delay={i * 60} className="h-full">
+        <Link
+          href={s.href}
+          className="group flex h-full items-center gap-4 border border-slate-200 bg-white p-4 transition-all duration-200 hover:border-slate-300 hover:shadow-sm"
+        >
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#111418] text-white/60 transition-colors group-hover:bg-[#1d5c42] group-hover:text-white">
+            <AdditionalServiceIcon index={i} />
           </div>
+
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-bold text-slate-900 group-hover:text-slate-700">
+              {s.title}
+            </p>
+            <p className="mt-0.5 text-xs leading-4 text-slate-400">
+              {s.desc}
+            </p>
+          </div>
+
+          <ArrowIcon className="shrink-0 text-slate-300 transition-colors group-hover:text-[#297858]" />
+        </Link>
+      </ScrollReveal>
+    ))}
+  </div>
+</div>
         </Container>
       </section>
 
@@ -385,13 +461,13 @@ export default function Home() {
         <Container>
           <ScrollReveal className="mb-10 flex flex-wrap items-baseline justify-between gap-4">
             <div>
-              <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">Evidence of Work</p>
+              <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">Evidence of Work</p>
               <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
                 Recent Projects
               </h2>
-              <div className="mt-2 h-[3px] w-10 bg-emerald-700" />
+              <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
             </div>
-            <Link href="/case-studies" className="shrink-0 text-xs font-semibold text-slate-500 underline underline-offset-4 hover:text-emerald-700">
+            <Link href="/case-studies" className="shrink-0 text-xs font-semibold text-slate-500 underline underline-offset-4 hover:text-[#297858]">
               View all case studies →
             </Link>
           </ScrollReveal>
@@ -418,9 +494,9 @@ export default function Home() {
         </p>
         <ul className="mt-6 flex flex-col gap-2.5">
           {[
-            "AHU refurbishment options & benefits explained",
-            "What to expect from a BVS condition survey",
-            "Energy saving & compliance guidance",
+            "AHU refurbishment options and typical scope of works explained",
+            "What to expect from a BVS condition survey and condition report",
+            "Part L, energy efficiency, and decarbonisation guidance",
           ].map((point) => (
             <li key={point} className="flex items-center gap-2.5 text-sm text-white/55">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
@@ -460,10 +536,10 @@ export default function Home() {
         <Container>
           <ScrollReveal className="mb-8 flex flex-wrap items-baseline justify-between gap-4">
             <div>
-              <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">Industries</p>
+              <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">Industries</p>
               <h2 className="font-display text-xl font-extrabold uppercase text-slate-900">Sectors We Work In</h2>
             </div>
-            <Link href="/industries" className="shrink-0 text-xs font-semibold text-emerald-700 hover:underline">
+            <Link href="/industries" className="shrink-0 text-xs font-semibold text-[#297858] hover:underline">
               View all →
             </Link>
           </ScrollReveal>
@@ -479,7 +555,7 @@ export default function Home() {
                     <div className="relative h-40 overflow-hidden bg-slate-900">
                       <Image
                         src={s.photo}
-                        alt={s.label}
+                        alt={s.photoAlt || s.label}
                         fill
                         unoptimized
                         className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-105 group-hover:opacity-100"
@@ -513,8 +589,7 @@ export default function Home() {
                 Ready to discuss your project?
               </h2>
               <p className="mt-3 max-w-lg text-sm leading-7 text-white/65">
-                Whether it&apos;s a survey, refurbishment, emergency coil replacement, or a full installation -
-                we respond quickly and manage the entire scope in-house.
+                Whether it&apos;s a planned refurbishment programme, emergency coil replacement, urgent fan failure, or a full new installation, we respond quickly and manage the entire project directly.
               </p>
               <ul className="mt-5 flex flex-col gap-2">
                 {["No obligation enquiry", "Response within one working day", "Speak directly with a specialist"].map((p) => (
@@ -608,7 +683,7 @@ async function CaseStudiesBlock() {
                 {item.photo && (
                   <Image
                     src={item.photo}
-                    alt={item.type}
+                    alt={item.photoAlt || item.type}
                     fill
                     unoptimized
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -640,7 +715,7 @@ async function CaseStudiesBlock() {
                 <p className="flex-1 text-sm leading-7 text-slate-600 group-hover:text-slate-800">
                   {isWp ? item.title?.rendered : item.outcome}
                 </p>
-                <div className="mt-5 flex items-center gap-2 text-xs font-semibold text-emerald-700">
+                <div className="mt-5 flex items-center gap-2 text-xs font-semibold text-[#297858]">
                   Read more <ArrowIcon />
                 </div>
               </div>
@@ -675,14 +750,6 @@ function PhoneIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M6.5 3h3l1 5-2 1.5a16 16 0 0 0 6.5 6.5L16.5 14l5 1v3c0 1.1-.9 2-2 2C10.8 20 4 13.2 4 4.5c0-1.1.9-2 2-2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function CheckIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0 text-emerald-700" aria-hidden="true">
-      <path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

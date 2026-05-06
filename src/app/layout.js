@@ -28,8 +28,8 @@ export const metadata = {
   description:
     "Expert air handling unit refurbishment, manufacturing, installation and maintenance. 40+ years experience across the UK.",
   icons: {
-    icon: "/BVS-logo.webp",
-    apple: "/BVS-logo.webp",
+    icon: "/bvs-logo.webp",
+    apple: "/bvs-logo.webp",
   },
 };
 
