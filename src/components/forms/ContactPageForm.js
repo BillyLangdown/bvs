@@ -75,7 +75,7 @@ export function ContactPageForm() {
         <div>
           <p className="font-display text-lg font-extrabold uppercase text-slate-900">Message received</p>
           <p className="mt-2 text-sm leading-6 text-slate-600">
-            An engineer will review your enquiry and respond within one working day. No spam, no sales pipeline — just a practical reply.
+            An engineer will review your enquiry and respond within one working day. No spam, no sales pipeline - just a practical reply.
           </p>
         </div>
         <a

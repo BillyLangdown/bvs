@@ -145,7 +145,7 @@ export default async function ProductPage({ params }) {
               <div className="border-t border-slate-100 pt-4">
                 <p className="text-xs leading-5 text-slate-400">
                   All products are available to order. Speak to an engineer about
-                  pricing and lead times — we respond within one working day.
+                  pricing and lead times - we respond within one working day.
                 </p>
               </div>
             </ScrollReveal>
@@ -170,6 +170,7 @@ export default async function ProductPage({ params }) {
                 <div
                   className="wp-content mt-8"
                   dangerouslySetInnerHTML={{ __html: product.content }}
+                  suppressHydrationWarning
                 />
               </div>
             </ScrollReveal>
@@ -200,7 +201,7 @@ export default async function ProductPage({ params }) {
                 {[
                   "Response within one working day",
                   "Speak directly with a technical specialist",
-                  "No obligation — just practical guidance",
+                  "No obligation - just practical guidance",
                 ].map((item) => (
                   <li
                     key={item}
@@ -259,7 +260,7 @@ export default async function ProductPage({ params }) {
 function decodeTitle(html) {
   return html
     .replace(/&#8211;/g, "–")
-    .replace(/&#8212;/g, "—")
+    .replace(/&#8212;/g, "-")
     .replace(/&#8220;/g, "“")
     .replace(/&#8221;/g, "”")
     .replace(/&amp;/g, "&")

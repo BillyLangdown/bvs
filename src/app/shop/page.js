@@ -5,7 +5,7 @@ import { getShopProducts, getProductCategories } from "@/lib/wordpress/api";
 import { ShopGrid } from "@/components/shop/ShopGrid";
 
 export const metadata = {
-  title: "Shop — HVAC Components & Parts | BVS Building Ventilation Solutions",
+  title: "Shop - HVAC Components & Parts | BVS Building Ventilation Solutions",
   description:
     "EC fans, filters, heating & cooling coils, and heater batteries. HVAC components sourced and supplied by BVS for commercial and industrial applications.",
 };
@@ -20,7 +20,7 @@ export default async function ShopPage() {
       getProductCategories({ revalidate: 600 }),
     ]);
   } catch {
-    // WordPress unavailable — renders empty state
+    // WordPress unavailable - renders empty state
   }
 
   return (
@@ -38,7 +38,7 @@ export default async function ShopPage() {
             </h1>
             <div className="mt-4 h-[3px] w-10 bg-emerald-500" />
             <p className="mt-5 max-w-lg text-[15px] leading-7 text-white/65">
-              EC fans, filters, heating &amp; cooling coils, and heater batteries — sourced by our engineers for commercial and industrial HVAC applications.
+              EC fans, filters, heating &amp; cooling coils, and heater batteries - sourced by our engineers for commercial and industrial HVAC applications.
             </p>
             <p className="mt-4 text-sm text-white/40">
               All products link through to our main store. Need help specifying the right component?{" "}
@@ -54,8 +54,8 @@ export default async function ShopPage() {
           <Container>
             <div className="grid grid-cols-3 divide-x divide-white/10 py-3">
               {[
-                { stat: String(products.length || "—"), label: "Products" },
-                { stat: String(categories.length || "—"), label: "Categories" },
+                { stat: String(products.length || "-"), label: "Products" },
+                { stat: String(categories.length || "-"), label: "Categories" },
                 { stat: "UK", label: "Dispatch" },
               ].map((s) => (
                 <div key={s.label} className="px-3 text-center sm:px-6">
@@ -99,7 +99,7 @@ export default async function ShopPage() {
                 Can&apos;t find what you&apos;re looking for?
               </h2>
               <p className="mt-2 max-w-lg text-sm leading-6 text-white/55">
-                We source and supply a wide range of HVAC components beyond what&apos;s listed here. If you need a specific part, model, or bespoke component — speak to our team.
+                We source and supply a wide range of HVAC components beyond what&apos;s listed here. If you need a specific part, model, or bespoke component - speak to our team.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={80} className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">

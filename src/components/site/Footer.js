@@ -50,7 +50,7 @@ export function Footer() {
               </Link>
 
               <p className="text-sm leading-6 text-zinc-400">
-                40+ years of AHU expertise — refurbishment, manufacturing, installation,
+                40+ years of AHU expertise - refurbishment, manufacturing, installation,
                 and controls. Nationwide.
               </p>
 
@@ -148,7 +148,7 @@ export function Footer() {
                   Technical guides from 40 years in the field.
                 </p>
                 <p className="mt-1 text-sm text-zinc-400">
-                  Maintenance tips, industry news, and AHU insights — straight from our engineers. No spam.
+                  Maintenance tips, industry news, and AHU insights - straight from our engineers. No spam.
                 </p>
               </div>
               <div className="w-full sm:w-auto sm:min-w-[320px]">

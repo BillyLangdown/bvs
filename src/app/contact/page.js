@@ -7,7 +7,7 @@ import { ContactPageForm } from "@/components/forms/ContactPageForm";
 export const metadata = {
   title: "Contact Us | BVS Building Ventilation Solutions",
   description:
-    "Speak directly with an AHU specialist. Tell us about your project and we'll respond with practical options within one working day — no obligation, no sales pitch.",
+    "Speak directly with an AHU specialist. Tell us about your project and we'll respond with practical options within one working day - no obligation, no sales pitch.",
 };
 
 /* ── DATA ───────────────────────────────────────────────────────────── */
@@ -25,12 +25,12 @@ const steps = [
   {
     number: "01",
     title: "Submit your enquiry",
-    body: "Use the form or call us directly. Takes under 2 minutes. No lengthy specification needed — just tell us what you're working on.",
+    body: "Use the form or call us directly. Takes under 2 minutes. No lengthy specification needed - just tell us what you're working on.",
   },
   {
     number: "02",
     title: "An engineer reviews it",
-    body: "Your enquiry goes to our technical team — not a call centre or sales department. We look at the specifics before responding.",
+    body: "Your enquiry goes to our technical team - not a call centre or sales department. We look at the specifics before responding.",
   },
   {
     number: "03",
@@ -41,7 +41,7 @@ const steps = [
 
 const objections = [
   { q: "Will I be chased by a sales team?", a: "No. We're engineers, not a sales organisation. You'll hear back from someone technical." },
-  { q: "Do you work nationwide?", a: "Yes — we cover the whole of the UK. Based in Hampshire but regularly on-site from Scotland to the South West." },
+  { q: "Do you work nationwide?", a: "Yes - we cover the whole of the UK. Based in Hampshire but regularly on-site from Scotland to the South West." },
   { q: "What if my project is small?", a: "We handle single-unit refurbishments and multi-site programmes alike. All enquiries are treated the same way." },
 ];
 
@@ -63,7 +63,7 @@ export default function ContactPage() {
             </h1>
             <div className="mt-4 h-[3px] w-10 bg-emerald-500" />
             <p className="mt-5 max-w-lg text-[15px] leading-7 text-white/65">
-              We don&apos;t pass you to a call centre. Your enquiry goes straight to our technical team — and we&apos;ll respond with practical options, not a sales pitch.
+              We don&apos;t pass you to a call centre. Your enquiry goes straight to our technical team - and we&apos;ll respond with practical options, not a sales pitch.
             </p>
 
             {/* Contact methods */}
@@ -217,7 +217,7 @@ export default function ContactPage() {
                         content: (
                           <>
                             <p className="text-sm font-bold text-slate-900">Mon–Fri: 8am – 5pm</p>
-                            <p className="text-xs text-slate-500">Out of hours? Leave a message — we&apos;ll call back.</p>
+                            <p className="text-xs text-slate-500">Out of hours? Leave a message - we&apos;ll call back.</p>
                           </>
                         ),
                       },
@@ -275,7 +275,7 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      {/* ── 3. FINAL PUSH — for anyone still hesitating ─────────────── */}
+      {/* ── 3. FINAL PUSH - for anyone still hesitating ─────────────── */}
       <section className="bg-[#111418] py-14 sm:py-16">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -285,7 +285,7 @@ export default function ContactPage() {
                 Just pick up the phone
               </h2>
               <p className="mt-3 max-w-lg text-sm leading-7 text-white/60">
-                Even a 5-minute call can confirm whether we&apos;re the right fit. No commitment needed — we&apos;re straightforward people and you&apos;ll know where you stand.
+                Even a 5-minute call can confirm whether we&apos;re the right fit. No commitment needed - we&apos;re straightforward people and you&apos;ll know where you stand.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={80}>

@@ -10,7 +10,7 @@ export const metadata = {
     "Extend your air handling unit's life by 10–15 years at around 40% of replacement cost. BVS survey, specify, and refurbish on-site with minimal disruption. UK nationwide.",
 };
 
-/* ── DATA ───────────────────────────────────────────────────────────── */
+/* ── DATA ─────────────────────────────────────────────────────────────── */
 
 const clientLogos = [
   { src: "/nhs-logo.png", alt: "NHS" },
@@ -23,175 +23,126 @@ const clientLogos = [
   { src: "/alpinef1-logo.png", alt: "Alpine F1 Team" },
 ];
 
-const scope = [
+const scopeGroups = [
   {
-    title: "Fan & Motor Replacement",
-    body: "Swap failing or inefficient fans for high-efficiency EC or AC replacements — often delivering 30–50% energy savings alongside the refurbishment.",
+    category: "Fans & Drive",
+    items: [
+      { title: "Fan & Motor Replacement", body: "EC or AC motors replacing belt-drive or failing fans." },
+      { title: "Damper & Actuator Works", body: "Worn or seized damper blades, actuators, and linkages replaced." },
+    ],
   },
   {
-    title: "Coil Replacement",
-    body: "Heating, cooling, and heat recovery coils measured, manufactured or sourced, and replaced as part of the refurbishment scope.",
+    category: "Thermal Performance",
+    items: [
+      { title: "Coil Replacement", body: "Heating, cooling, and heat recovery coils measured, manufactured, and fitted in-situ." },
+      { title: "Humidifier Systems", body: "Steam generators, UV systems, and water treatment serviced or replaced." },
+    ],
   },
   {
-    title: "Filter Section Upgrade",
-    body: "Filter housings and media upgraded to current efficiency standards — improving air quality and protecting downstream components.",
+    category: "Enclosure & Filtration",
+    items: [
+      { title: "Casing & Insulation", body: "Corroded panels, failed insulation, and unsealed joints repaired or replaced." },
+      { title: "Filter Section Upgrade", body: "Filter housings and media upgraded to current efficiency standards." },
+    ],
   },
   {
-    title: "Casing & Insulation",
-    body: "Repairs to corroded or damaged casing panels, replacement of failed insulation, and resealing of joints to stop thermal bridging and condensation.",
-  },
-  {
-    title: "Controls Modernisation",
-    body: "Replacement of obsolete controls with modern DDC systems including BMS integration, remote monitoring, and fault diagnostics.",
-  },
-  {
-    title: "Damper & Actuator Works",
-    body: "Inspection and replacement of damper blades, actuators, and linkages that are worn, seized, or failing.",
-  },
-  {
-    title: "Humidifier Systems",
-    body: "Service, repair, or replacement of humidifier components — from steam generators to UV systems and water treatment.",
-  },
-  {
-    title: "Associated Pipework",
-    body: "All pipework connections, thermal insulation, and pressure testing required to support the refurbished plant.",
+    category: "Controls & Services",
+    items: [
+      { title: "Controls Modernisation", body: "Obsolete controls replaced with modern DDC systems — BMS integration and fault diagnostics." },
+      { title: "Pipework & Commissioning", body: "All associated pipework, insulation, pressure testing, and full recommissioning." },
+    ],
   },
 ];
 
 const steps = [
   {
     n: "01",
-    title: "Site Survey",
-    body: "Our engineers assess the AHU's current condition — fans, coils, filters, controls, casing, and structural frame. We record exactly what needs attention and what can be retained.",
+    title: "Survey & Assessment",
+    body: "On-site inspection of every component. You receive a condition report and prioritised findings before anything is agreed.",
   },
   {
     n: "02",
-    title: "Specification & Quote",
-    body: "A detailed refurbishment specification with itemised costings. No hidden extras — you'll know exactly what's being replaced, upgraded, or refurbished before we start.",
+    title: "Specification & Planning",
+    body: "Fixed-price, itemised scope. Works programmed around your operational hours — nights or weekends where required.",
   },
   {
     n: "03",
-    title: "Programme Planning",
-    body: "We plan works around your operational hours. Most refurbishments can be staged to keep ventilation running — or completed over a planned shutdown.",
+    title: "On-Site Refurbishment",
+    body: "All mechanical and electrical works carried out in-situ by our own engineers. No craning out. No subcontractors.",
   },
   {
     n: "04",
-    title: "Refurbishment Works",
-    body: "Our engineers carry out all mechanical and electrical works on-site — fan replacements, coil swaps, casing repairs, controls upgrades, insulation, and pipework.",
-  },
-  {
-    n: "05",
-    title: "Testing & Commissioning",
-    body: "Full system recommissioning with airflow measurement, controls testing, and performance verification against your original or improved design specification.",
-  },
-  {
-    n: "06",
-    title: "Handover",
-    body: "Commissioning records, maintenance recommendations, and warranty documentation. An optional PPM contract keeps the team who knows your plant in place.",
-  },
-];
-
-const reasons = [
-  {
-    title: "We build AHUs — so we understand them",
-    body: "BVS manufactures its own air handling units. Our refurbishment engineers understand how AHUs work at a component level — not just how to swap parts out.",
-  },
-  {
-    title: "40+ years of refurbishment experience",
-    body: "We've refurbished AHUs in hospitals, hotels, offices, universities, and industrial facilities. If there's a make or model you're worried about, we've probably seen it.",
-  },
-  {
-    title: "On-site, not off-site",
-    body: "We refurbish your unit in place — no craning it out, no expensive temporary plant, no weeks without ventilation. Works happen where the AHU lives.",
-  },
-  {
-    title: "Fully in-house team",
-    body: "No subcontractors. Every engineer on your project is a BVS employee — giving you one accountable point of contact from survey to handover.",
+    title: "Testing & Handover",
+    body: "Full recommissioning against design specification. Commissioning records, O&M documentation, and warranty included.",
   },
 ];
 
 const faqs = [
   {
-    q: "How much does AHU refurbishment cost compared to replacement?",
-    a: "Typically around 30–50% of the cost of a new unit, depending on what's needed. The exact figure depends on the unit's size and condition — we'll give you a detailed, itemised quote after the survey.",
-  },
-  {
-    q: "How long does a refurbishment take?",
-    a: "Most refurbishments can be completed in 1–5 days depending on scope. We'll give you a realistic programme at the quotation stage based on the specific works required.",
-  },
-  {
-    q: "Can you refurbish any make of AHU?",
-    a: "Yes. We work across all makes and models — Daikin, Carrier, Stulz, Mitsubishi, Swegon, and many others including discontinued units. Our manufacturing capability means we can fabricate bespoke replacements when needed.",
+    q: "How much does refurbishment cost compared to replacement?",
+    a: "Typically 30–50% of the cost of a new unit. The exact figure depends on size and condition — we give you a fixed-price, itemised quote after the survey.",
   },
   {
     q: "Will we need to shut the building down?",
-    a: "Not necessarily. Many refurbishments can be staged so at least part of the ventilation stays live. Where a full shutdown is required, we plan it around your operational hours — nights or weekends if needed.",
+    a: "Not necessarily. Many refurbishments are staged so ventilation stays live throughout. Where a shutdown is required, we schedule it around your operational hours.",
   },
   {
-    q: "Is refurbishment worth it if the unit is old?",
-    a: "Often yes — particularly where the structure and casing are sound. We'll tell you honestly if replacement is the better option. We have no incentive to push refurbishment if it's not right for your building.",
+    q: "How many years does refurbishment add to my AHU's lifespan?",
+    a: "Typically 10–15 years, depending on structural condition and scope. We'll confirm this at survey stage — we won't refurbish a unit that isn't worth it.",
   },
   {
-    q: "Can energy-saving upgrades be included?",
-    a: "Absolutely. EC fan upgrades and modern controls are often incorporated into the refurbishment scope — and the energy savings can significantly offset the cost of the works.",
+    q: "When would you recommend replacement instead?",
+    a: "When the structural frame or core components are beyond economic repair. We'll tell you honestly — we have no incentive to push refurbishment where replacement is the right call.",
   },
 ];
 
-const sectors = [
-  { label: "Healthcare & NHS", desc: "HTM 03-01 compliant works. Critical environments managed without disruption to clinical operations.", href: "/industries/hospital" },
-  { label: "Hotel & Hospitality", desc: "Out-of-hours programmes to maintain guest comfort and comply with ventilation requirements.", href: "/industries/hotel" },
-  { label: "Education", desc: "Works planned around term times. Compliant with CIBSE guidance for educational buildings.", href: "/industries/education" },
-  { label: "Defence & Government", desc: "Security-cleared engineers. Experience on restricted access and MoD sites.", href: "/industries/defence" },
-  { label: "Leisure & Aquatic", desc: "High-humidity environments. Corrosion-resistant specification for pool halls and leisure centres.", href: "/industries/leisure-centre" },
-  { label: "Retail & Commercial", desc: "Works scheduled around trading hours. Reactive support available when needed.", href: "/industries/retail" },
-];
-
-/* ── PAGE ───────────────────────────────────────────────────────────── */
+/* ── PAGE ─────────────────────────────────────────────────────────────── */
 
 export default function AHURefurbishmentPage() {
   return (
     <div>
 
-      {/* ── 1. HERO ──────────────────────────────────────────────────── */}
-      <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900 ">
+      {/* ── 1. HERO ────────────────────────────────────────────────────── */}
+      <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900">
         <Image
           src="/belt-driven-fan.png"
-          alt="belt driven fan replacement"
+          alt="AHU refurbishment in progress"
           fill
           priority
-          className="object-cover opacity-30 "
+          className="object-cover"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 via-[45%] to-transparent" />
 
-        <Container className="relative flex min-h-[580px] items-end py-20 pb-28">
+        <Container className="relative flex min-h-[520px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
           <div className="max-w-2xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
               AHU Refurbishment
             </p>
-            <h1 className="font-display text-5xl font-extrabold uppercase leading-none text-white sm:text-6xl">
-              Extend Your AHU&apos;s Life.<br />Not Your Budget.
+            <h1
+              className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-5xl"
+              style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
+            >
+              Extend Asset Life and <br />Avoid Replacement Cost.
             </h1>
-            <div className="mt-5 h-[3px] w-16 bg-emerald-500" />
-            <p className="mt-5 max-w-xl text-base leading-7 text-white/75">
-              Refurbishing your existing air handling unit typically costs 30–50% of full
-              replacement — and adds 10–15 years of reliable service life. We survey, specify,
-              and execute on-site with minimal disruption.
+            <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
+            <p className="mt-5 text-[15px] leading-7 text-white/85" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
+              We survey, specify, and carry out all works on-site — one in-house team, fixed price, minimal disruption.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
               >
-                Discuss your project
+                Request a refurbishment survey
                 <ArrowIcon />
               </Link>
               <a
-                href="tel:01256518170"
+                href="#how-it-works"
                 className="inline-flex items-center gap-2 border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
               >
-                <PhoneIconSm />
-                01256 518170
+                How it works
+                <ChevronDownIcon />
               </a>
             </div>
           </div>
@@ -204,7 +155,7 @@ export default function AHURefurbishmentPage() {
               {[
                 { stat: "30–50%", label: "Of Replacement Cost" },
                 { stat: "10–15 Yrs", label: "Extended Service Life" },
-                { stat: "UK Wide", label: "Nationwide Coverage" },
+                { stat: "UK Wide", label: "In-House, Nationwide" },
               ].map((s) => (
                 <div key={s.label} className="px-3 text-center sm:px-6">
                   <p className="font-display text-base font-extrabold text-white sm:text-lg">{s.stat}</p>
@@ -216,13 +167,13 @@ export default function AHURefurbishmentPage() {
         </div>
       </section>
 
-      {/* ── 2. TRUST BAR ─────────────────────────────────────────────── */}
+      {/* ── TRUST BAR ─────────────────────────────────────────────────── */}
       <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
         <Container>
           <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
             Trusted by leading UK organisations
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-5 sm:gap-x-10 sm:gap-y-6">
+          <div className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-8 place-items-center">
             {clientLogos.map((logo) => (
               <Image
                 key={logo.alt}
@@ -231,7 +182,7 @@ export default function AHURefurbishmentPage() {
                 height={60}
                 width={120}
                 unoptimized
-                className="h-8 w-auto object-contain sm:h-10"
+                className="h-10 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100"
                 style={{ height: "60px", width: "auto", maxWidth: "120px" }}
               />
             ))}
@@ -239,21 +190,22 @@ export default function AHURefurbishmentPage() {
         </Container>
       </section>
 
-      {/* ── 3. IS THIS FOR YOU? ──────────────────────────────────────── */}
-      <section className="bg-[#111418] py-14 sm:py-16">
+      {/* ── 2. QUICK ASSESSMENT ────────────────────────────────────────── */}
+      <section className="bg-[#111418] py-16 sm:py-20">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+          <div className="grid gap-14 lg:grid-cols-[1.3fr_1fr] lg:items-start">
+
             <ScrollReveal>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-400">
-                Sound familiar?
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
+                Quick assessment
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-3xl">
-                Is Your AHU Underperforming?
+              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+                Is Refurbishment<br />Right for Your AHU?
               </h2>
-              <div className="mt-4 h-[3px] w-10 bg-emerald-500" />
-              <p className="mt-5 text-sm leading-7 text-white/60">
-                Most AHUs don&apos;t fail suddenly — they degrade gradually. If any of these sound familiar,
-                a refurbishment survey is the right next step.
+              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-6 text-sm leading-7 text-white/55">
+                Refurbishment is typically suitable when the unit&apos;s structure is sound but performance has declined.
+                If one or more of the following applies, a condition survey is the right next step.
               </p>
               <div className="mt-7">
                 <Link
@@ -267,78 +219,55 @@ export default function AHURefurbishmentPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={80}>
-              <ul className="flex flex-col divide-y divide-white/10">
+              <ul className="flex flex-col gap-3">
                 {[
-                  { signal: "Increased energy bills", detail: "Ageing fans and worn components reduce efficiency over time." },
-                  { signal: "Reduced airflow or poor air quality", detail: "Blocked coils, failed dampers, or worn fan blades restrict performance." },
-                  { signal: "Frequent breakdowns or reactive repairs", detail: "A symptom of multiple components reaching end of life simultaneously." },
-                  { signal: "Noise, vibration, or odour issues", detail: "Often caused by failing bearings, worn belts, or deteriorating insulation." },
-                  { signal: "Compliance or HTM concerns", detail: "Older units may no longer meet current ventilation standards or regulations." },
+                  "Your unit is structurally sound but underperforming",
+                  "Energy costs are rising without a clear cause",
+                  "There is visible wear, corrosion, or component failure",
+                  "Full replacement is not in budget or not yet justified",
                 ].map((item) => (
-                  <li key={item.signal} className="flex items-start gap-4 py-4">
-                    <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
-                    <span>
-                      <span className="block text-sm font-semibold text-white">{item.signal}</span>
-                      <span className="mt-0.5 block text-xs leading-5 text-white/50">{item.detail}</span>
-                    </span>
+                  <li
+                    key={item}
+                    className="border-l-2 border-[#297858] bg-white/5 px-5 py-4"
+                  >
+                    <span className="text-sm font-semibold text-white">{item}</span>
                   </li>
                 ))}
               </ul>
             </ScrollReveal>
+
           </div>
         </Container>
       </section>
 
-      {/* ── 4. OVERVIEW ──────────────────────────────────────────────── */}
-      <section className="bg-white py-20">
+      {/* ── 3. THE CASE FOR REFURBISHMENT ─────────────────────────────── */}
+      <section className="bg-surface-2 py-16 sm:py-20">
         <Container>
-          <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-center">
             <ScrollReveal>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                 The case for refurbishment
               </p>
-              <h2 className="font-display text-3xl font-extrabold uppercase text-slate-900 sm:text-4xl">
-                Better Performance.<br />Without the Cost of Replacement.
+              <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
+                A Practical Alternative<br />to Full Replacement
               </h2>
-              <div className="mt-4 h-[3px] w-12 bg-emerald-700" />
-              <p className="mt-6 text-[15px] leading-7 text-slate-600">
-                Most AHUs have a service life of 20–25 years — but ageing components, failing fans,
-                corroded coils, and obsolete controls drag performance down long before the unit
-                is truly end-of-life.
+              <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-5 text-sm leading-7 text-slate-500">
+                Most AHUs degrade gradually. The structure and casing often outlast the components inside them. Refurbishment replaces what&apos;s failing and restores full performance — without the disruption or cost of a new unit.
               </p>
-              <p className="mt-4 text-sm leading-7 text-slate-500">
-                Refurbishment restores your AHU to specification without the capital cost or
-                programme disruption of a full replacement. We survey your unit, tell you exactly
-                what it needs, and execute all works on-site — one contract, one accountable team.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-                >
-                  Request a survey
-                  <ArrowIcon />
-                </Link>
-                <Link
-                  href="/case-studies"
-                  className="inline-flex items-center gap-2 border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-slate-300 hover:shadow-sm"
-                >
-                  See our work
-                </Link>
-              </div>
             </ScrollReveal>
 
             <ScrollReveal delay={80}>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-px bg-slate-200">
                 {[
-                  { stat: "30–50%", label: "Typical cost saving vs. full replacement" },
-                  { stat: "10–15+", label: "Years of additional service life" },
-                  { stat: "1–5 days", label: "Typical on-site refurbishment time" },
-                  { stat: "Any make", label: "We refurbish all brands and models" },
+                  { label: "30–50% of replacement cost", sub: "Typical saving vs. a new unit" },
+                  { label: "10–15 years extended lifespan", sub: "With appropriate scope of works" },
+                  { label: "On-site delivery", sub: "No craning out, no temporary plant" },
+                  { label: "Minimal disruption", sub: "Planned around your operations" },
                 ].map((item) => (
-                  <div key={item.label} className="border border-slate-100 bg-surface-2 p-6">
-                    <p className="font-display text-3xl font-extrabold text-[#297858]">{item.stat}</p>
-                    <p className="mt-2 text-xs font-medium leading-5 text-slate-600">{item.label}</p>
+                  <div key={item.label} className="bg-white p-6">
+                    <p className="text-sm font-bold text-slate-900">{item.label}</p>
+                    <p className="mt-1 text-xs text-slate-400">{item.sub}</p>
                   </div>
                 ))}
               </div>
@@ -347,29 +276,36 @@ export default function AHURefurbishmentPage() {
         </Container>
       </section>
 
-      {/* ── 5. WHAT'S INCLUDED ───────────────────────────────────────── */}
-      <section className="bg-surface-2 py-20">
+      {/* ── 4. WHAT'S INCLUDED ─────────────────────────────────────────── */}
+      <section className="bg-white py-16 sm:py-20">
         <Container>
           <ScrollReveal className="mb-10">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
-              What&apos;s included
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              Scope of works
             </p>
             <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-              Refurbishment Scope
+              What&apos;s Included
             </h2>
-            <div className="mt-2 h-[3px] w-10 bg-emerald-700" />
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-500">
-              Every refurbishment is different — we specify exactly what your unit needs. Common elements include:
+            <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
+            <p className="mt-4 max-w-xl text-sm leading-6 text-slate-500">
+              Every refurbishment is specified to the unit&apos;s individual needs. Typical scope includes:
             </p>
           </ScrollReveal>
 
-          <div className="grid gap-px border border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-4">
-            {scope.map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 30}>
-                <div className="bg-white p-6 h-full">
-                  <div className="h-[3px] w-6 bg-emerald-700" />
-                  <h3 className="mt-4 text-sm font-bold text-slate-900">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-500">{item.body}</p>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {scopeGroups.map((group, gi) => (
+              <ScrollReveal key={group.category} delay={gi * 60}>
+                <div className="h-full border border-slate-100 bg-surface-2 p-6">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">{group.category}</p>
+                  <div className="mt-3 h-[2px] w-8 bg-[#297858]" />
+                  <ul className="mt-5 flex flex-col gap-4">
+                    {group.items.map((item) => (
+                      <li key={item.title}>
+                        <p className="text-sm font-bold text-slate-900">{item.title}</p>
+                        <p className="mt-1 text-xs leading-5 text-slate-500">{item.body}</p>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </ScrollReveal>
             ))}
@@ -377,268 +313,154 @@ export default function AHURefurbishmentPage() {
         </Container>
       </section>
 
-      {/* ── 6. FEATURED KEY COMPONENTS ───────────────────────────────── */}
-      <section className="bg-white py-20">
+      {/* ── 5. HOW IT WORKS ─────────────────────────────────────────────── */}
+      <section id="how-it-works" className="bg-surface-2 py-16 sm:py-20">
         <Container>
           <ScrollReveal className="mb-10">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
-              Key components
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-              High-Impact Upgrades Within Refurbishment
-            </h2>
-            <div className="mt-2 h-[3px] w-10 bg-emerald-700" />
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-500">
-              Two elements of refurbishment consistently deliver the most measurable return —
-              EC fan upgrades and coil replacement. Both can be included within your refurbishment
-              scope, or specified as standalone works.
-            </p>
-          </ScrollReveal>
-
-          <div className="grid gap-6 sm:grid-cols-2">
-            {[
-              {
-                title: "EC Fan Upgrades",
-                tag: "30–50% Energy Saving",
-                outcome: "Retrofit high-efficiency EC motors into your existing AHU casing — without replacing the whole unit.",
-                points: [
-                  "Direct replacement of belt-drive or AC fans",
-                  "Payback typically within 2–3 years",
-                  "Quieter operation, reduced maintenance",
-                  "BMS integration available",
-                ],
-                photo: "/ec-fan-upgrade.png",
-                href: "/ec-fan-upgrades-and-retrofits-for-hvac",
-              },
-              {
-                title: "Coil Replacement",
-                tag: "Performance Restored",
-                outcome: "Restore full heating, cooling, or heat recovery performance without a full AHU replacement.",
-                points: [
-                  "Measured and manufactured on-site",
-                  "All coil types — LPHW, CHW, DX, run-around",
-                  "Minimal downtime",
-                  "Significant cost saving vs. new unit",
-                ],
-                photo: "/ahu-coil-replacement.png",
-                href: "/air-handling-unit-coil-replacement",
-              },
-            ].map((s) => (
-              <ScrollReveal key={s.title}>
-                <Link
-                  href={s.href}
-                  className="group flex h-full flex-col overflow-hidden border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:border-slate-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)]"
-                >
-                  <div className="relative h-52 overflow-hidden bg-slate-900">
-                    <Image
-                      src={s.photo}
-                      alt={s.title}
-                      fill
-                      unoptimized
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-4 left-4">
-                      <span className="bg-emerald-600 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
-                        {s.tag}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex flex-1 flex-col p-6 sm:p-7">
-                    <h3 className="text-base font-extrabold uppercase tracking-wide text-slate-900 group-hover:text-slate-700">
-                      {s.title}
-                    </h3>
-                    <p className="mt-2 text-sm font-semibold text-emerald-700">{s.outcome}</p>
-                    <ul className="mt-4 flex flex-1 flex-col gap-2">
-                      {s.points.map((p) => (
-                        <li key={p} className="flex items-center gap-2 text-sm text-slate-500">
-                          <span className="h-1 w-1 shrink-0 rounded-full bg-emerald-500" />
-                          {p}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 transition-colors group-hover:text-emerald-600">
-                      Find out more <ArrowIcon />
-                    </div>
-                  </div>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ── 7. PROCESS ───────────────────────────────────────────────── */}
-      <section className="bg-surface-2 py-20">
-        <Container>
-          <ScrollReveal className="mb-12">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               How it works
             </p>
             <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-              Our Refurbishment Process
+              From Survey to Handover
             </h2>
-            <div className="mt-2 h-[3px] w-10 bg-emerald-700" />
+            <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
             <p className="mt-4 max-w-xl text-sm leading-6 text-slate-500">
-              Every refurbishment starts with a thorough site survey — so there are no surprises
-              when the work begins.
+              A fixed four-step process with one in-house team throughout. No handoffs, no subcontractors, no surprises.
             </p>
           </ScrollReveal>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Desktop: horizontal flow with arrow connectors */}
+          <div className="hidden lg:flex items-stretch">
+            {steps.flatMap((step, i) => {
+              const items = [
+                <ScrollReveal key={step.n} delay={i * 60} className="flex-1">
+                  <div className="flex h-full flex-col bg-white p-7 shadow-sm">
+                    <div className="mb-5 flex h-10 w-10 items-center justify-center bg-[#111418]">
+                      <span className="font-display text-sm font-extrabold text-white">{step.n}</span>
+                    </div>
+                    <h3 className="font-display text-sm font-extrabold uppercase text-slate-900">{step.title}</h3>
+                    <p className="mt-3 flex-1 text-xs leading-6 text-slate-500">{step.body}</p>
+                  </div>
+                </ScrollReveal>,
+              ];
+              if (i < steps.length - 1) {
+                items.push(
+                  <div key={`arrow-${i}`} className="flex w-10 shrink-0 items-center justify-center bg-slate-100">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M5 12h14M13 5l7 7-7 7" stroke="#297858" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                );
+              }
+              return items;
+            })}
+          </div>
+
+          {/* Mobile/tablet: vertical stack with down arrows */}
+          <div className="flex flex-col lg:hidden">
             {steps.map((step, i) => (
-              <ScrollReveal key={step.n} delay={i * 40}>
-                <div className="h-full bg-white p-8">
-                  <span className="font-display text-5xl font-extrabold leading-none text-emerald-700/20">
-                    {step.n}
-                  </span>
-                  <div className="mt-1 h-[2px] w-8 bg-emerald-700" />
-                  <h3 className="mt-4 font-display text-base font-bold uppercase text-slate-900">
-                    {step.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-500">{step.body}</p>
-                </div>
-              </ScrollReveal>
+              <div key={step.n}>
+                <ScrollReveal delay={i * 60}>
+                  <div className="bg-white p-6 shadow-sm">
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-[#111418]">
+                        <span className="font-display text-sm font-extrabold text-white">{step.n}</span>
+                      </div>
+                      <h3 className="font-display text-sm font-extrabold uppercase text-slate-900">{step.title}</h3>
+                    </div>
+                    <p className="text-xs leading-6 text-slate-500">{step.body}</p>
+                  </div>
+                </ScrollReveal>
+                {i < steps.length - 1 && (
+                  <div className="flex justify-center py-3">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M12 5v14M5 12l7 7 7-7" stroke="#297858" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
+
+          {/* Risk assurances strip */}
+          <ScrollReveal delay={100}>
+            <div className="mt-5 grid grid-cols-2 gap-px bg-slate-200 sm:grid-cols-4">
+              {[
+                "Phased delivery available",
+                "Out-of-hours work",
+                "No temporary plant",
+                "HTM 03-01 capable",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-2.5 bg-white px-5 py-4">
+                  <CheckIcon />
+                  <span className="text-xs font-semibold text-slate-700">{item}</span>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </Container>
       </section>
 
-      {/* ── 8. CASE STUDY ────────────────────────────────────────────── */}
+      {/* ── 6. CASE STUDY ───────────────────────────────────────────────── */}
       <section className="bg-[#111418] py-16 sm:py-20">
         <Container>
-          <ScrollReveal>
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-400">
-              Case Study
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
-              NHS Hospital — 12 AHU Refurbishment
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-emerald-500" />
-          </ScrollReveal>
-
-          <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_1fr_1fr]">
-            {[
-              {
-                label: "The Problem",
-                body: "12 ageing AHUs across a hospital estate were showing signs of deterioration — reduced airflow, failing components, and concerns around HTM 03-01 compliance. Full replacement was cost-prohibitive and would have required significant programme disruption to clinical areas.",
-              },
-              {
-                label: "Our Approach",
-                body: "BVS carried out condition surveys on all 12 units, providing a prioritised refurbishment programme. Works were sequenced around ward occupancy and executed in-house — including EC fan upgrades, coil replacements, controls modernisation, and casing repairs. No subcontractors. No disruption to clinical operations.",
-              },
-              {
-                label: "The Outcome",
-                body: "All 12 AHUs returned to full HTM 03-01 compliance. Airflow and air quality restored across all clinical areas. Energy costs reduced through EC fan upgrades. Full commissioning records and maintenance documentation provided at handover. Project delivered on programme.",
-              },
-            ].map((block) => (
-              <ScrollReveal key={block.label}>
-                <div className="border border-white/10 bg-white/5 p-7 h-full">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-emerald-400">
-                    {block.label}
-                  </p>
-                  <p className="mt-4 text-sm leading-7 text-white/70">{block.body}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal className="mt-8 flex flex-wrap items-center gap-5">
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-            >
-              View all case studies
-              <ArrowIcon />
-            </Link>
-            <p className="text-xs text-white/35">NHS, Disney, Marriott, Alpine F1 and more</p>
-          </ScrollReveal>
-        </Container>
-      </section>
-
-      {/* ── 9. WHY BVS ───────────────────────────────────────────────── */}
-      <section className="bg-white py-20">
-        <Container>
-          <ScrollReveal className="mb-10">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
-              Why choose BVS
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-              We Build AHUs — So We Know How to Fix Them
-            </h2>
-            <div className="mt-2 h-[3px] w-10 bg-emerald-700" />
-          </ScrollReveal>
-
-          <div className="grid gap-5 sm:grid-cols-2">
-            {reasons.map((r, i) => (
-              <ScrollReveal key={r.title} delay={i * 50}>
-                <div className="border border-slate-100 bg-surface-2 p-7 h-full">
-                  <div className="h-[3px] w-8 bg-emerald-700" />
-                  <h3 className="mt-4 font-display text-base font-bold uppercase text-slate-900">
-                    {r.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-500">{r.body}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ── 10. SECTORS ──────────────────────────────────────────────── */}
-      <section className="bg-surface-2 py-16">
-        <Container>
-          <ScrollReveal className="mb-8 flex flex-wrap items-baseline justify-between gap-4">
-            <div>
-              <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">Industries</p>
-              <h2 className="font-display text-xl font-extrabold uppercase text-slate-900">
-                Sectors We Work In
+          <div className="grid gap-14 lg:grid-cols-[1.3fr_1fr] lg:items-start">
+            <ScrollReveal>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
+                Case study
+              </p>
+              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+                NHS Hospital —<br />12 AHU Programme
               </h2>
-            </div>
-            <Link href="/industries" className="shrink-0 text-xs font-semibold text-emerald-700 hover:underline">
-              View all →
-            </Link>
-          </ScrollReveal>
+              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {sectors.map((s, i) => (
-              <ScrollReveal key={s.label} delay={i * 40}>
+              <div className="mt-6 flex flex-col gap-3">
+                <div className="border-l-2 border-[#297858] pl-4">
+                  <span className="text-sm font-bold text-white">100% HTM 03-01 compliance restored across all 12 units.</span>
+                </div>
+                <div className="border-l-2 border-white/15 pl-4">
+                  <span className="text-sm text-white/55">Delivered on programme. Zero disruption to clinical operations.</span>
+                </div>
+              </div>
+
+              <p className="mt-5 text-sm leading-7 text-white/55">
+                12 ageing hospital AHUs refurbished in-situ — EC fan upgrades, coil replacements, and controls modernisation — sequenced around ward occupancy. No ward closures, no subcontractors.
+              </p>
+
+              <div className="mt-7">
                 <Link
-                  href={s.href}
-                  className="group flex h-full flex-col border border-slate-200 bg-white p-6 transition-all duration-200 hover:border-slate-300 hover:shadow-lg"
+                  href="/case-studies"
+                  className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
                 >
-                  <div className="mb-3 h-[3px] w-6 bg-slate-200 transition-all duration-300 group-hover:w-10 group-hover:bg-emerald-600" />
-                  <p className="font-display text-sm font-extrabold uppercase text-slate-900 group-hover:text-slate-700">
-                    {s.label}
-                  </p>
-                  <p className="mt-2 flex-1 text-sm leading-6 text-slate-500">{s.desc}</p>
-                  <p className="mt-4 text-xs font-semibold text-emerald-700 transition-colors group-hover:text-emerald-600">
-                    Learn more →
-                  </p>
+                  View all case studies
+                  <ArrowIcon />
                 </Link>
-              </ScrollReveal>
-            ))}
+              </div>
+            </ScrollReveal>
+
+            <Image
+              src="/hospital.png"
+              alt="Hospital"
+              width={600}
+              height={400}
+            />
           </div>
         </Container>
       </section>
 
-      {/* ── 11. FAQ ──────────────────────────────────────────────────── */}
-      <section className="bg-white py-20">
+      {/* ── 7. FAQ ─────────────────────────────────────────────────────── */}
+      <section className="bg-white py-16 sm:py-20">
         <Container>
           <ScrollReveal className="mb-10">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
-              Common questions
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">
-              Frequently Asked Questions
-            </h2>
-            <div className="mt-2 h-[3px] w-10 bg-emerald-700" />
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">Common questions</p>
+            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">Frequently Asked Questions</h2>
+            <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
           </ScrollReveal>
 
           <div className="grid gap-5 lg:grid-cols-2">
             {faqs.map((faq, i) => (
               <ScrollReveal key={faq.q} delay={i * 30}>
-                <div className="border-l-2 border-emerald-700 bg-surface-2 p-6 h-full">
+                <div className="h-full border-l-2 border-[#297858] bg-surface-2 p-6">
                   <h3 className="text-sm font-bold text-slate-900">{faq.q}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-500">{faq.a}</p>
                 </div>
@@ -648,49 +470,37 @@ export default function AHURefurbishmentPage() {
         </Container>
       </section>
 
-      {/* ── 12. FINAL CTA + FORM ─────────────────────────────────────── */}
+      {/* ── 8. FINAL CTA ───────────────────────────────────────────────── */}
       <section className="bg-[#111418] py-20">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
             <ScrollReveal>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-400">
-                Get in touch
-              </p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/45">Speak to an engineer</p>
               <h2 className="font-display text-3xl font-extrabold uppercase text-white sm:text-4xl">
-                Ready to Discuss Your AHU?
+                Request a<br />Refurbishment Survey
               </h2>
-              <div className="mt-3 h-[3px] w-12 bg-emerald-500" />
+              <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-white/65">
-                Tell us about your unit — make, model, age, and what you&apos;re experiencing.
-                We&apos;ll respond within one working day with honest advice and a quotation
-                when you&apos;re ready.
+                Tell us about your unit — make, model, age, and what you&apos;re experiencing. We respond within one working day.
               </p>
-
-              <ul className="mt-7 flex flex-col gap-3">
+              <ul className="mt-6 flex flex-col gap-3">
                 {[
-                  "No obligation enquiry",
-                  "Response within one working day",
-                  "Speak directly with an AHU specialist",
+                  "We manufacture AHUs — we understand them at component level",
+                  "40+ years across NHS, hotels, defence, and commercial sites",
+                  "No subcontractors — one accountable in-house team",
                 ].map((p) => (
-                  <li key={p} className="flex items-center gap-2.5 text-sm text-white/60">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
+                  <li key={p} className="flex items-start gap-2.5 text-sm text-white/60">
+                    <span className="mt-[3px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
                     {p}
                   </li>
                 ))}
               </ul>
-
               <div className="mt-8 flex flex-col gap-3">
-                <a
-                  href="tel:01256518170"
-                  className="inline-flex items-center gap-3 text-sm text-white/70 hover:text-white"
-                >
+                <a href="tel:01256518170" className="inline-flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-white">
                   <PhoneIcon />
                   01256 518170
                 </a>
-                <a
-                  href="mailto:info@bvs-ltd.co.uk"
-                  className="inline-flex items-center gap-3 text-sm text-white/70 hover:text-white"
-                >
+                <a href="mailto:info@bvs-ltd.co.uk" className="inline-flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-white">
                   <MailIcon />
                   info@bvs-ltd.co.uk
                 </a>
@@ -699,12 +509,8 @@ export default function AHURefurbishmentPage() {
 
             <ScrollReveal delay={80}>
               <div className="bg-white p-8">
-                <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
-                  Quick enquiry
-                </p>
-                <p className="mb-6 text-sm text-slate-500">
-                  Describe your AHU and we&apos;ll be in touch within one working day.
-                </p>
+                <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">Quick enquiry</p>
+                <p className="mb-6 text-sm text-slate-500">Describe your AHU and we&apos;ll be in touch within one working day.</p>
                 <QuickQuoteForm />
               </div>
             </ScrollReveal>
@@ -712,12 +518,10 @@ export default function AHURefurbishmentPage() {
         </Container>
       </section>
 
-      {/* ── 13. RELATED SERVICES ─────────────────────────────────────── */}
+      {/* ── 9. RELATED SERVICES ────────────────────────────────────────── */}
       <section className="border-t border-slate-100 bg-white py-12">
         <Container>
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-slate-400">
-            Related Services
-          </p>
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-slate-400">Related Services</p>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },
@@ -731,7 +535,7 @@ export default function AHURefurbishmentPage() {
                 className="group flex items-center justify-between border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-900 transition-all duration-200 hover:border-slate-300 hover:shadow-sm"
               >
                 {l.label}
-                <span className="ml-3 shrink-0 text-emerald-700 transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+                <span className="ml-3 shrink-0 text-[#297858] transition-transform duration-200 group-hover:translate-x-0.5">→</span>
               </Link>
             ))}
           </div>
@@ -748,6 +552,22 @@ function ArrowIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
       <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function ChevronDownIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function CheckIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="shrink-0 text-[#297858]">
+      <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

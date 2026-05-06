@@ -136,7 +136,7 @@ export async function getShopProducts({ revalidate = 300 } = {}) {
         ]),
       );
     } catch {
-      // media resolution failed — products will render without images
+      // media resolution failed - products will render without images
     }
   }
 

@@ -26,7 +26,7 @@ const navItems = [
           {
             href: "/air-handling-unit-manufacturing/",
             label: "AHU Manufacturing",
-            description: "Bespoke AHUs built to specification — delivered and installed UK-wide.",
+            description: "Bespoke AHUs built to specification - delivered and installed UK-wide.",
             icon: FactoryIcon,
           },
           {
@@ -210,16 +210,29 @@ export function Navigation() {
     <header className={`relative ${headerClass}`}>
       <Container className="flex h-16 items-center gap-6">
         {/* Logo */}
-        <Link href="/" className="shrink-0 transition-opacity hover:opacity-80">
-          <Image
-            src="/BVS-logo.webp"
-            alt="BVS Building Ventilation Solutions"
-            width={148}
-            height={80}
-            className="h-10 w-auto"
-            priority
-          />
-        </Link>
+        <Link
+  href="/"
+  className="flex items-center gap-4 shrink-0 transition-opacity hover:opacity-80"
+>
+  <Image
+    src="/BVS-logo.webp"
+    alt="BVS Building Ventilation Solutions"
+    width={148}
+    height={80}
+    className="h-10 w-auto"
+    priority
+  />
+
+  {/* Divider */}
+  <div className="hidden sm:block h-8 w-px bg-slate-200" />
+
+  {/* Stacked text */}
+  <span className="hidden sm:flex flex-col text-[10px] leading-[1.1] uppercase tracking-[0.15em] text-slate-600">
+    <span>Building</span>
+    <span>Ventilation</span>
+    <span>Solutions</span>
+  </span>
+</Link>
 
         {/* Desktop nav */}
         <nav className="hidden flex-1 items-center justify-end gap-6 whitespace-nowrap lg:flex">
@@ -385,7 +398,7 @@ export function Navigation() {
   );
 }
 
-/* ── MEGA DROPDOWN (Services — two columns) ─────────────────────────── */
+/* ── MEGA DROPDOWN (Services - two columns) ─────────────────────────── */
 
 function MegaDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen, onItemClick }) {
   return (
