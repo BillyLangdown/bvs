@@ -222,7 +222,7 @@ export default function Home() {
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
               AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls. <br/>
-              Trusted by NHS, Disney, and Marriott. Nationwide, Flexible budgets, fast response.
+              Trusted by NHS, Disney, and Marriott. Nationwide, flexible budgets, fast responses.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
