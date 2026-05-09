@@ -36,7 +36,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         <div className="min-h-dvh bg-white text-slate-900">
           <Navigation />
           <main>{children}</main>

@@ -18,6 +18,18 @@ const navItems = [
         href: "/solutions/ahu",
         items: [
           {
+            href: "/ec-fan-upgrades-and-retrofits-for-hvac/",
+            label: "EC Fan Upgrades",
+            description: "Cut fan energy consumption & Retrofit into existing casings.",
+            icon: FanIcon,
+          },
+          {
+            href: "/air-handling-unit-coil-replacement/",
+            label: "Coil Replacement & Repair",
+            description: "Restore AHU efficiency without full replacement.",
+            icon: WrenchIcon,
+          },
+          {
             href: "/air-handling-unit-refurbishment/",
             label: "AHU Refurbishment",
             description: "Extend asset life by 10–15 years. Condition reports with costed solutions.",
@@ -34,18 +46,6 @@ const navItems = [
             label: "AHU Installation",
             description: "End-to-end installation managed from survey to commissioning.",
             icon: HardHatIcon,
-          },
-          {
-            href: "/air-handling-unit-coil-replacement/",
-            label: "Coil Replacement & Repair",
-            description: "Restore AHU efficiency without full replacement.",
-            icon: WrenchIcon,
-          },
-          {
-            href: "/ec-fan-upgrades-and-retrofits-for-hvac/",
-            label: "EC Fan Upgrades",
-            description: "Cut fan energy consumption by 30–50%. Retrofit into existing casings.",
-            icon: FanIcon,
           },
         ],
       },
