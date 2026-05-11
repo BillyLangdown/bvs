@@ -110,26 +110,39 @@ export default function HospitalPage() {
       <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
         <Container>
           <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading healthcare organisations
+            Trusted by leading UK organisations
           </p>
-          <div className="flex flex-wrap justify-center gap-x-10 gap-y-5">
-            {[
-              { src: "/nhs-logo.png", alt: "NHS" },
-              { src: "/moorfields-logo.png", alt: "Moorfields Eye Hospital" },
-              { src: "/disney-logo.png", alt: "Disney" },
-              { src: "/marriott-logo.png", alt: "Marriott Hotels" },
-              { src: "/ihg-logo.png", alt: "IHG Hotels & Resorts" },
-            ].map((logo) => (
-              <Image
-                key={logo.alt}
-                src={logo.src}
-                alt={logo.alt}
-                width={120}
-                height={60}
-                unoptimized
-                className="h-12 w-auto object-contain opacity-80 transition-opacity hover:opacity-100"
-              />
-            ))}
+          <div className="relative">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
+            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
+              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
+                {[
+                  { src: "/nhs-logo.png", alt: "NHS" },
+                  { src: "/disney-logo.png", alt: "Disney" },
+                  { src: "/marriott-logo.png", alt: "Marriott Hotels" },
+                  { src: "/moorfields-logo.png", alt: "Moorfields Eye Hospital" },
+                  { src: "/ihg-logo.png", alt: "IHG Hotels & Resorts" },
+                  { src: "/travelodge-logo.png", alt: "Travelodge" },
+                  { src: "/waitrose-logo.png", alt: "Waitrose" },
+                  { src: "/westfield-logo.png", alt: "Westfield" },
+                  { src: "/fenwick-logo.png", alt: "Fenwick" },
+                  { src: "/freedomleisure-logo.png", alt: "Freedom Leisure" },
+                  { src: "/queenmary-logo.png", alt: "Queen Mary University" },
+                  { src: "/alpinef1-logo.png", alt: "Alpine F1 Team" },
+                ].map((logo) => (
+                  <Image
+                    key={logo.alt}
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={120}
+                    height={60}
+                    unoptimized
+                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </Container>
       </section>

@@ -8,7 +8,7 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 export const metadata = {
   title: "AHU Installation | BVS Building Ventilation Solutions",
   description:
-    "Professional air handling unit installation across the UK. Survey, specification, installation, and commissioning — one team from start to finish. 40+ years experience.",
+    "New and replacement AHU installation across the UK. Survey, specification, mechanical and electrical installation, and full commissioning managed by BVS from first site visit to handover. 40+ years experience.",
 };
 
 const clientLogos = [
@@ -18,6 +18,12 @@ const clientLogos = [
   { src: "/moorfields-logo.png", alt: "Moorfields Eye Hospital" },
   { src: "/ihg-logo.png", alt: "IHG Hotels & Resorts" },
   { src: "/travelodge-logo.png", alt: "Travelodge" },
+  { src: "/waitrose-logo.png", alt: "Waitrose" },
+  { src: "/westfield-logo.png", alt: "Westfield" },
+  { src: "/fenwick-logo.png", alt: "Fenwick" },
+  { src: "/freedomleisure-logo.png", alt: "Freedom Leisure" },
+  { src: "/queenmary-logo.png", alt: "Queen Mary University" },
+  { src: "/alpinef1-logo.png", alt: "Alpine F1 Team" },
 ];
 
 const faqs = [
@@ -77,8 +83,7 @@ export default function AHUInstallationPage() {
         className="font-display text-4xl font-extrabold leading-[0.98] text-white sm:text-5xl uppercase lg:text-6xl"
         style={{ textShadow: "0 2px 24px rgba(0,0,0,0.45)" }}
       >
-        Keeping systems clean,
-        efficient and reliable
+        New & Replacement Installation
       </h1>
 
       <div className="mt-5 h-[3px] w-12 bg-[#297858]" />
@@ -87,9 +92,9 @@ export default function AHUInstallationPage() {
         className="mt-6 max-w-lg text-[15px] leading-7 text-white/72 sm:text-base"
         style={{ textShadow: "0 1px 10px rgba(0,0,0,0.4)" }}
       >
-        Survey, specification, mechanical and electrical installation,
-        and full airflow commissioning from one experienced engineering
-        team. Trusted across healthcare, commercial and industrial environments.
+        From initial site survey and specification through to mechanical installation,
+        electrical connection, and full airflow commissioning — managed by BVS
+        from first site visit through to handover.
       </p>
 
       <div className="mt-9 flex flex-wrap gap-3">
@@ -128,6 +133,34 @@ export default function AHUInstallationPage() {
   </Container>
 </section>
 
+      {/* ── TRUST BAR ─────────────────────────────────────────────────── */}
+      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
+        <Container>
+          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+            Trusted by leading UK organisations
+          </p>
+          <div className="relative">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
+            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
+              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
+                {clientLogos.map((logo) => (
+                  <Image
+                    key={logo.alt}
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={120}
+                    height={60}
+                    unoptimized
+                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* ── 2. PROBLEM ── 3 pain points ─────────────────────────────────── */}
       <section className="bg-[#111418] py-14 sm:py-16">
   <Container>
@@ -137,7 +170,9 @@ export default function AHUInstallationPage() {
       </p>
 
       <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
-        Why AHU Installation<br />Gets Complicated
+        Where AHU Installation
+        <br />
+        Goes Wrong
       </h2>
 
       <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -147,26 +182,27 @@ export default function AHUInstallationPage() {
       {[
         {
           n: "01",
-          heading: "Gaps in Scope",
+          heading: "Split Contractor Risk",
           body:
-            "Separate contractors often create coordination issues during installation and commissioning.",
+            "Mechanical, electrical, and controls split between contractors often leads to coordination issues at commissioning.",
         },
         {
           n: "02",
-          heading: "Site Disruption",
+          heading: "Programme Overruns",
           body:
-            "Poor planning can lead to shutdowns, access problems, and disruption to occupied buildings.",
+            "Poor access planning in live buildings causes shutdowns to extend beyond agreed windows and disrupt operations.",
         },
         {
           n: "03",
-          heading: "Wrong Specification",
+          heading: "Incorrect AHU Specification",
           body:
-            "Incorrect specifications or overlooked services routes can cause major commissioning issues.",
+            "Underspecified or unchecked AHUs often only fail once the building is in use, leading to costly rectification work.",
         },
       ].map((item) => (
         <ScrollReveal key={item.n} className="h-full">
           <div className="flex h-full flex-col border-l-2 border-[#297858]/30 bg-white/5 p-6">
-            <span className="font-display text-3xl font-extrabold text-[#297858]/20">
+            
+            <span className="font-display text-3xl font-extrabold text-white">
               {item.n}
             </span>
 
@@ -177,6 +213,7 @@ export default function AHUInstallationPage() {
             <p className="mt-2 text-sm leading-6 text-white/55">
               {item.body}
             </p>
+
           </div>
         </ScrollReveal>
       ))}
@@ -186,142 +223,288 @@ export default function AHUInstallationPage() {
 
       {/* ── 3. SOLUTION ── full scope phase grid ────────────────────────── */}
       <section className="bg-[#f7f6f5] py-16 sm:py-20">
-        <Container>
-          <ScrollReveal className="mb-10">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              The solution
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
-              One Scope.<br />No Grey Areas.
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-            <p className="mt-4 max-w-xl text-sm leading-7 text-slate-500">
-              Every element below is included in our scope — managed by the same team, not handed off between contractors.
-            </p>
-          </ScrollReveal>
+  <Container>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { phase: "Pre-Works", title: "Site Survey", detail: "Access, structural loadings, ductwork connections, services routes" },
-              { phase: "Pre-Works", title: "Specification", detail: "Full technical spec and scope issued for client approval" },
-              { phase: "Pre-Works", title: "Programme", detail: "Phased installation programme agreed around site occupation" },
-              { phase: "Pre-Works", title: "Temporary Works", detail: "Cranage, access platforms, scaffolding co-ordinated" },
-              { phase: "Installation", title: "Mechanical Works", detail: "Unit positioning, structural fixing, ductwork connections" },
-              { phase: "Installation", title: "Pipework", detail: "Heating, cooling, and drain connections made and tested" },
-              { phase: "Installation", title: "Electrical Works", detail: "Power supply, controls wiring, sensor installation" },
-              { phase: "Completion", title: "Commissioning", detail: "Full airflow balancing to CIBSE/BSRIA guidance" },
-              { phase: "Completion", title: "BMS Integration", detail: "Controls sequences tested and verified against specification" },
-              { phase: "Completion", title: "Documentation", detail: "O&M manuals, as-fitted drawings, commissioning record" },
-            ].map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 35}>
-                <div className="flex flex-col border border-slate-200 bg-white p-5">
-                  <span className={`mb-2 self-start px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.2em] ${
-                    item.phase === "Pre-Works"
-                      ? "bg-slate-100 text-slate-500"
-                      : item.phase === "Installation"
-                      ? "bg-amber-50 text-amber-700"
-                      : "bg-[#297858]/10 text-[#297858]"
-                  }`}>
-                    {item.phase}
-                  </span>
-                  <p className="text-sm font-bold text-slate-900">{item.title}</p>
-                  <p className="mt-1 text-xs leading-5 text-slate-500">{item.detail}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+    {/* HEADER */}
+    <ScrollReveal className="mb-10">
+      <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+        The solution
+      </p>
+
+      <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
+        Full Installation Scope —<br />Included as Standard
+      </h2>
+
+      <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+
+      <p className="mt-4 max-w-xl text-sm leading-7 text-slate-500">
+        Every stage of the installation is managed by BVS. Survey, specification, mechanical, electrical, commissioning, and handover — co-ordinated under one contract with a single point of accountability.
+      </p>
+    </ScrollReveal>
+
+    {/* GRID */}
+    <div className="space-y-10">
+
+      {["Before we start", "During installation", "At completion"].map((group) => (
+        <div key={group}>
+
+          {/* GROUP LABEL */}
+          <div className="mb-4 flex items-center gap-3">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
+              {group}
+            </p>
+            <div className="h-px flex-1 bg-slate-200" />
           </div>
-        </Container>
-      </section>
+
+          {/* CARDS */}
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+
+            {[
+              {
+                group: "Before we start",
+                title: "Site survey",
+                detail: "We inspect the system and confirm exactly what is required",
+                icon: "search",
+              },
+              {
+                group: "Before we start",
+                title: "Specification",
+                detail: "Clear scope agreed before any work begins",
+                icon: "document",
+              },
+              {
+                group: "Before we start",
+                title: "Planning",
+                detail: "Programme set around site access and operations",
+                icon: "calendar",
+              },
+              {
+                group: "Before we start",
+                title: "Access setup",
+                detail: "Cranage and temporary access arranged where needed",
+                icon: "structure",
+              },
+
+              {
+                group: "During installation",
+                title: "Mechanical works",
+                detail: "Unit install, fixings and duct connections",
+                icon: "wrench",
+              },
+              {
+                group: "During installation",
+                title: "Pipework",
+                detail: "Heating, cooling and drainage connected",
+                icon: "pipe",
+              },
+              {
+                group: "During installation",
+                title: "Electrical works",
+                detail: "Power and controls installed and tested",
+                icon: "bolt",
+              },
+
+              {
+                group: "At completion",
+                title: "Commissioning",
+                detail: "System tested and airflow balanced",
+                icon: "gauge",
+              },
+              {
+                group: "At completion",
+                title: "Controls setup",
+                detail: "BMS systems configured and verified",
+                icon: "cpu",
+              },
+              {
+                group: "At completion",
+                title: "Handover pack",
+                detail: "All documentation and records issued",
+                icon: "file",
+              },
+            ]
+              .filter((item) => item.group === group)
+              .map((item, i) => (
+                <ScrollReveal key={item.title} delay={i * 25}>
+
+                  <div className="h-full border border-slate-200 bg-white p-5 flex gap-4">
+
+                    {/* ICON */}
+                    <div className="shrink-0">
+                      <div className="flex h-10 w-10 items-center justify-center bg-[#297858]/10 text-[#297858]">
+                        <ServiceIcon type={item.icon} />
+                      </div>
+                    </div>
+
+                    {/* TEXT */}
+                    <div>
+                      <p className="text-sm font-bold text-slate-900">
+                        {item.title}
+                      </p>
+
+                      <p className="mt-2 text-xs leading-5 text-slate-500">
+                        {item.detail}
+                      </p>
+                    </div>
+
+                  </div>
+
+                </ScrollReveal>
+              ))}
+
+          </div>
+        </div>
+      ))}
+
+    </div>
+
+  </Container>
+</section>
 
       {/* ── 4. BENEFITS ── 4 outcome cards ──────────────────────────────── */}
       <section className="bg-white py-16 sm:py-20">
-        <Container>
-          <ScrollReveal className="mb-10">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              What you get
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-              The BVS Installation<br />Difference
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-          </ScrollReveal>
+  <Container>
+    <ScrollReveal className="mb-10">
+      <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+        What you get
+      </p>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { stat: "40+", label: "Years AHU experience", detail: "Four decades installing and commissioning air handling units across every major sector and site type in the UK." },
-              { stat: "100%", label: "In-house delivery", detail: "Directly employed engineers — no subcontracted trades, no responsibility gaps, single point of accountability throughout." },
-              { stat: "Live", label: "Sites — no problem", detail: "The majority of our installation work takes place in occupied buildings. We plan around site constraints before the first van arrives." },
-              { stat: "Full", label: "Documentation included", detail: "O&M manuals, as-fitted drawings, commissioning records, and compliance documentation issued at handover. Not on request." },
-            ].map((item, i) => (
-              <ScrollReveal key={item.label} delay={i * 60}>
-                <div className="flex flex-col border-t-2 border-[#297858] bg-[#f7f6f5] p-6">
-                  <p className="font-display text-4xl font-extrabold text-slate-900">{item.stat}</p>
-                  <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#297858]">{item.label}</p>
-                  <div className="my-3 h-px bg-slate-200" />
-                  <p className="text-xs leading-5 text-slate-500">{item.detail}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+      <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+        The BVS Installation
+        <br />
+        Difference
+      </h2>
+
+      <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+    </ScrollReveal>
+
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {[
+        {
+          stat: "40+",
+          label: "Years experience",
+          detail:
+            "Four decades delivering AHU installs and commissioning across healthcare, education, hospitality, and commercial sites.",
+        },
+        {
+          stat: "Single",
+          label: "Point of contact",
+          detail:
+            "One team manages survey, installation, and commissioning under a single contract and accountable lead.",
+        },
+        {
+          stat: "Live",
+          label: "Occupied buildings",
+          detail:
+            "Most work is delivered in operational environments with planned shutdowns and phased installation strategies.",
+        },
+        {
+          stat: "Full",
+          label: "Handover pack",
+          detail:
+            "Complete documentation including O&M manuals, drawings, test sheets, and commissioning records at handover.",
+        },
+      ].map((item, i) => (
+        <ScrollReveal key={item.label} delay={i * 60}>
+          <div className="flex h-full flex-col border-t-2 border-[#297858] bg-[#f7f6f5] p-6">
+            
+            <p className="font-display text-4xl font-extrabold text-slate-900">
+              {item.stat}
+            </p>
+
+            <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#297858]">
+              {item.label}
+            </p>
+
+            <div className="my-3 h-px bg-slate-200" />
+
+            <p className="text-xs leading-5 text-slate-500">
+              {item.detail}
+            </p>
+
           </div>
-        </Container>
-      </section>
+        </ScrollReveal>
+      ))}
+    </div>
+  </Container>
+</section>
 
       {/* ── 5. SOCIAL PROOF ── NHS case study with stats ────────────────── */}
-      <section className="bg-[#111418] py-16 sm:py-20">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-start">
-            <ScrollReveal>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">
-                Case study
-              </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
-                NHS Hospital<br />12-Unit AHU Programme
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-6 text-sm leading-7 text-white/55">
-                A programme of 12 AHU installations across a live NHS hospital site. Each unit required careful access planning, sequenced installation around clinical occupancy, and full HTM 03-01 compliance documentation.
-              </p>
+      <section className="relative overflow-hidden bg-[#111418] py-16 sm:py-20">
 
-              <div className="mt-6 grid grid-cols-2 gap-3">
-                {[
-                  { stat: "12", label: "AHUs installed" },
-                  { stat: "Zero", label: "Ward disruptions" },
-                  { stat: "On", label: "Programme delivery" },
-                  { stat: "HTM", label: "03-01 compliant" },
-                ].map((s) => (
-                  <div key={s.label} className="border border-white/10 bg-white/5 p-4">
-                    <p className="font-display text-2xl font-extrabold text-[#297858]">{s.stat}</p>
-                    <p className="mt-1 text-[10px] font-bold uppercase tracking-wider text-white/30">{s.label}</p>
-                  </div>
-                ))}
-              </div>
+{/* Background image */}
+<div className="absolute inset-0">
+  <Image
+    src="/ahu-duct-installation.png"
+    alt="AHU installation in commercial plant room"
+    fill
+    unoptimized
+    className="object-cover"
+  />
+  <div className="absolute inset-0 bg-black/35" />
+  <div className="absolute inset-0 bg-gradient-to-t from-[#111418]/80 via-[#111418]/60 to-[#111418]/20" />
+</div>
 
-              <div className="mt-6 border-l-2 border-[#297858] pl-4">
-                <p className="text-sm leading-6 text-white/65">
-                  Delivered on programme with zero disruption to clinical operations. Full O&M documentation, as-fitted drawings, and commissioning records issued at handover.
-                </p>
-              </div>
-              <div className="mt-6">
-                <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] transition-colors hover:text-white">
-                  View all case studies →
-                </Link>
-              </div>
-            </ScrollReveal>
+<Container className="relative z-10">
 
-            <ScrollReveal delay={80}>
-              <div className="relative min-h-[360px] overflow-hidden lg:min-h-[480px]">
-                <Image
-                  src="/hospital.png"
-                  alt="NHS hospital — BVS installed 12 AHUs in this live clinical environment"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-              </div>
-            </ScrollReveal>
-          </div>
-        </Container>
-      </section>
+  <ScrollReveal className="max-w-3xl">
+    <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">
+      Case Study · London · Commercial Office
+    </p>
+
+    <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl leading-tight">
+      Boiler Room Ventilation Installation
+    </h2>
+
+    <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+
+    <p className="mt-6 text-sm leading-7 text-white/85">
+      A central London office required compliant boiler room ventilation to meet BS 6644, where no existing mechanical ventilation was in place.
+    </p>
+
+    <p className="mt-4 text-sm leading-7 text-white/75">
+      BVS designed and installed a supply and extract system, integrated with existing power and BMS controls, including fail-safe boiler shutdown protection.
+    </p>
+
+    {/* Key facts panel */}
+    <div className="mt-8 grid gap-3 sm:grid-cols-2">
+      {[
+        "Supply fan: 0.752 m³/s (low level intake)",
+        "Extract fan: 0.361 m³/s (high level discharge)",
+        "Connected to existing electrical distribution board",
+        "BMS integration with automatic boiler shutdown",
+        "Fully compliant with BS 6644:2011",
+      ].map((point) => (
+        <div
+          key={point}
+          className="flex items-start gap-2.5 rounded-md bg-black/20 p-3 backdrop-blur-sm"
+        >
+          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
+          <p className="text-xs leading-5 text-white/80">{point}</p>
+        </div>
+      ))}
+    </div>
+
+    {/* CTAs */}
+    <div className="mt-10 flex flex-wrap items-center gap-4">
+      <Link
+        href="/case-studies/kingly-street-office-extract-fan-duct"
+        className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white hover:bg-[#1d5c42]"
+      >
+        View full case study
+      </Link>
+
+      <Link
+        href="/case-studies"
+        className="text-sm font-semibold text-white/60 hover:text-white"
+      >
+        More case studies →
+      </Link>
+    </div>
+
+  </ScrollReveal>
+</Container>
+</section>
 
       {/* ── 6. HOW IT WORKS ── 4-step programme ─────────────────────────── */}
       <section className="bg-[#f7f6f5] py-16 sm:py-20">
@@ -353,7 +536,7 @@ export default function AHUInstallationPage() {
               {
                 n: "03",
                 title: "Installation Works",
-                body: "Our directly employed engineering teams manage the full installation — mechanical, electrical, and controls — to a co-ordinated programme with minimum disruption.",
+                body: "Mechanical, electrical, and controls installation managed to a co-ordinated programme. Out-of-hours and phased working available to minimise disruption in occupied buildings.",
                 points: ["Mechanical fixings, ductwork, and pipework completed", "Electrical supply and controls wiring installed and tested", "Out-of-hours and phased installation available"],
               },
               {
@@ -398,11 +581,11 @@ export default function AHUInstallationPage() {
                     No-obligation offer
                   </p>
                   <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-                    Free Site Survey &<br />Programme Assessment
+                    Site Survey &<br />Programme Assessment
                   </h2>
                   <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
                   <p className="mt-4 text-sm leading-6 text-slate-600">
-                    Before any commitment, we visit site, assess access constraints, review ductwork and services connections, and produce a practical programme assessment — at no cost.
+                    Before any commitment, we visit site, assess access constraints, review ductwork and services connections, and produce a practical programme assessment.
                   </p>
                   <ul className="mt-5 space-y-2.5">
                     {[
@@ -424,7 +607,7 @@ export default function AHUInstallationPage() {
                     href="#survey"
                     className="inline-flex items-center justify-center gap-2 bg-[#297858] px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
                   >
-                    Book your free survey
+                    Book a survey
                   </a>
                   <a
                     href="tel:01256518170"
@@ -456,7 +639,7 @@ export default function AHUInstallationPage() {
               </p>
               <div className="mt-6 space-y-2.5 border-l border-white/10 pl-5">
                 <p className="text-sm text-white/50">40+ years AHU installation experience across all sectors</p>
-                <p className="text-sm text-white/50">Full scope delivered by directly employed engineering teams</p>
+                <p className="text-sm text-white/50">Survey, installation, and commissioning managed under one contract</p>
                 <p className="text-sm text-white/50">Programme planned around your site constraints from day one</p>
               </div>
               <div className="mt-7 flex flex-col gap-3 border-t border-white/10 pt-6">
@@ -550,3 +733,92 @@ function MailIcon() {
     </svg>
   );
 }
+
+const ServiceIcon = ({ type }) => {
+  switch (type) {
+    case "search":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5">
+          <path strokeWidth="2" d="M21 21l-4.3-4.3" />
+          <circle strokeWidth="2" cx="11" cy="11" r="7" />
+        </svg>
+      );
+
+    case "document":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5">
+          <path strokeWidth="2" d="M6 2h9l5 5v15H6z" />
+        </svg>
+      );
+
+    case "wrench":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5">
+          <path strokeWidth="2" d="M21 7l-3 3-4-4 3-3a5 5 0 00-6 6l-7 7a2 2 0 002 2l7-7a5 5 0 006-6z" />
+        </svg>
+      );
+
+    case "bolt":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5">
+          <path strokeWidth="2" d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" />
+        </svg>
+      );
+
+    case "gauge":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5">
+          <path strokeWidth="2" d="M12 3a9 9 0 100 18 9 9 0 000-18z" />
+          <path strokeWidth="2" d="M12 12l3-2" />
+        </svg>
+      );
+
+    case "file":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5">
+          <path strokeWidth="2" d="M6 2h9l5 5v15H6z" />
+        </svg>
+      );
+
+    case "calendar":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5">
+          <rect strokeWidth="2" x="3" y="4" width="18" height="18" rx="2" />
+          <path strokeWidth="2" d="M16 2v4M8 2v4M3 10h18" />
+        </svg>
+      );
+
+    case "structure":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5">
+          <path strokeWidth="2" d="M4 21V7l8-4 8 4v14" />
+          <path strokeWidth="2" d="M9 21v-6h6v6" />
+        </svg>
+      );
+
+    case "pipe":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5">
+          <path strokeWidth="2" d="M3 12h18" />
+          <path strokeWidth="2" d="M7 8v8M17 8v8" />
+        </svg>
+      );
+
+    case "cpu":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5">
+          <rect strokeWidth="2" x="7" y="7" width="10" height="10" rx="2" />
+          <path strokeWidth="2" d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4" />
+        </svg>
+      );
+
+      case "commissioning":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5">
+            <path strokeWidth="2" d="M20 6L9 17l-5-5" />
+            <path strokeWidth="2" d="M4 12a8 8 0 1016 0 8 8 0 00-16 0z" />
+          </svg>
+        );
+  }
+};
+

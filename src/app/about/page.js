@@ -17,6 +17,10 @@ const clientLogos = [
   { src: "/ihg-logo.png", alt: "IHG Hotels & Resorts" },
   { src: "/travelodge-logo.png", alt: "Travelodge" },
   { src: "/waitrose-logo.png", alt: "Waitrose" },
+  { src: "/westfield-logo.png", alt: "Westfield" },
+  { src: "/fenwick-logo.png", alt: "Fenwick" },
+  { src: "/freedomleisure-logo.png", alt: "Freedom Leisure" },
+  { src: "/queenmary-logo.png", alt: "Queen Mary University" },
   { src: "/alpinef1-logo.png", alt: "Alpine F1 Team" },
 ];
 
@@ -27,7 +31,7 @@ const values = [
   },
   {
     title: "One Team",
-    body: "Survey, specification, manufacture where required, installation, commissioning — carried out by our own engineers. No sub-contracting the delivery.",
+    body: "Survey, specification, manufacture where required, installation, commissioning — managed by BVS from first visit to handover. One point of contact and one point of accountability throughout.",
   },
   {
     title: "Programme Discipline",
@@ -115,7 +119,7 @@ export default function AboutPage() {
                 We exist to solve problems with air handling equipment. That might be an AHU that is failing, one that is consuming more energy than it should, one that no longer meets compliance requirements, or one that simply needs replacing. We provide the full scope — from initial survey through to commissioning and handover.
               </p>
               <p className="mt-4 text-sm leading-7 text-slate-600">
-                The reason clients come back is straightforward: one team handles the whole job. There is no disconnect between the surveyor who assessed the unit and the engineers who install it. The specification matches the site. The programme gets kept.
+                The reason clients come back is straightforward: BVS manages the whole job. There is no disconnect between the surveyor who assessed the unit and the engineers who install it. The specification matches the site. The programme gets kept.
               </p>
             </ScrollReveal>
 
@@ -189,7 +193,7 @@ export default function AboutPage() {
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
             <p className="mt-4 text-sm leading-6 text-slate-500">
-              Every service is delivered in-house. No sub-contracting. The capability exists within the team.
+              Every service is managed by BVS — from initial survey through to commissioning and handover.
             </p>
           </ScrollReveal>
 
@@ -258,23 +262,30 @@ export default function AboutPage() {
       </section>
 
       {/* ── CLIENT LOGOS ──────────────────────────────────────────────── */}
-      <section className="bg-white py-12 sm:py-14">
+      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
         <Container>
-          <ScrollReveal>
-            <p className="mb-8 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-              Trusted by
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
-              {clientLogos.map((logo) => (
-                <div
-                  key={logo.alt}
-                  className="relative h-8 w-24 opacity-50 grayscale transition-all duration-200 hover:opacity-80 hover:grayscale-0"
-                >
-                  <Image src={logo.src} alt={logo.alt} fill className="object-contain" />
-                </div>
-              ))}
+          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+            Trusted by leading UK organisations
+          </p>
+          <div className="relative">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
+            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
+              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
+                {clientLogos.map((logo) => (
+                  <Image
+                    key={logo.alt}
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={120}
+                    height={60}
+                    unoptimized
+                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
+                  />
+                ))}
+              </div>
             </div>
-          </ScrollReveal>
+          </div>
         </Container>
       </section>
 

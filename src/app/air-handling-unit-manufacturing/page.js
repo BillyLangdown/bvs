@@ -536,7 +536,7 @@ export default function AHUManufacturingPage() {
                     No-obligation offer
                   </p>
                   <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-                    Free Design Brief Review<br />&amp; Feasibility Assessment
+                    Design Brief Review<br />&amp; Feasibility Assessment
                   </h2>
                   <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
                   <p className="mt-4 text-sm leading-6 text-slate-600">

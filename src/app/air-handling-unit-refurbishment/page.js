@@ -19,6 +19,10 @@ const clientLogos = [
   { src: "/ihg-logo.png", alt: "IHG Hotels & Resorts" },
   { src: "/travelodge-logo.png", alt: "Travelodge" },
   { src: "/waitrose-logo.png", alt: "Waitrose" },
+  { src: "/westfield-logo.png", alt: "Westfield" },
+  { src: "/fenwick-logo.png", alt: "Fenwick" },
+  { src: "/freedomleisure-logo.png", alt: "Freedom Leisure" },
+  { src: "/queenmary-logo.png", alt: "Queen Mary University" },
   { src: "/alpinef1-logo.png", alt: "Alpine F1 Team" },
 ];
 
@@ -90,7 +94,7 @@ export default function AHURefurbishmentPage() {
         href="#audit"
         className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
       >
-        Request a free energy audit
+        Request an energy audit
       </a>
 
       <a
@@ -104,6 +108,34 @@ export default function AHURefurbishmentPage() {
   </div>
 </Container>
 </section>
+
+      {/* ── TRUST BAR ─────────────────────────────────────────────────── */}
+      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
+        <Container>
+          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+            Trusted by leading UK organisations
+          </p>
+          <div className="relative">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
+            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
+              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
+                {clientLogos.map((logo) => (
+                  <Image
+                    key={logo.alt}
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={120}
+                    height={60}
+                    unoptimized
+                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
 
       {/* ── 2. PROBLEM ──────────────────────────────────────────────────── */}
 {/* ── SIGNS SECTION ─────────────────────────────────────────────── */}
@@ -350,13 +382,13 @@ export default function AHURefurbishmentPage() {
             <div className="border border-[#297858]/30 bg-[#297858]/5 p-6 sm:p-8">
               <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">How to start</p>
               <h2 className="font-display text-xl font-extrabold uppercase text-slate-900 sm:text-2xl">
-                Start With a Free Condition Survey
+                Book a Condition Survey
               </h2>
               <p className="mt-3 max-w-lg text-sm leading-6 text-slate-500">
                 A BVS engineer visits site, inspects the AHU, and confirms whether refurbishment is viable — with an honest recommendation. No commitment required.
               </p>
               <ul className="mt-5 space-y-2">
-                {["Free on-site condition survey", "Fixed-price, itemised scope — no surprises", "Works programmed around your operations", "40+ years experience across all sectors"].map((item) => (
+                {["On-site condition survey", "Fixed-price, itemised scope — no surprises", "Works programmed around your operations", "40+ years experience across all sectors"].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm text-slate-600">
                     <CheckIcon /> {item}
                   </li>
@@ -364,7 +396,7 @@ export default function AHURefurbishmentPage() {
               </ul>
               <div className="mt-6">
                 <Link href="/contact" className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]">
-                  Book a free survey →
+                  Book a survey →
                 </Link>
               </div>
             </div>

@@ -281,7 +281,7 @@ export default function CoilReplacementPage() {
             <div className="relative h-full overflow-hidden border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
 
               {/* number watermark */}
-              <span className="absolute right-5 top-4 font-display text-4xl font-extrabold text-[#297858]/10">
+              <span className="absolute right-5 top-4 font-display text-4xl font-extrabold text-white/30">
                 {item.n}
               </span>
 
@@ -598,7 +598,7 @@ export default function CoilReplacementPage() {
                     No-obligation offer
                   </p>
                   <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-                    Free Coil Survey &<br />Specification
+                    Coil Survey &<br />Specification
                   </h2>
                   <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
                   <p className="mt-4 text-sm leading-6 text-slate-600">
@@ -624,7 +624,7 @@ export default function CoilReplacementPage() {
                     href="#enquire"
                     className="inline-flex items-center justify-center gap-2 bg-[#297858] px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
                   >
-                    Book your free survey
+                    Book a survey
                   </a>
                   <a
                     href="tel:01256518170"

@@ -33,7 +33,7 @@ const reasons = [
   },
   {
     title: "Full Scope Capability",
-    body: "From a single failed section to a complete reline of a multi-storey riser, we manage the full scope in-house - no subcontractor chains.",
+    body: "From a single failed section to a complete reline of a multi-storey riser, we manage the full scope — survey, specification, and delivery co-ordinated by BVS.",
   },
 ];
 

@@ -18,6 +18,12 @@ const clientLogos = [
   { src: "/moorfields-logo.png", alt: "Moorfields Eye Hospital" },
   { src: "/ihg-logo.png", alt: "IHG Hotels & Resorts" },
   { src: "/travelodge-logo.png", alt: "Travelodge" },
+  { src: "/waitrose-logo.png", alt: "Waitrose" },
+  { src: "/westfield-logo.png", alt: "Westfield" },
+  { src: "/fenwick-logo.png", alt: "Fenwick" },
+  { src: "/freedomleisure-logo.png", alt: "Freedom Leisure" },
+  { src: "/queenmary-logo.png", alt: "Queen Mary University" },
+  { src: "/alpinef1-logo.png", alt: "Alpine F1 Team" },
 ];
 
 const faqs = [
@@ -93,25 +99,6 @@ export default function ControllerUpgradesPage() {
                 </a>
               </div>
 
-              {/* Inline trust logos */}
-              <div className="mt-10 border-t border-white/10 pt-8">
-                <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">
-                  Trusted by
-                </p>
-                <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-                  {clientLogos.map((logo) => (
-                    <Image
-                      key={logo.alt}
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={80}
-                      height={40}
-                      unoptimized
-                      className="h-8 w-auto object-contain opacity-50 transition-opacity hover:opacity-80"
-                    />
-                  ))}
-                </div>
-              </div>
             </div>
 
             {/* System architecture diagram — desktop only */}
@@ -146,6 +133,34 @@ export default function ControllerUpgradesPage() {
               </div>
             </div>
 
+          </div>
+        </Container>
+      </section>
+
+      {/* ── TRUST BAR ─────────────────────────────────────────────────── */}
+      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
+        <Container>
+          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+            Trusted by leading UK organisations
+          </p>
+          <div className="relative">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
+            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
+              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
+                {clientLogos.map((logo) => (
+                  <Image
+                    key={logo.alt}
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={120}
+                    height={60}
+                    unoptimized
+                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </Container>
       </section>
@@ -385,7 +400,7 @@ export default function ControllerUpgradesPage() {
               {
                 n: "03",
                 title: "Installation & Wiring",
-                body: "Existing controls are removed and new panels, sensors, actuators, and field wiring installed by our directly employed engineering teams.",
+                body: "Existing controls are removed and new panels, sensors, actuators, and field wiring installed and tested to specification.",
                 points: ["Old controls removed, new panel installed and connected", "Sensors, actuators, and field devices wired and labelled", "Electrical certification and containment completed"],
               },
               {
@@ -430,11 +445,11 @@ export default function ControllerUpgradesPage() {
                     No-obligation offer
                   </p>
                   <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-                    Free Controls Assessment<br />&amp; Energy Model
+                    Controls Assessment<br />&amp; Energy Model
                   </h2>
                   <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
                   <p className="mt-4 text-sm leading-6 text-slate-600">
-                    Before any commitment, we assess your existing controls, model the energy savings an upgrade would deliver, and confirm BMS integration capability — at no cost.
+                    Before any commitment, we assess your existing controls, model the energy savings an upgrade would deliver, and confirm BMS integration capability.
                   </p>
                   <ul className="mt-5 space-y-2.5">
                     {[
@@ -456,7 +471,7 @@ export default function ControllerUpgradesPage() {
                     href="#assessment"
                     className="inline-flex items-center justify-center gap-2 bg-[#297858] px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
                   >
-                    Book your free assessment
+                    Book an assessment
                   </a>
                   <a
                     href="tel:01256518170"
