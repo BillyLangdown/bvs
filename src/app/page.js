@@ -239,14 +239,15 @@ export default function Home() {
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
               >
                 Discuss your project
-                <ArrowDownIcon />
+                <ArrowIcon />
+               
               </Link>
               <Link
                 href="#services"
                 className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
                 Our Services
-                <ArrowIcon />
+                <ArrowDownIcon />
               </Link>
             </div>
           </div>

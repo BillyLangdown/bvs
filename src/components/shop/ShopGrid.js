@@ -15,39 +15,46 @@ export function ShopGrid({ products, categories }) {
   return (
     <div>
       {/* Category filter */}
-      <div className="mb-8 flex flex-wrap gap-2">
-        <button
-          type="button"
-          onClick={() => setActiveCategory(null)}
-          className={`px-4 py-2 text-xs font-bold uppercase tracking-wide transition-colors ${
-            activeCategory === null
-              ? "bg-[#297858] text-white"
-              : "border border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-900"
-          }`}
-        >
-          All <span className="ml-1 opacity-70">({products.length})</span>
-        </button>
-        {categories.map((cat) => (
+      <div className="mb-8 border-b border-slate-200 pb-4">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="mr-1 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+            Filter
+          </span>
           <button
-            key={cat.id}
             type="button"
-            onClick={() => setActiveCategory(activeCategory === cat.id ? null : cat.id)}
+            onClick={() => setActiveCategory(null)}
             className={`px-4 py-2 text-xs font-bold uppercase tracking-wide transition-colors ${
-              activeCategory === cat.id
+              activeCategory === null
                 ? "bg-[#297858] text-white"
                 : "border border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-900"
             }`}
           >
-            {cat.name}{" "}
-            <span className="ml-1 opacity-70">({cat.count})</span>
+            All <span className="ml-1 opacity-70">({products.length})</span>
           </button>
-        ))}
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              type="button"
+              onClick={() => setActiveCategory(activeCategory === cat.id ? null : cat.id)}
+              className={`px-4 py-2 text-xs font-bold uppercase tracking-wide transition-colors ${
+                activeCategory === cat.id
+                  ? "bg-[#297858] text-white"
+                  : "border border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-900"
+              }`}
+            >
+              {cat.name}{" "}
+              <span className="ml-1 opacity-70">({cat.count})</span>
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Count line */}
       <p className="mb-6 text-xs text-slate-400">
         {filtered.length} product{filtered.length !== 1 ? "s" : ""}
-        {activeCategory !== null ? ` in ${categories.find((c) => c.id === activeCategory)?.name}` : ""}
+        {activeCategory !== null
+          ? ` in ${categories.find((c) => c.id === activeCategory)?.name}`
+          : ""}
       </p>
 
       {/* Grid */}
@@ -66,17 +73,22 @@ export function ShopGrid({ products, categories }) {
   );
 }
 
+function ArrowIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 function ProductCard({ product, categories }) {
   const catName =
     categories.find((c) => product.categories.includes(c.id))?.name || "";
 
   return (
-    <Link
-      href={`/shop/${product.slug}`}
-      className="group flex flex-col overflow-hidden border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:border-slate-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)]"
-    >
-      {/* Image */}
-      <div className="relative h-52 overflow-hidden bg-white">
+    <div className="group flex flex-col overflow-hidden border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:border-slate-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)]">
+      {/* Image — links to product detail */}
+      <Link href={`/shop/${product.slug}`} className="relative block h-52 overflow-hidden bg-white" tabIndex={-1}>
         {product.imageUrl ? (
           <Image
             src={product.imageUrl}
@@ -106,25 +118,39 @@ function ProductCard({ product, categories }) {
             </span>
           )}
         </div>
-      </div>
+      </Link>
 
       {/* Info */}
       <div className="flex flex-1 flex-col border-t border-slate-100 p-5">
-        <h3 className="text-sm font-bold leading-snug text-slate-900 group-hover:text-slate-700">
-          {product.title}
-        </h3>
+        <Link href={`/shop/${product.slug}`}>
+          <h3 className="text-sm font-bold leading-snug text-slate-900 hover:text-slate-700">
+            {product.title}
+          </h3>
+        </Link>
         {product.excerpt && (
           <p className="mt-2 flex-1 text-xs leading-5 text-slate-500 line-clamp-3">
             {product.excerpt}
           </p>
         )}
-        <div className="mt-4 flex items-center gap-2 text-xs font-semibold text-emerald-700 transition-colors group-hover:text-emerald-600">
-          View Product
-          <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+
+        {/* Actions */}
+        <div className="mt-4 flex items-center gap-5 border-t border-slate-100 pt-4">
+          <Link
+            href={`/shop/${product.slug}`}
+            className="flex items-center gap-1.5 text-sm font-semibold text-slate-500 transition-colors hover:text-slate-800"
+          >
+            View Details
+            <ArrowIcon />
+          </Link>
+          <Link
+            href={`/shop/${product.slug}#enquire`}
+            className="flex items-center gap-1.5 text-sm font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
+          >
+            Enquire Now
+            <ArrowIcon />
+          </Link>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

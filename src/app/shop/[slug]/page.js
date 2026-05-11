@@ -67,7 +67,7 @@ export default async function ProductPage({ params }) {
 
           <div className="max-w-2xl">
             {categoryName && (
-              <span className="mb-3 inline-block bg-emerald-600 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
+              <span className="mb-3 inline-block bg-[#297858] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
                 {categoryName}
               </span>
             )}
@@ -109,14 +109,14 @@ export default async function ProductPage({ params }) {
             <ScrollReveal delay={80} className="flex flex-col gap-6 lg:pt-1">
               <div>
                 {categoryName && (
-                  <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-emerald-700">
+                  <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                     {categoryName}
                   </p>
                 )}
                 <h2 className="font-display text-xl font-extrabold uppercase leading-snug text-slate-900 sm:text-2xl">
                   {product.title}
                 </h2>
-                <div className="mt-3 h-[3px] w-8 bg-emerald-700" />
+                <div className="mt-3 h-[3px] w-8 bg-[#297858]" />
               </div>
 
               {product.excerpt && (
@@ -160,13 +160,13 @@ export default async function ProductPage({ params }) {
           <Container>
             <ScrollReveal>
               <div className="mx-auto max-w-3xl">
-                <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.25em] text-emerald-700">
+                <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                   Product Details
                 </p>
                 <h2 className="font-display text-xl font-extrabold uppercase text-slate-900">
                   Technical Description
                 </h2>
-                <div className="mt-2 h-[3px] w-8 bg-emerald-700" />
+                <div className="mt-2 h-[3px] w-8 bg-[#297858]" />
                 <div
                   className="wp-content mt-8"
                   dangerouslySetInnerHTML={{ __html: product.content }}
@@ -185,13 +185,13 @@ export default async function ProductPage({ params }) {
 
             {/* Left: context */}
             <ScrollReveal>
-              <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-400">
+              <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
                 Product Enquiry
               </p>
               <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
                 Enquire About<br />This Product
               </h2>
-              <div className="mt-4 h-[3px] w-8 bg-emerald-500" />
+              <div className="mt-4 h-[3px] w-8 bg-[#297858]" />
               <p className="mt-5 max-w-sm text-[15px] leading-7 text-white/60">
                 Fill in the form and our team will get back to you within one
                 working day with pricing, availability, and any technical
@@ -207,7 +207,7 @@ export default async function ProductPage({ params }) {
                     key={item}
                     className="flex items-center gap-2.5 text-sm text-white/55"
                   >
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
                     {item}
                   </li>
                 ))}
@@ -233,7 +233,7 @@ export default async function ProductPage({ params }) {
               <div className="overflow-hidden border border-white/10 bg-white">
                 {/* Form header */}
                 <div className="border-b border-slate-100 px-6 py-5 sm:px-8">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-emerald-700">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                     Send Enquiry
                   </p>
                   <p className="mt-1 text-sm font-bold leading-snug text-slate-900">
