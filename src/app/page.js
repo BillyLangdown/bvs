@@ -157,19 +157,26 @@ const casePlaceholders = [
   {
     type: "EC Fan Upgrade",
     sector: "Leisure Centre",
-    outcome: "AHU failure caused airflow loss and uncontrolled humidity across a pool hall. Direct-drive EC fans installed, restoring full airflow (6 m/s), stabilising humidity, and eliminating belt-driven maintenance overhead.",
+    outcome: "Dorset leisure centre AHU was suffering fan failures and uncontrolled humidity across the pool hall. BVS retrofitted direct-drive EC fans, restoring full airflow and eliminating belt-driven maintenance overhead.",
     photo: "/ec-fan-before-after.png",
     photoAlt: "Before and after EC fan upgrade on a leisure centre AHU",
+    href: "/case-studies/leisure-centre-ec-fan-retrofit",
   },
   {
     type: "AHU Refurbishment",
     sector: "Healthcare",
-    outcome: "12 hospital AHUs refurbished to full HTM 03-01 compliance. Delivered on programme with no clinical service interruption.",
+    outcome: "NHS Hammersmith & Fulham AHUs refurbished to full specification — covering fan repairs, corrosion treatment, damper replacement, and new components, completed without disruption to clinical services.",
+    photo: "/ahu-refurbishment-worker.png",
+    photoAlt: "BVS engineer carrying out AHU refurbishment works on-site",
+    href: "/case-studies/nhs-hammersmith-fulham-ahu-refurbishment",
   },
   {
-    type: "Coil Replacement",
-    sector: "Commercial",
-    outcome: "Chilled water coils on a commercial AHU failed during peak season. Replacement coils manufactured and fitted within 48 hours, restoring full cooling capacity.",
+    type: "AHU Manufacturing",
+    sector: "Hospitality",
+    outcome: "Warner Leisure Hotel's Gunton Hall required a bespoke replacement AHU for their swimming pool — tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
+    photo: "/gunton-hall.jpg",
+    photoAlt: "Gunton Hall Warner Leisure Hotel — bespoke AHU manufactured and installed by BVS",
+    href: "/case-studies/warner-leisure-hotel-gunton-hall-ahu",
   },
 ];
 
@@ -265,33 +272,57 @@ export default function Home() {
       {/* ── 2. TRUST BAR ─────────────────────────────────────────────── */}
       <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
   <Container>
+
     <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
       Trusted by leading UK organisations
     </p>
 
+    {/* LOGOS */}
     <div className="relative">
-  {/* Left fade */}
-  <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
+      {/* fades */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent sm:hidden" />
 
-  {/* Right fade */}
-  <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
+      <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
+        <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 px-4 sm:px-0">
 
-  <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-    <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
-      {clientLogos.map((logo) => (
-        <Image
-          key={logo.alt}
-          src={logo.src}
-          alt={logo.alt}
-          width={120}
-          height={60}
-          unoptimized
-          className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
-        />
-      ))}
+          {clientLogos.map((logo) => (
+            <Image
+              key={logo.alt}
+              src={logo.src}
+              alt={logo.alt}
+              width={120}
+              height={60}
+              unoptimized
+              className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
+            />
+          ))}
+
+        </div>
+      </div>
     </div>
-  </div>
+
+{/* SCROLL HINT BELOW */}
+<div className="mt-4 flex items-center justify-center gap-2 text-slate-400 sm:hidden">
+
+  <span className="text-[10px] font-semibold uppercase tracking-wider opacity-70">
+    swipe to view more
+  </span>
+
+  <svg
+    className="h-4 w-4 animate-pulse"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M10 6l6 6-6 6" />
+  </svg>
+
 </div>
+
   </Container>
 </section>
 
@@ -325,65 +356,78 @@ export default function Home() {
 
     {/* FEATURED SERVICES (UNCHANGED STRUCTURE, BETTER TEXT CONTRAST) */}
     <div className="grid gap-5 sm:grid-cols-2">
-      {services.filter((s) => s.highlight).map((s) => (
-        <ScrollReveal key={s.title}>
-          <Link
-            href={s.href}
-            className="group flex h-[560px] flex-col overflow-hidden bg-white shadow-[0_10px_40px_rgba(0,0,0,0.4)] transition-shadow hover:shadow-[0_20px_60px_rgba(0,0,0,0.55)]"
-          >
-            <div className="relative h-56 overflow-hidden">
-              <Image
-                src={s.photo}
-                alt={s.photoAlt || s.title}
-                fill
-                unoptimized
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+  {services.filter((s) => s.highlight).map((s) => (
+    <ScrollReveal key={s.title}>
+      <Link
+        href={s.href}
+        className="group flex h-[560px] flex-col overflow-hidden bg-white shadow-[0_10px_40px_rgba(0,0,0,0.4)] transition-shadow hover:shadow-[0_20px_60px_rgba(0,0,0,0.55)]"
+      >
+        <div className="relative h-56 overflow-hidden">
+          <Image
+            src={s.photo}
+            alt={s.photoAlt || s.title}
+            fill
+            unoptimized
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
 
-              <div className="absolute bottom-4 left-4">
-                <span className="bg-[#297858] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
-                  {s.tag}
-                </span>
-              </div>
+          <div className="absolute bottom-4 left-4">
+            <span className="bg-[#297858] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
+              {s.tag}
+            </span>
+          </div>
+        </div>
+
+        <div className="flex flex-1 flex-col p-6">
+          <h3 className="text-base font-extrabold uppercase text-slate-900">
+            {s.title}
+          </h3>
+
+          <p className="mt-1 text-xs text-slate-500">
+            {s.plain}
+          </p>
+
+          <div className="mt-3">
+            <p className="text-sm font-bold text-[#297858]">
+              {s.outcome}
+              {s.title === "EC Fan Upgrades" && (
+                <span className="align-top text-[10px] text-slate-400">*</span>
+              )}
+            </p>
+
+            <p className="mt-2 text-sm text-slate-600">
+              {s.context}
+            </p>
+          </div>
+
+          <div className="mt-4 border-t border-slate-100 pt-4">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+              Common signs:
+            </p>
+
+            <ul className="mt-2 space-y-1 text-xs text-slate-500">
+              {s.signs.map((sign) => (
+                <li key={sign}>• {sign}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-auto pt-5">
+            {s.title === "EC Fan Upgrades" && (
+              <p className="mb-4 text-[9px] leading-4 text-slate-400">
+                *Potential savings vary depending on system condition and operational usage.
+              </p>
+            )}
+
+            <div className="flex items-center gap-1.5 text-sm font-semibold text-[#297858] group-hover:text-[#1d5c42]">
+              Learn more <ArrowIcon />
             </div>
-
-            <div className="flex flex-1 flex-col p-6">
-              <h3 className="text-base font-extrabold uppercase text-slate-900">
-                {s.title}
-              </h3>
-
-              <p className="mt-1 text-xs text-slate-500">
-                {s.plain}
-              </p>
-
-              <p className="mt-3 text-sm font-bold text-[#297858]">
-                {s.outcome}
-              </p>
-
-              <p className="mt-2 text-sm text-slate-600">
-                {s.context}
-              </p>
-
-              <div className="mt-4 border-t border-slate-100 pt-4">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                  Common signs:
-                </p>
-
-                <ul className="mt-2 space-y-1 text-xs text-slate-500">
-                  {s.signs.map((sign) => (
-                    <li key={sign}>• {sign}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-[#297858] group-hover:text-[#1d5c42]">
-                Learn more <ArrowIcon />
-              </div>
-            </div>
-          </Link>
-        </ScrollReveal>
-      ))}
-    </div>
+          </div>
+        </div>
+      </Link>
+    </ScrollReveal>
+  ))}
+</div>
 
     {/* FULL SERVICE CAPABILITY (IMPROVED READABILITY) */}
     <div className="mt-12">
@@ -508,46 +552,43 @@ export default function Home() {
   
 </section>
      {/* ── 8. ACCREDITATIONS ────────────────────────────────────────── */}
-<section className="border-t border-slate-200 bg-white py-10">
+     <section className="border-t border-slate-200 bg-white py-12 sm:py-14">
   <Container>
 
-    <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+    <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
 
-      {/* LEFT LABEL */}
-      <div className="space-y-1">
+      {/* LEFT CONTENT */}
+      <div className="max-w-md">
         <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
           Accredited &amp; Approved
         </p>
 
-        <p className="text-sm font-semibold text-slate-700">
-          Certified for regulated HVAC & engineering works
+        <h2 className="mt-3 text-xl font-semibold leading-snug text-slate-900 sm:text-2xl">
+          Certified for regulated HVAC and engineering works
+        </h2>
+
+        <div className="mt-5 h-[2px] w-10 bg-[#297858]" />
+
+        <p className="mt-5 text-sm leading-6 text-slate-500">
+          Gas Safe registered, Constructionline Gold certified and approved
+          SafeContractor engineers working across commercial and critical environments.
         </p>
       </div>
 
       {/* LOGOS */}
-      <div className="flex flex-wrap items-center justify-start gap-6 sm:justify-center">
+      <div className="flex flex-wrap items-center justify-start gap-x-10 gap-y-6 lg:justify-end">
         {accreditationLogos.map((logo) => (
-          <div
+          <Image
             key={logo.alt}
-            title={logo.alt}
-            className="flex h-12 items-center justify-center"
-          >
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              height={30}
-              width={90}
-              unoptimized
-              className="h-12 w-auto object-contain opacity-80 transition hover:opacity-100"
-            />
-          </div>
+            src={logo.src}
+            alt={logo.alt}
+            height={40}
+            width={120}
+            unoptimized
+            className="h-15 w-auto object-contain  transition-opacity duration-300 hover:opacity-100"
+          />
         ))}
       </div>
-
-      {/* RIGHT SUPPORT TEXT */}
-      <p className="text-xs leading-5 text-slate-500 sm:text-right">
-        Gas Safe · Constructionline Gold · SafeContractor
-      </p>
 
     </div>
 
@@ -743,7 +784,7 @@ async function CaseStudiesBlock() {
           return (
             <Link
               key={isWp ? item.id : item.type + i}
-              href={isWp ? `/case-studies/${item.slug}` : "/case-studies"}
+              href={isWp ? `/case-studies/${item.slug}` : (item.href || "/case-studies")}
               className="group flex flex-col overflow-hidden bg-white shadow-sm transition-all duration-200 hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)]"
             >
               <div className="relative h-52 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
