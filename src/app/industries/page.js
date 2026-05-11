@@ -5,7 +5,7 @@ import { Container } from "@/components/site/Container";
 export const metadata = {
   title: "Industries We Serve | BVS Building Ventilation Solutions",
   description:
-    "BVS delivers AHU refurbishment, EC fan upgrades, and ventilation services across healthcare, defence, education, hospitality, leisure, and retail. 40+ years experience.",
+    "BVS delivers AHU refurbishment, EC fan upgrades, and ventilation services across healthcare, defence, education, hotels, leisure, and retail. 40+ years experience.",
 };
 
 const sectors = [
@@ -32,10 +32,10 @@ const sectors = [
   },
   {
     slug: "hotel",
-    label: "Hotel & Hospitality",
-    summary: "Out-of-hours works. Guest experience protected. Marriott, IHG, and more.",
+    label: "Hotels",
+    summary: "Out-of-hours works. Minimum disruption. Marriott, IHG, and more.",
     photo: "/hotel.png",
-    photoAlt: "Hotel interior — BVS delivers AHU works out of hours for hospitality clients",
+    photoAlt: "Hotel interior — BVS delivers AHU works out of hours",
   },
   {
     slug: "leisure-centre",

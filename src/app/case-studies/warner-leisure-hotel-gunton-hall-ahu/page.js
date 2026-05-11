@@ -25,7 +25,7 @@ export default function GuntonHallAHUCaseStudy() {
 
           {/* Title */}
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-            Case Study · Hospitality · AHU Manufacturing
+            Case Study · Hotel · AHU Manufacturing
           </p>
           <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
             Warner Leisure Hotel<br />Gunton Hall<br />AHU Manufacturing

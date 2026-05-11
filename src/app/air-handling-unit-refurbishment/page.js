@@ -84,9 +84,7 @@ export default function AHURefurbishmentPage() {
       className="mt-6 max-w-2xl text-[15px] leading-7 text-white/80"
       style={{ textShadow: "0 1px 8px rgba(0,0,0,0.45)" }}
     >
-      Improve efficiency, reliability, and fan control without replacing the
-      entire air handling unit. Existing systems surveyed, upgraded, and
-      returned to service by one team.
+      Extend AHU life by 10–15 years at typically 30–50% of full replacement cost. Existing systems surveyed, specified, and returned to service — with net zero and decarbonisation improvements included where required.
     </p>
 
     <div className="mt-8 flex flex-wrap gap-3">
@@ -132,6 +130,25 @@ export default function AHURefurbishmentPage() {
                   />
                 ))}
               </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── PROVEN ON CRITICAL SITES ─────────────────────────────────── */}
+      <section className="border-b border-slate-200 bg-white py-8">
+        <Container>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+              Proven on critical sites
+            </p>
+            <div className="flex flex-wrap items-center gap-6 text-sm font-semibold text-slate-600">
+              {["NHS Hammersmith & Fulham", "Moorfields Eye Hospital", "Warner Leisure Hotels", "Disney"].map((name) => (
+                <span key={name} className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
+                  {name}
+                </span>
+              ))}
             </div>
           </div>
         </Container>

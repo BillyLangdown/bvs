@@ -148,7 +148,7 @@ export function Footer() {
                   Technical guides from 40 years in the field.
                 </p>
                 <p className="mt-1 text-sm text-zinc-400">
-                  Join our mailing list for updates, advise and offers. 
+                  Join our mailing list for updates, advice and offers. 
                 </p>
               </div>
               <div className="w-full sm:w-auto sm:min-w-[320px]">

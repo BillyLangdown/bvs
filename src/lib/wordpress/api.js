@@ -1,4 +1,5 @@
 import { wpFetch } from "./client";
+import { storeFetch } from "./store";
 
 function stripHtml(html) {
   if (!html) return "";
@@ -100,54 +101,23 @@ export async function getCaseStudyBySlug(slug, { revalidate = 300 } = {}) {
   return items?.[0] || null;
 }
 
-// Products (WooCommerce custom post type exposed via WP REST API)
+// Products — uses WooCommerce Store API (public, no auth) which reliably
+// exposes is_in_stock. Category IDs are the same term IDs as the WP taxonomy.
 export async function getShopProducts({ revalidate = 300 } = {}) {
-  const products = await wpFetch("product", {
-    query: {
-      per_page: 100,
-      _fields: "id,slug,title,excerpt,link,featured_media,product_cat",
-    },
+  const products = await storeFetch("products", {
+    query: { per_page: 100 },
     next: { revalidate },
   });
-
-  // Collect unique media IDs and batch-resolve them (WP REST API doesn't
-  // embed featured media for this custom post type via ?_embed)
-  const mediaIds = [
-    ...new Set((products || []).map((p) => p.featured_media).filter(Boolean)),
-  ];
-
-  let mediaMap = {};
-  if (mediaIds.length) {
-    try {
-      const mediaItems = await wpFetch("media", {
-        query: {
-          include: mediaIds.join(","),
-          per_page: 100,
-          _fields: "id,source_url,media_details",
-        },
-        next: { revalidate },
-      });
-      mediaMap = Object.fromEntries(
-        (mediaItems || []).map((m) => [
-          m.id,
-          m.media_details?.sizes?.large?.source_url ||
-            m.media_details?.sizes?.medium?.source_url ||
-            m.source_url,
-        ]),
-      );
-    } catch {
-      // media resolution failed - products will render without images
-    }
-  }
 
   return (products || []).map((p) => ({
     id: p.id,
     slug: p.slug,
-    title: decodeHtmlEntities(stripHtml(p.title?.rendered || "")),
-    excerpt: stripHtml(p.excerpt?.rendered || ""),
-    link: p.link || "",
-    categories: p.product_cat || [],
-    imageUrl: mediaMap[p.featured_media] || null,
+    title: decodeHtmlEntities(p.name || ""),
+    excerpt: stripHtml(p.short_description || ""),
+    link: p.permalink || "",
+    categories: (p.categories || []).map((c) => c.id),
+    imageUrl: p.images?.[0]?.src || null,
+    inStock: p.is_in_stock === true,
   }));
 }
 
@@ -157,7 +127,9 @@ export async function getProductCategories({ revalidate = 600 } = {}) {
       query: { per_page: 100, _fields: "id,name,slug,count" },
       next: { revalidate },
     });
-    return (cats || []).filter((c) => c.slug !== "uncategorized" && c.count > 0);
+    return (cats || [])
+      .filter((c) => c.slug !== "uncategorized" && c.count > 0)
+      .map((c) => ({ ...c, name: decodeHtmlEntities(c.name) }));
   } catch {
     return [];
   }

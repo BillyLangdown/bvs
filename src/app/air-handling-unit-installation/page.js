@@ -384,7 +384,7 @@ export default function AHUInstallationPage() {
           stat: "40+",
           label: "Years experience",
           detail:
-            "Four decades delivering AHU installs and commissioning across healthcare, education, hospitality, and commercial sites.",
+            "Four decades delivering AHU installs and commissioning across healthcare, education, hotels, and commercial sites.",
         },
         {
           stat: "Single",

@@ -119,7 +119,7 @@ export default function ECFanUpgradesPage() {
               className="mt-5 max-w-xl text-[15px] leading-7 text-white"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
             >
-              EC fan retrofits upgrade the existing fan set within your current AHU casing, improving efficiency, reliability, and control without the cost or disruption of full unit replacement.
+              EC fan retrofits upgrade the existing fan set within your current AHU casing, improving efficiency, reliability, and control without the cost or disruption of full unit replacement. The most common route to meeting net zero and decarbonisation targets on existing AHU estates.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -375,7 +375,7 @@ export default function ECFanUpgradesPage() {
       <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
     </ScrollReveal>
 
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
       {[
         {
           heading: "Lower Energy Use",
@@ -396,6 +396,11 @@ export default function ECFanUpgradesPage() {
           heading: "Longer Asset Life",
           detail:
             "Retrofit EC upgrades extend AHU life without replacing the full unit or casing.",
+        },
+        {
+          heading: "Redundancy",
+          detail:
+            "Dual fan configurations available where system requirements demand a backup option.",
         },
       ].map((item, i) => (
         <ScrollReveal key={item.heading} delay={i * 60}>

@@ -6,9 +6,9 @@ import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 
 export const metadata = {
-  title: "Hotel & Hospitality Ventilation | BVS Building Ventilation Solutions",
+  title: "Hotel Ventilation Services | BVS Building Ventilation Solutions",
   description:
-    "AHU refurbishment, EC fan upgrades, and coil replacement for hotels and hospitality venues. Out-of-hours delivery. Guest experience protected. UK nationwide.",
+    "AHU refurbishment, EC fan upgrades, and coil replacement for hotels. Out-of-hours delivery. Minimum disruption. UK nationwide.",
 };
 
 const faqs = [
@@ -58,7 +58,7 @@ export default function HotelPage() {
         <Container className="relative flex min-h-[520px] items-center py-14 pb-28 sm:min-h-[580px] sm:py-20 sm:pb-20">
           <div className="max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
-              Hotel &amp; Hospitality
+              Hotels
             </p>
             <h1
               className="font-display text-2xl font-extrabold uppercase leading-[1.08] text-white sm:text-5xl"
@@ -253,10 +253,10 @@ export default function HotelPage() {
         <Container>
           <ScrollReveal className="mb-10 max-w-2xl">
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              What we deliver in hospitality
+              What we deliver in hotels
             </p>
             <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-              Services for Hotels &amp; Hospitality
+              Services for Hotels
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
           </ScrollReveal>
@@ -322,7 +322,7 @@ export default function HotelPage() {
               <div className="mt-7 space-y-3 border-l border-white/10 pl-5">
                 <p className="text-sm text-white/60">Occupancy-first programme planning</p>
                 <p className="text-sm text-white/60">Overnight and out-of-hours delivery as standard</p>
-                <p className="text-sm text-white/60">Hotels, serviced apartments, and hospitality venues</p>
+                <p className="text-sm text-white/60">Hotels and serviced apartments</p>
                 <p className="text-sm text-white/60">Direct response from engineers, not sales handlers</p>
               </div>
               <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6">

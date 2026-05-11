@@ -96,10 +96,10 @@ export default async function ShopPage() {
                 Need something specific?
               </p>
               <h2 className="font-display text-xl font-extrabold uppercase text-white sm:text-2xl">
-                Can&apos;t find what you&apos;re looking for?
+                Don&apos;t see the product you&apos;re after?
               </h2>
               <p className="mt-2 max-w-lg text-sm leading-6 text-white/55">
-                We source and supply a wide range of HVAC components beyond what&apos;s listed here. If you need a specific part, model, or bespoke component - speak to our team.
+                Get in touch and we&apos;ll help you find the right match for your system — motor type, duty, casing size, and controls spec included. We source and supply a wide range of HVAC components beyond what&apos;s listed here.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={80} className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">

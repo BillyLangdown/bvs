@@ -32,7 +32,7 @@ export default function MarriottForestOfArdenCaseStudy() {
 
           {/* Title */}
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-            Case Study · Hospitality · AHU Troubleshooting
+            Case Study · Hotel · AHU Troubleshooting
           </p>
           <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
             Forest of Arden<br />Swimming Pool<br />Ventilation Troubleshooting

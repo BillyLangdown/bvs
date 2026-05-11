@@ -93,14 +93,19 @@ function ProductCard({ product, categories }) {
           </div>
         )}
 
-        {/* Category badge */}
-        {catName && (
-          <div className="absolute bottom-3 left-3">
-            <span className="bg-emerald-600 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
+        {/* Badges */}
+        <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
+          {catName && (
+            <span className="bg-[#297858] px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
               {catName}
             </span>
-          </div>
-        )}
+          )}
+          {product.inStock && (
+            <span className="border border-[#297858] bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-[#297858]">
+              In Stock
+            </span>
+          )}
+        </div>
       </div>
 
       {/* Info */}

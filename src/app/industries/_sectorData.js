@@ -30,10 +30,10 @@ export const sectorData = {
     clients: "We have worked on government and quasi-government sites requiring enhanced security procedures and strict adherence to programme and access requirements.",
   },
   hotel: {
-    title: "Hotel & Hospitality",
-    headline: "AHU & HVAC Services for Hotels and Hospitality Venues",
-    description: "Maintaining guest comfort and air quality in hotels and hospitality buildings - with minimum disruption to operations and guests.",
-    intro: "In hotel and hospitality environments, ventilation failure directly affects guest experience and revenue. We plan all works to minimise disruption - working around occupancy, scheduling overnight or out-of-hours where required.",
+    title: "Hotels",
+    headline: "AHU & HVAC Services for Hotels",
+    description: "Maintaining air quality and comfort in hotels - with minimum disruption to operations.",
+    intro: "In hotel environments, ventilation failure directly affects guest experience and revenue. We plan all works to minimise disruption — working around occupancy, scheduling overnight or out-of-hours where required.",
     services: [
       "AHU refurbishment and life extension",
       "EC fan retrofits for energy and noise reduction",
@@ -42,7 +42,7 @@ export const sectorData = {
       "Planned maintenance programmes",
       "Emergency call-out and reactive repair",
     ],
-    clients: "Clients include Marriott, Warner Hotels, and other major hospitality brands across the UK.",
+    clients: "Clients include Marriott, Warner Hotels, IHG, and Travelodge.",
   },
   "leisure-centre": {
     title: "Leisure Centres",

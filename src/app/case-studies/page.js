@@ -6,7 +6,7 @@ import { getCaseStudies } from "@/lib/wordpress/api";
 export const metadata = {
   title: "Case Studies | BVS Building Ventilation Solutions",
   description:
-    "Real projects from BVS. AHU refurbishment, EC fan upgrades, coil replacement, and controller programmes across healthcare, hospitality, education, and more.",
+    "Real projects from BVS. AHU refurbishment, EC fan upgrades, coil replacement, and controller programmes across healthcare, hotels, education, and more.",
 };
 
 const placeholderStudies = [
@@ -20,7 +20,7 @@ const placeholderStudies = [
   },
   {
     slug: null,
-    sector: "Hospitality",
+    sector: "Hotel",
     title: "Central London Hotel — Emergency Coil Replacement",
     summary:
       "Manufacturer discontinued. Coil measured on site, manufactured to match original specification, and replaced within a 4-day window to avoid revenue impact. Unit back to full operation.",
@@ -62,7 +62,7 @@ const placeholderStudies = [
 
 const sectorColours = {
   Healthcare: "bg-blue-50 text-blue-700",
-  Hospitality: "bg-amber-50 text-amber-700",
+  Hotel: "bg-amber-50 text-amber-700",
   Commercial: "bg-slate-100 text-slate-700",
   Education: "bg-purple-50 text-purple-700",
   Leisure: "bg-teal-50 text-teal-700",

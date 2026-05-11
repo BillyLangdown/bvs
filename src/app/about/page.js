@@ -37,6 +37,10 @@ const values = [
     title: "Programme Discipline",
     body: "Healthcare estates, live hotels, academic windows, secure sites — we plan around the constraints that matter to our clients and we deliver to the agreed programme.",
   },
+  {
+    title: "Direct & Responsive",
+    body: "Quick replies. Direct access to engineers. We answer the phone. Whether you are an M&E contractor working to a programme or an estates manager dealing with an urgent failure, you speak to someone who knows the job.",
+  },
 ];
 
 const services = [
@@ -76,7 +80,7 @@ const sectors = [
   "Healthcare & NHS",
   "Defence & Government",
   "Education",
-  "Hotel & Hospitality",
+  "Hotels",
   "Leisure Centres",
   "Retail & Commercial",
 ];
@@ -120,6 +124,9 @@ export default function AboutPage() {
               </p>
               <p className="mt-4 text-sm leading-7 text-slate-600">
                 The reason clients come back is straightforward: BVS manages the whole job. There is no disconnect between the surveyor who assessed the unit and the engineers who install it. The specification matches the site. The programme gets kept.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-slate-600">
+                We work directly with estates managers, facilities teams, and end users — and equally with HVAC contractors, M&amp;E consultants, and building services engineers who need a reliable delivery partner.
               </p>
             </ScrollReveal>
 

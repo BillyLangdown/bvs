@@ -36,7 +36,8 @@ const services = [
     signs: [
       "High fan energy use or failure to meet efficiency targets",
       "Constant-speed or belt-driven motors still in operation",
-      "No variable speed control on current system"
+      "No variable speed control on current system",
+      "No redundancy or backup fan option in current configuration"
     ],
     href: "/ec-fan-upgrades-and-retrofits-for-hvac",
     highlight: true,
@@ -52,7 +53,8 @@ const services = [
     signs: [
       "Air temperatures not reaching design levels",
       "Leaks, corrosion, or scaling on coil faces",
-      "Reduced heating or cooling capacity"
+      "Reduced heating or cooling capacity",
+      "Burst or fractured coil requiring urgent replacement"
     ],
     href: "/air-handling-unit-coil-replacement",
     highlight: true,
@@ -147,7 +149,7 @@ const additionalServices = [
 const sectors = [
   { label: "Healthcare & NHS", desc: "HTM 03-01 compliant. Critical environments.", href: "/industries/hospital", photo: "/hospital.png", photoAlt: "NHS hospital corridor — BVS ventilation works in live clinical environments" },
   { label: "Education", desc: "Around term times. CIBSE-compliant.", href: "/industries/education", photo: "/school.png", photoAlt: "School building — BVS AHU works scheduled around term times" },
-  { label: "Hotel & Hospitality", desc: "Out-of-hours. Minimum guest disruption.", href: "/industries/hotel", photo: "/hotel.png", photoAlt: "Hotel interior — BVS ventilation services with out-of-hours delivery" },
+  { label: "Hotels", desc: "Out-of-hours. Minimum disruption to operations.", href: "/industries/hotel", photo: "/hotel.png", photoAlt: "Hotel interior — BVS ventilation services with out-of-hours delivery" },
   { label: "Defence", desc: "Security cleared. Restricted access sites.", href: "/industries/defence", photo: "/defence.jpg", photoAlt: "Defence facility — BVS security-cleared engineers for restricted-access sites" },
   { label: "Leisure Centres", desc: "High-humidity. Corrosion-resistant spec.", href: "/industries/leisure-centre", photo: "/swimming-pool.png", photoAlt: "Swimming pool leisure centre — BVS high-humidity AHU specification" },
   { label: "Retail & Commercial", desc: "Around trading hours. Reactive support.", href: "/industries/retail", photo: "/mall.png", photoAlt: "Shopping centre retail environment — BVS ventilation works around trading hours" },
@@ -172,7 +174,7 @@ const casePlaceholders = [
   },
   {
     type: "AHU Manufacturing",
-    sector: "Hospitality",
+    sector: "Hotel",
     outcome: "Warner Leisure Hotel's Gunton Hall required a bespoke replacement AHU for their swimming pool — tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
     photo: "/gunton-hall.jpg",
     photoAlt: "Gunton Hall Warner Leisure Hotel — bespoke AHU manufactured and installed by BVS",
@@ -229,7 +231,7 @@ export default function Home() {
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
               AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls. <br/>
-              Trusted by NHS, Disney, and Marriott. Nationwide, flexible budgets, fast responses.
+              Trusted by NHS, Disney, and Marriott. Serving HVAC contractors, M&amp;E consultants, and estates teams UK-wide.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -343,7 +345,7 @@ export default function Home() {
       <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
 
       <p className="mt-3 max-w-lg text-sm leading-7 text-white/70">
-        AHU specialists covering refurbishment, EC fan upgrades, coil replacement, new installation, and controls.
+        AHU specialists covering refurbishment, EC fan upgrades, coil replacement, new installation, controls, and decarbonisation support.
       </p>
 
       <p className="mt-3 text-xs text-white/50">
@@ -731,7 +733,7 @@ export default function Home() {
                 Whether it&apos;s a planned refurbishment programme, emergency coil replacement, urgent fan failure, or a full new installation, we respond quickly and manage the entire project directly.
               </p>
               <ul className="mt-5 flex flex-col gap-2">
-                {["No obligation enquiry", "Response within one working day", "Speak directly with a specialist"].map((p) => (
+                {["No obligation enquiry", "Response within one working day — direct from an engineer", "Speak directly with a specialist, not a sales team"].map((p) => (
                   <li key={p} className="flex items-center gap-2 text-sm text-white/60">
                     <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
                     {p}

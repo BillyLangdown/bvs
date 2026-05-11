@@ -179,8 +179,12 @@ export default function CoilReplacementPage() {
             detail: "Custom-built replacements for ageing equipment",
           },
           {
-            label: "Fast Turnaround Available",
-            detail: "Support for urgent or critical systems",
+            label: "Emergency Replacements",
+            detail: "Burst or failed coils handled urgently — including systems out of service",
+          },
+          {
+            label: "Gas to DX Conversions",
+            detail: "Switching from LTHW or gas to DX refrigerant — full coil conversion managed by BVS",
           },
         ].map((item) => (
           <div
