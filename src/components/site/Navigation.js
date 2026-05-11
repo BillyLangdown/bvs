@@ -52,36 +52,48 @@ const navItems = [
       {
         heading: "Other Services",
         href: "/solutions",
-        items: [
+        groups: [
           {
-            href: "/solutions/ventilation/validation-surveys",
-            label: "Validation Surveys",
-            description: "Comprehensive AHU surveys with prioritised recommendations.",
-            icon: ClipboardIcon,
+            heading: "Ventilation Solutions",
+            href: "/solutions/ventilation",
+            items: [
+              {
+                href: "/solutions/ventilation/validation-surveys",
+                label: "Ventilation Surveys",
+                description: "Comprehensive AHU surveys with prioritised recommendations.",
+                icon: ClipboardIcon,
+              },
+              {
+                href: "/solutions/ventilation/troubleshooting",
+                label: "Troubleshooting",
+                description: "Diagnose and resolve ventilation performance and compliance issues.",
+                icon: SearchIcon,
+              },
+              {
+                href: "/solutions/ventilation/ducting-repair-replacement",
+                label: "Ducting Repairs & Replacements",
+                description: "Repair, reline, or replace failed ductwork with minimal disruption.",
+                icon: PipeIcon,
+              },
+            ],
           },
           {
-            href: "/solutions/ventilation/troubleshooting",
-            label: "Ventilation Troubleshooting",
-            description: "Diagnose and resolve ventilation performance and compliance issues.",
-            icon: SearchIcon,
-          },
-          {
-            href: "/solutions/ventilation/ducting-repair-replacement",
-            label: "Ducting Repair & Replacement",
-            description: "Repair, reline, or replace failed ductwork with minimal disruption.",
-            icon: PipeIcon,
-          },
-          {
-            href: "/solutions/mechanical/industrial-pipework",
-            label: "Industrial Pipework",
-            description: "Installation, maintenance, and repair of commercial pipework systems.",
-            icon: ToolsIcon,
-          },
-          {
-            href: "/solutions/mechanical/commercial-boiler-heating",
-            label: "Boiler & Heating Services",
-            description: "Gas Safe registered boiler installation, servicing, and repair.",
-            icon: FlameIcon,
+            heading: "Commercial Boiler & Pipework",
+            href: "/solutions/mechanical",
+            items: [
+              {
+                href: "/solutions/mechanical/industrial-pipework",
+                label: "Commercial Pipework",
+                description: "Installation, maintenance, and repair of commercial pipework systems.",
+                icon: ToolsIcon,
+              },
+              {
+                href: "/solutions/mechanical/commercial-boiler-heating",
+                label: "Commercial Boiler Services",
+                description: "Gas Safe registered boiler installation, servicing, and repair.",
+                icon: FlameIcon,
+              },
+            ],
           },
         ],
       },
@@ -302,7 +314,11 @@ export function Navigation() {
           <div className="divide-y divide-slate-100">
             {navItems.map((item) => {
               const allChildren = item.columns
-                ? item.columns.flatMap((col) => col.items)
+                ? item.columns.flatMap((col) =>
+                    col.items
+                      ? col.items
+                      : (col.groups ?? []).flatMap((g) => g.items)
+                  )
                 : item.children ?? [];
 
               return allChildren.length ? (
@@ -332,22 +348,47 @@ export function Navigation() {
                         <>
                           {item.columns.map((col) => (
                             <div key={col.heading}>
-                              <p className="mt-4 mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
-                                {col.heading}
-                              </p>
-                              {col.items.map((child) => (
-                                <Link
-                                  key={child.href}
-                                  href={child.href}
-                                  className="flex items-start gap-3 border-b border-slate-100 py-3 last:border-0"
-                                  onClick={() => setMobileOpen(false)}
-                                >
-                                  <span className="mt-0.5 shrink-0 text-emerald-700">{child.icon()}</span>
-                                  <span>
-                                    <span className="block text-[13px] font-semibold text-slate-900">{child.label}</span>
-                                    <span className="mt-0.5 block text-xs text-slate-500">{child.description}</span>
-                                  </span>
-                                </Link>
+                              {col.items && (
+                                <>
+                                  <p className="mt-4 mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                                    {col.heading}
+                                  </p>
+                                  {col.items.map((child) => (
+                                    <Link
+                                      key={child.href}
+                                      href={child.href}
+                                      className="flex items-start gap-3 border-b border-slate-100 py-3 last:border-0"
+                                      onClick={() => setMobileOpen(false)}
+                                    >
+                                      <span className="mt-0.5 shrink-0 text-emerald-700">{child.icon()}</span>
+                                      <span>
+                                        <span className="block text-[13px] font-semibold text-slate-900">{child.label}</span>
+                                        <span className="mt-0.5 block text-xs text-slate-500">{child.description}</span>
+                                      </span>
+                                    </Link>
+                                  ))}
+                                </>
+                              )}
+                              {col.groups && col.groups.map((group) => (
+                                <div key={group.heading}>
+                                  <p className="mt-4 mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                                    {group.heading}
+                                  </p>
+                                  {group.items.map((child) => (
+                                    <Link
+                                      key={child.href}
+                                      href={child.href}
+                                      className="flex items-start gap-3 border-b border-slate-100 py-3 last:border-0"
+                                      onClick={() => setMobileOpen(false)}
+                                    >
+                                      <span className="mt-0.5 shrink-0 text-emerald-700">{child.icon()}</span>
+                                      <span>
+                                        <span className="block text-[13px] font-semibold text-slate-900">{child.label}</span>
+                                        <span className="mt-0.5 block text-xs text-slate-500">{child.description}</span>
+                                      </span>
+                                    </Link>
+                                  ))}
+                                </div>
                               ))}
                             </div>
                           ))}
@@ -427,35 +468,70 @@ function MegaDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen, 
             <div className="grid grid-cols-2 divide-x divide-slate-100">
               {item.columns.map((col) => (
                 <div key={col.heading} className="first:pr-8 last:pl-8">
-                  <Link
-                    href={col.href}
-                    className="mb-3 block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-emerald-700"
-                    onClick={onItemClick}
-                  >
-                    {col.heading} →
-                  </Link>
-                  <div className="flex flex-col">
-                    {col.items.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="group flex items-start gap-3 border-l-2 border-transparent px-3 py-3 transition-all hover:border-[#297858] hover:bg-slate-50"
-                        onClick={onItemClick}
-                      >
-                        <span className="mt-0.5 shrink-0 text-emerald-700 transition-colors group-hover:text-emerald-600">
-                          {child.icon()}
-                        </span>
-                        <span className="min-w-0">
-                          <span className="block text-[13px] font-bold text-slate-900 group-hover:text-emerald-800">
-                            {child.label}
-                          </span>
-                          <span className="mt-0.5 block text-xs leading-5 text-slate-500">
-                            {child.description}
-                          </span>
-                        </span>
-                      </Link>
-                    ))}
-                  </div>
+                  {/* Single-group column (AHU Services) */}
+                  {col.items && (
+                    <>
+                      <p className="mb-3 block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                        {col.heading}
+                      </p>
+                      <div className="flex flex-col">
+                        {col.items.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className="group flex items-start gap-3 border-l-2 border-transparent px-3 py-3 transition-all hover:border-[#297858] hover:bg-slate-50"
+                            onClick={onItemClick}
+                          >
+                            <span className="mt-0.5 shrink-0 text-emerald-700 transition-colors group-hover:text-emerald-600">
+                              {child.icon()}
+                            </span>
+                            <span className="min-w-0">
+                              <span className="block text-[13px] font-bold text-slate-900 group-hover:text-emerald-800">
+                                {child.label}
+                              </span>
+                              <span className="mt-0.5 block text-xs leading-5 text-slate-500">
+                                {child.description}
+                              </span>
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                  {/* Multi-group column (Ventilation + Boiler stacked) */}
+                  {col.groups && (
+                    <div className="flex flex-col gap-6">
+                      {col.groups.map((group, gi) => (
+                        <div key={group.heading} className={gi > 0 ? "border-t border-slate-100 pt-6" : ""}>
+                          <p className="mb-3 block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                            {group.heading}
+                          </p>
+                          <div className="flex flex-col">
+                            {group.items.map((child) => (
+                              <Link
+                                key={child.href}
+                                href={child.href}
+                                className="group flex items-start gap-3 border-l-2 border-transparent px-3 py-3 transition-all hover:border-[#297858] hover:bg-slate-50"
+                                onClick={onItemClick}
+                              >
+                                <span className="mt-0.5 shrink-0 text-emerald-700 transition-colors group-hover:text-emerald-600">
+                                  {child.icon()}
+                                </span>
+                                <span className="min-w-0">
+                                  <span className="block text-[13px] font-bold text-slate-900 group-hover:text-emerald-800">
+                                    {child.label}
+                                  </span>
+                                  <span className="mt-0.5 block text-xs leading-5 text-slate-500">
+                                    {child.description}
+                                  </span>
+                                </span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
