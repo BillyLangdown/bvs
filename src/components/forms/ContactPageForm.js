@@ -12,6 +12,7 @@ const services = [
   "Validation Survey",
   "Ducting Repair",
   "Boiler & Heating",
+  "Product",
   "General Enquiry",
 ];
 

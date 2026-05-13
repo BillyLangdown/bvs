@@ -117,7 +117,7 @@ const navItems = [
       },
       {
         href: "/industries/hotel",
-        label: "Hotel & Hospitality",
+        label: "Hotels",
         description: "Maintaining guest comfort and air quality across hotel sites.",
         icon: HotelIcon,
       },
@@ -280,12 +280,19 @@ export function Navigation() {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden items-center lg:flex">
+        <div className="hidden items-center gap-4 lg:flex">
+          <a
+            href="tel:01256518170"
+            className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-[#297858] transition-colors whitespace-nowrap"
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.42 2 2 0 0 1 3.62 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6.29 6.29l1.39-1.39a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z" /></svg>
+            01256 518170
+          </a>
           <Link
             href="/contact"
-            className="ml-2 inline-flex h-10 items-center justify-center bg-[#297858] px-5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#1d5c42] whitespace-nowrap"
+            className="inline-flex h-10 items-center justify-center bg-[#297858] px-5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#1d5c42] whitespace-nowrap"
           >
-            Get a quote
+            Enquire
           </Link>
         </div>
 
@@ -295,7 +302,7 @@ export function Navigation() {
             href="/contact"
             className="inline-flex h-9 items-center justify-center bg-emerald-700 px-4 text-xs font-bold uppercase tracking-wide text-white"
           >
-            Get a quote
+            Enquire
           </Link>
           <button
             type="button"
@@ -423,14 +430,22 @@ export function Navigation() {
                 </Link>
               );
             })}
-            <div className="p-6">
+            <div className="p-6 flex flex-col gap-3">
               <Link
                 href="/contact"
                 className="flex h-11 w-full items-center justify-center bg-emerald-700 text-sm font-bold uppercase tracking-wide text-white"
                 onClick={() => setMobileOpen(false)}
               >
-                Get a quote
+                Enquire
               </Link>
+              <a
+                href="tel:01256518170"
+                className="flex h-11 w-full items-center justify-center gap-2 border border-slate-200 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+                onClick={() => setMobileOpen(false)}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.42 2 2 0 0 1 3.62 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6.29 6.29l1.39-1.39a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z" /></svg>
+                01256 518170
+              </a>
             </div>
           </div>
         </div>

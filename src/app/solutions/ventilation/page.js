@@ -41,7 +41,7 @@ export default function VentilationServicesPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/get-a-quote"
+                href="/contact"
                 className="inline-flex items-center gap-2 bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-500"
               >
                 Get a quote
@@ -111,7 +111,7 @@ export default function VentilationServicesPage() {
               </p>
             </div>
             <Link
-              href="/get-a-quote"
+              href="/contact"
               className="inline-flex shrink-0 items-center gap-2 bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-500"
             >
               Get a quote

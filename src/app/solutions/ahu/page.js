@@ -61,7 +61,7 @@ export default function AhuSolutionsPage() {
               nationwide coverage.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-500">
+              <Link href="/contact" className="inline-flex items-center gap-2 bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-500">
                 Let&apos;s talk
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </Link>
@@ -104,7 +104,7 @@ export default function AhuSolutionsPage() {
               <p className="font-display text-xl font-extrabold uppercase text-white">Not sure which service you need?</p>
               <p className="mt-1 text-sm text-white/65">Tell us about your AHU and we&apos;ll tell you the most cost-effective solution - honestly.</p>
             </div>
-            <Link href="/get-a-quote" className="inline-flex shrink-0 items-center gap-2 bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-500">Let&apos;s talk</Link>
+            <Link href="/contact" className="inline-flex shrink-0 items-center gap-2 bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-500">Let&apos;s talk</Link>
           </div>
         </Container>
       </section>

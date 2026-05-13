@@ -9,7 +9,7 @@ export function ServiceSubPage({
   intro,
   features = [],
   featuresTitle = "What we offer",
-  cta = { href: "/get-a-quote", label: "Get a quote" },
+  cta = { href: "/contact", label: "Get a quote" },
   relatedLinks = [],
 }) {
   return (
@@ -100,7 +100,7 @@ export function ServiceSubPage({
               </p>
             </div>
             <Link
-              href="/get-a-quote"
+              href="/contact"
               className="inline-flex shrink-0 items-center gap-2 bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-500"
             >
               Get a quote

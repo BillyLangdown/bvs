@@ -1,5 +1,6 @@
 import { Container } from "@/components/site/Container";
 import { ContactPageForm } from "@/components/forms/ContactPageForm";
+import Image from "next/image";
 
 export const metadata = {
   title: "Contact Us | BVS Building Ventilation Solutions",
@@ -11,145 +12,191 @@ export default function ContactPage() {
   return (
     <div>
 
-      {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="bg-[#111418] py-14 sm:py-20">
-        <Container>
-          <div className="max-w-2xl">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-              Contact BVS
-            </p>
-            <h1 className="font-display text-3xl font-extrabold uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
-              Speak directly<br />with a specialist
-            </h1>
-            <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
-            <p className="mt-5 text-[15px] leading-7 text-white/60">
-              Your enquiry goes straight to our technical team — not a call centre.
-              We'll come back with practical options within one working day.
-            </p>
+    {/* HERO */}
+    <section className="relative overflow-hidden bg-[#111418]">
+  
+      {/* Background image */}
+      <div className="absolute inset-0">
+  <Image
+    src="/person-working.png"
+    alt="BVS engineer working on ventilation equipment"
+    fill
+    priority
+    className="object-cover"
+  />
 
-            {/* Direct contact methods */}
-            <div className="mt-8 flex flex-wrap gap-6">
-              <a
-                href="tel:01256518170"
-                className="group inline-flex items-center gap-3 hover:text-[#297858] transition-colors"
-              >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-white/8 text-[#297858] ring-1 ring-white/10 transition-colors group-hover:bg-[#297858]/20">
-                  <PhoneIcon />
-                </span>
-                <span>
-                  <span className="block text-[10px] font-semibold uppercase tracking-widest text-white/40">Call us</span>
-                  <span className="text-[15px] font-bold text-white group-hover:text-[#297858] transition-colors">01256 518170</span>
-                </span>
-              </a>
-              <a
-                href="mailto:info@bvs-ltd.co.uk"
-                className="group inline-flex items-center gap-3 hover:text-[#297858] transition-colors"
-              >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-white/8 text-[#297858] ring-1 ring-white/10 transition-colors group-hover:bg-[#297858]/20">
-                  <EmailIcon />
-                </span>
-                <span>
-                  <span className="block text-[10px] font-semibold uppercase tracking-widest text-white/40">Email us</span>
-                  <span className="text-[15px] font-bold text-white group-hover:text-[#297858] transition-colors">info@bvs-ltd.co.uk</span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </Container>
-      </section>
+  {/* Directional overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-[#111418]/92 via-[#111418]/70 to-transparent" />
+</div>
+  
+      <Container className="relative z-10 py-16 sm:py-24">
+  
+        <div className="max-w-xl">
+  
+          <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
+            Contact BVS
+          </p>
+  
+          <h1 className="font-display text-3xl font-extrabold uppercase leading-[1.02] text-white sm:text-5xl">
+            Speak Directly With An AHU Specialist
+          </h1>
+  
+          <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
+  
+          <p className="mt-6 text-[15px] leading-7 text-white/80">
+            Technical support, quotations, upgrades, replacements, and AHU project enquiries across the UK.
+          </p>
+  
+          {/* Quick actions */}
+         
+          {/* Fast contact */}
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
 
-      {/* ── FORM + DETAILS ───────────────────────────────────────────── */}
-      <section className="bg-surface-2 py-14 sm:py-20">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[1fr_480px] lg:items-start">
+            <a
+              href="tel:01256518170"
+              className="flex items-start gap-4 border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-colors hover:bg-white/10"
+            >
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-[#297858]/15 text-[#297858]">
+                <PhoneIcon />
+              </span>
 
-            {/* Left: contact details */}
-            <div className="flex flex-col gap-6">
               <div>
-                <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
-                  Contact details
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+                  Call us
                 </p>
-                <div className="divide-y divide-slate-100 border border-slate-200 bg-white">
-                  {[
-                    {
-                      icon: <PhoneIcon />,
-                      label: "Phone",
-                      content: (
-                        <a href="tel:01256518170" className="text-sm font-bold text-slate-900 hover:text-[#297858]">
-                          01256 518170
-                        </a>
-                      ),
-                    },
-                    {
-                      icon: <EmailIcon />,
-                      label: "Email",
-                      content: (
-                        <a href="mailto:info@bvs-ltd.co.uk" className="text-sm font-bold text-slate-900 hover:text-[#297858]">
-                          info@bvs-ltd.co.uk
-                        </a>
-                      ),
-                    },
-                    {
-                      icon: <LocationIcon />,
-                      label: "Based in",
-                      content: (
-                        <>
-                          <p className="text-sm font-bold text-slate-900">Basingstoke, Hampshire</p>
-                          <p className="text-xs text-slate-500">Covering the whole of the UK</p>
-                        </>
-                      ),
-                    },
-                    {
-                      icon: <ClockIcon />,
-                      label: "Hours",
-                      content: (
-                        <>
-                          <p className="text-sm font-bold text-slate-900">Mon–Fri, 8am – 5pm</p>
-                          <p className="text-xs text-slate-500">Out of hours? Leave a message — we&apos;ll call back.</p>
-                        </>
-                      ),
-                    },
-                  ].map((row) => (
-                    <div key={row.label} className="flex items-start gap-4 px-5 py-4">
-                      <span className="mt-0.5 shrink-0 text-[#297858]">{row.icon}</span>
-                      <div>
-                        <p className="mb-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-400">{row.label}</p>
-                        {row.content}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
-              {/* Simple reassurance — no fluff */}
-              <div className="flex items-start gap-3 border-l-2 border-[#297858] bg-white px-5 py-4">
-                <p className="text-sm leading-6 text-slate-600">
-                  We&apos;re engineers, not a sales team. You&apos;ll hear back from someone technical within one working day.
+                <p className="mt-1 text-lg font-bold text-white">
+                  01256 518170
+                </p>
+
+                <p className="mt-1 text-xs text-white/50">
+                  Mon–Fri · 8am–5pm
                 </p>
               </div>
-            </div>
+            </a>
 
-            {/* Right: form — sticky on desktop */}
-            <div className="lg:sticky lg:top-24">
-              <div className="overflow-hidden border border-slate-200 bg-white shadow-sm">
-                <div className="bg-[#111418] px-6 py-5 sm:px-8">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-                    Send an enquiry
-                  </p>
-                  <p className="mt-1 text-base font-bold text-white">Tell us about your project</p>
-                  <p className="mt-1 text-xs text-white/45">
-                    We&apos;ll respond within one working day with practical options.
-                  </p>
-                </div>
-                <ContactPageForm />
+            <a
+              href="mailto:info@bvs-ltd.co.uk"
+              className="flex items-start gap-4 border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-colors hover:bg-white/10"
+            >
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-[#297858]/15 text-[#297858]">
+                <EmailIcon />
+              </span>
+
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+                  Email us
+                </p>
+
+                <p className="mt-1 text-base font-bold text-white break-all">
+                  info@bvs-ltd.co.uk
+                </p>
+
+                <p className="mt-1 text-xs text-white/50">
+                  Technical responses within one working day
+                </p>
               </div>
-            </div>
+            </a>
 
           </div>
-        </Container>
-      </section>
+  
+          {/* reassurance */}
+          <div className="mt-8 border-l-2 border-[#297858] pl-5">
+            <p className="text-sm leading-6 text-white/70">
+              Your enquiry goes directly to our technical team, not a sales call centre.
+            </p>
+          </div>
+  
+        </div>
+      </Container>
+    </section>
+  
+    {/* FORM SECTION */}
+    <section className="bg-[#f7f6f5] py-14 sm:py-20">
+  
+      <Container>
+  
+        <div className="mx-auto max-w-5xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+  
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
+  
+            {/* LEFT PANEL */}
+            <div className="bg-[#111418] px-8 py-10 text-white">
+  
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+                Send an enquiry
+              </p>
+  
+              <h2 className="mt-3 font-display text-2xl font-extrabold uppercase leading-tight">
+                Tell Us About
+                <br />
+                Your Project
+              </h2>
+  
+              <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
+  
+              <div className="mt-8 space-y-6">
+  
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+                    Phone
+                  </p>
+  
+                  <a
+                    href="tel:01256518170"
+                    className="mt-1 block text-lg font-bold text-white"
+                  >
+                    01256 518170
+                  </a>
+                </div>
+  
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+                    Email
+                  </p>
+  
+                  <a
+                    href="mailto:info@bvs-ltd.co.uk"
+                    className="mt-1 block text-sm font-semibold text-white"
+                  >
+                    info@bvs-ltd.co.uk
+                  </a>
+                </div>
+  
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+                    Response Time
+                  </p>
+  
+                  <p className="mt-1 text-sm text-white/70">
+                    Typically within one working day
+                  </p>
+                  
+                </div>
+  
+              </div>
+            </div>
+  
+            {/* FORM */}
+            <div className="p-6 sm:p-8">
+              <ContactPageForm />
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </Container>
+    </section>
+    <div className="bg-[#f7f6f5]">
 
-    </div>
+
+</div>
+  
+  </div>
+  
+
+  
   );
 }
 

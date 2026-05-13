@@ -319,7 +319,7 @@ export default function AboutPage() {
                   Get in touch →
                 </Link>
                 <Link
-                  href="/get-a-quote"
+                  href="/contact"
                   className="inline-flex items-center justify-center gap-2 border border-white/20 bg-transparent px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5"
                 >
                   Request a quote

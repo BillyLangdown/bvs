@@ -1,7 +1,6 @@
-import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/site/Container";
-import ScrollReveal from "@/components/ui/ScrollReveal";
-import { getCaseStudies } from "@/lib/wordpress/api";
+import CaseStudiesGrid from "./CaseStudiesGrid";
 
 export const metadata = {
   title: "Case Studies | BVS Building Ventilation Solutions",
@@ -9,228 +8,217 @@ export const metadata = {
     "Real projects from BVS. AHU refurbishment, EC fan upgrades, coil replacement, and controller programmes across healthcare, hotels, education, and more.",
 };
 
-const placeholderStudies = [
+const caseStudies = [
   {
-    slug: null,
+    slug: "bath-private-hospital-ahu-refurbishment",
     sector: "Healthcare",
-    title: "NHS Trust — 12-AHU Programme, Live Hospital Estate",
+    title: "Private Hospital Bath — Operating Theatre AHU Refurbishment",
     summary:
-      "Full AHU refurbishment programme across a live clinical facility. EC fan conversion, coil replacement, and controls upgrade phased around ward operations and infection-control requirements.",
-    tags: ["AHU Refurbishment", "EC Fan Upgrade", "NHS"],
+      "BVS refurbished an AHU supplying operating theatres at a private hospital in Bath — EC fans, custom cubic heat exchanger, and new fan bulkheads delivered energy savings with minimal clinical disruption.",
+    tags: ["AHU Refurbishment", "EC Fan", "Healthcare"],
+    image: "/ahu-refurbishment-worker.png",
   },
   {
-    slug: null,
+    slug: "nhs-hammersmith-ahu-refurbishment",
+    sector: "Healthcare",
+    title: "NHS Hammersmith & Fulham — AHU Refurbishment",
+    summary:
+      "BVS carried out a targeted light refurbishment of AHUs at an NHS hospital in Hammersmith & Fulham — drivebelts, filters, coil cleaning, corrosion treatment, and bathroom extract fan repairs.",
+    tags: ["AHU Refurbishment", "NHS", "Healthcare"],
+    image: "/ahu-refurbishment-worker.png",
+  },
+  {
+    slug: "friary-meadow-ahu-replacement",
+    sector: "Healthcare",
+    title: "Friary Meadow Retirement Village — AHU Replacement",
+    summary:
+      "BVS designed and installed a replacement AHU at Friary Meadow Retirement Village — delivering reliable ventilation for a sensitive residential care environment with minimum disruption to residents.",
+    tags: ["AHU Replacement", "Residential Care"],
+    image: "/ahu-installation.png",
+  },
+  {
+    slug: "warner-leisure-hotel-gunton-hall-ahu",
     sector: "Hotel",
-    title: "Central London Hotel — Emergency Coil Replacement",
+    title: "Warner Leisure Hotel Gunton Hall — AHU Manufacturing",
     summary:
-      "Manufacturer discontinued. Coil measured on site, manufactured to match original specification, and replaced within a 4-day window to avoid revenue impact. Unit back to full operation.",
-    tags: ["Coil Replacement", "Hotel"],
+      "BVS designed, manufactured, and installed a bespoke replacement AHU for Warner Leisure Hotel's Gunton Hall swimming pool — tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
+    tags: ["AHU Manufacturing", "Hotel", "Pool Hall"],
+    image: "/ahu-manufacturing2.png",
   },
   {
-    slug: null,
-    sector: "Commercial",
-    title: "FM Portfolio — 14-Site Controls Programme",
+    slug: "marriott-forest-of-arden-pool-ventilation",
+    sector: "Hotel",
+    title: "Marriott Forest of Arden — Swimming Pool AHU Troubleshooting",
     summary:
-      "Obsolete AHU controllers replaced across a 14-site commercial FM portfolio. Open-protocol DDC panels installed with BMS integration. Average 22% energy reduction recorded post-commissioning.",
-    tags: ["Controller Upgrade", "Multi-Site"],
+      "The AHU at Marriott Forest of Arden's swimming pool was designed to maintain 31°C but had only ever reached 24°C. BVS validated the system, identified ductwork leaks and AHU configuration faults, and delivered a full remediation scope.",
+    tags: ["AHU Troubleshooting", "Hotel", "Pool Hall"],
+    image: "/ahu-refurbishment-hero.png",
   },
   {
-    slug: null,
-    sector: "Healthcare",
-    title: "NHS Trust — Direct-Fit AHU Manufacturing, 8 Units",
-    summary:
-      "Original manufacturer discontinued the unit range. BVS manufactured 8 direct-fit replacements to match existing apertures and performance data, avoiding structural modifications.",
-    tags: ["AHU Manufacturing", "NHS"],
-  },
-  {
-    slug: null,
-    sector: "Education",
-    title: "University Campus — Summer Window EC Fan Retrofit",
-    summary:
-      "EC fan upgrades across six AHUs on a university campus, delivered within a six-week summer window. Full commissioning and BMS integration completed before term start.",
-    tags: ["EC Fan Upgrade", "Education"],
-  },
-  {
-    slug: null,
+    slug: "leisure-centre-dorset-ec-fan-upgrade",
     sector: "Leisure",
-    title: "Leisure Centre — Pool Hall AHU Refurbishment",
+    title: "Leisure Centre Dorset — Swimming Pool AHU EC Fan Upgrade",
     summary:
-      "High-humidity pool hall environment requiring corrosion-resistant specification throughout. EC fan conversion, coated coils, and stainless fixings specified for longevity in aggressive air quality conditions.",
-    tags: ["AHU Refurbishment", "Leisure"],
+      "BVS replaced failed belt-driven fans on a Dorset leisure centre's swimming pool AHU with two Ziehl-Abegg GR561-ZID EC fans — restoring airflow, humidity control, and protecting the building fabric.",
+    tags: ["EC Fan Upgrade", "Leisure", "Pool Hall"],
+    image: "/ec-fan-before-after.png",
+  },
+  {
+    slug: "ringwood-leisure-ahu-controller-upgrade",
+    sector: "Leisure",
+    title: "Ringwood Leisure Centre — AHU Controller Upgrade",
+    summary:
+      "Advised that two AHUs needed full replacement at £100k+, BVS identified the actual cause as failing controls. Trend controllers were installed on both units at a fraction of replacement cost.",
+    tags: ["Controller Upgrade", "Leisure", "Trend"],
+    image: "/ahu-refurbishment-hero.png",
+  },
+  {
+    slug: "gresham-street-office-ahu-refurbishment",
+    sector: "Commercial",
+    title: "10 Gresham Street London — AHU Refurbishment",
+    summary:
+      "The AHU at a Gresham Street commercial office in London required full internal refurbishment to meet reduced air volume requirements. BVS replaced all major components and upgraded to a modern inverter and fan assembly.",
+    tags: ["AHU Refurbishment", "Commercial", "London"],
+    image: "/ahu-refurbishment-worker.png",
+  },
+  {
+    slug: "pembroke-offices-ahu-refurbishment",
+    sector: "Commercial",
+    title: "Pembroke Offices — AHU Refurbishment",
+    summary:
+      "Post front-of-house renovation, BVS refurbished the AHUs at Pembroke Offices — reverse cycle coil, three Ziehl EC fans, 84kW heater batteries, casing repairs, and improved filtration.",
+    tags: ["AHU Refurbishment", "Commercial"],
+    image: "/ahu-refurbishment-worker.png",
+  },
+  {
+    slug: "burlington-street-office-coil-replacement",
+    sector: "Commercial",
+    title: "Burlington Street Office — Frost Coil Replacement",
+    summary:
+      "The frost coil at a Burlington Street commercial office suffered severe damage. BVS designed, manufactured, and installed a split-section replacement to overcome plantroom access constraints.",
+    tags: ["Coil Replacement", "Commercial"],
+    image: "/ahu-coil-replacement.png",
+  },
+  {
+    slug: "kingly-street-extract-fan-duct",
+    sector: "Commercial",
+    title: "60 Kingly Street London — Extract Fan & Duct Installation",
+    summary:
+      "BVS designed and installed a new extract fan and ductwork system at 60 Kingly Street, London — improving mechanical ventilation extraction performance for this commercial office property.",
+    tags: ["Extract Fan", "Ductwork", "Commercial"],
+    image: "/ahu-duct-installation.png",
+  },
+  {
+    slug: "newton-mearns-ahu-refurbishment-pipework",
+    sector: "Commercial",
+    title: "Newton Mearns — Shopping Centre AHU Refurbishment & Gas Pipework",
+    summary:
+      "BVS refurbished three weatherproof AHUs at Newton Mearns Shopping Centre and replaced a deteriorated mild-steel gas distribution network with 316-grade stainless steel pipework to IGEM UP 1 and 2.",
+    tags: ["AHU Refurbishment", "Gas Pipework", "Commercial"],
+    image: "/ahu-refurbishment-worker.png",
+  },
+  {
+    slug: "disney-headquarters-ventilation-survey",
+    sector: "Commercial",
+    title: "EU Disney Headquarters Hammersmith — Ventilation Survey",
+    summary:
+      "BVS conducted a full ventilation survey at the EU Disney Headquarters in Hammersmith, London — assessing AHU performance, air volumes, and system condition across the corporate campus.",
+    tags: ["Ventilation Survey", "Commercial"],
+    image: "/ahu-refurbishment-hero.png",
+  },
+  {
+    slug: "procook-westfield-ahu-controller-upgrade",
+    sector: "Commercial",
+    title: "Procook Westfield — AHU Controller Upgrade",
+    summary:
+      "The AHU at Procook's Westfield retail store had a failed fan motor and obsolete controls. BVS replaced the motor, installed a Trend BMS controller, and restored full climate control to the shop floor.",
+    tags: ["Controller Upgrade", "Retail", "Trend"],
+    image: "/ahu-refurbishment-hero.png",
+  },
+  {
+    slug: "toca-football-o2-ahu-refurbishment",
+    sector: "Commercial",
+    title: "Toca Interactive Football O2 Arena — AHU Refurbishment",
+    summary:
+      "BVS carried out an AHU refurbishment at the Toca Interactive Football facility at the O2 Arena — maintaining performance in a high-footfall sports entertainment environment.",
+    tags: ["AHU Refurbishment", "Commercial"],
+    image: "/ahu-refurbishment-worker.png",
+  },
+  {
+    slug: "concorde-simulator-ventilation",
+    sector: "Commercial",
+    title: "Concorde Simulator — Ventilation Survey & Works",
+    summary:
+      "BVS carried out a ventilation survey and subsequent works on the Concorde simulator — a unique heritage environment requiring careful handling and specialist knowledge of the existing installation.",
+    tags: ["Ventilation Survey", "Heritage"],
+    image: "/ahu-refurbishment-hero.png",
+  },
+  {
+    slug: "car-dealership-farnborough-coil-replacement",
+    sector: "Commercial",
+    title: "Car Dealership Farnborough — Heating Coil Replacement",
+    summary:
+      "A car dealership in Farnborough required a full heating coil replacement in its AHU plant room. BVS sized, manufactured, and installed a replacement unit with full pipework and insulation to BSS6644:2011.",
+    tags: ["Coil Replacement", "Commercial"],
+    image: "/ahu-coil-replacement.png",
+  },
+  {
+    slug: "pharmaceutical-lab-coil-replacement",
+    sector: "Manufacturing",
+    title: "Pharmaceutical Manufacturer — AHU Coil Replacement",
+    summary:
+      "BVS designed, manufactured, and installed a replacement AHU coil at a pharmaceutical manufacturing facility — meeting the strict process environment requirements of the site.",
+    tags: ["Coil Replacement", "Pharmaceutical"],
+    image: "/ahu-coil-replacement.png",
+  },
+  {
+    slug: "red-distillery-ahu-refurbishment",
+    sector: "Manufacturing",
+    title: "Red English Group Distillery — AHU Refurbishment",
+    summary:
+      "BVS refurbished the AHU at Red English Group's distillery facility — restoring reliable ventilation performance in an active production environment.",
+    tags: ["AHU Refurbishment", "Manufacturing"],
+    image: "/ahu-refurbishment-worker.png",
   },
 ];
 
-const sectorColours = {
-  Healthcare: "bg-blue-50 text-blue-700",
-  Hotel: "bg-amber-50 text-amber-700",
-  Commercial: "bg-slate-100 text-slate-700",
-  Education: "bg-purple-50 text-purple-700",
-  Leisure: "bg-teal-50 text-teal-700",
-};
-
-export default async function CaseStudiesPage() {
-  let items = [];
-
-  try {
-    items = await getCaseStudies({ perPage: 100, revalidate: 300 });
-  } catch {
-    // WordPress not configured — placeholder studies are shown below
-  }
-
-  const hasWordPressContent = items?.length > 0;
-
+export default function CaseStudiesPage() {
   return (
     <div>
 
-      {/* ── HERO ──────────────────────────────────────────────────────── */}
-      <section className="bg-[#111418] py-16 sm:py-20">
-        <Container>
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-[#111418] py-16 sm:py-20">
+        <div className="absolute inset-0">
+          <Image
+            src="/aerial-buildings.png"
+            alt="Aerial buildings"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[#111418]/70" />
+        </div>
+
+        <Container className="relative">
           <div className="max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/45">
               Case Studies
             </p>
+
             <h1 className="font-display text-3xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
               Real Projects.<br />Specific Problems.<br />Documented Results.
             </h1>
+
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
+
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/65">
-              Every project here is a real job — a specific building, a specific constraint, a specific outcome. We publish these because the detail matters more than the headline.
+              Every project here is a real job — a specific building, a specific constraint, a specific outcome.
             </p>
           </div>
         </Container>
       </section>
 
-      {/* ── CASE STUDIES GRID ─────────────────────────────────────────── */}
-      <section className="bg-surface-2 py-14 sm:py-20">
-        <Container>
-
-          {hasWordPressContent ? (
-            <>
-              <ScrollReveal className="mb-10">
-                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-                  Recent work
-                </p>
-                <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900">
-                  Project Archive
-                </h2>
-                <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
-              </ScrollReveal>
-              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                {items.map((cs, i) => (
-                  <ScrollReveal key={cs.id} delay={i * 60}>
-                    <Link
-                      href={`/case-studies/${cs.slug}`}
-                      className="group flex flex-col border border-slate-200 bg-white p-6 transition-all duration-200 hover:border-[#297858] hover:shadow-md"
-                    >
-                      <h2 className="font-display text-sm font-extrabold uppercase leading-snug text-slate-900 group-hover:text-[#297858]">
-                        {cs.title?.rendered}
-                      </h2>
-                      <span className="mt-4 text-xs font-semibold text-[#297858] transition-all group-hover:translate-x-1">
-                        Read case study →
-                      </span>
-                    </Link>
-                  </ScrollReveal>
-                ))}
-              </div>
-            </>
-          ) : (
-            <>
-              <ScrollReveal className="mb-3">
-                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-                  Example work
-                </p>
-                <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900">
-                  The Kind of Work We Do
-                </h2>
-                <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
-                <p className="mt-4 text-sm leading-6 text-slate-500">
-                  These are representative examples of the projects we undertake. For documented case studies and references for specific sectors, please get in touch directly.
-                </p>
-              </ScrollReveal>
-
-              <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                {placeholderStudies.map((cs, i) => (
-                  <ScrollReveal key={cs.title} delay={i * 60}>
-                    <div className="flex flex-col border border-slate-200 bg-white p-6">
-                      <div className="mb-3 flex items-center justify-between gap-3">
-                        <span className={`inline-block rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em] ${sectorColours[cs.sector] ?? "bg-slate-100 text-slate-600"}`}>
-                          {cs.sector}
-                        </span>
-                      </div>
-                      <h2 className="font-display text-sm font-extrabold uppercase leading-snug text-slate-900">
-                        {cs.title}
-                      </h2>
-                      <p className="mt-3 text-sm leading-6 text-slate-500">{cs.summary}</p>
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {cs.tags.map((t) => (
-                          <span key={t} className="bg-surface-2 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500">
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </ScrollReveal>
-                ))}
-              </div>
-            </>
-          )}
-        </Container>
-      </section>
-
-      {/* ── WHY CASE STUDIES MATTER ───────────────────────────────────── */}
-      <section className="bg-[#111418] py-14 sm:py-16">
-        <Container>
-          <div className="grid gap-8 lg:grid-cols-3">
-            {[
-              {
-                heading: "Sector References",
-                body: "If you need a reference from a specific sector — NHS, defence, education, hotel — we can provide direct client references for projects in that environment. Ask when you enquire.",
-              },
-              {
-                heading: "No Two Projects Are the Same",
-                body: "The constraints vary. The equipment varies. The access windows vary. We document what was done and why — not to promote ourselves, but because it helps clients understand what a realistic scope looks like.",
-              },
-              {
-                heading: "We'll Tell You What Didn't Work Too",
-                body: "Honest project documentation means including the complications. We are not interested in presenting a curated highlight reel. Clients making investment decisions deserve accurate information.",
-              },
-            ].map((item, i) => (
-              <ScrollReveal key={item.heading} delay={i * 80}>
-                <div className="border-l-2 border-[#297858] pl-5">
-                  <h3 className="font-display text-sm font-extrabold uppercase text-white">
-                    {item.heading}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-white/55">
-                    {item.body}
-                  </p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ── CTA ───────────────────────────────────────────────────────── */}
-      <section className="bg-white py-12">
-        <Container>
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <h2 className="font-display text-xl font-extrabold uppercase text-slate-900">
-                Looking for a reference in your sector?
-              </h2>
-              <p className="mt-1 text-sm text-slate-500">
-                We can put you in contact with clients who have commissioned similar works. Get in touch to ask.
-              </p>
-            </div>
-            <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-            >
-              Request a reference →
-            </Link>
-          </div>
-        </Container>
-      </section>
+      <CaseStudiesGrid caseStudies={caseStudies} />
 
     </div>
   );

@@ -108,102 +108,108 @@ export default function CoilReplacementPage() {
   return (
     <div>
 
-      {/* ── 1. HERO ── dark text, capability pillars, inline logos ───────── */}
-      <section className="relative overflow-hidden bg-[#111418] py-10 sm:py-16">
+    {/* ── 1. HERO ── improved mobile readability + simpler capability signals ───────── */}
+<section className="relative overflow-hidden bg-[#111418] py-10 sm:py-16">
 
-  {/* Background image */}
-  <div className="absolute inset-0">
-    <Image
-      src="/ahu-coil-replacement.png"
-      alt="AHU coil replacement"
-      fill
-      priority
-      className="object-cover"
-    />
+{/* Background image */}
+<div className="absolute inset-0">
+  <Image
+    src="/ahu-coil-replacement.png"
+    alt="AHU coil replacement"
+    fill
+    priority
+    className="object-cover object-center"
+  />
 
-    {/* Softer overlay */}
-    <div className="absolute inset-0 bg-[#111418]/50" />
-  </div>
+  {/* Stronger mobile readability overlay */}
+  <div className="absolute inset-0 bg-[#111418]/70 sm:bg-[#111418]/55" />
+</div>
 
-  <Container className="relative z-10 flex min-h-[420px] items-end pb-6 sm:pb-10">
-    <div className="grid gap-10 lg:grid-cols-2 lg:items-end w-full">
+<Container className="relative z-10 flex min-h-[420px] items-end pb-6 sm:pb-10">
+  <div className="grid gap-10 lg:grid-cols-2 lg:items-end w-full">
 
-      {/* Left content */}
-      <div>
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
-          AHU Coil Replacement & Repair
-        </p>
+    {/* Left content */}
+    <div>
+      <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
+        AHU Coil Replacement & Repair
+      </p>
 
-        <h1 className="font-display text-4xl font-extrabold uppercase leading-[1.02] text-white sm:text-5xl">
-          Coils Matched to Your System
-        </h1>
+      <h1 className="font-display text-3xl font-extrabold uppercase leading-[1.05] text-white sm:text-5xl">
+        Coils Matched to Your System
+      </h1>
 
-        <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
+      <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
 
-        <p className="mt-6 max-w-xl text-[15px] leading-7 text-white/70">
-          Existing coils surveyed and replacement units sourced or manufactured
-          to suit your AHU dimensions, performance requirements, and operating conditions.
-        </p>
+      <p className="mt-6 max-w-xl text-[15px] leading-7 text-white/70">
+        Existing coils surveyed and replacement units sourced or manufactured
+        to suit your AHU dimensions, performance requirements, and operating conditions.
+      </p>
 
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a
-            href="#enquire"
-            className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-          >
-            Discuss your replacement options
-          </a>
+      <div className="mt-8 flex flex-wrap gap-3">
+        <a
+          href="#enquire"
+          className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
+        >
+          Discuss your replacement options
+        </a>
 
-          <a
-            href="#problem"
-            className="inline-flex items-center gap-2 border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/5"
-          >
-            Learn more
-            <ArrowDownIcon className="h-4 w-4" />
-          </a>
-        </div>
+        <a
+          href="#problem"
+          className="inline-flex items-center gap-2 border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/5"
+        >
+          Learn more
+          <ArrowDownIcon className="h-4 w-4" />
+        </a>
       </div>
+    </div>
 
-      {/* Capability signals */}
-      <div className="grid max-w-[320px] gap-3 lg:ml-auto">
-        {[
-          {
-            label: "Any Make or Model",
-            detail: "Including obsolete and unsupported AHUs",
-          },
-          {
-            label: "Measured On Site",
-            detail: "Specified from real system dimensions and requirements",
-          },
-          {
-            label: "Manufactured To Match",
-            detail: "Custom-built replacements for ageing equipment",
-          },
-          {
-            label: "Emergency Replacements",
-            detail: "Burst or failed coils handled urgently — including systems out of service",
-          },
-          {
-            label: "Gas to DX Conversions",
-            detail: "Switching from LTHW or gas to DX refrigerant — full coil conversion managed by BVS",
-          },
-        ].map((item) => (
-          <div
-            key={item.label}
-            className="border border-white/10 bg-white/5 p-5 backdrop-blur-sm"
-          >
-            <p className="font-display text-sm font-extrabold uppercase text-white">
+    {/* Capability signals (simplified + more scannable) */}
+    <div className="grid gap-2 lg:ml-auto max-w-md">
+
+      {[
+        {
+          label: "Any Make or Model",
+          detail: "Works with obsolete and unsupported AHUs",
+        },
+        {
+          label: "Site Measured",
+          detail: "Designed from real system dimensions",
+        },
+        {
+          label: "Made to Match",
+          detail: "Custom replacement coil manufacturing",
+        },
+        {
+          label: "Emergency Replacement",
+          detail: "Fast turnaround for failed or leaking coils",
+        },
+        {
+          label: "System Conversion",
+          detail: "Gas / LTHW to DX coil conversions",
+        },
+      ].map((item) => (
+        <div
+          key={item.label}
+          className="flex items-start gap-3 border-l-2 border-[#297858]/60 bg-white/5 px-4 py-3 backdrop-blur-sm"
+        >
+          <div className="mt-[6px] h-2 w-2 flex-shrink-0 rounded-full bg-[#297858]" />
+
+          <div>
+            <p className="text-sm font-semibold text-white">
               {item.label}
             </p>
 
-            <p className="mt-1.5 text-xs leading-5 text-white/50">
+            <p className="text-xs leading-5 text-white/55">
               {item.detail}
             </p>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
 
     </div>
-  </Container>
+
+  </div>
+</Container>
 </section>
 
 
@@ -307,7 +313,7 @@ export default function CoilReplacementPage() {
           </ScrollReveal>
         );
       })}
-    </div>
+    </div> 
   </Container>
 </section>
 
@@ -414,51 +420,83 @@ export default function CoilReplacementPage() {
 
       {/* ── 4. BENEFITS ── coil types + 4 capability cards ───────────────── */}
       <section className="bg-[#f7f6f5] py-16 sm:py-20">
-        <Container>
-          <ScrollReveal className="mb-10">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              What we replace
+  <Container>
+
+    <ScrollReveal className="mb-10">
+      <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+        What we replace
+      </p>
+      <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+        Every Coil Type Covered
+      </h2>
+      <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+    </ScrollReveal>
+
+    {/* Coil types - improved mobile layout */}
+    <div className="mb-12">
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+        {[
+          "LTHW Heating",
+          "Steam Heating",
+          "Chilled Water",
+          "DX Refrigerant",
+          "Heat Recovery",
+          "Frost Protection",
+          "Pre-Heat",
+          "Run-Around",
+        ].map((type) => (
+          <div
+            key={type}
+            className="flex items-center gap-2 border border-slate-200 bg-white px-3 py-3"
+          >
+            <div className="h-1.5 w-1.5 flex-shrink-0 bg-[#297858]" />
+            <span className="text-xs font-semibold leading-5 text-slate-700">
+              {type}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* capability blocks */}
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {[
+        {
+          label: "Any manufacturer",
+          detail:
+            "All makes and models, including obsolete and discontinued units where parts are no longer available from the OEM.",
+        },
+        {
+          label: "Bespoke manufacture",
+          detail:
+            "Non-standard dimensions manufactured to exact specification. Coil specified from site measurements.",
+        },
+        {
+          label: "Emergency turnaround",
+          detail:
+            "For AHUs out of service, we prioritise survey, procurement, and installation.",
+        },
+        {
+          label: "Full installation scope",
+          detail:
+            "Removal, fitting, pipework, testing, insulation reinstatement, and verification included.",
+        },
+      ].map((item, i) => (
+        <ScrollReveal key={item.label} delay={i * 60}>
+          <div className="border-t-2 border-[#297858] bg-white p-5">
+            <p className="font-display text-sm font-extrabold uppercase text-slate-900">
+              {item.label}
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-              Every Coil Type Covered
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-          </ScrollReveal>
-
-          <div className="flex flex-wrap gap-2.5 mb-10">
-            {[
-              "LTHW Heating Coils",
-              "Steam Heating Coils",
-              "Chilled Water Cooling Coils",
-              "DX Refrigerant Coils",
-              "Heat Recovery Coils",
-              "Frost Protection Coils",
-              "Pre-Heat Coils",
-              "Run-Around Coils",
-            ].map((type) => (
-              <div key={type} className="border border-slate-200 bg-white px-4 py-2.5">
-                <span className="text-sm font-semibold text-slate-700">{type}</span>
-              </div>
-            ))}
+            <p className="mt-2 text-xs leading-5 text-slate-500">
+              {item.detail}
+            </p>
           </div>
+        </ScrollReveal>
+      ))}
+    </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { label: "Any manufacturer", detail: "All makes and models, including obsolete and discontinued units where parts are no longer available from the OEM." },
-              { label: "Bespoke manufacture", detail: "Non-standard dimensions manufactured to exact specification. No catalogue size required. Coil specified from site measurements." },
-              { label: "Emergency turnaround", detail: "For AHUs out of service, we prioritise survey, procurement, and installation. Contact us directly for emergency lead times." },
-              { label: "Full installation scope", detail: "Removal, fitting, pipework connections, pressure testing, insulation reinstatement, and performance verification included." },
-            ].map((item, i) => (
-              <ScrollReveal key={item.label} delay={i * 60}>
-                <div className="border-t-2 border-[#297858] bg-white p-5">
-                  <p className="font-display text-sm font-extrabold uppercase text-slate-900">{item.label}</p>
-                  <p className="mt-2 text-xs leading-5 text-slate-500">{item.detail}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </Container>
-      </section>
+  </Container>
+</section> 
 
       {/* ── 5. SOCIAL PROOF ── Marriott case study, bg image ───────────── */}
       <section className="relative overflow-hidden bg-[#111418] py-20 sm:py-24">

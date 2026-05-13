@@ -132,17 +132,27 @@ const additionalServices = [
   {
     title: "Validation Surveys",
     desc: "HTM 03-01 audits, Part L compliance checks, and system condition assessments. Full documented report with prioritised findings.",
-    href: "/solutions/ventilation",
+    href: "/solutions/ventilation/validation-surveys",
   },
   {
-    title: "Ducting Repair",
+    title: "Ducting Repair & Replacement",
     desc: "Uneven airflow, pressure loss, or visible duct damage? We repair or replace ductwork sections with minimal disruption to operations.",
-    href: "/solutions/ventilation",
+    href: "/solutions/ventilation/ducting-repair-replacement",
   },
   {
-    title: "Boiler & Pipework",
-    desc: "Gas Safe registered. Boiler servicing, installation, and associated pipework managed by the same engineering team as your AHU works.",
-    href: "/solutions/ventilation",
+    title: "Troubleshooting",
+    desc: "Ventilation performance or compliance issues that need diagnosing. We identify root causes and provide a clear remedial plan.",
+    href: "/solutions/ventilation/troubleshooting",
+  },
+  {
+    title: "Commercial Boiler Services",
+    desc: "Gas Safe registered boiler installation, servicing, and repair. Planned and reactive cover for commercial heating systems.",
+    href: "/solutions/mechanical/commercial-boiler-heating",
+  },
+  {
+    title: "Commercial Pipework",
+    desc: "Installation, maintenance, and repair of commercial pipework systems — HVAC circuits, heating mains, and associated insulation.",
+    href: "/solutions/mechanical/industrial-pipework",
   },
 ];
 
@@ -260,7 +270,7 @@ export default function Home() {
               {[
                 { stat: "40+", label: "Years Experience" },
                 { stat: "Nationwide", label: "UK Coverage" },
-                { stat: "All Project Sizes", label: "Supported" },
+                { stat: "24-hr", label: "Response Time" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
                   <p className="font-display text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
@@ -287,7 +297,7 @@ export default function Home() {
       <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent sm:hidden" />
 
       <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-        <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 px-4 sm:px-0">
+        <div className="flex sm:grid sm:grid-cols-6 lg:grid-cols-12 gap-x-8 gap-y-6 min-w-max sm:min-w-0 px-4 sm:px-0">
 
           {clientLogos.map((logo) => (
             <Image
@@ -297,7 +307,7 @@ export default function Home() {
               width={120}
               height={60}
               unoptimized
-              className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
+              className="h-12 w-auto object-contain mx-auto opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
             />
           ))}
 
@@ -330,149 +340,169 @@ export default function Home() {
 </section>
 
       {/* ── 3. SERVICES ──────────────────────────────────────────────── */}
-      <section id="services" className="bg-[#111418] py-20">
-  <Container>
+      <section
+  id="services"
+  className="relative overflow-hidden bg-[#f5f3ef] py-20 sm:py-24"
+>
+  <div className="absolute inset-0 opacity-[0.03]">
+    <div className="absolute left-0 top-0 h-[420px] w-[420px] rounded-full bg-[#297858] blur-3xl" />
+    <div className="absolute bottom-0 right-0 h-[320px] w-[320px] rounded-full bg-[#111418] blur-3xl" />
+  </div>
+
+  <Container className="relative">
 
     {/* INTRO */}
-    <ScrollReveal className="mb-12">
-      <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-white/55">
-        What we do
-      </p>
+    <ScrollReveal className="mb-14 max-w-2xl">
+  <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.28em] text-[#297858]">
+    What we do
+  </p>
 
-      <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
-        Our Services
-      </h2>
+  <h2 className="font-display text-2xl font-extrabold uppercase tracking-tight text-[#111418] sm:text-3xl">
+    Our Services
+  </h2>
 
-      <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
+  <div className="mt-4 h-[3px] w-12 bg-[#297858]" />
 
-      <p className="mt-3 max-w-lg text-sm leading-7 text-white/70">
-        AHU specialists covering refurbishment, EC fan upgrades, coil replacement, new installation, controls, and decarbonisation support.
-      </p>
+  <p className="mt-5 max-w-lg text-sm leading-7 text-slate-600">
+    AHU specialists covering refurbishment, EC fan upgrades, coil replacement,
+    new installation, controls, and decarbonisation support.
+  </p>
 
-      <p className="mt-3 text-xs text-white/50">
-        Working on a specification or responding to a client brief? Each service below lists the key diagnostic indicators, or{" "}
-        <Link href="/contact" className="font-semibold text-[#297858] hover:text-[#1d5c42]">
-          speak to an engineer and we&apos;ll advise →
-        </Link>
-      </p>
-    </ScrollReveal>
+  <p className="mt-3 text-xs leading-6 text-slate-500">
+    Working on a specification or responding to a client brief? Each service
+    below lists the key diagnostic indicators, or{" "}
+    <Link
+      href="/contact"
+      className="font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
+    >
+      speak to an engineer →
+    </Link>
+  </p>
+</ScrollReveal>
+    {/* FEATURED */}
+    <div className="grid gap-6 lg:grid-cols-2">
+      {services.filter((s) => s.highlight).map((s) => (
+        <ScrollReveal key={s.title}>
+          <Link
+            href={s.href}
+            className="group relative flex h-full flex-col overflow-hidden border border-black/5 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)]"
+          >
+            <div className="relative h-[320px] overflow-hidden">
+              <Image
+                src={s.photo}
+                alt={s.photoAlt || s.title}
+                fill
+                unoptimized
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
 
-    {/* FEATURED SERVICES (UNCHANGED STRUCTURE, BETTER TEXT CONTRAST) */}
-    <div className="grid gap-5 sm:grid-cols-2">
-  {services.filter((s) => s.highlight).map((s) => (
-    <ScrollReveal key={s.title}>
-      <Link
-        href={s.href}
-        className="group flex h-[560px] flex-col overflow-hidden bg-white shadow-[0_10px_40px_rgba(0,0,0,0.4)] transition-shadow hover:shadow-[0_20px_60px_rgba(0,0,0,0.55)]"
-      >
-        <div className="relative h-56 overflow-hidden">
-          <Image
-            src={s.photo}
-            alt={s.photoAlt || s.title}
-            fill
-            unoptimized
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
 
-          <div className="absolute bottom-4 left-4">
-            <span className="bg-[#297858] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
-              {s.tag}
-            </span>
-          </div>
-        </div>
+              <div className="absolute left-6 top-6">
+                <span className="bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#111418]">
+                  {s.tag}
+                </span>
+              </div>
 
-        <div className="flex flex-1 flex-col p-6">
-          <h3 className="text-base font-extrabold uppercase text-slate-900">
-            {s.title}
-          </h3>
+              <div className="absolute bottom-0 left-0 w-full p-6">
+                <h3 className="max-w-md text-2xl font-extrabold uppercase leading-tight text-white">
+                  {s.title}
+                </h3>
 
-          <p className="mt-1 text-xs text-slate-500">
-            {s.plain}
-          </p>
-
-          <div className="mt-3">
-            <p className="text-sm font-bold text-[#297858]">
-              {s.outcome}
-              {s.title === "EC Fan Upgrades" && (
-                <span className="align-top text-[10px] text-slate-400">*</span>
-              )}
-            </p>
-
-            <p className="mt-2 text-sm text-slate-600">
-              {s.context}
-            </p>
-          </div>
-
-          <div className="mt-4 border-t border-slate-100 pt-4">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
-              Common signs:
-            </p>
-
-            <ul className="mt-2 space-y-1 text-xs text-slate-500">
-              {s.signs.map((sign) => (
-                <li key={sign}>• {sign}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mt-auto pt-5">
-            {s.title === "EC Fan Upgrades" && (
-              <p className="mb-4 text-[9px] leading-4 text-slate-400">
-                *Potential savings vary depending on system condition and operational usage.
-              </p>
-            )}
-
-            <div className="flex items-center gap-1.5 text-sm font-semibold text-[#297858] group-hover:text-[#1d5c42]">
-              Learn more <ArrowIcon />
+                <p className="mt-2 max-w-lg text-sm leading-6 text-white/80">
+                  {s.context}
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
-      </Link>
-    </ScrollReveal>
-  ))}
-</div>
 
-    {/* FULL SERVICE CAPABILITY (IMPROVED READABILITY) */}
-    <div className="mt-12">
-      <div className="mb-5 flex items-center gap-4">
-        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
+            <div className="flex flex-1 flex-col p-6">
+              <p className="text-sm font-semibold text-[#297858]">
+                {s.outcome}
+              </p>
+
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                {s.plain}
+              </p>
+
+              <div className="mt-6 border-t border-slate-200 pt-5">
+                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
+                  Common indicators
+                </p>
+
+                <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                  {s.signs.map((sign) => (
+                    <div
+                      key={sign}
+                      className="flex items-start gap-2 text-sm text-slate-600"
+                    >
+                      <div className="mt-[7px] h-1.5 w-1.5 rounded-full bg-[#297858]" />
+                      <span>{sign}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-auto pt-8">
+                <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] transition group-hover:gap-3">
+                  Learn more <ArrowIcon />
+                </div>
+              </div>
+            </div>
+          </Link>
+        </ScrollReveal>
+      ))}
+    </div>
+
+    {/* FULL SERVICES */}
+    <div className="mt-20">
+      <div className="mb-8 flex items-center gap-5">
+        <div className="h-px flex-1 bg-black/10" />
+
+        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">
           Full service capability
         </p>
-        <div className="h-px flex-1 bg-white/10" />
+
+        <div className="h-px flex-1 bg-black/10" />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {services.filter((s) => !s.highlight).map((s, i) => (
           <ScrollReveal key={s.title} delay={i * 40}>
             <Link
               href={s.href}
-              className="group flex flex-col overflow-hidden bg-white shadow-[0_6px_25px_rgba(0,0,0,0.25)] transition hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]"
+              className="group flex h-full flex-col overflow-hidden border border-black/5 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
             >
-              <div className="relative h-24 overflow-hidden">
+              <div className="relative h-44 overflow-hidden">
                 <Image
                   src={s.photo}
                   alt={s.title}
                   fill
                   unoptimized
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-base font-extrabold uppercase leading-tight text-white">
+                    {s.title}
+                  </p>
+                </div>
               </div>
 
-              <div className="flex flex-1 flex-col p-4">
-                <p className="text-sm font-extrabold uppercase text-slate-900">
-                  {s.title}
-                </p>
-
-                <p className="mt-1 text-xs text-slate-600 line-clamp-2">
-                  {s.plain}
-                </p>
-
-                <p className="mt-auto text-xs font-semibold text-[#297858]">
+              <div className="flex flex-1 flex-col p-5">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#297858]">
                   {s.outcome}
                 </p>
 
-                <div className="mt-2 flex items-center gap-1 text-xs font-semibold text-[#297858] group-hover:text-[#1d5c42]">
-                  Learn more <ArrowIcon />
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  {s.plain}
+                </p>
+
+                <div className="mt-auto pt-6">
+                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] transition group-hover:gap-3">
+                    Learn more <ArrowIcon />
+                  </div>
                 </div>
               </div>
             </Link>
@@ -481,78 +511,76 @@ export default function Home() {
       </div>
     </div>
 
-    {/* ADDITIONAL SERVICES (BETTER DARK CONTRAST TEXT) */}
-    <div className="mt-10">
-      <div className="mb-5 flex items-center gap-4">
-        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
-          Additional services
-        </p>
-        <div className="h-px flex-1 bg-white/10" />
-      </div>
+    {/* ADDITIONAL SERVICES */}
+<div className="mt-16">
+  <div className="mb-6 flex items-center gap-5">
+    <div className="h-px flex-1 bg-black/10" />
+    <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">
+      Additional services
+    </p>
+    <div className="h-px flex-1 bg-black/10" />
+  </div>
 
-      <div className="space-y-2">
-        {additionalServices.map((s, i) => (
-          <details
-            key={s.title}
-            className="group border border-white/15 bg-white/10 transition hover:bg-white/15"
-          >
-            <summary className="flex cursor-pointer items-center gap-4 p-4">
-              <div className="flex h-10 w-10 items-center justify-center bg-[#111418] text-white/80">
-                <AdditionalServiceIcon index={i} />
-              </div>
+  <div className="space-y-3">
+    {additionalServices.map((s, i) => (
+      <ScrollReveal key={s.title} delay={i * 50}>
+        <details className="group border border-black/10 bg-white transition hover:border-black/20">
+          <summary className="flex cursor-pointer items-center gap-4 p-4">
+            <div className="flex h-10 w-10 items-center justify-center border border-black/10 bg-[#f5f3ef]">
+              <AdditionalServiceIcon index={i} />
+            </div>
 
-              <div className="flex-1">
-                <p className="text-sm font-bold text-white">
-                  {s.title}
+            <div className="flex-1">
+              <p className="text-sm font-bold uppercase text-slate-900">
+                {s.title}
+              </p>
+              <p className="text-xs text-slate-500">
+                {s.desc}
+              </p>
+            </div>
+
+            <span className="text-slate-400 transition-transform group-open:rotate-180">
+              ⌄
+            </span>
+          </summary>
+
+          <div className="border-t border-black/10 px-4 py-4">
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500">
+                  Overview
                 </p>
-
-                <p className="text-xs text-white/65">
+                <p className="mt-2 text-xs leading-6 text-slate-600">
                   {s.desc}
                 </p>
               </div>
 
-              <span className="text-white/50 transition-transform group-open:rotate-180">
-                ⌄
-              </span>
-            </summary>
-
-            <div className="border-t border-white/10 px-4 py-4">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-white/50">
-                    Overview
-                  </p>
-                  <p className="mt-2 text-xs leading-5 text-white/75">
-                    {s.desc}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-white/50">
-                    When it applies
-                  </p>
-                  <p className="mt-2 text-xs leading-5 text-white/75">
-                    Used in system upgrades, compliance requirements, and performance optimisation projects where supporting works are required alongside core AHU changes.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-4 border-t border-white/10 pt-4">
-                <Link
-                  href={s.href}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#297858] hover:text-[#1d5c42]"
-                >
-                  Learn more <ArrowIcon />
-                </Link>
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500">
+                  When it applies
+                </p>
+                <p className="mt-2 text-xs leading-6 text-slate-600">
+                  Used in system upgrades, compliance requirements, and performance optimisation where supporting works are required alongside core AHU changes.
+                </p>
               </div>
             </div>
-          </details>
-        ))}
-      </div>
-    </div>
+
+            <div className="mt-5 border-t border-black/10 pt-4">
+              <Link
+                href={s.href}
+                className="inline-flex items-center gap-2 text-xs font-semibold text-[#297858] hover:text-[#1d5c42]"
+              >
+                Learn more <ArrowIcon />
+              </Link>
+            </div>
+          </div>
+        </details>
+      </ScrollReveal>
+    ))}
+  </div>
+</div>
 
   </Container>
-  
 </section>
      {/* ── 8. ACCREDITATIONS ────────────────────────────────────────── */}
      <section className="border-t border-slate-200 bg-white py-12 sm:py-14">
@@ -889,8 +917,12 @@ function AdditionalServiceIcon({ index }) {
     <><path key="v1" d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" /><rect key="v2" x="9" y="3" width="6" height="4" rx="1" /><path key="v3" d="m9 12 2 2 4-4" /></>,
     // Git branch - Ducting Repair
     <><line key="d1" x1="6" y1="3" x2="6" y2="15" /><circle key="d2" cx="18" cy="6" r="3" /><circle key="d3" cx="6" cy="18" r="3" /><path key="d4" d="M18 9a9 9 0 0 1-9 9" /></>,
-    // Flame - Boiler & Pipework
+    // Search - Troubleshooting
+    <><circle key="t1" cx="11" cy="11" r="8" /><path key="t2" d="m21 21-4.35-4.35" /></>,
+    // Flame - Commercial Boiler Services
     <path key="b" d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />,
+    // Pipe - Commercial Pipework
+    <><path key="p1" d="M3 9h18v6H3z" /><path key="p2" d="M9 9V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" /><path key="p3" d="M9 15v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4" /></>,
   ];
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
