@@ -65,7 +65,7 @@ const features = [
   },
   {
     title: "Emergency Boiler Repair",
-    body: "Fast response to boiler breakdowns to minimise disruption, with engineers carrying common spare parts for first-visit fixes.",
+    body: "Fast response to boiler breakdowns to minimise disruption. We aim to resolve issues on the first visit where parts are available and the fault permits.",
   },
   {
     title: "Heating System Design",
@@ -73,7 +73,7 @@ const features = [
   },
   {
     title: "Energy Efficiency Upgrades",
-    body: "Replacement of ageing inefficient boilers with modern high-efficiency plant, with ROI analysis and energy cost savings projections.",
+    body: "Replacement of ageing inefficient boilers with modern high-efficiency plant, with ROI analysis and energy cost savings projections where applicable.*",
   },
   {
     title: "Gas Safe Certification",
@@ -88,14 +88,14 @@ export default function CommercialBoilerHeatingPage() {
       {/* Hero */}
       <section className="relative min-h-[480px] overflow-hidden bg-slate-900">
         <Image
-          src="/plant-room.png"
+          src="/Commercial-Gas-Works.jpg"
           alt="Commercial boiler and heating plant room serviced by BVS engineers"
           fill
           priority
           unoptimized
-          className="object-cover object-center opacity-40"
+          className="object-cover object-center opacity-80"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/45 to-transparent" />
 
         <Container className="relative flex min-h-[480px] items-center pt-16 pb-28">
           <div className="max-w-2xl">
@@ -217,6 +217,7 @@ export default function CommercialBoilerHeatingPage() {
               </div>
             ))}
           </div>
+          <p className="mt-6 text-xs text-slate-400">* ROI analysis and energy cost savings projections are provided where sufficient data on the existing system is available to model against. We will confirm at assessment stage what we can produce for your specific project.</p>
         </Container>
       </section>
 
@@ -224,7 +225,7 @@ export default function CommercialBoilerHeatingPage() {
       <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
         <Container>
           <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading UK organisations
+            Trusted by leading organisations
           </p>
           <div className="relative">
             <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />

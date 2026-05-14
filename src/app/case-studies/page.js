@@ -16,7 +16,7 @@ const caseStudies = [
     summary:
       "BVS refurbished an AHU supplying operating theatres at a private hospital in Bath — EC fans, custom cubic heat exchanger, and new fan bulkheads delivered energy savings with minimal clinical disruption.",
     tags: ["AHU Refurbishment", "EC Fan", "Healthcare"],
-    image: "/ahu-refurbishment-worker.png",
+    image: "/private-hospital-bath-case-study.png",
   },
   {
     slug: "nhs-hammersmith-ahu-refurbishment",
@@ -25,7 +25,7 @@ const caseStudies = [
     summary:
       "BVS carried out a targeted light refurbishment of AHUs at an NHS hospital in Hammersmith & Fulham — drivebelts, filters, coil cleaning, corrosion treatment, and bathroom extract fan repairs.",
     tags: ["AHU Refurbishment", "NHS", "Healthcare"],
-    image: "/ahu-refurbishment-worker.png",
+    image: "/nhs-hammersmith-fulham-case-study.webp",
   },
   {
     slug: "friary-meadow-ahu-replacement",
@@ -34,7 +34,7 @@ const caseStudies = [
     summary:
       "BVS designed and installed a replacement AHU at Friary Meadow Retirement Village — delivering reliable ventilation for a sensitive residential care environment with minimum disruption to residents.",
     tags: ["AHU Replacement", "Residential Care"],
-    image: "/ahu-installation.png",
+    image: "/friary-meadow-case-study.webp",
   },
   {
     slug: "warner-leisure-hotel-gunton-hall-ahu",
@@ -43,7 +43,7 @@ const caseStudies = [
     summary:
       "BVS designed, manufactured, and installed a bespoke replacement AHU for Warner Leisure Hotel's Gunton Hall swimming pool — tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
     tags: ["AHU Manufacturing", "Hotel", "Pool Hall"],
-    image: "/ahu-manufacturing2.png",
+    image: "/warner-hotel-gunton-case-study.webp",
   },
   {
     slug: "marriott-forest-of-arden-pool-ventilation",
@@ -52,7 +52,7 @@ const caseStudies = [
     summary:
       "The AHU at Marriott Forest of Arden's swimming pool was designed to maintain 31°C but had only ever reached 24°C. BVS validated the system, identified ductwork leaks and AHU configuration faults, and delivered a full remediation scope.",
     tags: ["AHU Troubleshooting", "Hotel", "Pool Hall"],
-    image: "/ahu-refurbishment-hero.png",
+    image: "/warner-hotel-forest-of-arden-case-study.webp",
   },
   {
     slug: "leisure-centre-dorset-ec-fan-upgrade",
@@ -61,7 +61,7 @@ const caseStudies = [
     summary:
       "BVS replaced failed belt-driven fans on a Dorset leisure centre's swimming pool AHU with two Ziehl-Abegg GR561-ZID EC fans — restoring airflow, humidity control, and protecting the building fabric.",
     tags: ["EC Fan Upgrade", "Leisure", "Pool Hall"],
-    image: "/ec-fan-before-after.png",
+    image: "/dorset-leisure-centre-case-study.webp",
   },
   {
     slug: "ringwood-leisure-ahu-controller-upgrade",
@@ -70,7 +70,7 @@ const caseStudies = [
     summary:
       "Advised that two AHUs needed full replacement at £100k+, BVS identified the actual cause as failing controls. Trend controllers were installed on both units at a fraction of replacement cost.",
     tags: ["Controller Upgrade", "Leisure", "Trend"],
-    image: "/ahu-refurbishment-hero.png",
+    image: "/ringwood-leisure-center-case-study.webp",
   },
   {
     slug: "gresham-street-office-ahu-refurbishment",
@@ -79,7 +79,7 @@ const caseStudies = [
     summary:
       "The AHU at a Gresham Street commercial office in London required full internal refurbishment to meet reduced air volume requirements. BVS replaced all major components and upgraded to a modern inverter and fan assembly.",
     tags: ["AHU Refurbishment", "Commercial", "London"],
-    image: "/ahu-refurbishment-worker.png",
+    image: "/gresham-street-office-case-study.webp",
   },
   {
     slug: "pembroke-offices-ahu-refurbishment",
@@ -88,7 +88,7 @@ const caseStudies = [
     summary:
       "Post front-of-house renovation, BVS refurbished the AHUs at Pembroke Offices — reverse cycle coil, three Ziehl EC fans, 84kW heater batteries, casing repairs, and improved filtration.",
     tags: ["AHU Refurbishment", "Commercial"],
-    image: "/ahu-refurbishment-worker.png",
+    image: "/pembroke-offices-case-study.webp",
   },
   {
     slug: "burlington-street-office-coil-replacement",
@@ -97,7 +97,7 @@ const caseStudies = [
     summary:
       "The frost coil at a Burlington Street commercial office suffered severe damage. BVS designed, manufactured, and installed a split-section replacement to overcome plantroom access constraints.",
     tags: ["Coil Replacement", "Commercial"],
-    image: "/ahu-coil-replacement.png",
+    image: "/burlington-street-office-case-study.png",
   },
   {
     slug: "kingly-street-extract-fan-duct",
@@ -106,7 +106,7 @@ const caseStudies = [
     summary:
       "BVS designed and installed a new extract fan and ductwork system at 60 Kingly Street, London — improving mechanical ventilation extraction performance for this commercial office property.",
     tags: ["Extract Fan", "Ductwork", "Commercial"],
-    image: "/ahu-duct-installation.png",
+    image: "/60-kingly-street-case-study.webp",
   },
   {
     slug: "newton-mearns-ahu-refurbishment-pipework",
@@ -115,7 +115,7 @@ const caseStudies = [
     summary:
       "BVS refurbished three weatherproof AHUs at Newton Mearns Shopping Centre and replaced a deteriorated mild-steel gas distribution network with 316-grade stainless steel pipework to IGEM UP 1 and 2.",
     tags: ["AHU Refurbishment", "Gas Pipework", "Commercial"],
-    image: "/ahu-refurbishment-worker.png",
+    image: "/newton-mearns-case-study.webp",
   },
   {
     slug: "disney-headquarters-ventilation-survey",
@@ -124,7 +124,7 @@ const caseStudies = [
     summary:
       "BVS conducted a full ventilation survey at the EU Disney Headquarters in Hammersmith, London — assessing AHU performance, air volumes, and system condition across the corporate campus.",
     tags: ["Ventilation Survey", "Commercial"],
-    image: "/ahu-refurbishment-hero.png",
+    image: "/disney-headquarters-case-study.webp",
   },
   {
     slug: "procook-westfield-ahu-controller-upgrade",
@@ -133,7 +133,7 @@ const caseStudies = [
     summary:
       "The AHU at Procook's Westfield retail store had a failed fan motor and obsolete controls. BVS replaced the motor, installed a Trend BMS controller, and restored full climate control to the shop floor.",
     tags: ["Controller Upgrade", "Retail", "Trend"],
-    image: "/ahu-refurbishment-hero.png",
+    image: "/procook-westfield-case-study.webp",
   },
   {
     slug: "toca-football-o2-ahu-refurbishment",
@@ -142,7 +142,7 @@ const caseStudies = [
     summary:
       "BVS carried out an AHU refurbishment at the Toca Interactive Football facility at the O2 Arena — maintaining performance in a high-footfall sports entertainment environment.",
     tags: ["AHU Refurbishment", "Commercial"],
-    image: "/ahu-refurbishment-worker.png",
+    image: "/toca-intereactive-arena-case-study.webp",
   },
   {
     slug: "concorde-simulator-ventilation",
@@ -151,7 +151,7 @@ const caseStudies = [
     summary:
       "BVS carried out a ventilation survey and subsequent works on the Concorde simulator — a unique heritage environment requiring careful handling and specialist knowledge of the existing installation.",
     tags: ["Ventilation Survey", "Heritage"],
-    image: "/ahu-refurbishment-hero.png",
+    image: "/concorde-project-case-study.png",
   },
   {
     slug: "car-dealership-farnborough-coil-replacement",
@@ -160,7 +160,7 @@ const caseStudies = [
     summary:
       "A car dealership in Farnborough required a full heating coil replacement in its AHU plant room. BVS sized, manufactured, and installed a replacement unit with full pipework and insulation to BSS6644:2011.",
     tags: ["Coil Replacement", "Commercial"],
-    image: "/ahu-coil-replacement.png",
+    image: "/car-dealership-case-study.webp",
   },
   {
     slug: "pharmaceutical-lab-coil-replacement",
@@ -169,7 +169,7 @@ const caseStudies = [
     summary:
       "BVS designed, manufactured, and installed a replacement AHU coil at a pharmaceutical manufacturing facility — meeting the strict process environment requirements of the site.",
     tags: ["Coil Replacement", "Pharmaceutical"],
-    image: "/ahu-coil-replacement.png",
+    image: "/pharmaceutical-lab-case-study.webp",
   },
   {
     slug: "red-distillery-ahu-refurbishment",
@@ -178,7 +178,7 @@ const caseStudies = [
     summary:
       "BVS refurbished the AHU at Red English Group's distillery facility — restoring reliable ventilation performance in an active production environment.",
     tags: ["AHU Refurbishment", "Manufacturing"],
-    image: "/ahu-refurbishment-worker.png",
+    image: "/red-english-group-distillery-case-study.webp",
   },
 ];
 
@@ -211,7 +211,7 @@ export default function CaseStudiesPage() {
 
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
 
-            <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/65">
+            <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/95">
               Every project here is a real job — a specific building, a specific constraint, a specific outcome.
             </p>
           </div>

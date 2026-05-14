@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/Input";
 
 export function NewsletterForm({ source = "newsletter_page", compact = false }) {
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
   const [message, setMessage] = useState("");
 
@@ -38,25 +39,43 @@ export function NewsletterForm({ source = "newsletter_page", compact = false }) 
       className={compact ? "grid gap-3" : "grid gap-3 sm:grid-cols-[1fr_auto]"}
     >
       {compact ? (
-        <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
-          <input
-            className="h-11 w-full rounded-md border border-white/25 bg-emerald-950/20 px-3 text-sm text-white placeholder:text-white/60 outline-none focus:border-white/40"
-            name="email"
-            type="email"
-            autoComplete="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            className="inline-flex h-11 items-center justify-center border border-white/25 bg-white/0 px-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-white hover:border-white/40 disabled:opacity-50"
-          >
-            {status === "loading" ? "Subscribing…" : "Subscribe"}
-          </button>
-        </div>
+        <>
+          <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
+            <input
+              className="h-11 w-full border border-slate-300 bg-white px-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-[#297858] focus:ring-2 focus:ring-[#297858]/15"
+              name="email"
+              type="email"
+              autoComplete="email"
+              placeholder="Your email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button
+              type="submit"
+              disabled={status === "loading" || !consent}
+              className="inline-flex h-11 items-center justify-center bg-[#297858] px-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-[#1e5e44] disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              {status === "loading" ? "Subscribing…" : "Subscribe"}
+            </button>
+          </div>
+
+          <label className="flex cursor-pointer items-start gap-3">
+            <input
+              type="checkbox"
+              checked={consent}
+              onChange={(e) => setConsent(e.target.checked)}
+              className="mt-0.5 h-4 w-4 shrink-0 accent-[#297858]"
+            />
+            <span className="text-xs leading-relaxed text-slate-500">
+              I agree to receive occasional email updates from BVS. You can unsubscribe at any time.{" "}
+              <a href="/privacy-policy" className="underline hover:text-slate-700">
+                Privacy Policy
+              </a>
+              .
+            </span>
+          </label>
+        </>
       ) : (
         <>
           <Input
@@ -82,8 +101,8 @@ export function NewsletterForm({ source = "newsletter_page", compact = false }) 
           className={`text-sm ${
             compact
               ? status === "error"
-                ? "text-red-200"
-                : "text-white/80"
+                ? "text-red-600"
+                : "text-[#297858]"
               : status === "error"
                 ? "text-red-600"
                 : "text-zinc-600"

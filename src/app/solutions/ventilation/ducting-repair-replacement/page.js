@@ -65,9 +65,9 @@ export default function DuctingRepairPage() {
           fill
           priority
           unoptimized
-          className="object-cover object-center opacity-40"
+          className="object-cover object-center opacity-80"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent" />
 
         <Container className="relative flex min-h-[480px] items-center pt-16 pb-28">
           <div className="max-w-2xl">
@@ -171,7 +171,7 @@ export default function DuctingRepairPage() {
       <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
         <Container>
           <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading UK organisations
+            Trusted by leading organisations
           </p>
           <div className="relative">
             <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
@@ -197,6 +197,66 @@ export default function DuctingRepairPage() {
             <svg className="h-4 w-4 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M10 6l6 6-6 6" />
             </svg>
+          </div>
+        </Container>
+      </section>
+
+      {/* Marriott case study */}
+      <section className="relative overflow-hidden bg-[#111418] py-20 sm:py-24">
+        <div className="absolute inset-0">
+          <Image
+            src="/hotel.png"
+            alt="Marriott Forest of Arden swimming pool — BVS ductwork troubleshooting"
+            fill
+            className="object-cover opacity-80 scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#111418] via-[#111418]/50 to-[#111418]/40" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(17,20,24,0.2),rgba(17,20,24,0.85))]" />
+        </div>
+
+        <Container className="relative">
+          <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-white/50">
+            Case study
+          </p>
+
+          <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-4xl">
+            Marriott Forest of Arden<br />
+            Swimming Pool AHU
+          </h2>
+
+          <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
+
+          <p className="mt-5 max-w-2xl text-sm leading-7 text-white/65">
+            The AHU serving the hotel&apos;s swimming pool was designed to maintain 31°C — but had only ever reached 24°C. BVS validated the system, identified leaking 30-year-old ductwork, inadequate diffuser velocities, and AHU configuration issues, then delivered a full remediation scope to restore design performance.
+          </p>
+
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4 max-w-2xl">
+            {[
+              { stat: "31°C", label: "Design target temp" },
+              { stat: "24°C", label: "Achieved before survey" },
+              { stat: "30 yrs", label: "Age of ductwork" },
+              { stat: "4 Areas", label: "Issues identified & resolved" },
+            ].map((item) => (
+              <div key={item.label} className="border border-white/15 bg-white/10 px-4 py-5 backdrop-blur-sm">
+                <p className="font-display text-2xl font-extrabold text-[#297858]">{item.stat}</p>
+                <p className="mt-1 text-[10px] uppercase tracking-wider text-white/50">{item.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center gap-6">
+            <Link
+              href="/case-studies/marriott-forest-of-arden-pool-ventilation"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] transition hover:text-white"
+            >
+              See full case study →
+            </Link>
+            <Link
+              href="/case-studies"
+              className="text-sm font-semibold text-white/60 transition hover:text-white"
+            >
+              All case studies →
+            </Link>
           </div>
         </Container>
       </section>

@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Navigation } from "@/components/site/Navigation";
 import { Footer } from "@/components/site/Footer";
+import { NewsletterBand } from "@/components/site/NewsletterBand";
 import { Playfair_Display, Inter } from "next/font/google";
 
 const playfair = Playfair_Display({
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
         <div className="min-h-dvh bg-white text-slate-900">
           <Navigation />
           <main>{children}</main>
+          <NewsletterBand />
           <Footer />
         </div>
       </body>

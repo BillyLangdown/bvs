@@ -90,22 +90,44 @@ export default function AboutPage() {
     <div>
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
-      <section className="bg-[#111418] py-20 sm:py-28">
-        <Container>
-          <div className="max-w-3xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/45">
-              About BVS
-            </p>
-            <h1 className="font-display text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl lg:text-6xl">
-              Engineering-Led.<br />40 Years.<br />In-House Delivery.
-            </h1>
-            <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
-            <p className="mt-6 max-w-2xl text-[15px] leading-7 text-white/65">
-              BVS has been working in mechanical ventilation since the 1980s. We refurbish, upgrade, install, and maintain air handling units across the UK — for hospitals, hotels, schools, leisure centres, defence facilities, and retail estates. The engineering is consistent. The approach adapts to the environment.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <section className="relative overflow-hidden bg-[#111418] py-20 sm:py-28">
+
+  {/* Background image */}
+  <div className="absolute inset-0">
+    <Image
+      src="/about-us.png"
+      alt="About BVS"
+      fill
+      priority
+      className="object-cover object-center"
+    />
+
+    {/* Overlay for readability */}
+    <div className="absolute inset-0 bg-[#111418]/50" />
+    <div className="absolute inset-0 bg-gradient-to-r from-[#111418]/80 via-[#111418]/50 to-[#111418]/30" />
+  </div>
+
+  {/* Content */}
+  <Container className="relative">
+    <div className="max-w-3xl">
+
+      <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/45">
+        About BVS
+      </p>
+
+      <h1 className="font-display text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl lg:text-6xl">
+        Engineering-Led <br/>  for 40+ years.
+      </h1>
+
+      <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
+
+      <p className="mt-6 max-w-2xl text-[15px] leading-7 text-white/70">
+        BVS has been working in mechanical ventilation since the 1980s. We refurbish, upgrade, install, and maintain air handling units across the UK — for hospitals, hotels, schools, leisure centres, defence facilities, and retail estates. The engineering is consistent. The approach adapts to the environment.
+      </p>
+
+    </div>
+  </Container>
+</section>
 
       {/* ── WHAT WE DO ────────────────────────────────────────────────── */}
       <section className="bg-surface-2 py-16 sm:py-20">
@@ -190,43 +212,58 @@ export default function AboutPage() {
 
       {/* ── SERVICES ──────────────────────────────────────────────────── */}
       <section className="bg-white py-16 sm:py-20">
-        <Container>
-          <ScrollReveal className="mb-10 max-w-2xl">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              Our Services
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
-              Six Services.<br />One Specialist.
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-            <p className="mt-4 text-sm leading-6 text-slate-500">
-              Every service is managed by BVS — from initial survey through to commissioning and handover.
-            </p>
-          </ScrollReveal>
+  <Container>
+    <ScrollReveal className="mb-10 max-w-2xl">
+      <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+        Our Services
+      </p>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((s, i) => (
-              <ScrollReveal key={s.title} delay={i * 60}>
-                <Link
-                  href={s.href}
-                  className="group flex flex-col border border-slate-200 bg-surface-2 p-6 transition-all duration-200 hover:border-[#297858] hover:shadow-md"
-                >
-                  <div className="mb-3 flex items-center gap-3">
-                    <div className="h-1 w-5 bg-[#297858] transition-all group-hover:w-8" />
-                    <h3 className="font-display text-sm font-extrabold uppercase text-slate-900 group-hover:text-[#297858]">
-                      {s.title}
-                    </h3>
-                  </div>
-                  <p className="text-sm leading-6 text-slate-500">{s.body}</p>
-                  <span className="mt-4 text-xs font-semibold text-[#297858] transition-all group-hover:translate-x-1">
-                    Learn more →
-                  </span>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
+        Six Services.<br />One Specialist.
+      </h2>
+
+      <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+
+      <p className="mt-4 text-sm leading-6 text-slate-500">
+        Every service is managed by BVS — from initial survey through to commissioning and handover.
+      </p>
+    </ScrollReveal>
+
+    {/* CARDS */}
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
+      {services.map((s, i) => (
+        <ScrollReveal key={s.title} delay={i * 60} className="h-full">
+          <Link
+            href={s.href}
+            className="group flex h-full flex-col border border-slate-200 bg-surface-2 p-6 transition-all duration-200 hover:border-[#297858] hover:shadow-md"
+          >
+            <div className="mb-3 flex items-center gap-3">
+              <div className="h-1 w-5 bg-[#297858] transition-all group-hover:w-8" />
+              <h3 className="font-display text-sm font-extrabold uppercase text-slate-900 group-hover:text-[#297858]">
+                {s.title}
+              </h3>
+            </div>
+
+            <p className="text-sm leading-6 text-slate-500">
+              {s.body}
+            </p>
+
+            <span className="mt-auto pt-6 text-xs font-semibold text-[#297858] transition-all group-hover:translate-x-1">
+              Learn more →
+            </span>
+          </Link>
+        </ScrollReveal>
+      ))}
+    </div>
+
+    {/* EXTRA MESSAGE */}
+    <div className="mt-10 text-center">
+      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+        And additional specialist services available on request
+      </p>
+    </div>
+  </Container>
+</section>
 
       {/* ── SECTORS ───────────────────────────────────────────────────── */}
       <section className="bg-surface-2 py-14 sm:py-16">
@@ -272,7 +309,7 @@ export default function AboutPage() {
       <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
         <Container>
           <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading UK organisations
+            Trusted by leading organisations
           </p>
           <div className="relative">
             <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />

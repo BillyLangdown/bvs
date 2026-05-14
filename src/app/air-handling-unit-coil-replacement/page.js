@@ -216,7 +216,7 @@ export default function CoilReplacementPage() {
 <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
   <Container>
     <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-      Trusted by leading UK organisations
+      Trusted by leading organisations
     </p>
 
     <div className="relative">
@@ -498,136 +498,94 @@ export default function CoilReplacementPage() {
   </Container>
 </section> 
 
-      {/* ── 5. SOCIAL PROOF ── Marriott case study, bg image ───────────── */}
-      <section className="relative overflow-hidden bg-[#111418] py-20 sm:py-24">
+      {/* ── 6. HOW IT WORKS ── 4-step process ───────────────────────────── */}
+      <section className="bg-[#0e1115] py-16 sm:py-20">
+  <Container>
+    <ScrollReveal className="mb-10">
+      <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+        How it works
+      </p>
+      <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+        From Survey to<br />Return to Service
+      </h2>
+      <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+    </ScrollReveal>
 
-<div className="absolute inset-0">
-  <Image
-    src="/hotel.png"
-    alt="Marriott Forest of Arden swimming pool — BVS ventilation troubleshooting"
-    fill
-    className="object-cover opacity-80 scale-105"
-  />
-  <div className="absolute inset-0 bg-gradient-to-r from-[#111418] via-[#111418]/50 to-[#111418]/40" />
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(17,20,24,0.2),rgba(17,20,24,0.85))]" />
-</div>
-
-<Container className="relative">
-  <ScrollReveal>
-
-    <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-white/50">
-      Case study
-    </p>
-
-    <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-4xl">
-      Marriott Forest of Arden<br />
-      Swimming Pool AHU
-    </h2>
-
-    <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
-
-    <p className="mt-5 max-w-2xl text-sm leading-7 text-white/65">
-      The AHU serving the hotel&apos;s swimming pool was designed to maintain 31°C — but had only ever reached 24°C. BVS validated the system, identified leaking 30-year-old ductwork, inadequate diffuser velocities, and AHU configuration issues, then delivered a full remediation scope to restore design performance.
-    </p>
-
-    <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4 max-w-2xl">
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
       {[
-        { stat: "31°C", label: "Design target temp" },
-        { stat: "24°C", label: "Achieved before survey" },
-        { stat: "30 yrs", label: "Age of ductwork" },
-        { stat: "4 Areas", label: "Issues identified & resolved" },
-      ].map((item) => (
-        <div
-          key={item.label}
-          className="border border-white/15 bg-white/10 px-4 py-5 backdrop-blur-sm"
-        >
-          <p className="font-display text-2xl font-extrabold text-[#297858]">
-            {item.stat}
-          </p>
-          <p className="mt-1 text-[10px] uppercase tracking-wider text-white/50">
-            {item.label}
-          </p>
-        </div>
+{
+  n: "01",
+  title: "Site Visit & Measurement",
+  summary: "On-site survey to capture full coil specification and operating conditions.",
+  outcome: "Ensures accurate replacement or performance upgrade.",
+  points: [
+    "Dimensions, connections and airflow recorded",
+    "Tube, fin and material spec confirmed",
+    "Operating conditions and constraints assessed",
+  ],
+},
+{
+  n: "02",
+  title: "Source or Manufacture",
+  summary: "Replacement sourced or custom-built depending on system requirement.",
+  outcome: "Matches or improves original duty performance.",
+  points: [
+    "Standard units sourced where possible",
+    "Bespoke manufacture for non-standard coils",
+    "Duty and performance verified against original",
+  ],
+},
+{
+  n: "03",
+  title: "Replacement Works",
+  summary: "Old coil removed and new unit installed with full reinstatement.",
+  outcome: "Minimal downtime with controlled changeover.",
+  points: [
+    "Existing coil removed and casing prepared",
+    "Pipework connected and pressure tested",
+    "Insulation and access reinstated",
+  ],
+},
+{
+  n: "04",
+  title: "Test & Commission",
+  summary: "System balanced, tested, and returned to service.",
+  outcome: "Verified performance and safe operation.",
+  points: [
+    "Flow rates balanced to design",
+    "Controls and valves checked",
+    "Handover report issued",
+  ],
+},
+      ].map((step, i) => (
+        <ScrollReveal key={step.n} delay={i * 60} className="h-full">
+          <div className="h-full border border-white/10 bg-white/5 p-5 flex flex-col">
+            <span className="font-display text-4xl font-extrabold text-[#297858]/25">
+              {step.n}
+            </span>
+
+            <h3 className="mt-2 font-display text-sm font-extrabold uppercase text-white">
+              {step.title}
+            </h3>
+
+            <p className="mt-2 text-xs leading-5 text-white/85">
+              {step.body}
+            </p>
+
+            <ul className="mt-3 space-y-1.5">
+              {step.points.map((p) => (
+                <li key={p} className="flex items-start gap-2 text-[11px] text-white/80">
+                  <span className="mt-1.5 h-1 w-1.5 shrink-0 bg-[#297858]" />
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </ScrollReveal>
       ))}
     </div>
-
-    <div className="mt-10 flex flex-wrap items-center gap-6">
-      <Link
-        href="/case-studies/marriott-forest-of-arden-pool-ventilation"
-        className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] transition hover:text-white"
-      >
-        See full case study →
-      </Link>
-      <Link
-        href="/case-studies"
-        className="text-sm font-semibold text-white/60 transition hover:text-white"
-      >
-        All case studies →
-      </Link>
-    </div>
-
-  </ScrollReveal>
-</Container>
+  </Container>
 </section>
-      {/* ── 6. HOW IT WORKS ── 4-step process ───────────────────────────── */}
-      <section className="bg-white py-16 sm:py-20">
-        <Container>
-          <ScrollReveal className="mb-10">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              How it works
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-              From Survey to<br />Return to Service
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-          </ScrollReveal>
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                n: "01",
-                title: "Site Visit & Measurement",
-                body: "We attend site to record existing coil dimensions, connection sizes, tube and fin arrangement, and flow rates.",
-                points: ["Face dimensions and clearances measured", "Connection sizes and flow rates recorded", "Tube/fin pitch and material spec confirmed"],
-              },
-              {
-                n: "02",
-                title: "Source or Manufacture",
-                body: "Where a direct replacement exists, we source it. Where not — or where performance can be improved — we manufacture to order.",
-                points: ["Standard sizes sourced with short lead time", "Bespoke manufacture for non-standard units", "Performance matching verified against original duty"],
-              },
-              {
-                n: "03",
-                title: "Replacement Works",
-                body: "Old coil removed, casing cleaned, replacement fitted including pipework, pressure testing, and insulation.",
-                points: ["Casing cleaned and inspected", "Pipework connections made and pressure tested", "Insulation and access panels reinstated"],
-              },
-              {
-                n: "04",
-                title: "Test & Commission",
-                body: "Flow rates set and verified. Controls checked. AHU returned to service with performance confirmed.",
-                points: ["Flow rates balanced against design", "Controls and valve operation checked", "Handover record and performance confirmation"],
-              },
-            ].map((step, i) => (
-              <ScrollReveal key={step.n} delay={i * 60}>
-                <div className="border border-slate-200 bg-[#f7f6f5] p-5">
-                  <span className="font-display text-4xl font-extrabold text-[#297858]/15">{step.n}</span>
-                  <h3 className="mt-2 font-display text-sm font-extrabold uppercase text-slate-900">{step.title}</h3>
-                  <p className="mt-2 text-xs leading-5 text-slate-500">{step.body}</p>
-                  <ul className="mt-3 space-y-1.5">
-                    {step.points.map((p) => (
-                      <li key={p} className="flex items-start gap-2 text-[11px] text-slate-400">
-                        <span className="mt-1.5 h-1 w-1.5 shrink-0 bg-[#297858]" />
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </Container>
-      </section>
 
       {/* ── 7. OFFER ── free coil survey ─────────────────────────────────── */}
       <section className="bg-[#f7f6f5] py-14">
@@ -723,7 +681,7 @@ export default function CoilReplacementPage() {
                 <div className="mt-5 flex flex-col gap-2 border-t border-white/10 pt-4">
                   <div className="flex items-center gap-2 text-[11px] text-white/35">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                    Engineering response within 24 working hours
+                    Engineering response within one working day
                   </div>
                   <div className="flex items-center gap-2 text-[11px] text-white/35">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />

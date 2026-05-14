@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "./Container";
-import { NewsletterForm } from "@/components/forms/NewsletterForm";
 
 const ahuLinks = [
   { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
@@ -31,37 +30,21 @@ const companyLinks = [
 
 export function Footer() {
   return (
-    <footer>
+    <footer className="relative bg-[#0b0d10]">
+      
+    
+      {/* MAIN FOOTER */}
+      <div className="border-t border-white/5 bg-[#0b0d10]">
+        <Container className="py-16">
 
-          {/* Newsletter band */}
-          <div className="border-t border-zinc-800 bg-[#111418]">
-          <Container className="py-8">
-            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-              <div className="max-w-md">
-                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-                  Engineer Insights
-                </p>
-                <p className="mt-1 text-base font-semibold text-white">
-                  Technical guides from 40 years in the field.
-                </p>
-                <p className="mt-1 text-sm text-zinc-400">
-                  Join our mailing list for updates, advice and offers. 
-                </p>
-              </div>
-              <div className="w-full sm:w-auto sm:min-w-[320px]">
-                <NewsletterForm source="footer" compact />
-              </div>
-            </div>
-          </Container>
-        </div>
-      {/* Main footer */}
-      <div className="border-t-[3px] border-emerald-600 bg-zinc-950">
-        <Container className="py-12">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
+          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
 
-            {/* Brand */}
-            <div className="flex flex-col gap-5">
-              <Link href="/" className="inline-block w-fit transition-opacity hover:opacity-80">
+            {/* BRAND */}
+            <div className="flex flex-col">
+              <Link
+                href="/"
+                className="inline-block w-fit transition-opacity hover:opacity-80"
+              >
                 <Image
                   src="/bvs-logo.webp"
                   alt="BVS Building Ventilation Solutions"
@@ -71,101 +54,99 @@ export function Footer() {
                 />
               </Link>
 
-              <p className="text-sm leading-6 text-zinc-400">
-                40+ years of AHU expertise - refurbishment, manufacturing, installation,
-                and controls. Nationwide.
+              <p className="mt-5 max-w-sm text-sm leading-7 text-zinc-400">
+                AHU refurbishment, manufacturing, installation,
+                EC fan upgrades, coil replacement, and controls.
+                Supporting commercial and critical environments UK-wide.
               </p>
 
-              <div className="flex flex-col gap-1.5 text-sm">
-                <a href="tel:01256518170" className="text-zinc-300 hover:text-white">
+              <div className="mt-6 flex flex-col gap-2 text-sm">
+                <a
+                  href="tel:01256518170"
+                  className="text-zinc-300 transition-colors hover:text-white"
+                >
                   01256 518170
                 </a>
-                <a href="mailto:info@bvs-ltd.co.uk" className="text-zinc-300 hover:text-white">
+
+                <a
+                  href="mailto:info@bvs-ltd.co.uk"
+                  className="text-zinc-300 transition-colors hover:text-white"
+                >
                   info@bvs-ltd.co.uk
                 </a>
               </div>
 
-              <div className="flex items-center gap-2 pt-1">
+              {/* SOCIALS */}
+              <div className="mt-6 flex items-center gap-2">
                 <a
                   href="https://www.linkedin.com"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn"
-                  className="inline-flex h-8 w-8 items-center justify-center border border-zinc-700 text-[11px] font-bold text-zinc-400 transition-colors hover:border-zinc-500 hover:text-white"
+                  className="inline-flex h-9 w-9 items-center justify-center border border-white/10 text-sm font-semibold text-zinc-400 transition-colors hover:border-white/20 hover:text-white"
                 >
                   in
                 </a>
+
                 <a
                   href="https://www.facebook.com"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Facebook"
-                  className="inline-flex h-8 w-8 items-center justify-center border border-zinc-700 text-[11px] font-bold text-zinc-400 transition-colors hover:border-zinc-500 hover:text-white"
+                  className="inline-flex h-9 w-9 items-center justify-center border border-white/10 text-sm font-semibold text-zinc-400 transition-colors hover:border-white/20 hover:text-white"
                 >
                   f
                 </a>
               </div>
             </div>
 
-            {/* AHU Solutions */}
-            <div>
-              <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-500">
-                AHU Solutions
-              </p>
-              <ul className="flex flex-col gap-2">
-                {ahuLinks.map((l) => (
-                  <li key={l.href}>
-                    <Link href={l.href} className="text-sm text-zinc-400 transition-colors hover:text-white">
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/* LINKS */}
+            {[
+              { title: "AHU Solutions", links: ahuLinks },
+              { title: "Other Services", links: serviceLinks },
+              { title: "Company", links: companyLinks },
+            ].map((group) => (
+              <div key={group.title}>
+                <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-500">
+                  {group.title}
+                </p>
 
-            {/* Services */}
-            <div>
-              <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-500">
-                Other Services
-              </p>
-              <ul className="flex flex-col gap-2">
-                {serviceLinks.map((l) => (
-                  <li key={l.href}>
-                    <Link href={l.href} className="text-sm text-zinc-400 transition-colors hover:text-white">
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Company */}
-            <div>
-              <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-500">
-                Company
-              </p>
-              <ul className="flex flex-col gap-2">
-                {companyLinks.map((l) => (
-                  <li key={l.href}>
-                    <Link href={l.href} className="text-sm text-zinc-400 transition-colors hover:text-white">
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <ul className="flex flex-col gap-3">
+                  {group.links.map((l) => (
+                    <li key={l.href}>
+                      <Link
+                        href={l.href}
+                        className="text-sm text-zinc-400 transition-colors hover:text-white"
+                      >
+                        {l.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
 
           </div>
         </Container>
 
-    
+        {/* BOTTOM BAR */}
+        <div className="border-t border-white/5">
+          <Container className="flex flex-col gap-3 py-5 text-xs text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
 
-        {/* Copyright bar */}
-        <div className="border-t border-zinc-800">
-          <Container className="py-4">
-            <p className="text-xs text-zinc-600">
-              &copy; {new Date().getFullYear()} Building Ventilation Solutions Ltd.
+            <p>
+              © {new Date().getFullYear()} Building Ventilation Solutions Ltd.
             </p>
+
+            <div className="flex gap-5">
+              <Link href="/privacy-policy" className="hover:text-zinc-400">
+                Privacy Policy
+              </Link>
+
+              <Link href="/terms" className="hover:text-zinc-400">
+                Terms
+              </Link>
+            </div>
+
           </Container>
         </div>
       </div>

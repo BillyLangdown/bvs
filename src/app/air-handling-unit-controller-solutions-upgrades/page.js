@@ -104,7 +104,7 @@ export default function ControllerUpgradesPage() {
       <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
         <Container>
           <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading UK organisations
+            Trusted by leading organisations
           </p>
           <div className="relative">
             <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
@@ -145,7 +145,7 @@ export default function ControllerUpgradesPage() {
             {[
               {
                 impact: "Energy Waste",
-                badge: "15–30% excess consumption",
+                badge: "Significant energy waste",
                 detail: "AHUs with outdated or misconfigured controls run fans, heating, and cooling when they should not. Every hour of unnecessary operation adds to the energy bill — and goes unmeasured.",
               },
               {
@@ -214,7 +214,7 @@ export default function ControllerUpgradesPage() {
 
               {[
                 { label: "AHU plant", upgrade: "Retained and extended", replace: "Removed and replaced" },
-                { label: "BMS integration", upgrade: "Included as standard", replace: "Depends on specification" },
+                { label: "BMS integration", upgrade: "Included on most installations", replace: "Depends on specification" },
                 { label: "Energy performance", upgrade: "Improved through controls optimisation", replace: "Depends on new plant specification" },
                 { label: "Right when", upgrade: "Controls are the root cause", replace: "Mechanical plant is at end of life" },
                 { label: "Consider if", upgrade: "Plant is mechanically sound", replace: "Structural or mechanical failure present" },
@@ -387,7 +387,7 @@ export default function ControllerUpgradesPage() {
       </section>
 
       {/* ── WHAT YOU GET ── stats + equal-height cards ────────────────── */}
-      <section className="bg-[#f7f6f5] py-16 sm:py-20">
+      <section className="bg-white py-16 sm:py-20">
         <Container>
           <ScrollReveal className="mb-10">
             <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
@@ -400,22 +400,46 @@ export default function ControllerUpgradesPage() {
           </ScrollReveal>
 
           {/* Stats row */}
-          <div className="mb-6 grid gap-px bg-slate-200 sm:grid-cols-3">
-            {[
-              { stat: "15–30%", label: "Typical AHU energy reduction", context: "Through improved sequences, demand-controlled ventilation, and setpoint optimisation" },
-              { stat: "22%", label: "Achieved — 14-site FM programme", context: "Measured post-commissioning energy reduction versus pre-upgrade baseline across a commercial estate" },
-              { stat: "100%", label: "BMS integration where required", context: "Open-protocol controllers installed as standard — compatible with all major BMS platforms" },
-            ].map((item) => (
-              <ScrollReveal key={item.label}>
-                <div className="flex flex-col bg-white p-7">
-                  <p className="font-display text-4xl font-extrabold text-[#297858]">{item.stat}</p>
-                  <p className="mt-2 text-xs font-bold uppercase tracking-[0.15em] text-slate-500">{item.label}</p>
-                  <div className="my-4 h-px bg-slate-100" />
-                  <p className="text-xs leading-5 text-slate-400">{item.context}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <div className="mb-6 grid gap-px bg-slate-200 sm:grid-cols-3 items-stretch">
+  {[
+    {
+      stat: "15–30%",
+      label: "Typical AHU energy reduction",
+      context:
+        "Through improved sequences, demand-controlled ventilation, and setpoint optimisation",
+    },
+    {
+      stat: "22%",
+      label: "Achieved — 14-site FM programme",
+      context:
+        "Measured post-commissioning energy reduction versus pre-upgrade baseline across a commercial estate",
+    },
+    {
+      stat: "100%",
+      label: "BMS integration where required",
+      context:
+        "Open-protocol controllers installed as standard — compatible with all major BMS platforms",
+    },
+  ].map((item) => (
+    <ScrollReveal key={item.label} className="h-full">
+      <div className="flex h-full flex-col bg-[#f7f6f5] p-7">
+        <p className="font-display text-4xl font-extrabold text-[#297858]">
+          {item.stat}
+        </p>
+
+        <p className="mt-2 text-xs font-bold uppercase tracking-[0.15em] text-slate-500">
+          {item.label}
+        </p>
+
+        <div className="my-4 h-px bg-slate-100" />
+
+        <p className="text-xs leading-5 text-slate-700">
+          {item.context}
+        </p>
+      </div>
+    </ScrollReveal>
+  ))}
+</div>
 
           {/* Equal-height capability cards */}
           <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -426,7 +450,7 @@ export default function ControllerUpgradesPage() {
               { label: "ESOS documentation", detail: "Controls upgrades count towards ESOS audits. We provide the energy baseline and post-upgrade records at handover." },
             ].map((item, i) => (
               <ScrollReveal key={item.label} delay={i * 60} className="h-full">
-                <div className="flex h-full flex-col border-t-2 border-[#297858] bg-white p-5">
+                <div className="flex h-full flex-col border-t-2 border-[#297858] bg-[#f7f6f5] p-5">
                   <p className="font-display text-sm font-extrabold uppercase text-slate-900">{item.label}</p>
                   <p className="mt-2 text-xs leading-5 text-slate-500">{item.detail}</p>
                 </div>
@@ -684,7 +708,7 @@ export default function ControllerUpgradesPage() {
                 <div className="mt-5 flex flex-col gap-2 border-t border-white/10 pt-4">
                   <div className="flex items-center gap-2 text-[11px] text-white/35">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                    Engineering response within 24 working hours
+                    Engineering response within one working day
                   </div>
                   <div className="flex items-center gap-2 text-[11px] text-white/35">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />

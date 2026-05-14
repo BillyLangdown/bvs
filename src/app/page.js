@@ -123,7 +123,7 @@ const services = [
     href: "/air-handling-unit-controller-solutions-upgrades",
     highlight: false,
     tag: null,
-    photo: "/ahu-refurbishment-hero.png",
+    photo: "/ahu-controller.png",
     photoAlt: "AHU controller upgrade — modern controls panel installed in air handling unit",
   },
 ];
@@ -170,24 +170,24 @@ const casePlaceholders = [
     type: "EC Fan Upgrade",
     sector: "Leisure Centre",
     outcome: "Dorset leisure centre AHU was suffering fan failures and uncontrolled humidity across the pool hall. BVS retrofitted direct-drive EC fans, restoring full airflow and eliminating belt-driven maintenance overhead.",
-    photo: "/ec-fan-before-after.png",
-    photoAlt: "Before and after EC fan upgrade on a leisure centre AHU",
+    photo: "/dorset-leisure-centre-case-study.webp",
+    photoAlt: "Dorset leisure centre AHU — EC fan upgrade carried out by BVS",
     href: "/case-studies/leisure-centre-dorset-ec-fan-upgrade",
   },
   {
     type: "AHU Refurbishment",
     sector: "Healthcare",
     outcome: "NHS Hammersmith & Fulham AHUs refurbished to full specification — covering fan repairs, corrosion treatment, damper replacement, and new components, completed without disruption to clinical services.",
-    photo: "/ahu-refurbishment-worker.png",
-    photoAlt: "BVS engineer carrying out AHU refurbishment works on-site",
+    photo: "/nhs-hammersmith-fulham-case-study.webp",
+    photoAlt: "NHS Hammersmith & Fulham — AHU refurbishment carried out by BVS",
     href: "/case-studies/nhs-hammersmith-ahu-refurbishment",
   },
   {
     type: "AHU Manufacturing",
     sector: "Hotel",
     outcome: "Warner Leisure Hotel's Gunton Hall required a bespoke replacement AHU for their swimming pool — tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
-    photo: "/gunton-hall.jpg",
-    photoAlt: "Gunton Hall Warner Leisure Hotel — bespoke AHU manufactured and installed by BVS",
+    photo: "/warner-hotel-gunton-case-study.webp",
+    photoAlt: "Warner Leisure Hotel Gunton Hall — bespoke AHU manufactured and installed by BVS",
     href: "/case-studies/warner-leisure-hotel-gunton-hall-ahu",
   },
 ];
@@ -243,6 +243,7 @@ export default function Home() {
               AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls. <br/>
               Trusted by NHS, Disney, and Marriott. Serving HVAC contractors, M&amp;E consultants, and estates teams UK-wide.
             </p>
+            
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
@@ -287,7 +288,7 @@ export default function Home() {
   <Container>
 
     <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-      Trusted by leading UK organisations
+      Trusted by leading organisations
     </p>
 
     {/* LOGOS */}
@@ -364,152 +365,180 @@ export default function Home() {
   <div className="mt-4 h-[3px] w-12 bg-[#297858]" />
 
   <p className="mt-5 max-w-lg text-sm leading-7 text-slate-600">
-    AHU specialists covering refurbishment, EC fan upgrades, coil replacement,
-    new installation, controls, and decarbonisation support.
+    AHU specialists covering refurbishment, EC fan upgrades, coil replacement, new installation, controls, and decarbonisation support.
   </p>
 
   <p className="mt-3 text-xs leading-6 text-slate-500">
-    Working on a specification or responding to a client brief? Each service
-    below lists the key diagnostic indicators, or{" "}
-    <Link
-      href="/contact"
-      className="font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
-    >
-      speak to an engineer →
-    </Link>
-  </p>
+  Not sure which service applies, or need something not listed here?{" "}
+  <Link
+    href="/contact"
+    className="font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
+  >
+    Speak directly with an engineer →
+  </Link>
+</p>
 </ScrollReveal>
-    {/* FEATURED */}
-    <div className="grid gap-6 lg:grid-cols-2">
-      {services.filter((s) => s.highlight).map((s) => (
-        <ScrollReveal key={s.title}>
-          <Link
-            href={s.href}
-            className="group relative flex h-full flex-col overflow-hidden border border-black/5 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)]"
-          >
-            <div className="relative h-[320px] overflow-hidden">
-              <Image
-                src={s.photo}
-                alt={s.photoAlt || s.title}
-                fill
-                unoptimized
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+    
+   {/* FEATURED */}
+<div className="grid gap-6 lg:grid-cols-2">
+  {services.filter((s) => s.highlight).map((s) => (
+    <ScrollReveal key={s.title}>
+      <Link
+        href={s.href}
+        className="group flex h-full flex-col overflow-hidden border border-black/5 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)]"
+      >
+        {/* IMAGE */}
+        <div className="relative h-[300px] overflow-hidden">
+          <Image
+            src={s.photo}
+            alt={s.photoAlt || s.title}
+            fill
+            unoptimized
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+          />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-              <div className="absolute left-6 top-6">
-                <span className="bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#111418]">
-                  {s.tag}
-                </span>
-              </div>
-
-              <div className="absolute bottom-0 left-0 w-full p-6">
-                <h3 className="max-w-md text-2xl font-extrabold uppercase leading-tight text-white">
-                  {s.title}
-                </h3>
-
-                <p className="mt-2 max-w-lg text-sm leading-6 text-white/80">
-                  {s.context}
-                </p>
-              </div>
+          {/* TAG */}
+          {s.tag && (
+            <div className="absolute left-5 top-5">
+              <span className="bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#111418]">
+                {s.tag}
+              </span>
             </div>
+          )}
 
-            <div className="flex flex-1 flex-col p-6">
-              <p className="text-sm font-semibold text-[#297858]">
-                {s.outcome}
-              </p>
+          {/* TITLE */}
+          <div className="absolute bottom-5 left-5 right-5">
+            <h3 className="font-display text-2xl font-extrabold uppercase leading-tight text-white">
+              {s.title}
+            </h3>
+          </div>
+        </div>
 
-              <p className="mt-3 text-sm leading-7 text-slate-600">
-                {s.plain}
-              </p>
+        {/* CONTENT */}
+        <div className="flex flex-1 flex-col p-6">
 
-              <div className="mt-6 border-t border-slate-200 pt-5">
-                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
-                  Common indicators
-                </p>
+          {/* OUTCOME */}
+          <div className="border-l-2 border-[#297858] pl-4">
+            <p className="text-[10px] font-bold uppercase  text-slate-400">
+              Typical outcome
+            </p>
 
-                <div className="mt-4 grid gap-2 sm:grid-cols-2">
-                  {s.signs.map((sign) => (
-                    <div
-                      key={sign}
-                      className="flex items-start gap-2 text-sm text-slate-600"
-                    >
-                      <div className="mt-[7px] h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                      <span>{sign}</span>
-                    </div>
-                  ))}
+            <p className="mt-1 text-base font-semibold leading-6 text-slate-900">
+              {s.outcome}
+            </p>
+          </div>
+
+          {/* DESCRIPTION */}
+          <p className="mt-5 text-sm leading-5 text-slate-600">
+            {s.plain}
+          </p>
+
+          {/* INDICATORS */}
+          <div className="mt-6">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
+              Common indicators
+            </p>
+
+            <div className="mt-3 flex flex-col gap-2">
+              {s.signs.slice(0, 3).map((sign) => (
+                <div
+                  key={sign}
+                  className="flex items-start gap-2 text-sm text-slate-600"
+                >
+                  <div className="mt-[7px] h-1.5 w-1.5 rounded-full bg-[#297858]" />
+                  <span>{sign}</span>
                 </div>
-              </div>
-
-              <div className="mt-auto pt-8">
-                <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] transition group-hover:gap-3">
-                  Learn more <ArrowIcon />
-                </div>
-              </div>
+              ))}
             </div>
-          </Link>
-        </ScrollReveal>
-      ))}
-    </div>
+          </div>
 
-    {/* FULL SERVICES */}
-    <div className="mt-20">
-      <div className="mb-8 flex items-center gap-5">
-        <div className="h-px flex-1 bg-black/10" />
+          {/* CTA */}
+          <div className="mt-auto pt-8">
+            <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] transition-all duration-200 group-hover:gap-3">
+              Learn more
+              <ArrowIcon />
+            </div>
+          </div>
+        </div>
+      </Link>
+    </ScrollReveal>
+  ))}
+</div>
 
-        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">
-          Full service capability
-        </p>
+{/* FULL SERVICES */}
+<div className="mt-20">
+  <div className="mb-8 flex items-center gap-5">
+    <div className="h-px flex-1 bg-black/10" />
 
-        <div className="h-px flex-1 bg-black/10" />
+    <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">
+      Full service capability
+    </p>
+
+    <div className="h-px flex-1 bg-black/10" />
+  </div>
+
+  <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+    {services.filter((s) => !s.highlight).map((s, i) => (
+      <ScrollReveal key={s.title} delay={i * 40}>
+        <Link
+          href={s.href}
+          className="group flex h-full flex-col overflow-hidden border border-black/5 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
+        >
+          {/* IMAGE */}
+          <div className="relative h-44 overflow-hidden">
+            <Image
+              src={s.photo}
+              alt={s.title}
+              fill
+              unoptimized
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+
+            <div className="absolute bottom-4 left-4 right-4">
+              <h3 className="font-display text-[15px] font-extrabold uppercase leading-tight text-white">
+                {s.title}
+              </h3>
+            </div>
+          </div>
+
+          {/* CONTENT */}
+          <div className="flex flex-1 flex-col p-5">
+
+
+  {/* PRIMARY OUTCOME */}
+  <p className="mt-2 text-[13px] font-semibold leading-5 text-slate-800">
+    {s.outcome}
+  </p>
+
+  {/* KEY SIGNALS (only first 2 for scanning) */}
+  <div className="mt-3 space-y-2">
+    {s.signs.slice(0, 2).map((sign) => (
+      <div
+        key={sign}
+        className="flex items-start gap-2 text-[12.5px] leading-5 text-slate-600"
+      >
+        <div className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
+        <span>{sign}</span>
       </div>
+    ))}
+  </div>
 
-      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-        {services.filter((s) => !s.highlight).map((s, i) => (
-          <ScrollReveal key={s.title} delay={i * 40}>
-            <Link
-              href={s.href}
-              className="group flex h-full flex-col overflow-hidden border border-black/5 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
-            >
-              <div className="relative h-44 overflow-hidden">
-                <Image
-                  src={s.photo}
-                  alt={s.title}
-                  fill
-                  unoptimized
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-base font-extrabold uppercase leading-tight text-white">
-                    {s.title}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-1 flex-col p-5">
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#297858]">
-                  {s.outcome}
-                </p>
-
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  {s.plain}
-                </p>
-
-                <div className="mt-auto pt-6">
-                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] transition group-hover:gap-3">
-                    Learn more <ArrowIcon />
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </ScrollReveal>
-        ))}
-      </div>
+  {/* CTA */}
+  <div className="mt-auto pt-6">
+    <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] transition group-hover:gap-3">
+      Learn more <ArrowIcon />
     </div>
+  </div>
+</div>
+        </Link>
+      </ScrollReveal>
+    ))}
+  </div>
+</div>
 
     {/* ADDITIONAL SERVICES */}
 <div className="mt-16">
@@ -589,7 +618,7 @@ export default function Home() {
     <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
 
       {/* LEFT CONTENT */}
-      <div className="max-w-md">
+      <div className="max-w-xl">
         <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
           Accredited &amp; Approved
         </p>
@@ -601,8 +630,7 @@ export default function Home() {
         <div className="mt-5 h-[2px] w-10 bg-[#297858]" />
 
         <p className="mt-5 text-sm leading-6 text-slate-500">
-          Gas Safe registered, Constructionline Gold certified and approved
-          SafeContractor engineers working across commercial and critical environments.
+        Gas Safe registered, Constructionline Gold certified, and SafeContractor approved.
         </p>
       </div>
 
@@ -658,9 +686,7 @@ export default function Home() {
         </h2>
         <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
         <p className="mt-6 max-w-lg text-[15px] leading-7 text-white/65">
-          Our brochure includes information and details on the wide range of AHU Refurbishment
-          benefits and how our team provides detailed surveys and guidance based on the condition
-          of your AHUs.
+        Download our AHU refurbishment brochure, including survey examples, upgrade options, and energy-efficiency guidance.
         </p>
         <ul className="mt-6 flex flex-col gap-2.5">
           {[

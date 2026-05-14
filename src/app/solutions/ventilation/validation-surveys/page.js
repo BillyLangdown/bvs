@@ -212,7 +212,7 @@ export default function ValidationSurveysPage() {
       <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
         <Container>
           <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading UK organisations
+            Trusted by leading organisations
           </p>
           <div className="relative">
             <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
@@ -294,7 +294,7 @@ export default function ValidationSurveysPage() {
         </Container>
       </section>
 
-      {/* Final CTA */}
+      {/* Final CTA
       <section className="bg-[#111418] py-16">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -332,7 +332,7 @@ export default function ValidationSurveysPage() {
             </div>
           </div>
         </Container>
-      </section>
+      </section> */}
 
     </div>
   );

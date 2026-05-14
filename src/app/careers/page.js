@@ -1,82 +1,18 @@
 import Link from "next/link";
 import { Container } from "@/components/site/Container";
-import ScrollReveal from "@/components/ui/ScrollReveal";
+import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
   title: "Careers | BVS Building Ventilation Solutions",
   description:
-    "Engineering roles at BVS. We work on air handling units across healthcare, hotels, defence, education, and leisure sites throughout the UK. In-house team. Technical work.",
+    "Join BVS — a fast-growing HVAC specialist driven by practical problem-solving. Send your CV and cover letter to be considered for current and future roles.",
 };
-
-const whyBVS = [
-  {
-    title: "Technical Depth",
-    body: "The work is not generic maintenance. It is AHU refurbishment, EC fan conversion, bespoke coil manufacture, controls integration, and commissioning. The scope requires real engineering knowledge and builds it.",
-  },
-  {
-    title: "Varied Sites",
-    body: "One week might be a live NHS hospital. The next, a secure government facility or a hotel pool plant room. The environments change. The engineering problems change. It is not repetitive work.",
-  },
-  {
-    title: "One Team",
-    body: "We do not sub-contract the delivery. The engineer who surveys a unit is often the same person who carries out the works. That means direct ownership of quality and outcome — not handoffs.",
-  },
-  {
-    title: "Established, Not Corporate",
-    body: "40 years in business. Small enough that decisions are made quickly and the people doing the work are known to the people directing it. Large enough to handle complex programmes across multiple sites.",
-  },
-];
-
-const roleTypes = [
-  {
-    area: "Field Engineering",
-    description:
-      "On-site AHU works: refurbishment, EC fan installation, coil replacement, and associated mechanical works. Experience with plant room environments, HVAC equipment, and in-situ installation is relevant.",
-    relevant: ["AHU / HVAC engineering background", "Mechanical installation experience", "Plant room familiarity", "Willingness to travel for site-based work"],
-  },
-  {
-    area: "Controls & Commissioning",
-    description:
-      "AHU controller replacement, DDC panel build and installation, BMS integration, and full commissioning. Experience with BACnet, Modbus, or Trend preferred. Electrical or controls background.",
-    relevant: ["DDC / BMS controls experience", "Electrical installation or panel-build background", "Commissioning experience", "Open-protocol protocols: BACnet, Modbus, LON"],
-  },
-  {
-    area: "Estimating & Technical Sales",
-    description:
-      "Scope interpretation, specification writing, and client-facing technical discussions. Strong HVAC background required — this is not a pure sales role. Client confidence comes from technical credibility.",
-    relevant: ["HVAC technical knowledge", "Scope writing and cost estimation", "Ability to interpret survey findings", "Client-facing communication"],
-  },
-  {
-    area: "Survey & Assessment",
-    description:
-      "On-site AHU condition surveys, performance assessments, and refurbishment feasibility evaluation. The findings directly drive the scope of works, so accuracy and thoroughness matter.",
-    relevant: ["AHU and ventilation equipment knowledge", "Site assessment and reporting experience", "Understanding of refurbishment viability factors", "Clean driving licence"],
-  },
-];
-
-const hiringSteps = [
-  {
-    n: "01",
-    title: "Send Your CV",
-    body: "Email your CV with a brief note on your background and what kind of role you are looking for. No covering letter required — keep it direct.",
-  },
-  {
-    n: "02",
-    title: "Initial Conversation",
-    body: "If there is a match — current vacancy or planned hire — we will arrange a call or meeting to understand your background and discuss the role in more detail.",
-  },
-  {
-    n: "03",
-    title: "Site or Technical Discussion",
-    body: "Depending on the role, we may arrange a site visit or a more detailed technical discussion to confirm fit on both sides. No formal assessment centre.",
-  },
-];
 
 export default function CareersPage() {
   return (
     <div>
 
-      {/* ── HERO ──────────────────────────────────────────────────────── */}
+      {/* Hero */}
       <section className="bg-[#111418] py-16 sm:py-20">
         <Container>
           <div className="max-w-3xl">
@@ -84,173 +20,91 @@ export default function CareersPage() {
               Careers
             </p>
             <h1 className="font-display text-3xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
-              Engineering Work.<br />Real Sites.<br />One Team.
+              Opportunities At<br />Building Ventilation<br />Solutions
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/65">
-              BVS is a specialist air handling unit contractor. We survey, refurbish, upgrade, and install ventilation plant across some of the most demanding building environments in the UK. If that kind of work interests you, we want to hear from you.
+              We are a fast-growing business driven by practical problem-solving to support our customers. If you think you have something to offer, we want to hear from you.
             </p>
           </div>
         </Container>
       </section>
 
-      {/* ── WHY BVS ───────────────────────────────────────────────────── */}
+      {/* Apply section */}
       <section className="bg-surface-2 py-16 sm:py-20">
         <Container>
-          <ScrollReveal className="mb-10 max-w-2xl">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              Working Here
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
-              What It Actually<br />Looks Like
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-          </ScrollReveal>
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start">
 
-          <div className="grid gap-5 sm:grid-cols-2">
-            {whyBVS.map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 70}>
-                <div className="border border-slate-200 bg-white p-6">
-                  <div className="mb-2 flex items-center gap-3">
-                    <div className="h-1 w-6 bg-[#297858]" />
-                    <h3 className="font-display text-sm font-extrabold uppercase text-slate-900">
-                      {item.title}
-                    </h3>
-                  </div>
-                  <p className="text-sm leading-6 text-slate-500">{item.body}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ── ROLE TYPES ────────────────────────────────────────────────── */}
-      <section className="bg-[#111418] py-16 sm:py-20">
-        <Container>
-          <ScrollReveal className="mb-10 max-w-2xl">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              Types of Role
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-3xl">
-              Where We Hire
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-            <p className="mt-4 text-sm leading-6 text-white/55">
-              We do not always have live vacancies in every area. But if your background matches one of these, it is worth sending a speculative application. We maintain a list of strong candidates for when roles arise.
-            </p>
-          </ScrollReveal>
-
-          <div className="grid gap-5 sm:grid-cols-2">
-            {roleTypes.map((role, i) => (
-              <ScrollReveal key={role.area} delay={i * 70}>
-                <div className="border border-white/10 bg-white/5 p-6">
-                  <h3 className="font-display text-base font-extrabold uppercase text-[#297858]">
-                    {role.area}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-white/65">{role.description}</p>
-                  <ul className="mt-4 space-y-2">
-                    {role.relevant.map((r) => (
-                      <li key={r} className="flex items-start gap-2 text-xs text-white/45">
-                        <div className="mt-1.5 h-1 w-3 shrink-0 bg-[#297858]" />
-                        {r}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ── CURRENT VACANCIES ─────────────────────────────────────────── */}
-      <section className="bg-white py-16 sm:py-18">
-        <Container>
-          <ScrollReveal className="mb-8 max-w-2xl">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              Vacancies
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
-              Current Openings
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-          </ScrollReveal>
-
-          <ScrollReveal delay={60}>
-            <div className="border border-dashed border-slate-300 bg-surface-2 p-8 sm:p-10">
-              <p className="font-display text-base font-extrabold uppercase text-slate-700">
-                No vacancies currently listed
-              </p>
-              <p className="mt-3 max-w-xl text-sm leading-7 text-slate-500">
-                We do not always advertise roles publicly. If your background is relevant — field engineering, controls, estimating, or survey — send us your CV speculatively. When something comes up, we go to our list of known candidates first.
-              </p>
-              <Link
-                href="mailto:info@bvs.co.uk"
-                className="mt-6 inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-              >
-                Send a speculative CV →
-              </Link>
-            </div>
-          </ScrollReveal>
-        </Container>
-      </section>
-
-      {/* ── HOW WE HIRE ───────────────────────────────────────────────── */}
-      <section className="bg-surface-2 py-14 sm:py-16">
-        <Container>
-          <ScrollReveal className="mb-10">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              Process
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">
-              How We Hire
-            </h2>
-            <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
-          </ScrollReveal>
-
-          <div className="grid gap-6 sm:grid-cols-3">
-            {hiringSteps.map((step, i) => (
-              <ScrollReveal key={step.n} delay={i * 80}>
-                <div className="flex gap-5">
-                  <p className="font-display text-3xl font-extrabold text-[#297858] opacity-50 shrink-0">
-                    {step.n}
-                  </p>
-                  <div>
-                    <h3 className="font-display text-sm font-extrabold uppercase text-slate-900">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-500">{step.body}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ── CTA ───────────────────────────────────────────────────────── */}
-      <section className="bg-[#111418] py-12">
-        <Container>
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            {/* Left col */}
             <div>
-              <h2 className="font-display text-xl font-extrabold uppercase text-white">
-                Think you&apos;d be a good fit?
-              </h2>
-              <p className="mt-1 text-sm text-white/55">
-                Send your CV and a brief note on your background. We will be in touch if there is a match — current or future.
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
+                Get in touch
               </p>
+              <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">
+                Send Us Your CV
+              </h2>
+              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-5 text-sm leading-7 text-slate-600">
+                We don&apos;t always advertise vacancies publicly. If your background is relevant to what we do, send your CV and a brief cover letter and we&apos;ll be in touch if there&apos;s a fit — current or future.
+              </p>
+
+              
+
+              <div className="mt-10 border-t border-slate-200 pt-8">
+                <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                  Contact directly
+                </p>
+                <div className="flex flex-col gap-3">
+                  <a
+                    href="tel:01256518170"
+                    className="inline-flex items-center gap-3 text-sm font-semibold text-slate-700 transition-colors hover:text-[#297858]"
+                  >
+                    <PhoneIcon />
+                    01256 518170
+                  </a>
+                  <a
+                    href="mailto:alex@bvs-ltd.co.uk"
+                    className="inline-flex items-center gap-3 text-sm font-semibold text-slate-700 transition-colors hover:text-[#297858]"
+                  >
+                    <MailIcon />
+                    alex@bvs-ltd.co.uk
+                  </a>
+                </div>
+              </div>
             </div>
-            <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-            >
-              Get in touch →
-            </Link>
+
+            {/* Right col — form */}
+            <div className="border border-slate-200 bg-white p-8">
+              <p className="mb-1 text-xs font-bold uppercase tracking-[0.2em] text-[#297858]">
+                Application
+              </p>
+              <p className="mb-6 text-xs text-slate-500">
+                Use the message field to tell us about your background and the kind of role you&apos;re looking for. Attach your CV by email to alex@bvs-ltd.co.uk.
+              </p>
+              <QuickQuoteForm />
+            </div>
+
           </div>
         </Container>
       </section>
 
     </div>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="shrink-0 text-[#297858]">
+      <path d="M6.5 3h3l1 5-2 1.5a16 16 0 0 0 6.5 6.5L16.5 14l5 1v3c0 1.1-.9 2-2 2C10.8 20 4 13.2 4 4.5c0-1.1.9-2 2-2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="shrink-0 text-[#297858]">
+      <path d="M4 6h16v12H4V6Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="m4 7 8 6 8-6" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+    </svg>
   );
 }

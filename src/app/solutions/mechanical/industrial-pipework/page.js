@@ -88,14 +88,14 @@ export default function IndustrialPipeworkPage() {
       {/* Hero */}
       <section className="relative min-h-[480px] overflow-hidden bg-slate-900">
         <Image
-          src="/ahu-installation.png"
+          src="/industrial-pipework-hero.webp"
           alt="Commercial pipework installation by BVS engineers"
           fill
           priority
           unoptimized
-          className="object-cover object-center opacity-40"
+          className="object-cover object-center opacity-90"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/45 to-transparent" />
 
         <Container className="relative flex min-h-[480px] items-center pt-16 pb-28">
           <div className="max-w-2xl">
@@ -224,7 +224,7 @@ export default function IndustrialPipeworkPage() {
       <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
         <Container>
           <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading UK organisations
+            Trusted by leading organisations
           </p>
           <div className="relative">
             <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />

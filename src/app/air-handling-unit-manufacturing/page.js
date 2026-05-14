@@ -8,7 +8,7 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 export const metadata = {
   title: "AHU Manufacturing | BVS Building Ventilation Solutions",
   description:
-    "Bespoke air handling unit manufacturing from our UK facility. Custom AHUs designed to specification — any size, any configuration, 6–14 week lead time. 40+ years manufacturing experience.",
+    "Bespoke air handling unit manufacturing from our UK facility. Custom AHUs designed to specification — any size, any configuration, 5–7 week lead time. 40+ years manufacturing experience.",
 };
 
 const clientLogos = [
@@ -29,7 +29,7 @@ const clientLogos = [
 const faqs = [
   {
     q: "What is the typical lead time for a bespoke AHU?",
-    a: "For most bespoke units, lead time is 6–14 weeks from drawing approval to delivery. This varies depending on complexity, size, and whether specialist components such as heat recovery or DX coils are included. We confirm lead time at quotation stage.",
+    a: "For most bespoke units, lead time is 5–7 weeks from drawing approval to delivery. This varies depending on complexity, size, and whether specialist components such as heat recovery or DX coils are included. We confirm lead time at quotation stage.",
   },
   {
     q: "Can you manufacture a replacement for an obsolete AHU?",
@@ -71,7 +71,7 @@ export default function AHUManufacturingPage() {
 />
 
 {/* softer controlled overlay (less heavy than before) */}
-<div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/20" />
+<div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-black/10" />
 
 <Container className="relative flex min-h-[620px] items-center">
 
@@ -120,7 +120,7 @@ export default function AHUManufacturingPage() {
       <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
   <Container>
     <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-      Trusted by leading UK organisations
+      Trusted by leading organisations
     </p>
 
     <div className="relative">
@@ -311,7 +311,7 @@ export default function AHUManufacturingPage() {
                     { spec: "Filtration grades", value: "G4 through to HEPA H14 — including HTM 03-01 theatre grade" },
                     { spec: "Controls options", value: "Mechanical-only or complete DDC panel, BACnet/Modbus/LON BMS integration" },
                     { spec: "Materials", value: "Galvanised steel standard; stainless steel, coated aluminium, marine grade available" },
-                    { spec: "Lead time", value: "6–14 weeks from drawing approval to delivery" },
+                    { spec: "Lead time", value: "5–7 weeks from drawing approval to delivery" },
                   ].map((row, i) => (
                     <tr key={row.spec} className={i % 2 === 0 ? "bg-white/5" : "bg-white/[0.03]"}>
                       <td className="w-44 border border-white/10 px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-white/45">
@@ -384,63 +384,69 @@ export default function AHUManufacturingPage() {
       <section className="bg-[#f7f6f5] py-20 sm:py-24">
   <Container>
 
-    <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+    <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
 
-      {/* LEFT SIDE - TEXT */}
+      {/* LEFT SIDE */}
       <ScrollReveal>
-        <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
+
+        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
           Case study
         </p>
 
-        <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
+        <h2 className="mt-3 font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
           Warner Leisure Hotel<br />
           Gunton Hall — Bespoke AHU
         </h2>
 
         <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 
-        <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-600">
-          The existing AHU at Gunton Hall&apos;s swimming pool had come to the end of its useful life. BVS investigated the existing set-up, designed and manufactured a tailor-made replacement to fit the constrained plantroom, delivered it in flatpack form, rebuilt and installed it on site, and commissioned it complete with a Trend controls panel.
-        </p>
+        {/* simplified narrative */}
+        <div className="mt-6 space-y-2 text-sm leading-6 text-slate-600">
+          <p>Replacement of end-of-life swimming pool AHU.</p>
+          <p>Custom unit engineered to match restricted plantroom space.</p>
+          <p>Full delivery: design, manufacture, install, commission.</p>
+        </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4 max-w-2xl">
+        {/* IMPROVED STATS → CHIPS (not cards anymore) */}
+        <div className="mt-8 flex flex-wrap gap-2">
           {[
-            { stat: "Bespoke", label: "AHU designed from scratch" },
-            { stat: "Flatpack", label: "Delivery for restricted access" },
-            { stat: "Trend", label: "Controls system fitted" },
-            { stat: "End-to-end", label: "Design, build, install, commission" },
+            "Bespoke design",
+            "Flatpack delivery",
+            "Trend controls",
+            "End-to-end delivery",
           ].map((item) => (
-            <div key={item.label} className="border border-slate-200 bg-white px-4 py-5">
-              <p className="font-display text-xl font-extrabold text-[#297858]">
-                {item.stat}
-              </p>
-              <p className="mt-1 text-[10px] uppercase tracking-wider text-slate-400">
-                {item.label}
-              </p>
-            </div>
+            <span
+              key={item}
+              className="rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-medium text-slate-600"
+            >
+              {item}
+            </span>
           ))}
         </div>
 
+        {/* CTA */}
         <div className="mt-10 flex flex-wrap items-center gap-6">
           <Link
             href="/case-studies/warner-leisure-hotel-gunton-hall-ahu"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] hover:text-[#1d5c42]"
           >
             See full case study →
           </Link>
 
           <Link
             href="/case-studies"
-            className="text-sm font-semibold text-slate-400 transition-colors hover:text-slate-700"
+            className="text-sm font-semibold text-slate-400 hover:text-slate-700"
           >
             All case studies →
           </Link>
         </div>
+
       </ScrollReveal>
 
-      {/* RIGHT SIDE - IMAGE */}
+      {/* RIGHT SIDE */}
       <ScrollReveal className="relative">
-        <div className="relative h-[420px] overflow-hidden border border-slate-200 bg-white shadow-sm ">
+
+        <div className="relative h-[420px] overflow-hidden border border-slate-200 bg-white shadow-sm">
 
           <Image
             src="/gunton-hall.jpg"
@@ -451,10 +457,11 @@ export default function AHUManufacturingPage() {
             sizes="(min-width: 1024px) 50vw, 100vw"
           />
 
-          {/* subtle overlay for polish (optional but helps integration) */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+          {/* softer depth instead of harsh overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
 
         </div>
+
       </ScrollReveal>
 
     </div>
@@ -464,66 +471,94 @@ export default function AHUManufacturingPage() {
 
       {/* ── 6. HOW IT WORKS ── 4-step build process ─────────────────────── */}
       <section className="bg-white py-16 sm:py-20">
-        <Container>
-          <ScrollReveal className="mb-10">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              Build process
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-              From Brief to<br />Built Unit
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-            <p className="mt-3 text-sm text-slate-500">The same sequence on every project. Every unit ships with factory test records and drawing pack.</p>
-          </ScrollReveal>
+  <Container>
+    <ScrollReveal className="mb-10">
+      <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+        Build process
+      </p>
+      <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+        From Brief to<br />Built Unit
+      </h2>
+      <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+      <p className="mt-3 text-sm text-slate-500">
+        The same sequence on every project. Every unit ships with factory test records and drawing pack.
+      </p>
+    </ScrollReveal>
 
-          <div className="grid gap-0 lg:grid-cols-4">
-            {[
-              {
-                n: "01",
-                title: "Design Brief",
-                body: "We work from a client-provided specification or develop the brief based on site survey, airflow requirements, and space constraints.",
-                points: ["Airflow, pressure, thermal, and acoustic requirements", "Space envelope, access, structural constraints", "Controls interface and BMS integration agreed"],
-              },
-              {
-                n: "02",
-                title: "Engineering & Drawing Approval",
-                body: "In-house engineering team produce full manufacturing drawings and a performance schedule for client review and approval before build commences.",
-                points: ["General arrangement and detail drawings produced", "Performance schedule with fan, coil, and filter data", "Client sign-off before manufacture starts"],
-              },
-              {
-                n: "03",
-                title: "Manufacture & Factory Test",
-                body: "Units built in our UK facility and factory-tested before despatch — fan performance, electrical continuity, and build quality checked.",
-                points: ["Built in our UK manufacturing facility", "Fan performance and electrical continuity tested", "Pre-delivery inspection available"],
-              },
-              {
-                n: "04",
-                title: "Delivery & Installation",
-                body: "Units delivered on a confirmed programme. Where installation is within scope, our engineering teams take it from delivery through to commissioned handover.",
-                points: ["Delivery programme confirmed prior to despatch", "Installation and commissioning in same contract", "O&M manuals and handover documentation issued"],
-              },
-            ].map((step, i) => (
-              <ScrollReveal key={step.n} delay={i * 70}>
-                <div className="relative flex flex-col border-b border-slate-200 p-7 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0">
-                  <div className="mb-4 flex h-9 w-9 shrink-0 items-center justify-center bg-[#111418]">
-                    <span className="font-display text-sm font-extrabold text-white">{step.n}</span>
-                  </div>
-                  <h3 className="font-display text-sm font-extrabold uppercase text-slate-900">{step.title}</h3>
-                  <p className="mt-2 text-xs leading-5 text-slate-500">{step.body}</p>
-                  <ul className="mt-4 space-y-1.5">
-                    {step.points.map((p) => (
-                      <li key={p} className="flex items-start gap-2 text-[10px] text-slate-400">
-                        <span className="mt-1 h-1 w-2 shrink-0 bg-[#297858]" />
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </Container>
-      </section>
+    {/* 🔒 THIS is the important fix */}
+    <div className="mx-auto max-w-6xl">
+      <div className="grid gap-0 lg:grid-cols-4 ">
+        {[
+          {
+            n: "01",
+            title: "Design Brief",
+            body: "Specification defined from site survey and performance needs.",
+            points: [
+              "Airflow + thermal requirements agreed",
+              "Space and access constraints captured",
+              "Controls and integration defined",
+            ],
+          },
+          {
+            n: "02",
+            title: "Engineering & Approval",
+            body: "Drawings produced and signed off before manufacture.",
+            points: [
+              "GA drawings issued",
+              "Performance schedule confirmed",
+              "Client approval before build",
+            ],
+          },
+          {
+            n: "03",
+            title: "Manufacture & Test",
+            body: "Built in UK facility and factory tested before dispatch.",
+            points: [
+              "In-house manufacture",
+              "Fan and electrical testing",
+              "Pre-delivery inspection available",
+            ],
+          },
+          {
+            n: "04",
+            title: "Delivery & Install",
+            body: "Delivered and installed to commissioning handover.",
+            points: [
+              "Scheduled delivery",
+              "Install and commission",
+              "O&M documentation supplied",
+            ],
+          },
+        ].map((step, i) => (
+          <ScrollReveal key={step.n} delay={i * 70}>
+            <div className="flex h-full flex-col border-r border-slate-200 p-6 last:border-r-0">
+              <div className="mb-4 flex h-8 w-8 items-center justify-center bg-[#111418]">
+                <span className="text-xs font-bold text-white">{step.n}</span>
+              </div>
+
+              <h3 className="text-sm font-bold uppercase text-slate-900">
+                {step.title}
+              </h3>
+
+              <p className="mt-2 text-xs text-slate-500">
+                {step.body}
+              </p>
+
+              <ul className="mt-4 space-y-1.5">
+                {step.points.map((p) => (
+                  <li key={p} className="flex gap-2 text-[10px] text-slate-400">
+                    <span className="mt-1 h-1 w-2 bg-[#297858]" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ScrollReveal>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>
 
       {/* ── 7. OFFER ── free design brief review ─────────────────────────── */}
       <section className="bg-[#f7f6f5] py-14">
@@ -619,7 +654,7 @@ export default function AHUManufacturingPage() {
                 <div className="mt-5 flex flex-col gap-2 border-t border-white/10 pt-4">
                   <div className="flex items-center gap-2 text-[11px] text-white/35">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                    Engineering response within 24 working hours
+                    Engineering response within one working day
                   </div>
                   <div className="flex items-center gap-2 text-[11px] text-white/35">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />

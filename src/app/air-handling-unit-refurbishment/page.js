@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "Can refurbishment support Part L or net zero targets?",
-    a: "Yes. EC fan conversion, heat recovery, and controls integration can all be incorporated. HTM 03-01 compliance confirmed for healthcare sites.",
+    a: "Yes. EC fan conversion, heat recovery, and controls integration can all be incorporated. Where the scope of works supports it, we work to HTM 03-01 benchmarks on healthcare sites — we'll confirm what's achievable at survey stage.",
   },
   {
     q: "What maintenance is needed after refurbishment?",
@@ -127,7 +127,7 @@ export default function AHURefurbishmentPage() {
       <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
         <Container>
           <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading UK organisations
+            Trusted by leading organisations
           </p>
           <div className="relative">
             <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
@@ -218,7 +218,7 @@ export default function AHURefurbishmentPage() {
       </section>
 
       {/* ── WHAT IS AHU REFURBISHMENT ──────────────────────────────────── */}
-      <section id="what-is-refurbishment" className="bg-[#f5f7f6] py-14 sm:py-16">
+      <section id="what-is-refurbishment" className="bg-white py-14 sm:py-16">
         <Container>
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
 
@@ -706,7 +706,7 @@ export default function AHURefurbishmentPage() {
             <ScrollReveal delay={80}>
               <div className="bg-white p-7 shadow-lg">
                 <p className="mb-1 text-xs font-bold uppercase tracking-[0.2em] text-[#297858]">Enquiry</p>
-                <p className="mb-5 text-xs text-slate-500">Engineering response within 24 working hours</p>
+                <p className="mb-5 text-xs text-slate-500">Engineering response within one working day</p>
                 <QuickQuoteForm />
               </div>
             </ScrollReveal>
