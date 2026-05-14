@@ -151,9 +151,246 @@ export default function AHURefurbishmentPage() {
         </Container>
       </section>
 
-    
-      {/* ── KEY BENEFITS ───────────────────────────────────────────────── */}
+      {/* ── SIGNS YOUR AHU NEEDS REFURBISHMENT ────────────────────────── */}
+      <section className="bg-[#f5f7f6] py-14 sm:py-16">
+        <Container>
+
+          <ScrollReveal className="mb-8">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              Common indicators
+            </p>
+            <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+              Signs Your AHU Needs Attention
+            </h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          </ScrollReveal>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                n: "01",
+                heading: "Reduced Efficiency",
+                body: "The unit is no longer delivering the airflow or temperature conditions required by the building design.",
+              },
+              {
+                n: "02",
+                heading: "Failure to Meet Design Requirements",
+                body: "Changing building use, occupancy, or regulation means the existing unit configuration can no longer comply.",
+              },
+              {
+                n: "03",
+                heading: "Excessive Noise",
+                body: "Worn bearings, degraded fan blades, or loose components cause operational noise that was not present originally.",
+              },
+              {
+                n: "04",
+                heading: "Temperature Problems",
+                body: "Inconsistent heating or cooling across zones points to coil degradation, control failures, or heat exchanger fouling.",
+              },
+              {
+                n: "05",
+                heading: "Corrosion from Water Ingress",
+                body: "Condensation or drainage issues cause internal corrosion affecting structural integrity and air quality.",
+              },
+              {
+                n: "06",
+                heading: "Poor Indoor Air Quality",
+                body: "Filter bypass, damaged seals, or degraded heat recovery reduces ventilation effectiveness and IAQ compliance.",
+              },
+            ].map((item) => (
+              <ScrollReveal key={item.n} className="h-full">
+                <div className="relative flex h-full flex-col overflow-hidden border border-slate-200 bg-white p-6">
+                  <span className="absolute right-5 top-4 font-display text-4xl font-extrabold text-[#297858]/10">
+                    {item.n}
+                  </span>
+                  <h3 className="font-display text-sm font-extrabold uppercase text-slate-900">
+                    {item.heading}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {item.body}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+        </Container>
+      </section>
+
+      {/* ── WHAT IS AHU REFURBISHMENT ──────────────────────────────────── */}
+      <section id="what-is-refurbishment" className="bg-[#f5f7f6] py-14 sm:py-16">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+
+            <ScrollReveal>
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+                What it involves
+              </p>
+              <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+                What Is AHU Refurbishment?
+              </h2>
+              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-5 text-sm leading-7 text-slate-600">
+                AHU refurbishment is a precise process aimed at restoring optimal functionality and efficiency. It is a comprehensive process involving thorough inspection and strategic component upgrades — not a blanket overhaul.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-slate-600">
+                Our engineers carry out a detailed assessment of every major component before any works are specified or authorised:
+              </p>
+              <ul className="mt-5 space-y-3">
+                {[
+                  "Fans, coils, filters, and dampers",
+                  "Heat recovery and heat exchangers",
+                  "Unit corrosion and structural condition",
+                  "AHU controls and automation interfaces",
+                  "Access doors, panels, and seals",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-slate-700">
+                    <CheckIcon />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-sm leading-6 text-slate-500">
+                Only failed or degraded components are replaced. The structural frame, casing, and duct connections are retained wherever viable — keeping costs down and works in-situ.
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={80}>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { stat: "40%", label: "of replacement cost, typically" },
+                  { stat: "10–20", label: "additional years of asset life" },
+                  { stat: "40+", label: "years of AHU experience" },
+                  { stat: "0", label: "disruption preferred — phased works" },
+                ].map((item) => (
+                  <div key={item.label} className="border border-slate-200 bg-white p-5">
+                    <p className="font-display text-3xl font-extrabold text-[#297858]">{item.stat}</p>
+                    <p className="mt-1 text-xs leading-5 text-slate-500">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+
+          </div>
+        </Container>
+      </section>
+
+      {/* ── SOLUTION ───────────────────────────────────────────────────── */}
+      <section className="bg-[#0f1216] py-14 sm:py-16">
+        <Container>
+
+          <ScrollReveal className="mb-8">
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              Our approach
+            </p>
+            <h2 className="font-display text-xl font-extrabold uppercase text-white sm:text-2xl">
+              Component-Level Assessment. No Unnecessary Spend.
+            </h2>
+            <p className="mt-3 max-w-lg text-sm leading-6 text-white/65">
+              In most cases the existing air handling unit is structurally sound. We assess condition at component level to determine what can be retained, what needs replacing, and how performance is restored — without unnecessary full replacement or disruption.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid gap-5 sm:grid-cols-3">
+            {[
+              {
+                title: "Retain structure",
+                body: "Casing, frames, and duct connections are assessed to confirm what can safely remain in service, keeping costs and footprint intact.",
+              },
+              {
+                title: "Targeted replacement",
+                body: "Only failed or degraded components — coils, fans, controls, seals — are replaced individually, not wholesale.",
+              },
+              {
+                title: "In-situ restoration",
+                body: "Works are completed within the existing unit footprint to minimise downtime, plant room access requirements, and operational disruption.",
+              },
+            ].map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 60}>
+                <div className="group relative h-full border border-white/10 bg-white/5 p-5 transition hover:bg-white/10">
+                  <div className="absolute left-0 top-0 h-full w-[2px] bg-[#297858]/40 transition group-hover:bg-[#297858]/70" />
+                  <p className="text-sm font-bold text-white">{item.title}</p>
+                  <p className="mt-2 text-xs leading-6 text-white/65">{item.body}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+        </Container>
+      </section>
+
+      {/* ── COMPARISON TABLE ───────────────────────────────────────────── */}
       <section className="bg-white py-14 sm:py-16">
+        <Container>
+
+          <ScrollReveal className="mb-8 max-w-2xl">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              Make the right call
+            </p>
+            <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+              Refurbish vs Replace
+            </h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+            <p className="mt-4 text-sm leading-6 text-slate-500">
+              Both are valid routes. The right choice depends on the condition of your plant, your programme, and your budget — every project is different, and we assess each one on its own merits.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="overflow-hidden border border-slate-200 bg-white">
+
+              <div className="grid grid-cols-[1.4fr_1fr_1fr] border-b border-slate-200 bg-[#f5f7f6]">
+                <div className="border-r border-slate-200 px-4 py-3" />
+                <div className="border-r border-slate-200 px-4 py-3">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#297858]">
+                    Refurbishment
+                  </p>
+                </div>
+                <div className="px-4 py-3">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-600">
+                    Full Replacement
+                  </p>
+                </div>
+              </div>
+
+              {[
+                { label: "Disruption", refurb: "Generally lower — works carried out in-situ", replace: "Generally higher — full plant change-out" },
+                { label: "Life extension", refurb: "Significant, depending on scope", replace: "Full new asset life from new" },
+                { label: "Compliance", refurb: "Upgrades can be incorporated", replace: "Fresh compliance baseline from new" },
+                { label: "Right when", refurb: "Frame is structurally sound", replace: "Frame is beyond repair or end of life" },
+                { label: "Consider if", refurb: "Budget or programme is constrained", replace: "Full performance reset is the goal" },
+              ].map((row, i, arr) => (
+                <div
+                  key={row.label}
+                  className={`grid grid-cols-[1.4fr_1fr_1fr] ${i !== arr.length - 1 ? "border-b border-slate-200" : ""}`}
+                >
+                  <div className="border-r border-slate-200 px-4 py-4">
+                    <p className="text-xs font-medium text-slate-700">{row.label}</p>
+                  </div>
+                  <div className="border-r border-slate-200 px-4 py-4">
+                    <p className="text-xs font-medium text-[#297858]">{row.refurb}</p>
+                  </div>
+                  <div className="px-4 py-4">
+                    <p className="text-xs font-medium text-slate-600">{row.replace}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          <p className="mt-4 text-xs text-slate-500">
+            Every project varies —{" "}
+            <Link href="/contact" className="font-semibold text-[#297858] underline underline-offset-2 hover:text-[#1d5c42]">
+              speak to our team
+            </Link>{" "}
+            and we&apos;ll give you an honest assessment of which route makes sense for your site. No commitment required.
+          </p>
+
+        </Container>
+      </section>
+
+      {/* ── KEY BENEFITS ───────────────────────────────────────────────── */}
+      <section className="bg-[#f5f7f6] py-14 sm:py-16">
         <Container>
 
           <ScrollReveal className="mb-10">
@@ -224,174 +461,6 @@ export default function AHURefurbishmentPage() {
         </Container>
       </section>
 
-      {/* ── WHAT IS AHU REFURBISHMENT ──────────────────────────────────── */}
-      <section id="what-is-refurbishment" className="bg-[#f5f7f6] py-14 sm:py-16">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-
-            <ScrollReveal>
-              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-                What it involves
-              </p>
-              <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-                What Is AHU Refurbishment?
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-5 text-sm leading-7 text-slate-600">
-                AHU refurbishment is a precise process aimed at restoring optimal functionality and efficiency. It is a comprehensive process involving thorough inspection and strategic component upgrades — not a blanket overhaul.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-slate-600">
-                Our engineers carry out a detailed assessment of every major component before any works are specified or authorised:
-              </p>
-              <ul className="mt-5 space-y-3">
-                {[
-                  "Fans, coils, filters, and dampers",
-                  "Heat recovery and heat exchangers",
-                  "Unit corrosion and structural condition",
-                  "AHU controls and automation interfaces",
-                  "Access doors, panels, and seals",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-slate-700">
-                    <CheckIcon />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-6 text-sm leading-6 text-slate-500">
-                Only failed or degraded components are replaced. The structural frame, casing, and duct connections are retained wherever viable — keeping costs down and works in-situ.
-              </p>
-            </ScrollReveal>
-
-            <ScrollReveal delay={80}>
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  { stat: "40%", label: "of replacement cost, typically" },
-                  { stat: "10–20", label: "additional years of asset life" },
-                  { stat: "40+", label: "years of AHU experience" },
-                  { stat: "0", label: "disruption preferred — phased works" },
-                ].map((item) => (
-                  <div key={item.label} className="border border-slate-200 bg-white p-5">
-                    <p className="font-display text-3xl font-extrabold text-[#297858]">{item.stat}</p>
-                    <p className="mt-1 text-xs leading-5 text-slate-500">{item.label}</p>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-
-          </div>
-        </Container>
-      </section>
-
-      {/* ── SIGNS YOUR AHU NEEDS REFURBISHMENT ────────────────────────── */}
-      <section className="bg-[#f5f7f6] pb-14 sm:pb-16">
-        <Container>
-
-          <ScrollReveal className="mb-8">
-            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              Common indicators
-            </p>
-            <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-              Signs Your AHU Needs Attention
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-          </ScrollReveal>
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                n: "01",
-                heading: "Reduced Efficiency",
-                body: "The unit is no longer delivering the airflow or temperature conditions required by the building design.",
-              },
-              {
-                n: "02",
-                heading: "Failure to Meet Design Requirements",
-                body: "Changing building use, occupancy, or regulation means the existing unit configuration can no longer comply.",
-              },
-              {
-                n: "03",
-                heading: "Excessive Noise",
-                body: "Worn bearings, degraded fan blades, or loose components cause operational noise that was not present originally.",
-              },
-              {
-                n: "04",
-                heading: "Temperature Problems",
-                body: "Inconsistent heating or cooling across zones points to coil degradation, control failures, or heat exchanger fouling.",
-              },
-              {
-                n: "05",
-                heading: "Corrosion from Water Ingress",
-                body: "Condensation or drainage issues cause internal corrosion affecting structural integrity and air quality.",
-              },
-              {
-                n: "06",
-                heading: "Poor Indoor Air Quality",
-                body: "Filter bypass, damaged seals, or degraded heat recovery reduces ventilation effectiveness and IAQ compliance.",
-              },
-            ].map((item) => (
-              <ScrollReveal key={item.n} className="h-full">
-                <div className="relative flex h-full flex-col overflow-hidden border border-slate-200 bg-white p-6">
-                  <span className="absolute right-5 top-4 font-display text-4xl font-extrabold text-[#297858]/10">
-                    {item.n}
-                  </span>
-                  <h3 className="font-display text-sm font-extrabold uppercase text-slate-900">
-                    {item.heading}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
-                    {item.body}
-                  </p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-        </Container>
-      </section>
-
-      {/* ── SOLUTION ───────────────────────────────────────────────────── */}
-      <section className="bg-[#0f1216] py-14 sm:py-16">
-        <Container>
-
-          <ScrollReveal className="mb-8">
-            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              Our approach
-            </p>
-            <h2 className="font-display text-xl font-extrabold uppercase text-white sm:text-2xl">
-              Component-Level Assessment. No Unnecessary Spend.
-            </h2>
-            <p className="mt-3 max-w-lg text-sm leading-6 text-white/65">
-              In most cases the existing air handling unit is structurally sound. We assess condition at component level to determine what can be retained, what needs replacing, and how performance is restored — without unnecessary full replacement or disruption.
-            </p>
-          </ScrollReveal>
-
-          <div className="grid gap-5 sm:grid-cols-3">
-            {[
-              {
-                title: "Retain structure",
-                body: "Casing, frames, and duct connections are assessed to confirm what can safely remain in service, keeping costs and footprint intact.",
-              },
-              {
-                title: "Targeted replacement",
-                body: "Only failed or degraded components — coils, fans, controls, seals — are replaced individually, not wholesale.",
-              },
-              {
-                title: "In-situ restoration",
-                body: "Works are completed within the existing unit footprint to minimise downtime, plant room access requirements, and operational disruption.",
-              },
-            ].map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 60}>
-                <div className="group relative h-full border border-white/10 bg-white/5 p-5 transition hover:bg-white/10">
-                  <div className="absolute left-0 top-0 h-full w-[2px] bg-[#297858]/40 transition group-hover:bg-[#297858]/70" />
-                  <p className="text-sm font-bold text-white">{item.title}</p>
-                  <p className="mt-2 text-xs leading-6 text-white/65">{item.body}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-        </Container>
-      </section>
-
       {/* ── INDUSTRIES SERVED ──────────────────────────────────────────── */}
       <section className="bg-white py-14 sm:py-16">
         <Container>
@@ -425,6 +494,75 @@ export default function AHURefurbishmentPage() {
                 {sector}
               </span>
             ))}
+          </div>
+
+        </Container>
+      </section>
+
+      {/* ── CASE STUDY ─────────────────────────────────────────────────── */}
+      <section className="bg-[#111418] py-14 sm:py-16">
+        <Container>
+
+          <ScrollReveal className="mb-2">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              Case study
+            </p>
+          </ScrollReveal>
+
+          <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+
+            <ScrollReveal>
+              <h2 className="font-display text-xl font-extrabold uppercase text-white sm:text-2xl">
+                NHS Hammersmith & Fulham
+              </h2>
+              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-5 text-sm leading-7 text-white/70">
+                BVS were appointed to refurbish multiple air handling units across an operational NHS site. Full replacement had been quoted by others. Following BVS&apos;s condition survey, it was confirmed that refurbishment was viable — restoring units to full compliance while maintaining clinical ventilation throughout.
+              </p>
+              <p className="mt-4 text-sm leading-6 text-white/55">
+                Works were completed in phases around ward operations with zero unplanned downtime. HTM 03-01 compliance confirmed on handover.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  href="/case-studies/nhs-hammersmith-ahu-refurbishment"
+                  className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
+                >
+                  Read case study →
+                </Link>
+                <Link
+                  href="/case-studies"
+                  className="inline-flex items-center gap-2 border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                >
+                  View all case studies
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={80}>
+              <div className="relative h-52 overflow-hidden">
+                <Image
+                  src="/hospital.png"
+                  alt="NHS hospital site where BVS carried out AHU refurbishment works"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20" />
+              </div>
+              <div className="mt-3 grid grid-cols-2 gap-3">
+                {[
+                  { label: "Sector", value: "Healthcare / NHS" },
+                  { label: "Outcome", value: "Full refurbishment" },
+                  { label: "Downtime", value: "Zero unplanned" },
+                  { label: "Compliance", value: "HTM 03-01" },
+                ].map((item) => (
+                  <div key={item.label} className="border border-white/10 bg-white/5 p-4">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/35">{item.label}</p>
+                    <p className="mt-1 text-sm font-semibold text-white">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+
           </div>
 
         </Container>
@@ -499,60 +637,6 @@ export default function AHURefurbishmentPage() {
                   fill
                   className="object-cover"
                 />
-              </div>
-            </ScrollReveal>
-
-          </div>
-
-        </Container>
-      </section>
-
-      {/* ── CASE STUDY ─────────────────────────────────────────────────── */}
-      <section className="bg-[#111418] py-14 sm:py-16">
-        <Container>
-
-          <ScrollReveal className="mb-2">
-            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              Case study
-            </p>
-          </ScrollReveal>
-
-          <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
-
-            <ScrollReveal>
-              <h2 className="font-display text-xl font-extrabold uppercase text-white sm:text-2xl">
-                NHS Hammersmith & Fulham
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-5 text-sm leading-7 text-white/70">
-                BVS were appointed to refurbish multiple air handling units across an operational NHS site. Full replacement had been quoted by others. Following BVS&apos;s condition survey, it was confirmed that refurbishment was viable — restoring units to full compliance while maintaining clinical ventilation throughout.
-              </p>
-              <p className="mt-4 text-sm leading-6 text-white/55">
-                Works were completed in phases around ward operations with zero unplanned downtime. HTM 03-01 compliance confirmed on handover.
-              </p>
-              <div className="mt-6">
-                <Link
-                  href="/case-studies/nhs-hammersmith-ahu-refurbishment"
-                  className="inline-flex items-center gap-2 border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-                >
-                  Read case study →
-                </Link>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={80}>
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  { label: "Sector", value: "Healthcare / NHS" },
-                  { label: "Outcome", value: "Full refurbishment" },
-                  { label: "Downtime", value: "Zero unplanned" },
-                  { label: "Compliance", value: "HTM 03-01" },
-                ].map((item) => (
-                  <div key={item.label} className="border border-white/10 bg-white/5 p-4">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/35">{item.label}</p>
-                    <p className="mt-1 text-sm font-semibold text-white">{item.value}</p>
-                  </div>
-                ))}
               </div>
             </ScrollReveal>
 

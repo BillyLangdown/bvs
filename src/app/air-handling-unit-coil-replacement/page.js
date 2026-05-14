@@ -419,7 +419,7 @@ export default function CoilReplacementPage() {
 </section>
 
       {/* ── 4. BENEFITS ── coil types + 4 capability cards ───────────────── */}
-      <section className="bg-[#f7f6f5] py-16 sm:py-20">
+      <section className="bg-white py-16 sm:py-20">
   <Container>
 
     <ScrollReveal className="mb-10">

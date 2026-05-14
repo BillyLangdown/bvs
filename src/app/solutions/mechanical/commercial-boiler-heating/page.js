@@ -97,7 +97,7 @@ export default function CommercialBoilerHeatingPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-transparent" />
 
-        <Container className="relative flex min-h-[480px] items-center py-16">
+        <Container className="relative flex min-h-[480px] items-center pt-16 pb-28">
           <div className="max-w-2xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#297858]">
               Mechanical Solutions
@@ -145,40 +145,6 @@ export default function CommercialBoilerHeatingPage() {
             </div>
           </Container>
         </div>
-      </section>
-
-      {/* Trust bar */}
-      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
-        <Container>
-          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading UK organisations
-          </p>
-          <div className="relative">
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent sm:hidden" />
-            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 px-4 sm:px-0">
-                {clientLogos.map((logo) => (
-                  <Image
-                    key={logo.alt}
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={120}
-                    height={60}
-                    unoptimized
-                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="mt-4 flex items-center justify-center gap-2 text-slate-400 sm:hidden">
-            <span className="text-[10px] font-semibold uppercase tracking-wider opacity-70">swipe to view more</span>
-            <svg className="h-4 w-4 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M10 6l6 6-6 6" />
-            </svg>
-          </div>
-        </Container>
       </section>
 
       {/* Why it matters */}
@@ -250,6 +216,40 @@ export default function CommercialBoilerHeatingPage() {
                 <p className="mt-3 text-sm leading-6 text-slate-600">{f.body}</p>
               </div>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Trust bar */}
+      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
+        <Container>
+          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+            Trusted by leading UK organisations
+          </p>
+          <div className="relative">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent sm:hidden" />
+            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
+              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 px-4 sm:px-0">
+                {clientLogos.map((logo) => (
+                  <Image
+                    key={logo.alt}
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={120}
+                    height={60}
+                    unoptimized
+                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-4 flex items-center justify-center gap-2 text-slate-400 sm:hidden">
+            <span className="text-[10px] font-semibold uppercase tracking-wider opacity-70">swipe to view more</span>
+            <svg className="h-4 w-4 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M10 6l6 6-6 6" />
+            </svg>
           </div>
         </Container>
       </section>

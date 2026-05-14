@@ -128,7 +128,127 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 2. INDEPENDENT & FLEXIBLE ────────────────────────────────────── */}
+      {/* ── PROBLEM ── cost of old controls ───────────────────────────── */}
+      <section className="bg-white py-14 sm:py-16">
+        <Container>
+          <ScrollReveal className="mb-10">
+            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              The problem
+            </p>
+            <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
+              What Old Controls<br />Are Doing to You
+            </h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          </ScrollReveal>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                impact: "Energy Waste",
+                badge: "15–30% excess consumption",
+                detail: "AHUs with outdated or misconfigured controls run fans, heating, and cooling when they should not. Every hour of unnecessary operation adds to the energy bill — and goes unmeasured.",
+              },
+              {
+                impact: "No Visibility",
+                badge: "Zero monitoring or fault alerting",
+                detail: "Older controllers have no network connection and no BMS integration. When something goes wrong — or performance degrades gradually — there is no alarm. The problem runs until it becomes a failure.",
+              },
+              {
+                impact: "Parts Obsolescence",
+                badge: "Components no longer manufactured",
+                detail: "Proprietary controllers from discontinued ranges cannot be repaired when they fail — only replaced. The older the system, the more fragile the supply chain.",
+              },
+              {
+                impact: "Supplier Lock-In",
+                badge: "Single-supplier maintenance contract",
+                detail: "Proprietary systems require the original supplier for maintenance and changes. Open-protocol controls give FM teams the freedom to choose any competent engineer.",
+              },
+            ].map((item, i) => (
+              <ScrollReveal key={item.impact} delay={i * 60}>
+                <div className="flex flex-col border-l-4 border-slate-200 bg-[#f7f6f5] p-6">
+                  <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
+                    <h3 className="font-display text-sm font-extrabold uppercase text-slate-900">{item.impact}</h3>
+                    <span className="shrink-0 bg-red-50 px-2 py-0.5 text-[10px] font-bold text-red-500/75">{item.badge}</span>
+                  </div>
+                  <p className="text-sm leading-6 text-slate-500">{item.detail}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ── COMPARISON TABLE ─────────────────────────────────────────────── */}
+      <section className="bg-[#111418] py-14 sm:py-16">
+        <Container>
+
+          <ScrollReveal className="mb-8 max-w-2xl">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              Make the right call
+            </p>
+            <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              Controller Upgrade vs Full AHU Replacement
+            </h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+            <p className="mt-4 text-sm leading-6 text-white/55">
+              Both are valid routes. The right answer depends on the root cause of the problem and the condition of your plant — which is why we carry out an independent assessment before recommending either.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="overflow-hidden border border-white/10 bg-white/[0.03]">
+
+              <div className="grid grid-cols-[1.4fr_1fr_1fr] border-b border-white/10">
+                <div className="border-r border-white/10 px-4 py-3" />
+                <div className="border-r border-white/10 px-4 py-3">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#8fd1b5]">
+                    Controller Upgrade
+                  </p>
+                </div>
+                <div className="px-4 py-3">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/65">
+                    Full AHU Replacement
+                  </p>
+                </div>
+              </div>
+
+              {[
+                { label: "AHU plant", upgrade: "Retained and extended", replace: "Removed and replaced" },
+                { label: "BMS integration", upgrade: "Included as standard", replace: "Depends on specification" },
+                { label: "Energy performance", upgrade: "Improved through controls optimisation", replace: "Depends on new plant specification" },
+                { label: "Right when", upgrade: "Controls are the root cause", replace: "Mechanical plant is at end of life" },
+                { label: "Consider if", upgrade: "Plant is mechanically sound", replace: "Structural or mechanical failure present" },
+              ].map((row, i, arr) => (
+                <div
+                  key={row.label}
+                  className={`grid grid-cols-[1.4fr_1fr_1fr] ${i !== arr.length - 1 ? "border-b border-white/10" : ""}`}
+                >
+                  <div className="border-r border-white/10 px-4 py-4">
+                    <p className="text-xs font-medium text-white">{row.label}</p>
+                  </div>
+                  <div className="border-r border-white/10 px-4 py-4">
+                    <p className="text-xs font-medium text-[#8fd1b5]">{row.upgrade}</p>
+                  </div>
+                  <div className="px-4 py-4">
+                    <p className="text-xs font-medium text-white/65">{row.replace}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          <p className="mt-4 text-xs text-white/55">
+            Every project is different —{" "}
+            <Link href="/contact" className="font-semibold text-[#8fd1b5] underline underline-offset-2 hover:text-[#297858] transition-colors">
+              speak to our team
+            </Link>{" "}
+            for an honest assessment of what&apos;s right for your site and system. No commitment required.
+          </p>
+
+        </Container>
+      </section>
+
+      {/* ── INDEPENDENT & FLEXIBLE ────────────────────────────────────────── */}
       <section className="bg-white py-14 sm:py-16">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
@@ -169,7 +289,50 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 3. SERVICES ──────────────────────────────────────────────────── */}
+      {/* ── SOLUTION ── open protocol ─────────────────────────────────── */}
+      <section className="bg-[#111418] py-16 sm:py-20">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+            <ScrollReveal>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+                The solution
+              </p>
+              <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-3xl">
+                BACnet. Modbus. LON.<br />Open Protocol, Always.
+              </h2>
+              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-5 text-sm leading-7 text-white/55">
+                Open-protocol controls use standardised communication languages that any competent engineer or BMS platform can read and write. The controller works with your BMS regardless of who made it.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-white/55">
+                Proprietary systems lock maintenance contracts, system changes, and future upgrades to a single supplier. Over a 10- or 15-year horizon, that dependency is a significant cost — and a significant risk.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-white/55">
+                We specify open-protocol DDC controllers as standard. Every installation we commission is accessible to any engineer after we hand over. That is deliberate.
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={100}>
+              <div className="grid gap-3">
+                {[
+                  { protocol: "BACnet", detail: "The dominant protocol for building automation. Supported by all major BMS platforms. Standard for healthcare, commercial, and public sector applications." },
+                  { protocol: "Modbus", detail: "Widely used in industrial and simpler building applications. Compatible with energy meters, variable speed drives, and legacy BMS systems." },
+                  { protocol: "LON (LonWorks)", detail: "Prevalent in older commercial BMS installations. We retain LON compatibility where existing infrastructure requires it." },
+                ].map((item) => (
+                  <div key={item.protocol} className="border border-white/10 bg-white/5 p-5">
+                    <div className="mb-2">
+                      <div className="inline-block bg-[#297858] px-2 py-0.5 text-[10px] font-bold text-white">{item.protocol}</div>
+                    </div>
+                    <p className="text-xs leading-5 text-white/50">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── SERVICES ──────────────────────────────────────────────────── */}
       <section id="services" className="bg-[#f7f6f5] py-16 sm:py-20">
         <Container>
           <ScrollReveal className="mb-10">
@@ -223,100 +386,7 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 4. PROBLEM ── cost of old controls ───────────────────────────── */}
-      <section className="bg-white py-14 sm:py-16">
-        <Container>
-          <ScrollReveal className="mb-10">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              The problem
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
-              What Old Controls<br />Are Doing to You
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-          </ScrollReveal>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              {
-                impact: "Energy Waste",
-                badge: "15–30% excess consumption",
-                detail: "AHUs with outdated or misconfigured controls run fans, heating, and cooling when they should not. Every hour of unnecessary operation adds to the energy bill — and goes unmeasured.",
-              },
-              {
-                impact: "No Visibility",
-                badge: "Zero monitoring or fault alerting",
-                detail: "Older controllers have no network connection and no BMS integration. When something goes wrong — or performance degrades gradually — there is no alarm. The problem runs until it becomes a failure.",
-              },
-              {
-                impact: "Parts Obsolescence",
-                badge: "Components no longer manufactured",
-                detail: "Proprietary controllers from discontinued ranges cannot be repaired when they fail — only replaced. The older the system, the more fragile the supply chain.",
-              },
-              {
-                impact: "Supplier Lock-In",
-                badge: "Single-supplier maintenance contract",
-                detail: "Proprietary systems require the original supplier for maintenance and changes. Open-protocol controls give FM teams the freedom to choose any competent engineer.",
-              },
-            ].map((item, i) => (
-              <ScrollReveal key={item.impact} delay={i * 60}>
-                <div className="flex flex-col border-l-4 border-slate-200 bg-[#f7f6f5] p-6">
-                  <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
-                    <h3 className="font-display text-sm font-extrabold uppercase text-slate-900">{item.impact}</h3>
-                    <span className="shrink-0 bg-red-50 px-2 py-0.5 text-[10px] font-bold text-red-500/75">{item.badge}</span>
-                  </div>
-                  <p className="text-sm leading-6 text-slate-500">{item.detail}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ── 5. SOLUTION ── open protocol ─────────────────────────────────── */}
-      <section className="bg-[#111418] py-16 sm:py-20">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
-            <ScrollReveal>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-                The solution
-              </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-3xl">
-                BACnet. Modbus. LON.<br />Open Protocol, Always.
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-5 text-sm leading-7 text-white/55">
-                Open-protocol controls use standardised communication languages that any competent engineer or BMS platform can read and write. The controller works with your BMS regardless of who made it.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-white/55">
-                Proprietary systems lock maintenance contracts, system changes, and future upgrades to a single supplier. Over a 10- or 15-year horizon, that dependency is a significant cost — and a significant risk.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-white/55">
-                We specify open-protocol DDC controllers as standard. Every installation we commission is accessible to any engineer after we hand over. That is deliberate.
-              </p>
-            </ScrollReveal>
-
-            <ScrollReveal delay={100}>
-              <div className="grid gap-3">
-                {[
-                  { protocol: "BACnet", detail: "The dominant protocol for building automation. Supported by all major BMS platforms. Standard for healthcare, commercial, and public sector applications." },
-                  { protocol: "Modbus", detail: "Widely used in industrial and simpler building applications. Compatible with energy meters, variable speed drives, and legacy BMS systems." },
-                  { protocol: "LON (LonWorks)", detail: "Prevalent in older commercial BMS installations. We retain LON compatibility where existing infrastructure requires it." },
-                ].map((item) => (
-                  <div key={item.protocol} className="border border-white/10 bg-white/5 p-5">
-                    <div className="mb-2">
-                      <div className="inline-block bg-[#297858] px-2 py-0.5 text-[10px] font-bold text-white">{item.protocol}</div>
-                    </div>
-                    <p className="text-xs leading-5 text-white/50">{item.detail}</p>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* ── 6. WHAT YOU GET ── stats + equal-height cards ────────────────── */}
+      {/* ── WHAT YOU GET ── stats + equal-height cards ────────────────── */}
       <section className="bg-[#f7f6f5] py-16 sm:py-20">
         <Container>
           <ScrollReveal className="mb-10">
@@ -347,7 +417,7 @@ export default function ControllerUpgradesPage() {
             ))}
           </div>
 
-          {/* Equal-height capability cards — grid-rows stretches all cards in each row */}
+          {/* Equal-height capability cards */}
           <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { label: "Open protocol DDC", detail: "No proprietary lock-in. BACnet, Modbus, or LON as standard — works with any BMS now and in the future." },
@@ -366,53 +436,74 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 7. CASE STUDY ── Ringwood Leisure Centre ─────────────────────── */}
-      <section className="border-t border-slate-200 bg-[#f7f6f5] py-16 sm:py-20">
-        <Container>
+      {/* ── CASE STUDY ── Ringwood Leisure Centre ─────────────────────── */}
+      <section className="relative overflow-hidden py-20 sm:py-24">
+
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/swimming-pool.png"
+            alt="Ringwood Leisure Centre — AHU controller upgrade case study"
+            fill
+            className="object-cover object-center"
+          />
+          {/* dark fade: strong on left, tapering right */}
+          <div className="absolute inset-0 bg-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+        </div>
+
+        <Container className="relative z-10">
           <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-start">
+
             <ScrollReveal>
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
                 Case study · Leisure · Controller Upgrade
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
+              <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-3xl">
                 Ringwood Leisure Centre<br />— AHU Controller Upgrade
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-6 text-sm leading-7 text-slate-500">
+              <p className="mt-6 text-sm leading-7 text-white/70">
                 Ringwood Leisure Centre had been advised by another contractor that both of their ageing AHUs needed full replacement — a programme quoted at over £100,000. BVS carried out an independent controls assessment and identified that the actual root cause was failing control systems, not the AHU plant itself.
               </p>
               <div className="mt-5 space-y-3">
-                <div className="border-l-2 border-slate-300 pl-4">
-                  <span className="text-sm text-slate-500">Full controls assessment carried out across both AHUs before any works were committed to</span>
+                <div className="border-l-2 border-white/20 pl-4">
+                  <span className="text-sm text-white/60">Full controls assessment carried out across both AHUs before any works were committed to</span>
                 </div>
-                <div className="border-l-2 border-slate-300 pl-4">
-                  <span className="text-sm text-slate-500">Trend BMS controllers specified, supplied, installed, and commissioned on both units</span>
+                <div className="border-l-2 border-white/20 pl-4">
+                  <span className="text-sm text-white/60">Trend BMS controllers specified, supplied, installed, and commissioned on both units</span>
                 </div>
-                <div className="border-l-2 border-slate-300 pl-4">
-                  <span className="text-sm text-slate-500">AHU plant retained — no replacement required</span>
+                <div className="border-l-2 border-white/20 pl-4">
+                  <span className="text-sm text-white/60">AHU plant retained — no replacement required</span>
                 </div>
               </div>
               <div className="mt-5 space-y-3">
                 <div className="border-l-2 border-[#297858] pl-4">
-                  <span className="text-sm font-bold text-slate-900">Full system control restored at a fraction of the £100k+ replacement cost</span>
+                  <span className="text-sm font-bold text-white">Full system control restored at a fraction of the £100k+ replacement cost</span>
                 </div>
                 <div className="border-l-2 border-[#297858] pl-4">
-                  <span className="text-sm text-slate-600">Both AHUs returned to full performance — no unnecessary plant replaced</span>
+                  <span className="text-sm text-white/70">Both AHUs returned to full performance — no unnecessary plant replaced</span>
                 </div>
               </div>
-              <div className="mt-7">
+              <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href="/case-studies/ringwood-leisure-ahu-controller-upgrade"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
+                  className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
                 >
                   Read the full case study →
+                </Link>
+                <Link
+                  href="/case-studies"
+                  className="inline-flex items-center gap-2 border border-white/25 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                >
+                  View all case studies
                 </Link>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={80}>
-              <div className="border border-slate-200 bg-white p-7">
-                <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Project summary</p>
+              <div className="border border-white/15 bg-white/10 p-7 backdrop-blur-sm">
+                <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">Project summary</p>
                 <div className="space-y-4">
                   {[
                     { stat: "Ringwood", label: "Leisure Centre, Hampshire" },
@@ -421,19 +512,20 @@ export default function ControllerUpgradesPage() {
                     { stat: "Trend", label: "BMS controllers — open protocol" },
                     { stat: "£100k+", label: "Replacement cost avoided" },
                   ].map((item) => (
-                    <div key={item.label} className="flex items-center justify-between border-b border-slate-100 pb-4 last:border-0 last:pb-0">
-                      <span className="text-xs text-slate-400">{item.label}</span>
+                    <div key={item.label} className="flex items-center justify-between border-b border-white/10 pb-4 last:border-0 last:pb-0">
+                      <span className="text-xs text-white/50">{item.label}</span>
                       <span className="font-display text-base font-extrabold text-[#297858]">{item.stat}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </ScrollReveal>
+
           </div>
         </Container>
       </section>
 
-      {/* ── 8. HOW IT WORKS ── 4-step process ───────────────────────────── */}
+      {/* ── HOW IT WORKS ── 4-step process ───────────────────────────── */}
       <section className="bg-[#111418] py-16 sm:py-20">
         <Container>
           <ScrollReveal className="mb-10">
@@ -497,7 +589,7 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 9. OFFER ── free controls assessment ─────────────────────────── */}
+      {/* ── OFFER ── free controls assessment ─────────────────────────── */}
       <section className="bg-white py-14">
         <Container>
           <ScrollReveal>
@@ -549,7 +641,7 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 10. CTA + FORM ───────────────────────────────────────────────── */}
+      {/* ── CTA + FORM ───────────────────────────────────────────────── */}
       <section id="assessment" className="bg-[#111418] py-20">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
@@ -605,7 +697,7 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 11. FAQ ──────────────────────────────────────────────────────── */}
+      {/* ── FAQ ──────────────────────────────────────────────────────── */}
       <FAQAccordion faqs={faqs} />
 
       {/* ── RELATED SERVICES ─────────────────────────────────────────────── */}

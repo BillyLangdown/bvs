@@ -32,6 +32,28 @@ const companyLinks = [
 export function Footer() {
   return (
     <footer>
+
+          {/* Newsletter band */}
+          <div className="border-t border-zinc-800 bg-[#111418]">
+          <Container className="py-8">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="max-w-md">
+                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+                  Engineer Insights
+                </p>
+                <p className="mt-1 text-base font-semibold text-white">
+                  Technical guides from 40 years in the field.
+                </p>
+                <p className="mt-1 text-sm text-zinc-400">
+                  Join our mailing list for updates, advice and offers. 
+                </p>
+              </div>
+              <div className="w-full sm:w-auto sm:min-w-[320px]">
+                <NewsletterForm source="footer" compact />
+              </div>
+            </div>
+          </Container>
+        </div>
       {/* Main footer */}
       <div className="border-t-[3px] border-emerald-600 bg-zinc-950">
         <Container className="py-12">
@@ -136,27 +158,7 @@ export function Footer() {
           </div>
         </Container>
 
-        {/* Newsletter band */}
-        <div className="border-t border-zinc-800 bg-[#111418]">
-          <Container className="py-8">
-            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-              <div className="max-w-md">
-                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-                  Engineer Insights
-                </p>
-                <p className="mt-1 text-base font-semibold text-white">
-                  Technical guides from 40 years in the field.
-                </p>
-                <p className="mt-1 text-sm text-zinc-400">
-                  Join our mailing list for updates, advice and offers. 
-                </p>
-              </div>
-              <div className="w-full sm:w-auto sm:min-w-[320px]">
-                <NewsletterForm source="footer" compact />
-              </div>
-            </div>
-          </Container>
-        </div>
+    
 
         {/* Copyright bar */}
         <div className="border-t border-zinc-800">
