@@ -87,18 +87,18 @@ export default function ECFanUpgradesPage() {
       {/* ── 1. HERO ── matches homepage structure ─────────────────────────── */}
       <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
       <Image
-  src="/ec-fan-upgrades.png"
+  src="/fan-attached-to-bulkhead.png"
   alt="EC fan unit installed in an existing air handling unit"
   fill
   priority
   className="object-cover object-center"
-  style={{ filter: "blur(1px)" }}
+
   sizes="100vw"
 />
         {/* Mobile: solid dark so text is always legible */}
         <div className="absolute inset-0 bg-black/60 sm:hidden" />
         {/* Desktop: left-to-right gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 via-[45%] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 via-[35%] to-transparent" />
 
         <Container className="relative flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
           <div className="max-w-3xl">

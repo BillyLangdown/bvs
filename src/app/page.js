@@ -172,7 +172,7 @@ const casePlaceholders = [
     outcome: "Dorset leisure centre AHU was suffering fan failures and uncontrolled humidity across the pool hall. BVS retrofitted direct-drive EC fans, restoring full airflow and eliminating belt-driven maintenance overhead.",
     photo: "/ec-fan-before-after.png",
     photoAlt: "Before and after EC fan upgrade on a leisure centre AHU",
-    href: "/case-studies/leisure-centre-ec-fan-retrofit",
+    href: "/case-studies/leisure-centre-dorset-ec-fan-upgrade",
   },
   {
     type: "AHU Refurbishment",
@@ -180,7 +180,7 @@ const casePlaceholders = [
     outcome: "NHS Hammersmith & Fulham AHUs refurbished to full specification — covering fan repairs, corrosion treatment, damper replacement, and new components, completed without disruption to clinical services.",
     photo: "/ahu-refurbishment-worker.png",
     photoAlt: "BVS engineer carrying out AHU refurbishment works on-site",
-    href: "/case-studies/nhs-hammersmith-fulham-ahu-refurbishment",
+    href: "/case-studies/nhs-hammersmith-ahu-refurbishment",
   },
   {
     type: "AHU Manufacturing",

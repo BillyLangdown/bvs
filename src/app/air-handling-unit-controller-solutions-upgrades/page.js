@@ -8,7 +8,7 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 export const metadata = {
   title: "AHU Controller Solutions & Upgrades | BVS Building Ventilation Solutions",
   description:
-    "AHU controls assessment, panel build, and commissioning across the UK. BMS-ready, open protocol, and energy reduction programmes for single units and multi-site estates.",
+    "Independent AHU controller supply, installation, and commissioning across the UK. Fault-finding, BMS integration, PCB replacements, and Trend controls — no manufacturer tie-in.",
 };
 
 const clientLogos = [
@@ -28,28 +28,28 @@ const clientLogos = [
 
 const faqs = [
   {
+    q: "Does this integrate with any brand of AHU?",
+    a: "Yes. Our control solutions are designed to integrate with AHUs from any manufacturer. Because we operate independently, we can work across multiple brands and tailor the setup to suit your specific system.",
+  },
+  {
+    q: "Why should I choose an independent service instead of the manufacturer?",
+    a: "Manufacturers often only supply controllers if they also carry out the installation, which limits flexibility and increases costs. We provide a fully independent service — freedom of choice, reduced downtime, and cost-effective solutions without being tied to one supplier.",
+  },
+  {
+    q: "Can you replace outdated or faulty controllers?",
+    a: "Absolutely. We specialise in upgrading and replacing obsolete or faulty controllers with modern alternatives that improve efficiency, reliability, and ease of use.",
+  },
+  {
+    q: "Do you offer BMS integration?",
+    a: "Yes. We can install and commission AHU controls into existing building management systems, including Trend and other leading platforms, to give you centralised monitoring and control.",
+  },
+  {
     q: "What energy savings can a controls upgrade deliver?",
     a: "Typically 15–30% reduction in AHU energy consumption through improved sequences, demand-controlled ventilation, and optimised setpoints. The actual saving depends on the existing controls state — we model this at assessment stage.",
   },
   {
-    q: "Can you integrate with any BMS?",
-    a: "We work with all major BMS platforms using open protocols including BACnet, Modbus, and LON. Where a proprietary system is in use, we confirm integration capability at assessment stage.",
-  },
-  {
-    q: "Do you work on single AHUs or multi-site programmes?",
-    a: "Both. We handle single-unit upgrades and phased multi-site programmes. For estates with multiple buildings, we provide consistent reporting, documentation, and a co-ordinated delivery programme.",
-  },
-  {
     q: "Can you upgrade controls without replacing the AHU?",
     a: "Yes — and this is often the most cost-effective approach. A controls upgrade can extend the useful life of the AHU, improve energy performance, and add BMS integration without the cost of full plant replacement.",
-  },
-  {
-    q: "What happens if the existing sequence of operation is not documented?",
-    a: "We assess and document the existing operation at survey stage. Where sequences are missing or incorrect, we develop a new specification in consultation with the client and the facilities team.",
-  },
-  {
-    q: "Do controls upgrades qualify for any incentives?",
-    a: "Energy-saving controls upgrades may qualify for SALIX funding in the public sector or qualify as ESOS-reducing actions. We can provide the energy modelling and documentation needed to support an application.",
   },
 ];
 
@@ -57,87 +57,50 @@ export default function ControllerUpgradesPage() {
   return (
     <div>
 
-      {/* ── 1. HERO ── dark dot-grid, system diagram, inline logos ───────── */}
-      <section className="relative overflow-hidden bg-[#111418] py-16 sm:py-24">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage: "radial-gradient(circle, rgba(41,120,88,0.15) 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
-          }}
+      {/* ── 1. HERO ─────────────────────────────────────────────────────── */}
+      <section className="relative min-h-[480px] overflow-hidden bg-slate-900">
+        <Image
+          src="/ahu-controller.png"
+          alt="AHU controller panel and building controls upgrade by BVS"
+          fill
+          priority
+          unoptimized
+          className="object-cover object-center opacity-40"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#111418]/80 via-transparent to-[#111418]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-transparent" />
 
-        <Container className="relative">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
-
-            <div>
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
-                AHU Controller Solutions & Upgrades
-              </p>
-              <h1 className="font-display text-4xl font-extrabold uppercase leading-[1.05] text-white sm:text-5xl xl:text-6xl">
-                Your AHU<br />Controls Are<br />
-                <span className="text-[#297858]">Costing You.</span>
-              </h1>
-              <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
-              <p className="mt-6 max-w-lg text-[15px] leading-7 text-white/60">
-                Obsolete controls, poor sequences, and missing BMS integration are a consistent source of energy waste. We assess, specify, build, install, and commission AHU controls — across single units and multi-site estates.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href="#assessment"
-                  className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-                >
-                  Request a controls assessment
-                </a>
-                <a
-                  href="tel:01256518170"
-                  className="inline-flex items-center gap-2 border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/5"
-                >
-                  <PhoneIcon /> 01256 518170
-                </a>
-              </div>
-
+        <Container className="relative flex min-h-[480px] items-center py-16">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#297858]">
+              AHU Controller Solutions & Upgrades
+            </p>
+            <h1 className="font-display text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
+              Independent AHU<br />Controller Solutions
+            </h1>
+            <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
+            <p className="mt-5 max-w-lg text-[15px] leading-7 text-white/70">
+              Unlike AHU manufacturers who only supply controllers on the condition their engineers do the work, we offer fully independent supply, installation, and commissioning. Freedom of choice. No lock-in.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#assessment"
+                className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
+              >
+                Request a controls assessment
+              </a>
+              <a
+                href="#services"
+                className="inline-flex items-center gap-2 border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/5"
+              >
+                Learn more
+                <ArrowDownIcon />
+              </a>
             </div>
-
-            {/* System architecture diagram — desktop only */}
-            <div className="hidden lg:block">
-              <div className="border border-white/10 bg-white/5 p-6">
-                <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.25em] text-white/30">
-                  Typical upgrade architecture
-                </p>
-                <div className="space-y-2">
-                  {[
-                    { label: "AHU Sensors & Actuators", sub: "Temperature, pressure, CO₂, damper, valve", highlight: false },
-                    { label: "DDC Controller Panel", sub: "Open protocol — BACnet / Modbus / LON", highlight: true },
-                    { label: "BMS Integration", sub: "Two-way data exchange, alarm routing", highlight: false },
-                    { label: "Energy Monitoring", sub: "kWh metering, trend logging, reporting", highlight: false },
-                  ].map((item, i) => (
-                    <div key={item.label}>
-                      <div className={`flex items-start gap-3 border px-4 py-3 ${item.highlight ? "border-[#297858]/40 bg-[#297858]/10" : "border-white/10 bg-white/5"}`}>
-                        <div className={`mt-1 h-2 w-2 shrink-0 ${item.highlight ? "bg-[#297858]" : "bg-white/20"}`} />
-                        <div>
-                          <p className={`text-xs font-bold ${item.highlight ? "text-white" : "text-white/55"}`}>{item.label}</p>
-                          <p className="text-[10px] text-white/30">{item.sub}</p>
-                        </div>
-                      </div>
-                      {i < 3 && (
-                        <div className="ml-[22px] flex h-5 items-center">
-                          <div className="h-full w-px bg-white/10" />
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
           </div>
         </Container>
       </section>
 
-      {/* ── TRUST BAR ─────────────────────────────────────────────────── */}
+      {/* ── TRUST BAR ─────────────────────────────────────────────────────── */}
       <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
         <Container>
           <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
@@ -147,7 +110,7 @@ export default function ControllerUpgradesPage() {
             <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
             <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
             <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
+              <div className="flex sm:grid sm:grid-cols-6 lg:grid-cols-12 gap-x-8 gap-y-6 min-w-max sm:min-w-0 px-4 sm:px-0">
                 {clientLogos.map((logo) => (
                   <Image
                     key={logo.alt}
@@ -156,7 +119,7 @@ export default function ControllerUpgradesPage() {
                     width={120}
                     height={60}
                     unoptimized
-                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
+                    className="h-12 w-auto object-contain mx-auto opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
                   />
                 ))}
               </div>
@@ -165,7 +128,102 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 2. PROBLEM ── cost of old controls ──────────────────────────── */}
+      {/* ── 2. INDEPENDENT & FLEXIBLE ────────────────────────────────────── */}
+      <section className="bg-white py-14 sm:py-16">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+            <ScrollReveal>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+                Independent & Flexible
+              </p>
+              <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
+                No Manufacturer Tie-In.<br />No Unnecessary Costs.
+              </h2>
+              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-5 text-sm leading-7 text-slate-500">
+                Our AHU controller solutions provide a flexible, cost-effective alternative to manufacturer-tied services. Many AHU manufacturers only supply controllers on the condition that their own engineers carry out the work — limiting your options and inflating costs.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-slate-500">
+                We offer independent supply, installation, and commissioning across any make or model of AHU. You choose the right solution for your system without being forced into a single-supplier arrangement.
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={80}>
+              <div className="grid gap-3">
+                {[
+                  { label: "Any AHU brand", detail: "We work across all makes and models. Brand-agnostic assessment, specification, and installation." },
+                  { label: "Open protocol as standard", detail: "BACnet, Modbus, and LON. Any competent engineer or BMS platform can read and write the system after handover." },
+                  { label: "Qualified engineers", detail: "Every project carried out by engineers with extensive experience in fault-finding, upgrades, and commissioning." },
+                ].map((item) => (
+                  <div key={item.label} className="flex gap-4 border border-slate-200 bg-[#f7f6f5] p-5">
+                    <div className="mt-1 h-2 w-2 shrink-0 bg-[#297858]" />
+                    <div>
+                      <p className="text-sm font-bold text-slate-900">{item.label}</p>
+                      <p className="mt-1 text-xs leading-5 text-slate-500">{item.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── 3. SERVICES ──────────────────────────────────────────────────── */}
+      <section id="services" className="bg-[#f7f6f5] py-16 sm:py-20">
+        <Container>
+          <ScrollReveal className="mb-10">
+            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              Our services
+            </p>
+            <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
+              AHU Controller<br />Solutions
+            </h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+            <p className="mt-4 max-w-xl text-sm leading-7 text-slate-500">
+              Save money with expert AHU controls upgrades, refurbishments, and independent commissioning.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "AHU Control Fault-Finding & Diagnostics",
+                detail: "Comprehensive investigation of control issues including sensor errors, programming faults, and communication failures — with fast and effective resolutions.",
+              },
+              {
+                title: "AHU Control Upgrades & Replacements",
+                detail: "Replacing outdated or inefficient control systems with modern alternatives designed to improve reliability, energy efficiency, and long-term performance.",
+              },
+              {
+                title: "PCB Upgrades & Replacements",
+                detail: "Supplying and installing new printed circuit boards to restore full control functionality and eliminate faults caused by ageing or damaged components.",
+              },
+              {
+                title: "Trend & BMS Integration",
+                detail: "Installing, configuring, and commissioning AHU controls within Trend systems or wider building management systems — ensuring seamless communication and centralised control.",
+              },
+              {
+                title: "AHU Controller Refurbishment",
+                detail: "Overhauling existing control systems, repairing or replacing worn components, and extending the operational life of your AHU without the need for full replacement.",
+              },
+              {
+                title: "Energy Optimisation & Sequences",
+                detail: "Reviewing and rewriting control sequences for energy efficiency — demand-controlled ventilation, optimised setpoints, and night setback programmes.",
+              },
+            ].map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 50} className="h-full">
+                <div className="flex h-full flex-col border-t-2 border-[#297858] bg-white p-6">
+                  <h3 className="font-display text-sm font-extrabold uppercase text-slate-900">{item.title}</h3>
+                  <p className="mt-3 flex-1 text-sm leading-6 text-slate-500">{item.detail}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ── 4. PROBLEM ── cost of old controls ───────────────────────────── */}
       <section className="bg-white py-14 sm:py-16">
         <Container>
           <ScrollReveal className="mb-10">
@@ -215,7 +273,7 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 3. SOLUTION ── open protocol explained ───────────────────────── */}
+      {/* ── 5. SOLUTION ── open protocol ─────────────────────────────────── */}
       <section className="bg-[#111418] py-16 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
@@ -258,7 +316,7 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 4. BENEFITS ── energy stats + capability cards ───────────────── */}
+      {/* ── 6. WHAT YOU GET ── stats + equal-height cards ────────────────── */}
       <section className="bg-[#f7f6f5] py-16 sm:py-20">
         <Container>
           <ScrollReveal className="mb-10">
@@ -271,6 +329,7 @@ export default function ControllerUpgradesPage() {
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
           </ScrollReveal>
 
+          {/* Stats row */}
           <div className="mb-6 grid gap-px bg-slate-200 sm:grid-cols-3">
             {[
               { stat: "15–30%", label: "Typical AHU energy reduction", context: "Through improved sequences, demand-controlled ventilation, and setpoint optimisation" },
@@ -288,15 +347,16 @@ export default function ControllerUpgradesPage() {
             ))}
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Equal-height capability cards — grid-rows stretches all cards in each row */}
+          <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { label: "Open protocol DDC", detail: "No proprietary lock-in. BACnet, Modbus, or LON as standard — works with any BMS now and in the future." },
               { label: "Energy modelled upfront", detail: "We model energy savings before any commitment. You know what the upgrade will deliver before you commit." },
               { label: "Single unit to estate", detail: "One AHU or 40 sites. Same process, same quality, same documentation — phased to your programme." },
               { label: "ESOS documentation", detail: "Controls upgrades count towards ESOS audits. We provide the energy baseline and post-upgrade records at handover." },
             ].map((item, i) => (
-              <ScrollReveal key={item.label} delay={i * 60}>
-                <div className="border-t-2 border-[#297858] bg-white p-5">
+              <ScrollReveal key={item.label} delay={i * 60} className="h-full">
+                <div className="flex h-full flex-col border-t-2 border-[#297858] bg-white p-5">
                   <p className="font-display text-sm font-extrabold uppercase text-slate-900">{item.label}</p>
                   <p className="mt-2 text-xs leading-5 text-slate-500">{item.detail}</p>
                 </div>
@@ -306,57 +366,60 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 5. SOCIAL PROOF ── 14-site case study with stats panel ─────── */}
-      <section className="bg-[#f7f6f5] py-16 sm:py-20 border-t border-slate-200">
+      {/* ── 7. CASE STUDY ── Ringwood Leisure Centre ─────────────────────── */}
+      <section className="border-t border-slate-200 bg-[#f7f6f5] py-16 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-start">
             <ScrollReveal>
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-                Case study
+                Case study · Leisure · Controller Upgrade
               </p>
               <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
-                14-Site FM Portfolio<br />Controls Programme
+                Ringwood Leisure Centre<br />— AHU Controller Upgrade
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-slate-500">
-                An FM contractor managing a 14-building commercial portfolio needed obsolete AHU controllers replaced across all sites. Inconsistent hardware, missing sequence documentation, and no BMS integration across the estate.
+                Ringwood Leisure Centre had been advised by another contractor that both of their ageing AHUs needed full replacement — a programme quoted at over £100,000. BVS carried out an independent controls assessment and identified that the actual root cause was failing control systems, not the AHU plant itself.
               </p>
               <div className="mt-5 space-y-3">
                 <div className="border-l-2 border-slate-300 pl-4">
-                  <span className="text-sm text-slate-500">Controllers assessed and documented across all 14 sites before specification</span>
+                  <span className="text-sm text-slate-500">Full controls assessment carried out across both AHUs before any works were committed to</span>
                 </div>
                 <div className="border-l-2 border-slate-300 pl-4">
-                  <span className="text-sm text-slate-500">New DDC panels built, installed, and commissioned to a phased programme</span>
+                  <span className="text-sm text-slate-500">Trend BMS controllers specified, supplied, installed, and commissioned on both units</span>
+                </div>
+                <div className="border-l-2 border-slate-300 pl-4">
+                  <span className="text-sm text-slate-500">AHU plant retained — no replacement required</span>
                 </div>
               </div>
-              <p className="mt-5 text-sm leading-7 text-slate-500">
-                Open-protocol BACnet controllers installed across all sites. BMS integration confirmed. Energy monitoring added as part of the controls package.
-              </p>
               <div className="mt-5 space-y-3">
                 <div className="border-l-2 border-[#297858] pl-4">
-                  <span className="text-sm font-bold text-slate-900">22% average energy reduction recorded across the 14 sites</span>
+                  <span className="text-sm font-bold text-slate-900">Full system control restored at a fraction of the £100k+ replacement cost</span>
                 </div>
                 <div className="border-l-2 border-[#297858] pl-4">
-                  <span className="text-sm text-slate-600">Full BMS integration and remote monitoring on all units at handover</span>
+                  <span className="text-sm text-slate-600">Both AHUs returned to full performance — no unnecessary plant replaced</span>
                 </div>
               </div>
               <div className="mt-7">
-                <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]">
-                  View all case studies →
+                <Link
+                  href="/case-studies/ringwood-leisure-ahu-controller-upgrade"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
+                >
+                  Read the full case study →
                 </Link>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={80}>
               <div className="border border-slate-200 bg-white p-7">
-                <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Programme results</p>
+                <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Project summary</p>
                 <div className="space-y-4">
                   {[
-                    { stat: "14", label: "Sites in programme" },
-                    { stat: "22%", label: "Average energy reduction" },
-                    { stat: "BACnet", label: "Protocol — open, not proprietary" },
-                    { stat: "100%", label: "BMS integration at handover" },
-                    { stat: "Phased", label: "Delivery — no single-site disruption" },
+                    { stat: "Ringwood", label: "Leisure Centre, Hampshire" },
+                    { stat: "Leisure", label: "Sector" },
+                    { stat: "2", label: "AHUs — both retained, not replaced" },
+                    { stat: "Trend", label: "BMS controllers — open protocol" },
+                    { stat: "£100k+", label: "Replacement cost avoided" },
                   ].map((item) => (
                     <div key={item.label} className="flex items-center justify-between border-b border-slate-100 pb-4 last:border-0 last:pb-0">
                       <span className="text-xs text-slate-400">{item.label}</span>
@@ -370,7 +433,7 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 6. HOW IT WORKS ── 4-step process (dark 2×2) ────────────────── */}
+      {/* ── 8. HOW IT WORKS ── 4-step process ───────────────────────────── */}
       <section className="bg-[#111418] py-16 sm:py-20">
         <Container>
           <ScrollReveal className="mb-10">
@@ -434,7 +497,7 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 7. OFFER ── free controls assessment ─────────────────────────── */}
+      {/* ── 9. OFFER ── free controls assessment ─────────────────────────── */}
       <section className="bg-white py-14">
         <Container>
           <ScrollReveal>
@@ -445,11 +508,11 @@ export default function ControllerUpgradesPage() {
                     No-obligation offer
                   </p>
                   <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-                    Controls Assessment<br />&amp; Energy Model
+                    Book a Free AHU<br />Controls Site Survey
                   </h2>
                   <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
                   <p className="mt-4 text-sm leading-6 text-slate-600">
-                    Before any commitment, we assess your existing controls, model the energy savings an upgrade would deliver, and confirm BMS integration capability.
+                    Book a site survey today and receive bespoke AHU controls advice and recommendations from our engineers. Before any commitment, we assess your existing controls, model the energy savings an upgrade would deliver, and confirm BMS integration capability.
                   </p>
                   <ul className="mt-5 space-y-2.5">
                     {[
@@ -486,7 +549,7 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 8. FINAL CTA ── dark section with form ───────────────────────── */}
+      {/* ── 10. CTA + FORM ───────────────────────────────────────────────── */}
       <section id="assessment" className="bg-[#111418] py-20">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
@@ -542,7 +605,7 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 9. FAQ ───────────────────────────────────────────────────────── */}
+      {/* ── 11. FAQ ──────────────────────────────────────────────────────── */}
       <FAQAccordion faqs={faqs} />
 
       {/* ── RELATED SERVICES ─────────────────────────────────────────────── */}
@@ -576,6 +639,13 @@ export default function ControllerUpgradesPage() {
   );
 }
 
+function ArrowDownIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 function CheckIcon({ className = "" }) {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" className={`text-[#297858] ${className}`}>
