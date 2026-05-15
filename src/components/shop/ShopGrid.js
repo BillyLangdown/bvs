@@ -134,22 +134,24 @@ function ProductCard({ product, categories }) {
         )}
 
         {/* Actions */}
-        <div className="mt-4 flex items-center gap-5 border-t border-slate-100 pt-4">
-          <Link
-            href={`/shop/${product.slug}`}
-            className="flex items-center gap-1.5 text-sm font-semibold text-slate-500 transition-colors hover:text-slate-800"
-          >
-            View Details
-            <ArrowIcon />
-          </Link>
-          <Link
-            href={`/shop/${product.slug}#enquire`}
-            className="flex items-center gap-1.5 text-sm font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
-          >
-            Enquire Now
-            <ArrowIcon />
-          </Link>
-        </div>
+        <div className="mt-4 flex items-end justify-between border-t border-slate-100 pt-4">
+  <Link
+    href={`/shop/${product.slug}`}
+    className="group inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition-colors hover:text-slate-800"
+  >
+    View Details
+    <span className="inline-flex text-slate-400 transition-transform duration-200 group-hover:translate-x-1">
+      →
+    </span>
+  </Link>
+
+  <Link
+    href={`/shop/${product.slug}#enquire`}
+    className="text-sm font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
+  >
+    Enquire Now
+  </Link>
+</div>
       </div>
     </div>
   );

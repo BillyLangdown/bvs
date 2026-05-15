@@ -4,6 +4,7 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { getShopProducts, getProductCategories } from "@/lib/wordpress/api";
 import { ShopGrid } from "@/components/shop/ShopGrid";
+import { CustomBuildEnquiry } from "@/components/forms/CustomBuildEnquiry";
 
 export const metadata = {
   title: "Shop - HVAC Components & Parts | BVS Building Ventilation Solutions",
@@ -120,46 +121,23 @@ export default async function ShopPage() {
         </Container>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────────────── */}
-      <section className="bg-[#111418] py-14 sm:py-16">
+      {/* ── CUSTOM BUILD ENQUIRY ─────────────────────────────────────── */}
+      <section className="bg-[#111418] py-14 sm:py-20">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
-            <ScrollReveal>
-              <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-                Need something specific?
-              </p>
-              <h2 className="font-display text-xl font-extrabold uppercase text-white sm:text-2xl">
-                Don&apos;t see the product you&apos;re after?
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <ul className="mt-5 flex flex-col gap-2.5">
-                {[
-                  "We source components beyond what's listed here",
-                  "Motor type, duty, casing size, and controls spec covered",
-                  "Response within one working day — direct from an engineer",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 text-sm text-white/55">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </ScrollReveal>
-            <ScrollReveal delay={80} className="flex flex-col gap-3">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#1d5c42]"
-              >
-                Enquire About Parts
-              </Link>
-              <a
-                href="tel:01256518170"
-                className="inline-flex items-center justify-center gap-2 border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/8"
-              >
-                01256 518170
-              </a>
-            </ScrollReveal>
-          </div>
+          <ScrollReveal className="mb-10">
+            <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
+              Custom Build
+            </p>
+            <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              Need Something Built to Specification?
+            </h2>
+            <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
+            <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/60">
+              Select the product type below and fill in your requirements. Our engineers will come
+              back within one working day with a specification and price.
+            </p>
+          </ScrollReveal>
+          <CustomBuildEnquiry />
         </Container>
       </section>
 
