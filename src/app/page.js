@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { getCaseStudies } from "@/lib/wordpress/api";
+import { AdditionalServicesAccordion } from "@/components/ui/AdditionalServicesAccordion";
 
 /* ── DATA ───────────────────────────────────────────────────────────── */
 
@@ -185,9 +186,9 @@ const casePlaceholders = [
   {
     type: "AHU Manufacturing",
     sector: "Hotel",
-    outcome: "Warner Leisure Hotel's Gunton Hall required a bespoke replacement AHU for their swimming pool — tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
+    outcome: "Warner Leisure Hotel's Gunton Hall required a custom-built replacement AHU for their swimming pool — tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
     photo: "/warner-hotel-gunton-case-study.webp",
-    photoAlt: "Warner Leisure Hotel Gunton Hall — bespoke AHU manufactured and installed by BVS",
+    photoAlt: "Warner Leisure Hotel Gunton Hall — custom-built AHU manufactured and installed by BVS",
     href: "/case-studies/warner-leisure-hotel-gunton-hall-ahu",
   },
 ];
@@ -204,7 +205,10 @@ export default function Home() {
           src="/ahu-manufacturing2.webp"
           alt="BVS air handling unit manufacturing workshop"
           fill
+          sizes="100vw"
           priority
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
           className="object-cover object-[65%_15%] sm:object-[40%_55%]"
         />
         {/* Mobile: solid dark base so text is always legible */}
@@ -550,63 +554,7 @@ export default function Home() {
     <div className="h-px flex-1 bg-black/10" />
   </div>
 
-  <div className="space-y-3">
-    {additionalServices.map((s, i) => (
-      <ScrollReveal key={s.title} delay={i * 50}>
-        <details className="group border border-black/10 bg-white transition hover:border-black/20">
-          <summary className="flex cursor-pointer items-center gap-4 p-4">
-            <div className="flex h-10 w-10 items-center justify-center border border-black/10 bg-[#f5f3ef]">
-              <AdditionalServiceIcon index={i} />
-            </div>
-
-            <div className="flex-1">
-              <p className="text-sm font-bold uppercase text-slate-900">
-                {s.title}
-              </p>
-              <p className="text-xs text-slate-500">
-                {s.desc}
-              </p>
-            </div>
-
-            <span className="text-slate-400 transition-transform group-open:rotate-180">
-              ⌄
-            </span>
-          </summary>
-
-          <div className="border-t border-black/10 px-4 py-4">
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500">
-                  Overview
-                </p>
-                <p className="mt-2 text-xs leading-6 text-slate-600">
-                  {s.desc}
-                </p>
-              </div>
-
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500">
-                  When it applies
-                </p>
-                <p className="mt-2 text-xs leading-6 text-slate-600">
-                  Used in system upgrades, compliance requirements, and performance optimisation where supporting works are required alongside core AHU changes.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-5 border-t border-black/10 pt-4">
-              <Link
-                href={s.href}
-                className="inline-flex items-center gap-2 text-xs font-semibold text-[#297858] hover:text-[#1d5c42]"
-              >
-                Learn more <ArrowIcon />
-              </Link>
-            </div>
-          </div>
-        </details>
-      </ScrollReveal>
-    ))}
-  </div>
+  <AdditionalServicesAccordion services={additionalServices} />
 </div>
 
   </Container>

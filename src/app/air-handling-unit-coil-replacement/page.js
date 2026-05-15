@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "How long does a coil replacement take?",
-    a: "For a straightforward single-coil replacement in an accessible unit, typically one to two days on site. Larger or more complex units with multiple coils, poor access, or requiring bespoke manufacture will take longer — we confirm programme at quotation stage.",
+    a: "For a straightforward single-coil replacement in an accessible unit, typically one to two days on site. Larger or more complex units with multiple coils, poor access, or requiring custom manufacture will take longer — we confirm programme at quotation stage.",
   },
   {
     q: "What coil types do you replace?",
@@ -44,7 +44,7 @@ const faqs = [
   },
   {
     q: "Can a coil failure be treated as an emergency?",
-    a: "We handle emergency coil replacements where the AHU is out of service or environmental control is compromised. Lead time depends on coil type and whether a standard or bespoke coil is required — contact us directly to discuss urgency.",
+    a: "We handle emergency coil replacements where the AHU is out of service or environmental control is compromised. Lead time depends on coil type and whether a standard or custom-manufactured coil is required — contact us directly to discuss urgency.",
   },
   {
     q: "What causes coil failure?",
@@ -114,15 +114,18 @@ export default function CoilReplacementPage() {
 {/* Background image */}
 <div className="absolute inset-0">
   <Image
-    src="/ahu-coil-replacement.webp"
+    src="/coil-replacement.webp"
     alt="AHU coil replacement"
     fill
+    sizes="100vw"
     priority
+    placeholder="blur"
+    blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
     className="object-cover object-center"
   />
 
   {/* Stronger mobile readability overlay */}
-  <div className="absolute inset-0 bg-[#111418]/70 sm:bg-[#111418]/55" />
+  <div className="absolute inset-0 bg-[#111418]/90 sm:bg-[#111418]/55" />
 </div>
 
 <Container className="relative z-10 flex min-h-[420px] items-end pb-6 sm:pb-10">
@@ -190,7 +193,7 @@ export default function CoilReplacementPage() {
       ].map((item) => (
         <div
           key={item.label}
-          className="flex items-start gap-3 border-l-2 border-[#297858]/60 bg-white/5 px-4 py-3 backdrop-blur-sm"
+          className="flex items-start gap-3 border-l-2 border-[#297858]/70 bg-white/20 px-4 py-3 backdrop-blur-sm"
         >
           <div className="mt-[6px] h-2 w-2 flex-shrink-0 rounded-full bg-[#297858]" />
 
@@ -199,7 +202,7 @@ export default function CoilReplacementPage() {
               {item.label}
             </p>
 
-            <p className="text-xs leading-5 text-white/55">
+            <p className="text-xs leading-5 text-white/95">
               {item.detail}
             </p>
           </div>
@@ -467,7 +470,7 @@ export default function CoilReplacementPage() {
             "All makes and models, including obsolete and discontinued units where parts are no longer available from the OEM.",
         },
         {
-          label: "Bespoke manufacture",
+          label: "Custom manufacture",
           detail:
             "Non-standard dimensions manufactured to exact specification. Coil specified from site measurements.",
         },
@@ -531,7 +534,7 @@ export default function CoilReplacementPage() {
   outcome: "Matches or improves original duty performance.",
   points: [
     "Standard units sourced where possible",
-    "Bespoke manufacture for non-standard coils",
+    "Custom manufacture for non-standard coils",
     "Duty and performance verified against original",
   ],
 },
@@ -665,7 +668,7 @@ export default function CoilReplacementPage() {
               <div className="mt-5 space-y-2.5 border-l border-white/10 pl-5">
                 <p className="text-sm text-white/50">Any make, any model — including obsolete and discontinued units</p>
                 <p className="text-sm text-white/50">Measure-to-fit: coils specified from site measurements, not model numbers</p>
-                <p className="text-sm text-white/50">Standard sourcing and bespoke manufacture available</p>
+                <p className="text-sm text-white/50">Standard sourcing and custom manufacture available</p>
               </div>
             </ScrollReveal>
 

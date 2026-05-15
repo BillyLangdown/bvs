@@ -82,7 +82,10 @@ export default function TroubleshootingPage() {
           src="/ventilation-troubleshooting-hero.webp"
           alt="BVS engineer diagnosing a ventilation system fault on-site"
           fill
+          sizes="100vw"
           priority
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
           unoptimized
           className="object-cover object-center opacity-80"
         />

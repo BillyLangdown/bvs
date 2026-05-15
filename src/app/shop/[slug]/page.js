@@ -91,9 +91,12 @@ export default async function ProductPage({ params }) {
                     src={product.imageUrl}
                     alt={plainTitle}
                     fill
+                    sizes="100vw"
                     unoptimized
                     className="object-contain p-8"
                     priority
+                    placeholder="blur"
+                    blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
                   />
                 ) : (
                   <div className="flex h-full items-center justify-center">

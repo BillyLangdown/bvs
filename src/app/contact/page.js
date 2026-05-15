@@ -21,7 +21,10 @@ export default function ContactPage() {
     src="/person-working.webp"
     alt="BVS engineer working on ventilation equipment"
     fill
+    sizes="100vw"
     priority
+    placeholder="blur"
+    blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
     className="object-cover"
   />
 

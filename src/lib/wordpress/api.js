@@ -61,7 +61,7 @@ export async function getPosts({ perPage = 20, revalidate = 300 } = {}) {
   return wpFetch("posts", {
     query: {
       per_page: perPage,
-      _fields: "id,slug,title,excerpt,date,yoast_head_json",
+      _embed: "wp:featuredmedia",
     },
     next: { revalidate },
   });

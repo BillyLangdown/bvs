@@ -8,7 +8,7 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 export const metadata = {
   title: "AHU Manufacturing | BVS Building Ventilation Solutions",
   description:
-    "Bespoke air handling unit manufacturing from our UK facility. Custom AHUs designed to specification — any size, any configuration, 5–7 week lead time. 40+ years manufacturing experience.",
+    "Custom air handling unit manufacturing from our UK facility. Custom AHUs designed to specification — any size, any configuration, 5–7 week lead time. 40+ years manufacturing experience.",
 };
 
 const clientLogos = [
@@ -28,8 +28,8 @@ const clientLogos = [
 
 const faqs = [
   {
-    q: "What is the typical lead time for a bespoke AHU?",
-    a: "For most bespoke units, lead time is 5–7 weeks from drawing approval to delivery. This varies depending on complexity, size, and whether specialist components such as heat recovery or DX coils are included. We confirm lead time at quotation stage.",
+    q: "What is the typical lead time for a custom-built AHU?",
+    a: "For most custom-built units, lead time is 5–7 weeks from drawing approval to delivery. This varies depending on complexity, size, and whether specialist components such as heat recovery or DX coils are included. We confirm lead time at quotation stage.",
   },
   {
     q: "Can you manufacture a replacement for an obsolete AHU?",
@@ -63,29 +63,30 @@ export default function AHUManufacturingPage() {
 {/* IMAGE (more visible, less crushed by overlays) */}
 <Image
   src="/ahu-sparks.webp"
-  alt="BVS air handling unit manufacturing workshop — bespoke AHU build in progress"
+  alt="BVS air handling unit manufacturing workshop — custom-built AHU build in progress"
   fill
   priority
+  placeholder="blur"
+  blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
   className="object-cover object-center scale-[1.02]"
   sizes="100vw"
 />
 
 {/* softer controlled overlay (less heavy than before) */}
-<div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-black/10" />
+<div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-black/0" />
 
 <Container className="relative flex min-h-[620px] items-center">
 
   {/* LEFT CONTENT PANEL */}
-  <div className="w-full max-w-xl">
+  <div className="w-full max-w-3xl">
 
     <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
       AHU Manufacturing
     </p>
 
     <h1 className="font-display text-4xl font-extrabold uppercase leading-[1.05] text-white sm:text-5xl">
-      Built to Fit.<br />
-      Engineered to Perform.<br />
-      UK Manufactured.
+     Built for your project, <br/>
+    Manufactured in the UK.
     </h1>
 
     <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
@@ -333,25 +334,25 @@ export default function AHUManufacturingPage() {
       stat: "40+",
       label: "Years manufacturing",
       detail:
-        "Four decades designing and building AHUs from our UK facility — not a recent addition to the service range.",
+        "Four decades of AHU design and manufacture from our UK facility.",
     },
     {
       stat: "UK",
       label: "Manufactured",
       detail:
-        "Every unit built in our UK facility. Accessible for client or third-party pre-delivery inspection before despatch.",
+        "All units built in the UK with client inspection available pre-despatch.",
     },
     {
       stat: "Full",
       label: "Scope available",
       detail:
-        "Manufacture, delivery, mechanical and electrical installation, and commissioning available within a single contract.",
+        "Manufacture, delivery, installation and commissioning under one contract.",
     },
     {
       stat: "Factory",
       label: "Tested every unit",
       detail:
-        "Fan performance, electrical continuity, and build quality tested before every unit leaves our facility. Records issued at handover.",
+        "Performance and electrical checks completed before despatch with records issued.",
     },
   ].map((item, i) => (
     <ScrollReveal key={item.label} delay={i * 60} className="h-full">
@@ -395,7 +396,7 @@ export default function AHUManufacturingPage() {
 
         <h2 className="mt-3 font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
           Warner Leisure Hotel<br />
-          Gunton Hall — Bespoke AHU
+          Gunton Hall — Made-to-Specification AHU
         </h2>
 
         <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
@@ -410,7 +411,7 @@ export default function AHUManufacturingPage() {
         {/* IMPROVED STATS → CHIPS (not cards anymore) */}
         <div className="mt-8 flex flex-wrap gap-2">
           {[
-            "Bespoke design",
+            "Made-to-specification design",
             "Flatpack delivery",
             "Trend controls",
             "End-to-end delivery",
@@ -450,7 +451,7 @@ export default function AHUManufacturingPage() {
 
           <Image
             src="/gunton-hall.webp"
-            alt="Gunton Hall Warner Leisure Hotel — bespoke AHU manufactured and installed by BVS"
+            alt="Gunton Hall Warner Leisure Hotel — custom-built AHU manufactured and installed by BVS"
             fill
             unoptimized
             className="object-cover"

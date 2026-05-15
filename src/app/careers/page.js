@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import Image from "next/image";
 
 export const metadata = {
   title: "Careers | BVS Building Ventilation Solutions",
@@ -13,22 +14,42 @@ export default function CareersPage() {
     <div>
 
       {/* Hero */}
-      <section className="bg-[#111418] py-16 sm:py-20">
-        <Container>
-          <div className="max-w-3xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/45">
-              Careers
-            </p>
-            <h1 className="font-display text-3xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
-              Opportunities At<br />Building Ventilation<br />Solutions
-            </h1>
-            <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
-            <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/65">
-              We are a fast-growing business driven by practical problem-solving to support our customers. If you think you have something to offer, we want to hear from you.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <section className="relative overflow-hidden bg-[#111418]">
+  {/* Background Image */}
+  <Image
+    src="/two-workers.webp"
+    alt="BVS engineers working inside an air handling unit"
+    fill
+    priority
+    className="object-cover object-center"
+    sizes="100vw"
+  />
+
+  {/* Overlays */}
+  <div className="absolute inset-0 bg-black/35" />
+  <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-black/15" />
+
+  <Container className="relative py-16 sm:py-20">
+    <div className="max-w-3xl">
+      <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/45">
+        Careers
+      </p>
+
+      <h1 className="font-display text-3xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
+        Opportunities At
+    
+       BVS
+      </h1>
+
+      <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
+
+      <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/65">
+        We are a fast-growing business driven by practical problem-solving to support our customers.
+        If you think you have something to offer, we want to hear from you.
+      </p>
+    </div>
+  </Container>
+</section>
 
       {/* Apply section */}
       <section className="bg-surface-2 py-16 sm:py-20">

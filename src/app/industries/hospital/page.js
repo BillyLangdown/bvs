@@ -49,6 +49,8 @@ export default function HospitalPage() {
           alt="NHS hospital corridor — BVS delivers HTM 03-01 compliant AHU works in live clinical environments"
           fill
           priority
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
           className="object-cover object-center"
           sizes="100vw"
         />

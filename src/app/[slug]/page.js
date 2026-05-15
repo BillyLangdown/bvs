@@ -66,6 +66,8 @@ export default async function WordpressPageBySlug({ params }) {
             alt=""
             fill
             priority
+            placeholder="blur"
+            blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
             className="object-cover"
             sizes="100vw"
           />

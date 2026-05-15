@@ -84,9 +84,15 @@ a {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
-.wp-content :where(img, video, iframe) {
+.wp-content :where(video, iframe) {
   max-width: 100%;
   height: auto;
+}
+.wp-content img {
+  max-width: 100%;
+  height: auto !important;
+  width: auto;
+  display: block;
 }
 
 /* hide scrollbar but keep scroll */

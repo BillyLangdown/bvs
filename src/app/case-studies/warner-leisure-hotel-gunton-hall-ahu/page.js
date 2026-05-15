@@ -5,7 +5,7 @@ import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 export const metadata = {
   title: "Warner Leisure Hotel Gunton Hall — AHU Manufacturing | BVS Case Study",
   description:
-    "BVS designed, manufactured, and installed a bespoke replacement AHU for Warner Leisure Hotel's Gunton Hall swimming pool — tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
+    "BVS designed, manufactured, and installed a custom-built replacement AHU for Warner Leisure Hotel's Gunton Hall swimming pool — tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
 };
 
 export default function GuntonHallAHUCaseStudy() {
@@ -127,7 +127,7 @@ export default function GuntonHallAHUCaseStudy() {
           <div className="mt-14 border border-slate-200 bg-surface-2">
             <div className="bg-[#111418] px-6 py-5">
               <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">AHU Manufacturing Enquiry</p>
-              <p className="mt-1 text-base font-bold text-white">Need a bespoke or replacement AHU?</p>
+              <p className="mt-1 text-base font-bold text-white">Need a custom-built or replacement AHU?</p>
               <p className="mt-1 text-xs text-white/45">We respond within one working day with practical options.</p>
             </div>
             <div className="px-6 py-6">

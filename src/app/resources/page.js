@@ -42,7 +42,10 @@ export default function ResourcesPage() {
     src="/aerial-buildings.webp"
     alt="Aerial view of buildings and HVAC environments"
     fill
+    sizes="100vw"
     priority
+    placeholder="blur"
+    blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
     className="object-cover object-center"
   />
   

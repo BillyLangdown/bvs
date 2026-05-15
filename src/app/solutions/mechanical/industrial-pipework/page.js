@@ -91,7 +91,10 @@ export default function IndustrialPipeworkPage() {
           src="/industrial-pipework-hero.webp"
           alt="Commercial pipework installation by BVS engineers"
           fill
+          sizes="100vw"
           priority
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
           unoptimized
           className="object-cover object-center opacity-90"
         />

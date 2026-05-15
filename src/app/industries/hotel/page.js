@@ -49,6 +49,8 @@ export default function HotelPage() {
           alt="Hotel interior — BVS delivers AHU works out of hours to protect guest experience"
           fill
           priority
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
           className="object-cover object-center"
           sizes="100vw"
         />

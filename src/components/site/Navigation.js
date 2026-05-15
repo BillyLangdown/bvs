@@ -38,7 +38,7 @@ const navItems = [
           {
             href: "/air-handling-unit-manufacturing/",
             label: "AHU Manufacturing",
-            description: "Bespoke AHUs built to specification - delivered and installed UK-wide.",
+            description: "Custom-built AHUs to specification - delivered and installed UK-wide.",
             icon: FactoryIcon,
           },
           {

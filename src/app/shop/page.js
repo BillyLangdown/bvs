@@ -33,8 +33,11 @@ export default async function ShopPage() {
   src="/crate-in-air.webp"
   alt="Crane lifting a ventilation unit against a clear blue sky"
   fill
+  sizes="100vw"
   unoptimized
   priority
+  placeholder="blur"
+  blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
   className="object-cover object-[70%_center]"
 />
         <div className="absolute inset-0 bg-gradient-to-r from-[#111418] via-[#111418]/55 to-[#111418]/10" />

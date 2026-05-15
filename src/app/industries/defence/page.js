@@ -49,6 +49,8 @@ export default function DefencePage() {
           alt="Defence facility — BVS delivers ventilation services on secure government and MoD sites"
           fill
           priority
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
           className="object-cover object-center"
           sizes="100vw"
         />
@@ -229,7 +231,7 @@ export default function DefencePage() {
               {
                 href: "/air-handling-unit-manufacturing",
                 label: "AHU Manufacturing",
-                desc: "Bespoke replacement AHUs to exact specification where like-for-like sourcing is not possible.",
+                desc: "Made-to-specification replacement AHUs where like-for-like sourcing is not possible.",
               },
               {
                 href: "/ec-fan-upgrades-and-retrofits-for-hvac",

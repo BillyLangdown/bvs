@@ -79,7 +79,10 @@ export default function ValidationSurveysPage() {
           src="/ventilation-survey-hero.webp"
           alt="BVS engineer carrying out an AHU condition survey on-site"
           fill
+          sizes="100vw"
           priority
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
           unoptimized
           className="object-cover object-center opacity-80"
         />

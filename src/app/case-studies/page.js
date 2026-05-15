@@ -41,7 +41,7 @@ const caseStudies = [
     sector: "Hotel",
     title: "Warner Leisure Hotel Gunton Hall — AHU Manufacturing",
     summary:
-      "BVS designed, manufactured, and installed a bespoke replacement AHU for Warner Leisure Hotel's Gunton Hall swimming pool — tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
+      "BVS designed, manufactured, and installed a custom-built replacement AHU for Warner Leisure Hotel's Gunton Hall swimming pool — tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
     tags: ["AHU Manufacturing", "Hotel", "Pool Hall"],
     image: "/warner-hotel-gunton-case-study.webp",
   },
@@ -193,7 +193,10 @@ export default function CaseStudiesPage() {
             src="/aerial-buildings.webp"
             alt="Aerial buildings"
             fill
+            sizes="100vw"
             priority
+            placeholder="blur"
+            blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
             className="object-cover"
           />
           <div className="absolute inset-0 bg-[#111418]/70" />

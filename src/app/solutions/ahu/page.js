@@ -18,7 +18,7 @@ const services = [
   {
     href: "/air-handling-unit-manufacturing",
     title: "AHU Manufacturing",
-    body: "Bespoke air handling units built in the UK to your exact specification. Off-the-shelf doesn't fit every building - we design and manufacture what you actually need.",
+    body: "Custom-built air handling units in the UK to your exact specification. Off-the-shelf doesn't fit every building - we design and manufacture what you actually need.",
   },
   {
     href: "/air-handling-unit-coil-replacement",
@@ -56,7 +56,7 @@ export default function AhuSolutionsPage() {
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-emerald-500" />
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/75">
-              From emergency coil replacements to bespoke new-build installations, we cover
+              From emergency coil replacements to custom new-build installations, we cover
               the full spectrum of air handling unit services. One team, 40+ years of expertise,
               nationwide coverage.
             </p>

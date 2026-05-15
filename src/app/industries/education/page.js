@@ -49,6 +49,8 @@ export default function EducationPage() {
           alt="School building — BVS delivers AHU refurbishment and ventilation works around academic calendars"
           fill
           priority
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
           className="object-cover object-center"
           sizes="100vw"
         />

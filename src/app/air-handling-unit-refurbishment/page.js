@@ -69,6 +69,8 @@ export default function AHURefurbishmentPage() {
             alt="BVS engineer carrying out air handling unit refurbishment works on site"
             fill
             priority
+            placeholder="blur"
+            blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
             className="object-cover object-center"
             sizes="100vw"
           />
@@ -632,7 +634,7 @@ export default function AHURefurbishmentPage() {
             <ScrollReveal delay={120}>
               <div className="relative h-[420px] overflow-hidden border border-slate-200 bg-white shadow-sm">
                 <Image
-                  src="/ahu-refurbishment-worker.webp"
+                  src="/ahu-refurbishment-hero2.webp"
                   alt="BVS engineer carrying out AHU refurbishment works"
                   fill
                   className="object-cover"

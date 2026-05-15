@@ -2,6 +2,7 @@ import { Container } from "@/components/site/Container";
 import Link from "next/link";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { getPosts, stripHtml } from "@/lib/wordpress/api";
+import Image from "next/image";
 
 export const metadata = {
   title: "Insights | BVS Building Ventilation Solutions",
@@ -17,6 +18,8 @@ const placeholderPosts = [
       "The economics of refurbishment versus replacement are often misunderstood. The comparison is not simply cost — it involves remaining structural life, compliance requirements, energy targets, and programme constraints. We break down the decision framework we use on every survey.",
     tag: "AHU Refurbishment",
     readTime: "6 min read",
+    photo: "/ahu-refurbishment-worker.webp",
+    photoAlt: "BVS engineer working on AHU refurbishment on site",
   },
   {
     slug: null,
@@ -25,6 +28,8 @@ const placeholderPosts = [
       "Quoted energy savings for EC fan conversions range from 15% to 60% depending on the source. The real figure depends on the existing fan type, controls configuration, and load profile. Here is what we typically see in practice.",
     tag: "EC Fan Technology",
     readTime: "5 min read",
+    photo: "/ec-fan-upgrade.webp",
+    photoAlt: "EC fan installed in air handling unit during upgrade",
   },
   {
     slug: null,
@@ -33,6 +38,8 @@ const placeholderPosts = [
       "HTM 03-01 is the NHS Health Technical Memorandum covering ventilation for healthcare premises. It is not simply a compliance checklist — it shapes how works are planned, what components are acceptable, and how commissioning is documented. A practical overview.",
     tag: "Healthcare",
     readTime: "7 min read",
+    photo: "/hospital.webp",
+    photoAlt: "Hospital corridor — BVS ventilation works in live clinical environments",
   },
   {
     slug: null,
@@ -41,6 +48,8 @@ const placeholderPosts = [
       "A degraded coil does not fail cleanly — it underperforms gradually. Fouled or corroded coil surfaces reduce heat transfer efficiency, increase energy consumption, and degrade air quality before the unit visibly stops working. What the delay actually costs.",
     tag: "Coil Replacement",
     readTime: "4 min read",
+    photo: "/ahu-coil-replacement.webp",
+    photoAlt: "AHU coil replacement in progress on site",
   },
   {
     slug: null,
@@ -49,6 +58,8 @@ const placeholderPosts = [
       "Proprietary controller systems tie maintenance contracts and future upgrades to a single supplier. Open-protocol systems — BACnet, Modbus, LON — give FM teams flexibility. We explain what the practical difference looks like over a 10-year horizon.",
     tag: "Controller Upgrades",
     readTime: "5 min read",
+    photo: "/ahu-controller.webp",
+    photoAlt: "AHU controller upgrade — modern controls panel installed in air handling unit",
   },
   {
     slug: null,
@@ -57,6 +68,8 @@ const placeholderPosts = [
       "Education estates have a defined window for invasive plant room works: summer. Six to eight weeks, and the programme needs to account for handover before term starts. How we plan and de-risk the academic calendar constraint.",
     tag: "Education",
     readTime: "4 min read",
+    photo: "/school.webp",
+    photoAlt: "School building — BVS AHU works scheduled around term times",
   },
 ];
 
@@ -69,23 +82,45 @@ export default async function BlogsPage() {
     // WordPress not configured — placeholder posts shown below
   }
 
-  const hasWordPressContent = posts?.length > 0;
+  const cleanPosts = (posts || []).filter((p) => {
+    const title = stripHtml(p.title?.rendered || "").trim();
+    const excerpt = p.excerpt?.rendered || "";
+    if (!title) return false;
+    if (excerpt.includes("et_pb_") || excerpt.includes("[et_pb")) return false;
+    return true;
+  });
+
+  const hasWordPressContent = cleanPosts.length > 0;
 
   return (
     <div>
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
-      <section className="bg-[#111418] py-16 sm:py-20">
-        <Container>
+      <section className="relative overflow-hidden bg-[#111418] py-16 sm:py-20">
+        <div className="absolute inset-0">
+          <Image
+            src="/london-aerial.webp"
+            alt="Engineering workshop insights and AHU technical documentation"
+            fill
+            priority
+            sizes="100vw"
+            placeholder="blur"
+            blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#111418]/75 via-[#111418]/50 to-[#111418]/20" />
+        </div>
+
+        <Container className="relative">
           <div className="max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/45">
-              Insights
+              Blogs
             </p>
             <h1 className="font-display text-3xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
-              Engineering Thinking.<br />Written Down.
+              Practical AHU Guidance
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
-            <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/65">
+            <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/75">
               Technical guidance on AHU refurbishment, EC fan performance, compliance, energy, and sector-specific delivery constraints. Practical, not promotional.
             </p>
           </div>
@@ -98,48 +133,98 @@ export default async function BlogsPage() {
           {hasWordPressContent ? (
             <>
               {/* Featured first post */}
-              <ScrollReveal className="mb-10">
-                <Link
-                  href={`/blogs/${posts[0].slug}`}
-                  className="group block border border-slate-200 bg-white p-8 transition-all duration-200 hover:border-[#297858] hover:shadow-md"
-                >
-                  <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#297858]">
-                    Latest
-                  </p>
-                  <h2 className="font-display text-xl font-extrabold uppercase leading-snug text-slate-900 group-hover:text-[#297858] sm:text-2xl">
-                    {posts[0].title?.rendered}
-                  </h2>
-                  <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500">
-                    {stripHtml(posts[0].excerpt?.rendered).slice(0, 280)}
-                    {stripHtml(posts[0].excerpt?.rendered).length > 280 ? "…" : ""}
-                  </p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-[#297858] transition-all group-hover:gap-3">
-                    Read article →
-                  </span>
-                </Link>
-              </ScrollReveal>
+              {(() => {
+                const featuredImg =
+                  cleanPosts[0]._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes?.large?.source_url ||
+                  cleanPosts[0]._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+                  cleanPosts[0].yoast_head_json?.og_image?.[0]?.url ||
+                  null;
+                return (
+                  <ScrollReveal className="mb-10">
+                    <Link
+                      href={`/blogs/${cleanPosts[0].slug}`}
+                      className="group block overflow-hidden border border-slate-200 bg-white transition-all duration-200 hover:border-[#297858] hover:shadow-md"
+                    >
+                      <div className="relative h-64 w-full sm:h-80 bg-slate-100">
+                        {featuredImg ? (
+                          <Image
+                            src={featuredImg}
+                            alt={stripHtml(cleanPosts[0].title?.rendered || "")}
+                            fill
+                            sizes="100vw"
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        ) : (
+                          <div className="flex h-full items-center justify-center">
+                            <Image src="/bvs-logo.webp" alt="BVS Building Ventilation Solutions" width={120} height={65} className="h-12 w-auto opacity-30" />
+                          </div>
+                        )}
+                      </div>
+                      <div className="p-8">
+                        <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#297858]">
+                          Latest
+                        </p>
+                        <h2 className="font-display text-xl font-extrabold uppercase leading-snug text-slate-900 group-hover:text-[#297858] sm:text-2xl">
+                          {cleanPosts[0].title?.rendered}
+                        </h2>
+                        <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500">
+                          {stripHtml(cleanPosts[0].excerpt?.rendered).slice(0, 280)}
+                          {stripHtml(cleanPosts[0].excerpt?.rendered).length > 280 ? "…" : ""}
+                        </p>
+                        <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-[#297858] transition-all group-hover:gap-3">
+                          Read article →
+                        </span>
+                      </div>
+                    </Link>
+                  </ScrollReveal>
+                );
+              })()}
 
               {/* Remaining posts grid */}
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                {posts.slice(1).map((p, i) => (
-                  <ScrollReveal key={p.id} delay={i * 60}>
-                    <Link
-                      href={`/blogs/${p.slug}`}
-                      className="group flex flex-col border border-slate-200 bg-white p-6 transition-all duration-200 hover:border-[#297858] hover:shadow-md"
-                    >
-                      <h2 className="font-display text-sm font-extrabold uppercase leading-snug text-slate-900 group-hover:text-[#297858]">
-                        {p.title?.rendered}
-                      </h2>
-                      <p className="mt-3 text-sm leading-6 text-slate-500 line-clamp-3">
-                        {stripHtml(p.excerpt?.rendered).slice(0, 160)}
-                        {stripHtml(p.excerpt?.rendered).length > 160 ? "…" : ""}
-                      </p>
-                      <span className="mt-4 text-xs font-semibold text-[#297858] transition-all group-hover:translate-x-1">
-                        Read →
-                      </span>
-                    </Link>
-                  </ScrollReveal>
-                ))}
+                {cleanPosts.slice(1).map((p, i) => {
+                  const img =
+                    p._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes?.medium_large?.source_url ||
+                    p._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+                    p.yoast_head_json?.og_image?.[0]?.url ||
+                    null;
+                  return (
+                    <ScrollReveal key={p.id} delay={i * 60}>
+                      <Link
+                        href={`/blogs/${p.slug}`}
+                        className="group flex h-full flex-col overflow-hidden border border-slate-200 bg-white transition-all duration-200 hover:border-[#297858] hover:shadow-md"
+                      >
+                        <div className="relative h-44 w-full shrink-0 bg-slate-100">
+                          {img ? (
+                            <Image
+                              src={img}
+                              alt={stripHtml(p.title?.rendered || "")}
+                              fill
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                          ) : (
+                            <div className="flex h-full items-center justify-center">
+                              <Image src="/bvs-logo.webp" alt="BVS Building Ventilation Solutions" width={120} height={65} className="h-10 w-auto opacity-30" />
+                            </div>
+                          )}
+                        </div>
+                        <div className="flex flex-1 flex-col p-6">
+                          <h2 className="font-display text-sm font-extrabold uppercase leading-snug text-slate-900 group-hover:text-[#297858]">
+                            {p.title?.rendered}
+                          </h2>
+                          <p className="mt-3 text-sm leading-6 text-slate-500 line-clamp-3">
+                            {stripHtml(p.excerpt?.rendered).slice(0, 160)}
+                            {stripHtml(p.excerpt?.rendered).length > 160 ? "…" : ""}
+                          </p>
+                          <span className="mt-auto pt-4 text-xs font-semibold text-[#297858] transition-all group-hover:translate-x-1">
+                            Read →
+                          </span>
+                        </div>
+                      </Link>
+                    </ScrollReveal>
+                  );
+                })}
               </div>
             </>
           ) : (
@@ -160,17 +245,28 @@ export default async function BlogsPage() {
               <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {placeholderPosts.map((p, i) => (
                   <ScrollReveal key={p.title} delay={i * 60}>
-                    <div className="flex flex-col border border-slate-200 bg-white p-6">
-                      <div className="mb-3 flex items-center justify-between">
-                        <span className="bg-surface-2 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500">
-                          {p.tag}
-                        </span>
-                        <span className="text-[10px] text-slate-400">{p.readTime}</span>
+                    <div className="flex flex-col overflow-hidden border border-slate-200 bg-white">
+                      <div className="relative h-44 w-full shrink-0">
+                        <Image
+                          src={p.photo}
+                          alt={p.photoAlt}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className="object-cover"
+                        />
                       </div>
-                      <h2 className="font-display text-sm font-extrabold uppercase leading-snug text-slate-900">
-                        {p.title}
-                      </h2>
-                      <p className="mt-3 text-sm leading-6 text-slate-500">{p.excerpt}</p>
+                      <div className="flex flex-1 flex-col p-6">
+                        <div className="mb-3 flex items-center justify-between">
+                          <span className="bg-surface-2 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500">
+                            {p.tag}
+                          </span>
+                          <span className="text-[10px] text-slate-400">{p.readTime}</span>
+                        </div>
+                        <h2 className="font-display text-sm font-extrabold uppercase leading-snug text-slate-900">
+                          {p.title}
+                        </h2>
+                        <p className="mt-3 text-sm leading-6 text-slate-500">{p.excerpt}</p>
+                      </div>
                     </div>
                   </ScrollReveal>
                 ))}

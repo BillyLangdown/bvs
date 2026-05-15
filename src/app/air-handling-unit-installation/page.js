@@ -64,6 +64,8 @@ export default function AHUInstallationPage() {
     alt="BVS engineers installing an air handling unit in a commercial plant room"
     fill
     priority
+    placeholder="blur"
+    blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
     className="object-cover object-center"
     sizes="100vw"
   />
@@ -73,7 +75,7 @@ export default function AHUInstallationPage() {
   <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/65 via-[42%] to-black/15" />
 
   <Container className="relative flex min-h-[620px] items-center py-20">
-    <div className="max-w-xl">
+    <div className="max-w-3xl">
 
       <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
         AHU Installation
@@ -83,7 +85,7 @@ export default function AHUInstallationPage() {
         className="font-display text-4xl font-extrabold leading-[0.98] text-white sm:text-5xl uppercase lg:text-6xl"
         style={{ textShadow: "0 2px 24px rgba(0,0,0,0.45)" }}
       >
-        New & Replacement Installation
+        New & Replacement Installation.
       </h1>
 
       <div className="mt-5 h-[3px] w-12 bg-[#297858]" />
