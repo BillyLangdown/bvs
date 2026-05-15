@@ -16,7 +16,7 @@ const caseStudies = [
     summary:
       "BVS refurbished an AHU supplying operating theatres at a private hospital in Bath — EC fans, custom cubic heat exchanger, and new fan bulkheads delivered energy savings with minimal clinical disruption.",
     tags: ["AHU Refurbishment", "EC Fan", "Healthcare"],
-    image: "/private-hospital-bath-case-study.png",
+    image: "/private-hospital-bath-case-study.webp",
   },
   {
     slug: "nhs-hammersmith-ahu-refurbishment",
@@ -97,7 +97,7 @@ const caseStudies = [
     summary:
       "The frost coil at a Burlington Street commercial office suffered severe damage. BVS designed, manufactured, and installed a split-section replacement to overcome plantroom access constraints.",
     tags: ["Coil Replacement", "Commercial"],
-    image: "/burlington-street-office-case-study.png",
+    image: "/burlington-street-office-case-study.webp",
   },
   {
     slug: "kingly-street-extract-fan-duct",
@@ -151,7 +151,7 @@ const caseStudies = [
     summary:
       "BVS carried out a ventilation survey and subsequent works on the Concorde simulator — a unique heritage environment requiring careful handling and specialist knowledge of the existing installation.",
     tags: ["Ventilation Survey", "Heritage"],
-    image: "/concorde-project-case-study.png",
+    image: "/concorde-project-case-study.webp",
   },
   {
     slug: "car-dealership-farnborough-coil-replacement",
@@ -190,7 +190,7 @@ export default function CaseStudiesPage() {
       <section className="relative overflow-hidden bg-[#111418] py-16 sm:py-20">
         <div className="absolute inset-0">
           <Image
-            src="/aerial-buildings.png"
+            src="/aerial-buildings.webp"
             alt="Aerial buildings"
             fill
             priority

@@ -35,18 +35,18 @@ export const metadata = {
 };
 
 const clientLogos = [
-  { src: "/nhs-logo.png", alt: "NHS" },
-  { src: "/disney-logo.png", alt: "Disney" },
-  { src: "/marriott-logo.png", alt: "Marriott Hotels" },
-  { src: "/moorfields-logo.png", alt: "Moorfields Eye Hospital" },
-  { src: "/ihg-logo.png", alt: "IHG Hotels & Resorts" },
-  { src: "/travelodge-logo.png", alt: "Travelodge" },
-  { src: "/waitrose-logo.png", alt: "Waitrose" },
-  { src: "/westfield-logo.png", alt: "Westfield" },
-  { src: "/fenwick-logo.png", alt: "Fenwick" },
-  { src: "/freedomleisure-logo.png", alt: "Freedom Leisure" },
-  { src: "/queenmary-logo.png", alt: "Queen Mary University" },
-  { src: "/alpinef1-logo.png", alt: "Alpine F1 Team" },
+  { src: "/nhs-logo.webp", alt: "NHS" },
+  { src: "/disney-logo.webp", alt: "Disney" },
+  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
+  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
+  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
+  { src: "/travelodge-logo.webp", alt: "Travelodge" },
+  { src: "/waitrose-logo.webp", alt: "Waitrose" },
+  { src: "/westfield-logo.webp", alt: "Westfield" },
+  { src: "/fenwick-logo.webp", alt: "Fenwick" },
+  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
+  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
+  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
 ];
 
 const faqs = [
@@ -87,7 +87,7 @@ export default function ECFanUpgradesPage() {
       {/* ── 1. HERO ── matches homepage structure ─────────────────────────── */}
       <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
       <Image
-  src="/fan-attached-to-bulkhead.png"
+  src="/fan-attached-to-bulkhead.webp"
   alt="EC fan unit installed in an existing air handling unit"
   fill
   priority
@@ -482,7 +482,7 @@ export default function ECFanUpgradesPage() {
             <ScrollReveal delay={80}>
               <div className="relative min-h-[300px] overflow-hidden lg:min-h-[420px]">
                 <Image
-                  src="/swimming-pool.png"
+                  src="/swimming-pool.webp"
                   alt="Leisure centre — EC fan retrofit restored full airflow and humidity control"
                   fill
                   className="object-cover"

@@ -12,18 +12,18 @@ export const metadata = {
 };
 
 const clientLogos = [
-  { src: "/nhs-logo.png", alt: "NHS" },
-  { src: "/disney-logo.png", alt: "Disney" },
-  { src: "/marriott-logo.png", alt: "Marriott Hotels" },
-  { src: "/moorfields-logo.png", alt: "Moorfields Eye Hospital" },
-  { src: "/ihg-logo.png", alt: "IHG Hotels & Resorts" },
-  { src: "/travelodge-logo.png", alt: "Travelodge" },
-  { src: "/waitrose-logo.png", alt: "Waitrose" },
-  { src: "/westfield-logo.png", alt: "Westfield" },
-  { src: "/fenwick-logo.png", alt: "Fenwick" },
-  { src: "/freedomleisure-logo.png", alt: "Freedom Leisure" },
-  { src: "/queenmary-logo.png", alt: "Queen Mary University" },
-  { src: "/alpinef1-logo.png", alt: "Alpine F1 Team" },
+  { src: "/nhs-logo.webp", alt: "NHS" },
+  { src: "/disney-logo.webp", alt: "Disney" },
+  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
+  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
+  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
+  { src: "/travelodge-logo.webp", alt: "Travelodge" },
+  { src: "/waitrose-logo.webp", alt: "Waitrose" },
+  { src: "/westfield-logo.webp", alt: "Westfield" },
+  { src: "/fenwick-logo.webp", alt: "Fenwick" },
+  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
+  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
+  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
 ];
 
 const faqs = [
@@ -60,7 +60,7 @@ export default function ControllerUpgradesPage() {
       {/* ── 1. HERO ─────────────────────────────────────────────────────── */}
       <section className="relative min-h-[480px] overflow-hidden bg-slate-900">
         <Image
-          src="/ahu-controller.png"
+          src="/ahu-controller.webp"
           alt="AHU controller panel and building controls upgrade by BVS"
           fill
           priority
@@ -466,7 +466,7 @@ export default function ControllerUpgradesPage() {
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/swimming-pool.png"
+            src="/swimming-pool.webp"
             alt="Ringwood Leisure Centre — AHU controller upgrade case study"
             fill
             className="object-cover object-center"

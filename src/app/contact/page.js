@@ -18,7 +18,7 @@ export default function ContactPage() {
       {/* Background image */}
       <div className="absolute inset-0">
   <Image
-    src="/person-working.png"
+    src="/person-working.webp"
     alt="BVS engineer working on ventilation equipment"
     fill
     priority

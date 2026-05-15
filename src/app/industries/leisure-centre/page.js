@@ -45,7 +45,7 @@ export default function LeisureCentrePage() {
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900">
         <Image
-          src="/swimming-pool.png"
+          src="/swimming-pool.webp"
           alt="Leisure centre swimming pool — BVS pool hall AHU specialist with corrosion-resistant specification"
           fill
           priority

@@ -7,24 +7,24 @@ import { getCaseStudies } from "@/lib/wordpress/api";
 /* ── DATA ───────────────────────────────────────────────────────────── */
 
 const accreditationLogos = [
-  { src: "/gas-safe-register-logo.png", alt: "Gas Safe Registered" },
-  { src: "/constructionline-gold-logo.png", alt: "Constructionline Gold Member" },
-  { src: "/safe-contractor-logo.png", alt: "SafeContractor Approved Contractor" },
+  { src: "/gas-safe-register-logo.webp", alt: "Gas Safe Registered" },
+  { src: "/constructionline-gold-logo.webp", alt: "Constructionline Gold Member" },
+  { src: "/safe-contractor-logo.webp", alt: "SafeContractor Approved Contractor" },
 ];
 
 const clientLogos = [
-  { src: "/nhs-logo.png", alt: "NHS" },
-  { src: "/disney-logo.png", alt: "Disney" },
-  { src: "/marriott-logo.png", alt: "Marriott Hotels" },
-  { src: "/moorfields-logo.png", alt: "Moorfields Eye Hospital" },
-  { src: "/ihg-logo.png", alt: "IHG Hotels & Resorts" },
-  { src: "/travelodge-logo.png", alt: "Travelodge" },
-  { src: "/waitrose-logo.png", alt: "Waitrose" },
-  { src: "/westfield-logo.png", alt: "Westfield" },
-  { src: "/fenwick-logo.png", alt: "Fenwick" },
-  { src: "/freedomleisure-logo.png", alt: "Freedom Leisure" },
-  { src: "/queenmary-logo.png", alt: "Queen Mary University" },
-  { src: "/alpinef1-logo.png", alt: "Alpine F1 Team" },
+  { src: "/nhs-logo.webp", alt: "NHS" },
+  { src: "/disney-logo.webp", alt: "Disney" },
+  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
+  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
+  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
+  { src: "/travelodge-logo.webp", alt: "Travelodge" },
+  { src: "/waitrose-logo.webp", alt: "Waitrose" },
+  { src: "/westfield-logo.webp", alt: "Westfield" },
+  { src: "/fenwick-logo.webp", alt: "Fenwick" },
+  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
+  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
+  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
 ];
 
 const services = [
@@ -42,7 +42,7 @@ const services = [
     href: "/ec-fan-upgrades-and-retrofits-for-hvac",
     highlight: true,
     tag: "Most Requested",
-    photo: "/ec-fan-upgrade.png",
+    photo: "/ec-fan-upgrade.webp",
     photoAlt: "EC fan retrofit installed in existing AHU casing",
   },
   {
@@ -59,7 +59,7 @@ const services = [
     href: "/air-handling-unit-coil-replacement",
     highlight: true,
     tag: "Most Requested",
-    photo: "/ahu-coil-replacement.png",
+    photo: "/ahu-coil-replacement.webp",
     photoAlt: "Replacement coil being fitted into air handling unit on-site",
   },
   {
@@ -75,7 +75,7 @@ const services = [
     href: "/air-handling-unit-refurbishment",
     highlight: false,
     tag: null,
-    photo: "/ahu-refurbishment-worker.png",
+    photo: "/ahu-refurbishment-worker.webp",
     photoAlt: "BVS engineer refurbishing an air handling unit on-site",
   },
   {
@@ -91,7 +91,7 @@ const services = [
     href: "/air-handling-unit-manufacturing",
     highlight: false,
     tag: null,
-    photo: "/ahu-manufacturing2.png",
+    photo: "/ahu-manufacturing2.webp",
     photoAlt: "Custom AHU being manufactured in the BVS workshop",
   },
   {
@@ -107,7 +107,7 @@ const services = [
     href: "/air-handling-unit-installation",
     highlight: false,
     tag: null,
-    photo: "/ahu-installation.png",
+    photo: "/ahu-installation.webp",
     photoAlt: "Air handling unit being installed on a commercial site",
   },
   {
@@ -123,7 +123,7 @@ const services = [
     href: "/air-handling-unit-controller-solutions-upgrades",
     highlight: false,
     tag: null,
-    photo: "/ahu-controller.png",
+    photo: "/ahu-controller.webp",
     photoAlt: "AHU controller upgrade — modern controls panel installed in air handling unit",
   },
 ];
@@ -157,12 +157,12 @@ const additionalServices = [
 ];
 
 const sectors = [
-  { label: "Healthcare & NHS", desc: "HTM 03-01 compliant. Critical environments.", href: "/industries/hospital", photo: "/hospital.png", photoAlt: "NHS hospital corridor — BVS ventilation works in live clinical environments" },
-  { label: "Education", desc: "Around term times. CIBSE-compliant.", href: "/industries/education", photo: "/school.png", photoAlt: "School building — BVS AHU works scheduled around term times" },
-  { label: "Hotels", desc: "Out-of-hours. Minimum disruption to operations.", href: "/industries/hotel", photo: "/hotel.png", photoAlt: "Hotel interior — BVS ventilation services with out-of-hours delivery" },
-  { label: "Defence", desc: "Security cleared. Restricted access sites.", href: "/industries/defence", photo: "/defence.jpg", photoAlt: "Defence facility — BVS security-cleared engineers for restricted-access sites" },
-  { label: "Leisure Centres", desc: "High-humidity. Corrosion-resistant spec.", href: "/industries/leisure-centre", photo: "/swimming-pool.png", photoAlt: "Swimming pool leisure centre — BVS high-humidity AHU specification" },
-  { label: "Retail & Commercial", desc: "Around trading hours. Reactive support.", href: "/industries/retail", photo: "/mall.png", photoAlt: "Shopping centre retail environment — BVS ventilation works around trading hours" },
+  { label: "Healthcare & NHS", desc: "HTM 03-01 compliant. Critical environments.", href: "/industries/hospital", photo: "/hospital.webp", photoAlt: "NHS hospital corridor — BVS ventilation works in live clinical environments" },
+  { label: "Education", desc: "Around term times. CIBSE-compliant.", href: "/industries/education", photo: "/school.webp", photoAlt: "School building — BVS AHU works scheduled around term times" },
+  { label: "Hotels", desc: "Out-of-hours. Minimum disruption to operations.", href: "/industries/hotel", photo: "/hotel.webp", photoAlt: "Hotel interior — BVS ventilation services with out-of-hours delivery" },
+  { label: "Defence", desc: "Security cleared. Restricted access sites.", href: "/industries/defence", photo: "/defence.webp", photoAlt: "Defence facility — BVS security-cleared engineers for restricted-access sites" },
+  { label: "Leisure Centres", desc: "High-humidity. Corrosion-resistant spec.", href: "/industries/leisure-centre", photo: "/swimming-pool.webp", photoAlt: "Swimming pool leisure centre — BVS high-humidity AHU specification" },
+  { label: "Retail & Commercial", desc: "Around trading hours. Reactive support.", href: "/industries/retail", photo: "/mall.webp", photoAlt: "Shopping centre retail environment — BVS ventilation works around trading hours" },
 ];
 
 const casePlaceholders = [
@@ -201,7 +201,7 @@ export default function Home() {
       {/* ── 1. HERO ──────────────────────────────────────────────────── */}
       <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
         <Image
-          src="/ahu-manufacturing2.png"
+          src="/ahu-manufacturing2.webp"
           alt="BVS air handling unit manufacturing workshop"
           fill
           priority
@@ -393,7 +393,7 @@ export default function Home() {
             src={s.photo}
             alt={s.photoAlt || s.title}
             fill
-            unoptimized
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
 
@@ -492,7 +492,7 @@ export default function Home() {
               src={s.photo}
               alt={s.title}
               fill
-              unoptimized
+              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
 
@@ -702,7 +702,7 @@ export default function Home() {
         </ul>
         <div className="mt-8 flex flex-wrap items-center gap-5">
           <a
-            href="/bvs-brochure.png"
+            href="/bvs-brochure.webp"
             download="BVS-AHU-Specialists-Brochure"
             className="inline-flex items-center gap-2.5 bg-[#297858] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#1d5c42]"
           >
@@ -715,11 +715,11 @@ export default function Home() {
 
       <ScrollReveal delay={120} className="flex justify-center lg:justify-end">
         <Image
-          src="/bvs-brochure.png"
+          src="/bvs-brochure.webp"
           alt="BVS AHU Specialists Brochure"
           width={800}
           height={438}
-          unoptimized
+          sizes="(max-width: 1024px) 100vw, 50vw"
           className="w-full"
         />
       </ScrollReveal>

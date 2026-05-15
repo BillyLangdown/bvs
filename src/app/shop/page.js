@@ -30,7 +30,7 @@ export default async function ShopPage() {
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[#111418] pb-0 pt-14 sm:pt-16">
       <Image
-  src="/crate-in-air.png"
+  src="/crate-in-air.webp"
   alt="Crane lifting a ventilation unit against a clear blue sky"
   fill
   unoptimized

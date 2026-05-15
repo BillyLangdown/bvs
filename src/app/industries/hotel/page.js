@@ -45,7 +45,7 @@ export default function HotelPage() {
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900">
         <Image
-          src="/hotel.png"
+          src="/hotel.webp"
           alt="Hotel interior — BVS delivers AHU works out of hours to protect guest experience"
           fill
           priority
@@ -118,18 +118,18 @@ export default function HotelPage() {
             <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
               <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
                 {[
-                  { src: "/nhs-logo.png", alt: "NHS" },
-                  { src: "/disney-logo.png", alt: "Disney" },
-                  { src: "/marriott-logo.png", alt: "Marriott Hotels" },
-                  { src: "/moorfields-logo.png", alt: "Moorfields Eye Hospital" },
-                  { src: "/ihg-logo.png", alt: "IHG Hotels & Resorts" },
-                  { src: "/travelodge-logo.png", alt: "Travelodge" },
-                  { src: "/waitrose-logo.png", alt: "Waitrose" },
-                  { src: "/westfield-logo.png", alt: "Westfield" },
-                  { src: "/fenwick-logo.png", alt: "Fenwick" },
-                  { src: "/freedomleisure-logo.png", alt: "Freedom Leisure" },
-                  { src: "/queenmary-logo.png", alt: "Queen Mary University" },
-                  { src: "/alpinef1-logo.png", alt: "Alpine F1 Team" },
+                  { src: "/nhs-logo.webp", alt: "NHS" },
+                  { src: "/disney-logo.webp", alt: "Disney" },
+                  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
+                  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
+                  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
+                  { src: "/travelodge-logo.webp", alt: "Travelodge" },
+                  { src: "/waitrose-logo.webp", alt: "Waitrose" },
+                  { src: "/westfield-logo.webp", alt: "Westfield" },
+                  { src: "/fenwick-logo.webp", alt: "Fenwick" },
+                  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
+                  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
+                  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
                 ].map((logo) => (
                   <Image
                     key={logo.alt}

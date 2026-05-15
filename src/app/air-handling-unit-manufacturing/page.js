@@ -12,18 +12,18 @@ export const metadata = {
 };
 
 const clientLogos = [
-  { src: "/nhs-logo.png", alt: "NHS" },
-  { src: "/disney-logo.png", alt: "Disney" },
-  { src: "/marriott-logo.png", alt: "Marriott Hotels" },
-  { src: "/moorfields-logo.png", alt: "Moorfields Eye Hospital" },
-  { src: "/ihg-logo.png", alt: "IHG Hotels & Resorts" },
-  { src: "/travelodge-logo.png", alt: "Travelodge" },
-  { src: "/waitrose-logo.png", alt: "Waitrose" },
-  { src: "/westfield-logo.png", alt: "Westfield" },
-  { src: "/fenwick-logo.png", alt: "Fenwick" },
-  { src: "/freedomleisure-logo.png", alt: "Freedom Leisure" },
-  { src: "/queenmary-logo.png", alt: "Queen Mary University" },
-  { src: "/alpinef1-logo.png", alt: "Alpine F1 Team" },
+  { src: "/nhs-logo.webp", alt: "NHS" },
+  { src: "/disney-logo.webp", alt: "Disney" },
+  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
+  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
+  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
+  { src: "/travelodge-logo.webp", alt: "Travelodge" },
+  { src: "/waitrose-logo.webp", alt: "Waitrose" },
+  { src: "/westfield-logo.webp", alt: "Westfield" },
+  { src: "/fenwick-logo.webp", alt: "Fenwick" },
+  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
+  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
+  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
 ];
 
 const faqs = [
@@ -62,7 +62,7 @@ export default function AHUManufacturingPage() {
 
 {/* IMAGE (more visible, less crushed by overlays) */}
 <Image
-  src="/ahu-sparks.png"
+  src="/ahu-sparks.webp"
   alt="BVS air handling unit manufacturing workshop — bespoke AHU build in progress"
   fill
   priority
@@ -449,7 +449,7 @@ export default function AHUManufacturingPage() {
         <div className="relative h-[420px] overflow-hidden border border-slate-200 bg-white shadow-sm">
 
           <Image
-            src="/gunton-hall.jpg"
+            src="/gunton-hall.webp"
             alt="Gunton Hall Warner Leisure Hotel — bespoke AHU manufactured and installed by BVS"
             fill
             unoptimized

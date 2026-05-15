@@ -39,7 +39,7 @@ export default function ResourcesPage() {
 {/* Background Image */}
 <div className="absolute inset-0">
   <Image
-    src="/aerial-buildings.png"
+    src="/aerial-buildings.webp"
     alt="Aerial view of buildings and HVAC environments"
     fill
     priority

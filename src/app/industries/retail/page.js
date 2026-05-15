@@ -45,7 +45,7 @@ export default function RetailPage() {
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900">
         <Image
-          src="/mall.png"
+          src="/mall.webp"
           alt="Shopping centre interior — BVS delivers AHU works around retail trading hours"
           fill
           priority

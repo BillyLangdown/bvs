@@ -45,7 +45,7 @@ export default function DefencePage() {
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900">
         <Image
-          src="/defence.jpg"
+          src="/defence.webp"
           alt="Defence facility — BVS delivers ventilation services on secure government and MoD sites"
           fill
           priority

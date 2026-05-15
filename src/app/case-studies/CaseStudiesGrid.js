@@ -58,7 +58,7 @@ export default function CaseStudiesGrid({ caseStudies }) {
                 >
                   <div className="relative h-44 bg-slate-100">
                     <Image
-                      src={cs.image || "/case-studies/aerial-fallback.jpg"}
+                      src={cs.image || "/case-studies/aerial-fallback.webp"}
                       alt={cs.title}
                       fill
                       className="object-cover transition duration-500 group-hover:scale-105"

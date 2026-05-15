@@ -4,6 +4,8 @@ const nextConfig = {
     root: new URL(".", import.meta.url).pathname,
   },
   images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 31536000,
     remotePatterns: (() => {
       const base = process.env.WP_BASE_URL;
       if (!base) return [];

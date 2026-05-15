@@ -45,7 +45,7 @@ export default function EducationPage() {
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900">
         <Image
-          src="/school.png"
+          src="/school.webp"
           alt="School building — BVS delivers AHU refurbishment and ventilation works around academic calendars"
           fill
           priority
