@@ -99,7 +99,7 @@ function ProductCard({ product, categories }) {
           />
         ) : (
           <div className="flex h-full items-center justify-center bg-slate-50">
-            <span className="font-display text-4xl font-extrabold text-slate-200">
+            <span className="text-4xl font-extrabold text-slate-200">
               BVS
             </span>
           </div>
@@ -112,9 +112,14 @@ function ProductCard({ product, categories }) {
               {catName}
             </span>
           )}
-          {product.inStock && (
+          {product.stockClass === "in-stock" && (
             <span className="border border-[#297858] bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-[#297858]">
               In Stock
+            </span>
+          )}
+          {product.stockClass === "out-of-stock" && (
+            <span className="border border-slate-300 bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+              Out of Stock
             </span>
           )}
         </div>

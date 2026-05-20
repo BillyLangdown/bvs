@@ -4,47 +4,29 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { TrustedByBar } from "@/components/site/TrustedByBar";
 export const metadata = {
   title: "AHU Coil Replacement | BVS Building Ventilation Solutions",
   description:
     "Measure-to-fit AHU coil replacement for any make or model. Heating, cooling, heat recovery, and frost coils sourced or manufactured and installed across the UK.",
 };
 
-const clientLogos = [
-  { src: "/nhs-logo.webp", alt: "NHS" },
-  { src: "/disney-logo.webp", alt: "Disney" },
-  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
-  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
-  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
-  { src: "/travelodge-logo.webp", alt: "Travelodge" },
-  { src: "/waitrose-logo.webp", alt: "Waitrose" },
-  { src: "/westfield-logo.webp", alt: "Westfield" },
-  { src: "/fenwick-logo.webp", alt: "Fenwick" },
-  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
-  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
-  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
-];
-
 const faqs = [
   {
     q: "Can you replace coils in any AHU make or model?",
-    a: "Yes. We work with all makes and models — including obsolete units where the original manufacturer no longer supports the equipment. Provided we can measure the existing coil, we can source or manufacture a replacement.",
+    a: "Yes. We work with all makes and models, including obsolete units where the original manufacturer no longer supports the equipment. Provided we can measure the existing coil, we can manufacture a bespoke replacement to exact specification.",
   },
   {
     q: "How long does a coil replacement take?",
-    a: "For a straightforward single-coil replacement in an accessible unit, typically one to two days on site. Larger or more complex units with multiple coils, poor access, or requiring custom manufacture will take longer — we confirm programme at quotation stage.",
+    a: "For a straightforward single-coil replacement in an accessible unit, typically one to two days on site. Larger or more complex units with multiple coils, poor access, or requiring custom manufacture will take longer. We confirm programme at quotation stage.",
   },
   {
     q: "What coil types do you replace?",
-    a: "Heating coils (LTHW and steam), chilled water cooling coils, DX coils, heat recovery coils, and frost coils. If it sits inside an AHU and transfers heat, we can replace it.",
-  },
-  {
-    q: "Do you manufacture coils, or just source them?",
-    a: "Both. For standard sizes we source from UK suppliers with short lead times. For non-standard, obsolete, or performance-critical applications, we have coils manufactured to exact specification.",
+    a: "Heating coils (LTHW/LPHW and steam), chilled water cooling coils, DX coils, heat recovery coils, frost coils, and run-around coils. If it sits inside an AHU and transfers heat, we can replace it.",
   },
   {
     q: "Can a coil failure be treated as an emergency?",
-    a: "We handle emergency coil replacements where the AHU is out of service or environmental control is compromised. Lead time depends on coil type and whether a standard or custom-manufactured coil is required — contact us directly to discuss urgency.",
+    a: "We handle emergency coil replacements where the AHU is out of service or environmental control is compromised. Lead time depends on coil type and complexity. Contact us directly to discuss urgency.",
   },
   {
     q: "What causes coil failure?",
@@ -125,139 +107,59 @@ export default function CoilReplacementPage() {
   />
 
   {/* Stronger mobile readability overlay */}
-  <div className="absolute inset-0 bg-[#111418]/90 sm:bg-[#111418]/55" />
+  <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent" />
 </div>
 
 <Container className="relative z-10 flex min-h-[420px] items-end pb-6 sm:pb-10">
-  <div className="grid gap-10 lg:grid-cols-2 lg:items-end w-full">
+  <div className="w-full max-w-3xl">
+    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
+      AHU Coil Replacement
+    </p>
 
-    {/* Left content */}
-    <div>
-      <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
-        AHU Coil Replacement & Repair
-      </p>
+    <h1 className="text-3xl font-extrabold leading-[1.05] text-white sm:text-5xl">
+      Coils Matched <br/> to Your System
+    </h1>
 
-      <h1 className="font-display text-3xl font-extrabold uppercase leading-[1.05] text-white sm:text-5xl">
-        Coils Matched to Your System
-      </h1>
+    <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
 
-      <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
+    <p className="mt-6 max-w-xl text-[15px] leading-7 text-white/80">
+      Every replacement coil is measured on site and built to fit your AHU exactly. No off-the-shelf options, every coil is manufactured to your system's dimensions, performance requirements, and operating conditions.
+    </p>
 
-      <p className="mt-6 max-w-xl text-[15px] leading-7 text-white/70">
-        Existing coils surveyed and replacement units sourced or manufactured
-        to suit your AHU dimensions, performance requirements, and operating conditions.
-      </p>
+    <div className="mt-8 flex flex-wrap gap-3">
+      <a
+        href="#enquire"
+        className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
+      >
+        Discuss your replacement options
+        <ArrowIcon />
+      </a>
 
-      <div className="mt-8 flex flex-wrap gap-3">
-        <a
-          href="#enquire"
-          className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-        >
-          Discuss your replacement options
-        </a>
-
-        <a
-          href="#problem"
-          className="inline-flex items-center gap-2 border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/5"
-        >
-          Learn more
-          <ArrowDownIcon className="h-4 w-4" />
-        </a>
-      </div>
+      <a
+        href="#problem"
+        className="inline-flex items-center gap-2 border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/5"
+      >
+        Learn more
+        <ArrowDownIcon className="h-4 w-4" />
+      </a>
     </div>
-
-    {/* Capability signals (simplified + more scannable) */}
-    <div className="grid gap-2 lg:ml-auto max-w-md">
-
-      {[
-        {
-          label: "Any Make or Model",
-          detail: "Works with obsolete and unsupported AHUs",
-        },
-        {
-          label: "Site Measured",
-          detail: "Designed from real system dimensions",
-        },
-        {
-          label: "Made to Match",
-          detail: "Custom replacement coil manufacturing",
-        },
-        {
-          label: "Emergency Replacement",
-          detail: "Fast turnaround for failed or leaking coils",
-        },
-        {
-          label: "System Conversion",
-          detail: "Gas / LTHW to DX coil conversions",
-        },
-      ].map((item) => (
-        <div
-          key={item.label}
-          className="flex items-start gap-3 border-l-2 border-[#297858]/70 bg-white/20 px-4 py-3 backdrop-blur-sm"
-        >
-          <div className="mt-[6px] h-2 w-2 flex-shrink-0 rounded-full bg-[#297858]" />
-
-          <div>
-            <p className="text-sm font-semibold text-white">
-              {item.label}
-            </p>
-
-            <p className="text-xs leading-5 text-white/95">
-              {item.detail}
-            </p>
-          </div>
-        </div>
-      ))}
-
-    </div>
-
   </div>
 </Container>
 </section>
 
 
-<section className="border-b border-slate-100 bg-white py-7 sm:py-10">
-  <Container>
-    <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-      Trusted by leading organisations
-    </p>
-
-    <div className="relative">
-  {/* Left fade */}
-  <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
-
-  {/* Right fade */}
-  <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
-
-  <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-    <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
-      {clientLogos.map((logo) => (
-        <Image
-          key={logo.alt}
-          src={logo.src}
-          alt={logo.alt}
-          width={120}
-          height={60}
-          unoptimized
-          className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
-        />
-      ))}
-    </div>
-  </div>
-</div>
-  </Container>
-</section>
+<TrustedByBar />
 
       {/* ── 2. PROBLEM ── 3 pain points ─────────────────────────────────── */}
       <section className="bg-[#0e1115] py-14 sm:py-16" id="problem">
   <Container>
     <ScrollReveal className="mb-8">
       <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-        Why it's rarely straightforward
+        When it needs attention
       </p>
 
-      <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
-        Common Coil Replacement Issues
+      <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
+        Common Signs You Have a<br />Problem With Your Coil
       </h2>
 
       <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -265,57 +167,27 @@ export default function CoilReplacementPage() {
 
     <div className="grid gap-4 sm:grid-cols-3">
       {[
-  {
-    n: "01",
-    icon: Factory,
-    heading: "Discontinued Equipment",
-    body:
-      "Original manufacturers no longer support many legacy AHUs. We survey on site and match performance exactly.",
-  },
-  {
-    n: "02",
-    icon: Ruler,
-    heading: "Non-Standard Sizes",
-    body:
-      "Coils rarely match catalogue dimensions. We manufacture to exact measurements and connection points.",
-  },
-  {
-    n: "03",
-    icon: TrendingDown,
-    heading: "Performance Loss",
-    body:
-      "Coils degrade gradually, increasing energy use long before visible failure occurs.",
-  },
-].map((item) => {
-        const Icon = item.icon;
-
-        return (
-          <ScrollReveal key={item.n} className="h-full">
-            <div className="relative h-full overflow-hidden border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-
-              {/* number watermark */}
-              <span className="absolute right-5 top-4 font-display text-4xl font-extrabold text-white/30">
-                {item.n}
-              </span>
-
-              {/* icon (your system) */}
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#297858]/10 text-[#297858]">
-                <Icon className="h-5 w-5" strokeWidth={2.2} />
-              </div>
-
-              {/* heading */}
-              <h3 className="mt-5 font-display text-sm font-extrabold uppercase text-white">
-                {item.heading}
-              </h3>
-
-              {/* body */}
-              <p className="mt-2 text-sm leading-6 text-white/60">
-                {item.body}
-              </p>
-            </div>
-          </ScrollReveal>
-        );
-      })}
+        {
+          heading: "Air temperature inconsistencies",
+          body: "Failure to reach design temperatures, or inconsistent air conditions across a zone, is often a sign of coil fouling, partial blockage, or internal degradation.",
+        },
+        {
+          heading: "Visible leaking or corrosion on coil faces",
+          body: "Corrosion, water staining, or active leaks on coil headers or tube connections indicate the coil is at or beyond end of life.",
+        },
+        {
+          heading: "Reduced system performance or unexplained energy increase",
+          body: "Gradual fouling of coil surfaces increases thermal resistance and reduces heat transfer efficiency, resulting in higher energy use before any visible sign of failure.",
+        },
+      ].map((item) => (
+        <ScrollReveal key={item.heading} className="h-full">
+          <div className="h-full border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+            <div className="mb-4 h-[3px] w-8 bg-[#297858]" />
+            <h3 className="text-sm font-extrabold text-white">{item.heading}</h3>
+            <p className="mt-2 text-sm leading-6 text-white/60">{item.body}</p>
+          </div>
+        </ScrollReveal>
+      ))}
     </div> 
   </Container>
 </section>
@@ -328,8 +200,8 @@ export default function CoilReplacementPage() {
         How we solve it
       </p>
 
-      <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
-        Measure, Source or Build, Fit.
+      <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">
+        Measure, Supply, Fit.
       </h2>
 
       <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -352,13 +224,13 @@ export default function CoilReplacementPage() {
         {
           step: "02",
           icon: Factory,
-          heading: "Source or Manufacture",
+          heading: "Supply",
           body:
-            "Standard coils are sourced where suitable. Non-standard or obsolete coils are manufactured to match the existing system.",
+            "All replacement coils are manufactured to the exact dimensions and performance specification of your AHU. Every coil is built to fit your system.",
           points: [
-            "Standard coils sourced quickly",
-            "Custom coils built to specification",
-            "Performance matched to duty",
+            "Manufactured to exact site dimensions",
+            "Duty and performance matched to your system",
+            "Lead time confirmed at quotation stage",
           ],
         },
         {
@@ -386,13 +258,13 @@ export default function CoilReplacementPage() {
                   <Icon className="h-5 w-5" strokeWidth={2.2} />
                 </div>
 
-                <span className="font-display text-4xl font-extrabold text-[#297858]/10">
+                <span className="text-4xl font-extrabold text-[#297858]/10">
                   {item.step}
                 </span>
               </div>
 
               {/* heading */}
-              <h3 className="mt-5 font-display text-base font-extrabold uppercase text-slate-900">
+              <h3 className="mt-5 text-base font-extrabold text-slate-900">
                 {item.heading}
               </h3>
 
@@ -429,7 +301,7 @@ export default function CoilReplacementPage() {
       <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
         What we replace
       </p>
-      <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+      <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
         Every Coil Type Covered
       </h2>
       <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -439,13 +311,12 @@ export default function CoilReplacementPage() {
     <div className="mb-12">
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
         {[
-          "LTHW Heating",
           "Steam Heating",
           "Chilled Water",
           "DX Refrigerant",
           "Heat Recovery",
-          "Frost Protection",
-          "Pre-Heat",
+          "Frost Coil",
+          "LTHW / LPHW",
           "Run-Around",
         ].map((type) => (
           <div
@@ -470,9 +341,9 @@ export default function CoilReplacementPage() {
             "All makes and models, including obsolete and discontinued units where parts are no longer available from the OEM.",
         },
         {
-          label: "Custom manufacture",
+          label: "Made to measure",
           detail:
-            "Non-standard dimensions manufactured to exact specification. Coil specified from site measurements.",
+            "Every coil is manufactured to exact specification from site measurements. No off-the-shelf options.",
         },
         {
           label: "Emergency turnaround",
@@ -487,7 +358,7 @@ export default function CoilReplacementPage() {
       ].map((item, i) => (
         <ScrollReveal key={item.label} delay={i * 60}>
           <div className="border-t-2 border-[#297858] bg-white p-5">
-            <p className="font-display text-sm font-extrabold uppercase text-slate-900">
+            <p className="text-sm font-extrabold text-slate-900">
               {item.label}
             </p>
             <p className="mt-2 text-xs leading-5 text-slate-500">
@@ -501,95 +372,6 @@ export default function CoilReplacementPage() {
   </Container>
 </section> 
 
-      {/* ── 6. HOW IT WORKS ── 4-step process ───────────────────────────── */}
-      <section className="bg-[#0e1115] py-16 sm:py-20">
-  <Container>
-    <ScrollReveal className="mb-10">
-      <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-        How it works
-      </p>
-      <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
-        From Survey to<br />Return to Service
-      </h2>
-      <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-    </ScrollReveal>
-
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
-      {[
-{
-  n: "01",
-  title: "Site Visit & Measurement",
-  summary: "On-site survey to capture full coil specification and operating conditions.",
-  outcome: "Ensures accurate replacement or performance upgrade.",
-  points: [
-    "Dimensions, connections and airflow recorded",
-    "Tube, fin and material spec confirmed",
-    "Operating conditions and constraints assessed",
-  ],
-},
-{
-  n: "02",
-  title: "Source or Manufacture",
-  summary: "Replacement sourced or custom-built depending on system requirement.",
-  outcome: "Matches or improves original duty performance.",
-  points: [
-    "Standard units sourced where possible",
-    "Custom manufacture for non-standard coils",
-    "Duty and performance verified against original",
-  ],
-},
-{
-  n: "03",
-  title: "Replacement Works",
-  summary: "Old coil removed and new unit installed with full reinstatement.",
-  outcome: "Minimal downtime with controlled changeover.",
-  points: [
-    "Existing coil removed and casing prepared",
-    "Pipework connected and pressure tested",
-    "Insulation and access reinstated",
-  ],
-},
-{
-  n: "04",
-  title: "Test & Commission",
-  summary: "System balanced, tested, and returned to service.",
-  outcome: "Verified performance and safe operation.",
-  points: [
-    "Flow rates balanced to design",
-    "Controls and valves checked",
-    "Handover report issued",
-  ],
-},
-      ].map((step, i) => (
-        <ScrollReveal key={step.n} delay={i * 60} className="h-full">
-          <div className="h-full border border-white/10 bg-white/5 p-5 flex flex-col">
-            <span className="font-display text-4xl font-extrabold text-[#297858]/25">
-              {step.n}
-            </span>
-
-            <h3 className="mt-2 font-display text-sm font-extrabold uppercase text-white">
-              {step.title}
-            </h3>
-
-            <p className="mt-2 text-xs leading-5 text-white/85">
-              {step.body}
-            </p>
-
-            <ul className="mt-3 space-y-1.5">
-              {step.points.map((p) => (
-                <li key={p} className="flex items-start gap-2 text-[11px] text-white/80">
-                  <span className="mt-1.5 h-1 w-1.5 shrink-0 bg-[#297858]" />
-                  {p}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </ScrollReveal>
-      ))}
-    </div>
-  </Container>
-</section>
-
       {/* ── 7. OFFER ── free coil survey ─────────────────────────────────── */}
       <section className="bg-[#f7f6f5] py-14">
         <Container>
@@ -600,19 +382,19 @@ export default function CoilReplacementPage() {
                   <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
                     No-obligation offer
                   </p>
-                  <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+                  <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
                     Coil Survey &<br />Specification
                   </h2>
                   <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
                   <p className="mt-4 text-sm leading-6 text-slate-600">
-                    Before any commitment, we attend site, measure the existing coil, and produce a full specification and quote — including sourcing and manufacture options with lead times.
+                    Before any commitment, we attend site, measure the existing coil, and produce a full specification and quote, including sourcing and manufacture options with lead times.
                   </p>
                   <ul className="mt-5 space-y-2.5">
                     {[
                       "Existing coil measured and specified on site",
                       "Sourcing and manufacture options with lead times",
                       "Quotation for full replacement scope",
-                      "Emergency cases handled — contact us directly",
+                      "Emergency cases handled, contact us directly",
                       "No obligation to proceed",
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">
@@ -642,53 +424,53 @@ export default function CoilReplacementPage() {
         </Container>
       </section>
 
-      {/* ── 8. FINAL CTA ── urgent tone, phone prominent ─────────────────── */}
-      <section id="enquire" className="bg-[#111418] py-20">
+      {/* ── 8. FINAL CTA ── white ────────────────────────────────────────── */}
+      <section id="enquire" className="bg-white py-20">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
             <ScrollReveal>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/40">
-                Speak to an engineer
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
+                Get in touch
               </p>
-              <h2 className="font-display text-3xl font-extrabold uppercase text-white sm:text-4xl">
-                Coil Failing?<br />Call or Enquire<br />Today.
+              <h2 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">
+                Discuss Your<br />Coil Replacement
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
-              <p className="mt-5 text-sm leading-7 text-white/60">
+              <p className="mt-5 text-sm leading-7 text-slate-600">
                 If your AHU is out of service or environmental control is compromised, contact us directly. We handle emergency replacements and can advise on lead time based on coil type.
               </p>
 
-              <div className="mt-6 border border-[#297858]/30 bg-[#297858]/10 p-5">
+              <div className="mt-6 border border-[#297858]/20 bg-[#297858]/5 p-5">
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#297858]">For urgent enquiries</p>
-                <a href="tel:01256518170" className="mt-3 flex items-center gap-3 font-display text-2xl font-extrabold text-white transition-colors hover:text-[#297858]">
+                <a href="tel:01256518170" className="mt-3 flex items-center gap-3 text-2xl font-extrabold text-slate-900 transition-colors hover:text-[#297858]">
                   <PhoneIcon /> 01256 518170
                 </a>
               </div>
 
-              <div className="mt-5 space-y-2.5 border-l border-white/10 pl-5">
-                <p className="text-sm text-white/50">Any make, any model — including obsolete and discontinued units</p>
-                <p className="text-sm text-white/50">Measure-to-fit: coils specified from site measurements, not model numbers</p>
-                <p className="text-sm text-white/50">Standard sourcing and custom manufacture available</p>
+              <div className="mt-5 space-y-2.5 border-l border-slate-200 pl-5">
+                <p className="text-sm text-slate-500">Any make, any model, including obsolete and discontinued units</p>
+                <p className="text-sm text-slate-500">All coils measured on site and built to fit your AHU exactly</p>
+                <p className="text-sm text-slate-500">Direct response from engineers, not a sales team</p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={80}>
-              <div className="border border-white/10 bg-white/5 p-8">
+              <div className="border border-slate-200 bg-white p-8">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
                   Enquiry
                 </p>
-                <p className="mt-3 text-sm leading-6 text-white/50">
-                  Tell us the AHU make, approximate coil dimensions, and coil type if known. We&apos;ll respond with a practical view and lead time within one working day.
+                <p className="mt-3 text-sm leading-6 text-slate-500">
+                  Tell us the AHU make, approximate coil dimensions, and coil type if known. We&apos;ll respond with a practical view and lead time within 24 hours.
                 </p>
-                <div className="mt-6"><QuickQuoteForm /></div>
-                <div className="mt-5 flex flex-col gap-2 border-t border-white/10 pt-4">
-                  <div className="flex items-center gap-2 text-[11px] text-white/35">
+                <div className="mt-6"><QuickQuoteForm defaultService="Coil Replacement" /></div>
+                <div className="mt-5 flex flex-col gap-2 border-t border-slate-100 pt-4">
+                  <div className="flex items-center gap-2 text-[11px] text-slate-400">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                    Engineering response within one working day
+                    Response within 24 hours
                   </div>
-                  <div className="flex items-center gap-2 text-[11px] text-white/35">
+                  <div className="flex items-center gap-2 text-[11px] text-slate-400">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                    Emergency — call directly for fastest response
+                    Emergency, call directly for fastest response
                   </div>
                 </div>
               </div>
@@ -707,7 +489,7 @@ export default function CoilReplacementPage() {
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
-              { href: "/air-handling-unit-manufacturing", label: "AHU Manufacturing" },
+              { href: "/air-handling-unit-manufactoring-and-installation", label: "AHU Manufacturing & Installation" },
               { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },
               { href: "/air-handling-unit-controller-solutions-upgrades", label: "Controller Upgrades" },
             ].map((l) => (
@@ -750,6 +532,13 @@ function MailIcon() {
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="shrink-0">
       <path d="M4 6h16v12H4V6Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
       <path d="m4 7 8 6 8-6" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function ArrowIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

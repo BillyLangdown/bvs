@@ -16,19 +16,14 @@ const services = [
     body: "Extend the life of your existing AHU by 10–15+ years at a fraction of replacement cost. We survey, specify, and refurbish on-site with minimal disruption.",
   },
   {
-    href: "/air-handling-unit-manufacturing",
-    title: "AHU Manufacturing",
-    body: "Custom-built air handling units in the UK to your exact specification. Off-the-shelf doesn't fit every building - we design and manufacture what you actually need.",
+    href: "/air-handling-unit-manufactoring-and-installation",
+    title: "AHU Manufacturing & Installation",
+    body: "Custom-built AHUs manufactured in the UK and installed under a single contract, from survey and design through to commissioning and handover.",
   },
   {
     href: "/air-handling-unit-coil-replacement",
-    title: "Coil Replacement & Repair",
+    title: "Coil Replacement",
     body: "A failed coil brings your whole ventilation system down. We measure, manufacture or source, and replace - getting you back online as quickly as possible.",
-  },
-  {
-    href: "/air-handling-unit-installation",
-    title: "Installation & Contracting",
-    body: "End-to-end AHU installation from survey to signed handover. We manage mechanical, electrical, and controls as one accountable team.",
   },
   {
     href: "/ec-fan-upgrades-and-retrofits-for-hvac",
@@ -51,7 +46,7 @@ export default function AhuSolutionsPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400">
               Building Ventilation Solutions
             </p>
-            <h1 className="font-display text-4xl font-extrabold uppercase leading-none text-white sm:text-5xl">
+            <h1 className="text-4xl font-extrabold leading-none text-white sm:text-5xl">
               AHU Solutions
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-emerald-500" />
@@ -81,14 +76,14 @@ export default function AhuSolutionsPage() {
         <Container>
           <div className="mb-10">
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">Our services</p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">What We Do</h2>
+            <h2 className="text-2xl font-extrabold text-slate-900">What We Do</h2>
             <div className="mt-2 h-[3px] w-10 bg-emerald-700" />
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s) => (
               <Link key={s.href} href={s.href} className="group border border-slate-200 bg-white p-8 transition-all duration-200 hover:border-emerald-200 hover:shadow-md">
                 <div className="h-[3px] w-8 bg-emerald-700 transition-all duration-300 group-hover:w-16" />
-                <h3 className="mt-5 font-display text-base font-bold uppercase text-slate-900">{s.title}</h3>
+                <h3 className="mt-5 text-base font-bold text-slate-900">{s.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{s.body}</p>
                 <span className="mt-5 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-emerald-700">Find out more →</span>
               </Link>
@@ -101,7 +96,7 @@ export default function AhuSolutionsPage() {
         <Container>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="font-display text-xl font-extrabold uppercase text-white">Not sure which service you need?</p>
+              <p className="text-xl font-extrabold text-white">Not sure which service you need?</p>
               <p className="mt-1 text-sm text-white/65">Tell us about your AHU and we&apos;ll tell you the most cost-effective solution - honestly.</p>
             </div>
             <Link href="/contact" className="inline-flex shrink-0 items-center gap-2 bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-500">Let&apos;s talk</Link>
@@ -111,7 +106,7 @@ export default function AhuSolutionsPage() {
 
       <section className="bg-surface-2 py-14">
         <Container>
-          <h2 className="font-display text-xl font-extrabold uppercase text-slate-900">Related Services</h2>
+          <h2 className="text-xl font-extrabold text-slate-900">Related Services</h2>
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { href: "/solutions/ventilation", label: "Ventilation Services" },

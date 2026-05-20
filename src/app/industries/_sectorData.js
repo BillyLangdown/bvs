@@ -33,7 +33,7 @@ export const sectorData = {
     title: "Hotels",
     headline: "AHU & HVAC Services for Hotels",
     description: "Maintaining air quality and comfort in hotels - with minimum disruption to operations.",
-    intro: "In hotel environments, ventilation failure directly affects guest experience and revenue. We plan all works to minimise disruption — working around occupancy, scheduling overnight or out-of-hours where required.",
+    intro: "In hotel environments, ventilation failure directly affects guest experience and revenue. We plan all works to minimise disruption, working around occupancy, scheduling overnight or out-of-hours where required.",
     services: [
       "AHU refurbishment and life extension",
       "EC fan retrofits for energy and noise reduction",

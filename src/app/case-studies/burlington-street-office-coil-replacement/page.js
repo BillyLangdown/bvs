@@ -3,7 +3,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Burlington Street Office — Frost Coil Replacement | BVS Case Study",
+  title: "Burlington Street Office, Frost Coil Replacement | BVS Case Study",
   description:
     "The frost coil at a Burlington Street commercial office suffered severe damage. BVS designed, manufactured, and installed a split-section replacement to overcome plantroom access constraints.",
 };
@@ -20,20 +20,20 @@ export default function BurlingtonStreetCoilReplacementCaseStudy() {
             <span>›</span>
             <Link href="/case-studies" className="hover:text-slate-600 transition-colors">Case Studies</Link>
             <span>›</span>
-            <span className="text-slate-600">Burlington Street Office — Frost Coil Replacement</span>
+            <span className="text-slate-600">Burlington Street Office, Frost Coil Replacement</span>
           </nav>
 
           {/* Title */}
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
             Case Study · Commercial · Coil Replacement
           </p>
-          <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
             Burlington Street<br />Office<br />Frost Coil Replacement
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 
           {/* ── PROJECT OVERVIEW ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             Project Overview
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
@@ -46,15 +46,15 @@ export default function BurlingtonStreetCoilReplacementCaseStudy() {
           </div>
 
           {/* ── THE CHALLENGE ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             The Challenge
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
-            The original frost coil had failed beyond repair, compromising the AHU's ability to protect downstream components during cold weather. Beyond the coil condition itself, the restricted plantroom access made conventional replacement impractical — a standard single-piece coil could not be brought into the space.
+            The original frost coil had failed beyond repair, compromising the AHU's ability to protect downstream components during cold weather. Beyond the coil condition itself, the restricted plantroom access made conventional replacement impractical, a standard single-piece coil could not be brought into the space.
           </p>
 
           {/* ── WHAT WE DID ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             What We Did
           </h2>
           <div className="mt-4 flex flex-col gap-6">
@@ -67,7 +67,7 @@ export default function BurlingtonStreetCoilReplacementCaseStudy() {
             <div>
               <p className="font-semibold text-slate-900">Split-Section Installation</p>
               <p className="mt-1 text-[15px] leading-7 text-slate-700">
-                To overcome the access constraint, the replacement coil was manufactured in two sections. Both sections were moved into the plantroom separately and connected in position — maintaining full performance without compromising the unit's functionality or requiring structural modifications to the plantroom.
+                To overcome the access constraint, the replacement coil was manufactured in two sections. Both sections were moved into the plantroom separately and connected in position, maintaining full performance without compromising the unit's functionality or requiring structural modifications to the plantroom.
               </p>
             </div>
             <div>
@@ -79,7 +79,7 @@ export default function BurlingtonStreetCoilReplacementCaseStudy() {
           </div>
 
           {/* ── THE RESULTS ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             The Results
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">

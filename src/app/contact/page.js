@@ -40,7 +40,7 @@ export default function ContactPage() {
             Contact BVS
           </p>
   
-          <h1 className="font-display text-3xl font-extrabold uppercase leading-[1.02] text-white sm:text-5xl">
+          <h1 className="text-3xl font-extrabold leading-[1.02] text-white sm:text-5xl">
             Speak Directly With An AHU Specialist
           </h1>
   
@@ -130,7 +130,7 @@ export default function ContactPage() {
                 Send an enquiry
               </p>
   
-              <h2 className="mt-3 font-display text-2xl font-extrabold uppercase leading-tight">
+              <h2 className="mt-3 text-2xl font-extrabold leading-tight">
                 Tell Us About
                 <br />
                 Your Project

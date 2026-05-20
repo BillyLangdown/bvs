@@ -3,9 +3,9 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Red English Group Distillery — AHU Refurbishment | BVS Case Study",
+  title: "Red English Group Distillery, AHU Refurbishment | BVS Case Study",
   description:
-    "BVS refurbished the AHU at Red English Group's distillery facility — restoring reliable ventilation performance in an active production environment.",
+    "BVS refurbished the AHU at Red English Group's distillery facility, restoring reliable ventilation performance in an active production environment.",
 };
 
 export default function RedDistilleryAhuRefurbishment() {
@@ -20,26 +20,26 @@ export default function RedDistilleryAhuRefurbishment() {
             <span>›</span>
             <Link href="/case-studies" className="hover:text-slate-600 transition-colors">Case Studies</Link>
             <span>›</span>
-            <span className="text-slate-600">Red English Group Distillery — AHU Refurbishment</span>
+            <span className="text-slate-600">Red English Group Distillery, AHU Refurbishment</span>
           </nav>
 
           {/* Title */}
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
             Case Study · Manufacturing · AHU Refurbishment
           </p>
-          <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
             Red English Group<br />Distillery<br />AHU Refurbishment
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 
           {/* PROJECT OVERVIEW */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             Project Overview
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
             The Red English Group distillery required an AHU refurbishment to restore reliable ventilation
             performance within its production facility. Distillery environments present specific HVAC
-            challenges — including temperature and humidity demands tied to production processes — making
+            challenges, including temperature and humidity demands tied to production processes, making
             reliable air handling critical to both building performance and operational output. The existing
             AHU required a targeted internal refurbishment to address component deterioration and restore
             designed system performance.
@@ -51,7 +51,7 @@ export default function RedDistilleryAhuRefurbishment() {
           </div>
 
           {/* WHAT WE DID */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             What We Did
           </h2>
           <div className="mt-4 flex flex-col gap-6">
@@ -59,7 +59,7 @@ export default function RedDistilleryAhuRefurbishment() {
               <p className="font-semibold text-slate-900">AHU Condition Assessment</p>
               <p className="mt-1 text-[15px] leading-7 text-slate-700">
                 BVS assessed the existing AHU condition and defined the scope of refurbishment works
-                required to restore designed performance — identifying worn components, fan condition,
+                required to restore designed performance, identifying worn components, fan condition,
                 and filtration requirements.
               </p>
             </div>
@@ -74,7 +74,7 @@ export default function RedDistilleryAhuRefurbishment() {
           </div>
 
           {/* THE RESULTS */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             The Results
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">

@@ -2,27 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
-  title: "Ventilation Validation Surveys | BVS",
+  title: "Validation Surveys | BVS",
   description:
-    "AHU condition surveys and validation reports from BVS. Know exactly what your ventilation assets need — with prioritised, costed recommendations.",
+    "Entire system condition assessments with a full documented report of findings and proposals. Prioritised, costed recommendations for your ventilation assets.",
 };
-
-const clientLogos = [
-  { src: "/nhs-logo.webp", alt: "NHS" },
-  { src: "/disney-logo.webp", alt: "Disney" },
-  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
-  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
-  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
-  { src: "/travelodge-logo.webp", alt: "Travelodge" },
-  { src: "/waitrose-logo.webp", alt: "Waitrose" },
-  { src: "/westfield-logo.webp", alt: "Westfield" },
-  { src: "/fenwick-logo.webp", alt: "Fenwick" },
-  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
-  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
-  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
-];
 
 const coverage = [
   "Fan condition, bearings, and motor performance",
@@ -33,6 +19,7 @@ const coverage = [
   "Structural casing and frame integrity",
   "Airflow volumes vs. design specification",
   "Internal cleanliness and hygiene assessment",
+  "Insulation condition and repair requirements",
 ];
 
 const deliverables = [
@@ -42,30 +29,30 @@ const deliverables = [
   },
   {
     title: "Priority-Rated Defect Register",
-    body: "Defects are categorised by severity — immediate, short-term, and planned — so your maintenance team can act on what matters first.",
+    body: "Defects are categorised by severity, immediate, short-term, and planned, so your maintenance team can act on what matters first.",
   },
   {
     title: "Costed Remedial Recommendations",
     body: "Where works are required, we provide indicative costs alongside the findings, so you can plan budget and programme at the same time.",
   },
   {
-    title: "Compliance Reference Points",
-    body: "Surveys are carried out against CIBSE, HTM 03-01, and Part L benchmarks where relevant, providing a reference point for audits and planned maintenance.",
+    title: "Independent Documented Record",
+    body: "The completed report stands as an independent record of system condition at the point of survey — a reliable reference for asset management, maintenance planning, and future works.",
   },
 ];
 
 const painPoints = [
   {
     title: "You Don't Know What You've Got",
-    body: "Inherited plant rooms, incomplete maintenance records, or units that have never been formally assessed — a condition survey gives you a reliable baseline.",
+    body: "Inherited plant rooms, incomplete maintenance records, or units that have never been formally assessed, a condition survey gives you a reliable baseline.",
   },
   {
     title: "Budget Planning Is Guesswork",
     body: "Without documented condition data, it's difficult to plan maintenance spend or justify capital requests. A survey gives you the evidence to build a credible asset programme.",
   },
   {
-    title: "Compliance Questions Are Coming",
-    body: "HTM 03-01, CIBSE guidance, and Part L all reference ventilation performance standards. A validation survey provides documented evidence that your systems are meeting — or working towards — those requirements.",
+    title: "Everything Is Reactive",
+    body: "Without a baseline condition record, every decision is reactive — you respond to failures rather than preventing them. A survey gives you the data to move from reactive to planned.",
   },
 ];
 
@@ -93,12 +80,12 @@ export default function ValidationSurveysPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#297858]">
               Ventilation Solutions
             </p>
-            <h1 className="font-display text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
-              Ventilation<br />Surveys
+            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
+              Validation Surveys
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-lg text-base leading-7 text-white/75">
-              Air handling units are significant capital assets. Our validation surveys give you a clear, independent picture of system condition — with prioritised, costed recommendations so you can plan with confidence.
+              An entire system condition assessment with a full documented report of findings and proposals. Know exactly what your assets need, with prioritised, costed recommendations you can act on.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -109,11 +96,11 @@ export default function ValidationSurveysPage() {
                 <ArrowIcon />
               </Link>
               <a
-                href="tel:01256518170"
+                href="#why-it-matters"
                 className="inline-flex items-center gap-2 border border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
               >
-                <PhoneIcon />
-                01256 518170
+                Learn more
+                <ArrowDownIcon />
               </a>
             </div>
           </div>
@@ -124,12 +111,12 @@ export default function ValidationSurveysPage() {
           <Container>
             <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
               {[
-                { stat: "HTM 03-01", label: "Compliance Reference" },
-                { stat: "CIBSE", label: "Aligned Methodology" },
+                { stat: "Fully", label: "Documented" },
+                { stat: "Independent", label: "Assessment" },
                 { stat: "40+", label: "Years Experience" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
-                  <p className="font-display text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
                   <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
                 </div>
               ))}
@@ -139,22 +126,21 @@ export default function ValidationSurveysPage() {
       </section>
 
       {/* Pain points */}
-      <section className="bg-[#111418] py-16">
+      <section id="why-it-matters" className="bg-[#111418] py-14 sm:py-16">
         <Container>
-          <div className="mb-10">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/55">
-              Why it matters
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
-              What a survey solves
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-          </div>
-          <div className="grid gap-6 sm:grid-cols-3">
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+            Why it matters
+          </p>
+          <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
+            When a survey is the right call
+          </h2>
+          <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {painPoints.map((p) => (
-              <div key={p.title} className="border-l-2 border-[#297858] pl-5">
-                <h3 className="text-sm font-bold text-white">{p.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-white/65">{p.body}</p>
+              <div key={p.title} className="border border-white/10 bg-white/5 p-6">
+                <div className="mb-4 h-[3px] w-8 bg-[#297858]" />
+                <h3 className="text-sm font-extrabold text-white">{p.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-white/60">{p.body}</p>
               </div>
             ))}
           </div>
@@ -162,23 +148,22 @@ export default function ValidationSurveysPage() {
       </section>
 
       {/* Coverage */}
-      <section className="bg-surface-2 py-16">
+      <section className="bg-[#f7f6f4] py-14 sm:py-20">
         <Container>
-          <div className="mb-8">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
-              Scope of assessment
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-              What every survey covers
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {coverage.map((item) => (
-              <div key={item} className="flex items-start gap-3 border border-slate-200 bg-white p-4">
-                <span className="mt-0.5 shrink-0 text-[#297858]">
-                  <CheckIcon />
-                </span>
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+            Scope of assessment
+          </p>
+          <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
+            What every survey covers
+          </h2>
+          <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          <p className="mt-4 max-w-xl text-sm leading-7 text-slate-500">
+            Every AHU is assessed against the same rigorous checklist. Nothing is skipped and every finding is recorded.
+          </p>
+          <div className="mt-10 grid gap-0 border border-slate-200 bg-white sm:grid-cols-2">
+            {coverage.map((item, i) => (
+              <div key={item} className={`flex items-start gap-3 border-b border-slate-200 p-5 ${i % 2 === 0 ? "sm:border-r" : ""}`}>
+                <span className="mt-0.5 shrink-0 text-[#297858]"><CheckIcon /></span>
                 <span className="text-sm text-slate-700">{item}</span>
               </div>
             ))}
@@ -187,24 +172,26 @@ export default function ValidationSurveysPage() {
       </section>
 
       {/* Deliverables */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-14 sm:py-20">
         <Container>
-          <div className="mb-10">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
-              What you receive
-            </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
-              Survey deliverables
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-          </div>
-          <div className="grid gap-8 sm:grid-cols-2">
-            {deliverables.map((d) => (
-              <div key={d.title} className="border-t-2 border-[#297858] pt-5">
-                <h3 className="font-display text-sm font-bold uppercase tracking-wide text-slate-900">
-                  {d.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{d.body}</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+            What you receive
+          </p>
+          <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
+            Survey deliverables
+          </h2>
+          <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          <p className="mt-4 max-w-xl text-sm leading-7 text-slate-500">
+            Every survey produces a complete set of documented outputs your team can act on.
+          </p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {deliverables.map((d, i) => (
+              <div key={d.title} className="border border-slate-200 p-6">
+                <span className="text-2xl font-extrabold text-slate-200">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-3 font-bold text-slate-900">{d.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-500">{d.body}</p>
               </div>
             ))}
           </div>
@@ -212,38 +199,7 @@ export default function ValidationSurveysPage() {
       </section>
 
       {/* Trust bar */}
-      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
-        <Container>
-          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading organisations
-          </p>
-          <div className="relative">
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent sm:hidden" />
-            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 px-4 sm:px-0">
-                {clientLogos.map((logo) => (
-                  <Image
-                    key={logo.alt}
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={120}
-                    height={60}
-                    unoptimized
-                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="mt-4 flex items-center justify-center gap-2 text-slate-400 sm:hidden">
-            <span className="text-[10px] font-semibold uppercase tracking-wider opacity-70">swipe to view more</span>
-            <svg className="h-4 w-4 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M10 6l6 6-6 6" />
-            </svg>
-          </div>
-        </Container>
-      </section>
+      <TrustedByBar />
 
       {/* CTA + form */}
       <section className="bg-surface-2 py-16">
@@ -253,7 +209,7 @@ export default function ValidationSurveysPage() {
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
                 Get in touch
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">
+              <h2 className="text-2xl font-extrabold text-slate-900">
                 Book a survey
               </h2>
               <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
@@ -302,7 +258,7 @@ export default function ValidationSurveysPage() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 Ready to understand your assets?
               </h2>
               <p className="mt-3 max-w-lg text-sm leading-7 text-white/65">
@@ -357,10 +313,10 @@ function CheckIcon() {
   );
 }
 
-function PhoneIcon() {
+function ArrowDownIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M6.5 3h3l1 5-2 1.5a16 16 0 0 0 6.5 6.5L16.5 14l5 1v3c0 1.1-.9 2-2 2C10.8 20 4 13.2 4 4.5c0-1.1.9-2 2-2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+      <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

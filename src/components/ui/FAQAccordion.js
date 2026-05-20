@@ -19,7 +19,7 @@ export default function FAQAccordion({ faqs }) {
           <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
             Common questions
           </p>
-          <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">
+          <h2 className="text-2xl font-extrabold text-slate-900">
             Frequently Asked Questions
           </h2>
           <div className="mt-2 h-[3px] w-10 bg-[#297858]" />

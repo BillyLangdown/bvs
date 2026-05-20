@@ -1,21 +1,20 @@
+import { sendProductEnquiryEmail } from "@/lib/email";
+
 async function postToWebhook(payload) {
   const webhookUrl = process.env.FORMS_WEBHOOK_URL;
-  if (!webhookUrl) return { ok: true, sent: false };
-
-  const res = await fetch(webhookUrl, {
+  if (!webhookUrl) return;
+  await fetch(webhookUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ type: "product_enquiry", ...payload }),
-  });
-
-  return { ok: res.ok, sent: true };
+  }).catch(() => null);
 }
 
 export async function POST(req) {
   try {
     const body = await req.json();
 
-    // Honeypot check — bots fill hidden fields, humans don't
+    // Honeypot — bots fill hidden fields, humans don't
     if (body?.hp) {
       return Response.json({ ok: true });
     }
@@ -26,7 +25,7 @@ export async function POST(req) {
     const company = String(body?.company || "").trim();
     const phone = String(body?.phone || "").trim();
     const enquiry = String(body?.enquiry || "").trim();
-    const image = body?.image ?? null; // { name, data } or null
+    const image = body?.image ?? null;
 
     if (!name || !email.includes("@") || !enquiry) {
       return Response.json(
@@ -42,22 +41,17 @@ export async function POST(req) {
       company: company || null,
       phone: phone || null,
       enquiry,
+      imageAttached: image?.name || null,
     };
 
-    // Include image metadata in the payload if present (data URI kept server-side)
-    if (image?.name) {
-      payload.imageAttached = image.name;
-      payload.imageData = image.data ?? null;
-    }
-
-    const result = await postToWebhook(payload);
-
-    if (!result.ok) {
-      return Response.json({ error: "Failed to deliver enquiry." }, { status: 502 });
-    }
+    await Promise.all([
+      sendProductEnquiryEmail(payload),
+      postToWebhook({ ...payload, imageData: image?.data ?? null }),
+    ]);
 
     return Response.json({ ok: true });
-  } catch {
-    return Response.json({ error: "Invalid request." }, { status: 400 });
+  } catch (err) {
+    console.error("[enquiry]", err);
+    return Response.json({ error: "Failed to send enquiry." }, { status: 500 });
   }
 }

@@ -3,9 +3,9 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "EU Disney Headquarters Hammersmith — Ventilation Survey | BVS Case Study",
+  title: "EU Disney Headquarters Hammersmith, Ventilation Survey | BVS Case Study",
   description:
-    "BVS conducted a full ventilation survey at the EU Disney Headquarters in Hammersmith, London — assessing AHU performance, air volumes, and system condition across the corporate campus.",
+    "BVS conducted a full ventilation survey at the EU Disney Headquarters in Hammersmith, London, assessing AHU performance, air volumes, and system condition across the corporate campus.",
 };
 
 export default function DisneyHeadquartersVentilationSurvey() {
@@ -20,26 +20,26 @@ export default function DisneyHeadquartersVentilationSurvey() {
             <span>›</span>
             <Link href="/case-studies" className="hover:text-slate-600 transition-colors">Case Studies</Link>
             <span>›</span>
-            <span className="text-slate-600">EU Disney Headquarters Hammersmith — Ventilation Survey</span>
+            <span className="text-slate-600">EU Disney Headquarters Hammersmith, Ventilation Survey</span>
           </nav>
 
           {/* Title */}
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
             Case Study · Corporate · Ventilation Survey
           </p>
-          <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
             EU Disney<br />Headquarters<br />Ventilation Survey
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 
           {/* PROJECT OVERVIEW */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             Project Overview
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
             The European headquarters of Disney in Hammersmith, London required a comprehensive ventilation
             survey across its corporate campus. The survey was commissioned to provide a full picture of
-            current AHU and ventilation system performance, air volumes, and equipment condition — forming
+            current AHU and ventilation system performance, air volumes, and equipment condition, forming
             the basis for future planned maintenance and capital investment decisions.
           </p>
 
@@ -49,7 +49,7 @@ export default function DisneyHeadquartersVentilationSurvey() {
           </div>
 
           {/* WHAT WE DID */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             What We Did
           </h2>
           <div className="mt-4 flex flex-col gap-6">
@@ -72,12 +72,12 @@ export default function DisneyHeadquartersVentilationSurvey() {
           </div>
 
           {/* THE RESULTS */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             The Results
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
             The survey provided Disney's estates team with a clear, accurate picture of the current state
-            of their ventilation systems and a prioritised list of recommended actions — enabling informed
+            of their ventilation systems and a prioritised list of recommended actions, enabling informed
             capital planning and preventative maintenance scheduling.
           </p>
 

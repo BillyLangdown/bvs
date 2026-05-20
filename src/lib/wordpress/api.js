@@ -1,5 +1,5 @@
 import { wpFetch } from "./client";
-import { storeFetch } from "./store";
+import { storeFetch, getStoreProductBySlug } from "./store";
 
 function stripHtml(html) {
   if (!html) return "";
@@ -101,24 +101,38 @@ export async function getCaseStudyBySlug(slug, { revalidate = 300 } = {}) {
   return items?.[0] || null;
 }
 
-// Products — uses WooCommerce Store API (public, no auth) which reliably
-// exposes is_in_stock. Category IDs are the same term IDs as the WP taxonomy.
 export async function getShopProducts({ revalidate = 300 } = {}) {
-  const products = await storeFetch("products", {
-    query: { per_page: 100 },
-    next: { revalidate },
-  });
+  const [storeProducts, wpProducts] = await Promise.all([
+    storeFetch("products", {
+      query: { per_page: 100 },
+      next: { revalidate },
+    }),
+    wpFetch("product", {
+      query: { per_page: 100, _fields: "id,slug,product_badge" },
+      next: { revalidate },
+    }).catch(() => []),
+  ]);
 
-  return (products || []).map((p) => ({
-    id: p.id,
-    slug: p.slug,
-    title: decodeHtmlEntities(p.name || ""),
-    excerpt: stripHtml(p.short_description || ""),
-    link: p.permalink || "",
-    categories: (p.categories || []).map((c) => c.id),
-    imageUrl: p.images?.[0]?.src || null,
-    inStock: p.is_in_stock === true,
-  }));
+  // Build a slug→badge map from WP products (only populated after functions.php snippet added)
+  const badgeBySlug = {};
+  for (const wp of wpProducts || []) {
+    if (wp.product_badge) badgeBySlug[wp.slug] = wp.product_badge;
+  }
+
+  return (storeProducts || []).map((p) => {
+    const badge = badgeBySlug[p.slug] || null;
+    return {
+      id: p.id,
+      slug: p.slug,
+      title: decodeHtmlEntities(p.name || ""),
+      excerpt: stripHtml(p.short_description || ""),
+      link: p.permalink || "",
+      categories: (p.categories || []).map((c) => c.id),
+      imageUrl: p.images?.[0]?.src || null,
+      stockBadge: badge || null,
+      stockClass: badge ? badge.toLowerCase().replace(/\s+/g, "-") : null,
+    };
+  });
 }
 
 export async function getProductCategories({ revalidate = 600 } = {}) {
@@ -136,19 +150,22 @@ export async function getProductCategories({ revalidate = 600 } = {}) {
 }
 
 export async function getShopProductBySlug(slug, { revalidate = 300 } = {}) {
-  const items = await wpFetch("product", {
-    query: {
-      slug,
-      _fields: "id,slug,title,excerpt,link,featured_media,product_cat,meta",
-    },
-    next: { revalidate },
-  });
+  const [wpItems, storeProduct] = await Promise.all([
+    wpFetch("product", {
+      query: {
+        slug,
+        _fields: "id,slug,title,excerpt,link,featured_media,product_cat,meta,product_badge",
+      },
+      next: { revalidate },
+    }),
+    getStoreProductBySlug(slug, { revalidate }).catch(() => null),
+  ]);
 
-  const p = items?.[0];
+  const p = wpItems?.[0];
   if (!p) return null;
 
-  // Resolve featured image directly (WP doesn't embed media on this CPT)
-  let imageUrl = null;
+  // Resolve featured image — prefer WP media API, fall back to Store API image
+  let imageUrl = storeProduct?.images?.[0]?.src || null;
   if (p.featured_media) {
     try {
       const media = await wpFetch(`media/${p.featured_media}`, {
@@ -159,7 +176,7 @@ export async function getShopProductBySlug(slug, { revalidate = 300 } = {}) {
         media?.media_details?.sizes?.large?.source_url ||
         media?.media_details?.sizes?.medium?.source_url ||
         media?.source_url ||
-        null;
+        imageUrl;
     } catch {}
   }
 
@@ -167,8 +184,29 @@ export async function getShopProductBySlug(slug, { revalidate = 300 } = {}) {
   const rawContent = p.meta?._et_pb_old_content || "";
   const content = rawContent
     .replace(/\s+data-(?:start|end)="[^"]*"/g, "")
-    .replace(/\[[\w/][^\]]*\]/g, "") // strip any stray shortcodes
+    .replace(/\[[\w/][^\]]*\]/g, "")
     .trim();
+
+  // Extract brand — prefer the dedicated brands taxonomy returned by the Store API,
+  // fall back to a WC attribute named "brand" / taxonomy "pa_brand"
+  const attributes = storeProduct?.attributes || [];
+  const brand =
+    storeProduct?.brands?.[0]?.name ||
+    attributes.find((a) => a.name?.toLowerCase() === "brand" || a.taxonomy === "pa_brand")
+      ?.terms?.[0]?.name ||
+    null;
+
+  // Format price from prices object (minor units) — avoids HTML entity issues in price_html
+  const pricesObj = storeProduct?.prices;
+  const priceDisplay = pricesObj?.price
+    ? `${pricesObj.currency_prefix || "£"}${(
+        parseInt(pricesObj.price, 10) /
+        Math.pow(10, pricesObj.currency_minor_unit ?? 2)
+      ).toLocaleString("en-GB", {
+        minimumFractionDigits: pricesObj.currency_minor_unit ?? 2,
+        maximumFractionDigits: pricesObj.currency_minor_unit ?? 2,
+      })}`
+    : null;
 
   return {
     id: p.id,
@@ -179,6 +217,27 @@ export async function getShopProductBySlug(slug, { revalidate = 300 } = {}) {
     link: p.link || "",
     categories: p.product_cat || [],
     imageUrl,
+    images: (storeProduct?.images || []).map((img) => ({
+      src: img.src,
+      thumbnail: img.thumbnail || img.src,
+      alt: img.alt || "",
+    })),
+    // WooCommerce Store API fields
+    price: priceDisplay,
+    sku: storeProduct?.sku || null,
+    weight: storeProduct?.weight || null,
+    dimensions: storeProduct?.dimensions || null,
+    tags: (storeProduct?.tags || []).map((t) => t.name),
+    brand,
+    attributes: attributes.map((a) => ({
+      name: a.name,
+      terms: (a.terms || []).map((t) => t.name),
+    })),
+    // Stock: YITH product_badge is the sole source of truth. No fallback.
+    stockBadge: p.product_badge || null,
+    stockClass: p.product_badge
+      ? p.product_badge.toLowerCase().replace(/\s+/g, "-")
+      : null,
   };
 }
 

@@ -14,27 +14,27 @@ export const metadata = {
 const faqs = [
   {
     q: "Can you work during term time?",
-    a: "Most planned works are scheduled for school holiday periods to avoid disruption to teaching. Where works can be contained within plant rooms or non-teaching areas without creating noise or dust, limited term-time access is sometimes possible — we assess this case by case.",
+    a: "Most planned works are scheduled for school holiday periods to avoid disruption to teaching. Where works can be contained within plant rooms or non-teaching areas without creating noise or dust, limited term-time access is sometimes possible. We assess this case by case.",
   },
   {
     q: "How long does a typical school AHU refurbishment take?",
-    a: "A single AHU refurbishment typically takes 3–5 days on site depending on scope. Where multiple units are being addressed, we programme works to make best use of the available holiday window — summer being the most common.",
+    a: "A single AHU refurbishment typically takes 3–5 days on site depending on scope. Where multiple units are being addressed, we programme works to make best use of the available holiday window, summer being the most common.",
   },
   {
     q: "Do you work in schools with children on site?",
-    a: "Where works are required during term time, we follow safeguarding protocols appropriate to the site — including enhanced DBS checks for engineers where required. All access is managed through the site's visitor procedures.",
+    a: "Where works are required during term time, we follow safeguarding protocols appropriate to the site, including enhanced DBS checks for engineers where required. All access is managed through the site's visitor procedures.",
   },
   {
     q: "How do you approach budget constraints typical in education?",
-    a: "We always present refurbishment and life extension alongside any replacement option. For education estates, this is usually the more practical route — restoring performance and extending asset life at significantly lower cost than full plant replacement.",
+    a: "We always present refurbishment and life extension alongside any replacement option. For education estates, this is usually the more practical route, restoring performance and extending asset life at significantly lower cost than full plant replacement.",
   },
   {
     q: "Can you survey the full estate and provide a prioritised programme?",
-    a: "Yes. We carry out condition surveys across multiple buildings and produce a prioritised programme report — rating units by condition, compliance risk, and energy performance — which supports capital planning and budget bids.",
+    a: "Yes. We carry out condition surveys across multiple buildings and produce a prioritised programme report, rating units by condition, compliance risk, and energy performance, which supports capital planning and budget bids.",
   },
   {
     q: "What age of buildings do you work in?",
-    a: "We work across all building ages — from 1960s system-built schools through to newer academy builds. Older building stock typically has AHUs approaching or past their original design life, which is where prioritised refurbishment programmes deliver the most value.",
+    a: "We work across all building ages, from 1960s system-built schools through to newer academy builds. Older building stock typically has AHUs approaching or past their original design life, which is where prioritised refurbishment programmes deliver the most value.",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function EducationPage() {
       <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900">
         <Image
           src="/school.webp"
-          alt="School building — BVS delivers AHU refurbishment and ventilation works around academic calendars"
+          alt="School building, BVS delivers AHU refurbishment and ventilation works around academic calendars"
           fill
           priority
           placeholder="blur"
@@ -63,7 +63,7 @@ export default function EducationPage() {
               Education
             </p>
             <h1
-              className="font-display text-2xl font-extrabold uppercase leading-[1.08] text-white sm:text-5xl"
+              className="text-2xl font-extrabold leading-[1.08] text-white sm:text-5xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
               Around Term Time.<br />Within Budget.
@@ -77,7 +77,7 @@ export default function EducationPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
               >
-                Speak to an engineer
+                Get in touch
                 <ArrowIcon />
               </Link>
               <Link
@@ -99,7 +99,7 @@ export default function EducationPage() {
                 { stat: "UK Nationwide", label: "Any Estate Type" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
-                  <p className="font-display text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
                   <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
                 </div>
               ))}
@@ -117,12 +117,12 @@ export default function EducationPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
                 The key constraint
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 The Academic Calendar<br />Runs the Programme.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/55">
-                In education, the project window is fixed by the school year, not by contractor availability. The summer holidays — six weeks in most cases — are the primary delivery window for disruptive or noisy works. Easter and half-term windows allow limited access for smaller-scope tasks.
+                In education, the project window is fixed by the school year, not by contractor availability. The summer holidays, six weeks in most cases, are the primary delivery window for disruptive or noisy works. Easter and half-term windows allow limited access for smaller-scope tasks.
               </p>
               <p className="mt-4 text-sm leading-7 text-white/55">
                 This means programme planning matters more in education than almost any other sector. Delays cannot run into term time. Mobilisation, material lead times, and access arrangements all need to be in place before the holiday window opens.
@@ -152,7 +152,7 @@ export default function EducationPage() {
                   },
                   {
                     period: "Term Time",
-                    desc: "Limited to non-disruptive survey work and pre-works activities in contained plant areas only — subject to agreement with the estates team.",
+                    desc: "Limited to non-disruptive survey work and pre-works activities in contained plant areas only, subject to agreement with the estates team.",
                     color: "border-white/10",
                   },
                 ].map((item) => (
@@ -176,7 +176,7 @@ export default function EducationPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                 The lifecycle question
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
                 Refurbish or Replace?
               </h2>
               <div className="mx-auto mt-4 h-[3px] w-10 bg-[#297858]" />
@@ -194,12 +194,12 @@ export default function EducationPage() {
                   Full AHU replacement
                 </p>
                 <div className="mt-4 space-y-3 text-sm text-slate-500">
-                  <p>Long procurement lead times — often 3–6 months</p>
-                  <p>High capital cost — difficult to justify in education budgets</p>
+                  <p>Long procurement lead times, often 3–6 months</p>
+                  <p>High capital cost, difficult to justify in education budgets</p>
                   <p>Plant room access and structural works frequently required</p>
                   <p>Decommissioning, disposal, and installation costs on top</p>
                 </div>
-                <p className="mt-6 text-sm font-semibold text-slate-400">Often the right solution — but not always the only one</p>
+                <p className="mt-6 text-sm font-semibold text-slate-400">Often the right solution, but not always the only one</p>
               </div>
 
               <div className="relative overflow-hidden bg-[#111418] p-6 sm:p-8 text-white">
@@ -211,7 +211,7 @@ export default function EducationPage() {
                   <div className="mt-4 space-y-3 text-sm text-white/80">
                     <p>New fans, coils, and controls within the existing casing</p>
                     <p>Delivered within the summer holiday window</p>
-                    <p>Significantly lower capital cost — supportable within estate budgets</p>
+                    <p>Significantly lower capital cost, supportable within estate budgets</p>
                     <p>10–15 year life extension on plant that is structurally sound</p>
                   </div>
                   <p className="mt-6 text-sm font-semibold text-white">More deliverable. More affordable. Appropriate for most education estates.</p>
@@ -232,7 +232,7 @@ export default function EducationPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
                 What we find on site
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 Common Problems in<br />Education Building Stock.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -245,11 +245,11 @@ export default function EducationPage() {
               <ul className="flex flex-col gap-3">
                 {[
                   "Fixed-speed belt-driven fans running continuously without demand control",
-                  "No BMS integration — AHUs running on timeclock only",
-                  "Filter sections overdue for replacement — increasing pressure drop",
-                  "Coils fouled or corroded — reduced heating and cooling capacity",
+                  "No BMS integration, AHUs running on timeclock only",
+                  "Filter sections overdue for replacement, increasing pressure drop",
+                  "Coils fouled or corroded, reduced heating and cooling capacity",
                   "Controls obsolete with no fault logging or remote monitoring",
-                  "No commissioning records on file — performance unverified for years",
+                  "No commissioning records on file, performance unverified for years",
                 ].map((item) => (
                   <li key={item} className="flex gap-3 border-l-2 border-[#297858] bg-white/5 px-4 py-3">
                     <CheckIcon className="mt-1 shrink-0" />
@@ -270,7 +270,7 @@ export default function EducationPage() {
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               What we deliver in education
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               Services for Schools &amp; Universities
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
@@ -286,7 +286,7 @@ export default function EducationPage() {
               {
                 href: "/ec-fan-upgrades-and-retrofits-for-hvac",
                 label: "EC Fan Upgrades",
-                desc: "Replace belt-driven fans with EC technology. 30–50% energy savings — significant for education energy budgets.",
+                desc: "Replace belt-driven fans with EC technology. 30–50% energy savings, significant for education energy budgets.",
               },
               {
                 href: "/air-handling-unit-coil-replacement",
@@ -325,17 +325,17 @@ export default function EducationPage() {
 
             <ScrollReveal>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/45">
-                Speak to an engineer
+                Get in touch
               </p>
-              <h2 className="font-display text-3xl font-extrabold uppercase text-white sm:text-4xl">
+              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                 Plan Your<br />Summer Programme
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-white/65">
-                The earlier we talk, the more useful we can be. Tell us about your estate — building ages, known AHU issues, and any compliance or energy targets — and we&apos;ll help you develop a practical programme.
+                The earlier we talk, the more useful we can be. Tell us about your estate, building ages, known AHU issues, and any compliance or energy targets, and we&apos;ll help you develop a practical programme.
               </p>
               <div className="mt-7 space-y-3 border-l border-white/10 pl-5">
-                <p className="text-sm text-white/60">Holiday window delivery — programme planned around your calendar</p>
+                <p className="text-sm text-white/60">Holiday window delivery, programme planned around your calendar</p>
                 <p className="text-sm text-white/60">Condition surveys to support capital planning and budget bids</p>
                 <p className="text-sm text-white/60">Schools, colleges, universities, and specialist estates</p>
                 <p className="text-sm text-white/60">Direct response from engineers, not sales handlers</p>
@@ -368,11 +368,11 @@ export default function EducationPage() {
                   <div className="mt-6 flex flex-col gap-2 border-t border-slate-100 pt-5">
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                      Engineering response within 24 working hours
+                      Response within 24 hours
                     </div>
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                      No obligation — site survey available
+                      No obligation, site survey available
                     </div>
                   </div>
                 </div>

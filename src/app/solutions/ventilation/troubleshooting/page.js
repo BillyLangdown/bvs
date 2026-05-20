@@ -2,27 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
   title: "Ventilation Troubleshooting | BVS",
   description:
-    "Expert diagnosis and resolution of ventilation system problems. BVS identify root causes quickly and restore full performance — with a written report included.",
+    "Expert diagnosis and resolution of ventilation system problems. BVS identify root causes quickly and restore full performance, with a written report included.",
 };
-
-const clientLogos = [
-  { src: "/nhs-logo.webp", alt: "NHS" },
-  { src: "/disney-logo.webp", alt: "Disney" },
-  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
-  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
-  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
-  { src: "/travelodge-logo.webp", alt: "Travelodge" },
-  { src: "/waitrose-logo.webp", alt: "Waitrose" },
-  { src: "/westfield-logo.webp", alt: "Westfield" },
-  { src: "/fenwick-logo.webp", alt: "Fenwick" },
-  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
-  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
-  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
-];
 
 const symptoms = [
   {
@@ -31,7 +17,7 @@ const symptoms = [
   },
   {
     title: "Temperature Not Reaching Setpoint",
-    body: "Heating or cooling failing to deliver required temperatures — often a coil performance, valve, or controls issue.",
+    body: "Heating or cooling failing to deliver required temperatures, often a coil performance, valve, or controls issue.",
   },
   {
     title: "Unusual Noise or Vibration",
@@ -47,17 +33,17 @@ const process = [
   {
     step: "01",
     title: "On-Site Diagnosis",
-    body: "Our engineers assess the full system — fans, coils, filters, dampers, controls, ductwork, and sensors. We identify root causes, not just symptoms.",
+    body: "Our engineers assess the full system, fans, coils, filters, dampers, controls, ductwork, and sensors. We identify root causes, not just symptoms.",
   },
   {
     step: "02",
     title: "Remediation Where Possible",
-    body: "Where the fault and site conditions allow, we carry out fixes on the same visit — filter replacements, belt adjustments, sensor recalibration, airflow rebalancing. Not every issue can be resolved immediately, but we aim to action what we can and report clearly on what remains.",
+    body: "Where the fault and site conditions allow, we carry out fixes on the same visit, filter replacements, belt adjustments, sensor recalibration, airflow rebalancing. Not every issue can be resolved immediately, but we aim to action what we can and report clearly on what remains.",
   },
   {
     step: "03",
     title: "Written Report & Next Steps",
-    body: "A clear, costed report outlining what was found, what was actioned, and any further remedial works required — with priority ratings and indicative costs.",
+    body: "A clear, costed report outlining what was found, what was actioned, and any further remedial works required, with priority ratings and indicative costs.",
   },
 ];
 
@@ -96,12 +82,12 @@ export default function TroubleshootingPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#297858]">
               Ventilation Solutions
             </p>
-            <h1 className="font-display text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
+            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
               Ventilation<br />Troubleshooting
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-lg text-base leading-7 text-white/75">
-              Ventilation problems affect comfort, air quality, energy costs, and compliance. Our engineers get to the root cause quickly — diagnosing faults, resolving what can be fixed on the day, and reporting everything with costed next steps.
+              Ventilation problems affect comfort, air quality, energy costs, and compliance. Our engineers get to the root cause quickly, diagnosing faults, resolving what can be fixed on the day, and reporting everything with costed next steps.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -132,7 +118,7 @@ export default function TroubleshootingPage() {
                 { stat: "Written", label: "Report Included" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
-                  <p className="font-display text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
                   <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
                 </div>
               ))}
@@ -148,7 +134,7 @@ export default function TroubleshootingPage() {
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/55">
               Common problems
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
               Recognise any of these?
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -171,7 +157,7 @@ export default function TroubleshootingPage() {
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
               How we work
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               From call-out to close-out
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -179,7 +165,7 @@ export default function TroubleshootingPage() {
           <div className="grid gap-6 sm:grid-cols-3">
             {process.map((p) => (
               <div key={p.step} className="bg-white border border-slate-200 p-6">
-                <p className="font-display text-3xl font-extrabold text-slate-100">{p.step}</p>
+                <p className="text-3xl font-extrabold text-slate-100">{p.step}</p>
                 <h3 className="mt-3 text-sm font-bold uppercase tracking-wide text-slate-900">{p.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{p.body}</p>
               </div>
@@ -195,7 +181,7 @@ export default function TroubleshootingPage() {
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
               Diagnostic scope
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               What we assess on-site
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -214,38 +200,7 @@ export default function TroubleshootingPage() {
       </section>
 
       {/* Trust bar */}
-      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
-        <Container>
-          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading organisations
-          </p>
-          <div className="relative">
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent sm:hidden" />
-            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 px-4 sm:px-0">
-                {clientLogos.map((logo) => (
-                  <Image
-                    key={logo.alt}
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={120}
-                    height={60}
-                    unoptimized
-                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="mt-4 flex items-center justify-center gap-2 text-slate-400 sm:hidden">
-            <span className="text-[10px] font-semibold uppercase tracking-wider opacity-70">swipe to view more</span>
-            <svg className="h-4 w-4 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M10 6l6 6-6 6" />
-            </svg>
-          </div>
-        </Container>
-      </section>
+      <TrustedByBar />
 
       {/* CTA + form */}
       <section className="bg-surface-2 py-16">
@@ -255,12 +210,12 @@ export default function TroubleshootingPage() {
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
                 Get in touch
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">
+              <h2 className="text-2xl font-extrabold text-slate-900">
                 Tell us what&apos;s happening
               </h2>
               <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-4 text-sm leading-7 text-slate-600">
-                Describe the symptoms — noise, temperature, airflow, or compliance — and we&apos;ll respond within one working day with an honest assessment of next steps.
+                Describe the symptoms, noise, temperature, airflow, or compliance, and we&apos;ll respond within one working day with an honest assessment of next steps.
               </p>
               <ul className="mt-5 flex flex-col gap-2">
                 {["No obligation", "Response within one working day", "Speak directly with a specialist"].map((p) => (
@@ -276,7 +231,7 @@ export default function TroubleshootingPage() {
                 </p>
                 <div className="flex flex-col gap-2">
                   {[
-                    { href: "/solutions/ventilation/validation-surveys", label: "Ventilation Surveys" },
+                    { href: "/solutions/ventilation/validation-surveys", label: "Validation Surveys" },
                     { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
                     { href: "/solutions/ventilation/ducting-repair-replacement", label: "Ducting Repairs" },
                   ].map((l) => (
@@ -304,7 +259,7 @@ export default function TroubleshootingPage() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 Got a ventilation problem?
               </h2>
               <p className="mt-3 max-w-lg text-sm leading-7 text-white/65">

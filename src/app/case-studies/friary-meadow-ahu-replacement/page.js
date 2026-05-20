@@ -3,9 +3,9 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Friary Meadow Retirement Village — AHU Replacement | BVS Case Study",
+  title: "Friary Meadow Retirement Village, AHU Replacement | BVS Case Study",
   description:
-    "BVS designed and installed a replacement AHU at Friary Meadow Retirement Village — delivering reliable ventilation for a sensitive residential care environment with minimum disruption to residents.",
+    "BVS designed and installed a replacement AHU at Friary Meadow Retirement Village, delivering reliable ventilation for a sensitive residential care environment with minimum disruption to residents.",
 };
 
 export default function FriaryMeadowAhuReplacement() {
@@ -20,26 +20,26 @@ export default function FriaryMeadowAhuReplacement() {
             <span>›</span>
             <Link href="/case-studies" className="hover:text-slate-600 transition-colors">Case Studies</Link>
             <span>›</span>
-            <span className="text-slate-600">Friary Meadow Retirement Village — AHU Replacement</span>
+            <span className="text-slate-600">Friary Meadow Retirement Village, AHU Replacement</span>
           </nav>
 
           {/* Title */}
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
             Case Study · Residential Care · AHU Replacement
           </p>
-          <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
             Friary Meadow<br />Retirement Village<br />AHU Replacement
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 
           {/* PROJECT OVERVIEW */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             Project Overview
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
             Friary Meadow Retirement Village required a replacement air handling unit to maintain reliable
             ventilation throughout the residential facility. Retirement villages and care environments
-            present particular challenges — disruption must be minimised and air quality maintained at all
+            present particular challenges, disruption must be minimised and air quality maintained at all
             times for the comfort and health of residents. The existing AHU had reached the end of its
             operational life and required full replacement.
           </p>
@@ -50,7 +50,7 @@ export default function FriaryMeadowAhuReplacement() {
           </div>
 
           {/* WHAT WE DID */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             What We Did
           </h2>
           <div className="mt-4 flex flex-col gap-6">
@@ -58,7 +58,7 @@ export default function FriaryMeadowAhuReplacement() {
               <p className="font-semibold text-slate-900">Assessment & Design</p>
               <p className="mt-1 text-[15px] leading-7 text-slate-700">
                 BVS assessed the existing installation and designed a replacement AHU to meet the required
-                performance specification — ensuring the new unit would deliver the ventilation performance
+                performance specification, ensuring the new unit would deliver the ventilation performance
                 needed for the residential environment.
               </p>
             </div>
@@ -73,7 +73,7 @@ export default function FriaryMeadowAhuReplacement() {
           </div>
 
           {/* THE RESULTS */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             The Results
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">

@@ -1,39 +1,52 @@
+import { sendContactEmail } from "@/lib/email";
+
 async function postToWebhook(payload) {
   const webhookUrl = process.env.FORMS_WEBHOOK_URL;
-  if (!webhookUrl) return { ok: true, sent: false };
-
-  const res = await fetch(webhookUrl, {
+  if (!webhookUrl) return;
+  await fetch(webhookUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ type: "contact", ...payload }),
-  });
-
-  return { ok: res.ok, sent: true };
+  }).catch(() => null);
 }
 
 export async function POST(req) {
   try {
     const body = await req.json();
+
     const name = String(body?.name || "").trim();
     const email = String(body?.email || "").trim();
+    const mobile = String(body?.mobile || "").trim();
+    const phone = String(body?.phone || "").trim();
     const company = String(body?.company || "").trim();
+    const service = String(body?.service || "").trim();
     const message = String(body?.message || "").trim();
 
-    if (!name || !email.includes("@") || !message) {
+    if (!name || !email.includes("@")) {
       return Response.json(
         { error: "Please complete all required fields." },
         { status: 400 },
       );
     }
 
-    const result = await postToWebhook({ name, email, company, message });
-    if (!result.ok) {
-      return Response.json({ error: "Failed to deliver message." }, { status: 502 });
-    }
+    const payload = {
+      name,
+      email,
+      mobile: mobile || null,
+      phone: phone || null,
+      company: company || null,
+      service: service || null,
+      message: message || null,
+    };
+
+    await Promise.all([
+      sendContactEmail(payload),
+      postToWebhook(payload),
+    ]);
 
     return Response.json({ ok: true });
-  } catch {
-    return Response.json({ error: "Invalid request." }, { status: 400 });
+  } catch (err) {
+    console.error("[contact]", err);
+    return Response.json({ error: "Failed to send message." }, { status: 500 });
   }
 }
-

@@ -14,7 +14,7 @@ export const metadata = {
 const faqs = [
   {
     q: "Do your engineers hold security clearances?",
-    a: "We have engineers who have worked on sites requiring enhanced security vetting. The clearance level required depends on the specific site and access classification — we discuss this at enquiry stage and confirm capability before committing to a programme.",
+    a: "We have engineers who have worked on sites requiring enhanced security vetting. The clearance level required depends on the specific site and access classification. We discuss this at enquiry stage and confirm capability before committing to a programme.",
   },
   {
     q: "Can you work within strict access and programme requirements?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Can you manage the documentation requirements on these contracts?",
-    a: "Yes. We produce the quality, technical, and commissioning documentation typically required on government and defence contracts — including as-fitted drawings, commissioning records, risk assessments, and method statements to the required standard.",
+    a: "Yes. We produce the quality, technical, and commissioning documentation typically required on government and defence contracts, including as-fitted drawings, commissioning records, risk assessments, and method statements to the required standard.",
   },
   {
     q: "Do you work directly with the MoD or through prime contractors?",
@@ -46,7 +46,7 @@ export default function DefencePage() {
       <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900">
         <Image
           src="/defence.webp"
-          alt="Defence facility — BVS delivers ventilation services on secure government and MoD sites"
+          alt="Defence facility, BVS delivers ventilation services on secure government and MoD sites"
           fill
           priority
           placeholder="blur"
@@ -63,7 +63,7 @@ export default function DefencePage() {
               Defence &amp; Government
             </p>
             <h1
-              className="font-display text-2xl font-extrabold uppercase leading-[1.08] text-white sm:text-5xl"
+              className="text-2xl font-extrabold leading-[1.08] text-white sm:text-5xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
               Secure Sites.<br />No Shortcuts.
@@ -77,7 +77,7 @@ export default function DefencePage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
               >
-                Speak to an engineer
+                Get in touch
                 <ArrowIcon />
               </Link>
               <Link
@@ -92,14 +92,15 @@ export default function DefencePage() {
 
         <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-black/60 backdrop-blur-sm">
           <Container>
-            <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
+            <div className="grid grid-cols-2 divide-x divide-white/15 py-2 sm:grid-cols-4 sm:py-3">
               {[
+                { stat: "VIVO", label: "Approved" },
                 { stat: "Secure Site", label: "Access Experience" },
                 { stat: "Programme", label: "Compliance" },
                 { stat: "UK Nationwide", label: "Coverage" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
-                  <p className="font-display text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
                   <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
                 </div>
               ))}
@@ -117,12 +118,12 @@ export default function DefencePage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
                 The operating environment
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 What Makes Defence<br />Estates Different.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/55">
-                Security vetting, escorted access, tool manifests, and pre-approved method statements are standard requirements on defence and government sites. These are not obstacles — they are the baseline expectation.
+                Security vetting, escorted access, tool manifests, and pre-approved method statements are standard requirements on defence and government sites. These are not obstacles, they are the baseline expectation.
               </p>
               <p className="mt-4 text-sm leading-7 text-white/55">
                 Operational continuity is non-negotiable. Works cannot run over programme without site management approval. Unplanned disruption is not acceptable. The contractor that works on these sites understands this from the outset.
@@ -141,7 +142,7 @@ export default function DefencePage() {
               <ul className="flex flex-col gap-3">
                 {[
                   "Security vetting requirements confirmed and met before site attendance",
-                  "Works programmes submitted and approved in advance — no ad hoc access",
+                  "Works programmes submitted and approved in advance, no ad hoc access",
                   "Tool and material manifests produced for each site visit",
                   "Escorted access procedures followed without exception",
                   "Risk assessments and method statements to the required format and standard",
@@ -159,6 +160,45 @@ export default function DefencePage() {
         </Container>
       </section>
 
+      {/* ── VIVO APPROVED ─────────────────────────────────────────────── */}
+      <section className="bg-white py-16 sm:py-20">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+            <ScrollReveal>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
+                Approved status
+              </p>
+              <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
+                VIVO Approved<br />Contractor
+              </h2>
+              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-6 text-sm leading-7 text-slate-500">
+                BVS holds approved contractor status with VIVO, the organisation responsible for managing and maintaining the UK&apos;s defence housing and built estate on behalf of the Ministry of Defence.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-slate-500">
+                VIVO approval means BVS has been vetted, assessed, and authorised to deliver mechanical services on MOD-managed estates. This removes a significant barrier to mobilisation and confirms we meet the compliance and quality standards required to work on these sites.
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={80}>
+              <div className="flex flex-col gap-3">
+                {[
+                  "Vetted and authorised to work on MOD-managed estates",
+                  "Compliance and quality standards assessed and confirmed",
+                  "Faster mobilisation on VIVO-managed contracts",
+                  "Experience across defence housing and operational estates",
+                ].map((item) => (
+                  <div key={item} className="flex gap-3 border-l-2 border-[#297858] bg-[#f7f6f5] px-4 py-3">
+                    <CheckIcon className="mt-1 shrink-0" />
+                    <span className="text-sm leading-6 text-slate-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </Container>
+      </section>
+
       {/* ── INFRASTRUCTURE CHALLENGES ─────────────────────────────────── */}
       <section className="bg-surface-2 py-16 sm:py-20">
         <Container>
@@ -168,7 +208,7 @@ export default function DefencePage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                 The infrastructure challenge
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
                 Ageing MoD Plant<br />in Demanding Environments.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -176,7 +216,7 @@ export default function DefencePage() {
                 Much of the UK defence estate was built in the post-war period and expanded through the 1970s and 1980s. Mechanical plant in many of these buildings is well past its design life but continues to operate due to budget cycles, procurement timelines, and operational continuity requirements.
               </p>
               <p className="mt-4 text-sm leading-6 text-slate-500">
-                Refurbishment and life extension — rather than full replacement — is often the most practical option. It avoids lengthy procurement programmes, reduces plant room disruption, and can significantly extend useful asset life.
+                Refurbishment and life extension, rather than full replacement, is often the most practical option. It avoids lengthy procurement programmes, reduces plant room disruption, and can significantly extend useful asset life.
               </p>
             </ScrollReveal>
 
@@ -185,7 +225,7 @@ export default function DefencePage() {
                 {[
                   {
                     title: "Life extension over replacement",
-                    body: "Where plant is structurally sound, targeted refurbishment — new fans, coils, and controls within the existing casing — can add 10–15 years at a fraction of full replacement cost.",
+                    body: "Where plant is structurally sound, targeted refurbishment, new fans, coils, and controls within the existing casing, can add 10–15 years at a fraction of full replacement cost.",
                   },
                   {
                     title: "Obsolete controls replacement",
@@ -193,7 +233,7 @@ export default function DefencePage() {
                   },
                   {
                     title: "EC fan upgrades",
-                    body: "Belt-driven fans running at fixed speed are a standard finding. EC retrofits reduce energy consumption and eliminate the maintenance overhead of belts and pulleys — within the original AHU casing.",
+                    body: "Belt-driven fans running at fixed speed are a standard finding. EC retrofits reduce energy consumption and eliminate the maintenance overhead of belts and pulleys, within the original AHU casing.",
                   },
                 ].map((item) => (
                   <div key={item.title} className="border border-slate-200 bg-white p-5">
@@ -215,7 +255,7 @@ export default function DefencePage() {
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               What we deliver on defence estates
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               Services for Defence &amp; Government
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
@@ -226,11 +266,11 @@ export default function DefencePage() {
               {
                 href: "/air-handling-unit-refurbishment",
                 label: "AHU Refurbishment",
-                desc: "Life extension of existing plant. Condition surveys with costed options — no commitment required before survey.",
+                desc: "Life extension of existing plant. Condition surveys with costed options, no commitment required before survey.",
               },
               {
-                href: "/air-handling-unit-manufacturing",
-                label: "AHU Manufacturing",
+                href: "/air-handling-unit-manufactoring-and-installation",
+                label: "AHU Manufacturing & Installation",
                 desc: "Made-to-specification replacement AHUs where like-for-like sourcing is not possible.",
               },
               {
@@ -270,9 +310,9 @@ export default function DefencePage() {
 
             <ScrollReveal>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/45">
-                Speak to an engineer
+                Get in touch
               </p>
-              <h2 className="font-display text-3xl font-extrabold uppercase text-white sm:text-4xl">
+              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                 Discuss Your<br />Defence Estate
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
@@ -281,7 +321,7 @@ export default function DefencePage() {
               </p>
               <div className="mt-7 space-y-3 border-l border-white/10 pl-5">
                 <p className="text-sm text-white/60">Secure site access experience as standard</p>
-                <p className="text-sm text-white/60">Programme compliance — works delivered within agreed windows</p>
+                <p className="text-sm text-white/60">Programme compliance, works delivered within agreed windows</p>
                 <p className="text-sm text-white/60">Full documentation to the required standard</p>
                 <p className="text-sm text-white/60">Direct response from engineers, not sales handlers</p>
               </div>
@@ -313,7 +353,7 @@ export default function DefencePage() {
                   <div className="mt-6 flex flex-col gap-2 border-t border-slate-100 pt-5">
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                      Engineering response within 24 working hours
+                      Response within 24 hours
                     </div>
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />

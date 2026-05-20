@@ -3,9 +3,9 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Pembroke Offices — AHU Refurbishment | BVS Case Study",
+  title: "Pembroke Offices, AHU Refurbishment | BVS Case Study",
   description:
-    "Post front-of-house renovation, BVS refurbished the AHUs at Pembroke Offices — reverse cycle coil, three Ziehl EC fans, 84kW heater batteries, casing repairs, and improved filtration.",
+    "Post front-of-house renovation, BVS refurbished the AHUs at Pembroke Offices, reverse cycle coil, three Ziehl EC fans, 84kW heater batteries, casing repairs, and improved filtration.",
 };
 
 export default function PembrokeOfficesAHURefurbishmentCaseStudy() {
@@ -20,24 +20,24 @@ export default function PembrokeOfficesAHURefurbishmentCaseStudy() {
             <span>›</span>
             <Link href="/case-studies" className="hover:text-slate-600 transition-colors">Case Studies</Link>
             <span>›</span>
-            <span className="text-slate-600">Pembroke Offices — AHU Refurbishment</span>
+            <span className="text-slate-600">Pembroke Offices, AHU Refurbishment</span>
           </nav>
 
           {/* Title */}
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
             Case Study · Commercial · AHU Refurbishment
           </p>
-          <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
             Pembroke Offices<br />AHU Refurbishment
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 
           {/* ── PROJECT OVERVIEW ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             Project Overview
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
-            Following comprehensive front-of-house renovations at Pembroke Offices — a flexible open-plan office facility with strong connectivity to London — the client required HVAC system upgrades to match the modernised building and ensure optimal air quality for tenants. The aging AHUs needed a full refurbishment to bring performance in line with the upgraded surroundings.
+            Following comprehensive front-of-house renovations at Pembroke Offices, a flexible open-plan office facility with strong connectivity to London, the client required HVAC system upgrades to match the modernised building and ensure optimal air quality for tenants. The aging AHUs needed a full refurbishment to bring performance in line with the upgraded surroundings.
           </p>
 
           {/* Photo placeholder */}
@@ -46,7 +46,7 @@ export default function PembrokeOfficesAHURefurbishmentCaseStudy() {
           </div>
 
           {/* ── THE CHALLENGE ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             The Challenge
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
@@ -54,7 +54,7 @@ export default function PembrokeOfficesAHURefurbishmentCaseStudy() {
           </p>
 
           {/* ── WHAT WE DID ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             What We Did
           </h2>
           <ul className="mt-4 flex flex-col gap-2 text-[15px] leading-7 text-slate-700">
@@ -66,7 +66,7 @@ export default function PembrokeOfficesAHURefurbishmentCaseStudy() {
           </ul>
 
           {/* ── THE RESULTS ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             The Results
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">

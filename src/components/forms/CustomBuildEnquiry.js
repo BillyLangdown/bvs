@@ -5,7 +5,7 @@ import { useState, useCallback } from "react";
 /* ── Shared input styles ───────────────────────────────────────────────── */
 
 const inputClass =
-  "h-11 w-full border border-slate-200 bg-slate-50 px-4 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:bg-white focus:ring-1 focus:ring-[#297858] transition-colors";
+  "h-11 w-full border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors";
 
 const labelClass =
   "mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500";
@@ -43,7 +43,7 @@ function Select({ value, onChange, options, placeholder }) {
 function Textarea({ value, onChange, placeholder }) {
   return (
     <textarea
-      className="min-h-[100px] w-full border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:bg-white focus:ring-1 focus:ring-[#297858] transition-colors"
+      className="min-h-[100px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors"
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
@@ -62,7 +62,7 @@ function RadioGroup({ value, onChange, options }) {
           className={`flex-1 border py-2.5 text-[11px] font-bold uppercase tracking-wide transition-colors ${
             value === o
               ? "border-[#297858] bg-[#297858] text-white"
-              : "border-slate-200 bg-slate-50 text-slate-600 hover:border-slate-300"
+              : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"
           }`}
         >
           {o}
@@ -84,7 +84,7 @@ function FileUpload({ value, onChange }) {
 
   return (
     <div>
-      <label className="flex cursor-pointer items-center gap-4 border border-dashed border-slate-300 bg-slate-50 px-4 py-4 transition-colors hover:border-slate-400 hover:bg-white">
+      <label className="flex cursor-pointer items-center gap-4 border border-dashed border-slate-300 bg-white px-4 py-4 transition-colors hover:border-slate-400">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-slate-400" aria-hidden="true">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" />
         </svg>
@@ -143,7 +143,7 @@ function SuccessView() {
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
       </div>
       <div>
-        <p className="font-display text-lg font-extrabold uppercase text-slate-900">Enquiry received</p>
+        <p className="text-lg font-extrabold text-slate-900">Enquiry received</p>
         <p className="mt-2 text-sm leading-6 text-slate-600">We&apos;ll get back to you within one working day with a specification and quote.</p>
       </div>
       <a href="tel:01256518170" className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] hover:underline">
@@ -339,7 +339,7 @@ function FanForm({ fanType }) {
         <Field label="Airflow required" optional>
           <div className="flex gap-2">
             <input type="number" min="1" placeholder="e.g. 2500" className={`${inputClass} flex-1`} value={v.airflow} onChange={(e) => set("airflow", e.target.value)} />
-            <select className="h-11 border border-slate-200 bg-slate-50 px-3 text-sm text-slate-900 outline-none focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors cursor-pointer" value={v.airflowUnit} onChange={(e) => set("airflowUnit", e.target.value)}>
+            <select className="h-11 border border-slate-200 bg-white px-3 text-sm text-slate-900 outline-none focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors cursor-pointer" value={v.airflowUnit} onChange={(e) => set("airflowUnit", e.target.value)}>
               <option>m³/h</option><option>l/s</option><option>CFM</option>
             </select>
           </div>

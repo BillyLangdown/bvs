@@ -3,9 +3,9 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Warner Leisure Hotel Gunton Hall — AHU Manufacturing | BVS Case Study",
+  title: "Warner Leisure Hotel Gunton Hall, AHU Manufacturing | BVS Case Study",
   description:
-    "BVS designed, manufactured, and installed a custom-built replacement AHU for Warner Leisure Hotel's Gunton Hall swimming pool — tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
+    "BVS designed, manufactured, and installed a custom-built replacement AHU for Warner Leisure Hotel's Gunton Hall swimming pool, tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
 };
 
 export default function GuntonHallAHUCaseStudy() {
@@ -20,20 +20,20 @@ export default function GuntonHallAHUCaseStudy() {
             <span>›</span>
             <Link href="/case-studies" className="hover:text-slate-600 transition-colors">Case Studies</Link>
             <span>›</span>
-            <span className="text-slate-600">Warner Leisure Hotel Gunton Hall — AHU Manufacturing</span>
+            <span className="text-slate-600">Warner Leisure Hotel Gunton Hall, AHU Manufacturing</span>
           </nav>
 
           {/* Title */}
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
             Case Study · Hotel · AHU Manufacturing
           </p>
-          <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
             Warner Leisure Hotel<br />Gunton Hall<br />AHU Manufacturing
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 
           {/* ── PROJECT OVERVIEW ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             Project Overview
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
@@ -56,7 +56,7 @@ export default function GuntonHallAHUCaseStudy() {
           </div>
 
           {/* ── AHU DESIGN CRITERIA ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             AHU Design Criteria
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
@@ -66,7 +66,7 @@ export default function GuntonHallAHUCaseStudy() {
           </p>
 
           {/* ── WHAT WE DID ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             What We Did
           </h2>
 
@@ -138,10 +138,10 @@ export default function GuntonHallAHUCaseStudy() {
           {/* Back link */}
           <div className="mt-8">
             <Link
-              href="/air-handling-unit-manufacturing"
+              href="/air-handling-unit-manufactoring-and-installation"
               className="text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-400 hover:text-[#297858] transition-colors"
             >
-              ← Back to AHU Manufacturing
+              ← Back to AHU Manufacturing &amp; Installation
             </Link>
           </div>
 

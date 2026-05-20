@@ -23,7 +23,7 @@ export function ServiceSubPage({
                 {tagline}
               </p>
             )}
-            <h1 className="font-display text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
+            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
               {title}
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-emerald-500" />
@@ -64,7 +64,7 @@ export function ServiceSubPage({
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
                 Building Ventilation Solutions
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">
+              <h2 className="text-2xl font-extrabold text-slate-900">
                 {featuresTitle}
               </h2>
               <div className="mt-2 h-[3px] w-10 bg-emerald-700" />
@@ -72,7 +72,7 @@ export function ServiceSubPage({
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {features.map((f) => (
                 <div key={f.title} className="border-t-2 border-emerald-700 pt-5">
-                  <h3 className="font-display text-sm font-bold uppercase tracking-wide text-slate-900">
+                  <h3 className="text-sm font-bold tracking-wide text-slate-900">
                     {f.title}
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">{f.body}</p>
@@ -88,7 +88,7 @@ export function ServiceSubPage({
         <Container>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="font-display text-xl font-extrabold uppercase text-white">
+              <p className="text-xl font-extrabold text-white">
                 Ready to get started?
               </p>
               <p className="mt-1 text-sm text-white/65">
@@ -113,7 +113,7 @@ export function ServiceSubPage({
       {relatedLinks.length > 0 && (
         <section className="bg-surface-2 py-14">
           <Container>
-            <h2 className="font-display text-xl font-extrabold uppercase text-slate-900">
+            <h2 className="text-xl font-extrabold text-slate-900">
               Related Services
             </h2>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

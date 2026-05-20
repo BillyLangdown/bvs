@@ -15,7 +15,7 @@ const placeholderPosts = [
     slug: null,
     title: "When Does AHU Refurbishment Make More Sense Than Replacement?",
     excerpt:
-      "The economics of refurbishment versus replacement are often misunderstood. The comparison is not simply cost — it involves remaining structural life, compliance requirements, energy targets, and programme constraints. We break down the decision framework we use on every survey.",
+      "The economics of refurbishment versus replacement are often misunderstood. The comparison is not simply cost, it involves remaining structural life, compliance requirements, energy targets, and programme constraints. We break down the decision framework we use on every survey.",
     tag: "AHU Refurbishment",
     readTime: "6 min read",
     photo: "/ahu-refurbishment-worker.webp",
@@ -35,17 +35,17 @@ const placeholderPosts = [
     slug: null,
     title: "HTM 03-01: What It Actually Means for AHU Works in Healthcare",
     excerpt:
-      "HTM 03-01 is the NHS Health Technical Memorandum covering ventilation for healthcare premises. It is not simply a compliance checklist — it shapes how works are planned, what components are acceptable, and how commissioning is documented. A practical overview.",
+      "HTM 03-01 is the NHS Health Technical Memorandum covering ventilation for healthcare premises. It is not simply a compliance checklist, it shapes how works are planned, what components are acceptable, and how commissioning is documented. A practical overview.",
     tag: "Healthcare",
     readTime: "7 min read",
     photo: "/hospital.webp",
-    photoAlt: "Hospital corridor — BVS ventilation works in live clinical environments",
+    photoAlt: "Hospital corridor, BVS ventilation works in live clinical environments",
   },
   {
     slug: null,
     title: "The Hidden Cost of Delaying AHU Coil Replacement",
     excerpt:
-      "A degraded coil does not fail cleanly — it underperforms gradually. Fouled or corroded coil surfaces reduce heat transfer efficiency, increase energy consumption, and degrade air quality before the unit visibly stops working. What the delay actually costs.",
+      "A degraded coil does not fail cleanly, it underperforms gradually. Fouled or corroded coil surfaces reduce heat transfer efficiency, increase energy consumption, and degrade air quality before the unit visibly stops working. What the delay actually costs.",
     tag: "Coil Replacement",
     readTime: "4 min read",
     photo: "/ahu-coil-replacement.webp",
@@ -55,11 +55,11 @@ const placeholderPosts = [
     slug: null,
     title: "Open-Protocol Controls: Why BACnet and Modbus Matter for FM Teams",
     excerpt:
-      "Proprietary controller systems tie maintenance contracts and future upgrades to a single supplier. Open-protocol systems — BACnet, Modbus, LON — give FM teams flexibility. We explain what the practical difference looks like over a 10-year horizon.",
+      "Proprietary controller systems tie maintenance contracts and future upgrades to a single supplier. Open-protocol systems, BACnet, Modbus, LON, give FM teams flexibility. We explain what the practical difference looks like over a 10-year horizon.",
     tag: "Controller Upgrades",
     readTime: "5 min read",
     photo: "/ahu-controller.webp",
-    photoAlt: "AHU controller upgrade — modern controls panel installed in air handling unit",
+    photoAlt: "AHU controller upgrade, modern controls panel installed in air handling unit",
   },
   {
     slug: null,
@@ -69,7 +69,7 @@ const placeholderPosts = [
     tag: "Education",
     readTime: "4 min read",
     photo: "/school.webp",
-    photoAlt: "School building — BVS AHU works scheduled around term times",
+    photoAlt: "School building, BVS AHU works scheduled around term times",
   },
 ];
 
@@ -79,7 +79,7 @@ export default async function BlogsPage() {
   try {
     posts = await getPosts({ perPage: 30, revalidate: 300 });
   } catch {
-    // WordPress not configured — placeholder posts shown below
+    // WordPress not configured, placeholder posts shown below
   }
 
   const cleanPosts = (posts || []).filter((p) => {
@@ -116,7 +116,7 @@ export default async function BlogsPage() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/45">
               Blogs
             </p>
-            <h1 className="font-display text-3xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
+            <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-5xl">
               Practical AHU Guidance
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
@@ -151,6 +151,7 @@ export default async function BlogsPage() {
                             src={featuredImg}
                             alt={stripHtml(cleanPosts[0].title?.rendered || "")}
                             fill
+                            unoptimized
                             sizes="100vw"
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                           />
@@ -164,7 +165,7 @@ export default async function BlogsPage() {
                         <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#297858]">
                           Latest
                         </p>
-                        <h2 className="font-display text-xl font-extrabold uppercase leading-snug text-slate-900 group-hover:text-[#297858] sm:text-2xl">
+                        <h2 className="text-xl font-extrabold leading-snug text-slate-900 group-hover:text-[#297858] sm:text-2xl">
                           {cleanPosts[0].title?.rendered}
                         </h2>
                         <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500">
@@ -200,6 +201,7 @@ export default async function BlogsPage() {
                               src={img}
                               alt={stripHtml(p.title?.rendered || "")}
                               fill
+                              unoptimized
                               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                               className="object-cover transition-transform duration-500 group-hover:scale-105"
                             />
@@ -210,7 +212,7 @@ export default async function BlogsPage() {
                           )}
                         </div>
                         <div className="flex flex-1 flex-col p-6">
-                          <h2 className="font-display text-sm font-extrabold uppercase leading-snug text-slate-900 group-hover:text-[#297858]">
+                          <h2 className="text-sm font-extrabold leading-snug text-slate-900 group-hover:text-[#297858]">
                             {p.title?.rendered}
                           </h2>
                           <p className="mt-3 text-sm leading-6 text-slate-500 line-clamp-3">
@@ -233,7 +235,7 @@ export default async function BlogsPage() {
                 <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                   Coming soon
                 </p>
-                <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900">
+                <h2 className="mt-2 text-2xl font-extrabold text-slate-900">
                   Articles In Progress
                 </h2>
                 <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
@@ -262,7 +264,7 @@ export default async function BlogsPage() {
                           </span>
                           <span className="text-[10px] text-slate-400">{p.readTime}</span>
                         </div>
-                        <h2 className="font-display text-sm font-extrabold uppercase leading-snug text-slate-900">
+                        <h2 className="text-sm font-extrabold leading-snug text-slate-900">
                           {p.title}
                         </h2>
                         <p className="mt-3 text-sm leading-6 text-slate-500">{p.excerpt}</p>
@@ -281,11 +283,11 @@ export default async function BlogsPage() {
         <Container>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h2 className="font-display text-xl font-extrabold uppercase text-white">
+              <h2 className="text-xl font-extrabold text-white">
                 Have a specific technical question?
               </h2>
               <p className="mt-1 text-sm text-white/55">
-                If you need guidance on a particular situation — compliance, refurbishment vs replacement, energy targets — we are happy to discuss it directly.
+                If you need guidance on a particular situation, compliance, refurbishment vs replacement, energy targets, we are happy to discuss it directly.
               </p>
             </div>
             <Link

@@ -2,27 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
   title: "About BVS | Building Ventilation Solutions",
   description:
     "BVS has been refurbishing, upgrading, and maintaining air handling units across the UK for over 40 years. Engineering-led. In-house delivery. Every sector.",
 };
-
-const clientLogos = [
-  { src: "/nhs-logo.webp", alt: "NHS" },
-  { src: "/disney-logo.webp", alt: "Disney" },
-  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
-  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
-  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
-  { src: "/travelodge-logo.webp", alt: "Travelodge" },
-  { src: "/waitrose-logo.webp", alt: "Waitrose" },
-  { src: "/westfield-logo.webp", alt: "Westfield" },
-  { src: "/fenwick-logo.webp", alt: "Fenwick" },
-  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
-  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
-  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
-];
 
 const values = [
   {
@@ -31,11 +17,11 @@ const values = [
   },
   {
     title: "One Team",
-    body: "Survey, specification, manufacture where required, installation, commissioning — managed by BVS from first visit to handover. One point of contact and one point of accountability throughout.",
+    body: "Survey, specification, manufacture where required, installation, commissioning, managed by BVS from first visit to handover. One point of contact and one point of accountability throughout.",
   },
   {
     title: "Programme Discipline",
-    body: "Healthcare estates, live hotels, academic windows, secure sites — we plan around the constraints that matter to our clients and we deliver to the agreed programme.",
+    body: "Healthcare estates, live hotels, academic windows, secure sites, we plan around the constraints that matter to our clients and we deliver to the agreed programme.",
   },
   {
     title: "Direct & Responsive",
@@ -47,7 +33,7 @@ const services = [
   {
     title: "AHU Refurbishment",
     href: "/air-handling-unit-refurbishment",
-    body: "Extending equipment life by 10–15 years at a fraction of replacement cost. Fan, coil, controls, casing — complete or partial scope.",
+    body: "Extending equipment life by 10–15 years at a fraction of replacement cost. Fan, coil, controls, casing, complete or partial scope.",
   },
   {
     title: "EC Fan Upgrades",
@@ -55,19 +41,14 @@ const services = [
     body: "Replacing belt-drive fans with EC direct-drive. Proven energy reduction, reduced maintenance, BMS-compatible variable speed control.",
   },
   {
-    title: "AHU Installation",
-    href: "/air-handling-unit-installation",
-    body: "Planned replacement of life-expired units with new equipment, specified and installed by the same team. Survey through to commissioning.",
+    title: "AHU Manufacturing & Installation",
+    href: "/air-handling-unit-manufactoring-and-installation",
+    body: "Custom-built AHUs where catalogue products cannot meet the requirement, manufactured in the UK and installed by the same team, survey through to commissioning.",
   },
   {
     title: "Coil Replacement",
     href: "/air-handling-unit-coil-replacement",
     body: "Any make, any age. Coils measured on site, sourced or manufactured, and replaced in situ. Heating, cooling, and heat recovery.",
-  },
-  {
-    title: "AHU Manufacturing",
-    href: "/air-handling-unit-manufacturing",
-    body: "Custom-built units where catalogue products cannot meet the space or performance requirement. UK manufactured, direct-fit replacements.",
   },
   {
     title: "Controller Upgrades",
@@ -118,14 +99,14 @@ export default function AboutPage() {
         About BVS
       </p>
 
-      <h1 className="font-display text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl lg:text-6xl">
+      <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
         Engineering-Led <br/>  for 40+ years.
       </h1>
 
       <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
 
       <p className="mt-6 max-w-2xl text-[15px] leading-7 text-white/70">
-        BVS has been working in mechanical ventilation since the 1980s. We refurbish, upgrade, install, and maintain air handling units across the UK — for hospitals, hotels, schools, leisure centres, defence facilities, and retail estates. The engineering is consistent. The approach adapts to the environment.
+        BVS has been working in mechanical ventilation since the 1980s. We refurbish, upgrade, install, and maintain air handling units across the UK, for hospitals, hotels, schools, leisure centres, defence facilities, and retail estates. The engineering is consistent. The approach adapts to the environment.
       </p>
 
     </div>
@@ -140,18 +121,18 @@ export default function AboutPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                 What We Do
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
+              <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">
                 Air Handling Units.<br />The Full Scope.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-slate-600">
-                We exist to solve problems with air handling equipment. That might be an AHU that is failing, one that is consuming more energy than it should, one that no longer meets compliance requirements, or one that simply needs replacing. We provide the full scope — from initial survey through to commissioning and handover.
+                We exist to solve problems with air handling equipment. That might be an AHU that is failing, one that is consuming more energy than it should, one that no longer meets compliance requirements, or one that simply needs replacing. We provide the full scope, from initial survey through to commissioning and handover.
               </p>
               <p className="mt-4 text-sm leading-7 text-slate-600">
                 The reason clients come back is straightforward: BVS manages the whole job. There is no disconnect between the surveyor who assessed the unit and the engineers who install it. The specification matches the site. The programme gets kept.
               </p>
               <p className="mt-4 text-sm leading-7 text-slate-600">
-                We work directly with estates managers, facilities teams, and end users — and equally with HVAC contractors, M&amp;E consultants, and building services engineers who need a reliable delivery partner.
+                We work directly with estates managers, facilities teams, and end users, and equally with HVAC contractors, M&amp;E consultants, and building services engineers who need a reliable delivery partner.
               </p>
             </ScrollReveal>
 
@@ -161,7 +142,7 @@ export default function AboutPage() {
                   <div key={v.title} className="border border-slate-200 bg-white p-6">
                     <div className="mb-2 flex items-center gap-3">
                       <div className="h-1 w-6 bg-[#297858]" />
-                      <h3 className="font-display text-sm font-extrabold uppercase text-slate-900">
+                      <h3 className="text-sm font-extrabold text-slate-900">
                         {v.title}
                       </h3>
                     </div>
@@ -182,15 +163,15 @@ export default function AboutPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                 Experience
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
                 Four Decades.<br />Still In-House.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-white/65">
-                BVS was founded in the mechanical engineering sector and has operated continuously in the air handling unit market for over 40 years. In that time the equipment has changed — EC motors, modern DDC controls, variable speed drive systems — but the core capability has not: engineering knowledge applied on site by people who understand how ventilation plant actually behaves.
+                BVS was founded in the mechanical engineering sector and has operated continuously in the air handling unit market for over 40 years. In that time the equipment has changed, EC motors, modern DDC controls, variable speed drive systems, but the core capability has not: engineering knowledge applied on site by people who understand how ventilation plant actually behaves.
               </p>
               <p className="mt-4 text-sm leading-7 text-white/65">
-                The team that surveys a unit is the same team that specifies the works and, in many cases, the same team that carries them out. That continuity matters — particularly on complex sites where the constraints are unusual and the margin for disruption is low.
+                The team that surveys a unit is the same team that specifies the works and, in many cases, the same team that carries them out. That continuity matters, particularly on complex sites where the constraints are unusual and the margin for disruption is low.
               </p>
             </ScrollReveal>
 
@@ -203,7 +184,7 @@ export default function AboutPage() {
                   { stat: "6", label: "Sectors served as standard" },
                 ].map((item) => (
                   <div key={item.label} className="border border-white/10 bg-white/5 p-6">
-                    <p className="font-display text-3xl font-extrabold text-[#297858]">{item.stat}</p>
+                    <p className="text-3xl font-extrabold text-[#297858]">{item.stat}</p>
                     <p className="mt-1 text-xs text-white/55">{item.label}</p>
                   </div>
                 ))}
@@ -221,14 +202,14 @@ export default function AboutPage() {
         Our Services
       </p>
 
-      <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
+      <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">
         Six Services.<br />One Specialist.
       </h2>
 
       <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
 
       <p className="mt-4 text-sm leading-6 text-slate-500">
-        Every service is managed by BVS — from initial survey through to commissioning and handover.
+        Every service is managed by BVS, from initial survey through to commissioning and handover.
       </p>
     </ScrollReveal>
 
@@ -242,7 +223,7 @@ export default function AboutPage() {
           >
             <div className="mb-3 flex items-center gap-3">
               <div className="h-1 w-5 bg-[#297858] transition-all group-hover:w-8" />
-              <h3 className="font-display text-sm font-extrabold uppercase text-slate-900 group-hover:text-[#297858]">
+              <h3 className="text-sm font-extrabold text-slate-900 group-hover:text-[#297858]">
                 {s.title}
               </h3>
             </div>
@@ -276,7 +257,7 @@ export default function AboutPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                 Sectors
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
+              <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">
                 Every Environment<br />Is Different.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -309,32 +290,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── CLIENT LOGOS ──────────────────────────────────────────────── */}
-      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
-        <Container>
-          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading organisations
-          </p>
-          <div className="relative">
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
-            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
-                {clientLogos.map((logo) => (
-                  <Image
-                    key={logo.alt}
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={120}
-                    height={60}
-                    unoptimized
-                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <TrustedByBar />
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}
       <section className="bg-[#111418] py-14 sm:py-16">
@@ -344,7 +300,7 @@ export default function AboutPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                 Work With Us
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
                 If the Timing Is Right,<br />Let&apos;s Talk.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />

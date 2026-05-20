@@ -3,9 +3,9 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "NHS Hammersmith & Fulham — AHU Refurbishment | BVS Case Study",
+  title: "NHS Hammersmith & Fulham, AHU Refurbishment | BVS Case Study",
   description:
-    "BVS carried out a targeted light refurbishment of AHUs at an NHS hospital in Hammersmith & Fulham — drivebelts, filters, coil cleaning, corrosion treatment, and bathroom extract fan repairs.",
+    "BVS carried out a targeted light refurbishment of AHUs at an NHS hospital in Hammersmith & Fulham, drivebelts, filters, coil cleaning, corrosion treatment, and bathroom extract fan repairs.",
 };
 
 export default function NHSHammersmithAHURefurbishmentCaseStudy() {
@@ -20,20 +20,20 @@ export default function NHSHammersmithAHURefurbishmentCaseStudy() {
             <span>›</span>
             <Link href="/case-studies" className="hover:text-slate-600 transition-colors">Case Studies</Link>
             <span>›</span>
-            <span className="text-slate-600">NHS Hammersmith &amp; Fulham — AHU Refurbishment</span>
+            <span className="text-slate-600">NHS Hammersmith &amp; Fulham, AHU Refurbishment</span>
           </nav>
 
           {/* Title */}
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
             Case Study · Healthcare · AHU Refurbishment
           </p>
-          <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
             NHS Hammersmith<br />&amp; Fulham<br />AHU Refurbishment
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 
           {/* ── PROJECT OVERVIEW ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             Project Overview
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
@@ -46,7 +46,7 @@ export default function NHSHammersmithAHURefurbishmentCaseStudy() {
           </div>
 
           {/* ── THE CHALLENGE ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             The Challenge
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
@@ -54,7 +54,7 @@ export default function NHSHammersmithAHURefurbishmentCaseStudy() {
           </p>
 
           {/* ── WHAT WE DID ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             What We Did
           </h2>
           <ul className="mt-4 flex flex-col gap-2 text-[15px] leading-7 text-slate-700">
@@ -63,17 +63,17 @@ export default function NHSHammersmithAHURefurbishmentCaseStudy() {
             <li>• Component lubrication completed as part of planned maintenance scope</li>
             <li>• Door seal replacement and catch adjustments to prevent air leakage and ingress</li>
             <li>• Surface corrosion treatment applied to halt further deterioration</li>
-            <li>• Bathroom extract twin fan system repaired — new motors and belts fitted</li>
+            <li>• Bathroom extract twin fan system repaired, new motors and belts fitted</li>
             <li>• Automatic changeover system restored to full operation</li>
             <li>• Failed fresh air inlet damper replaced</li>
           </ul>
 
           {/* ── THE RESULTS ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             The Results
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
-            The targeted refurbishment extended the AHU's operational life without the cost or disruption of full replacement. Air quality across hospital corridors and communal spaces improved, and system reliability was restored — ensuring continued performance within an active NHS facility.
+            The targeted refurbishment extended the AHU's operational life without the cost or disruption of full replacement. Air quality across hospital corridors and communal spaces improved, and system reliability was restored, ensuring continued performance within an active NHS facility.
           </p>
 
           {/* ── CTA ── */}

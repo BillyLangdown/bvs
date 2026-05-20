@@ -48,12 +48,12 @@ export default async function ShopPage() {
               <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
                 Shop
               </p>
-              <h1 className="font-display text-3xl font-extrabold uppercase leading-tight text-white sm:text-4xl">
+              <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl">
                 HVAC Components<br />&amp; Parts
               </h1>
               <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-5 max-w-lg text-[15px] leading-7 text-white/65">
-                EC fans, filters, heating &amp; cooling coils, and heater batteries — sourced by our engineers for commercial and industrial HVAC applications.
+                EC fans, filters, heating &amp; cooling coils, and heater batteries, sourced by our engineers for commercial and industrial HVAC applications.
               </p>
               <p className="mt-4 text-sm text-white/40">
                 Need help specifying the right component?{" "}
@@ -74,7 +74,7 @@ export default async function ShopPage() {
                   { stat: "Expert", label: "Sourcing" },
                 ].map((s) => (
                   <div key={s.label} className="px-3 text-center sm:px-6">
-                    <p className="font-display text-base font-extrabold text-white sm:text-lg">{s.stat}</p>
+                    <p className="text-base font-extrabold text-white sm:text-lg">{s.stat}</p>
                     <p className="mt-0.5 text-[10px] uppercase tracking-wide text-white/50">{s.label}</p>
                   </div>
                 ))}
@@ -93,7 +93,7 @@ export default async function ShopPage() {
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
               Components &amp; Parts
             </p>
-            <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900">
+            <h2 className="mt-2 text-2xl font-extrabold text-slate-900">
               All Products
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
@@ -128,7 +128,7 @@ export default async function ShopPage() {
             <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
               Custom Build
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
               Need Something Built to Specification?
             </h2>
             <div className="mt-4 h-[3px] w-10 bg-[#297858]" />

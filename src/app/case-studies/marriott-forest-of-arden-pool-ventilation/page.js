@@ -3,7 +3,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Marriott Forest of Arden — Swimming Pool AHU Troubleshooting | BVS Case Study",
+  title: "Marriott Forest of Arden, Swimming Pool AHU Troubleshooting | BVS Case Study",
   description:
     "The AHU at Marriott Forest of Arden's swimming pool was designed to maintain 31°C but had only ever reached 24°C. BVS validated the system, identified ductwork leaks and AHU configuration faults, and delivered a full remediation scope.",
 };
@@ -27,20 +27,20 @@ export default function MarriottForestOfArdenCaseStudy() {
             <span>›</span>
             <Link href="/case-studies" className="hover:text-slate-600 transition-colors">Case Studies</Link>
             <span>›</span>
-            <span className="text-slate-600">Marriott Forest of Arden — Swimming Pool AHU</span>
+            <span className="text-slate-600">Marriott Forest of Arden, Swimming Pool AHU</span>
           </nav>
 
           {/* Title */}
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
             Case Study · Hotel · AHU Troubleshooting
           </p>
-          <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
             Forest of Arden<br />Swimming Pool<br />Ventilation Troubleshooting
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 
           {/* ── PROJECT OVERVIEW ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             Project Overview
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
@@ -61,7 +61,7 @@ export default function MarriottForestOfArdenCaseStudy() {
           </div>
 
           {/* ── THE ISSUES ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             Issues Found
           </h2>
 
@@ -70,7 +70,7 @@ export default function MarriottForestOfArdenCaseStudy() {
               <p className="font-semibold text-slate-900">AHU Issues</p>
               <p className="mt-1 text-[15px] leading-7 text-slate-700">
                 The AHU, installed three years ago, was responsible for supplying and extracting air to maintain a
-                temperature of approximately 31°C — but the maximum achieved was only around 24°C. Air volumes,
+                temperature of approximately 31°C, but the maximum achieved was only around 24°C. Air volumes,
                 temperatures, and system configuration were all assessed as part of the investigation.
               </p>
             </div>
@@ -90,7 +90,7 @@ export default function MarriottForestOfArdenCaseStudy() {
           </div>
 
           {/* ── WHAT WE DID ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             What We Did
           </h2>
 
@@ -130,7 +130,7 @@ export default function MarriottForestOfArdenCaseStudy() {
           </div>
 
           {/* ── THE RESULTS ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             The Results
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">

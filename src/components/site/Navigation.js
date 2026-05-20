@@ -25,7 +25,7 @@ const navItems = [
           },
           {
             href: "/air-handling-unit-coil-replacement/",
-            label: "Coil Replacement & Repair",
+            label: "Coil Replacement",
             description: "Restore AHU efficiency without full replacement.",
             icon: WrenchIcon,
           },
@@ -36,16 +36,10 @@ const navItems = [
             icon: RotateIcon,
           },
           {
-            href: "/air-handling-unit-manufacturing/",
-            label: "AHU Manufacturing",
-            description: "Custom-built AHUs to specification - delivered and installed UK-wide.",
+            href: "/air-handling-unit-manufactoring-and-installation/",
+            label: "AHU Manufacturing & Installation",
+            description: "Custom-built AHUs and end-to-end installation, from survey to commissioning.",
             icon: FactoryIcon,
-          },
-          {
-            href: "/air-handling-unit-installation/",
-            label: "AHU Installation",
-            description: "End-to-end installation managed from survey to commissioning.",
-            icon: HardHatIcon,
           },
           {
             href: "/air-handling-unit-controller-solutions-upgrades",
@@ -65,7 +59,7 @@ const navItems = [
             items: [
               {
                 href: "/solutions/ventilation/validation-surveys",
-                label: "Ventilation Surveys",
+                label: "Validation Surveys",
                 description: "Comprehensive AHU surveys with prioritised recommendations.",
                 icon: ClipboardIcon,
               },

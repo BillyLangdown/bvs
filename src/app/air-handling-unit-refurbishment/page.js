@@ -4,6 +4,7 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
   title: "AHU Refurbishment | BVS Building Ventilation Solutions",
@@ -11,25 +12,10 @@ export const metadata = {
     "Restore and extend your air handling unit's life by 10–20 years at around 40% of replacement cost. BVS survey, specify, and refurbish on-site. UK nationwide.",
 };
 
-const clientLogos = [
-  { src: "/nhs-logo.webp", alt: "NHS" },
-  { src: "/disney-logo.webp", alt: "Disney" },
-  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
-  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
-  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
-  { src: "/travelodge-logo.webp", alt: "Travelodge" },
-  { src: "/waitrose-logo.webp", alt: "Waitrose" },
-  { src: "/westfield-logo.webp", alt: "Westfield" },
-  { src: "/fenwick-logo.webp", alt: "Fenwick" },
-  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
-  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
-  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
-];
-
 const faqs = [
   {
     q: "How much does refurbishment cost compared to replacement?",
-    a: "Typically around 40% of a new unit. We provide a fixed-price, itemised quote after the survey — no commitment required before that.",
+    a: "Typically around 40% of a new unit. We provide a fixed-price, itemised quote after the survey. No commitment required before that.",
   },
   {
     q: "How long does refurbishment take?",
@@ -45,7 +31,7 @@ const faqs = [
   },
   {
     q: "Can refurbishment support Part L or net zero targets?",
-    a: "Yes. EC fan conversion, heat recovery, and controls integration can all be incorporated. Where the scope of works supports it, we work to HTM 03-01 benchmarks on healthcare sites — we'll confirm what's achievable at survey stage.",
+    a: "Yes. EC fan conversion, heat recovery, and controls integration can all be incorporated. Where the scope of works supports it, we work to HTM 03-01 benchmarks on healthcare sites. We'll confirm what's achievable at survey stage.",
   },
   {
     q: "What maintenance is needed after refurbishment?",
@@ -53,7 +39,7 @@ const faqs = [
   },
   {
     q: "When is replacement the better option?",
-    a: "When the structural frame is beyond economic repair. We assess this honestly — there is no incentive for us to favour one route over the other.",
+    a: "When the structural frame is beyond economic repair. We assess this honestly: there is no incentive for us to favour one route over the other.",
   },
 ];
 
@@ -80,38 +66,33 @@ export default function AHURefurbishmentPage() {
 
         <Container className="relative z-10 flex min-h-[520px] items-end py-14 pb-20 sm:min-h-[620px] sm:py-20 sm:pb-24">
           <div className="max-w-3xl">
-
             <p
               className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#297858]"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
             >
               AHU Refurbishment
             </p>
-
             <h1
-              className="font-display text-4xl font-extrabold uppercase leading-[1.02] text-white sm:text-5xl lg:text-6xl"
+              className="font-display text-4xl font-extrabold  leading-[1.02] text-white sm:text-5xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.55)" }}
             >
-              Restore & Extend<br />Your Air Handling Units
+              Restore &amp; Extend<br />Your Air Handling Units
             </h1>
-
             <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
-
             <p
               className="mt-6 max-w-2xl text-[15px] leading-7 text-white/80"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.45)" }}
             >
-              Extend your AHU&apos;s life by 10–20 years at around 40% of full replacement cost. BVS survey, specify, and refurbish on-site — with minimum disruption to your operations.
+              Extend your AHU&apos;s life by 10&ndash;20 years at around 40% of full replacement cost. BVS survey, specify, and refurbish on-site with minimum disruption to your operations.
             </p>
-
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
               >
                 Book a condition survey
+                <ArrowIcon />
               </Link>
-
               <a
                 href="#what-is-refurbishment"
                 className="inline-flex items-center gap-2 border border-white/20 bg-black/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
@@ -120,38 +101,11 @@ export default function AHURefurbishmentPage() {
                 <ArrowDownIcon />
               </a>
             </div>
-
           </div>
         </Container>
       </section>
 
-      {/* ── TRUST BAR ──────────────────────────────────────────────────── */}
-      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
-        <Container>
-          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading organisations
-          </p>
-          <div className="relative">
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
-            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
-                {clientLogos.map((logo) => (
-                  <Image
-                    key={logo.alt}
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={120}
-                    height={60}
-                    unoptimized
-                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <TrustedByBar />
 
       {/* ── SIGNS YOUR AHU NEEDS REFURBISHMENT ────────────────────────── */}
       <section className="bg-[#f5f7f6] py-14 sm:py-16">
@@ -161,7 +115,7 @@ export default function AHURefurbishmentPage() {
             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               Common indicators
             </p>
-            <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
               Signs Your AHU Needs Attention
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -202,10 +156,10 @@ export default function AHURefurbishmentPage() {
             ].map((item) => (
               <ScrollReveal key={item.n} className="h-full">
                 <div className="relative flex h-full flex-col overflow-hidden border border-slate-200 bg-white p-6">
-                  <span className="absolute right-5 top-4 font-display text-4xl font-extrabold text-[#297858]/10">
+                  <span className="absolute right-5 top-4 text-4xl font-extrabold text-[#297858]/10">
                     {item.n}
                   </span>
-                  <h3 className="font-display text-sm font-extrabold uppercase text-slate-900">
+                  <h3 className="text-sm font-extrabold text-slate-900">
                     {item.heading}
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-slate-600">
@@ -228,12 +182,12 @@ export default function AHURefurbishmentPage() {
               <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                 What it involves
               </p>
-              <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+              <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
                 What Is AHU Refurbishment?
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-slate-600">
-                AHU refurbishment is a precise process aimed at restoring optimal functionality and efficiency. It is a comprehensive process involving thorough inspection and strategic component upgrades — not a blanket overhaul.
+                AHU refurbishment is a precise process aimed at restoring optimal functionality and efficiency. It is a comprehensive process involving thorough inspection and strategic component upgrades, not a blanket overhaul.
               </p>
               <p className="mt-4 text-sm leading-7 text-slate-600">
                 Our engineers carry out a detailed assessment of every major component before any works are specified or authorised:
@@ -253,7 +207,7 @@ export default function AHURefurbishmentPage() {
                 ))}
               </ul>
               <p className="mt-6 text-sm leading-6 text-slate-500">
-                Only failed or degraded components are replaced. The structural frame, casing, and duct connections are retained wherever viable — keeping costs down and works in-situ.
+                Only failed or degraded components are replaced. The structural frame, casing, and duct connections are retained wherever viable, keeping costs down and works in-situ.
               </p>
             </ScrollReveal>
 
@@ -263,10 +217,10 @@ export default function AHURefurbishmentPage() {
                   { stat: "40%", label: "of replacement cost, typically" },
                   { stat: "10–20", label: "additional years of asset life" },
                   { stat: "40+", label: "years of AHU experience" },
-                  { stat: "0", label: "disruption preferred — phased works" },
+                  { stat: "0", label: "disruption preferred, phased works" },
                 ].map((item) => (
                   <div key={item.label} className="border border-slate-200 bg-white p-5">
-                    <p className="font-display text-3xl font-extrabold text-[#297858]">{item.stat}</p>
+                    <p className="text-3xl font-extrabold text-[#297858]">{item.stat}</p>
                     <p className="mt-1 text-xs leading-5 text-slate-500">{item.label}</p>
                   </div>
                 ))}
@@ -285,11 +239,11 @@ export default function AHURefurbishmentPage() {
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               Our approach
             </p>
-            <h2 className="font-display text-xl font-extrabold uppercase text-white sm:text-2xl">
+            <h2 className="text-xl font-extrabold text-white sm:text-2xl">
               Component-Level Assessment. No Unnecessary Spend.
             </h2>
             <p className="mt-3 max-w-lg text-sm leading-6 text-white/65">
-              In most cases the existing air handling unit is structurally sound. We assess condition at component level to determine what can be retained, what needs replacing, and how performance is restored — without unnecessary full replacement or disruption.
+              In most cases the existing air handling unit is structurally sound. We assess condition at component level to determine what can be retained, what needs replacing, and how performance is restored, without unnecessary full replacement or disruption.
             </p>
           </ScrollReveal>
 
@@ -301,7 +255,7 @@ export default function AHURefurbishmentPage() {
               },
               {
                 title: "Targeted replacement",
-                body: "Only failed or degraded components — coils, fans, controls, seals — are replaced individually, not wholesale.",
+                body: "Only failed or degraded components, coils, fans, controls, seals, are replaced individually, not wholesale.",
               },
               {
                 title: "In-situ restoration",
@@ -329,12 +283,12 @@ export default function AHURefurbishmentPage() {
             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               Make the right call
             </p>
-            <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
               Refurbish vs Replace
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
             <p className="mt-4 text-sm leading-6 text-slate-500">
-              Both are valid routes. The right choice depends on the condition of your plant, your programme, and your budget — every project is different, and we assess each one on its own merits.
+              Both are valid routes. The right choice depends on the condition of your plant, your programme, and your budget, every project is different, and we assess each one on its own merits.
             </p>
           </ScrollReveal>
 
@@ -356,7 +310,7 @@ export default function AHURefurbishmentPage() {
               </div>
 
               {[
-                { label: "Disruption", refurb: "Generally lower — works carried out in-situ", replace: "Generally higher — full plant change-out" },
+                { label: "Disruption", refurb: "Generally lower, works carried out in-situ", replace: "Generally higher, full plant change-out" },
                 { label: "Life extension", refurb: "Significant, depending on scope", replace: "Full new asset life from new" },
                 { label: "Compliance", refurb: "Upgrades can be incorporated", replace: "Fresh compliance baseline from new" },
                 { label: "Right when", refurb: "Frame is structurally sound", replace: "Frame is beyond repair or end of life" },
@@ -399,7 +353,7 @@ export default function AHURefurbishmentPage() {
             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               Why refurbish
             </p>
-            <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
               The Case for Refurbishment
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -413,7 +367,7 @@ export default function AHURefurbishmentPage() {
               {
                 icon: CostIcon,
                 title: "Cost Effective",
-                body: "The cost to refurbish in-situ is typically around 40% of that of replacing with a new air handling unit — substantial capital savings.",
+                body: "The cost to refurbish in-situ is typically around 40% of that of replacing with a new air handling unit, substantial capital savings.",
               },
               {
                 icon: LeafIcon,
@@ -433,7 +387,7 @@ export default function AHURefurbishmentPage() {
               {
                 icon: ClockIcon,
                 title: "Extended Asset Life",
-                body: "This approach effectively extends the unit's working life by another 10–20 years — deferring the capital cost of full replacement.",
+                body: "This approach effectively extends the unit's working life by another 10–20 years, deferring the capital cost of full replacement.",
               },
               {
                 icon: BoltIcon,
@@ -448,7 +402,7 @@ export default function AHURefurbishmentPage() {
                     <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#297858]/10 text-[#297858]">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="mt-5 font-display text-sm font-extrabold uppercase text-slate-900">
+                    <h3 className="mt-5 text-sm font-extrabold text-slate-900">
                       {item.title}
                     </h3>
                     <p className="mt-2 text-sm leading-6 text-slate-500">
@@ -471,7 +425,7 @@ export default function AHURefurbishmentPage() {
             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               Sectors
             </p>
-            <h2 className="mt-2 font-display text-xl font-extrabold uppercase text-slate-900 sm:text-2xl">
+            <h2 className="mt-2 text-xl font-extrabold text-slate-900 sm:text-2xl">
               Industries We Serve
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -514,12 +468,12 @@ export default function AHURefurbishmentPage() {
           <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-start">
 
             <ScrollReveal>
-              <h2 className="font-display text-xl font-extrabold uppercase text-white sm:text-2xl">
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
                 NHS Hammersmith & Fulham
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-white/70">
-                BVS were appointed to refurbish multiple air handling units across an operational NHS site. Full replacement had been quoted by others. Following BVS&apos;s condition survey, it was confirmed that refurbishment was viable — restoring units to full compliance while maintaining clinical ventilation throughout.
+                BVS were appointed to refurbish multiple air handling units across an operational NHS site. Full replacement had been quoted by others. Following BVS&apos;s condition survey, it was confirmed that refurbishment was viable, restoring units to full compliance while maintaining clinical ventilation throughout.
               </p>
               <p className="mt-4 text-sm leading-6 text-white/55">
                 Works were completed in phases around ward operations with zero unplanned downtime. HTM 03-01 compliance confirmed on handover.
@@ -582,8 +536,8 @@ export default function AHURefurbishmentPage() {
                 <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                   The process
                 </p>
-                <h2 className="font-display text-xl font-extrabold uppercase text-slate-900 sm:text-2xl">
-                  Survey to Handover — Four Steps
+                <h2 className="text-xl font-extrabold text-slate-900 sm:text-2xl">
+                  Survey to Handover, Four Steps
                 </h2>
               </ScrollReveal>
 
@@ -597,7 +551,7 @@ export default function AHURefurbishmentPage() {
                   {
                     n: "01",
                     title: "Site Survey",
-                    body: "On-site inspection by a BVS engineer confirms condition, refurbishment viability, and scope requirements — with an honest assessment.",
+                    body: "On-site inspection by a BVS engineer confirms condition, refurbishment viability, and scope requirements, with an honest assessment.",
                   },
                   {
                     n: "02",
@@ -653,16 +607,16 @@ export default function AHURefurbishmentPage() {
           <ScrollReveal>
             <div className="border border-[#297858]/30 bg-[#297858]/5 p-6 sm:p-8">
               <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">How to start</p>
-              <h2 className="font-display text-xl font-extrabold uppercase text-slate-900 sm:text-2xl">
+              <h2 className="text-xl font-extrabold text-slate-900 sm:text-2xl">
                 Book a Condition Survey
               </h2>
               <p className="mt-3 max-w-lg text-sm leading-6 text-slate-500">
-                A BVS engineer visits site, inspects the AHU, and confirms whether refurbishment is viable — with an honest recommendation. No commitment required.
+                A BVS engineer visits site, inspects the AHU, and confirms whether refurbishment is viable, with an honest recommendation. No commitment required.
               </p>
               <ul className="mt-5 space-y-2">
                 {[
                   "On-site condition survey by an experienced engineer",
-                  "Fixed-price, itemised scope — no surprises",
+                  "Fixed-price, itemised scope, no surprises",
                   "Works programmed around your operations",
                   "40+ years experience across all sectors",
                 ].map((item) => (
@@ -689,7 +643,7 @@ export default function AHURefurbishmentPage() {
         <Container>
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
             <ScrollReveal>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 Ready to Restore<br />Your AHU?
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -708,8 +662,8 @@ export default function AHURefurbishmentPage() {
             <ScrollReveal delay={80}>
               <div className="bg-white p-7 shadow-lg">
                 <p className="mb-1 text-xs font-bold uppercase tracking-[0.2em] text-[#297858]">Enquiry</p>
-                <p className="mb-5 text-xs text-slate-500">Engineering response within one working day</p>
-                <QuickQuoteForm />
+                <p className="mb-5 text-xs text-slate-500">We will aim to respond within 24 hours</p>
+                <QuickQuoteForm defaultService="AHU Refurbishment" />
               </div>
             </ScrollReveal>
           </div>
@@ -727,7 +681,7 @@ export default function AHURefurbishmentPage() {
             {[
               { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },
               { href: "/air-handling-unit-coil-replacement", label: "Coil Replacement" },
-              { href: "/air-handling-unit-manufacturing", label: "AHU Manufacturing" },
+              { href: "/air-handling-unit-manufactoring-and-installation", label: "AHU Manufacturing & Installation" },
               { href: "/air-handling-unit-controller-solutions-upgrades", label: "Controller Upgrades" },
             ].map((l) => (
               <Link
@@ -819,6 +773,13 @@ function BoltIcon({ className }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
       <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function ArrowIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

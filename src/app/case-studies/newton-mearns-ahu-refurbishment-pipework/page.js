@@ -3,7 +3,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Newton Mearns Glasgow — Shopping Centre AHU Refurbishment & Gas Pipework | BVS Case Study",
+  title: "Newton Mearns Glasgow, Shopping Centre AHU Refurbishment & Gas Pipework | BVS Case Study",
   description:
     "BVS refurbished three weatherproof AHUs at Newton Mearns Shopping Centre and replaced a deteriorated mild-steel gas distribution network with 316-grade stainless steel pipework to IGEM UP 1 and 2.",
 };
@@ -20,24 +20,24 @@ export default function NewtonMearnsAHURefurbishmentPipeworkCaseStudy() {
             <span>›</span>
             <Link href="/case-studies" className="hover:text-slate-600 transition-colors">Case Studies</Link>
             <span>›</span>
-            <span className="text-slate-600">Newton Mearns Glasgow — AHU Refurbishment & Pipework</span>
+            <span className="text-slate-600">Newton Mearns Glasgow, AHU Refurbishment & Pipework</span>
           </nav>
 
           {/* Title */}
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
             Case Study · Commercial · AHU Refurbishment & Pipework
           </p>
-          <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
             Newton Mearns<br />Shopping Centre<br />AHU Refurbishment
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 
           {/* ── PROJECT OVERVIEW ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             Project Overview
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
-            Three existing weatherproof Air Handling Units serving the main mall areas of Newton Mearns Shopping Centre in Glasgow required a comprehensive refurbishment. Rather than pursuing costly full replacement, the client sought a modernisation approach to extend equipment lifespan, improve operational reliability, and bring the gas distribution infrastructure up to current safety standards — all while maintaining uninterrupted operation of the live shopping centre.
+            Three existing weatherproof Air Handling Units serving the main mall areas of Newton Mearns Shopping Centre in Glasgow required a comprehensive refurbishment. Rather than pursuing costly full replacement, the client sought a modernisation approach to extend equipment lifespan, improve operational reliability, and bring the gas distribution infrastructure up to current safety standards, all while maintaining uninterrupted operation of the live shopping centre.
           </p>
 
           {/* Photo placeholder */}
@@ -46,7 +46,7 @@ export default function NewtonMearnsAHURefurbishmentPipeworkCaseStudy() {
           </div>
 
           {/* ── THE CHALLENGE ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             The Challenge
           </h2>
           <ul className="mt-4 flex flex-col gap-2 text-[15px] leading-7 text-slate-700">
@@ -60,7 +60,7 @@ export default function NewtonMearnsAHURefurbishmentPipeworkCaseStudy() {
           </ul>
 
           {/* ── WHAT WE DID ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             What We Did
           </h2>
           <div className="mt-4 flex flex-col gap-6">
@@ -85,7 +85,7 @@ export default function NewtonMearnsAHURefurbishmentPipeworkCaseStudy() {
           </div>
 
           {/* ── THE RESULTS ── */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             The Results
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">

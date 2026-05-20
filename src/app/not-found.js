@@ -36,7 +36,7 @@ export default function NotFound() {
                 Error 404
               </p>
 
-              <h1 className="max-w-2xl font-display text-4xl font-extrabold uppercase leading-[1.02] text-white sm:text-6xl">
+              <h1 className="max-w-2xl text-4xl font-extrabold leading-[1.02] text-white sm:text-6xl">
                 The page you&apos;re looking for isn&apos;t available
               </h1>
 

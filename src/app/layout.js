@@ -2,19 +2,13 @@ import "./globals.css";
 import { Navigation } from "@/components/site/Navigation";
 import { Footer } from "@/components/site/Footer";
 import { NewsletterBand } from "@/components/site/NewsletterBand";
-import { Playfair_Display, Inter } from "next/font/google";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  weight: ["700", "800", "900"],
-  display: "swap",
-});
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { Inter } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -32,7 +26,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={inter.variable}>
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
       <body className="antialiased" suppressHydrationWarning>
         <div className="min-h-dvh bg-white text-slate-900">
           <Navigation />

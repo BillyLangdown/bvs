@@ -18,7 +18,7 @@ const articles = [
   {
     title: "Understanding Humidity Calculation for Optimal Indoor Conditions",
     excerpt:
-      "Maintaining proper humidity levels is crucial for indoor comfort and various applications. During the winter months, heating air with low moisture content can cause dryness — understanding the calculation helps you specify and maintain the right conditions.",
+      "Maintaining proper humidity levels is crucial for indoor comfort and various applications. During the winter months, heating air with low moisture content can cause dryness, understanding the calculation helps you specify and maintain the right conditions.",
     href: "https://www.bvs-ltd.co.uk/2023/06/14/understanding-humidity-calculation-for-optimal-indoor-conditions/",
   },
   {
@@ -63,14 +63,14 @@ export default function ResourcesPage() {
       HVAC Resources
     </p>
 
-    <h1 className="font-display text-3xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
+    <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-5xl">
       Technical Articles<br />& Guides
     </h1>
 
     <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
 
     <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/65">
-      Practical technical reading from the BVS engineering team — covering ventilation fundamentals, load calculations, and indoor environment management.
+      Practical technical reading from the BVS engineering team, covering ventilation fundamentals, load calculations, and indoor environment management.
     </p>
   </div>
 </Container>
@@ -89,7 +89,7 @@ export default function ResourcesPage() {
                 rel="noopener noreferrer"
                 className="group flex flex-col border border-slate-200 bg-white p-6 transition-all hover:border-[#297858]/40 hover:shadow-sm"
               >
-                <h2 className="font-display text-sm font-extrabold uppercase leading-snug text-slate-900 group-hover:text-[#297858] transition-colors">
+                <h2 className="text-sm font-extrabold leading-snug text-slate-900 group-hover:text-[#297858] transition-colors">
                   {article.title}
                 </h2>
                 <p className="mt-3 flex-1 text-sm leading-6 text-slate-500">
@@ -109,7 +109,7 @@ export default function ResourcesPage() {
         <Container>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h2 className="font-display text-xl font-extrabold uppercase text-white">
+              <h2 className="text-xl font-extrabold text-white">
                 Got a technical question?
               </h2>
               <p className="mt-1 text-sm text-white/55">
@@ -120,7 +120,7 @@ export default function ResourcesPage() {
               href="/contact"
               className="shrink-0 inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
             >
-              Speak to an engineer →
+              Get in touch →
             </Link>
           </div>
         </Container>

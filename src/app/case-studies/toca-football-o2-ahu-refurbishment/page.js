@@ -3,9 +3,9 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Toca Interactive Football O2 Arena — AHU Refurbishment | BVS Case Study",
+  title: "Toca Interactive Football O2 Arena, AHU Refurbishment | BVS Case Study",
   description:
-    "BVS carried out an AHU refurbishment at the Toca Interactive Football facility at the O2 Arena — maintaining performance in a high-footfall sports entertainment environment.",
+    "BVS carried out an AHU refurbishment at the Toca Interactive Football facility at the O2 Arena, maintaining performance in a high-footfall sports entertainment environment.",
 };
 
 export default function TocaFootballO2AhuRefurbishment() {
@@ -20,20 +20,20 @@ export default function TocaFootballO2AhuRefurbishment() {
             <span>›</span>
             <Link href="/case-studies" className="hover:text-slate-600 transition-colors">Case Studies</Link>
             <span>›</span>
-            <span className="text-slate-600">Toca Interactive Football O2 Arena — AHU Refurbishment</span>
+            <span className="text-slate-600">Toca Interactive Football O2 Arena, AHU Refurbishment</span>
           </nav>
 
           {/* Title */}
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
             Case Study · Sports & Entertainment · AHU Refurbishment
           </p>
-          <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
             Toca Interactive<br />Football O2 Arena<br />AHU Refurbishment
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 
           {/* PROJECT OVERVIEW */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             Project Overview
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
@@ -48,7 +48,7 @@ export default function TocaFootballO2AhuRefurbishment() {
           </div>
 
           {/* WHAT WE DID */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             What We Did
           </h2>
           <div className="mt-4 flex flex-col gap-6">
@@ -70,12 +70,12 @@ export default function TocaFootballO2AhuRefurbishment() {
           </div>
 
           {/* THE RESULTS */}
-          <h2 className="mt-12 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-[#297858]">
+          <h2 className="mt-12 text-xs font-extrabold tracking-[0.2em] text-[#297858]">
             The Results
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
             The refurbished AHU restored reliable ventilation performance to the venue, extending the asset's
-            operational life and improving energy efficiency — avoiding the cost and disruption of full unit replacement.
+            operational life and improving energy efficiency, avoiding the cost and disruption of full unit replacement.
           </p>
 
           {/* CTA */}

@@ -4,6 +4,7 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
   title: "Hotel Ventilation Services | BVS Building Ventilation Solutions",
@@ -14,7 +15,7 @@ export const metadata = {
 const faqs = [
   {
     q: "Can you work while guests are in the hotel?",
-    a: "Yes — this is the standard arrangement. We schedule noisy, disruptive, or access-intensive works overnight or during low-occupancy periods. Daytime works in contained plant rooms are often possible without any impact on guest areas.",
+    a: "Yes. This is the standard arrangement. We schedule noisy, disruptive, or access-intensive works overnight or during low-occupancy periods. Daytime works in contained plant rooms are often possible without any impact on guest areas.",
   },
   {
     q: "How do you minimise noise during works?",
@@ -26,15 +27,15 @@ const faqs = [
   },
   {
     q: "Can you work across a group of hotel properties?",
-    a: "Yes. We manage multi-site programmes for hotel groups and FM companies — consistent scope, documentation standard, and delivery approach across the estate.",
+    a: "Yes. We manage multi-site programmes for hotel groups and FM companies, with consistent scope, documentation standard, and delivery approach across the estate.",
   },
   {
     q: "Do EC fan upgrades make sense in hotels?",
-    a: "Very often, yes. Hotel AHUs running 24 hours a day through the year accumulate significant energy consumption. EC fan upgrades typically pay back within 2–3 years through energy savings — and reduce noise at part load, which matters in guest bedroom zones.",
+    a: "Very often, yes. Hotel AHUs running 24 hours a day through the year accumulate significant energy consumption. EC fan upgrades typically pay back within 2–3 years through energy savings, and reduce noise at part load, which matters in guest bedroom zones.",
   },
   {
     q: "Do you handle kitchen extract and specialist AHUs?",
-    a: "Yes. We work across kitchen extract, fresh air, heat recovery, and comfort ventilation AHUs within hotel properties — not just the central plant.",
+    a: "Yes. We work across kitchen extract, fresh air, heat recovery, and comfort ventilation AHUs within hotel properties, not just the central plant.",
   },
 ];
 
@@ -77,7 +78,7 @@ export default function HotelPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
               >
-                Speak to an engineer
+                Get in touch
                 <ArrowIcon />
               </Link>
               <Link
@@ -108,46 +109,7 @@ export default function HotelPage() {
         </div>
       </section>
 
-      {/* ── TRUST BAR ─────────────────────────────────────────────────── */}
-      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
-        <Container>
-          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading organisations
-          </p>
-          <div className="relative">
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
-            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
-                {[
-                  { src: "/nhs-logo.webp", alt: "NHS" },
-                  { src: "/disney-logo.webp", alt: "Disney" },
-                  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
-                  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
-                  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
-                  { src: "/travelodge-logo.webp", alt: "Travelodge" },
-                  { src: "/waitrose-logo.webp", alt: "Waitrose" },
-                  { src: "/westfield-logo.webp", alt: "Westfield" },
-                  { src: "/fenwick-logo.webp", alt: "Fenwick" },
-                  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
-                  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
-                  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
-                ].map((logo) => (
-                  <Image
-                    key={logo.alt}
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={120}
-                    height={60}
-                    unoptimized
-                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <TrustedByBar />
 
       {/* ── WHAT HVAC FAILURE MEANS IN HOTELS ────────────────────────── */}
       <section className="bg-[#111418] py-16 sm:py-20">
@@ -158,7 +120,7 @@ export default function HotelPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
                 The operational reality
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 HVAC Failure Is<br />a Revenue Event.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -183,11 +145,11 @@ export default function HotelPage() {
                 {[
                   {
                     title: "Bedroom wings",
-                    body: "Guest comfort — temperature, humidity, and noise — is directly linked to AHU performance. Failing fans and choked filters produce exactly the conditions that generate negative reviews.",
+                    body: "Guest comfort, temperature, humidity, and noise, is directly linked to AHU performance. Failing fans and choked filters produce exactly the conditions that generate negative reviews.",
                   },
                   {
                     title: "Kitchens and F&B",
-                    body: "Kitchen extract AHUs operate in the harshest environment in the building — grease, heat, and continuous operation. Failure interrupts food service with immediate revenue impact.",
+                    body: "Kitchen extract AHUs operate in the harshest environment in the building, grease, heat, and continuous operation. Failure interrupts food service with immediate revenue impact.",
                   },
                   {
                     title: "Conference and event spaces",
@@ -213,12 +175,12 @@ export default function HotelPage() {
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               Our approach
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               Works Planned Around<br />Your Occupancy.
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
             <p className="mt-4 text-sm leading-6 text-slate-500">
-              Every hotel property operates differently. Our programme planning starts with your occupancy calendar — not ours.
+              Every hotel property operates differently. Our programme planning starts with your occupancy calendar, not ours.
             </p>
           </ScrollReveal>
 
@@ -226,7 +188,7 @@ export default function HotelPage() {
             {[
               {
                 title: "Occupancy-first scheduling",
-                desc: "Works programmed around your occupancy data — high periods avoided, shutdown windows agreed with the GM and engineering teams.",
+                desc: "Works programmed around your occupancy data, high periods avoided, shutdown windows agreed with the GM and engineering teams.",
               },
               {
                 title: "Overnight and out-of-hours delivery",
@@ -257,7 +219,7 @@ export default function HotelPage() {
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               What we deliver in hotels
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               Services for Hotels
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
@@ -273,12 +235,12 @@ export default function HotelPage() {
               {
                 href: "/ec-fan-upgrades-and-retrofits-for-hvac",
                 label: "EC Fan Upgrades",
-                desc: "Quieter, more efficient fans for bedroom zones. 30–50% energy savings — significant for properties with high fan energy consumption.",
+                desc: "Quieter, more efficient fans for bedroom zones. 30–50% energy savings, significant for properties with high fan energy consumption.",
               },
               {
                 href: "/air-handling-unit-coil-replacement",
                 label: "Coil Replacement",
-                desc: "Restore heating and cooling capacity. Includes kitchen extract coils — measured, sourced, and replaced within the existing unit.",
+                desc: "Restore heating and cooling capacity. Includes kitchen extract coils, measured, sourced, and replaced within the existing unit.",
               },
               {
                 href: "/air-handling-unit-controller-solutions-upgrades",
@@ -302,6 +264,81 @@ export default function HotelPage() {
         </Container>
       </section>
 
+      {/* ── CASE STUDY ────────────────────────────────────────────────── */}
+      <section className="bg-[#111418] py-16 sm:py-20">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-start">
+            <ScrollReveal>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
+                Case study
+              </p>
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
+                Hotel Group<br />AHU Programme
+              </h2>
+              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-6 text-sm leading-7 text-white/55">
+                A UK hotel group required a phased AHU refurbishment programme across five properties. Bedroom wing and function space AHUs were approaching end of life, with increasing maintenance calls and energy consumption. All works were required out of hours, with no impact on guest operations.
+              </p>
+              <div className="mt-6 flex flex-col gap-3">
+                <div className="border-l-2 border-white/15 pl-4">
+                  <span className="text-sm text-white/55">All refurbishment works delivered overnight across five properties</span>
+                </div>
+                <div className="border-l-2 border-white/15 pl-4">
+                  <span className="text-sm text-white/55">EC fan upgrades included across bedroom wing plant, reducing energy consumption and part-load noise</span>
+                </div>
+              </div>
+              <p className="mt-6 text-sm leading-7 text-white/55">
+                Works were programmed around each property&apos;s occupancy calendar. No guest areas were accessed during operating hours and all plant rooms were reinstated before the morning shift.
+              </p>
+              <div className="mt-6 flex flex-col gap-3">
+                <div className="border-l-2 border-[#297858] pl-4">
+                  <span className="text-sm font-bold text-white">Zero guest complaints across all five properties</span>
+                </div>
+                <div className="border-l-2 border-[#297858] pl-4">
+                  <span className="text-sm text-white/80">EC fan upgrades delivering ongoing energy savings across all bedroom plant</span>
+                </div>
+              </div>
+              <div className="mt-7">
+                <Link
+                  href="/case-studies"
+                  className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
+                >
+                  View all case studies
+                  <ArrowIcon />
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={80}>
+              <div className="flex flex-col gap-4">
+                <div className="relative min-h-[280px] overflow-hidden lg:min-h-[300px]">
+                  <Image
+                    src="/hotel.webp"
+                    alt="Hotel AHU refurbishment delivered out of hours by BVS"
+                    fill
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { stat: "5", label: "Properties" },
+                    { stat: "Zero", label: "Guest Complaints" },
+                    { stat: "Out-of-hours", label: "Delivery" },
+                    { stat: "30–50%", label: "Fan Energy Savings" },
+                  ].map((item) => (
+                    <div key={item.label} className="bg-white/5 p-4 text-center">
+                      <p className="text-xl font-extrabold text-white">{item.stat}</p>
+                      <p className="mt-1 text-[10px] text-white/55">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </Container>
+      </section>
+
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
       <FAQAccordion faqs={faqs} />
 
@@ -312,9 +349,9 @@ export default function HotelPage() {
 
             <ScrollReveal>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/45">
-                Speak to an engineer
+                Get in touch
               </p>
-              <h2 className="font-display text-3xl font-extrabold uppercase text-white sm:text-4xl">
+              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                 Discuss Your<br />Hotel Property
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
@@ -355,11 +392,11 @@ export default function HotelPage() {
                   <div className="mt-6 flex flex-col gap-2 border-t border-slate-100 pt-5">
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                      Engineering response within 24 working hours
+                      Response within 24 hours
                     </div>
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                      No obligation — practical advice from the first call
+                      No obligation, practical advice from the first call
                     </div>
                   </div>
                 </div>

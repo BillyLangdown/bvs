@@ -35,7 +35,7 @@ export default function MechanicalSolutionsPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400">
               Building Ventilation Solutions
             </p>
-            <h1 className="font-display text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
+            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
               Mechanical Solutions
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-emerald-500" />
@@ -72,7 +72,7 @@ export default function MechanicalSolutionsPage() {
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
               Our mechanical services
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">
+            <h2 className="text-2xl font-extrabold text-slate-900">
               What we offer
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-emerald-700" />
@@ -86,7 +86,7 @@ export default function MechanicalSolutionsPage() {
                 className="group border border-slate-200 bg-white p-8 transition-all duration-200 hover:border-emerald-200 hover:shadow-md"
               >
                 <div className="h-[3px] w-8 bg-emerald-700 transition-all duration-300 group-hover:w-16" />
-                <h3 className="mt-5 font-display text-lg font-bold uppercase text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900">
                   {s.title}
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{s.body}</p>
@@ -104,7 +104,7 @@ export default function MechanicalSolutionsPage() {
         <Container>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="font-display text-xl font-extrabold uppercase text-white">
+              <p className="text-xl font-extrabold text-white">
                 Talk to our mechanical team
               </p>
               <p className="mt-1 text-sm text-white/65">
@@ -128,14 +128,14 @@ export default function MechanicalSolutionsPage() {
       {/* Related */}
       <section className="bg-surface-2 py-14">
         <Container>
-          <h2 className="font-display text-xl font-extrabold uppercase text-slate-900">
+          <h2 className="text-xl font-extrabold text-slate-900">
             Related Services
           </h2>
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { href: "/solutions/ahu", label: "AHU Solutions" },
               { href: "/solutions/ventilation", label: "Ventilation Services" },
-              { href: "/air-handling-unit-installation", label: "AHU Installation" },
+              { href: "/air-handling-unit-manufactoring-and-installation", label: "AHU Manufacturing & Installation" },
               { href: "/case-studies", label: "Case Studies" },
             ].map((l) => (
               <Link

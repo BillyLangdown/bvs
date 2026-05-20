@@ -2,26 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
   title: "Ducting Repair & Replacement | BVS",
-  description: "Commercial ductwork repair, relining, and replacement across the UK. BVS manage the full scope from survey to reinstatement — minimum disruption, compliant finish.",
+  description: "Commercial ductwork repair, relining, and replacement across the UK. BVS manage the full scope from survey to reinstatement, minimum disruption, compliant finish.",
 };
-
-const clientLogos = [
-  { src: "/nhs-logo.webp", alt: "NHS" },
-  { src: "/disney-logo.webp", alt: "Disney" },
-  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
-  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
-  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
-  { src: "/travelodge-logo.webp", alt: "Travelodge" },
-  { src: "/waitrose-logo.webp", alt: "Waitrose" },
-  { src: "/westfield-logo.webp", alt: "Westfield" },
-  { src: "/fenwick-logo.webp", alt: "Fenwick" },
-  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
-  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
-  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
-];
 
 const scope = [
   "Ductwork survey and condition assessment",
@@ -37,7 +23,7 @@ const scope = [
 const reasons = [
   {
     title: "Leaking Ductwork Wastes Energy",
-    body: "Even small duct leaks cause significant energy waste — heated or cooled air failing to reach its destination. We identify and seal leakage points to restore system efficiency.",
+    body: "Even small duct leaks cause significant energy waste, heated or cooled air failing to reach its destination. We identify and seal leakage points to restore system efficiency.",
   },
   {
     title: "Compliance Standards Are Specific",
@@ -45,11 +31,11 @@ const reasons = [
   },
   {
     title: "Minimum Disruption Approach",
-    body: "We plan all ducting works around your operational schedule. Night shifts, phased programmes, and temporary containment — whatever is needed to keep your building running.",
+    body: "We plan all ducting works around your operational schedule. Night shifts, phased programmes, and temporary containment, whatever is needed to keep your building running.",
   },
   {
     title: "Full Scope Capability",
-    body: "From a single failed section to a complete reline of a multi-storey riser, we manage the full scope — survey, specification, and delivery co-ordinated by BVS.",
+    body: "From a single failed section to a complete reline of a multi-storey riser, we manage the full scope, survey, specification, and delivery co-ordinated by BVS.",
   },
 ];
 
@@ -77,12 +63,12 @@ export default function DuctingRepairPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#297858]">
               Ventilation Solutions
             </p>
-            <h1 className="font-display text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
+            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
               Ducting Repair<br />&amp; Replacement
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-lg text-base leading-7 text-white/75">
-              Failed or leaking ductwork reduces system performance, wastes energy, and can create compliance issues. We survey, repair, reline, or replace — with full documentation and minimum disruption.
+              Failed or leaking ductwork reduces system performance, wastes energy, and can create compliance issues. We survey, repair, reline, or replace, with full documentation and minimum disruption.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -113,7 +99,7 @@ export default function DuctingRepairPage() {
                 { stat: "40+", label: "Years Experience" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
-                  <p className="font-display text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
                   <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
                 </div>
               ))}
@@ -129,7 +115,7 @@ export default function DuctingRepairPage() {
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/55">
               Why it matters
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
               The case for action
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -152,7 +138,7 @@ export default function DuctingRepairPage() {
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
               Scope of work
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               What we do
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -171,45 +157,14 @@ export default function DuctingRepairPage() {
       </section>
 
       {/* Trust bar */}
-      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
-        <Container>
-          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading organisations
-          </p>
-          <div className="relative">
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent sm:hidden" />
-            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 px-4 sm:px-0">
-                {clientLogos.map((logo) => (
-                  <Image
-                    key={logo.alt}
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={120}
-                    height={60}
-                    unoptimized
-                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="mt-4 flex items-center justify-center gap-2 text-slate-400 sm:hidden">
-            <span className="text-[10px] font-semibold uppercase tracking-wider opacity-70">swipe to view more</span>
-            <svg className="h-4 w-4 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M10 6l6 6-6 6" />
-            </svg>
-          </div>
-        </Container>
-      </section>
+      <TrustedByBar />
 
       {/* Marriott case study */}
       <section className="relative overflow-hidden bg-[#111418] py-20 sm:py-24">
         <div className="absolute inset-0">
           <Image
             src="/hotel.webp"
-            alt="Marriott Forest of Arden swimming pool — BVS ductwork troubleshooting"
+            alt="Marriott Forest of Arden swimming pool, BVS ductwork troubleshooting"
             fill
             className="object-cover opacity-80 scale-105"
           />
@@ -222,7 +177,7 @@ export default function DuctingRepairPage() {
             Case study
           </p>
 
-          <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-4xl">
+          <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-4xl">
             Marriott Forest of Arden<br />
             Swimming Pool AHU
           </h2>
@@ -230,7 +185,7 @@ export default function DuctingRepairPage() {
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 
           <p className="mt-5 max-w-2xl text-sm leading-7 text-white/65">
-            The AHU serving the hotel&apos;s swimming pool was designed to maintain 31°C — but had only ever reached 24°C. BVS validated the system, identified leaking 30-year-old ductwork, inadequate diffuser velocities, and AHU configuration issues, then delivered a full remediation scope to restore design performance.
+            The AHU serving the hotel&apos;s swimming pool was designed to maintain 31°C, but had only ever reached 24°C. BVS validated the system, identified leaking 30-year-old ductwork, inadequate diffuser velocities, and AHU configuration issues, then delivered a full remediation scope to restore design performance.
           </p>
 
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4 max-w-2xl">
@@ -241,7 +196,7 @@ export default function DuctingRepairPage() {
               { stat: "4 Areas", label: "Issues identified & resolved" },
             ].map((item) => (
               <div key={item.label} className="border border-white/15 bg-white/10 px-4 py-5 backdrop-blur-sm">
-                <p className="font-display text-2xl font-extrabold text-[#297858]">{item.stat}</p>
+                <p className="text-2xl font-extrabold text-[#297858]">{item.stat}</p>
                 <p className="mt-1 text-[10px] uppercase tracking-wider text-white/50">{item.label}</p>
               </div>
             ))}
@@ -272,7 +227,7 @@ export default function DuctingRepairPage() {
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
                 Get in touch
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">
+              <h2 className="text-2xl font-extrabold text-slate-900">
                 Discuss your ductwork project
               </h2>
               <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
@@ -293,7 +248,7 @@ export default function DuctingRepairPage() {
                 </p>
                 <div className="flex flex-col gap-2">
                   {[
-                    { href: "/solutions/ventilation/validation-surveys", label: "Ventilation Surveys" },
+                    { href: "/solutions/ventilation/validation-surveys", label: "Validation Surveys" },
                     { href: "/solutions/ventilation/troubleshooting", label: "Troubleshooting" },
                     { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
                   ].map((l) => (
@@ -321,11 +276,11 @@ export default function DuctingRepairPage() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 Ready to discuss your project?
               </h2>
               <p className="mt-3 max-w-lg text-sm leading-7 text-white/65">
-                Whether it&apos;s a single failed section or a full riser reline, we survey, specify, and deliver — co-ordinated from start to finish.
+                Whether it&apos;s a single failed section or a full riser reline, we survey, specify, and deliver, co-ordinated from start to finish.
               </p>
               <ul className="mt-5 flex flex-col gap-2">
                 {["No obligation enquiry", "Response within one working day", "Speak directly with a specialist"].map((p) => (

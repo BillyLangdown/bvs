@@ -33,7 +33,7 @@ export default async function IndustrySectorPage({ params }) {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400">
               Industries - {data.title}
             </p>
-            <h1 className="font-display text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
+            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
               {data.headline}
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-emerald-500" />
@@ -65,7 +65,7 @@ export default async function IndustrySectorPage({ params }) {
 
             <div>
               <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-emerald-700">What we deliver</p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">
+              <h2 className="text-2xl font-extrabold text-slate-900">
                 Services for {data.title}
               </h2>
               <div className="mt-2 h-[3px] w-10 bg-emerald-700" />
@@ -107,7 +107,7 @@ export default async function IndustrySectorPage({ params }) {
 
             <div className="border border-slate-200 bg-white p-8">
               <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-emerald-700">Get in touch</p>
-              <h3 className="mb-5 font-display text-lg font-extrabold uppercase text-slate-900">
+              <h3 className="mb-5 text-lg font-extrabold text-slate-900">
                 Discuss your {data.title} project
               </h3>
               <QuickQuoteForm />
@@ -129,7 +129,7 @@ export default async function IndustrySectorPage({ params }) {
         <Container>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h2 className="font-display text-xl font-extrabold uppercase text-white">
+              <h2 className="text-xl font-extrabold text-white">
                 40+ years of HVAC expertise
               </h2>
               <p className="mt-1 text-sm text-white/60">

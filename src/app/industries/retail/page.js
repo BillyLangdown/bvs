@@ -18,15 +18,15 @@ const faqs = [
   },
   {
     q: "Can you work across multiple sites on a portfolio contract?",
-    a: "Yes. We manage multi-site programmes across retail estates — consistent scope, documentation, and delivery approach from one site to the next. This is common for facilities managers and retail property teams managing a number of assets.",
+    a: "Yes. We manage multi-site programmes across retail estates, with consistent scope, documentation, and delivery approach from one site to the next. This is common for facilities managers and retail property teams managing a number of assets.",
   },
   {
     q: "How do EC fan upgrades reduce operating costs in retail?",
-    a: "Retail AHUs often run continuously to maintain a comfortable shopping environment. Replacing belt-driven AC fans with EC technology typically reduces fan energy consumption by 30–50% — a measurable reduction in operating cost and a contribution toward EPC and ESOS targets.",
+    a: "Retail AHUs often run continuously to maintain a comfortable shopping environment. Replacing belt-driven AC fans with EC technology typically reduces fan energy consumption by 30–50%, a measurable reduction in operating cost and a contribution toward EPC and ESOS targets.",
   },
   {
     q: "Do you work in supermarkets with refrigeration plant?",
-    a: "We focus on AHU and ventilation works — we do not carry out refrigeration maintenance or repair. However, we work alongside refrigeration contractors on integrated HVAC refurbishment projects where both scopes are running concurrently.",
+    a: "We focus on AHU and ventilation works. We do not carry out refrigeration maintenance or repair. However, we work alongside refrigeration contractors on integrated HVAC refurbishment projects where both scopes are running concurrently.",
   },
   {
     q: "Can you support an EPC or ESOS improvement programme?",
@@ -46,7 +46,7 @@ export default function RetailPage() {
       <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900">
         <Image
           src="/mall.webp"
-          alt="Shopping centre interior — BVS delivers AHU works around retail trading hours"
+          alt="Shopping centre interior, BVS delivers AHU works around retail trading hours"
           fill
           priority
           placeholder="blur"
@@ -63,21 +63,21 @@ export default function RetailPage() {
               Retail &amp; Commercial
             </p>
             <h1
-              className="font-display text-2xl font-extrabold uppercase leading-[1.08] text-white sm:text-5xl"
+              className="text-2xl font-extrabold leading-[1.08] text-white sm:text-5xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
               Trading Continues.<br />Works Don&apos;t Wait.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white/85" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
-              Retail and commercial buildings operate on commercial timelines — trading hours, lease obligations, and EPC targets. AHU works have to fit around all of them. We plan around your calendar, not ours.
+              Retail and commercial buildings operate on commercial timelines, trading hours, lease obligations, and EPC targets. AHU works have to fit around all of them. We plan around your calendar, not ours.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
               >
-                Speak to an engineer
+                Get in touch
                 <ArrowIcon />
               </Link>
               <Link
@@ -99,7 +99,7 @@ export default function RetailPage() {
                 { stat: "UK Nationwide", label: "Portfolio Coverage" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
-                  <p className="font-display text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
                   <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
                 </div>
               ))}
@@ -117,12 +117,12 @@ export default function RetailPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
                 The operational constraint
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 Retail Can&apos;t Close<br />for Plant Works.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/55">
-                Retail properties trade six or seven days a week. A supermarket or shopping centre closing for AHU maintenance is not an option. Works have to happen around trading hours — and in most cases, around tenant lease obligations that limit what landlords can do and when.
+                Retail properties trade six or seven days a week. A supermarket or shopping centre closing for AHU maintenance is not an option. Works have to happen around trading hours, and in most cases, around tenant lease obligations that limit what landlords can do and when.
               </p>
               <p className="mt-4 text-sm leading-7 text-white/55">
                 Night works, bank holiday windows, and low-footfall periods are where planned AHU maintenance and refurbishment gets done. The contractor managing these works needs to be reliable, programme-compliant, and able to reinstate areas before trading opens.
@@ -143,7 +143,7 @@ export default function RetailPage() {
                   "Night works with full reinstatement before trading opens",
                   "Bank holiday and low-footfall window programming",
                   "Access through trading areas agreed in advance and managed carefully",
-                  "Noise and dust contained — no impact on trading environment",
+                  "Noise and dust contained, no impact on trading environment",
                   "Plant room works during trading hours where containment is confirmed",
                   "Co-ordination with estate management for access and permits",
                 ].map((item) => (
@@ -168,7 +168,7 @@ export default function RetailPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                 The energy and compliance pressure
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
                 EPC, ESOS, and<br />Rising Energy Costs.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -176,7 +176,7 @@ export default function RetailPage() {
                 Commercial property operators face growing pressure on energy performance. EPC ratings affect asset value and lease terms. ESOS compliance requires documented energy reduction actions. Energy costs are a direct line item on operating accounts.
               </p>
               <p className="mt-4 text-sm leading-6 text-slate-500">
-                AHU plant — particularly ageing belt-driven fan sets and fixed-speed systems — is typically one of the largest energy consumers in a commercial building. Targeted upgrades to EC fans and demand-controlled ventilation deliver measurable energy reduction at predictable cost.
+                AHU plant, particularly ageing belt-driven fan sets and fixed-speed systems, is typically one of the largest energy consumers in a commercial building. Targeted upgrades to EC fans and demand-controlled ventilation deliver measurable energy reduction at predictable cost.
               </p>
             </ScrollReveal>
 
@@ -185,11 +185,11 @@ export default function RetailPage() {
                 {[
                   {
                     title: "EC fan upgrades",
-                    body: "Replacing belt-driven fans with EC direct-drive within existing casings. 30–50% fan energy reduction — significant in buildings where AHUs run continuously during trading hours.",
+                    body: "Replacing belt-driven fans with EC direct-drive within existing casings. 30–50% fan energy reduction, significant in buildings where AHUs run continuously during trading hours.",
                   },
                   {
                     title: "Controls and DCV",
-                    body: "Demand-controlled ventilation reduces AHU energy consumption outside peak occupancy — particularly valuable in retail units with variable footfall throughout the day.",
+                    body: "Demand-controlled ventilation reduces AHU energy consumption outside peak occupancy, particularly valuable in retail units with variable footfall throughout the day.",
                   },
                   {
                     title: "ESOS-qualifying documentation",
@@ -215,7 +215,7 @@ export default function RetailPage() {
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               What we deliver in retail
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               Services for Retail &amp; Commercial
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
@@ -231,7 +231,7 @@ export default function RetailPage() {
               {
                 href: "/ec-fan-upgrades-and-retrofits-for-hvac",
                 label: "EC Fan Upgrades",
-                desc: "30–50% fan energy reduction. ESOS-qualifying documentation. Fitted within the existing AHU casing — minimal plant room disruption.",
+                desc: "30–50% fan energy reduction. ESOS-qualifying documentation. Fitted within the existing AHU casing, minimal plant room disruption.",
               },
               {
                 href: "/air-handling-unit-controller-solutions-upgrades",
@@ -270,9 +270,9 @@ export default function RetailPage() {
 
             <ScrollReveal>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/45">
-                Speak to an engineer
+                Get in touch
               </p>
-              <h2 className="font-display text-3xl font-extrabold uppercase text-white sm:text-4xl">
+              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                 Discuss Your<br />Retail Estate
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
@@ -313,11 +313,11 @@ export default function RetailPage() {
                   <div className="mt-6 flex flex-col gap-2 border-t border-slate-100 pt-5">
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                      Engineering response within 24 working hours
+                      Response within 24 hours
                     </div>
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                      No obligation — practical advice from the first call
+                      No obligation, practical advice from the first call
                     </div>
                   </div>
                 </div>

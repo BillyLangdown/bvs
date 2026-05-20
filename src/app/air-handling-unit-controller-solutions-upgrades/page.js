@@ -4,27 +4,13 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
   title: "AHU Controller Solutions & Upgrades | BVS Building Ventilation Solutions",
   description:
-    "Independent AHU controller supply, installation, and commissioning across the UK. Fault-finding, BMS integration, PCB replacements, and Trend controls — no manufacturer tie-in.",
+    "Independent AHU controller supply, installation, and commissioning across the UK. Fault-finding, BMS integration, PCB replacements, and Trend controls, no manufacturer tie-in.",
 };
-
-const clientLogos = [
-  { src: "/nhs-logo.webp", alt: "NHS" },
-  { src: "/disney-logo.webp", alt: "Disney" },
-  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
-  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
-  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
-  { src: "/travelodge-logo.webp", alt: "Travelodge" },
-  { src: "/waitrose-logo.webp", alt: "Waitrose" },
-  { src: "/westfield-logo.webp", alt: "Westfield" },
-  { src: "/fenwick-logo.webp", alt: "Fenwick" },
-  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
-  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
-  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
-];
 
 const faqs = [
   {
@@ -33,7 +19,7 @@ const faqs = [
   },
   {
     q: "Why should I choose an independent service instead of the manufacturer?",
-    a: "Manufacturers often only supply controllers if they also carry out the installation, which limits flexibility and increases costs. We provide a fully independent service — freedom of choice, reduced downtime, and cost-effective solutions without being tied to one supplier.",
+    a: "Manufacturers often only supply controllers if they also carry out the installation, which limits flexibility and increases costs. We provide a fully independent service: freedom of choice, reduced downtime, and cost-effective solutions without being tied to one supplier.",
   },
   {
     q: "Can you replace outdated or faulty controllers?",
@@ -45,11 +31,11 @@ const faqs = [
   },
   {
     q: "What energy savings can a controls upgrade deliver?",
-    a: "Typically 15–30% reduction in AHU energy consumption through improved sequences, demand-controlled ventilation, and optimised setpoints. The actual saving depends on the existing controls state — we model this at assessment stage.",
+    a: "Typically 15–30% reduction in AHU energy consumption through improved sequences, demand-controlled ventilation, and optimised setpoints. The actual saving depends on the existing controls state. We model this at assessment stage.",
   },
   {
     q: "Can you upgrade controls without replacing the AHU?",
-    a: "Yes — and this is often the most cost-effective approach. A controls upgrade can extend the useful life of the AHU, improve energy performance, and add BMS integration without the cost of full plant replacement.",
+    a: "Yes, and this is often the most cost-effective approach. A controls upgrade can extend the useful life of the AHU, improve energy performance, and add BMS integration without the cost of full plant replacement.",
   },
 ];
 
@@ -75,14 +61,14 @@ export default function ControllerUpgradesPage() {
         <Container className="relative flex min-h-[480px] items-center py-16">
           <div className="max-w-2xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#297858]">
-              AHU Controller Solutions & Upgrades
+              AHU Controller Solutions &amp; Upgrades
             </p>
-            <h1 className="font-display text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
+            <h1 className="font-display text-4xl font-extrabold leading-tight text-white sm:text-5xl">
               Independent AHU<br />Controller Solutions
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
-            <p className="mt-5 max-w-lg text-[15px] leading-7 text-white/70">
-              Unlike AHU manufacturers who only supply controllers on the condition their engineers do the work, we offer fully independent supply, installation, and commissioning. Freedom of choice. No lock-in.
+            <p className="mt-5 max-w-lg text-[15px] leading-7 text-white/80">
+              Unlike AHU manufacturers who only supply controllers on the condition their engineers do the work, we offer fully independent supply, installation, and commissioning.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -90,6 +76,7 @@ export default function ControllerUpgradesPage() {
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
               >
                 Request a controls assessment
+                <ArrowIcon />
               </a>
               <a
                 href="#services"
@@ -103,33 +90,7 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── TRUST BAR ─────────────────────────────────────────────────────── */}
-      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
-        <Container>
-          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading organisations
-          </p>
-          <div className="relative">
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
-            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-              <div className="flex sm:grid sm:grid-cols-6 lg:grid-cols-12 gap-x-8 gap-y-6 min-w-max sm:min-w-0 px-4 sm:px-0">
-                {clientLogos.map((logo) => (
-                  <Image
-                    key={logo.alt}
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={120}
-                    height={60}
-                    unoptimized
-                    className="h-12 w-auto object-contain mx-auto opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <TrustedByBar />
 
       {/* ── PROBLEM ── cost of old controls ───────────────────────────── */}
       <section className="bg-white py-14 sm:py-16">
@@ -138,7 +99,7 @@ export default function ControllerUpgradesPage() {
             <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               The problem
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">
               What Old Controls<br />Are Doing to You
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -149,17 +110,17 @@ export default function ControllerUpgradesPage() {
               {
                 impact: "Energy Waste",
                 badge: "Significant energy waste",
-                detail: "AHUs with outdated or misconfigured controls run fans, heating, and cooling when they should not. Every hour of unnecessary operation adds to the energy bill — and goes unmeasured.",
+                detail: "AHUs with outdated or misconfigured controls run fans, heating, and cooling when they should not. Every hour of unnecessary operation adds to the energy bill, and goes unmeasured.",
               },
               {
                 impact: "No Visibility",
                 badge: "Zero monitoring or fault alerting",
-                detail: "Older controllers have no network connection and no BMS integration. When something goes wrong — or performance degrades gradually — there is no alarm. The problem runs until it becomes a failure.",
+                detail: "Older controllers have no network connection and no BMS integration. When something goes wrong, or performance degrades gradually, there is no alarm. The problem runs until it becomes a failure.",
               },
               {
                 impact: "Parts Obsolescence",
                 badge: "Components no longer manufactured",
-                detail: "Proprietary controllers from discontinued ranges cannot be repaired when they fail — only replaced. The older the system, the more fragile the supply chain.",
+                detail: "Proprietary controllers from discontinued ranges cannot be repaired when they fail, only replaced. The older the system, the more fragile the supply chain.",
               },
               {
                 impact: "Supplier Lock-In",
@@ -170,7 +131,7 @@ export default function ControllerUpgradesPage() {
               <ScrollReveal key={item.impact} delay={i * 60}>
                 <div className="flex flex-col border-l-4 border-slate-200 bg-[#f7f6f5] p-6">
                   <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
-                    <h3 className="font-display text-sm font-extrabold uppercase text-slate-900">{item.impact}</h3>
+                    <h3 className="text-sm font-extrabold text-slate-900">{item.impact}</h3>
                     <span className="shrink-0 bg-red-50 px-2 py-0.5 text-[10px] font-bold text-red-500/75">{item.badge}</span>
                   </div>
                   <p className="text-sm leading-6 text-slate-500">{item.detail}</p>
@@ -189,12 +150,12 @@ export default function ControllerUpgradesPage() {
             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               Make the right call
             </p>
-            <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+            <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
               Controller Upgrade vs Full AHU Replacement
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
             <p className="mt-4 text-sm leading-6 text-white/55">
-              Both are valid routes. The right answer depends on the root cause of the problem and the condition of your plant — which is why we carry out an independent assessment before recommending either.
+              Both are valid routes. The right answer depends on the root cause of the problem and the condition of your plant, which is why we carry out an independent assessment before recommending either.
             </p>
           </ScrollReveal>
 
@@ -259,7 +220,7 @@ export default function ControllerUpgradesPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                 Independent & Flexible
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
+              <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">
                 No Manufacturer Tie-In.<br />No Unnecessary Costs.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -301,7 +262,7 @@ export default function ControllerUpgradesPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
                 The solution
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
                 BACnet. Modbus. LON.<br />Open Protocol, Always.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -345,7 +306,7 @@ export default function ControllerUpgradesPage() {
             <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               Our services
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">
               AHU Controller<br />Solutions
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -383,7 +344,7 @@ export default function ControllerUpgradesPage() {
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 50} className="h-full">
                 <div className="flex h-full flex-col border-t-2 border-[#297858] bg-white p-6">
-                  <h3 className="font-display text-sm font-extrabold uppercase text-slate-900">{item.title}</h3>
+                  <h3 className="text-sm font-extrabold text-slate-900">{item.title}</h3>
                   <p className="mt-3 flex-1 text-sm leading-6 text-slate-500">{item.detail}</p>
                 </div>
               </ScrollReveal>
@@ -399,7 +360,7 @@ export default function ControllerUpgradesPage() {
             <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               What you get
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               The Controls Upgrade<br />Advantage
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -416,7 +377,7 @@ export default function ControllerUpgradesPage() {
     },
     {
       stat: "22%",
-      label: "Achieved — 14-site FM programme",
+      label: "Achieved: 14-site FM programme",
       context:
         "Measured post-commissioning energy reduction versus pre-upgrade baseline across a commercial estate",
     },
@@ -424,12 +385,12 @@ export default function ControllerUpgradesPage() {
       stat: "100%",
       label: "BMS integration where required",
       context:
-        "Open-protocol controllers installed as standard — compatible with all major BMS platforms",
+        "Open-protocol controllers installed as standard, compatible with all major BMS platforms",
     },
   ].map((item) => (
     <ScrollReveal key={item.label} className="h-full">
       <div className="flex h-full flex-col bg-[#f7f6f5] p-7">
-        <p className="font-display text-4xl font-extrabold text-[#297858]">
+        <p className="text-4xl font-extrabold text-[#297858]">
           {item.stat}
         </p>
 
@@ -457,7 +418,7 @@ export default function ControllerUpgradesPage() {
             ].map((item, i) => (
               <ScrollReveal key={item.label} delay={i * 60} className="h-full">
                 <div className="flex h-full flex-col border-t-2 border-[#297858] bg-[#f7f6f5] p-5">
-                  <p className="font-display text-sm font-extrabold uppercase text-slate-900">{item.label}</p>
+                  <p className="text-sm font-extrabold text-slate-900">{item.label}</p>
                   <p className="mt-2 text-xs leading-5 text-slate-500">{item.detail}</p>
                 </div>
               </ScrollReveal>
@@ -473,7 +434,7 @@ export default function ControllerUpgradesPage() {
         <div className="absolute inset-0">
           <Image
             src="/swimming-pool.webp"
-            alt="Ringwood Leisure Centre — AHU controller upgrade case study"
+            alt="Ringwood Leisure Centre, AHU controller upgrade case study"
             fill
             className="object-cover object-center"
           />
@@ -489,7 +450,7 @@ export default function ControllerUpgradesPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
                 Case study · Leisure · Controller Upgrade
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
                 Ringwood Leisure Centre<br />— AHU Controller Upgrade
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -522,7 +483,7 @@ export default function ControllerUpgradesPage() {
                   <span className="text-sm font-bold text-white">Full system control restored at a fraction of the £100k+ replacement cost</span>
                 </div>
                 <div className="border-l-2 border-[#297858] pl-4">
-                  <span className="text-sm text-white/70">Both AHUs returned to full performance — no unnecessary plant replaced</span>
+                  <span className="text-sm text-white/70">Both AHUs returned to full performance, no unnecessary plant replaced</span>
                 </div>
               </div>
               <div className="mt-7 flex flex-wrap gap-3">
@@ -548,13 +509,13 @@ export default function ControllerUpgradesPage() {
                   {[
                     { stat: "Ringwood", label: "Leisure Centre, Hampshire" },
                     { stat: "Leisure", label: "Sector" },
-                    { stat: "2", label: "AHUs — both retained, not replaced" },
-                    { stat: "Trend", label: "BMS controllers — open protocol" },
+                    { stat: "2", label: "AHUs, both retained, not replaced" },
+                    { stat: "Trend", label: "BMS controllers, open protocol" },
                     { stat: "£100k+", label: "Replacement cost avoided" },
                   ].map((item) => (
                     <div key={item.label} className="flex items-center justify-between border-b border-white/10 pb-4 last:border-0 last:pb-0">
                       <span className="text-xs text-white/80">{item.label}</span>
-                      <span className="font-display text-base font-extrabold text-white
+                      <span className="text-base font-extrabold text-white
 ">{item.stat}</span>
                     </div>
                   ))}
@@ -573,7 +534,7 @@ export default function ControllerUpgradesPage() {
             <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               How it works
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-3xl">
+            <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
               Assessment to<br />Commissioned System
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -584,7 +545,7 @@ export default function ControllerUpgradesPage() {
               {
                 n: "01",
                 title: "Controls Assessment",
-                body: "We survey the existing controls installation — hardware condition, sequence of operation, BMS integration, and energy performance — and identify what an upgrade would achieve.",
+                body: "We survey the existing controls installation, hardware condition, sequence of operation, BMS integration, and energy performance, and identify what an upgrade would achieve.",
                 points: ["Existing controller, sensors, and actuators assessed", "Sequence of operation reviewed against current requirements", "Energy savings modelled from proposed upgrade specification"],
               },
               {
@@ -610,9 +571,9 @@ export default function ControllerUpgradesPage() {
                 <div className="border border-white/10 bg-white/5 p-6">
                   <div className="mb-4 flex items-center gap-4">
                     <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-[#297858]">
-                      <span className="font-display text-sm font-extrabold text-white">{step.n}</span>
+                      <span className="text-sm font-extrabold text-white">{step.n}</span>
                     </div>
-                    <h3 className="font-display text-sm font-extrabold uppercase text-white">{step.title}</h3>
+                    <h3 className="text-sm font-extrabold text-white">{step.title}</h3>
                   </div>
                   <p className="text-xs leading-5 text-white/55">{step.body}</p>
                   <ul className="mt-4 space-y-1.5">
@@ -640,7 +601,7 @@ export default function ControllerUpgradesPage() {
                   <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
                     No-obligation offer
                   </p>
-                  <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+                  <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
                     Book a Free AHU<br />Controls Site Survey
                   </h2>
                   <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -688,9 +649,9 @@ export default function ControllerUpgradesPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
             <ScrollReveal>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/40">
-                Speak to an engineer
+                Get in touch
               </p>
-              <h2 className="font-display text-3xl font-extrabold uppercase text-white sm:text-4xl">
+              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                 Request a<br />Controls Assessment
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
@@ -698,7 +659,7 @@ export default function ControllerUpgradesPage() {
                 Tell us about the AHU, the existing controls hardware, and what you are trying to achieve. We will model the energy savings and confirm BMS integration capability before you commit to works.
               </p>
               <div className="mt-6 space-y-2.5 border-l border-white/10 pl-5">
-                <p className="text-sm text-white/50">Open-protocol DDC as standard — no proprietary lock-in</p>
+                <p className="text-sm text-white/50">Open-protocol DDC as standard, no proprietary lock-in</p>
                 <p className="text-sm text-white/50">Energy model provided before commitment to works</p>
                 <p className="text-sm text-white/50">Single units and multi-site estate programmes both handled</p>
                 <p className="text-sm text-white/50">ESOS documentation and energy baselines issued at handover</p>
@@ -714,20 +675,20 @@ export default function ControllerUpgradesPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={80}>
-              <div className="border border-white/10 bg-white/5 p-8">
+              <div className="border border-slate-200 bg-white p-8">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
                   Enquiry
                 </p>
-                <p className="mt-3 text-sm leading-6 text-white/50">
-                  Tell us the AHU make, current controls hardware if known, and what you are trying to achieve. We&apos;ll respond within one working day.
+                <p className="mt-3 text-sm leading-6 text-slate-500">
+                  Tell us the AHU make, current controls hardware if known, and what you are trying to achieve. We&apos;ll respond within 24 hours.
                 </p>
-                <div className="mt-6"><QuickQuoteForm /></div>
-                <div className="mt-5 flex flex-col gap-2 border-t border-white/10 pt-4">
-                  <div className="flex items-center gap-2 text-[11px] text-white/35">
+                <div className="mt-6"><QuickQuoteForm defaultService="Controller Upgrades" /></div>
+                <div className="mt-5 flex flex-col gap-2 border-t border-slate-100 pt-4">
+                  <div className="flex items-center gap-2 text-[11px] text-slate-400">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                    Engineering response within one working day
+                    Response within 24 hours
                   </div>
-                  <div className="flex items-center gap-2 text-[11px] text-white/35">
+                  <div className="flex items-center gap-2 text-[11px] text-slate-400">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
                     Energy model and BMS compatibility confirmed
                   </div>
@@ -749,8 +710,7 @@ export default function ControllerUpgradesPage() {
             {[
               { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
               { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },
-              { href: "/air-handling-unit-installation", label: "AHU Installation" },
-              { href: "/air-handling-unit-manufacturing", label: "AHU Manufacturing" },
+              { href: "/air-handling-unit-manufactoring-and-installation", label: "AHU Manufacturing & Installation" },
             ].map((l) => (
               <Link
                 key={l.href}
@@ -772,6 +732,13 @@ export default function ControllerUpgradesPage() {
   );
 }
 
+function ArrowIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 function ArrowDownIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">

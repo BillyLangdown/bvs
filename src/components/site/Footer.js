@@ -4,9 +4,8 @@ import { Container } from "./Container";
 
 const ahuLinks = [
   { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
-  { href: "/air-handling-unit-manufacturing", label: "AHU Manufacturing" },
+  { href: "/air-handling-unit-manufactoring-and-installation", label: "Manufacturing & Installation" },
   { href: "/air-handling-unit-coil-replacement", label: "Coil Replacement" },
-  { href: "/air-handling-unit-installation", label: "Installation" },
   { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },
   { href: "/air-handling-unit-controller-solutions-upgrades", label: "Controller Solutions" },
 ];

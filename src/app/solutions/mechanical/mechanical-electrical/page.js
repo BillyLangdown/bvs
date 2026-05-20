@@ -42,7 +42,7 @@ export default function MechanicalElectricalPage() {
       relatedLinks={[
         { href: "/solutions/mechanical/industrial-pipework", label: "Industrial Pipework" },
         { href: "/solutions/mechanical/commercial-boiler-heating", label: "Commercial Boiler & Heating" },
-        { href: "/air-handling-unit-installation", label: "AHU Installation & Contracting" },
+        { href: "/air-handling-unit-manufactoring-and-installation", label: "AHU Manufacturing & Installation" },
         { href: "/air-handling-unit-controller-solutions-upgrades", label: "Controller Solutions" },
         { href: "/solutions/ahu", label: "AHU Solutions" },
         { href: "/contact", label: "Contact Us" },

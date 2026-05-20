@@ -14,42 +14,42 @@ const sectors = [
     label: "Healthcare & NHS",
     summary: "HTM 03-01 aware. Critical environments. Live clinical works managed as standard.",
     photo: "/hospital.webp",
-    photoAlt: "NHS hospital corridor — BVS ventilation services for healthcare environments",
+    photoAlt: "NHS hospital corridor, BVS ventilation services for healthcare environments",
   },
   {
     slug: "defence",
     label: "Defence & Government",
     summary: "Secure site experience. Programme compliance. Access and vetting requirements met.",
     photo: "/defence.webp",
-    photoAlt: "Defence facility — BVS ventilation on secure government and MoD sites",
+    photoAlt: "Defence facility, BVS ventilation on secure government and MoD sites",
   },
   {
     slug: "education",
     label: "Education",
     summary: "Holiday window delivery. Budget-conscious lifecycle approach. Any estate type.",
     photo: "/school.webp",
-    photoAlt: "School building — BVS AHU works scheduled around academic calendars",
+    photoAlt: "School building, BVS AHU works scheduled around academic calendars",
   },
   {
     slug: "hotel",
     label: "Hotels",
     summary: "Out-of-hours works. Minimum disruption. Marriott, IHG, and more.",
     photo: "/hotel.webp",
-    photoAlt: "Hotel interior — BVS delivers AHU works out of hours",
+    photoAlt: "Hotel interior, BVS delivers AHU works out of hours",
   },
   {
     slug: "leisure-centre",
     label: "Leisure Centres",
     summary: "Pool hall specialist. Corrosion-resistant specification. High-humidity environments.",
     photo: "/swimming-pool.webp",
-    photoAlt: "Leisure centre swimming pool — BVS pool hall AHU specialist",
+    photoAlt: "Leisure centre swimming pool, BVS pool hall AHU specialist",
   },
   {
     slug: "retail",
     label: "Retail & Commercial",
     summary: "Around trading hours. EPC and ESOS support. Multi-site portfolio delivery.",
     photo: "/mall.webp",
-    photoAlt: "Shopping centre — BVS AHU works delivered around retail trading hours",
+    photoAlt: "Shopping centre, BVS AHU works delivered around retail trading hours",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function IndustriesPage() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/45">
               Industries
             </p>
-            <h1 className="font-display text-3xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
+            <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-5xl">
               40+ Years.<br />Every Sector.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
@@ -96,7 +96,7 @@ export default function IndustriesPage() {
                   <div className="absolute inset-0 bg-black/20 transition-opacity group-hover:bg-black/30" />
                 </div>
                 <div className="flex flex-col gap-3 p-5">
-                  <h2 className="font-display text-base font-extrabold uppercase text-slate-900 group-hover:text-[#297858]">
+                  <h2 className="text-base font-extrabold text-slate-900 group-hover:text-[#297858]">
                     {s.label}
                   </h2>
                   <p className="text-sm leading-6 text-slate-500">{s.summary}</p>
@@ -115,7 +115,7 @@ export default function IndustriesPage() {
         <Container>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h2 className="font-display text-xl font-extrabold uppercase text-white">
+              <h2 className="text-xl font-extrabold text-white">
                 Don&apos;t see your sector?
               </h2>
               <p className="mt-1 text-sm text-white/55">

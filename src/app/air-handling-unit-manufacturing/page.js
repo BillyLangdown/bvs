@@ -4,27 +4,13 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
   title: "AHU Manufacturing | BVS Building Ventilation Solutions",
   description:
     "Custom air handling unit manufacturing from our UK facility. Custom AHUs designed to specification — any size, any configuration, 5–7 week lead time. 40+ years manufacturing experience.",
 };
-
-const clientLogos = [
-  { src: "/nhs-logo.webp", alt: "NHS" },
-  { src: "/disney-logo.webp", alt: "Disney" },
-  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
-  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
-  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
-  { src: "/travelodge-logo.webp", alt: "Travelodge" },
-  { src: "/waitrose-logo.webp", alt: "Waitrose" },
-  { src: "/westfield-logo.webp", alt: "Westfield" },
-  { src: "/fenwick-logo.webp", alt: "Fenwick" },
-  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
-  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
-  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
-];
 
 const faqs = [
   {
@@ -57,98 +43,51 @@ export default function AHUManufacturingPage() {
   return (
     <div>
 
-   {/* ── HERO ─────────────────────────────────────────────── */}
-<section className="relative min-h-[620px] w-full overflow-hidden bg-slate-900">
-
-{/* IMAGE (more visible, less crushed by overlays) */}
-<Image
-  src="/ahu-sparks.webp"
-  alt="BVS air handling unit manufacturing workshop — custom-built AHU build in progress"
-  fill
-  priority
-  placeholder="blur"
-  blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
-  className="object-cover object-center scale-[1.02]"
-  sizes="100vw"
-/>
-
-{/* softer controlled overlay (less heavy than before) */}
-<div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-black/0" />
-
-<Container className="relative flex min-h-[620px] items-center">
-
-  {/* LEFT CONTENT PANEL */}
-  <div className="w-full max-w-3xl">
-
-    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
-      AHU Manufacturing
-    </p>
-
-    <h1 className="font-display text-4xl font-extrabold uppercase leading-[1.05] text-white sm:text-5xl">
-     Built for your project, <br/>
-    Manufactured in the UK.
-    </h1>
-
-    <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
-
-    <p className="mt-5 text-[15px] leading-7 text-white/75">
-      When the catalogue does not have what the building requires, we build it.
-      Any size. Any specification. 40+ years of AHU manufacturing from our UK facility.
-    </p>
-
-    {/* CTA */}
-    <div className="mt-7 flex flex-wrap gap-3">
-      <a
-        href="#brief"
-        className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-      >
-        Discuss your requirements
-      </a>
-
-      <a
-        href="tel:01256518170"
-        className="inline-flex items-center gap-2 border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-      >
-        <PhoneIcon /> 01256 518170
-      </a>
-    </div>
-
-  </div>
-
-</Container>
-</section>
-      {/* ── 2. TRUST BAR ─────────────────────────────────────────────── */}
-      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
-  <Container>
-    <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-      Trusted by leading organisations
-    </p>
-
-    <div className="relative">
-  {/* Left fade */}
-  <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
-
-  {/* Right fade */}
-  <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
-
-  <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-    <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
-      {clientLogos.map((logo) => (
+      {/* ── HERO ─────────────────────────────────────────────── */}
+      <section className="relative min-h-[620px] w-full overflow-hidden bg-slate-900">
         <Image
-          key={logo.alt}
-          src={logo.src}
-          alt={logo.alt}
-          width={120}
-          height={60}
-          unoptimized
-          className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
+          src="/ahu-sparks.webp"
+          alt="BVS air handling unit manufacturing workshop — custom-built AHU build in progress"
+          fill
+          priority
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
+          className="object-cover object-center scale-[1.02]"
+          sizes="100vw"
         />
-      ))}
-    </div>
-  </div>
-</div>
-  </Container>
-</section>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-black/0" />
+        <Container className="relative flex min-h-[620px] items-center">
+          <div className="w-full max-w-3xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
+              AHU Manufacturing
+            </p>
+            <h1 className="font-display text-4xl font-extrabold uppercase leading-[1.05] text-white sm:text-5xl">
+              Built for your project,<br />Manufactured in the UK.
+            </h1>
+            <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
+            <p className="mt-5 text-[15px] leading-7 text-white/75">
+              When the catalogue does not have what the building requires, we build it. Any size. Any specification. 40+ years of AHU manufacturing from our UK facility.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a
+                href="#brief"
+                className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
+              >
+                Discuss your requirements
+                <ArrowIcon />
+              </a>
+              <a
+                href="tel:01256518170"
+                className="inline-flex items-center gap-2 border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+              >
+                <PhoneIcon /> 01256 518170
+              </a>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <TrustedByBar />
 
 {/* ── 2. PROBLEM ── when catalogue products fail ───────────────────── */}
 <section className="bg-[#0e1115] py-14 sm:py-16">
@@ -159,7 +98,7 @@ export default function AHUManufacturingPage() {
         When off-the-shelf isn't enough
       </p>
 
-      <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+      <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
         Where Catalogue Units Fail
       </h2>
 
@@ -189,11 +128,11 @@ export default function AHUManufacturingPage() {
 
           <div className="border-l-2 border-[#297858]/30 bg-white/5 p-6">
 
-            <span className="font-display text-3xl font-extrabold text-[#297858]/25">
+            <span className="text-3xl font-extrabold text-[#297858]/25">
               {item.n}
             </span>
 
-            <h3 className="mt-3 font-display text-sm font-extrabold uppercase text-white">
+            <h3 className="mt-3 text-sm font-extrabold text-white">
               {item.heading}
             </h3>
 
@@ -220,7 +159,7 @@ export default function AHUManufacturingPage() {
         The solution
       </p>
 
-      <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-3xl">
+      <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">
         How We Solve It
       </h2>
 
@@ -291,7 +230,7 @@ export default function AHUManufacturingPage() {
             <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               Manufacturing capability
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-3xl">
+            <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
               What We Can Build
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -359,7 +298,7 @@ export default function AHUManufacturingPage() {
       
       <div className="h-full flex flex-col border border-white/10 bg-white/5 p-5">
 
-        <p className="font-display text-3xl font-extrabold text-[#297858]">
+        <p className="text-3xl font-extrabold text-[#297858]">
           {item.stat}
         </p>
 
@@ -394,7 +333,7 @@ export default function AHUManufacturingPage() {
           Case study
         </p>
 
-        <h2 className="mt-3 font-display text-2xl font-extrabold uppercase leading-tight text-slate-900 sm:text-4xl">
+        <h2 className="mt-3 text-2xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
           Warner Leisure Hotel<br />
           Gunton Hall — Made-to-Specification AHU
         </h2>
@@ -477,7 +416,7 @@ export default function AHUManufacturingPage() {
       <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
         Build process
       </p>
-      <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+      <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
         From Brief to<br />Built Unit
       </h2>
       <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -571,7 +510,7 @@ export default function AHUManufacturingPage() {
                   <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
                     No-obligation offer
                   </p>
-                  <h2 className="mt-2 font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+                  <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
                     Design Brief Review<br />&amp; Feasibility Assessment
                   </h2>
                   <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -619,9 +558,9 @@ export default function AHUManufacturingPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
             <ScrollReveal>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/40">
-                Speak to an engineer
+                Get in touch
               </p>
-              <h2 className="font-display text-3xl font-extrabold uppercase text-white sm:text-4xl">
+              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                 Discuss Your<br />Manufacturing Brief
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
@@ -702,6 +641,13 @@ export default function AHUManufacturingPage() {
   );
 }
 
+function ArrowIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 function CheckIcon({ className = "" }) {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" className={`text-[#297858] ${className}`}>

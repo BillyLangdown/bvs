@@ -1,5 +1,29 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/air-handling-unit-manufacturing",
+        destination: "/air-handling-unit-manufactoring-and-installation",
+        permanent: true,
+      },
+      {
+        source: "/air-handling-unit-manufacturing/",
+        destination: "/air-handling-unit-manufactoring-and-installation",
+        permanent: true,
+      },
+      {
+        source: "/air-handling-unit-installation",
+        destination: "/air-handling-unit-manufactoring-and-installation",
+        permanent: true,
+      },
+      {
+        source: "/air-handling-unit-installation/",
+        destination: "/air-handling-unit-manufactoring-and-installation",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,

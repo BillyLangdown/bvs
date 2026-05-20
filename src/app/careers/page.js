@@ -6,7 +6,7 @@ import Image from "next/image";
 export const metadata = {
   title: "Careers | BVS Building Ventilation Solutions",
   description:
-    "Join BVS — a fast-growing HVAC specialist driven by practical problem-solving. Send your CV and cover letter to be considered for current and future roles.",
+    "Join BVS, a fast-growing HVAC specialist driven by practical problem-solving. Send your CV and cover letter to be considered for current and future roles.",
 };
 
 export default function CareersPage() {
@@ -35,7 +35,7 @@ export default function CareersPage() {
         Careers
       </p>
 
-      <h1 className="font-display text-3xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
+      <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-5xl">
         Opportunities At
     
        BVS
@@ -61,12 +61,12 @@ export default function CareersPage() {
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
                 Get in touch
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">
+              <h2 className="text-2xl font-extrabold text-slate-900">
                 Send Us Your CV
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-slate-600">
-                We don&apos;t always advertise vacancies publicly. If your background is relevant to what we do, send your CV and a brief cover letter and we&apos;ll be in touch if there&apos;s a fit — current or future.
+                We don&apos;t always advertise vacancies publicly. If your background is relevant to what we do, send your CV and a brief cover letter and we&apos;ll be in touch if there&apos;s a fit, current or future.
               </p>
 
               
@@ -94,7 +94,7 @@ export default function CareersPage() {
               </div>
             </div>
 
-            {/* Right col — form */}
+            {/* Right col, form */}
             <div className="border border-slate-200 bg-white p-8">
               <p className="mb-1 text-xs font-bold uppercase tracking-[0.2em] text-[#297858]">
                 Application

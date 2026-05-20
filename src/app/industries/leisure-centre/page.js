@@ -14,7 +14,7 @@ export const metadata = {
 const faqs = [
   {
     q: "Do you understand the specific requirements of pool hall ventilation?",
-    a: "Yes. Pool hall AHUs operate under specific humidity, temperature, and air volume requirements that differ significantly from standard commercial HVAC. We specify and install equipment appropriate to the environment — not standard commercial units adapted to cope.",
+    a: "Yes. Pool hall AHUs operate under specific humidity, temperature, and air volume requirements that differ significantly from standard commercial HVAC. We specify and install equipment appropriate to the environment, not standard commercial units adapted to cope.",
   },
   {
     q: "What causes AHU failure faster in pool environments?",
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: "Can you replace a failed AHU in a pool hall without closing the facility?",
-    a: "In most cases, yes — with careful programming. Pool halls have defined maintenance windows, typically overnight or early morning. We plan works to fit those windows and assess temporary ventilation requirements before any shutdown is agreed.",
+    a: "In most cases, yes. Pool halls have defined maintenance windows, typically overnight or early morning. We plan works to fit those windows and assess temporary ventilation requirements before any shutdown is agreed.",
   },
   {
     q: "Are EC fans suitable for pool hall environments?",
@@ -46,7 +46,7 @@ export default function LeisureCentrePage() {
       <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900">
         <Image
           src="/swimming-pool.webp"
-          alt="Leisure centre swimming pool — BVS pool hall AHU specialist with corrosion-resistant specification"
+          alt="Leisure centre swimming pool, BVS pool hall AHU specialist with corrosion-resistant specification"
           fill
           priority
           placeholder="blur"
@@ -63,21 +63,21 @@ export default function LeisureCentrePage() {
               Leisure Centres &amp; Aquatic Facilities
             </p>
             <h1
-              className="font-display text-2xl font-extrabold uppercase leading-[1.08] text-white sm:text-5xl"
+              className="text-2xl font-extrabold leading-[1.08] text-white sm:text-5xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
               Pool Halls Need<br />Specialists.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white/85" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
-              Leisure centre ventilation — and pool hall AHUs in particular — is a specialist application. The environment accelerates component failure, demands specific material selection, and requires correct humidity control to prevent structural damage and protect user comfort.
+              Leisure centre ventilation, and pool hall AHUs in particular, is a specialist application. The environment accelerates component failure, demands specific material selection, and requires correct humidity control to prevent structural damage and protect user comfort.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
               >
-                Speak to an engineer
+                Get in touch
                 <ArrowIcon />
               </Link>
               <Link
@@ -99,7 +99,7 @@ export default function LeisureCentrePage() {
                 { stat: "EC Fan", label: "Energy Savings" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
-                  <p className="font-display text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
                   <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
                 </div>
               ))}
@@ -117,15 +117,15 @@ export default function LeisureCentrePage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
                 The environment
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 Why Pool Halls Destroy<br />Standard HVAC Plant.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/55">
-                Pool hall air contains elevated chloramine concentrations — a by-product of chlorine disinfection and human contact. Chloramines are highly corrosive to steel, aluminium, copper, and most standard coatings. Standard commercial AHU components have a significantly shortened service life when exposed to this environment continuously.
+                Pool hall air contains elevated chloramine concentrations, a by-product of chlorine disinfection and human contact. Chloramines are highly corrosive to steel, aluminium, copper, and most standard coatings. Standard commercial AHU components have a significantly shortened service life when exposed to this environment continuously.
               </p>
               <p className="mt-4 text-sm leading-7 text-white/55">
-                High relative humidity — typically 50–65% in pool halls — adds to the challenge. Condensation on poorly insulated surfaces, structural moisture ingress, and mould are all consequences of inadequate humidity control. The AHU is the primary line of defence against all of these.
+                High relative humidity, typically 50–65% in pool halls, adds to the challenge. Condensation on poorly insulated surfaces, structural moisture ingress, and mould are all consequences of inadequate humidity control. The AHU is the primary line of defence against all of these.
               </p>
               <div className="mt-7">
                 <Link
@@ -142,11 +142,11 @@ export default function LeisureCentrePage() {
                 {[
                   {
                     title: "Humidity control",
-                    body: "Pool hall AHUs must maintain precise humidity — too high causes structural damage and user discomfort; too low increases evaporation and chemical cost. Both are an AHU performance issue.",
+                    body: "Pool hall AHUs must maintain precise humidity, too high causes structural damage and user discomfort; too low increases evaporation and chemical cost. Both are an AHU performance issue.",
                   },
                   {
                     title: "Air volume and distribution",
-                    body: "Correct air change rates prevent chloramine build-up at breathing level. Poor distribution creates dead zones — typically identified by persistent smell or patron discomfort in specific pool positions.",
+                    body: "Correct air change rates prevent chloramine build-up at breathing level. Poor distribution creates dead zones, typically identified by persistent smell or patron discomfort in specific pool positions.",
                   },
                   {
                     title: "Heat recovery",
@@ -172,12 +172,12 @@ export default function LeisureCentrePage() {
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               What we find on site
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               Common Failure Points<br />in Leisure Centre AHUs.
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
             <p className="mt-4 text-sm leading-6 text-slate-500">
-              Pool hall AHU failure rarely presents suddenly. It is usually a progressive deterioration — components failing earlier than expected, performance dropping, energy costs rising. These are the most common findings when we survey leisure centre plant.
+              Pool hall AHU failure rarely presents suddenly. It is usually a progressive deterioration, components failing earlier than expected, performance dropping, energy costs rising. These are the most common findings when we survey leisure centre plant.
             </p>
           </ScrollReveal>
 
@@ -185,7 +185,7 @@ export default function LeisureCentrePage() {
             {[
               {
                 title: "Corroded belt-driven fans",
-                desc: "Belt-driven fans fail significantly faster in pool environments. Belt slip, bearing corrosion, and pulley damage are common — combined with high maintenance frequency and unplanned shutdowns.",
+                desc: "Belt-driven fans fail significantly faster in pool environments. Belt slip, bearing corrosion, and pulley damage are common, combined with high maintenance frequency and unplanned shutdowns.",
               },
               {
                 title: "Coil corrosion and fouling",
@@ -193,19 +193,19 @@ export default function LeisureCentrePage() {
               },
               {
                 title: "Casing and panel corrosion",
-                desc: "Standard galvanised steel AHU casings corrode in pool environments. Structural integrity degrades over time — a refurbishment must address the casing as well as the components.",
+                desc: "Standard galvanised steel AHU casings corrode in pool environments. Structural integrity degrades over time, a refurbishment must address the casing as well as the components.",
               },
               {
                 title: "No variable speed control",
-                desc: "Pool hall AHUs should modulate speed based on humidity and occupancy. Fixed-speed operation wastes energy and is unable to respond to changing conditions — a significant operating cost issue.",
+                desc: "Pool hall AHUs should modulate speed based on humidity and occupancy. Fixed-speed operation wastes energy and is unable to respond to changing conditions, a significant operating cost issue.",
               },
               {
                 title: "Humidity control drift",
-                desc: "Humidity setpoints drifting over time due to degraded sensors, failed actuators, or untuned controls — leading to humidity too high for structural safety or too low for operational economy.",
+                desc: "Humidity setpoints drifting over time due to degraded sensors, failed actuators, or untuned controls, leading to humidity too high for structural safety or too low for operational economy.",
               },
               {
                 title: "No BMS visibility",
-                desc: "Standalone controls with no fault logging mean problems go undetected until users complain or pool management observe structural symptoms — condensation, surface moisture, or persistent chloramine odour.",
+                desc: "Standalone controls with no fault logging mean problems go undetected until users complain or pool management observe structural symptoms, condensation, surface moisture, or persistent chloramine odour.",
               },
             ].map((item) => (
               <div key={item.title} className="border-l-2 border-[#297858] bg-white p-5">
@@ -226,15 +226,15 @@ export default function LeisureCentrePage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
                 Energy opportunity
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 EC Fans Are Particularly<br />Suited to Pool Halls.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/55">
-                Leisure centre AHUs often run 16–24 hours a day. The energy consumed by fixed-speed belt-driven fans in this environment is substantial — and the energy saving from upgrading to EC direct-drive is among the most significant achievable in a building of this type.
+                Leisure centre AHUs often run 16–24 hours a day. The energy consumed by fixed-speed belt-driven fans in this environment is substantial, and the energy saving from upgrading to EC direct-drive is among the most significant achievable in a building of this type.
               </p>
               <p className="mt-4 text-sm leading-7 text-white/55">
-                EC fans also remove belts from the equation — eliminating the most common source of unplanned maintenance in a pool environment. No belts means no belt changes, no belt slip, and no associated fan shutdown.
+                EC fans also remove belts from the equation, eliminating the most common source of unplanned maintenance in a pool environment. No belts means no belt changes, no belt slip, and no associated fan shutdown.
               </p>
               <div className="mt-7">
                 <Link
@@ -250,12 +250,12 @@ export default function LeisureCentrePage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
                   { stat: "30–50%", label: "Typical fan energy saving" },
-                  { stat: "24/7", label: "Operation — savings compound daily" },
+                  { stat: "24/7", label: "Operation, savings compound daily" },
                   { stat: "No belts", label: "Removes primary maintenance burden" },
                   { stat: "Variable speed", label: "Responds to humidity demand" },
                 ].map((item) => (
                   <div key={item.label} className="bg-white/5 p-5 text-center">
-                    <p className="font-display text-2xl font-extrabold text-white">{item.stat}</p>
+                    <p className="text-2xl font-extrabold text-white">{item.stat}</p>
                     <p className="mt-1 text-xs text-white/55">{item.label}</p>
                   </div>
                 ))}
@@ -273,7 +273,7 @@ export default function LeisureCentrePage() {
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               What we deliver in leisure
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               Services for Leisure Centres
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
@@ -299,7 +299,7 @@ export default function LeisureCentrePage() {
               {
                 href: "/air-handling-unit-controller-solutions-upgrades",
                 label: "Controller Upgrades",
-                desc: "Humidity-based demand control, BMS integration, and variable speed — replacing fixed-speed standalone controls.",
+                desc: "Humidity-based demand control, BMS integration, and variable speed, replacing fixed-speed standalone controls.",
               },
             ].map((s) => (
               <Link
@@ -318,6 +318,81 @@ export default function LeisureCentrePage() {
         </Container>
       </section>
 
+      {/* ── CASE STUDY ────────────────────────────────────────────────── */}
+      <section className="bg-[#111418] py-16 sm:py-20">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-start">
+            <ScrollReveal>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
+                Case study
+              </p>
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
+                Leisure Centre<br />EC Fan Retrofit
+              </h2>
+              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-6 text-sm leading-7 text-white/55">
+                Failed belt-driven fans in a pool hall AHU caused complete airflow loss and uncontrolled humidity. The belt drive arrangement was beyond economic repair. Rather than replacing the AHU, BVS removed the existing fan set, installed EC plug fans within the original casing, and restored full airflow within two days.
+              </p>
+              <div className="mt-6 flex flex-col gap-3">
+                <div className="border-l-2 border-white/15 pl-4">
+                  <span className="text-sm text-white/55">Works completed overnight within the existing maintenance window</span>
+                </div>
+                <div className="border-l-2 border-white/15 pl-4">
+                  <span className="text-sm text-white/55">AHU casing, ductwork connections, and services left untouched</span>
+                </div>
+              </div>
+              <p className="mt-6 text-sm leading-7 text-white/55">
+                EC fans removed belts from the maintenance schedule entirely. Ongoing belt changes, belt slip, and associated unplanned shutdowns were all eliminated. Full airflow and humidity control was restored within two days of mobilisation.
+              </p>
+              <div className="mt-6 flex flex-col gap-3">
+                <div className="border-l-2 border-[#297858] pl-4">
+                  <span className="text-sm font-bold text-white">Full airflow and humidity control restored in two days</span>
+                </div>
+                <div className="border-l-2 border-[#297858] pl-4">
+                  <span className="text-sm text-white/80">Belt maintenance overhead eliminated, EC fans operating without unplanned stops since installation</span>
+                </div>
+              </div>
+              <div className="mt-7">
+                <Link
+                  href="/case-studies/leisure-centre-ec-fan-retrofit"
+                  className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
+                >
+                  Read full case study
+                  <ArrowIcon />
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={80}>
+              <div className="flex flex-col gap-4">
+                <div className="relative min-h-[280px] overflow-hidden lg:min-h-[300px]">
+                  <Image
+                    src="/swimming-pool.webp"
+                    alt="Leisure centre pool hall, EC fan retrofit by BVS restored airflow and humidity control"
+                    fill
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { stat: "2 days", label: "Return to service" },
+                    { stat: "Zero", label: "Unplanned stops post-install" },
+                    { stat: "Belts removed", label: "Main maintenance burden gone" },
+                    { stat: "30–50%", label: "Fan energy saving" },
+                  ].map((item) => (
+                    <div key={item.label} className="bg-white/5 p-4 text-center">
+                      <p className="text-xl font-extrabold text-white">{item.stat}</p>
+                      <p className="mt-1 text-[10px] text-white/55">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </Container>
+      </section>
+
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
       <FAQAccordion faqs={faqs} />
 
@@ -328,9 +403,9 @@ export default function LeisureCentrePage() {
 
             <ScrollReveal>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/45">
-                Speak to an engineer
+                Get in touch
               </p>
-              <h2 className="font-display text-3xl font-extrabold uppercase text-white sm:text-4xl">
+              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                 Discuss Your<br />Leisure Facility
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
@@ -371,11 +446,11 @@ export default function LeisureCentrePage() {
                   <div className="mt-6 flex flex-col gap-2 border-t border-slate-100 pt-5">
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                      Engineering response within 24 working hours
+                      Response within 24 hours
                     </div>
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                      No obligation — practical advice from the first call
+                      No obligation, practical advice from the first call
                     </div>
                   </div>
                 </div>

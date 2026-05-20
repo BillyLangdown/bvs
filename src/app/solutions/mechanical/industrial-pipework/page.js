@@ -2,27 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
   title: "Commercial Pipework | BVS",
   description:
     "Commercial and industrial pipework installation, maintenance, and repair from BVS. Supporting HVAC, heating, and process pipework across the UK.",
 };
-
-const clientLogos = [
-  { src: "/nhs-logo.webp", alt: "NHS" },
-  { src: "/disney-logo.webp", alt: "Disney" },
-  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
-  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
-  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
-  { src: "/travelodge-logo.webp", alt: "Travelodge" },
-  { src: "/waitrose-logo.webp", alt: "Waitrose" },
-  { src: "/westfield-logo.webp", alt: "Westfield" },
-  { src: "/fenwick-logo.webp", alt: "Fenwick" },
-  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
-  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
-  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
-];
 
 const scope = [
   "HVAC chilled and hot water pipework",
@@ -50,7 +36,7 @@ const reasons = [
   },
   {
     title: "Commissioning Determines Performance",
-    body: "Correctly commissioned pipework — pressure tested, flushed, and balanced — ensures your HVAC and heating systems perform as designed from day one, with full documentation to prove it.",
+    body: "Correctly commissioned pipework, pressure tested, flushed, and balanced, ensures your HVAC and heating systems perform as designed from day one, with full documentation to prove it.",
   },
 ];
 
@@ -105,12 +91,12 @@ export default function IndustrialPipeworkPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#297858]">
               Mechanical Solutions
             </p>
-            <h1 className="font-display text-4xl font-extrabold uppercase leading-tight text-white sm:text-5xl">
+            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
               Commercial<br />Pipework
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-lg text-base leading-7 text-white/75">
-              Reliable pipework is the backbone of any heating, cooling, or ventilation system. Our engineers install, maintain, and repair commercial and industrial pipework systems to the highest standards — with minimal disruption to your operations.
+              Reliable pipework is the backbone of any heating, cooling, or ventilation system. Our engineers install, maintain, and repair commercial and industrial pipework systems to the highest standards, with minimal disruption to your operations.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -141,7 +127,7 @@ export default function IndustrialPipeworkPage() {
                 { stat: "40+", label: "Years Experience" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
-                  <p className="font-display text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
                   <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
                 </div>
               ))}
@@ -157,7 +143,7 @@ export default function IndustrialPipeworkPage() {
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/55">
               Why it matters
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
               The case for action
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -180,7 +166,7 @@ export default function IndustrialPipeworkPage() {
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
               Scope of work
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               What we do
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -205,7 +191,7 @@ export default function IndustrialPipeworkPage() {
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
               Pipework services
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               How we help
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -213,7 +199,7 @@ export default function IndustrialPipeworkPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((f) => (
               <div key={f.title} className="border-t-2 border-[#297858] pt-5">
-                <h3 className="font-display text-sm font-bold uppercase tracking-wide text-slate-900">
+                <h3 className="text-sm font-bold tracking-wide text-slate-900">
                   {f.title}
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{f.body}</p>
@@ -224,38 +210,7 @@ export default function IndustrialPipeworkPage() {
       </section>
 
       {/* Trust bar */}
-      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
-        <Container>
-          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading organisations
-          </p>
-          <div className="relative">
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent sm:hidden" />
-            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 px-4 sm:px-0">
-                {clientLogos.map((logo) => (
-                  <Image
-                    key={logo.alt}
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={120}
-                    height={60}
-                    unoptimized
-                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="mt-4 flex items-center justify-center gap-2 text-slate-400 sm:hidden">
-            <span className="text-[10px] font-semibold uppercase tracking-wider opacity-70">swipe to view more</span>
-            <svg className="h-4 w-4 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M10 6l6 6-6 6" />
-            </svg>
-          </div>
-        </Container>
-      </section>
+      <TrustedByBar />
 
       {/* CTA + form */}
       <section className="bg-surface-2 py-16">
@@ -265,7 +220,7 @@ export default function IndustrialPipeworkPage() {
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
                 Get in touch
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900">
+              <h2 className="text-2xl font-extrabold text-slate-900">
                 Discuss your pipework project
               </h2>
               <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
@@ -288,7 +243,7 @@ export default function IndustrialPipeworkPage() {
                   {[
                     { href: "/solutions/mechanical/commercial-boiler-heating", label: "Commercial Boiler & Heating" },
                     { href: "/solutions/mechanical/mechanical-electrical", label: "Mechanical & Electrical" },
-                    { href: "/air-handling-unit-installation", label: "AHU Installation" },
+                    { href: "/air-handling-unit-manufactoring-and-installation", label: "AHU Manufacturing & Installation" },
                   ].map((l) => (
                     <Link
                       key={l.href}
@@ -314,7 +269,7 @@ export default function IndustrialPipeworkPage() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 Ready to discuss your project?
               </h2>
               <p className="mt-3 max-w-lg text-sm leading-7 text-white/65">

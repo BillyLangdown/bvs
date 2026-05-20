@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const inputClass =
-  "h-11 w-full border border-slate-200 bg-slate-50 px-4 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:bg-white focus:ring-1 focus:ring-[#297858] transition-colors";
+  "h-11 w-full border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors";
 
 const labelClass =
   "mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500";
@@ -62,7 +62,7 @@ export function ProductEnquiryForm({ productSlug, productName }) {
           </svg>
         </div>
         <div>
-          <p className="font-display text-lg font-extrabold uppercase text-slate-900">Enquiry received</p>
+          <p className="text-lg font-extrabold text-slate-900">Enquiry received</p>
           <p className="mt-2 text-sm leading-6 text-slate-600">
             We&apos;ll get back to you within one working day with pricing, lead times, and any technical guidance you need.
           </p>
@@ -109,7 +109,7 @@ export function ProductEnquiryForm({ productSlug, productName }) {
       <div>
         <label className={labelClass}>Brief Requirements / Message <span className="text-[#297858]">*</span></label>
         <textarea
-          className="min-h-[120px] w-full border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:bg-white focus:ring-1 focus:ring-[#297858] transition-colors"
+          className="min-h-[120px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Tell us what you need…"

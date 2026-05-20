@@ -36,9 +36,8 @@ const services = [
     context: "Improves efficiency, enables variable speed control, and supports Part L compliance. Typical payback 2–3 years.",
     signs: [
       "High fan energy use or failure to meet efficiency targets",
-      "Constant-speed or belt-driven motors still in operation",
-      "No variable speed control on current system",
-      "No redundancy or backup fan option in current configuration"
+      "Lack of airflow or airflow error",
+      "Noisy fans and regular maintenance",
     ],
     href: "/ec-fan-upgrades-and-retrofits-for-hvac",
     highlight: true,
@@ -80,36 +79,20 @@ const services = [
     photoAlt: "BVS engineer refurbishing an air handling unit on-site",
   },
   {
-    title: "AHU Manufacturing",
-    plain: "Custom-built air handling units for replacement or new installation.",
-    outcome: "New units built to specification for performance and compliance",
-    context: "Full replacement solution when existing systems are beyond repair or no longer suitable.",
+    title: "AHU Manufacturing & Installation",
+    plain: "Custom-built AHUs manufactured in the UK and installed under a single contract, from survey to commissioning.",
+    outcome: "Full scope from design to handover, under one contract",
+    context: "Managed delivery for new builds, full system replacements, or where off-the-shelf units do not fit.",
     signs: [
-      "Unit is beyond economic repair",
-      "Non-standard size or specification required",
-      "New build or system replacement project"
+      "Non-standard size or access constraints require a custom-built unit",
+      "Unit is beyond economic repair or no longer supported",
+      "Full project delivery needed, survey, manufacture, install, commission"
     ],
-    href: "/air-handling-unit-manufacturing",
+    href: "/air-handling-unit-manufactoring-and-installation",
     highlight: false,
     tag: null,
-    photo: "/ahu-manufacturing2.webp",
-    photoAlt: "Custom AHU being manufactured in the BVS workshop",
-  },
-  {
-    title: "AHU Installation",
-    plain: "Complete supply and installation of air handling systems from survey to commissioning.",
-    outcome: "Single point delivery from design through to handover",
-    context: "Managed installation for new builds, upgrades, or full system replacement projects.",
-    signs: [
-      "New or replacement system required",
-      "Full project delivery needed",
-      "No existing installation contractor in place"
-    ],
-    href: "/air-handling-unit-installation",
-    highlight: false,
-    tag: null,
-    photo: "/ahu-installation.webp",
-    photoAlt: "Air handling unit being installed on a commercial site",
+    photo: "/ahu-sparks.webp",
+    photoAlt: "BVS air handling unit manufacturing workshop, custom-built AHU in progress",
   },
   {
     title: "Controller Upgrades",
@@ -125,45 +108,56 @@ const services = [
     highlight: false,
     tag: null,
     photo: "/ahu-controller.webp",
-    photoAlt: "AHU controller upgrade — modern controls panel installed in air handling unit",
+    photoAlt: "AHU controller upgrade, modern controls panel installed in air handling unit",
+  },
+  {
+    title: "Commercial Boiler Services",
+    plain: "Gas Safe registered installation, servicing, and repair for commercial heating systems.",
+    outcome: "Planned and reactive cover under one specialist",
+    context: "For commercial heating plant alongside or independent of ventilation works.",
+    signs: [
+      "Boiler unreliable or requiring frequent repairs",
+      "Heating not meeting demand across the building",
+      "Gas Safe compliance required",
+    ],
+    href: "/solutions/mechanical/commercial-boiler-heating",
+    highlight: false,
+    tag: null,
+    photo: "/Commercial-Gas-Works.webp",
+    photoAlt: "Commercial boiler installation and servicing by BVS",
   },
 ];
 
 const additionalServices = [
   {
     title: "Validation Surveys",
-    desc: "HTM 03-01 audits, Part L compliance checks, and system condition assessments. Full documented report with prioritised findings.",
+    desc: "Entire system condition assessment with a full documented report of findings and proposals, covering ductwork, coils, fans, controls, and insulation repair.",
     href: "/solutions/ventilation/validation-surveys",
   },
   {
     title: "Ducting Repair & Replacement",
-    desc: "Uneven airflow, pressure loss, or visible duct damage? We repair or replace ductwork sections with minimal disruption to operations.",
+    desc: "Uneven airflow, pressure loss, or visible duct damage? We repair or replace ductwork sections to restore system performance.",
     href: "/solutions/ventilation/ducting-repair-replacement",
   },
   {
     title: "Troubleshooting",
-    desc: "Ventilation performance or compliance issues that need diagnosing. We identify root causes and provide a clear remedial plan.",
+    desc: "40+ years of AHU experience means we've seen it before. We diagnose the root cause and give you a clear, practical fix, from insulation repair to controls failures.",
     href: "/solutions/ventilation/troubleshooting",
   },
   {
-    title: "Commercial Boiler Services",
-    desc: "Gas Safe registered boiler installation, servicing, and repair. Planned and reactive cover for commercial heating systems.",
-    href: "/solutions/mechanical/commercial-boiler-heating",
-  },
-  {
     title: "Commercial Pipework",
-    desc: "Installation, maintenance, and repair of commercial pipework systems — HVAC circuits, heating mains, and associated insulation.",
+    desc: "Installation, maintenance, and repair of commercial pipework systems, HVAC circuits, heating mains, and associated insulation.",
     href: "/solutions/mechanical/industrial-pipework",
   },
 ];
 
 const sectors = [
-  { label: "Healthcare & NHS", desc: "HTM 03-01 compliant. Critical environments.", href: "/industries/hospital", photo: "/hospital.webp", photoAlt: "NHS hospital corridor — BVS ventilation works in live clinical environments" },
-  { label: "Education", desc: "Around term times. CIBSE-compliant.", href: "/industries/education", photo: "/school.webp", photoAlt: "School building — BVS AHU works scheduled around term times" },
-  { label: "Hotels", desc: "Out-of-hours. Minimum disruption to operations.", href: "/industries/hotel", photo: "/hotel.webp", photoAlt: "Hotel interior — BVS ventilation services with out-of-hours delivery" },
-  { label: "Defence", desc: "Security cleared. Restricted access sites.", href: "/industries/defence", photo: "/defence.webp", photoAlt: "Defence facility — BVS security-cleared engineers for restricted-access sites" },
-  { label: "Leisure Centres", desc: "High-humidity. Corrosion-resistant spec.", href: "/industries/leisure-centre", photo: "/swimming-pool.webp", photoAlt: "Swimming pool leisure centre — BVS high-humidity AHU specification" },
-  { label: "Retail & Commercial", desc: "Around trading hours. Reactive support.", href: "/industries/retail", photo: "/mall.webp", photoAlt: "Shopping centre retail environment — BVS ventilation works around trading hours" },
+  { label: "Healthcare & NHS", desc: "Active hospitals. Live clinical environments.", href: "/industries/hospital", photo: "/hospital.webp", photoAlt: "NHS hospital corridor, BVS ventilation works in live clinical environments" },
+  { label: "Education", desc: "Around term times. CIBSE-compliant.", href: "/industries/education", photo: "/school.webp", photoAlt: "School building, BVS AHU works scheduled around term times" },
+  { label: "Hotels", desc: "Out-of-hours. Minimum disruption to operations.", href: "/industries/hotel", photo: "/hotel.webp", photoAlt: "Hotel interior, BVS ventilation services with out-of-hours delivery" },
+  { label: "Defence", desc: "Security cleared. Restricted access sites.", href: "/industries/defence", photo: "/defence.webp", photoAlt: "Defence facility, BVS security-cleared engineers for restricted-access sites" },
+  { label: "Leisure Centres", desc: "High-humidity. Corrosion-resistant spec.", href: "/industries/leisure-centre", photo: "/swimming-pool.webp", photoAlt: "Swimming pool leisure centre, BVS high-humidity AHU specification" },
+  { label: "Retail & Commercial", desc: "Around trading hours. Reactive support.", href: "/industries/retail", photo: "/mall.webp", photoAlt: "Shopping centre retail environment, BVS ventilation works around trading hours" },
 ];
 
 const casePlaceholders = [
@@ -172,23 +166,23 @@ const casePlaceholders = [
     sector: "Leisure Centre",
     outcome: "Dorset leisure centre AHU was suffering fan failures and uncontrolled humidity across the pool hall. BVS retrofitted direct-drive EC fans, restoring full airflow and eliminating belt-driven maintenance overhead.",
     photo: "/dorset-leisure-centre-case-study.webp",
-    photoAlt: "Dorset leisure centre AHU — EC fan upgrade carried out by BVS",
+    photoAlt: "Dorset leisure centre AHU, EC fan upgrade carried out by BVS",
     href: "/case-studies/leisure-centre-dorset-ec-fan-upgrade",
   },
   {
     type: "AHU Refurbishment",
     sector: "Healthcare",
-    outcome: "NHS Hammersmith & Fulham AHUs refurbished to full specification — covering fan repairs, corrosion treatment, damper replacement, and new components, completed without disruption to clinical services.",
+    outcome: "NHS Hammersmith & Fulham AHUs refurbished to full specification, covering fan repairs, corrosion treatment, damper replacement, and new components, completed without disruption to clinical services.",
     photo: "/nhs-hammersmith-fulham-case-study.webp",
-    photoAlt: "NHS Hammersmith & Fulham — AHU refurbishment carried out by BVS",
+    photoAlt: "NHS Hammersmith & Fulham, AHU refurbishment carried out by BVS",
     href: "/case-studies/nhs-hammersmith-ahu-refurbishment",
   },
   {
     type: "AHU Manufacturing",
     sector: "Hotel",
-    outcome: "Warner Leisure Hotel's Gunton Hall required a custom-built replacement AHU for their swimming pool — tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
+    outcome: "Warner Leisure Hotel's Gunton Hall required a custom-built replacement AHU for their swimming pool, tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
     photo: "/warner-hotel-gunton-case-study.webp",
-    photoAlt: "Warner Leisure Hotel Gunton Hall — custom-built AHU manufactured and installed by BVS",
+    photoAlt: "Warner Leisure Hotel Gunton Hall, custom-built AHU manufactured and installed by BVS",
     href: "/case-studies/warner-leisure-hotel-gunton-hall-ahu",
   },
 ];
@@ -202,8 +196,8 @@ export default function Home() {
       {/* ── 1. HERO ──────────────────────────────────────────────────── */}
       <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
         <Image
-          src="/ahu-manufacturing2.webp"
-          alt="BVS air handling unit manufacturing workshop"
+          src="/ahu-hero-temp.webp"
+          alt="BVS air handling unit rooftop installation"
           fill
           sizes="100vw"
           priority
@@ -237,10 +231,10 @@ export default function Home() {
 </div>
           
             <h1
-              className="font-display text-3xl font-extrabold uppercase leading-[1.08] text-white sm:text-4xl lg:text-6xl"
+              className="text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-           Better Airflow,<br/> Lower Energy Costs.
+           Better airflow,<br/> lower Energy Costs.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
@@ -248,14 +242,19 @@ export default function Home() {
               Trusted by NHS, Disney, and Marriott. Serving HVAC contractors, M&amp;E consultants, and estates teams UK-wide.
             </p>
             
-            <div className="mt-8 flex flex-wrap gap-3">
+            <p className="mt-6 text-sm text-white/70">
+              Call us:{" "}
+              <a href="tel:01256518170" className="font-semibold text-white hover:text-white/80 transition-colors">
+                01256 518170
+              </a>
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
               >
                 Discuss your project
                 <ArrowIcon />
-               
               </Link>
               <Link
                 href="#services"
@@ -278,7 +277,7 @@ export default function Home() {
                 { stat: "24-hr", label: "Response Time" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
-                  <p className="font-display text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
                   <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
                 </div>
               ))}
@@ -289,60 +288,27 @@ export default function Home() {
 
       {/* ── 2. TRUST BAR ─────────────────────────────────────────────── */}
       <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
-  <Container>
-
-    <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-      Trusted by leading organisations
-    </p>
-
-    {/* LOGOS */}
-    <div className="relative">
-      {/* fades */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent sm:hidden" />
-
-      <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-        <div className="flex sm:grid sm:grid-cols-6 lg:grid-cols-12 gap-x-8 gap-y-6 min-w-max sm:min-w-0 px-4 sm:px-0">
-
-          {clientLogos.map((logo) => (
-            <Image
-              key={logo.alt}
-              src={logo.src}
-              alt={logo.alt}
-              width={120}
-              height={60}
-              unoptimized
-              className="h-12 w-auto object-contain mx-auto opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
-            />
-          ))}
-
+        <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+          Trusted by leading organisations
+        </p>
+        <div className="relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-white to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-white to-transparent" />
+          <div className="flex w-max animate-marquee items-center gap-x-14">
+            {[...clientLogos, ...clientLogos].map((logo, i) => (
+              <Image
+                key={i}
+                src={logo.src}
+                alt={logo.alt}
+                width={120}
+                height={60}
+                unoptimized
+                className="h-11 w-auto shrink-0 object-contain opacity-80 transition-opacity duration-300 hover:opacity-100"
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </div>
-
-{/* SCROLL HINT BELOW */}
-<div className="mt-4 flex items-center justify-center gap-2 text-slate-400 sm:hidden">
-
-  <span className="text-[10px] font-semibold uppercase tracking-wider opacity-70">
-    swipe to view more
-  </span>
-
-  <svg
-    className="h-4 w-4 animate-pulse"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M10 6l6 6-6 6" />
-  </svg>
-
-</div>
-
-  </Container>
-</section>
+      </section>
 
       {/* ── 3. SERVICES ──────────────────────────────────────────────── */}
       <section
@@ -362,7 +328,7 @@ export default function Home() {
     What we do
   </p>
 
-  <h2 className="font-display text-2xl font-extrabold uppercase tracking-tight text-[#111418] sm:text-3xl">
+  <h2 className="text-2xl font-extrabold tracking-tight text-[#111418] sm:text-3xl">
     Our Services
   </h2>
 
@@ -414,7 +380,7 @@ export default function Home() {
 
           {/* TITLE */}
           <div className="absolute bottom-5 left-5 right-5">
-            <h3 className="font-display text-2xl font-extrabold uppercase leading-tight text-white">
+            <h3 className="text-2xl font-extrabold leading-tight text-white">
               {s.title}
             </h3>
           </div>
@@ -503,7 +469,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
 
             <div className="absolute bottom-4 left-4 right-4">
-              <h3 className="font-display text-[15px] font-extrabold uppercase leading-tight text-white">
+              <h3 className="text-[15px] font-extrabold leading-tight text-white">
                 {s.title}
               </h3>
             </div>
@@ -592,7 +558,7 @@ export default function Home() {
             height={40}
             width={120}
             unoptimized
-            className="h-15 w-auto object-contain  transition-opacity duration-300 hover:opacity-100"
+            className="h-20 w-auto object-contain transition-opacity duration-300 hover:opacity-100"
           />
         ))}
       </div>
@@ -608,7 +574,7 @@ export default function Home() {
           <ScrollReveal className="mb-10 flex flex-wrap items-baseline justify-between gap-4">
             <div>
               <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">Evidence of Work</p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
                 Recent Projects
               </h2>
               <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
@@ -629,18 +595,18 @@ export default function Home() {
         <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
           Free Download
         </p>
-        <h2 className="font-display text-2xl font-extrabold uppercase leading-tight text-white sm:text-3xl lg:text-4xl">
+        <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl lg:text-4xl">
           AHU Specialists<br />Brochure
         </h2>
         <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
         <p className="mt-6 max-w-lg text-[15px] leading-7 text-white/65">
-        Download our AHU refurbishment brochure, including survey examples, upgrade options, and energy-efficiency guidance.
+          Download our AHU brochure, covering the services we provide, sectors we work in, and a selection of previous case studies.
         </p>
         <ul className="mt-6 flex flex-col gap-2.5">
           {[
             "AHU refurbishment options and typical scope of works explained",
-            "What to expect from a BVS condition survey and condition report",
-            "Part L, energy efficiency, and decarbonisation guidance",
+            "Sectors we support, including NHS, hotels, education, and defence",
+            "Previous case studies from across our project portfolio",
           ].map((point) => (
             <li key={point} className="flex items-center gap-2.5 text-sm text-white/55">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
@@ -681,7 +647,7 @@ export default function Home() {
           <ScrollReveal className="mb-8 flex flex-wrap items-baseline justify-between gap-4">
             <div>
               <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">Industries</p>
-              <h2 className="font-display text-xl font-extrabold uppercase text-slate-900">Sectors We Work In</h2>
+              <h2 className="text-xl font-extrabold text-slate-900">Sectors We Work In</h2>
             </div>
             <Link href="/industries" className="shrink-0 text-xs font-semibold text-[#297858] hover:underline">
               View all →
@@ -709,7 +675,7 @@ export default function Home() {
                   )}
                   <div className="flex flex-1 flex-col p-6">
                     {!s.photo && <div className="mb-3 h-[3px] w-6 bg-slate-200 transition-all duration-300 group-hover:w-10 group-hover:bg-[#297858]" />}
-                    <p className="font-display text-base font-extrabold uppercase text-slate-900 group-hover:text-slate-700">
+                    <p className="text-base font-extrabold text-slate-900 group-hover:text-slate-700">
                       {s.label}
                     </p>
                     <p className="mt-2 flex-1 text-sm leading-6 text-slate-500">{s.desc}</p>
@@ -729,14 +695,14 @@ export default function Home() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <ScrollReveal>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 Ready to discuss your project?
               </h2>
               <p className="mt-3 max-w-lg text-sm leading-7 text-white/65">
                 Whether it&apos;s a planned refurbishment programme, emergency coil replacement, urgent fan failure, or a full new installation, we respond quickly and manage the entire project directly.
               </p>
               <ul className="mt-5 flex flex-col gap-2">
-                {["No obligation enquiry", "Response within one working day — direct from an engineer", "Speak directly with a specialist, not a sales team"].map((p) => (
+                {["No obligation enquiry", "Response within one working day, direct from an engineer", "Speak directly with a specialist, not a sales team"].map((p) => (
                   <li key={p} className="flex items-center gap-2 text-sm text-white/60">
                     <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
                     {p}
@@ -803,7 +769,7 @@ async function CaseStudiesBlock() {
                   />
                 )}
                 {!item.photo && (
-                  <span className="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 select-none font-display text-7xl font-extrabold text-white/5">
+                  <span className="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 select-none text-7xl font-extrabold text-white/5">
                     {isWp ? "CS" : item.type?.split(" ")[0]}
                   </span>
                 )}

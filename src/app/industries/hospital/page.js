@@ -4,11 +4,12 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
   title: "Healthcare & NHS Ventilation | BVS Building Ventilation Solutions",
   description:
-    "AHU refurbishment, EC fan upgrades, and validation surveys for NHS and private healthcare. HTM 03-01 aware. Live clinical environments managed as standard. UK nationwide.",
+    "AHU refurbishment, EC fan upgrades, and validation surveys for NHS and private healthcare. Live clinical environments managed as standard. UK nationwide.",
 };
 
 const faqs = [
@@ -18,11 +19,11 @@ const faqs = [
   },
   {
     q: "Do you understand HTM 03-01 requirements?",
-    a: "HTM 03-01 defines the ventilation standards for healthcare premises in England and Wales. We are familiar with the requirements for different clinical environments — theatres, wards, isolation rooms, and critical care — and commission and document works accordingly.",
+    a: "HTM 03-01 defines the ventilation standards for healthcare premises in England and Wales. We are familiar with the requirements for different clinical environments: theatres, wards, isolation rooms, and critical care. We commission and document works accordingly.",
   },
   {
     q: "Can you validate AHU performance to HTM 03-01?",
-    a: "We carry out airflow validation surveys that confirm performance against the relevant HTM 03-01 parameters — air change rates, pressure differentials, filter conditions, and temperature — with a formal report suitable for estates records.",
+    a: "We carry out airflow validation surveys that confirm performance against the relevant HTM 03-01 parameters: air change rates, pressure differentials, filter conditions, and temperature. We produce a formal report suitable for estates records.",
   },
   {
     q: "How do you manage infection control during works?",
@@ -46,7 +47,7 @@ export default function HospitalPage() {
       <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900">
         <Image
           src="/hospital.webp"
-          alt="NHS hospital corridor — BVS delivers HTM 03-01 compliant AHU works in live clinical environments"
+          alt="NHS hospital corridor — BVS works in live clinical environments"
           fill
           priority
           placeholder="blur"
@@ -70,14 +71,14 @@ export default function HospitalPage() {
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white/85" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
-              Healthcare ventilation operates under some of the most demanding standards in the built environment. We understand what HTM 03-01 requires, how to work in live clinical environments, and what it means when AHU plant fails in a hospital.
+              Healthcare ventilation operates under some of the most demanding conditions in the built environment. We understand clinical environments, how to work in live hospitals, and what it means when AHU plant fails.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
               >
-                Speak to an engineer
+                Get in touch
                 <ArrowIcon />
               </Link>
               <Link
@@ -94,7 +95,7 @@ export default function HospitalPage() {
           <Container>
             <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
               {[
-                { stat: "HTM 03-01", label: "Compliance Aware" },
+                { stat: "Clinical", label: "Environment Experience" },
                 { stat: "24/7", label: "Live Site Capability" },
                 { stat: "NHS & Private", label: "Healthcare Experience" },
               ].map((s) => (
@@ -108,65 +109,26 @@ export default function HospitalPage() {
         </div>
       </section>
 
-      {/* ── TRUST BAR ─────────────────────────────────────────────────── */}
-      <section className="border-b border-slate-100 bg-white py-7 sm:py-10">
-        <Container>
-          <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            Trusted by leading organisations
-          </p>
-          <div className="relative">
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white to-transparent sm:hidden" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent sm:hidden" />
-            <div className="overflow-x-auto no-scrollbar sm:overflow-visible">
-              <div className="flex sm:grid sm:grid-flow-col sm:auto-cols-max sm:justify-center gap-x-6 gap-y-5 min-w-max sm:min-w-0 pl-4 pr-10 sm:px-0">
-                {[
-                  { src: "/nhs-logo.webp", alt: "NHS" },
-                  { src: "/disney-logo.webp", alt: "Disney" },
-                  { src: "/marriott-logo.webp", alt: "Marriott Hotels" },
-                  { src: "/moorfields-logo.webp", alt: "Moorfields Eye Hospital" },
-                  { src: "/ihg-logo.webp", alt: "IHG Hotels & Resorts" },
-                  { src: "/travelodge-logo.webp", alt: "Travelodge" },
-                  { src: "/waitrose-logo.webp", alt: "Waitrose" },
-                  { src: "/westfield-logo.webp", alt: "Westfield" },
-                  { src: "/fenwick-logo.webp", alt: "Fenwick" },
-                  { src: "/freedomleisure-logo.webp", alt: "Freedom Leisure" },
-                  { src: "/queenmary-logo.webp", alt: "Queen Mary University" },
-                  { src: "/alpinef1-logo.webp", alt: "Alpine F1 Team" },
-                ].map((logo) => (
-                  <Image
-                    key={logo.alt}
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={120}
-                    height={60}
-                    unoptimized
-                    className="h-14 w-auto object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 shrink-0"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <TrustedByBar />
 
-      {/* ── THE COMPLIANCE CONTEXT ────────────────────────────────────── */}
+      {/* ── THE CLINICAL ENVIRONMENT ──────────────────────────────────── */}
       <section className="bg-[#111418] py-16 sm:py-20">
         <Container>
           <div className="grid gap-14 lg:grid-cols-[1.1fr_1fr] lg:items-start">
 
             <ScrollReveal>
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
-                The regulatory framework
+                The clinical environment
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
-                HTM 03-01 Is Not<br />a Recommendation.
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
+                Clinical Environments<br />Demand Different.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/55">
-                Health Technical Memorandum 03-01 defines the ventilation standards for healthcare premises in England. For NHS Trusts and private healthcare operators, compliance is a CQC inspection requirement, not a design aspiration.
+                When AHU plant fails in a hospital, the consequences are immediate and clinical. A failed theatre circuit means a cancelled list. A loss of negative pressure in an isolation room creates an infection risk. Inadequate air change rates on a ward are a patient safety issue.
               </p>
               <p className="mt-4 text-sm leading-7 text-white/55">
-                This means AHU plant in clinical areas must deliver validated performance — correct air change rates, pressure relationships, filtration grade, and temperature control — and maintain that performance between inspections.
+                AHU plant in clinical areas must deliver validated performance, correct air change rates, pressure relationships, filtration grade, and temperature control, and maintain that performance reliably between planned maintenance intervals.
               </p>
               <div className="mt-7">
                 <Link
@@ -213,7 +175,7 @@ export default function HospitalPage() {
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               What we find on site
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               The Reality of Ageing<br />NHS Plant
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
@@ -226,7 +188,7 @@ export default function HospitalPage() {
             {[
               {
                 title: "Belt-driven fans past service life",
-                desc: "Running at fixed speed regardless of demand. Bearing wear, belt slip, and increasing energy consumption — with no variable speed capability.",
+                desc: "Running at fixed speed regardless of demand. Bearing wear, belt slip, and increasing energy consumption, with no variable speed capability.",
               },
               {
                 title: "Filter banks overdue for replacement",
@@ -246,7 +208,7 @@ export default function HospitalPage() {
               },
               {
                 title: "Insulation and ductwork deterioration",
-                desc: "Deteriorating duct insulation creating condensation risk and potential for mould growth — particularly in older plant rooms.",
+                desc: "Deteriorating duct insulation creating condensation risk and potential for mould growth, particularly in older plant rooms.",
               },
             ].map((item) => (
               <div key={item.title} className="border-l-2 border-[#297858] bg-white p-5">
@@ -267,12 +229,12 @@ export default function HospitalPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
                 Our approach
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 Planned Around<br />Clinical Operations.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/55">
-                Healthcare projects are different from commercial refurbishments. The operational environment, the compliance obligations, and the consequences of disruption require a different kind of contractor — one that plans works around the hospital, not the other way around.
+                Healthcare projects are different from commercial refurbishments. The operational environment, the compliance obligations, and the consequences of disruption require a different kind of contractor, one that plans works around the hospital, not the other way around.
               </p>
               <p className="mt-4 text-sm leading-7 text-white/55">
                 Our engineers have worked in NHS environments for 40+ years. We understand how estates co-ordinators work, what IPC teams need to know, and why documentation matters as much as the works themselves.
@@ -318,7 +280,7 @@ export default function HospitalPage() {
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               What we deliver in healthcare
             </p>
-            <h2 className="font-display text-2xl font-extrabold uppercase text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
               Services for NHS &amp; Private Healthcare
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
@@ -339,7 +301,7 @@ export default function HospitalPage() {
               {
                 href: "/air-handling-unit-coil-replacement",
                 label: "Coil Replacement",
-                desc: "Restore heating and cooling performance. Any make or model — measured on site and replaced within the existing casing.",
+                desc: "Restore heating and cooling performance. Any make or model, measured on site and replaced within the existing casing.",
               },
               {
                 href: "/air-handling-unit-controller-solutions-upgrades",
@@ -372,7 +334,7 @@ export default function HospitalPage() {
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
                 Case study
               </p>
-              <h2 className="font-display text-2xl font-extrabold uppercase text-white sm:text-3xl">
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
                 NHS Hospital<br />12-AHU Programme
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -413,7 +375,7 @@ export default function HospitalPage() {
               <div className="relative h-full min-h-[420px] overflow-hidden shadow-lg lg:min-h-[520px]">
                 <Image
                   src="/hospital.webp"
-                  alt="NHS hospital plant room — BVS AHU replacement programme in a live clinical environment"
+                  alt="NHS hospital plant room, BVS AHU replacement programme in a live clinical environment"
                   fill
                   className="object-cover object-center"
                 />
@@ -435,9 +397,9 @@ export default function HospitalPage() {
 
             <ScrollReveal>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/45">
-                Speak to an engineer
+                Get in touch
               </p>
-              <h2 className="font-display text-3xl font-extrabold uppercase text-white sm:text-4xl">
+              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                 Discuss Your<br />Healthcare Estate
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
@@ -445,7 +407,7 @@ export default function HospitalPage() {
                 Tell us about your estate, the age and condition of the plant, and any compliance concerns. We&apos;ll confirm what the practical options are and how we can work around your clinical operations.
               </p>
               <div className="mt-7 space-y-3 border-l border-white/10 pl-5">
-                <p className="text-sm text-white/60">HTM 03-01 aware — validation and documentation as standard</p>
+                <p className="text-sm text-white/60">Validation and documentation as standard on all clinical works</p>
                 <p className="text-sm text-white/60">Live clinical environments managed routinely</p>
                 <p className="text-sm text-white/60">NHS Trusts, private healthcare, and specialist facilities</p>
                 <p className="text-sm text-white/60">Direct response from engineers, not sales handlers</p>
@@ -470,7 +432,7 @@ export default function HospitalPage() {
                   <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">Enquiry</p>
                   <div className="mt-3 h-[2px] w-10 bg-[#297858]" />
                   <p className="mt-5 text-sm leading-6 text-slate-500">
-                    Tell us about your healthcare estate — plant age, compliance concerns, or a specific project requirement. We&apos;ll respond within one working day.
+                    Tell us about your healthcare estate, plant age, compliance concerns, or a specific project requirement. We&apos;ll respond within one working day.
                   </p>
                   <div className="mt-7">
                     <QuickQuoteForm />
@@ -478,11 +440,11 @@ export default function HospitalPage() {
                   <div className="mt-6 flex flex-col gap-2 border-t border-slate-100 pt-5">
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                      Engineering response within 24 working hours
+                      Response within 24 hours
                     </div>
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                      No obligation — practical advice from the first call
+                      No obligation, practical advice from the first call
                     </div>
                   </div>
                 </div>
