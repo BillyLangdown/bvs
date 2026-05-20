@@ -1,9 +1,11 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const FROM = process.env.EMAIL_FROM || "BVS Enquiries <forms@bvs-ltd.co.uk>";
 const TO = process.env.EMAIL_TO || "enquiries@bvs-ltd.co.uk";
+
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY);
+}
 
 function row(label, value) {
   if (!value) return "";
@@ -51,7 +53,7 @@ export async function sendContactEmail({ name, email, mobile, phone, company, se
     row("Service", service),
   ].join("");
 
-  await resend.emails.send({
+  await getResend().emails.send({
     from: FROM,
     to: TO,
     replyTo: email,
@@ -70,7 +72,7 @@ export async function sendProductEnquiryEmail({ productSlug, name, email, compan
     row("Attachment", imageAttached),
   ].join("");
 
-  await resend.emails.send({
+  await getResend().emails.send({
     from: FROM,
     to: TO,
     replyTo: email,
