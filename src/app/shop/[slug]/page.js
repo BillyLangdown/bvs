@@ -168,12 +168,6 @@ export default async function ProductPage({ params }) {
                 )}
               </div>
 
-              {/* Excerpt */}
-              {product.excerpt && (
-                <p className="mt-5 border-l-2 border-[#297858] pl-4 text-sm leading-7 text-slate-500">
-                  {product.excerpt}
-                </p>
-              )}
 
               {/* CTAs */}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">

@@ -5,6 +5,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+
 function Zap({ className, strokeWidth = 2 }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
@@ -28,6 +29,7 @@ function ClipboardCheck({ className, strokeWidth = 2 }) {
     </svg>
   );
 }
+function CloseIcon({ className = "" }) {  return (    <svg      width="14"      height="14"      viewBox="0 0 24 24"      fill="none"      className={className}      aria-hidden="true"    >      <path        d="M6 6l12 12M18 6L6 18"        stroke="currentColor"        strokeWidth="2"        strokeLinecap="round"      />    </svg>  );}
 
 export const metadata = {
   title: "EC Fan Upgrades & Retrofits for Existing AHUs | BVS",
@@ -197,187 +199,184 @@ export default function ECFanUpgradesPage() {
   </Container>
 </section>
 
-      {/* ── 3. SOLUTION ── dark, card-based comparison ───────────────────── */}
+      {/* ── 3. COMPARISON ── dark ────────────────────────────────────────── */}
       <section className="bg-[#111418] py-16 sm:py-20">
   <Container>
-    <ScrollReveal className="max-w-3xl">
+
+    {/* Section header */}
+    <ScrollReveal className="mx-auto mb-10 max-w-2xl text-center">
       <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-        EC Fan Upgrades
+        EC vs AC
       </p>
 
       <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
-        Why Facilities Teams Upgrade to EC Fans
+        How EC Technology Compares
       </h2>
 
-      <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-
-      <p className="mt-5 max-w-2xl text-sm leading-7 text-white/70">
-        EC fan retrofits improve airflow efficiency, reduce maintenance,
-        and provide greater control compared to traditional AC fan sets.
-      </p>
+      <div className="mx-auto mt-3 h-[3px] w-10 bg-[#297858]" />
     </ScrollReveal>
 
-    {/* Comparison table */}
-    <div className="mt-10 overflow-hidden border border-white/10 bg-white/[0.03]">
-      {/* Header */}
-      <div className="grid grid-cols-[1.4fr_0.8fr_0.8fr] border-b border-white/10 bg-white/[0.02]">
-        <div className="border-r border-white/10 px-5 py-4">
-          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/35">
-            Comparison
-          </p>
-        </div>
+    <div className="grid gap-6 lg:grid-cols-2">
 
-        <div className="border-r border-white/10 px-5 py-4 text-center">
-          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/40">
-            Traditional AC
-          </p>
-        </div>
+      {/* Comparison table */}
+      <ScrollReveal className="h-full">
+        <div className="flex h-full flex-col overflow-hidden border border-white/10 bg-white/[0.03]">
 
-        <div className="px-5 py-4 text-center">
-          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#8fd1b5]">
-            EC Fan Upgrade
-          </p>
+          {/* Table header */}
+          <div className="grid grid-cols-[1fr_90px_90px] border-b border-white/10 bg-white/[0.02]">
+            <div className="px-5 py-3" />
+
+            <div className="flex items-center justify-center border-l border-white/10 px-3 py-3">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-white/30">
+                AC
+              </p>
+            </div>
+
+            <div className="flex items-center justify-center border-l border-white/10 px-3 py-3">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-[#8fd1b5]">
+                EC
+              </p>
+            </div>
+          </div>
+
+          {[
+            {
+              label: "Energy efficiency",
+              ac: false,
+              ec: true,
+            },
+            {
+              label: "Low maintenance",
+              ac: false,
+              ec: true,
+            },
+            {
+              label: "Variable speed control",
+              ac: false,
+              ec: true,
+            },
+            {
+              label: "BMS integration",
+              ac: false,
+              ec: true,
+            },
+            {
+              label: "Built-in diagnostics",
+              ac: false,
+              ec: true,
+            },
+            {
+              label: "Lower running costs",
+              ac: false,
+              ec: true,
+            },
+          ].map((row, i, arr) => (
+            <div
+              key={row.label}
+              className={`grid grid-cols-[1fr_90px_90px] ${
+                i !== arr.length - 1 ? "border-b border-white/10" : ""
+              }`}
+            >
+              <div className="border-r border-white/10 px-5 py-4">
+                <p className="text-sm text-white/80">{row.label}</p>
+              </div>
+
+              <div className="flex items-center justify-center border-r border-white/10 py-4">
+                {row.ac ? (
+                  <CheckIcon className="text-white/40" />
+                ) : (
+                  <CloseIcon className="text-white/20" />
+                )}
+              </div>
+
+              <div className="flex items-center justify-center py-4">
+                {row.ec ? (
+                  <CheckIcon className="text-[#297858]" />
+                ) : (
+                  <CloseIcon className="text-white/20" />
+                )}
+              </div>
+            </div>
+          ))}
         </div>
+      </ScrollReveal>
+
+      {/* Simple stat card */}
+  {/* Energy saving visual */}
+<ScrollReveal delay={80} className="h-full">
+  <div className="flex h-full flex-col justify-between border border-white/10 bg-white/[0.03] p-8">
+
+    <div>
+      <p className="text-center text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+        Typical Energy Reduction
+      </p>
+
+      <div className="mt-6 text-center">
+        <p className="text-7xl font-extrabold leading-none text-white">
+          40%
+        </p>
+
+        <p className="mt-3 text-sm text-white/55">
+          Lower fan energy consumption after EC retrofit
+        </p>
       </div>
 
-      {[
-        {
-          label: "Lower energy consumption",
-          ac: false,
-          ec: true,
-        },
-        {
-          label: "Reduced maintenance requirements",
-          ac: false,
-          ec: true,
-        },
-        {
-          label: "Variable speed control",
-          ac: false,
-          ec: true,
-        },
-        {
-          label: "BMS compatibility",
-          ac: false,
-          ec: true,
-        },
-        {
-          label: "Fault diagnostics",
-          ac: false,
-          ec: true,
-        },
-      ].map((row, i, arr) => (
-        <div
-          key={row.label}
-          className={`grid grid-cols-[1.4fr_0.8fr_0.8fr] ${
-            i !== arr.length - 1 ? "border-b border-white/10" : ""
-          }`}
-        >
-          {/* Label */}
-          <div className="border-r border-white/10 px-5 py-5">
-            <p className="text-sm font-medium text-white">
-              {row.label}
+      {/* Visual comparison */}
+      <div className="mt-10 space-y-5">
+
+        {/* AC */}
+        <div>
+          <div className="mb-2 flex items-center justify-between">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-white/35">
+              Traditional AC Fan
+            </p>
+
+            <p className="text-[11px] font-semibold text-white/35">
+              100%
             </p>
           </div>
 
-          {/* AC */}
-          <div className="flex items-center justify-center border-r border-white/10 px-5 py-5">
-            {row.ac ? (
-              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white/10">
-                <svg
-                  className="h-3.5 w-3.5 text-white/70"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M16.704 5.29a1 1 0 010 1.42l-7.2 7.2a1 1 0 01-1.415 0l-3-3a1 1 0 111.414-1.41l2.293 2.29 6.497-6.49a1 1 0 011.411 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-            ) : (
-              <div className="h-3 w-3 rounded-full border border-white/15 bg-transparent" />
-            )}
-          </div>
-
-          {/* EC */}
-          <div className="flex items-center justify-center px-5 py-5">
-            {row.ec ? (
-              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#297858]">
-                <svg
-                  className="h-3.5 w-3.5 text-white"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M16.704 5.29a1 1 0 010 1.42l-7.2 7.2a1 1 0 01-1.415 0l-3-3a1 1 0 111.414-1.41l2.293 2.29 6.497-6.49a1 1 0 011.411 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-            ) : (
-              <div className="h-3 w-3 rounded-full border border-white/15 bg-transparent" />
-            )}
+          <div className="h-4 w-full overflow-hidden rounded-full bg-white/10">
+            <div className="h-full w-full bg-white/30" />
           </div>
         </div>
-      ))}
-    </div>
 
-  
-{/* SIMPLE ENERGY COMPARISON - TWO BARS ONLY */}
-<div className="mt-8 border border-white/10 bg-white/[0.02] p-6">
+        {/* EC */}
+        <div>
+          <div className="mb-2 flex items-center justify-between">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-[#8fd1b5]">
+              EC Fan Upgrade
+            </p>
 
-  <div className="mb-6">
-    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#297858]">
-      Energy Consumption
-    </p>
-    <h3 className="mt-2 text-lg font-bold text-white">
-      AC vs EC Fan Annual Energy Use
-    </h3>
-    <p className="mt-1 text-xs text-white/40">
-      Typical AHU fan set (per year, 6,000–8,000 hrs operation)
-    </p>
-  </div>
+            <p className="text-[11px] font-semibold text-[#8fd1b5]">
+              ~60%
+            </p>
+          </div>
 
-  <div className="space-y-6">
+          <div className="h-4 w-full overflow-hidden rounded-full bg-white/10">
+            <div className="h-full w-[60%] bg-[#297858]" />
+          </div>
+        </div>
 
-    {/* AC */}
-    <div>
-      <div className="mb-2 flex justify-between text-xs text-white/60">
-        <span>Traditional AC Fan System</span>
-        <span>10,000 kWh</span>
-      </div>
-      <div className="h-6 w-full bg-white/10">
-        <div className="h-6 w-[100%] bg-white/30" />
       </div>
     </div>
 
-    {/* EC */}
-    <div>
-      <div className="mb-2 flex justify-between text-xs text-white/60">
-        <span>EC Fan System</span>
-        <span>5,800 kWh</span>
-      </div>
-      <div className="h-6 w-full bg-white/10">
-        <div className="h-6 w-[58%] bg-[#297858]" />
-      </div>
+    <div className="mt-8 border-t border-white/10 pt-5">
+      <p className="text-center text-xs leading-6 text-white/40">
+        Typical savings based on continuously operated commercial AHUs.
+      </p>
     </div>
 
   </div>
+</ScrollReveal>
 
-  {/* key takeaway */}
-  <div className="mt-6 border-t border-white/10 pt-4 text-xs text-white/40">
-    EC fan upgrades typically reduce energy consumption by ~40–45% while maintaining identical airflow performance.
-  </div>
-
-</div>
+    </div>
   </Container>
 </section>
 
+
       {/* ── 5. SOCIAL PROOF ── dark ───────────────────────────────────────── */}
-      <section className="bg-[#111418] py-16 sm:py-20">
+      <section className="bg-[#111418]/95 py-16 sm:py-20">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-start">
             <ScrollReveal>
@@ -432,63 +431,72 @@ export default function ECFanUpgradesPage() {
 
       {/* ── 6. HOW IT WORKS ── surface-2 ─────────────────────────────────── */}
       <section className="bg-[#f7f6f5] py-16 sm:py-20">
-        <Container>
-          <ScrollReveal className="mb-10">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              How it works
-            </p>
-            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
-              From inital appointment to<br />Return to Service
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-          </ScrollReveal>
+  <Container>
+    <ScrollReveal className="mb-10">
+      <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+        How it works
+      </p>
+      <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
+        From inital appointment to<br />Return to Service
+      </h2>
+      <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+    </ScrollReveal>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                n: "01",
-                title: "Discuss your requirements",
-                body: "Talk through your system setup, existing fan types, and targets. We confirm feasibility and what an upgrade could deliver before any site visit.",
-                points: ["Feasibility confirmed upfront", "Energy saving potential discussed", "No commitment required"],
-              },
-              {
-                n: "02",
-                title: "Site survey",
-                body: "We visit site to audit your existing fan sets, record motor type and current power draw, and produce an energy model with projected savings and payback assessment.",
-                points: ["Motor type and consumption recorded", "Energy model produced", "Recommendations from our engineers"],
-              },
-              {
-                n: "03",
-                title: "Fan selection",
-                body: "EC fans are selected to match the existing airflow duty, static pressure, and speed range. Controls integration is specified at the same time.",
-                points: ["Matched to existing duty", "Ziehl-Abegg, ebm-papst, Systemair", "BMS interface specified"],
-              },
-              {
-                n: "04",
-                title: "Installation",
-                body: "The existing fan and motor assembly is removed and the EC unit installed. Electrical supply, controls wiring, commissioning, and airflow verification all included.",
-                points: ["Existing fan set fully removed", "Electrical and controls wired", "Airflow and speed verified on completion"],
-              },
-            ].map((step, i) => (
-              <ScrollReveal key={step.n} delay={i * 60}>
-                <div className="border border-slate-200 bg-white p-5">
-                  <span className="text-4xl font-extrabold text-[#297858]/15">{step.n}</span>
-                  <h3 className="mt-2 text-sm font-extrabold text-slate-900">{step.title}</h3>
-                  <p className="mt-2 text-xs leading-5 text-slate-500">{step.body}</p>
-                  <ul className="mt-3 space-y-1.5">
-                    {step.points.map((p) => (
-                      <li key={p} className="flex items-start gap-2 text-[11px] text-slate-400">
-                        <span className="mt-1.5 h-1 w-1.5 shrink-0 bg-[#297858]" />
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </ScrollReveal>
-            ))}
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+      {[
+        {
+          n: "01",
+          title: "Discuss your requirements",
+          body: "Talk through your system setup, existing fan types, and targets. We confirm feasibility and what an upgrade could deliver before any site visit.",
+          points: ["Feasibility confirmed upfront", "Energy saving potential discussed", "No commitment required"],
+        },
+        {
+          n: "02",
+          title: "Site survey",
+          body: "We visit site to audit your existing fan sets, record motor type and current power draw, and produce an energy model with projected savings and payback assessment.",
+          points: ["Motor type and consumption recorded", "Energy model produced", "Recommendations from our engineers"],
+        },
+        {
+          n: "03",
+          title: "Fan selection",
+          body: "EC fans are selected to match the existing airflow duty, static pressure, and speed range. Controls integration is specified at the same time.",
+          points: ["Matched to existing duty", "Ziehl-Abegg, ebm-papst, Systemair", "BMS interface specified"],
+        },
+        {
+          n: "04",
+          title: "Installation",
+          body: "The existing fan and motor assembly is removed and the EC unit installed. Electrical supply, controls wiring, commissioning, and airflow verification all included.",
+          points: ["Existing fan set fully removed", "Electrical and controls wired", "Airflow and speed verified on completion"],
+        },
+      ].map((step, i) => (
+        <ScrollReveal key={step.n} delay={i * 60} className="h-full">
+          <div className="h-full flex flex-col border border-slate-200 bg-white p-5">
+            <span className="text-4xl font-extrabold text-[#297858]/15">
+              {step.n}
+            </span>
+
+            <h3 className="mt-2 text-sm font-extrabold text-slate-900">
+              {step.title}
+            </h3>
+
+            <p className="mt-2 text-xs leading-5 text-slate-500 flex-1">
+              {step.body}
+            </p>
+
+            <ul className="mt-3 space-y-1.5">
+              {step.points.map((p) => (
+                <li key={p} className="flex items-start gap-2 text-[11px] text-slate-400">
+                  <span className="mt-1.5 h-1 w-1.5 shrink-0 bg-[#297858]" />
+                  {p}
+                </li>
+              ))}
+            </ul>
           </div>
-        </Container>
-      </section>
+        </ScrollReveal>
+      ))}
+    </div>
+  </Container>
+</section>
 
       {/* ── 8. FINAL CTA ── white ────────────────────────────────────────── */}
       <section id="upgrade" className="bg-white py-20">
