@@ -113,7 +113,7 @@ export default function ResourcesPage() {
                 Got a technical question?
               </h2>
               <p className="mt-1 text-sm text-white/55">
-                If you are working through a specific ventilation or HVAC problem, our engineers are happy to help directly.
+                If you are working through a specific ventilation or HVAC problem, the team are happy to help directly.
               </p>
             </div>
             <Link

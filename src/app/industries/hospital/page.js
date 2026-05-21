@@ -18,12 +18,12 @@ const faqs = [
     a: "Yes. The majority of our healthcare work takes place in occupied buildings. We plan all works with phased shutdown windows, temporary ventilation where required, and infection control measures appropriate to the clinical environment.",
   },
   {
-    q: "Do you understand HTM 03-01 requirements?",
-    a: "HTM 03-01 defines the ventilation standards for healthcare premises in England and Wales. We are familiar with the requirements for different clinical environments: theatres, wards, isolation rooms, and critical care. We commission and document works accordingly.",
+    q: "Do you understand clinical ventilation requirements?",
+    a: "We have worked in NHS and private healthcare environments for over 40 years. We are familiar with the ventilation requirements for different clinical settings: theatres, wards, isolation rooms, and critical care. We commission and document works to the standards appropriate for each area.",
   },
   {
-    q: "Can you validate AHU performance to HTM 03-01?",
-    a: "We carry out airflow validation surveys that confirm performance against the relevant HTM 03-01 parameters: air change rates, pressure differentials, filter conditions, and temperature. We produce a formal report suitable for estates records.",
+    q: "Can you validate AHU performance?",
+    a: "We carry out airflow validation surveys that confirm performance against the relevant parameters for the clinical environment: air change rates, pressure differentials, filter conditions, and temperature. We produce a formal report suitable for estates records.",
   },
   {
     q: "How do you manage infection control during works?",
@@ -67,7 +67,7 @@ export default function HospitalPage() {
               className="font-display text-2xl font-extrabold uppercase leading-[1.08] text-white sm:text-5xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-              Ventilation That<br />Cannot Fail.
+              Ventilation Works in<br />Live Clinical Environments
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white/85" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
@@ -258,7 +258,7 @@ export default function HospitalPage() {
                   },
                   {
                     title: "Post-works validation",
-                    desc: "Airflow performance confirmed against HTM 03-01 parameters on completion. Full commissioning record issued for estates files.",
+                    desc: "Airflow performance confirmed and documented on completion. Full commissioning record issued for estates files.",
                   },
                 ].map((item) => (
                   <div key={item.title} className="bg-white/5 p-5">
@@ -346,7 +346,7 @@ export default function HospitalPage() {
                   <span className="text-sm text-white/55">Programme delivered over 18 months around live clinical operations</span>
                 </div>
                 <div className="border-l-2 border-white/15 pl-4">
-                  <span className="text-sm text-white/55">HTM 03-01 validation carried out on completion of each unit</span>
+                  <span className="text-sm text-white/55">Performance validation carried out on completion of each unit</span>
                 </div>
               </div>
               <p className="mt-6 text-sm leading-7 text-white/55">
@@ -357,7 +357,7 @@ export default function HospitalPage() {
                   <span className="text-sm font-bold text-white">Zero unplanned clinical service interruptions across the programme</span>
                 </div>
                 <div className="border-l-2 border-[#297858] pl-4">
-                  <span className="text-sm text-white/80">HTM 03-01 compliance documentation issued for all 12 units</span>
+                  <span className="text-sm text-white/80">Full commissioning documentation issued for all 12 units</span>
                 </div>
               </div>
               <div className="mt-7">
@@ -410,7 +410,7 @@ export default function HospitalPage() {
                 <p className="text-sm text-white/60">Validation and documentation as standard on all clinical works</p>
                 <p className="text-sm text-white/60">Live clinical environments managed routinely</p>
                 <p className="text-sm text-white/60">NHS Trusts, private healthcare, and specialist facilities</p>
-                <p className="text-sm text-white/60">Direct response from engineers, not sales handlers</p>
+                <p className="text-sm text-white/60">Direct response, not sales handlers</p>
               </div>
               <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6">
                 <a href="tel:01256518170" className="inline-flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-white">

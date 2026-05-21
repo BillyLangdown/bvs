@@ -66,7 +66,7 @@ export default function DefencePage() {
               className="text-2xl font-extrabold leading-[1.08] text-white sm:text-5xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-              Secure Sites.<br />No Shortcuts.
+              Specialist Contractors<br />for Secure and Government Sites
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white/85" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
@@ -301,7 +301,7 @@ export default function DefencePage() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
-      <FAQAccordion faqs={faqs} />
+      <FAQAccordion faqs={faqs} theme="dark" />
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}
       <section className="bg-[#111418] py-20">
@@ -323,7 +323,7 @@ export default function DefencePage() {
                 <p className="text-sm text-white/60">Secure site access experience as standard</p>
                 <p className="text-sm text-white/60">Programme compliance, works delivered within agreed windows</p>
                 <p className="text-sm text-white/60">Full documentation to the required standard</p>
-                <p className="text-sm text-white/60">Direct response from engineers, not sales handlers</p>
+                <p className="text-sm text-white/60">Direct response, not sales handlers</p>
               </div>
               <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6">
                 <a href="tel:01256518170" className="inline-flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-white">

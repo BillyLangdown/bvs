@@ -91,7 +91,7 @@ export default function ECFanUpgradesPage() {
               className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-              Lower energy <br/> & better reliability.
+              Lower Energy Use<br />and Better Reliability
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p
@@ -100,7 +100,11 @@ export default function ECFanUpgradesPage() {
             >
               EC fan retrofits upgrade existing AHU fan systems to improve efficiency, reliability, and control without full unit replacement, reducing energy use and carbon output.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <p className="mt-6 text-sm text-white/70">
+              Call us:{" "}
+              <a href="tel:01256518170" className="font-semibold text-white transition-colors hover:text-white/80">01256 518170</a>
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
               <a
                 href="#upgrade"
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
@@ -486,57 +490,6 @@ export default function ECFanUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── 7. OFFER ── dark ─────────────────────────────────────────────── */}
-      <section className="bg-[#111418] py-14 sm:py-16">
-        <Container>
-          <ScrollReveal>
-            <div className="border border-[#297858]/40 bg-[#297858]/10 p-8 sm:p-10">
-              <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-                    No commitment required
-                  </p>
-                  <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
-                  Upgrade Assessment
-                  </h2>
-                  <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-                  <p className="mt-4 text-sm leading-6 text-white/60">
-                  Before any works are proposed, we assess your existing fan sets and recommend an upgrade solution suited to your system, operational requirements, and long-term performance goals.
-                  </p>
-                  <ul className="mt-5 space-y-2.5">
-                    {[
-                      "Energy-saving guidance and recommendations from AHU specialists",
-                      "Retrofit suitability confirmed on site",
-                      "Part L and ESOS compliance documentation at handover",
-                      "No obligation to proceed",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-white/65">
-                        <CheckIcon className="mt-0.5 shrink-0 text-[#297858]" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex flex-col gap-3 lg:min-w-[190px]">
-                  <a
-                    href="#audit"
-                    className="inline-flex items-center justify-center bg-[#297858] px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-                  >
-                    Book an appointment
-                  </a>
-                  <a
-                    href="tel:01256518170"
-                    className="inline-flex items-center justify-center gap-2 border border-white/25 px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/5"
-                  >
-                    <PhoneIcon /> 01256 518170
-                  </a>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </Container>
-      </section>
-
       {/* ── 8. FINAL CTA ── white ────────────────────────────────────────── */}
       <section id="upgrade" className="bg-white py-20">
         <Container>
@@ -557,7 +510,7 @@ export default function ECFanUpgradesPage() {
   {[
     "Upgrade proposal tailored to your system",
     "All major AHU makes and configurations covered",
-    "Direct response from engineers, not a sales team",
+    "Direct response, not a sales team",
   ].map((item) => (
     <div key={item} className="flex items-start gap-2.5">
       <div className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
@@ -569,12 +522,10 @@ export default function ECFanUpgradesPage() {
   ))}
 
 </div>
-              <div className="mt-7 flex flex-col gap-3 border-t border-slate-100 pt-6">
-                <a href="tel:01256518170" className="inline-flex items-center gap-3 text-sm text-slate-500 transition-colors hover:text-slate-900">
+              <div className="mt-6 border border-[#297858]/20 bg-[#297858]/5 p-5">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#297858]">Call us directly</p>
+                <a href="tel:01256518170" className="mt-3 flex items-center gap-3 text-2xl font-extrabold text-slate-900 transition-colors hover:text-[#297858]">
                   <PhoneIcon /> 01256 518170
-                </a>
-                <a href="mailto:info@bvs-ltd.co.uk" className="inline-flex items-center gap-3 text-sm text-slate-500 transition-colors hover:text-slate-900">
-                  <MailIcon /> info@bvs-ltd.co.uk
                 </a>
               </div>
             </ScrollReveal>
@@ -605,7 +556,7 @@ export default function ECFanUpgradesPage() {
       </section>
 
       {/* ── 9. FAQ ── surface-2 ───────────────────────────────────────────── */}
-      <FAQAccordion faqs={faqs} />
+      <FAQAccordion faqs={faqs} theme="dark" />
 
       {/* ── RELATED SERVICES ── white ────────────────────────────────────── */}
       <section className="border-t border-slate-100 bg-white py-12">

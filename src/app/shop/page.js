@@ -58,7 +58,7 @@ export default async function ShopPage() {
               <p className="mt-4 text-sm text-white/40">
                 Need help specifying the right component?{" "}
                 <Link href="/contact" className="text-[#297858] underline-offset-2 hover:underline">
-                  Ask an engineer.
+                  Ask the team.
                 </Link>
               </p>
             </div>
@@ -133,7 +133,7 @@ export default async function ShopPage() {
             </h2>
             <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/60">
-              Select the product type below and fill in your requirements. Our engineers will come
+              Select the product type below and fill in your requirements. We will come
               back within one working day with a specification and price.
             </p>
           </ScrollReveal>

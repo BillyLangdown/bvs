@@ -67,11 +67,11 @@ export default function HotelPage() {
               className="font-display text-2xl font-extrabold uppercase leading-[1.08] text-white sm:text-5xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-              Guest Comfort First.<br />Works Around You.
+              AHU Works Planned<br />Around Hotel Occupancy
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white/85" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
-              In hotels, HVAC failure is not an engineering problem — it is a guest experience problem with immediate revenue consequences. We plan all works around occupancy, operate out of hours, and keep rooms and function spaces trading throughout.
+              In hotels, HVAC failure is not an engineering problem; it is a guest experience problem with immediate revenue consequences. We plan all works around occupancy, operate out of hours, and keep rooms and function spaces trading throughout.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -362,7 +362,7 @@ export default function HotelPage() {
                 <p className="text-sm text-white/60">Occupancy-first programme planning</p>
                 <p className="text-sm text-white/60">Overnight and out-of-hours delivery as standard</p>
                 <p className="text-sm text-white/60">Hotels and serviced apartments</p>
-                <p className="text-sm text-white/60">Direct response from engineers, not sales handlers</p>
+                <p className="text-sm text-white/60">Direct response, not sales handlers</p>
               </div>
               <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6">
                 <a href="tel:01256518170" className="inline-flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-white">

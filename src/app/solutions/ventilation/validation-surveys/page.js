@@ -37,7 +37,7 @@ const deliverables = [
   },
   {
     title: "Independent Documented Record",
-    body: "The completed report stands as an independent record of system condition at the point of survey — a reliable reference for asset management, maintenance planning, and future works.",
+    body: "The completed report stands as an independent record of system condition at the point of survey, a reliable reference for asset management, maintenance planning, and future works.",
   },
 ];
 
@@ -52,7 +52,7 @@ const painPoints = [
   },
   {
     title: "Everything Is Reactive",
-    body: "Without a baseline condition record, every decision is reactive — you respond to failures rather than preventing them. A survey gives you the data to move from reactive to planned.",
+    body: "Without a baseline condition record, every decision is reactive; you respond to failures rather than preventing them. A survey gives you the data to move from reactive to planned.",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function ValidationSurveysPage() {
     <div className="pb-20 lg:pb-0">
 
       {/* Hero */}
-      <section className="relative min-h-[480px] overflow-hidden bg-slate-900">
+      <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
         <Image
           src="/ventilation-survey-hero.webp"
           alt="BVS engineer carrying out an AHU condition survey on-site"
@@ -75,7 +75,7 @@ export default function ValidationSurveysPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/35 to-transparent" />
 
-        <Container className="relative flex min-h-[480px] items-center pt-16 pb-28">
+        <Container className="relative flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
           <div className="max-w-2xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#297858]">
               Ventilation Solutions
@@ -97,7 +97,7 @@ export default function ValidationSurveysPage() {
               </Link>
               <a
                 href="#why-it-matters"
-                className="inline-flex items-center gap-2 border border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
                 Learn more
                 <ArrowDownIcon />
@@ -217,13 +217,19 @@ export default function ValidationSurveysPage() {
                 Tell us about your site, the number of units, and what access is available. We&apos;ll come back within one working day.
               </p>
               <ul className="mt-5 flex flex-col gap-2">
-                {["No obligation", "Response within one working day", "Speak directly with a specialist"].map((p) => (
+                {["No obligation", "Response within one working day", "Honest assessment, no obligation"].map((p) => (
                   <li key={p} className="flex items-center gap-2 text-sm text-slate-700">
                     <CheckIcon />
                     {p}
                   </li>
                 ))}
               </ul>
+              <div className="mt-6 border border-[#297858]/20 bg-[#297858]/5 p-5">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#297858]">Call us directly</p>
+                <a href="tel:01256518170" className="mt-3 flex items-center gap-3 text-2xl font-extrabold text-slate-900 transition-colors hover:text-[#297858]">
+                  <PhoneIcon /> 01256 518170
+                </a>
+              </div>
               <div className="mt-8 border-t border-slate-200 pt-6">
                 <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
                   Related services
@@ -305,6 +311,13 @@ function ArrowIcon() {
   );
 }
 
+function PhoneIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="shrink-0">
+      <path d="M6.5 3h3l1 5-2 1.5a16 16 0 0 0 6.5 6.5L16.5 14l5 1v3c0 1.1-.9 2-2 2C10.8 20 4 13.2 4 4.5c0-1.1.9-2 2-2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+    </svg>
+  );
+}
 function CheckIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">

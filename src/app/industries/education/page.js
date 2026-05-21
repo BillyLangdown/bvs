@@ -66,7 +66,7 @@ export default function EducationPage() {
               className="text-2xl font-extrabold leading-[1.08] text-white sm:text-5xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-              Around Term Time.<br />Within Budget.
+              AHU Works Planned Around<br />Term Dates and Education Budgets
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white/85" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
@@ -316,7 +316,7 @@ export default function EducationPage() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
-      <FAQAccordion faqs={faqs} />
+      <FAQAccordion faqs={faqs} theme="dark" />
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}
       <section className="bg-[#111418] py-20">
@@ -338,7 +338,7 @@ export default function EducationPage() {
                 <p className="text-sm text-white/60">Holiday window delivery, programme planned around your calendar</p>
                 <p className="text-sm text-white/60">Condition surveys to support capital planning and budget bids</p>
                 <p className="text-sm text-white/60">Schools, colleges, universities, and specialist estates</p>
-                <p className="text-sm text-white/60">Direct response from engineers, not sales handlers</p>
+                <p className="text-sm text-white/60">Direct response, not sales handlers</p>
               </div>
               <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6">
                 <a href="tel:01256518170" className="inline-flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-white">

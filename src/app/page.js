@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { getCaseStudies } from "@/lib/wordpress/api";
-import { AdditionalServicesAccordion } from "@/components/ui/AdditionalServicesAccordion";
+import { AllServicesPanel } from "@/components/ui/AllServicesPanel";
 
 /* ── DATA ───────────────────────────────────────────────────────────── */
 
@@ -164,7 +164,11 @@ const casePlaceholders = [
   {
     type: "EC Fan Upgrade",
     sector: "Leisure Centre",
-    outcome: "Dorset leisure centre AHU was suffering fan failures and uncontrolled humidity across the pool hall. BVS retrofitted direct-drive EC fans, restoring full airflow and eliminating belt-driven maintenance overhead.",
+    bullets: [
+      "Pool hall AHU with recurring fan failures and humidity control issues",
+      "Direct-drive EC fans retrofitted into existing casing, no structural changes needed",
+      "Full airflow restored and ongoing belt-driven maintenance eliminated",
+    ],
     photo: "/dorset-leisure-centre-case-study.webp",
     photoAlt: "Dorset leisure centre AHU, EC fan upgrade carried out by BVS",
     href: "/case-studies/leisure-centre-dorset-ec-fan-upgrade",
@@ -172,7 +176,11 @@ const casePlaceholders = [
   {
     type: "AHU Refurbishment",
     sector: "Healthcare",
-    outcome: "NHS Hammersmith & Fulham AHUs refurbished to full specification, covering fan repairs, corrosion treatment, damper replacement, and new components, completed without disruption to clinical services.",
+    bullets: [
+      "Multiple AHUs across a live NHS site requiring full condition refurbishment",
+      "Fan repairs, corrosion treatment, damper and component replacement throughout",
+      "Completed to full specification with no disruption to clinical services",
+    ],
     photo: "/nhs-hammersmith-fulham-case-study.webp",
     photoAlt: "NHS Hammersmith & Fulham, AHU refurbishment carried out by BVS",
     href: "/case-studies/nhs-hammersmith-ahu-refurbishment",
@@ -180,7 +188,11 @@ const casePlaceholders = [
   {
     type: "AHU Manufacturing",
     sector: "Hotel",
-    outcome: "Warner Leisure Hotel's Gunton Hall required a custom-built replacement AHU for their swimming pool, tailor-made for a constrained plantroom, delivered in flatpack, and commissioned with a Trend controls panel.",
+    bullets: [
+      "Custom-built pool hall AHU required to fit a constrained plantroom",
+      "Manufactured in flatpack sections, commissioned with a Trend controls panel",
+      "Single-contract delivery from survey and design through to handover",
+    ],
     photo: "/warner-hotel-gunton-case-study.webp",
     photoAlt: "Warner Leisure Hotel Gunton Hall, custom-built AHU manufactured and installed by BVS",
     href: "/case-studies/warner-leisure-hotel-gunton-hall-ahu",
@@ -256,13 +268,13 @@ export default function Home() {
                 Discuss your project
                 <ArrowIcon />
               </Link>
-              <Link
+              <a
                 href="#services"
                 className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
                 Our Services
                 <ArrowDownIcon />
-              </Link>
+              </a>
             </div>
           </div>
         </Container>
@@ -344,7 +356,7 @@ export default function Home() {
     href="/contact"
     className="font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
   >
-    Speak directly with an engineer →
+    Speak to our team →
   </Link>
 </p>
 </ScrollReveal>
@@ -437,91 +449,11 @@ export default function Home() {
   ))}
 </div>
 
-{/* FULL SERVICES */}
-<div className="mt-20">
-  <div className="mb-8 flex items-center gap-5">
-    <div className="h-px flex-1 bg-black/10" />
-
-    <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">
-      Full service capability
-    </p>
-
-    <div className="h-px flex-1 bg-black/10" />
-  </div>
-
-  <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-    {services.filter((s) => !s.highlight).map((s, i) => (
-      <ScrollReveal key={s.title} delay={i * 40}>
-        <Link
-          href={s.href}
-          className="group flex h-full flex-col overflow-hidden border border-black/5 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
-        >
-          {/* IMAGE */}
-          <div className="relative h-44 overflow-hidden">
-            <Image
-              src={s.photo}
-              alt={s.title}
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-
-            <div className="absolute bottom-4 left-4 right-4">
-              <h3 className="text-[15px] font-extrabold leading-tight text-white">
-                {s.title}
-              </h3>
-            </div>
-          </div>
-
-          {/* CONTENT */}
-          <div className="flex flex-1 flex-col p-5">
-
-
-  {/* PRIMARY OUTCOME */}
-  <p className="mt-2 text-[13px] font-semibold leading-5 text-slate-800">
-    {s.outcome}
-  </p>
-
-  {/* KEY SIGNALS (only first 2 for scanning) */}
-  <div className="mt-3 space-y-2">
-    {s.signs.slice(0, 2).map((sign) => (
-      <div
-        key={sign}
-        className="flex items-start gap-2 text-[12.5px] leading-5 text-slate-600"
-      >
-        <div className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
-        <span>{sign}</span>
-      </div>
-    ))}
-  </div>
-
-  {/* CTA */}
-  <div className="mt-auto pt-6">
-    <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] transition group-hover:gap-3">
-      Learn more <ArrowIcon />
-    </div>
-  </div>
-</div>
-        </Link>
-      </ScrollReveal>
-    ))}
-  </div>
-</div>
-
-    {/* ADDITIONAL SERVICES */}
-<div className="mt-16">
-  <div className="mb-6 flex items-center gap-5">
-    <div className="h-px flex-1 bg-black/10" />
-    <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">
-      Additional services
-    </p>
-    <div className="h-px flex-1 bg-black/10" />
-  </div>
-
-  <AdditionalServicesAccordion services={additionalServices} />
-</div>
+    {/* ALL SERVICES (collapsible) */}
+    <AllServicesPanel
+      services={services.filter((s) => !s.highlight)}
+      additionalServices={additionalServices}
+    />
 
   </Container>
 </section>
@@ -538,7 +470,7 @@ export default function Home() {
         </p>
 
         <h2 className="mt-3 text-xl font-semibold leading-snug text-slate-900 sm:text-2xl">
-          Certified for regulated HVAC and engineering works
+          Certified for regulated HVAC <br/> and engineering works
         </h2>
 
         <div className="mt-5 h-[2px] w-10 bg-[#297858]" />
@@ -702,7 +634,7 @@ export default function Home() {
                 Whether it&apos;s a planned refurbishment programme, emergency coil replacement, urgent fan failure, or a full new installation, we respond quickly and manage the entire project directly.
               </p>
               <ul className="mt-5 flex flex-col gap-2">
-                {["No obligation enquiry", "Response within one working day, direct from an engineer", "Speak directly with a specialist, not a sales team"].map((p) => (
+                {["No obligation enquiry", "Response within one working day", "No sales handlers, straight to the team"].map((p) => (
                   <li key={p} className="flex items-center gap-2 text-sm text-white/60">
                     <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
                     {p}
@@ -714,7 +646,7 @@ export default function Home() {
             <ScrollReveal delay={100} className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-[#297858] px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#1d5c42]"
+                className="inline-flex items-center justify-center gap-2 bg-[#297858] px-7 py-4 text-sm font-bold  tracking-wide text-white transition-colors hover:bg-[#1d5c42]"
               >
                 Discuss your project
                 <ArrowIcon />
@@ -756,46 +688,58 @@ async function CaseStudiesBlock() {
             <Link
               key={isWp ? item.id : item.type + i}
               href={isWp ? `/case-studies/${item.slug}` : (item.href || "/case-studies")}
-              className="group flex flex-col overflow-hidden bg-white shadow-sm transition-all duration-200 hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)]"
+              className="group flex flex-col overflow-hidden border border-slate-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-slate-200 hover:shadow-[0_20px_50px_rgba(0,0,0,0.09)]"
             >
-              <div className="relative h-52 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
+              {/* IMAGE */}
+              <div className="relative h-56 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
                 {item.photo && (
                   <Image
                     src={item.photo}
                     alt={item.photoAlt || item.type}
                     fill
                     unoptimized
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 )}
-                {!item.photo && (
-                  <span className="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 select-none text-7xl font-extrabold text-white/5">
-                    {isWp ? "CS" : item.type?.split(" ")[0]}
-                  </span>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                <div className="absolute bottom-4 left-4 flex flex-wrap gap-1.5">
-                  <span className="bg-[#297858] px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                {/* TAGS */}
+                <div className="absolute left-5 top-5 flex flex-wrap gap-2">
+                  <span className="bg-[#297858] px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.18em] text-white">
                     {isWp ? "Case Study" : item.type}
                   </span>
                   {item.sector && (
-                    <span className="border border-white/25 bg-black/20 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-white/75">
+                    <span className="border border-white/30 bg-white/10 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wide text-white/80 backdrop-blur-sm">
                       {item.sector}
-                    </span>
-                  )}
-                  {item.location && (
-                    <span className="py-1 text-[10px] text-white/50">
-                      {item.location}
                     </span>
                   )}
                 </div>
               </div>
+
+              {/* BODY */}
               <div className="flex flex-1 flex-col p-6">
-                <p className="flex-1 text-sm leading-7 text-slate-600 group-hover:text-slate-800">
-                  {isWp ? item.title?.rendered : item.outcome}
-                </p>
-                <div className="mt-5 flex items-center gap-2 text-xs font-semibold text-[#297858]">
-                  Read more <ArrowIcon />
+                {isWp ? (
+                  <p className="flex-1 text-sm leading-7 text-slate-600">
+                    {item.title?.rendered}
+                  </p>
+                ) : (
+                  <ul className="flex-1 space-y-3">
+                    {item.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-3 text-[13px] leading-6 text-slate-600">
+                        <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                    {isWp ? "Case Study" : item.sector}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-xs font-semibold text-[#297858] transition-all duration-200 group-hover:gap-2.5">
+                    Read more <ArrowIcon />
+                  </span>
                 </div>
               </div>
             </Link>

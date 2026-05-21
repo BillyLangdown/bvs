@@ -22,15 +22,15 @@ const faqs = [
   },
   {
     q: "How do EC fan upgrades reduce operating costs in retail?",
-    a: "Retail AHUs often run continuously to maintain a comfortable shopping environment. Replacing belt-driven AC fans with EC technology typically reduces fan energy consumption by 30–50%, a measurable reduction in operating cost and a contribution toward EPC and ESOS targets.",
+    a: "Retail AHUs often run continuously to maintain a comfortable shopping environment. Replacing belt-driven AC fans with EC technology typically reduces fan energy consumption by 30–50%, a measurable reduction in operating cost and a direct contribution toward EPC rating improvements.",
   },
   {
     q: "Do you work in supermarkets with refrigeration plant?",
     a: "We focus on AHU and ventilation works. We do not carry out refrigeration maintenance or repair. However, we work alongside refrigeration contractors on integrated HVAC refurbishment projects where both scopes are running concurrently.",
   },
   {
-    q: "Can you support an EPC or ESOS improvement programme?",
-    a: "Yes. EC fan upgrades, controls upgrades with demand-controlled ventilation, and heat recovery modifications all contribute to ESOS energy reduction targets and EPC rating improvements. We provide the energy modelling and documentation to support these programmes.",
+    q: "Can you support an energy reduction programme?",
+    a: "Yes. EC fan upgrades, controls upgrades with demand-controlled ventilation, and heat recovery modifications all deliver measurable energy reduction and contribute to EPC rating improvements. We provide energy modelling and before-and-after performance data to support these programmes.",
   },
   {
     q: "What notice do you need to organise out-of-hours access?",
@@ -66,7 +66,7 @@ export default function RetailPage() {
               className="text-2xl font-extrabold leading-[1.08] text-white sm:text-5xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-              Trading Continues.<br />Works Don&apos;t Wait.
+              AHU Works Planned<br />Around Your Trading Hours
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white/85" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
@@ -95,7 +95,7 @@ export default function RetailPage() {
             <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
               {[
                 { stat: "Out-of-Hours", label: "Works Delivery" },
-                { stat: "Energy Reduction", label: "EPC & ESOS Support" },
+                { stat: "Energy Reduction", label: "EPC Improvement" },
                 { stat: "UK Nationwide", label: "Portfolio Coverage" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
@@ -166,14 +166,14 @@ export default function RetailPage() {
 
             <ScrollReveal>
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-                The energy and compliance pressure
+                The energy pressure
               </p>
               <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                EPC, ESOS, and<br />Rising Energy Costs.
+                Rising Energy Costs<br />and EPC Pressure.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-6 text-slate-500">
-                Commercial property operators face growing pressure on energy performance. EPC ratings affect asset value and lease terms. ESOS compliance requires documented energy reduction actions. Energy costs are a direct line item on operating accounts.
+                Commercial property operators face growing pressure on energy performance. EPC ratings affect asset value and lease terms. Energy costs are a direct line item on operating accounts.
               </p>
               <p className="mt-4 text-sm leading-6 text-slate-500">
                 AHU plant, particularly ageing belt-driven fan sets and fixed-speed systems, is typically one of the largest energy consumers in a commercial building. Targeted upgrades to EC fans and demand-controlled ventilation deliver measurable energy reduction at predictable cost.
@@ -192,8 +192,8 @@ export default function RetailPage() {
                     body: "Demand-controlled ventilation reduces AHU energy consumption outside peak occupancy, particularly valuable in retail units with variable footfall throughout the day.",
                   },
                   {
-                    title: "ESOS-qualifying documentation",
-                    body: "We provide the energy modelling, before-and-after performance data, and commissioning records required to document ESOS qualifying energy reduction measures.",
+                    title: "Energy performance documentation",
+                    body: "We provide energy modelling and before-and-after performance data to support your energy reduction programme.",
                   },
                 ].map((item) => (
                   <div key={item.title} className="border border-slate-200 bg-white p-5">
@@ -231,7 +231,7 @@ export default function RetailPage() {
               {
                 href: "/ec-fan-upgrades-and-retrofits-for-hvac",
                 label: "EC Fan Upgrades",
-                desc: "30–50% fan energy reduction. ESOS-qualifying documentation. Fitted within the existing AHU casing, minimal plant room disruption.",
+                desc: "30–50% fan energy reduction. Fitted within the existing AHU casing, minimal plant room disruption.",
               },
               {
                 href: "/air-handling-unit-controller-solutions-upgrades",
@@ -261,7 +261,7 @@ export default function RetailPage() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
-      <FAQAccordion faqs={faqs} />
+      <FAQAccordion faqs={faqs} theme="dark" />
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}
       <section className="bg-[#111418] py-20">
@@ -282,8 +282,8 @@ export default function RetailPage() {
               <div className="mt-7 space-y-3 border-l border-white/10 pl-5">
                 <p className="text-sm text-white/60">Out-of-hours and overnight delivery as standard</p>
                 <p className="text-sm text-white/60">Multi-site programme management for retail estates</p>
-                <p className="text-sm text-white/60">EPC, ESOS, and energy reduction documentation provided</p>
-                <p className="text-sm text-white/60">Direct response from engineers, not sales handlers</p>
+                <p className="text-sm text-white/60">Energy reduction and EPC documentation provided</p>
+                <p className="text-sm text-white/60">Direct response, not sales handlers</p>
               </div>
               <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6">
                 <a href="tel:01256518170" className="inline-flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-white">

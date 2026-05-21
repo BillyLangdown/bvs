@@ -112,7 +112,7 @@ export default async function IndustrySectorPage({ params }) {
               </h3>
               <QuickQuoteForm />
               <ul className="mt-5 flex flex-col gap-1.5">
-                {["No obligation", "Response within one working day", "Speak directly with a specialist"].map((p) => (
+                {["No obligation", "Response within one working day", "Honest assessment, no obligation"].map((p) => (
                   <li key={p} className="flex items-center gap-2 text-xs text-slate-500">
                     <span className="h-1 w-1 rounded-full bg-emerald-600" />
                     {p}

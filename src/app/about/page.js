@@ -25,7 +25,7 @@ const values = [
   },
   {
     title: "Direct & Responsive",
-    body: "Quick replies. Direct access to engineers. We answer the phone. Whether you are an M&E contractor working to a programme or an estates manager dealing with an urgent failure, you speak to someone who knows the job.",
+    body: "Quick replies. We answer the phone. Whether you are an M&E contractor working to a programme or an estates manager dealing with an urgent failure, you speak to someone who knows the job.",
   },
 ];
 
@@ -100,7 +100,7 @@ export default function AboutPage() {
       </p>
 
       <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
-        Engineering-Led <br/>  for 40+ years.
+        Engineering-Led<br />for Over 40 Years
       </h1>
 
       <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
@@ -122,7 +122,7 @@ export default function AboutPage() {
                 What We Do
               </p>
               <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">
-                Air Handling Units.<br />The Full Scope.
+                Air Handling Units,<br />the Full Scope
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-slate-600">
@@ -164,7 +164,7 @@ export default function AboutPage() {
                 Experience
               </p>
               <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
-                Four Decades.<br />Still In-House.
+                Four Decades of<br />In-House Engineering
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-white/65">
@@ -203,7 +203,7 @@ export default function AboutPage() {
       </p>
 
       <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">
-        Six Services.<br />One Specialist.
+        Five Services,<br />One Specialist
       </h2>
 
       <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
@@ -262,7 +262,7 @@ export default function AboutPage() {
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-slate-600">
-                The engineering requirement for ventilation is broadly consistent across building types. The operational constraints are not. A hospital requires clinical-programme coordination and HTM 03-01 awareness. A hotel requires out-of-hours access and guest-impact planning. A leisure centre requires corrosion-resistant specification for pool hall environments.
+                The engineering requirement for ventilation is broadly consistent across building types. The operational constraints are not. A hospital requires clinical-programme coordination and careful documentation. A hotel requires out-of-hours access and guest-impact planning. A leisure centre requires corrosion-resistant specification for pool hall environments.
               </p>
               <p className="mt-4 text-sm leading-7 text-slate-600">
                 We have worked in all of the sectors below. The experience is direct, not adjacent.

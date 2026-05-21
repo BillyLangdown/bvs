@@ -38,7 +38,7 @@ export default function PharmaceuticalLabCoilReplacement() {
           </h2>
           <p className="mt-3 text-[15px] leading-7 text-slate-700">
             A pharmaceutical manufacturing facility required a replacement coil for its air handling unit.
-            Pharmaceutical environments demand strict control of temperature, humidity, and air quality —
+            Pharmaceutical environments demand strict control of temperature, humidity, and air quality,
             making reliable, correctly specified HVAC components critical to site operation and product
             integrity. The existing coil had reached the end of its serviceable life and required a
             like-for-like replacement to the original performance specification.

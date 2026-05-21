@@ -91,7 +91,7 @@ export default function CoilReplacementPage() {
     <div>
 
     {/* ── 1. HERO ── improved mobile readability + simpler capability signals ───────── */}
-<section className="relative overflow-hidden bg-[#111418] py-10 sm:py-16">
+<section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
 
 {/* Background image */}
 <div className="absolute inset-0">
@@ -106,27 +106,29 @@ export default function CoilReplacementPage() {
     className="object-cover object-center"
   />
 
-  {/* Stronger mobile readability overlay */}
-  <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent" />
+  <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 via-[35%] to-transparent" />
 </div>
 
-<Container className="relative z-10 flex min-h-[420px] items-end pb-6 sm:pb-10">
-  <div className="w-full max-w-3xl">
-    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
+<Container className="relative z-10 flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
+  <div className="max-w-3xl">
+    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
       AHU Coil Replacement
     </p>
 
-    <h1 className="text-3xl font-extrabold leading-[1.05] text-white sm:text-5xl">
+    <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
       Coils Matched <br/> to Your System
     </h1>
 
     <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
 
-    <p className="mt-6 max-w-xl text-[15px] leading-7 text-white/80">
+    <p className="mt-6 max-w-xl text-[15px] leading-7 text-white">
       Every replacement coil is measured on site and built to fit your AHU exactly. No off-the-shelf options, every coil is manufactured to your system's dimensions, performance requirements, and operating conditions.
     </p>
-
-    <div className="mt-8 flex flex-wrap gap-3">
+    <p className="mt-6 text-sm text-white/70">
+      Call us:{" "}
+      <a href="tel:01256518170" className="font-semibold text-white transition-colors hover:text-white/80">01256 518170</a>
+    </p>
+    <div className="mt-4 flex flex-wrap gap-3">
       <a
         href="#enquire"
         className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
@@ -137,7 +139,7 @@ export default function CoilReplacementPage() {
 
       <a
         href="#problem"
-        className="inline-flex items-center gap-2 border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/5"
+        className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
       >
         Learn more
         <ArrowDownIcon className="h-4 w-4" />
@@ -145,6 +147,23 @@ export default function CoilReplacementPage() {
     </div>
   </div>
 </Container>
+
+        <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-black/60 backdrop-blur-sm">
+          <Container>
+            <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
+              {[
+                { stat: "Custom Built", label: "Every Coil" },
+                { stat: "All Makes", label: "& Models" },
+                { stat: "40+", label: "Years Experience" },
+              ].map((s) => (
+                <div key={s.label} className="px-2 text-center sm:px-6">
+                  <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </div>
 </section>
 
 
@@ -372,60 +391,8 @@ export default function CoilReplacementPage() {
   </Container>
 </section> 
 
-      {/* ── 7. OFFER ── free coil survey ─────────────────────────────────── */}
-      <section className="bg-[#f7f6f5] py-14">
-        <Container>
-          <ScrollReveal>
-            <div className="border-2 border-[#297858] bg-white p-8 sm:p-10">
-              <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-                    No-obligation offer
-                  </p>
-                  <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                    Coil Survey &<br />Specification
-                  </h2>
-                  <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-                  <p className="mt-4 text-sm leading-6 text-slate-600">
-                    Before any commitment, we attend site, measure the existing coil, and produce a full specification and quote, including sourcing and manufacture options with lead times.
-                  </p>
-                  <ul className="mt-5 space-y-2.5">
-                    {[
-                      "Existing coil measured and specified on site",
-                      "Sourcing and manufacture options with lead times",
-                      "Quotation for full replacement scope",
-                      "Emergency cases handled, contact us directly",
-                      "No obligation to proceed",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">
-                        <CheckIcon className="mt-0.5" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex flex-col gap-3 lg:min-w-[200px]">
-                  <a
-                    href="#enquire"
-                    className="inline-flex items-center justify-center gap-2 bg-[#297858] px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-                  >
-                    Book a survey
-                  </a>
-                  <a
-                    href="tel:01256518170"
-                    className="inline-flex items-center justify-center gap-2 border border-slate-300 px-8 py-4 text-sm font-semibold text-slate-900 transition-colors hover:border-[#297858]"
-                  >
-                    <PhoneIcon /> 01256 518170
-                  </a>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </Container>
-      </section>
-
-      {/* ── 8. FINAL CTA ── white ────────────────────────────────────────── */}
-      <section id="enquire" className="bg-white py-20">
+      {/* ── 7. ENQUIRY FORM ─────────────────────────────────────────────── */}
+      <section id="enquire" className="bg-[#f7f6f5] py-20">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
             <ScrollReveal>
@@ -437,20 +404,27 @@ export default function CoilReplacementPage() {
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-slate-600">
-                If your AHU is out of service or environmental control is compromised, contact us directly. We handle emergency replacements and can advise on lead time based on coil type.
+                Before any commitment, we attend site, measure the existing coil, and produce a full specification and quote with sourcing and manufacture options.
               </p>
-
+              <ul className="mt-5 space-y-2.5">
+                {[
+                  "Existing coil measured and specified on site",
+                  "Sourcing and manufacture options with lead times",
+                  "Any make, any model, including obsolete units",
+                  "Emergency cases handled, call us directly",
+                  "No obligation to proceed",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">
+                    <CheckIcon className="mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
               <div className="mt-6 border border-[#297858]/20 bg-[#297858]/5 p-5">
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#297858]">For urgent enquiries</p>
                 <a href="tel:01256518170" className="mt-3 flex items-center gap-3 text-2xl font-extrabold text-slate-900 transition-colors hover:text-[#297858]">
                   <PhoneIcon /> 01256 518170
                 </a>
-              </div>
-
-              <div className="mt-5 space-y-2.5 border-l border-slate-200 pl-5">
-                <p className="text-sm text-slate-500">Any make, any model, including obsolete and discontinued units</p>
-                <p className="text-sm text-slate-500">All coils measured on site and built to fit your AHU exactly</p>
-                <p className="text-sm text-slate-500">Direct response from engineers, not a sales team</p>
               </div>
             </ScrollReveal>
 
@@ -470,7 +444,7 @@ export default function CoilReplacementPage() {
                   </div>
                   <div className="flex items-center gap-2 text-[11px] text-slate-400">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                    Emergency, call directly for fastest response
+                    Emergency: call directly for fastest response
                   </div>
                 </div>
               </div>
@@ -479,8 +453,8 @@ export default function CoilReplacementPage() {
         </Container>
       </section>
 
-      {/* ── 9. FAQ ───────────────────────────────────────────────────────── */}
-      <FAQAccordion faqs={faqs} />
+      {/* ── 8. FAQ ───────────────────────────────────────────────────────── */}
+      <FAQAccordion faqs={faqs} theme="dark" />
 
       {/* ── RELATED SERVICES ─────────────────────────────────────────────── */}
       <section className="border-t border-slate-100 bg-white py-12">

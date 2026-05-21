@@ -416,7 +416,7 @@ export default function LeisureCentrePage() {
                 <p className="text-sm text-white/60">Pool hall and high-humidity environment experience</p>
                 <p className="text-sm text-white/60">Corrosion-resistant component specification as standard</p>
                 <p className="text-sm text-white/60">Local authority and private leisure operators</p>
-                <p className="text-sm text-white/60">Direct response from engineers, not sales handlers</p>
+                <p className="text-sm text-white/60">Direct response, not sales handlers</p>
               </div>
               <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6">
                 <a href="tel:01256518170" className="inline-flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-white">

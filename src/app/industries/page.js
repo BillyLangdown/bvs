@@ -12,7 +12,7 @@ const sectors = [
   {
     slug: "hospital",
     label: "Healthcare & NHS",
-    summary: "HTM 03-01 aware. Critical environments. Live clinical works managed as standard.",
+    summary: "Clinical environment experience. Critical environments. Live site works managed as standard.",
     photo: "/hospital.webp",
     photoAlt: "NHS hospital corridor, BVS ventilation services for healthcare environments",
   },
@@ -47,7 +47,7 @@ const sectors = [
   {
     slug: "retail",
     label: "Retail & Commercial",
-    summary: "Around trading hours. EPC and ESOS support. Multi-site portfolio delivery.",
+    summary: "Around trading hours. EPC and energy reduction support. Multi-site portfolio delivery.",
     photo: "/mall.webp",
     photoAlt: "Shopping centre, BVS AHU works delivered around retail trading hours",
   },
@@ -65,11 +65,11 @@ export default function IndustriesPage() {
               Industries
             </p>
             <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-5xl">
-              40+ Years.<br />Every Sector.
+              40+ Years of Experience<br />Across Every Sector
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/65">
-              The engineering is consistent. The approach adapts. Healthcare means HTM 03-01 and live clinical planning. Defence means security compliance and programme rigour. Education means the summer window. We&apos;ve worked in all of them.
+              The engineering is consistent. The approach adapts. Healthcare means live clinical environments and careful documentation. Defence means security compliance and programme rigour. Education means the summer window. We&apos;ve worked in all of them.
             </p>
           </div>
         </Container>

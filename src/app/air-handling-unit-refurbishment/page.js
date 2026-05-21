@@ -48,7 +48,7 @@ export default function AHURefurbishmentPage() {
     <div>
 
       {/* ── HERO ───────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[#111418]">
+      <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
         <div className="absolute inset-0">
           <Image
             src="/ahu-refurbishment-worker.webp"
@@ -60,32 +60,36 @@ export default function AHURefurbishmentPage() {
             className="object-cover object-center"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-[#111418]/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-black/60 sm:hidden" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 via-[35%] to-transparent" />
         </div>
 
-        <Container className="relative z-10 flex min-h-[520px] items-end py-14 pb-20 sm:min-h-[620px] sm:py-20 sm:pb-24">
+        <Container className="relative z-10 flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
           <div className="max-w-3xl">
             <p
-              className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#297858]"
+              className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
             >
               AHU Refurbishment
             </p>
             <h1
-              className="font-display text-4xl font-extrabold  leading-[1.02] text-white sm:text-5xl lg:text-6xl"
-              style={{ textShadow: "0 2px 24px rgba(0,0,0,0.55)" }}
+              className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
+              style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
               Restore &amp; Extend<br />Your Air Handling Units
             </h1>
-            <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
+            <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p
-              className="mt-6 max-w-2xl text-[15px] leading-7 text-white/80"
-              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.45)" }}
+              className="mt-5 max-w-xl text-[15px] leading-7 text-white"
+              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
             >
               Extend your AHU&apos;s life by 10&ndash;20 years at around 40% of full replacement cost. BVS survey, specify, and refurbish on-site with minimum disruption to your operations.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <p className="mt-6 text-sm text-white/70">
+              Call us:{" "}
+              <a href="tel:01256518170" className="font-semibold text-white transition-colors hover:text-white/80">01256 518170</a>
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
@@ -95,7 +99,7 @@ export default function AHURefurbishmentPage() {
               </Link>
               <a
                 href="#what-is-refurbishment"
-                className="inline-flex items-center gap-2 border border-white/20 bg-black/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+                className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
                 Learn more
                 <ArrowDownIcon />
@@ -103,6 +107,23 @@ export default function AHURefurbishmentPage() {
             </div>
           </div>
         </Container>
+
+        <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-black/60 backdrop-blur-sm">
+          <Container>
+            <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
+              {[
+                { stat: "40+", label: "Years Experience" },
+                { stat: "All Makes", label: "& Configurations" },
+                { stat: "UK Wide", label: "Coverage" },
+              ].map((s) => (
+                <div key={s.label} className="px-2 text-center sm:px-6">
+                  <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </div>
       </section>
 
       <TrustedByBar />
@@ -335,7 +356,7 @@ export default function AHURefurbishmentPage() {
           </ScrollReveal>
 
           <p className="mt-4 text-xs text-slate-500">
-            Every project varies —{" "}
+            Every project varies, so{" "}
             <Link href="/contact" className="font-semibold text-[#297858] underline underline-offset-2 hover:text-[#1d5c42]">
               speak to our team
             </Link>{" "}
@@ -601,66 +622,42 @@ export default function AHURefurbishmentPage() {
         </Container>
       </section>
 
-      {/* ── OFFER BOX ──────────────────────────────────────────────────── */}
-      <section className="bg-white py-14">
+      {/* ── FINAL CTA + FORM ───────────────────────────────────────────── */}
+      <section className="bg-[#f7f6f5] py-16 sm:py-20">
         <Container>
-          <ScrollReveal>
-            <div className="border border-[#297858]/30 bg-[#297858]/5 p-6 sm:p-8">
-              <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">How to start</p>
-              <h2 className="text-xl font-extrabold text-slate-900 sm:text-2xl">
-                Book a Condition Survey
-              </h2>
-              <p className="mt-3 max-w-lg text-sm leading-6 text-slate-500">
-                A BVS engineer visits site, inspects the AHU, and confirms whether refurbishment is viable, with an honest recommendation. No commitment required.
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+            <ScrollReveal>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
+                Get in touch
               </p>
-              <ul className="mt-5 space-y-2">
+              <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
+                Ready to Restore<br />Your AHU?
+              </h2>
+              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-4 text-sm leading-6 text-slate-600">
+                Tell us the make, model, and the issue you&apos;re experiencing. We respond within one working day with a practical assessment.
+              </p>
+              <ul className="mt-5 space-y-2.5">
                 {[
                   "On-site condition survey by an experienced engineer",
                   "Fixed-price, itemised scope, no surprises",
                   "Works programmed around your operations",
-                  "40+ years experience across all sectors",
+                  "No obligation to proceed",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-sm text-slate-600">
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">
                     <CheckIcon /> {item}
                   </li>
                 ))}
               </ul>
-              <div className="mt-6">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-                >
-                  Book a survey →
-                </Link>
-              </div>
-            </div>
-          </ScrollReveal>
-        </Container>
-      </section>
-
-      {/* ── FINAL CTA + FORM ───────────────────────────────────────────── */}
-      <section className="bg-[#111418] py-16 sm:py-20">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-            <ScrollReveal>
-              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
-                Ready to Restore<br />Your AHU?
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-4 text-sm leading-6 text-white/55">
-                Tell us the make, model, and the issue you&apos;re experiencing. We respond within one working day with a practical assessment.
-              </p>
-              <div className="mt-5 flex flex-col gap-2">
-                <a href="tel:01256518170" className="inline-flex items-center gap-3 text-sm text-white/55 hover:text-white transition-colors">
+              <div className="mt-6 border border-[#297858]/20 bg-[#297858]/5 p-5">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#297858]">Call us directly</p>
+                <a href="tel:01256518170" className="mt-3 flex items-center gap-3 text-2xl font-extrabold text-slate-900 transition-colors hover:text-[#297858]">
                   <PhoneIcon /> 01256 518170
-                </a>
-                <a href="mailto:info@bvs-ltd.co.uk" className="inline-flex items-center gap-3 text-sm text-white/55 hover:text-white transition-colors">
-                  <MailIcon /> info@bvs-ltd.co.uk
                 </a>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={80}>
-              <div className="bg-white p-7 shadow-lg">
+              <div className="border border-slate-200 bg-white p-7">
                 <p className="mb-1 text-xs font-bold uppercase tracking-[0.2em] text-[#297858]">Enquiry</p>
                 <p className="mb-5 text-xs text-slate-500">We will aim to respond within 24 hours</p>
                 <QuickQuoteForm defaultService="AHU Refurbishment" />
@@ -671,7 +668,7 @@ export default function AHURefurbishmentPage() {
       </section>
 
       {/* ── FAQ ────────────────────────────────────────────────────────── */}
-      <FAQAccordion faqs={faqs} />
+      <FAQAccordion faqs={faqs} theme="dark" />
 
       {/* ── RELATED ────────────────────────────────────────────────────── */}
       <section className="border-t border-slate-100 bg-white py-12">

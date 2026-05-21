@@ -44,7 +44,7 @@ export default function ControllerUpgradesPage() {
     <div>
 
       {/* ── 1. HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[480px] overflow-hidden bg-slate-900">
+      <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
         <Image
           src="/ahu-controller.webp"
           alt="AHU controller panel and building controls upgrade by BVS"
@@ -54,23 +54,28 @@ export default function ControllerUpgradesPage() {
           placeholder="blur"
           blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
           unoptimized
-          className="object-cover object-center opacity-80"
+          className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-black/60 sm:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 via-[35%] to-transparent" />
 
-        <Container className="relative flex min-h-[480px] items-center py-16">
-          <div className="max-w-2xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#297858]">
+        <Container className="relative flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               AHU Controller Solutions &amp; Upgrades
             </p>
-            <h1 className="font-display text-4xl font-extrabold leading-tight text-white sm:text-5xl">
+            <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
               Independent AHU<br />Controller Solutions
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
-            <p className="mt-5 max-w-lg text-[15px] leading-7 text-white/80">
+            <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
               Unlike AHU manufacturers who only supply controllers on the condition their engineers do the work, we offer fully independent supply, installation, and commissioning.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <p className="mt-6 text-sm text-white/70">
+              Call us:{" "}
+              <a href="tel:01256518170" className="font-semibold text-white transition-colors hover:text-white/80">01256 518170</a>
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
               <a
                 href="#assessment"
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
@@ -80,7 +85,7 @@ export default function ControllerUpgradesPage() {
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center gap-2 border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/5"
+                className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
                 Learn more
                 <ArrowDownIcon />
@@ -88,6 +93,23 @@ export default function ControllerUpgradesPage() {
             </div>
           </div>
         </Container>
+
+        <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-black/60 backdrop-blur-sm">
+          <Container>
+            <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
+              {[
+                { stat: "Independent", label: "Supply & Install" },
+                { stat: "All Makes", label: "& Models" },
+                { stat: "40+", label: "Years Experience" },
+              ].map((s) => (
+                <div key={s.label} className="px-2 text-center sm:px-6">
+                  <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </div>
       </section>
 
       <TrustedByBar />
@@ -202,7 +224,7 @@ export default function ControllerUpgradesPage() {
           </ScrollReveal>
 
           <p className="mt-4 text-xs text-white/55">
-            Every project is different —{" "}
+            Every project is different, so{" "}
             <Link href="/contact" className="font-semibold text-[#8fd1b5] underline underline-offset-2 hover:text-[#297858] transition-colors">
               speak to our team
             </Link>{" "}
@@ -221,7 +243,7 @@ export default function ControllerUpgradesPage() {
                 Independent & Flexible
               </p>
               <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">
-                No Manufacturer Tie-In.<br />No Unnecessary Costs.
+                No Manufacturer Tie-In,<br />No Unnecessary Costs
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-slate-500">
@@ -263,7 +285,7 @@ export default function ControllerUpgradesPage() {
                 The solution
               </p>
               <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
-                BACnet. Modbus. LON.<br />Open Protocol, Always.
+                Open Protocol Controllers:<br />BACnet, Modbus and LON
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-white/55">
@@ -451,7 +473,7 @@ export default function ControllerUpgradesPage() {
                 Case study · Leisure · Controller Upgrade
               </p>
               <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
-                Ringwood Leisure Centre<br />— AHU Controller Upgrade
+                Ringwood Leisure Centre:<br />AHU Controller Upgrade
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/70">
@@ -591,85 +613,39 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── OFFER ── free controls assessment ─────────────────────────── */}
-      <section className="bg-white py-14">
-        <Container>
-          <ScrollReveal>
-            <div className="border-2 border-[#297858] bg-white p-8 sm:p-10">
-              <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-                    No-obligation offer
-                  </p>
-                  <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                    Book a Free AHU<br />Controls Site Survey
-                  </h2>
-                  <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-                  <p className="mt-4 text-sm leading-6 text-slate-600">
-                    Book a site survey today and receive bespoke AHU controls advice and recommendations from our engineers. Before any commitment, we assess your existing controls, model the energy savings an upgrade would deliver, and confirm BMS integration capability.
-                  </p>
-                  <ul className="mt-5 space-y-2.5">
-                    {[
-                      "Existing controls hardware assessed and documented",
-                      "Energy savings modelled against current consumption",
-                      "BMS integration compatibility confirmed",
-                      "Open-protocol specification options outlined",
-                      "No obligation to proceed with works",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">
-                        <CheckIcon className="mt-0.5" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex flex-col gap-3 lg:min-w-[200px]">
-                  <a
-                    href="#assessment"
-                    className="inline-flex items-center justify-center gap-2 bg-[#297858] px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-                  >
-                    Book an assessment
-                  </a>
-                  <a
-                    href="tel:01256518170"
-                    className="inline-flex items-center justify-center gap-2 border border-slate-300 px-8 py-4 text-sm font-semibold text-slate-900 transition-colors hover:border-[#297858]"
-                  >
-                    <PhoneIcon /> 01256 518170
-                  </a>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </Container>
-      </section>
-
       {/* ── CTA + FORM ───────────────────────────────────────────────── */}
-      <section id="assessment" className="bg-[#111418] py-20">
+      <section id="assessment" className="bg-[#f7f6f5] py-20">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
             <ScrollReveal>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/40">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
                 Get in touch
               </p>
-              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+              <h2 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">
                 Request a<br />Controls Assessment
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
-              <p className="mt-5 text-sm leading-7 text-white/60">
+              <p className="mt-5 text-sm leading-7 text-slate-600">
                 Tell us about the AHU, the existing controls hardware, and what you are trying to achieve. We will model the energy savings and confirm BMS integration capability before you commit to works.
               </p>
-              <div className="mt-6 space-y-2.5 border-l border-white/10 pl-5">
-                <p className="text-sm text-white/50">Open-protocol DDC as standard, no proprietary lock-in</p>
-                <p className="text-sm text-white/50">Energy model provided before commitment to works</p>
-                <p className="text-sm text-white/50">Single units and multi-site estate programmes both handled</p>
-                <p className="text-sm text-white/50">ESOS documentation and energy baselines issued at handover</p>
-              </div>
-              <div className="mt-7 flex flex-col gap-3 border-t border-white/10 pt-6">
-                <a href="tel:01256518170" className="inline-flex items-center gap-3 text-sm text-white/55 transition-colors hover:text-white">
+              <ul className="mt-5 space-y-2.5">
+                {[
+                  "Open-protocol DDC as standard, no proprietary lock-in",
+                  "Energy model provided before commitment to works",
+                  "Single units and multi-site estate programmes both handled",
+                  "ESOS documentation and energy baselines issued at handover",
+                  "No obligation to proceed",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">
+                    <CheckIcon className="mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 border border-[#297858]/20 bg-[#297858]/5 p-5">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#297858]">Call us directly</p>
+                <a href="tel:01256518170" className="mt-3 flex items-center gap-3 text-2xl font-extrabold text-slate-900 transition-colors hover:text-[#297858]">
                   <PhoneIcon /> 01256 518170
-                </a>
-                <a href="mailto:info@bvs-ltd.co.uk" className="inline-flex items-center gap-3 text-sm text-white/55 transition-colors hover:text-white">
-                  <MailIcon /> info@bvs-ltd.co.uk
                 </a>
               </div>
             </ScrollReveal>
@@ -700,7 +676,7 @@ export default function ControllerUpgradesPage() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────────── */}
-      <FAQAccordion faqs={faqs} />
+      <FAQAccordion faqs={faqs} theme="dark" />
 
       {/* ── RELATED SERVICES ─────────────────────────────────────────────── */}
       <section className="border-t border-slate-100 bg-white py-12">

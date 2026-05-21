@@ -9,7 +9,7 @@ import { TrustedByBar } from "@/components/site/TrustedByBar";
 export const metadata = {
   title: "AHU Manufacturing | BVS Building Ventilation Solutions",
   description:
-    "Custom air handling unit manufacturing from our UK facility. Custom AHUs designed to specification — any size, any configuration, 5–7 week lead time. 40+ years manufacturing experience.",
+    "Custom air handling unit manufacturing from our UK facility. Custom AHUs designed to specification, any size, any configuration, 5–7 week lead time. 40+ years manufacturing experience.",
 };
 
 const faqs = [
@@ -31,11 +31,11 @@ const faqs = [
   },
   {
     q: "Can you supply fan, coil, and controls as part of the AHU?",
-    a: "Yes. We supply complete units including fans, heating and cooling coils, filters, dampers, and controls panels. The degree of integration depends on the project requirements — we can supply a full packaged unit or a mechanical-only casing.",
+    a: "Yes. We supply complete units including fans, heating and cooling coils, filters, dampers, and controls panels. The degree of integration depends on the project requirements; we can supply a full packaged unit or a mechanical-only casing.",
   },
   {
     q: "Do you offer installation as well as manufacture?",
-    a: "Yes. We can provide the full scope from manufacture through to mechanical and electrical installation and commissioning — under a single contract. This is the most common arrangement for replacement projects where the existing AHU is being removed.",
+    a: "Yes. We can provide the full scope from manufacture through to mechanical and electrical installation and commissioning, under a single contract. This is the most common arrangement for replacement projects where the existing AHU is being removed.",
   },
 ];
 
@@ -44,10 +44,10 @@ export default function AHUManufacturingPage() {
     <div>
 
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative min-h-[620px] w-full overflow-hidden bg-slate-900">
+      <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
         <Image
           src="/ahu-sparks.webp"
-          alt="BVS air handling unit manufacturing workshop — custom-built AHU build in progress"
+          alt="BVS air handling unit manufacturing workshopcustom-built AHU build in progress"
           fill
           priority
           placeholder="blur"
@@ -55,20 +55,25 @@ export default function AHUManufacturingPage() {
           className="object-cover object-center scale-[1.02]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-black/0" />
-        <Container className="relative flex min-h-[620px] items-center">
-          <div className="w-full max-w-3xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
+        <div className="absolute inset-0 bg-black/60 sm:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 via-[35%] to-transparent" />
+        <Container className="relative flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               AHU Manufacturing
             </p>
-            <h1 className="font-display text-4xl font-extrabold uppercase leading-[1.05] text-white sm:text-5xl">
-              Built for your project,<br />Manufactured in the UK.
+            <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
+              Built for your project,<br />manufactured in the UK.
             </h1>
-            <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
-            <p className="mt-5 text-[15px] leading-7 text-white/75">
+            <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
+            <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
               When the catalogue does not have what the building requires, we build it. Any size. Any specification. 40+ years of AHU manufacturing from our UK facility.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <p className="mt-6 text-sm text-white/70">
+              Call us:{" "}
+              <a href="tel:01256518170" className="font-semibold text-white transition-colors hover:text-white/80">01256 518170</a>
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
               <a
                 href="#brief"
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
@@ -77,20 +82,38 @@ export default function AHUManufacturingPage() {
                 <ArrowIcon />
               </a>
               <a
-                href="tel:01256518170"
-                className="inline-flex items-center gap-2 border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                href="#overview"
+                className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
-                <PhoneIcon /> 01256 518170
+                Learn more
+                <ArrowDownIcon />
               </a>
             </div>
           </div>
         </Container>
+
+        <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-black/60 backdrop-blur-sm">
+          <Container>
+            <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
+              {[
+                { stat: "Custom Built", label: "UK Manufacture" },
+                { stat: "Any Size", label: "Any Specification" },
+                { stat: "40+", label: "Years Experience" },
+              ].map((s) => (
+                <div key={s.label} className="px-2 text-center sm:px-6">
+                  <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </div>
       </section>
 
       <TrustedByBar />
 
 {/* ── 2. PROBLEM ── when catalogue products fail ───────────────────── */}
-<section className="bg-[#0e1115] py-14 sm:py-16">
+<section id="overview" className="bg-[#0e1115] py-14 sm:py-16">
   <Container>
 
     <ScrollReveal className="mb-8">
@@ -177,7 +200,7 @@ export default function AHUManufacturingPage() {
         </p>
 
         <p className="mt-4 text-sm leading-7 text-slate-600">
-          Every project is engineered around the existing plant constraints — meaning the solution is defined by what is already installed, not what is available in a catalogue.
+          Every project is engineered around the existing plant constraints, meaning the solution is defined by what is already installed, not what is available in a catalogue.
         </p>
 
       </div>
@@ -248,7 +271,7 @@ export default function AHUManufacturingPage() {
                     { spec: "Casing configurations", value: "Horizontal, vertical, modular, split-casing" },
                     { spec: "Thermal sections", value: "LTHW/MTHW/HTHW heating, chilled water, DX, heat recovery, frost protection" },
                     { spec: "Fan types", value: "EC plug fans, EC axial fans, backward-curved centrifugal" },
-                    { spec: "Filtration grades", value: "G4 through to HEPA H14 — including HTM 03-01 theatre grade" },
+                    { spec: "Filtration grades", value: "G4 through to HEPA H14, including HTM 03-01 theatre grade" },
                     { spec: "Controls options", value: "Mechanical-only or complete DDC panel, BACnet/Modbus/LON BMS integration" },
                     { spec: "Materials", value: "Galvanised steel standard; stainless steel, coated aluminium, marine grade available" },
                     { spec: "Lead time", value: "5–7 weeks from drawing approval to delivery" },
@@ -335,7 +358,7 @@ export default function AHUManufacturingPage() {
 
         <h2 className="mt-3 text-2xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
           Warner Leisure Hotel<br />
-          Gunton Hall — Made-to-Specification AHU
+          Gunton Hall: Made-to-Specification AHU
         </h2>
 
         <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
@@ -390,7 +413,7 @@ export default function AHUManufacturingPage() {
 
           <Image
             src="/gunton-hall.webp"
-            alt="Gunton Hall Warner Leisure Hotel — custom-built AHU manufactured and installed by BVS"
+            alt="Gunton Hall Warner Leisure Hotelcustom-built AHU manufactured and installed by BVS"
             fill
             unoptimized
             className="object-cover"
@@ -500,103 +523,57 @@ export default function AHUManufacturingPage() {
   </Container>
 </section>
 
-      {/* ── 7. OFFER ── free design brief review ─────────────────────────── */}
-      <section className="bg-[#f7f6f5] py-14">
-        <Container>
-          <ScrollReveal>
-            <div className="border-2 border-[#297858] bg-white p-8 sm:p-10">
-              <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-                    No-obligation offer
-                  </p>
-                  <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                    Design Brief Review<br />&amp; Feasibility Assessment
-                  </h2>
-                  <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-                  <p className="mt-4 text-sm leading-6 text-slate-600">
-                    Before any commitment, we review your airflow requirements, space constraints, and sector context — and produce a practical feasibility assessment with indicative lead time and budget.
-                  </p>
-                  <ul className="mt-5 space-y-2.5">
-                    {[
-                      "Feasibility confirmed against space and performance requirements",
-                      "Indicative lead time and budget range provided",
-                      "Specification options discussed — full packaged or mechanical only",
-                      "Drawing approval process and programme outline agreed",
-                      "No obligation to proceed with manufacture",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">
-                        <CheckIcon className="mt-0.5" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex flex-col gap-3 lg:min-w-[200px]">
-                  <a
-                    href="#brief"
-                    className="inline-flex items-center justify-center gap-2 bg-[#297858] px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-                  >
-                    Submit your brief
-                  </a>
-                  <a
-                    href="tel:01256518170"
-                    className="inline-flex items-center justify-center gap-2 border border-slate-300 px-8 py-4 text-sm font-semibold text-slate-900 transition-colors hover:border-[#297858]"
-                  >
-                    <PhoneIcon /> 01256 518170
-                  </a>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </Container>
-      </section>
-
-      {/* ── 8. FINAL CTA ── dark section with form ───────────────────────── */}
-      <section id="brief" className="bg-[#111418] py-20">
+      {/* ── 8. FINAL CTA ── form ───────────────────────────────────────── */}
+      <section id="brief" className="bg-[#f7f6f5] py-20">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
             <ScrollReveal>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/40">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
                 Get in touch
               </p>
-              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+              <h2 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">
                 Discuss Your<br />Manufacturing Brief
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
-              <p className="mt-5 text-sm leading-7 text-white/60">
+              <p className="mt-5 text-sm leading-7 text-slate-600">
                 Tell us the airflow requirements, available space envelope, any access constraints, and the sector. We&apos;ll provide a practical view on feasibility and lead time before you commit to anything.
               </p>
-              <div className="mt-6 space-y-2.5 border-l border-white/10 pl-5">
-                <p className="text-sm text-white/50">40+ years manufacturing experience — not a recent addition to the service range</p>
-                <p className="text-sm text-white/50">UK facility — accessible for client or third-party pre-delivery inspection</p>
-                <p className="text-sm text-white/50">Full scope: manufacture, installation, commissioning, documentation</p>
-              </div>
-              <div className="mt-7 flex flex-col gap-3 border-t border-white/10 pt-6">
-                <a href="tel:01256518170" className="inline-flex items-center gap-3 text-sm text-white/55 transition-colors hover:text-white">
+              <ul className="mt-5 space-y-2.5">
+                {[
+                  "40+ years manufacturing experience, not a recent addition to the service range",
+                  "UK facility, accessible for client or third-party pre-delivery inspection",
+                  "Full scope: manufacture, installation, commissioning, documentation",
+                  "No obligation to proceed",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">
+                    <CheckIcon className="mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 border border-[#297858]/20 bg-[#297858]/5 p-5">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#297858]">Call us directly</p>
+                <a href="tel:01256518170" className="mt-3 flex items-center gap-3 text-2xl font-extrabold text-slate-900 transition-colors hover:text-[#297858]">
                   <PhoneIcon /> 01256 518170
-                </a>
-                <a href="mailto:info@bvs-ltd.co.uk" className="inline-flex items-center gap-3 text-sm text-white/55 transition-colors hover:text-white">
-                  <MailIcon /> info@bvs-ltd.co.uk
                 </a>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={80}>
-              <div className="border border-white/10 bg-white/5 p-8">
+              <div className="border border-slate-200 bg-white p-8">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
                   Enquiry
                 </p>
-                <p className="mt-3 text-sm leading-6 text-white/50">
+                <p className="mt-3 text-sm leading-6 text-slate-500">
                   Send us your airflow requirements, space constraints, and sector. We&apos;ll respond with a practical view on specification and lead time within one working day.
                 </p>
                 <div className="mt-6"><QuickQuoteForm /></div>
-                <div className="mt-5 flex flex-col gap-2 border-t border-white/10 pt-4">
-                  <div className="flex items-center gap-2 text-[11px] text-white/35">
+                <div className="mt-5 flex flex-col gap-2 border-t border-slate-100 pt-4">
+                  <div className="flex items-center gap-2 text-[11px] text-slate-400">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                    Engineering response within one working day
+                    Response within one working day
                   </div>
-                  <div className="flex items-center gap-2 text-[11px] text-white/35">
+                  <div className="flex items-center gap-2 text-[11px] text-slate-400">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
                     Lead time and feasibility confirmed at quotation stage
                   </div>
@@ -638,6 +615,14 @@ export default function AHUManufacturingPage() {
       </section>
 
     </div>
+  );
+}
+
+function ArrowDownIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
 
