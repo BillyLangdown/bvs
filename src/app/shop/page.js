@@ -25,6 +25,33 @@ export default async function ShopPage() {
     // WordPress unavailable - renders empty state
   }
 
+  // Exclude air filter products — we don't surface those in the shop
+  const filterCategoryIds = new Set(
+    categories
+      .filter((c) => c.name.toLowerCase().includes("filter"))
+      .map((c) => c.id)
+  );
+  const shopProducts = products.filter(
+    (p) => !p.categories.some((id) => filterCategoryIds.has(id))
+  );
+  const shopCategories = categories.filter((c) => !filterCategoryIds.has(c.id));
+
+  const typeImages = {};
+  if (shopProducts.length > 0 && shopCategories.length > 0) {
+    const findImage = (keywords) => {
+      const cat = shopCategories.find((c) =>
+        keywords.some((k) => c.name.toLowerCase().includes(k))
+      );
+      return cat
+        ? shopProducts.find((p) => p.categories.includes(cat.id) && p.imageUrl)?.imageUrl || null
+        : null;
+    };
+    typeImages["ec-fan"]    = findImage(["ec fan", "ec fans"]);
+    typeImages["axial-fan"] = findImage(["axial"]);
+    typeImages["coil"]      = findImage(["coil"]);
+    typeImages["battery"]   = findImage(["heater battery", "heater batteries", "electric heater", "battery"]);
+  }
+
   return (
     <div>
 
@@ -90,23 +117,33 @@ export default async function ShopPage() {
 
           {/* Section intro */}
           <ScrollReveal className="mb-10">
-            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-              Components &amp; Parts
-            </p>
-            <h2 className="mt-2 text-2xl font-extrabold text-slate-900">
-              All Products
-            </h2>
-            <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
-            <p className="mt-3 text-sm leading-6 text-slate-500">
-              Sourced and supplied by our engineers. Can&apos;t find what you need?{" "}
-              <Link href="/contact" className="text-[#297858] underline-offset-2 hover:underline">
-                Get in touch.
-              </Link>
-            </p>
-          </ScrollReveal>
+  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
+    Components &amp; Parts
+  </p>
 
-          {products.length > 0 ? (
-            <ShopGrid products={products} categories={categories} />
+  <h2 className="mt-2 text-2xl font-extrabold text-slate-900">
+    All Products
+  </h2>
+
+  <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
+
+  <div className="mt-5 rounded-lg border border-[#297858]/20 bg-[#297858]/5 p-4">
+    <p className="text-sm leading-6 text-slate-600">
+      Looking for something specific or made to specification?
+    </p>
+
+    <a
+      href="#custom-build-enquiry"
+      className="mt-2 inline-flex items-center gap-2 text-sm font-bold text-[#297858] transition-colors hover:text-[#1d5c42]"
+    >
+      Custom build enquiry
+      <span className="transition-transform group-hover:translate-x-1">→</span>
+    </a>
+  </div>
+</ScrollReveal>
+
+          {shopProducts.length > 0 ? (
+            <ShopGrid products={shopProducts} categories={shopCategories} />
           ) : (
             <div className="py-20 text-center">
               <p className="text-sm text-slate-500">
@@ -122,7 +159,7 @@ export default async function ShopPage() {
       </section>
 
       {/* ── CUSTOM BUILD ENQUIRY ─────────────────────────────────────── */}
-      <section className="bg-[#111418] py-14 sm:py-20">
+      <section  id="custom-build-enquiry" className="bg-[#111418] py-14 sm:py-20">
         <Container>
           <ScrollReveal className="mb-10">
             <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
@@ -137,7 +174,7 @@ export default async function ShopPage() {
               back within one working day with a specification and price.
             </p>
           </ScrollReveal>
-          <CustomBuildEnquiry />
+          <CustomBuildEnquiry typeImages={typeImages} />
         </Container>
       </section>
 

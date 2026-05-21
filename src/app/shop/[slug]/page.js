@@ -47,6 +47,8 @@ export default async function ProductPage({ params }) {
   const categoryName =
     categories.find((c) => product.categories.includes(c.id))?.name || "";
 
+  const isCoil = categoryName.toLowerCase().includes("coil");
+
   const related = allProducts
     .filter(
       (p) =>
@@ -117,7 +119,11 @@ export default async function ProductPage({ params }) {
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
 
               {/* Price */}
-              {product.price && (
+              {isCoil ? (
+                <p className="mt-5 text-sm font-semibold text-slate-500">
+                  Custom built to specification.
+                </p>
+              ) : product.price && (
                 <p className="mt-5 text-3xl font-extrabold text-slate-900">
                   {product.price}
                 </p>
@@ -138,6 +144,11 @@ export default async function ProductPage({ params }) {
                     </span>
                   )}
                 </div>
+              )}
+
+              {/* Excerpt */}
+              {product.excerpt && (
+                <p className="mt-5 text-sm leading-6 text-slate-600">{product.excerpt}</p>
               )}
 
               {/* Meta rows */}
@@ -175,7 +186,7 @@ export default async function ProductPage({ params }) {
                   href="#enquire"
                   className="inline-flex items-center justify-center gap-2 bg-[#297858] px-8 py-3.5 text-sm font-semibold tracking-wide text-white transition-colors hover:bg-[#1d5c42]"
                 >
-                  Enquire About This Product
+                  {isCoil ? "Request a Custom Quote" : "Enquire About This Product"}
                   <ArrowIcon />
                 </a>
                 <Link
@@ -187,8 +198,9 @@ export default async function ProductPage({ params }) {
               </div>
 
               <p className="mt-4 text-xs text-slate-400">
-                Contact us about pricing, availability, and lead times.
-                We respond within one working day.
+                {isCoil
+                  ? "All coils are built to your specification. Send us the dimensions and we'll quote within one working day."
+                  : "Contact us about pricing, availability, and lead times. We respond within one working day."}
               </p>
 
             </ScrollReveal>
@@ -335,7 +347,7 @@ export default async function ProductPage({ params }) {
                 <ul className="hidden flex-col gap-1.5 text-right sm:flex">
                   {[
                     "Response within one working day",
-                    "Speak directly with a technical specialist",
+                    "Technical advice included",
                     "No obligation",
                   ].map((item) => (
                     <li

@@ -96,17 +96,17 @@ export default function CoilReplacementPage() {
 {/* Background image */}
 <div className="absolute inset-0">
   <Image
-    src="/coil-replacement.webp"
+    src="/ahu-coil-replacement.webp"
     alt="AHU coil replacement"
     fill
     sizes="100vw"
     priority
     placeholder="blur"
     blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
-    className="object-cover object-center"
+     className="object-cover object-center blur-[0.8px]"
   />
 
-  <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 via-[35%] to-transparent" />
+  <div className="absolute  inset-0 bg-gradient-to-r from-black/85 via-black/60 via-[35%] to-transparent" />
 </div>
 
 <Container className="relative z-10 flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">

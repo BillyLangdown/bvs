@@ -290,9 +290,9 @@ export function Navigation() {
           </a>
           <Link
             href="/contact"
-            className="inline-flex h-10 items-center justify-center bg-[#297858] px-5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#1d5c42] whitespace-nowrap"
+            className="inline-flex h-10 items-center uppercase justify-center bg-[#297858] px-5 text-xs font-bold  tracking-wider text-white transition-colors hover:bg-[#1d5c42] whitespace-nowrap"
           >
-            Enquire
+           Contact 
           </Link>
         </div>
 

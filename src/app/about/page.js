@@ -164,7 +164,7 @@ export default function AboutPage() {
                 Experience
               </p>
               <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
-                Four Decades of<br />In-House Engineering
+                Four Decades of<br />Engineering
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-white/65">

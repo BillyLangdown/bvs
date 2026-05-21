@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Image from "next/image";
 
 /* ── Shared input styles ───────────────────────────────────────────────── */
 
@@ -376,7 +377,7 @@ const TYPES = [
   { id: "battery",   label: "Electric Heater Battery" },
 ];
 
-export function CustomBuildEnquiry() {
+export function CustomBuildEnquiry({ typeImages = {} }) {
   const [active, setActive] = useState(null);
 
   return (
@@ -388,18 +389,39 @@ export function CustomBuildEnquiry() {
             key={t.id}
             type="button"
             onClick={() => setActive(active === t.id ? null : t.id)}
-            className={`border px-4 py-4 text-left transition-colors ${
+            className={`overflow-hidden border text-left transition-colors ${
               active === t.id
-                ? "border-[#297858] bg-[#297858] text-white"
-                : "border-white/15 bg-white/5 text-white/70 hover:border-white/30 hover:text-white"
+                ? "border-[#297858]"
+                : "border-white/15 hover:border-white/30"
             }`}
           >
-            <p className="text-[11px] font-bold uppercase tracking-wide leading-snug">
-              {t.label}
-            </p>
-            <p className={`mt-1 text-[10px] ${active === t.id ? "text-white/70" : "text-white/40"}`}>
-              Custom build enquiry
-            </p>
+            {/* Image area */}
+            <div className={`relative h-28 ${active === t.id ? "bg-[#1d5c42]" : "bg-white/5"}`}>
+              {typeImages[t.id] ? (
+                <Image
+                  src={typeImages[t.id]}
+                  alt={t.label}
+                  fill
+                  unoptimized
+                  className="object-cover"
+                />
+              ) : (
+                <div className="flex h-full items-center justify-center">
+                  <span className={`text-[10px] font-bold uppercase tracking-widest ${active === t.id ? "text-white/40" : "text-white/20"}`}>
+                    {t.label}
+                  </span>
+                </div>
+              )}
+            </div>
+            {/* Label area */}
+            <div className={`px-4 py-3 ${active === t.id ? "bg-[#297858]" : "bg-white/5"}`}>
+              <p className={`text-[11px] font-bold uppercase tracking-wide leading-snug ${active === t.id ? "text-white" : "text-white/70"}`}>
+                {t.label}
+              </p>
+              <p className={`mt-0.5 text-[10px] ${active === t.id ? "text-white/70" : "text-white/40"}`}>
+                Custom build enquiry
+              </p>
+            </div>
           </button>
         ))}
       </div>

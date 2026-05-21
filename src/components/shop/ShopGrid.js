@@ -1,83 +1,70 @@
 "use client";
 
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useMemo } from "react";
 
 export function ShopGrid({ products, categories }) {
   const [activeCategory, setActiveCategory] = useState(null);
 
   const filtered = useMemo(() => {
-    if (activeCategory === null) return products;
+    if (!activeCategory) return products;
     return products.filter((p) => p.categories.includes(activeCategory));
   }, [products, activeCategory]);
+
+  const activeCatName = categories.find((c) => c.id === activeCategory)?.name || "";
+
+  const populatedCategories = categories.filter((c) =>
+    products.some((p) => p.categories.includes(c.id))
+  );
 
   return (
     <div>
       {/* Category filter */}
-      <div className="mb-8 border-b border-slate-200 pb-4">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="mr-1 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+      {populatedCategories.length > 1 && (
+        <div className="mb-8 flex flex-wrap items-center gap-2 border border-slate-200 bg-white p-3">
+          <span className="mr-1 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
             Filter
           </span>
           <button
             type="button"
             onClick={() => setActiveCategory(null)}
-            className={`px-4 py-2 text-xs font-bold uppercase tracking-wide transition-colors ${
+            className={`border px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide transition-colors ${
               activeCategory === null
-                ? "bg-[#297858] text-white"
-                : "border border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-900"
+                ? "border-[#297858] bg-[#297858] text-white"
+                : "border-slate-200 bg-slate-50 text-slate-500 hover:border-slate-300"
             }`}
           >
-            All <span className="ml-1 opacity-70">({products.length})</span>
+            All
           </button>
-          {categories.map((cat) => (
+          {populatedCategories.map((c) => (
             <button
-              key={cat.id}
+              key={c.id}
               type="button"
-              onClick={() => setActiveCategory(activeCategory === cat.id ? null : cat.id)}
-              className={`px-4 py-2 text-xs font-bold uppercase tracking-wide transition-colors ${
-                activeCategory === cat.id
-                  ? "bg-[#297858] text-white"
-                  : "border border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-900"
+              onClick={() => setActiveCategory(activeCategory === c.id ? null : c.id)}
+              className={`border px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide transition-colors ${
+                activeCategory === c.id
+                  ? "border-[#297858] bg-[#297858] text-white"
+                  : "border-slate-200 bg-slate-50 text-slate-500 hover:border-slate-300"
               }`}
             >
-              {cat.name}{" "}
-              <span className="ml-1 opacity-70">({cat.count})</span>
+              {c.name}
             </button>
           ))}
         </div>
-      </div>
+      )}
 
-      {/* Count line */}
-      <p className="mb-6 text-xs text-slate-400">
-        {filtered.length} product{filtered.length !== 1 ? "s" : ""}
-        {activeCategory !== null
-          ? ` in ${categories.find((c) => c.id === activeCategory)?.name}`
-          : ""}
+      <p className="mb-6 text-[11px] text-slate-400">
+        {filtered.length} {filtered.length === 1 ? "product" : "products"}
+        {activeCatName ? ` in ${activeCatName}` : ""}
       </p>
 
-      {/* Grid */}
-      {filtered.length > 0 ? (
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((product) => (
-            <ProductCard key={product.id} product={product} categories={categories} />
-          ))}
-        </div>
-      ) : (
-        <p className="py-16 text-center text-sm text-slate-500">
-          No products found in this category.
-        </p>
-      )}
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {filtered.map((product) => (
+          <ProductCard key={product.id} product={product} categories={categories} />
+        ))}
+      </div>
     </div>
-  );
-}
-
-function ArrowIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-      <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
   );
 }
 
@@ -87,7 +74,7 @@ function ProductCard({ product, categories }) {
 
   return (
     <div className="group flex flex-col overflow-hidden border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:border-slate-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)]">
-      {/* Image — links to product detail */}
+      {/* Image */}
       <Link href={`/shop/${product.slug}`} className="relative block h-52 overflow-hidden bg-white" tabIndex={-1}>
         {product.imageUrl ? (
           <Image
@@ -99,9 +86,7 @@ function ProductCard({ product, categories }) {
           />
         ) : (
           <div className="flex h-full items-center justify-center bg-slate-50">
-            <span className="text-4xl font-extrabold text-slate-200">
-              BVS
-            </span>
+            <span className="text-4xl font-extrabold text-slate-200">BVS</span>
           </div>
         )}
 
@@ -140,23 +125,20 @@ function ProductCard({ product, categories }) {
 
         {/* Actions */}
         <div className="mt-4 flex items-end justify-between border-t border-slate-100 pt-4">
-  <Link
-    href={`/shop/${product.slug}`}
-    className="group inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition-colors hover:text-slate-800"
-  >
-    View Details
-    <span className="inline-flex text-slate-400 transition-transform duration-200 group-hover:translate-x-1">
-      →
-    </span>
-  </Link>
-
-  <Link
-    href={`/shop/${product.slug}#enquire`}
-    className="text-sm font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
-  >
-    Enquire Now
-  </Link>
-</div>
+          <Link
+            href={`/shop/${product.slug}`}
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition-colors hover:text-slate-800"
+          >
+            View Details
+            <span className="inline-flex text-slate-400 transition-transform duration-200 group-hover:translate-x-1">→</span>
+          </Link>
+          <Link
+            href={`/shop/${product.slug}#enquire`}
+            className="text-sm font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
+          >
+            Enquire Now
+          </Link>
+        </div>
       </div>
     </div>
   );
