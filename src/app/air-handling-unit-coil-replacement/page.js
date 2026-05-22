@@ -5,6 +5,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { caseStudies } from "@/lib/caseStudyData";
+import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 export const metadata = {
   title: "AHU Coil Replacement | BVS Building Ventilation Solutions",
   description:
@@ -87,6 +89,7 @@ function TrendingDown({ className, strokeWidth = 2 }) {
 }
 
 export default function CoilReplacementPage() {
+  const studies = caseStudies.filter((s) => s.services.includes("coil"));
   return (
     <div>
 
@@ -122,7 +125,7 @@ export default function CoilReplacementPage() {
     <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
 
     <p className="mt-6 max-w-xl text-[15px] leading-7 text-white">
-      Every replacement coil is measured on site and built to fit your AHU exactly. No off-the-shelf options, every coil is manufactured to your system's dimensions, performance requirements, and operating conditions.
+      Replacement coils measured on site and manufactured to your AHU's exact specification. Any make, any model, including obsolete units where the original manufacturer no longer supports the equipment.
     </p>
     <p className="mt-6 text-sm text-white/70">
       Call us:{" "}
@@ -138,10 +141,10 @@ export default function CoilReplacementPage() {
       </a>
 
       <a
-        href="#problem"
+        href="#our-projects"
         className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
       >
-        Learn more
+        Our Projects
         <ArrowDownIcon className="h-4 w-4" />
       </a>
     </div>
@@ -362,7 +365,7 @@ export default function CoilReplacementPage() {
         {
           label: "Made to measure",
           detail:
-            "Every coil is manufactured to exact specification from site measurements. No off-the-shelf options.",
+            "Every coil manufactured to exact specification from site measurements, matched to your system's dimensions and duty.",
         },
         {
           label: "Emergency turnaround",
@@ -390,6 +393,25 @@ export default function CoilReplacementPage() {
 
   </Container>
 </section> 
+
+      {/* ── OUR PROJECTS ── case study carousel ───────────────────────── */}
+      <section id="our-projects" className="bg-[#111418] py-14 sm:py-20">
+        <Container>
+          <ScrollReveal className="mb-8">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              Our Projects
+            </p>
+            <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
+              Work We&apos;ve Delivered
+            </h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          </ScrollReveal>
+          <CaseStudyCarousel
+            studies={studies}
+            intro="Coil replacements across commercial offices, pharmaceutical production, and automotive facilities."
+          />
+        </Container>
+      </section>
 
       {/* ── 7. ENQUIRY FORM ─────────────────────────────────────────────── */}
       <section id="enquire" className="bg-[#f7f6f5] py-20">

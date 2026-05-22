@@ -57,7 +57,7 @@ export async function sendContactEmail({ name, email, mobile, phone, company, se
     from: FROM,
     to: TO,
     replyTo: email,
-    subject: `New Enquiry – ${name}${service ? ` (${service})` : ""}`,
+    subject: `New Enquiry: ${name}${service ? ` (${service})` : ""}`,
     html: layout("New Enquiry", rows, message),
   });
 }
@@ -76,7 +76,7 @@ export async function sendProductEnquiryEmail({ productSlug, name, email, compan
     from: FROM,
     to: TO,
     replyTo: email,
-    subject: `Product Enquiry – ${name}${productSlug ? ` re: ${productSlug}` : ""}`,
+    subject: `Product Enquiry: ${name}${productSlug ? ` re: ${productSlug}` : ""}`,
     html: layout("Product Enquiry", rows, enquiry),
   });
 }

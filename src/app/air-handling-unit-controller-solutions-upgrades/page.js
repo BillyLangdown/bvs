@@ -5,6 +5,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { caseStudies } from "@/lib/caseStudyData";
+import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
   title: "AHU Controller Solutions & Upgrades | BVS Building Ventilation Solutions",
@@ -40,6 +42,7 @@ const faqs = [
 ];
 
 export default function ControllerUpgradesPage() {
+  const studies = caseStudies.filter((s) => s.services.includes("controller"));
   return (
     <div>
 
@@ -84,10 +87,10 @@ export default function ControllerUpgradesPage() {
                 <ArrowIcon />
               </a>
               <a
-                href="#services"
+                href="#our-projects"
                 className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
-                Learn more
+                Our Projects
                 <ArrowDownIcon />
               </a>
             </div>
@@ -449,106 +452,6 @@ export default function ControllerUpgradesPage() {
         </Container>
       </section>
 
-      {/* ── CASE STUDY ── Ringwood Leisure Centre ─────────────────────── */}
-      <section className="relative overflow-hidden py-20 sm:py-24">
-
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/swimming-pool.webp"
-            alt="Ringwood Leisure Centre, AHU controller upgrade case study"
-            fill
-            className="object-cover object-center"
-          />
-          {/* dark fade: strong on left, tapering right */}
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/10" />
-        </div>
-
-        <Container className="relative z-10">
-          <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-start">
-
-            <ScrollReveal>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-                Case study · Leisure · Controller Upgrade
-              </p>
-              <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
-                Ringwood Leisure Centre:<br />AHU Controller Upgrade
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-6 text-sm leading-7 text-white/70">
-  Ringwood Leisure Centre was advised by another contractor that both ageing AHUs required full replacement, with a quoted programme exceeding £100,000. Our independent controls assessment identified the real issue as control system failure rather than plant failure.
-</p>
-
-<div className="mt-5 space-y-3">
-  <div className="border-l-2 border-white/20 pl-4">
-    <span className="text-sm text-white/60">
-      Controls assessed across both AHUs before any works were agreed
-    </span>
-  </div>
-
-  <div className="border-l-2 border-white/20 pl-4">
-    <span className="text-sm text-white/60">
-      Trend BMS controllers supplied, installed, and commissioned on both units
-    </span>
-  </div>
-
-  <div className="border-l-2 border-white/20 pl-4">
-    <span className="text-sm text-white/60">
-      Existing AHU plant retained, avoiding full replacement
-    </span>
-  </div>
-
-              </div>
-              <div className="mt-5 space-y-3">
-                <div className="border-l-2 border-[#297858] pl-4">
-                  <span className="text-sm font-bold text-white">Full system control restored at a fraction of the £100k+ replacement cost</span>
-                </div>
-                <div className="border-l-2 border-[#297858] pl-4">
-                  <span className="text-sm text-white/70">Both AHUs returned to full performance, no unnecessary plant replaced</span>
-                </div>
-              </div>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link
-                  href="/case-studies/ringwood-leisure-ahu-controller-upgrade"
-                  className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-                >
-                  Read the full case study →
-                </Link>
-                <Link
-                  href="/case-studies"
-                  className="inline-flex items-center gap-2 border border-white/25 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-                >
-                  View all case studies
-                </Link>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={80}>
-              <div className="border border-white/15 bg-white/30 p-7 backdrop-blur-sm">
-                <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">Project summary</p>
-                <div className="space-y-4">
-                  {[
-                    { stat: "Ringwood", label: "Leisure Centre, Hampshire" },
-                    { stat: "Leisure", label: "Sector" },
-                    { stat: "2", label: "AHUs, both retained, not replaced" },
-                    { stat: "Trend", label: "BMS controllers, open protocol" },
-                    { stat: "£100k+", label: "Replacement cost avoided" },
-                  ].map((item) => (
-                    <div key={item.label} className="flex items-center justify-between border-b border-white/10 pb-4 last:border-0 last:pb-0">
-                      <span className="text-xs text-white/80">{item.label}</span>
-                      <span className="text-base font-extrabold text-white
-">{item.stat}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
-
-          </div>
-        </Container>
-      </section>
-
       {/* ── HOW IT WORKS ── 4-step process ───────────────────────────── */}
       <section className="bg-[#111418] py-16 sm:py-20">
         <Container>
@@ -610,6 +513,25 @@ export default function ControllerUpgradesPage() {
               </ScrollReveal>
             ))}
           </div>
+        </Container>
+      </section>
+
+      {/* ── OUR PROJECTS ── case study carousel ───────────────────────── */}
+      <section id="our-projects" className="bg-[#111418] py-14 sm:py-20">
+        <Container>
+          <ScrollReveal className="mb-8">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              Our Projects
+            </p>
+            <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
+              Work We&apos;ve Delivered
+            </h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          </ScrollReveal>
+          <CaseStudyCarousel
+            studies={studies}
+            intro="Controller upgrades that kept existing AHUs running when replacement had been recommended."
+          />
         </Container>
       </section>
 

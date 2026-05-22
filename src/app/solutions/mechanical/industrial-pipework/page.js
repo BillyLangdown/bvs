@@ -93,7 +93,7 @@ export default function IndustrialPipeworkPage() {
               Mechanical Solutions
             </p>
             <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
-              Commercial<br />Pipework
+              Commercial Pipework
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">

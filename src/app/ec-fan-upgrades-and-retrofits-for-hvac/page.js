@@ -5,6 +5,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { caseStudies } from "@/lib/caseStudyData";
+import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 function Zap({ className, strokeWidth = 2 }) {
   return (
@@ -63,6 +65,7 @@ const faqs = [
 ];
 
 export default function ECFanUpgradesPage() {
+  const studies = caseStudies.filter((s) => s.services.includes("ec-fan"));
   return (
     <div>
 
@@ -115,10 +118,10 @@ export default function ECFanUpgradesPage() {
                 <ArrowIcon />
               </a>
               <a
-                href="#next-section"
+                href="#our-projects"
                 className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
-                Learn more
+                Our Projects
                 <ArrowDownIcon />
               </a>
             </div>
@@ -342,60 +345,6 @@ export default function ECFanUpgradesPage() {
 </section>
 
 
-      {/* ── 5. SOCIAL PROOF ── dark ───────────────────────────────────────── */}
-      <section className="bg-[#111418]/95 py-16 sm:py-20">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-start">
-            <ScrollReveal>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">
-                Project example
-              </p>
-              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
-                Leisure Centre<br />EC Fan Retrofit
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-6 text-sm leading-7 text-white/55">
-                Failed belt-driven fans in a pool hall AHU caused complete airflow loss and uncontrolled humidity. The belt drive arrangement was beyond economic repair. Rather than replacing the AHU, BVS removed the existing fan set, installed EC plug fans within the original casing, and restored full airflow within two days.
-              </p>
-              <div className="mt-6 space-y-3">
-                <div className="border-l-2 border-[#297858] pl-4">
-                  <p className="text-sm leading-6 text-white/65">
-                    Full airflow and humidity control restored. Ongoing belt maintenance overhead eliminated. AHU casing and ductwork connections untouched.
-                  </p>
-                </div>
-              </div>
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-  <Link
-    href="/case-studies/leisure-centre-ec-fan-retrofit"
-    className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-  >
-    Read full case study
-  </Link>
-
-  <Link
-    href="/case-studies"
-    className="text-sm font-semibold text-white/60 transition-colors hover:text-white"
-  >
-    View all case studies →
-  </Link>
-</div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={80}>
-              <div className="relative min-h-[300px] overflow-hidden lg:min-h-[420px]">
-                <Image
-                  src="/swimming-pool.webp"
-                  alt="Leisure centre, EC fan retrofit restored full airflow and humidity control"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-              </div>
-            </ScrollReveal>
-          </div>
-        </Container>
-      </section>
-
       {/* ── 6. HOW IT WORKS ── surface-2 ─────────────────────────────────── */}
       <section className="bg-[#f7f6f5] py-16 sm:py-20">
   <Container>
@@ -464,6 +413,25 @@ export default function ECFanUpgradesPage() {
     </div>
   </Container>
 </section>
+
+      {/* ── OUR PROJECTS ── case study carousel ───────────────────────── */}
+      <section id="our-projects" className="bg-[#111418] py-14 sm:py-20">
+        <Container>
+          <ScrollReveal className="mb-8">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              Our Projects
+            </p>
+            <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
+              Work We&apos;ve Delivered
+            </h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          </ScrollReveal>
+          <CaseStudyCarousel
+            studies={studies}
+            intro="EC retrofits across swimming pools, hospitals, and commercial buildings."
+          />
+        </Container>
+      </section>
 
       {/* ── 8. FINAL CTA ── white ────────────────────────────────────────── */}
       <section id="upgrade" className="bg-white py-20">

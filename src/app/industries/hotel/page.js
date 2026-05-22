@@ -5,6 +5,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { caseStudies } from "@/lib/caseStudyData";
+import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
   title: "Hotel Ventilation Services | BVS Building Ventilation Solutions",
@@ -40,6 +42,7 @@ const faqs = [
 ];
 
 export default function HotelPage() {
+  const studies = caseStudies.filter((s) => s.sector.includes("Hotel"));
   return (
     <div>
 
@@ -47,7 +50,7 @@ export default function HotelPage() {
       <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900">
         <Image
           src="/hotel.webp"
-          alt="Hotel interior — BVS delivers AHU works out of hours to protect guest experience"
+          alt="Hotel interior, BVS delivers AHU works out of hours to protect guest experience"
           fill
           priority
           placeholder="blur"
@@ -64,7 +67,7 @@ export default function HotelPage() {
               Hotels
             </p>
             <h1
-              className="font-display text-2xl font-extrabold uppercase leading-[1.08] text-white sm:text-5xl"
+              className="font-display text-2xl font-extrabold  leading-[1.08] text-white sm:text-5xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
               AHU Works Planned<br />Around Hotel Occupancy
@@ -82,10 +85,11 @@ export default function HotelPage() {
                 <ArrowIcon />
               </Link>
               <Link
-                href="/air-handling-unit-refurbishment"
+                href="#services"
                 className="inline-flex items-center gap-2 border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
               >
-                AHU refurbishment
+                Services
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 11l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </Link>
             </div>
           </div>
@@ -126,9 +130,6 @@ export default function HotelPage() {
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/55">
                 A failed AHU in a bedroom wing means complaints, refunds, and reviews. A failed kitchen extract unit means service cannot run. An event space with inadequate ventilation means a booking that doesn&apos;t come back.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-white/55">
-                For hotel operators, the case for proactive AHU maintenance and refurbishment is straightforward: the cost of plant failure always exceeds the cost of preventing it. The question is whether it happens on your terms or the plant&apos;s.
               </p>
               <div className="mt-7">
                 <Link
@@ -213,7 +214,7 @@ export default function HotelPage() {
       </section>
 
       {/* ── RELEVANT SERVICES ─────────────────────────────────────────── */}
-      <section className="bg-white py-16 sm:py-20">
+      <section id="services" className="bg-white py-16 sm:py-20">
         <Container>
           <ScrollReveal className="mb-10 max-w-2xl">
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
@@ -264,78 +265,15 @@ export default function HotelPage() {
         </Container>
       </section>
 
-      {/* ── CASE STUDY ────────────────────────────────────────────────── */}
-      <section className="bg-[#111418] py-16 sm:py-20">
+      {/* ── OUR PROJECTS ─────────────────────────────────────────────── */}
+      <section id="our-projects" className="bg-[#111418] py-16 sm:py-20">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-start">
-            <ScrollReveal>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
-                Case study
-              </p>
-              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
-                Hotel Group<br />AHU Programme
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-6 text-sm leading-7 text-white/55">
-                A UK hotel group required a phased AHU refurbishment programme across five properties. Bedroom wing and function space AHUs were approaching end of life, with increasing maintenance calls and energy consumption. All works were required out of hours, with no impact on guest operations.
-              </p>
-              <div className="mt-6 flex flex-col gap-3">
-                <div className="border-l-2 border-white/15 pl-4">
-                  <span className="text-sm text-white/55">All refurbishment works delivered overnight across five properties</span>
-                </div>
-                <div className="border-l-2 border-white/15 pl-4">
-                  <span className="text-sm text-white/55">EC fan upgrades included across bedroom wing plant, reducing energy consumption and part-load noise</span>
-                </div>
-              </div>
-              <p className="mt-6 text-sm leading-7 text-white/55">
-                Works were programmed around each property&apos;s occupancy calendar. No guest areas were accessed during operating hours and all plant rooms were reinstated before the morning shift.
-              </p>
-              <div className="mt-6 flex flex-col gap-3">
-                <div className="border-l-2 border-[#297858] pl-4">
-                  <span className="text-sm font-bold text-white">Zero guest complaints across all five properties</span>
-                </div>
-                <div className="border-l-2 border-[#297858] pl-4">
-                  <span className="text-sm text-white/80">EC fan upgrades delivering ongoing energy savings across all bedroom plant</span>
-                </div>
-              </div>
-              <div className="mt-7">
-                <Link
-                  href="/case-studies"
-                  className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-                >
-                  View all case studies
-                  <ArrowIcon />
-                </Link>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={80}>
-              <div className="flex flex-col gap-4">
-                <div className="relative min-h-[280px] overflow-hidden lg:min-h-[300px]">
-                  <Image
-                    src="/hotel.webp"
-                    alt="Hotel AHU refurbishment delivered out of hours by BVS"
-                    fill
-                    className="object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    { stat: "5", label: "Properties" },
-                    { stat: "Zero", label: "Guest Complaints" },
-                    { stat: "Out-of-hours", label: "Delivery" },
-                    { stat: "30–50%", label: "Fan Energy Savings" },
-                  ].map((item) => (
-                    <div key={item.label} className="bg-white/5 p-4 text-center">
-                      <p className="text-xl font-extrabold text-white">{item.stat}</p>
-                      <p className="mt-1 text-[10px] text-white/55">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
+          <ScrollReveal className="mb-8">
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">Our projects</p>
+            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">Case Studies</h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          </ScrollReveal>
+          <CaseStudyCarousel studies={studies} />
         </Container>
       </section>
 

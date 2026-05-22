@@ -5,6 +5,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { caseStudies } from "@/lib/caseStudyData";
+import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
   title: "AHU Refurbishment | BVS Building Ventilation Solutions",
@@ -44,6 +46,7 @@ const faqs = [
 ];
 
 export default function AHURefurbishmentPage() {
+  const studies = caseStudies.filter((s) => s.services.includes("refurbishment"));
   return (
     <div>
 
@@ -98,10 +101,10 @@ export default function AHURefurbishmentPage() {
                 <ArrowIcon />
               </Link>
               <a
-                href="#what-is-refurbishment"
+                href="#our-projects"
                 className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
-                Learn more
+                Our Projects
                 <ArrowDownIcon />
               </a>
             </div>
@@ -476,75 +479,6 @@ export default function AHURefurbishmentPage() {
         </Container>
       </section>
 
-      {/* ── CASE STUDY ─────────────────────────────────────────────────── */}
-      <section className="bg-[#111418] py-14 sm:py-16">
-        <Container>
-
-          <ScrollReveal className="mb-2">
-            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              Case study
-            </p>
-          </ScrollReveal>
-
-          <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-start">
-
-            <ScrollReveal>
-              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
-                NHS Hammersmith & Fulham
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-5 text-sm leading-7 text-white/70">
-                BVS were appointed to refurbish multiple air handling units across an operational NHS site. Full replacement had been quoted by others. Following BVS&apos;s condition survey, it was confirmed that refurbishment was viable, restoring units to full compliance while maintaining clinical ventilation throughout.
-              </p>
-              <p className="mt-4 text-sm leading-6 text-white/55">
-                Works were completed in phases around ward operations with zero unplanned downtime. HTM 03-01 compliance confirmed on handover.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link
-                  href="/case-studies/nhs-hammersmith-ahu-refurbishment"
-                  className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-                >
-                  Read case study →
-                </Link>
-                <Link
-                  href="/case-studies"
-                  className="inline-flex items-center gap-2 border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-                >
-                  View all case studies
-                </Link>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={80}>
-              <div className="relative h-52 overflow-hidden">
-                <Image
-                  src="/hospital.webp"
-                  alt="NHS hospital site where BVS carried out AHU refurbishment works"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-black/20" />
-              </div>
-              <div className="mt-3 grid grid-cols-2 gap-3">
-                {[
-                  { label: "Sector", value: "Healthcare / NHS" },
-                  { label: "Outcome", value: "Full refurbishment" },
-                  { label: "Downtime", value: "Zero unplanned" },
-                  { label: "Compliance", value: "HTM 03-01" },
-                ].map((item) => (
-                  <div key={item.label} className="border border-white/10 bg-white/5 p-4">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/35">{item.label}</p>
-                    <p className="mt-1 text-sm font-semibold text-white">{item.value}</p>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-
-          </div>
-
-        </Container>
-      </section>
-
       {/* ── HOW IT WORKS ───────────────────────────────────────────────── */}
       <section id="how-it-works" className="bg-[#f5f7f6] py-14 sm:py-16">
         <Container>
@@ -619,6 +553,25 @@ export default function AHURefurbishmentPage() {
 
           </div>
 
+        </Container>
+      </section>
+
+      {/* ── OUR PROJECTS ── case study carousel ───────────────────────── */}
+      <section id="our-projects" className="bg-[#111418] py-14 sm:py-20">
+        <Container>
+          <ScrollReveal className="mb-8">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              Our Projects
+            </p>
+            <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
+              Work We&apos;ve Delivered
+            </h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          </ScrollReveal>
+          <CaseStudyCarousel
+            studies={studies}
+            intro="NHS trusts, shopping centres, hotels, entertainment venues, and production facilities."
+          />
         </Container>
       </section>
 

@@ -5,6 +5,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { caseStudies } from "@/lib/caseStudyData";
+import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
   title: "AHU Manufacturing & Installation | BVS Building Ventilation Solutions",
@@ -44,14 +46,15 @@ const faqs = [
 ];
 
 export default function AHUManufacturingInstallationPage() {
+  const studies = caseStudies.filter((s) => s.services.includes("manufacturing"));
   return (
     <div>
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[620px] w-full overflow-hidden bg-slate-900">
+      <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
         <Image
           src="/ahu-sparks.webp"
-          alt="BVS air handling unit manufacturing and installation — custom-built AHU in progress"
+          alt="BVS air handling unit manufacturing and installation, custom-built AHU in progress"
           fill
           priority
           placeholder="blur"
@@ -59,42 +62,75 @@ export default function AHUManufacturingInstallationPage() {
           className="object-cover object-center scale-[1.02]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/10" />
-        <Container className="relative flex min-h-[620px] items-center">
-          <div className="w-full max-w-3xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
+        <div className="absolute inset-0 bg-black/60 sm:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 via-[35%] to-transparent" />
+
+        <Container className="relative flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
+          <div className="max-w-3xl">
+            <p
+              className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55"
+              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
+            >
               AHU Manufacturing &amp; Installation
             </p>
-            <h1 className="font-display text-4xl font-extrabold  leading-[1.05] text-white sm:text-5xl">
-            Manufactoring & Installation, Under One Contract
+            <h1
+              className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
+              style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
+            >
+              Manufacturing &amp; Installation,<br />Under One Contract
             </h1>
-            <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
-            <p className="mt-5 text-[15px] leading-7 text-white/80">
-              Custom air handling units manufactured at our UK facility and installed end-to-end under a single contract. Survey, design, manufacture, install, and commission. 
+            <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
+            <p
+              className="mt-5 max-w-xl text-[15px] leading-7 text-white"
+              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
+            >
+              Custom air handling units manufactured at our UK facility and installed end-to-end under a single contract. Survey, design, manufacture, install, and commission.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <p className="mt-6 text-sm text-white/70">
+              Call us:{" "}
+              <a href="tel:01256518170" className="font-semibold text-white transition-colors hover:text-white/80">01256 518170</a>
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
               <a
                 href="#brief"
                 className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
               >
-                Discuss your requirements
+                Discuss Your Requirements
                 <ArrowIcon />
               </a>
               <a
-                href="tel:01256518170"
-                className="inline-flex items-center gap-2 border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                href="#our-projects"
+                className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
-                <PhoneIcon /> 01256 518170
+                Our Projects
+                <ArrowDownIcon />
               </a>
             </div>
           </div>
         </Container>
+
+        <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-black/60 backdrop-blur-sm">
+          <Container>
+            <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
+              {[
+                { stat: "40+", label: "Years Experience" },
+                { stat: "UK", label: "Manufactured" },
+                { stat: "One", label: "Contract, Full Scope" },
+              ].map((s) => (
+                <div key={s.label} className="px-2 text-center sm:px-6">
+                  <p className="font-display text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
+                  <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </div>
       </section>
 
       <TrustedByBar />
 
       {/* ── PROBLEM ── 3 pain point cards ─────────────────────────────── */}
-      <section className="bg-[#0e1115] py-14 sm:py-16">
+      <section id="next-section" className="bg-[#0e1115] py-14 sm:py-16">
         <Container>
           <ScrollReveal className="mb-8">
             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
@@ -301,67 +337,6 @@ export default function AHUManufacturingInstallationPage() {
         </Container>
       </section>
 
-      {/* ── CASE STUDY ── Warner Leisure Hotel ───────────────────────── */}
-      <section className="bg-[#f7f6f5] py-20 sm:py-24">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <ScrollReveal>
-              <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-                Case study
-              </p>
-              <h2 className="mt-3 text-2xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-                Warner Leisure Hotel<br />
-                Gunton Hall, Made-to-Specification AHU
-              </h2>
-              <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
-              <div className="mt-6 space-y-2 text-sm leading-6 text-slate-600">
-                <p>Replacement of end-of-life swimming pool AHU.</p>
-                <p>Custom unit engineered to match restricted plantroom space.</p>
-                <p>Full delivery: design, manufacture, install, commission.</p>
-              </div>
-              <div className="mt-8 flex flex-wrap gap-2">
-                {["Made-to-specification design", "Flatpack delivery", "Trend controls", "End-to-end delivery"].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-medium text-slate-600"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-              <div className="mt-10 flex flex-wrap items-center gap-6">
-                <Link
-                  href="/case-studies/warner-leisure-hotel-gunton-hall-ahu"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] hover:text-[#1d5c42]"
-                >
-                  See full case study →
-                </Link>
-                <Link
-                  href="/case-studies"
-                  className="text-sm font-semibold text-slate-400 hover:text-slate-700"
-                >
-                  All case studies →
-                </Link>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal className="relative">
-              <div className="relative h-[420px] overflow-hidden border border-slate-200 bg-white shadow-sm">
-                <Image
-                  src="/gunton-hall.webp"
-                  alt="Gunton Hall Warner Leisure Hotel, custom-built AHU manufactured and installed by BVS"
-                  fill
-                  unoptimized
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
-              </div>
-            </ScrollReveal>
-          </div>
-        </Container>
-      </section>
-
       {/* ── HOW IT WORKS ── 4-step process ───────────────────────────── */}
       <section className="bg-white py-16 sm:py-20">
         <Container>
@@ -442,6 +417,25 @@ export default function AHUManufacturingInstallationPage() {
               ))}
             </div>
           </div>
+        </Container>
+      </section>
+
+      {/* ── OUR PROJECTS ── case study carousel ───────────────────────── */}
+      <section id="our-projects" className="bg-[#111418] py-14 sm:py-20">
+        <Container>
+          <ScrollReveal className="mb-8">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              Our Projects
+            </p>
+            <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
+              Work We&apos;ve Delivered
+            </h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          </ScrollReveal>
+          <CaseStudyCarousel
+            studies={studies}
+            intro="Made-to-specification AHU projects where standard catalogue units couldn't meet the requirement."
+          />
         </Container>
       </section>
 
@@ -590,6 +584,13 @@ function ArrowIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
       <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function ArrowDownIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

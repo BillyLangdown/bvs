@@ -4,6 +4,8 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { caseStudies } from "@/lib/caseStudyData";
+import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
   title: "Leisure Centre Ventilation | BVS Building Ventilation Solutions",
@@ -39,6 +41,7 @@ const faqs = [
 ];
 
 export default function LeisureCentrePage() {
+  const studies = caseStudies.filter((s) => s.sector.includes("Leisure") || s.sector.includes("Swimming Pool"));
   return (
     <div>
 
@@ -66,7 +69,7 @@ export default function LeisureCentrePage() {
               className="text-2xl font-extrabold leading-[1.08] text-white sm:text-5xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-              Pool Halls Need<br />Specialists.
+             Ventilation Solutions <br/> for Pool Halls
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white/85" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
@@ -81,10 +84,11 @@ export default function LeisureCentrePage() {
                 <ArrowIcon />
               </Link>
               <Link
-                href="/air-handling-unit-refurbishment"
+                href="#services"
                 className="inline-flex items-center gap-2 border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
               >
-                AHU refurbishment
+                Services
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 11l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </Link>
             </div>
           </div>
@@ -123,9 +127,6 @@ export default function LeisureCentrePage() {
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/55">
                 Pool hall air contains elevated chloramine concentrations, a by-product of chlorine disinfection and human contact. Chloramines are highly corrosive to steel, aluminium, copper, and most standard coatings. Standard commercial AHU components have a significantly shortened service life when exposed to this environment continuously.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-white/55">
-                High relative humidity, typically 50–65% in pool halls, adds to the challenge. Condensation on poorly insulated surfaces, structural moisture ingress, and mould are all consequences of inadequate humidity control. The AHU is the primary line of defence against all of these.
               </p>
               <div className="mt-7">
                 <Link
@@ -233,9 +234,6 @@ export default function LeisureCentrePage() {
               <p className="mt-6 text-sm leading-7 text-white/55">
                 Leisure centre AHUs often run 16–24 hours a day. The energy consumed by fixed-speed belt-driven fans in this environment is substantial, and the energy saving from upgrading to EC direct-drive is among the most significant achievable in a building of this type.
               </p>
-              <p className="mt-4 text-sm leading-7 text-white/55">
-                EC fans also remove belts from the equation, eliminating the most common source of unplanned maintenance in a pool environment. No belts means no belt changes, no belt slip, and no associated fan shutdown.
-              </p>
               <div className="mt-7">
                 <Link
                   href="/ec-fan-upgrades-and-retrofits-for-hvac"
@@ -267,7 +265,7 @@ export default function LeisureCentrePage() {
       </section>
 
       {/* ── RELEVANT SERVICES ─────────────────────────────────────────── */}
-      <section className="bg-white py-16 sm:py-20">
+      <section id="services" className="bg-white py-16 sm:py-20">
         <Container>
           <ScrollReveal className="mb-10 max-w-2xl">
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
@@ -318,78 +316,15 @@ export default function LeisureCentrePage() {
         </Container>
       </section>
 
-      {/* ── CASE STUDY ────────────────────────────────────────────────── */}
-      <section className="bg-[#111418] py-16 sm:py-20">
+      {/* ── OUR PROJECTS ─────────────────────────────────────────────── */}
+      <section id="our-projects" className="bg-[#111418] py-16 sm:py-20">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-start">
-            <ScrollReveal>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
-                Case study
-              </p>
-              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
-                Leisure Centre<br />EC Fan Retrofit
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-6 text-sm leading-7 text-white/55">
-                Failed belt-driven fans in a pool hall AHU caused complete airflow loss and uncontrolled humidity. The belt drive arrangement was beyond economic repair. Rather than replacing the AHU, BVS removed the existing fan set, installed EC plug fans within the original casing, and restored full airflow within two days.
-              </p>
-              <div className="mt-6 flex flex-col gap-3">
-                <div className="border-l-2 border-white/15 pl-4">
-                  <span className="text-sm text-white/55">Works completed overnight within the existing maintenance window</span>
-                </div>
-                <div className="border-l-2 border-white/15 pl-4">
-                  <span className="text-sm text-white/55">AHU casing, ductwork connections, and services left untouched</span>
-                </div>
-              </div>
-              <p className="mt-6 text-sm leading-7 text-white/55">
-                EC fans removed belts from the maintenance schedule entirely. Ongoing belt changes, belt slip, and associated unplanned shutdowns were all eliminated. Full airflow and humidity control was restored within two days of mobilisation.
-              </p>
-              <div className="mt-6 flex flex-col gap-3">
-                <div className="border-l-2 border-[#297858] pl-4">
-                  <span className="text-sm font-bold text-white">Full airflow and humidity control restored in two days</span>
-                </div>
-                <div className="border-l-2 border-[#297858] pl-4">
-                  <span className="text-sm text-white/80">Belt maintenance overhead eliminated, EC fans operating without unplanned stops since installation</span>
-                </div>
-              </div>
-              <div className="mt-7">
-                <Link
-                  href="/case-studies/leisure-centre-ec-fan-retrofit"
-                  className="inline-flex items-center gap-2 bg-[#297858] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
-                >
-                  Read full case study
-                  <ArrowIcon />
-                </Link>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={80}>
-              <div className="flex flex-col gap-4">
-                <div className="relative min-h-[280px] overflow-hidden lg:min-h-[300px]">
-                  <Image
-                    src="/swimming-pool.webp"
-                    alt="Leisure centre pool hall, EC fan retrofit by BVS restored airflow and humidity control"
-                    fill
-                    className="object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    { stat: "2 days", label: "Return to service" },
-                    { stat: "Zero", label: "Unplanned stops post-install" },
-                    { stat: "Belts removed", label: "Main maintenance burden gone" },
-                    { stat: "30–50%", label: "Fan energy saving" },
-                  ].map((item) => (
-                    <div key={item.label} className="bg-white/5 p-4 text-center">
-                      <p className="text-xl font-extrabold text-white">{item.stat}</p>
-                      <p className="mt-1 text-[10px] text-white/55">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
+          <ScrollReveal className="mb-8">
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">Our projects</p>
+            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">Case Studies</h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          </ScrollReveal>
+          <CaseStudyCarousel studies={studies} />
         </Container>
       </section>
 

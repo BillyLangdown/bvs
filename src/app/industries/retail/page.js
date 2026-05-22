@@ -4,6 +4,8 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { caseStudies } from "@/lib/caseStudyData";
+import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
   title: "Retail & Commercial Ventilation | BVS Building Ventilation Solutions",
@@ -39,6 +41,7 @@ const faqs = [
 ];
 
 export default function RetailPage() {
+  const studies = caseStudies.filter((s) => s.sector.includes("Retail"));
   return (
     <div>
 
@@ -81,10 +84,11 @@ export default function RetailPage() {
                 <ArrowIcon />
               </Link>
               <Link
-                href="/air-handling-unit-refurbishment"
+                href="#services"
                 className="inline-flex items-center gap-2 border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
               >
-                AHU refurbishment
+                Services
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 11l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </Link>
             </div>
           </div>
@@ -123,9 +127,6 @@ export default function RetailPage() {
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/55">
                 Retail properties trade six or seven days a week. A supermarket or shopping centre closing for AHU maintenance is not an option. Works have to happen around trading hours, and in most cases, around tenant lease obligations that limit what landlords can do and when.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-white/55">
-                Night works, bank holiday windows, and low-footfall periods are where planned AHU maintenance and refurbishment gets done. The contractor managing these works needs to be reliable, programme-compliant, and able to reinstate areas before trading opens.
               </p>
               <div className="mt-7">
                 <Link
@@ -173,10 +174,7 @@ export default function RetailPage() {
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-6 text-slate-500">
-                Commercial property operators face growing pressure on energy performance. EPC ratings affect asset value and lease terms. Energy costs are a direct line item on operating accounts.
-              </p>
-              <p className="mt-4 text-sm leading-6 text-slate-500">
-                AHU plant, particularly ageing belt-driven fan sets and fixed-speed systems, is typically one of the largest energy consumers in a commercial building. Targeted upgrades to EC fans and demand-controlled ventilation deliver measurable energy reduction at predictable cost.
+                Commercial property operators face growing pressure on energy performance. EPC ratings affect asset value and lease terms. AHU plant — particularly ageing belt-driven fan sets — is typically one of the largest energy consumers in the building. Targeted upgrades to EC fans and demand-controlled ventilation deliver measurable reduction at predictable cost.
               </p>
             </ScrollReveal>
 
@@ -209,7 +207,7 @@ export default function RetailPage() {
       </section>
 
       {/* ── RELEVANT SERVICES ─────────────────────────────────────────── */}
-      <section className="bg-white py-16 sm:py-20">
+      <section id="services" className="bg-white py-16 sm:py-20">
         <Container>
           <ScrollReveal className="mb-10 max-w-2xl">
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
@@ -257,6 +255,18 @@ export default function RetailPage() {
               </Link>
             ))}
           </div>
+        </Container>
+      </section>
+
+      {/* ── OUR PROJECTS ─────────────────────────────────────────────── */}
+      <section id="our-projects" className="bg-[#111418] py-16 sm:py-20">
+        <Container>
+          <ScrollReveal className="mb-8">
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">Our projects</p>
+            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">Case Studies</h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          </ScrollReveal>
+          <CaseStudyCarousel studies={studies} />
         </Container>
       </section>
 
