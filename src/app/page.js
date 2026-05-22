@@ -295,31 +295,34 @@ export default function Home() {
 
   <Container className="relative">
 
-    {/* INTRO */}
-    <ScrollReveal className="mb-14 max-w-2xl">
-  <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.28em] text-[#297858]">
-    What we do
-  </p>
+  <ScrollReveal className="mb-14">
+  <div className="max-w-6xl mx-auto">
+    <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-[#297858]">
+      What we do
+    </p>
 
-  <h2 className="text-2xl font-extrabold tracking-tight text-[#111418] sm:text-3xl">
-    Our Services
-  </h2>
+    <h2 className="text-2xl font-extrabold tracking-tight text-[#111418] sm:text-3xl mt-2">
+      Our Services
+    </h2>
 
-  <div className="mt-4 h-[3px] w-12 bg-[#297858]" />
+    <div className="mt-4 h-[3px] w-12 bg-[#297858]" />
 
-  <p className="mt-5 max-w-lg text-sm leading-7 text-slate-600">
-    AHU specialists covering refurbishment, EC fan upgrades, coil replacement, new installation, controls, and decarbonisation support.
-  </p>
+    <div className="mt-6 max-w-xl">
+      <p className="text-sm leading-7 text-slate-600">
+        AHU specialists covering refurbishment, EC fan upgrades, coil replacement, new installation, controls, and decarbonisation support.
+      </p>
 
-  <p className="mt-3 text-xs leading-6 text-slate-500">
-  Not sure which service applies, or need something not listed here?{" "}
-  <Link
-    href="/contact"
-    className="font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
-  >
-    Speak to our team →
-  </Link>
-</p>
+      <p className="mt-3 text-xs leading-6 text-slate-500">
+        Not sure which service applies, or need something not listed here?{" "}
+        <Link
+          href="/contact"
+          className="font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
+        >
+          Speak to our team →
+        </Link>
+      </p>
+    </div>
+  </div>
 </ScrollReveal>
     
    {/* FEATURED */}
@@ -419,7 +422,7 @@ export default function Home() {
   </Container>
 </section>
      {/* ── 8. ACCREDITATIONS ────────────────────────────────────────── */}
-     <section className="border-t border-slate-200 bg-white py-12 sm:py-14">
+     <section className=" bg-slate-50 py-12 sm:py-14">
   <Container>
 
     <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
@@ -473,67 +476,15 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── 5. BROCHURE ──────────────────────────────────────────────── */}
-      <section className="overflow-hidden bg-[#111418] py-16 sm:py-20">
-  <Container>
-    <div className="grid items-center gap-10 lg:grid-cols-[1fr_450px]">
-      <ScrollReveal>
-        <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
-          Free Download
-        </p>
-        <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl lg:text-4xl">
-          AHU Specialists<br />Brochure
-        </h2>
-        <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
-        <p className="mt-6 max-w-lg text-[15px] leading-7 text-white/65">
-          Download our AHU brochure, covering the services we provide, sectors we work in, and a selection of previous case studies.
-        </p>
-        <ul className="mt-6 flex flex-col gap-2.5">
-          {[
-            "AHU refurbishment options and typical scope of works explained",
-            "Sectors we support, including NHS, hotels, education, and defence",
-            "Previous case studies from across our project portfolio",
-          ].map((point) => (
-            <li key={point} className="flex items-center gap-2.5 text-sm text-white/55">
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
-              {point}
-            </li>
-          ))}
-        </ul>
-        <div className="mt-8 flex flex-wrap items-center gap-5">
-          <a
-            href="/bvs-brochure.webp"
-            download="BVS-AHU-Specialists-Brochure"
-            className="inline-flex items-center gap-2.5 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-bold tracking-wide text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
-          >
-            <DownloadIcon />
-            Download Brochure
-          </a>
-          <p className="text-xs text-white/30">No email required · Instant download</p>
-        </div>
-      </ScrollReveal>
-
-      <ScrollReveal delay={120} className="flex justify-center lg:justify-end">
-        <Image
-          src="/bvs-brochure.webp"
-          alt="BVS AHU Specialists Brochure"
-          width={800}
-          height={438}
-          sizes="(max-width: 1024px) 100vw, 50vw"
-          className="w-full"
-        />
-      </ScrollReveal>
-    </div>
-  </Container>
-</section>
+     
 
       {/* ── 6. SECTORS ───────────────────────────────────────────────── */}
-      <section className="bg-surface-2 py-16">
+      <section className="bg-[#f5f3ef] py-16">
         <Container>
           <ScrollReveal className="mb-8 flex flex-wrap items-baseline justify-between gap-4">
             <div>
               <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">Industries</p>
-              <h2 className="text-xl font-extrabold text-slate-900">Sectors We Work In</h2>
+              <h2 className="text-2xl font-extrabold tracking-tight text-[#111418] sm:text-3xl mt-2">Sectors We Work In</h2>
             </div>
             <Link href="/industries" className="shrink-0 text-xs font-semibold text-[#297858] hover:underline">
               View all →
@@ -575,6 +526,60 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+       {/* ── 5. BROCHURE ──────────────────────────────────────────────── */}
+       <section className="overflow-hidden bg-white py-16 sm:py-20">
+  <Container>
+    <div className="grid items-center gap-10 lg:grid-cols-[1fr_450px]">
+      <ScrollReveal>
+        <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
+          Free Download
+        </p>
+        <h2 className="text-2xl font-extrabold leading-tight text-slate-800 sm:text-3xl lg:text-4xl">
+          AHU Specialists<br />Brochure
+        </h2>
+        <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
+        <p className="mt-6 max-w-lg text-[15px] leading-7 text-slate-800">
+          Download our AHU brochure, covering the services we provide, sectors we work in, and a selection of previous case studies.
+        </p>
+        <ul className="mt-6 flex flex-col gap-2.5">
+          {[
+            "AHU refurbishment options and typical scope of works explained",
+            "Sectors we support, including NHS, hotels, education, and defence",
+            "Previous case studies from across our project portfolio",
+          ].map((point) => (
+            <li key={point} className="flex items-center gap-2.5 text-sm text-slate-500">
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
+              {point}
+            </li>
+          ))}
+        </ul>
+        <div className="mt-8 flex flex-wrap items-center gap-5">
+          <a
+            href="/bvs-brochure.webp"
+            download="BVS-AHU-Specialists-Brochure"
+            className="inline-flex items-center gap-2.5 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-bold tracking-wide text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
+          >
+            <DownloadIcon />
+            Download Brochure
+          </a>
+          <p className="text-xs text-slate-500">No email required · Instant download</p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal delay={120} className="flex justify-center lg:justify-end">
+        <Image
+          src="/bvs-brochure.webp"
+          alt="BVS AHU Specialists Brochure"
+          width={800}
+          height={438}
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="w-full"
+        />
+      </ScrollReveal>
+    </div>
+  </Container>
+</section>
 
       {/* ── 7. FINAL CTA ─────────────────────────────────────────────── */}
       <section className="bg-[#111418] py-20">

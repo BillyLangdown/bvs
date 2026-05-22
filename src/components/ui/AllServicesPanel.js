@@ -44,11 +44,11 @@ export function AllServicesPanel({ services, additionalServices }) {
       {/* TOGGLE BUTTON */}
       <button
         onClick={handleToggle}
-        className="group flex w-full items-center justify-center gap-2.5 border border-black/10 bg-white px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-600 transition-colors hover:border-[#297858]/40 hover:bg-slate-50 hover:text-slate-900"
+        className="group flex w-full items-center justify-center gap-2.5 bg-white px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-600 transition-colors hover:border-[#297858]/40 hover:bg-slate-50 hover:text-slate-900"
         aria-expanded={open}
       >
         {open ? 'Hide all services' : `View all services`}
-        <span className="rounded-full bg-[#297858]/10 px-2 py-0.5 text-[10px] font-extrabold text-[#297858]">
+        <span className=" px-2 py-0.5 text-[10px] font-extrabold text-[#297858]">
           {totalCount}
         </span>
         <ChevronIcon open={open} />
