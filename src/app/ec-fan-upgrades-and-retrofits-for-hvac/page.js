@@ -301,67 +301,34 @@ export default function ECFanUpgradesPage() {
         </div>
       </ScrollReveal>
 
-      {/* Simple stat card */}
-  {/* Energy saving visual */}
+      {/* Energy bar chart */}
 <ScrollReveal delay={80} className="h-full">
-  <div className="flex h-full flex-col justify-between border border-white/10 bg-white/[0.03] p-8">
+  <div className="flex h-full flex-col border border-white/10 bg-white/[0.03] p-8">
 
-    <div>
-      <p className="text-center text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-        Typical Energy Reduction
-      </p>
+    <p className="text-center text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+      Typical Energy Use
+    </p>
 
-      <div className="mt-6 text-center">
-        <p className="text-7xl font-extrabold leading-none text-white">
-          40%
-        </p>
+    {/* Vertical bars — bottom-aligned */}
+    <div className="mt-6 flex flex-1 items-end justify-center gap-10">
 
-        <p className="mt-3 text-sm text-white/55">
-          Lower fan energy consumption after EC retrofit
-        </p>
+      {/* AC Fan */}
+      <div className="flex flex-col items-center gap-3">
+        <p className="text-sm font-extrabold text-white/40">100%</p>
+        <div className="h-40 w-20 bg-white/20" />
+        <p className="text-[9px] font-bold uppercase tracking-widest text-white/30">AC Fan</p>
       </div>
 
-      {/* Visual comparison */}
-      <div className="mt-10 space-y-5">
-
-        {/* AC */}
-        <div>
-          <div className="mb-2 flex items-center justify-between">
-            <p className="text-[11px] font-semibold uppercase tracking-wide text-white/35">
-              Traditional AC Fan
-            </p>
-
-            <p className="text-[11px] font-semibold text-white/35">
-              100%
-            </p>
-          </div>
-
-          <div className="h-4 w-full overflow-hidden rounded-full bg-white/10">
-            <div className="h-full w-full bg-white/30" />
-          </div>
-        </div>
-
-        {/* EC */}
-        <div>
-          <div className="mb-2 flex items-center justify-between">
-            <p className="text-[11px] font-semibold uppercase tracking-wide text-[#8fd1b5]">
-              EC Fan Upgrade
-            </p>
-
-            <p className="text-[11px] font-semibold text-[#8fd1b5]">
-              ~60%
-            </p>
-          </div>
-
-          <div className="h-4 w-full overflow-hidden rounded-full bg-white/10">
-            <div className="h-full w-[60%] bg-[#297858]" />
-          </div>
-        </div>
-
+      {/* EC Upgrade */}
+      <div className="flex flex-col items-center gap-3">
+        <p className="text-sm font-extrabold text-[#8fd1b5]">~60%</p>
+        <div className="h-24 w-20 bg-[#297858]" />
+        <p className="text-[9px] font-bold uppercase tracking-widest text-[#8fd1b5]">EC Upgrade</p>
       </div>
+
     </div>
 
-    <div className="mt-8 border-t border-white/10 pt-5">
+    <div className="mt-6 border-t border-white/10 pt-5">
       <p className="text-center text-xs leading-6 text-white/40">
         Typical savings based on continuously operated commercial AHUs.
       </p>
