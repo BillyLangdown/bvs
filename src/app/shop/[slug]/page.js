@@ -108,7 +108,7 @@ export default async function ProductPage({ params }) {
 
               {/* Category pill */}
               {categoryName && (
-                <span className="mb-4 inline-block bg-[#297858] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
+                <span className="mb-4 inline-block rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
                   {categoryName}
                 </span>
               )}
@@ -184,7 +184,7 @@ export default async function ProductPage({ params }) {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#enquire"
-                  className="inline-flex items-center justify-center gap-2 bg-[#297858] px-8 py-3.5 text-sm font-semibold tracking-wide text-white transition-colors hover:bg-[#1d5c42]"
+                  className="inline-flex items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-8 py-3.5 text-sm font-semibold tracking-wide text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
                 >
                   {isCoil ? "Request a Custom Quote" : "Enquire About This Product"}
                   <ArrowIcon />
@@ -275,7 +275,7 @@ export default async function ProductPage({ params }) {
                         </div>
                       )}
                       {catName && (
-                        <span className="absolute bottom-2 left-2 bg-[#297858] px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-white">
+                        <span className="absolute bottom-2 left-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-white">
                           {catName}
                         </span>
                       )}

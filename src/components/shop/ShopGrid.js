@@ -93,7 +93,7 @@ function ProductCard({ product, categories }) {
         {/* Badges */}
         <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
           {catName && (
-            <span className="bg-[#297858] px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
+            <span className="rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
               {catName}
             </span>
           )}

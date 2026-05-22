@@ -54,7 +54,7 @@ export function NewsletterForm({ source = "newsletter_page", compact = false }) 
             <button
               type="submit"
               disabled={status === "loading" || !consent}
-              className="inline-flex h-11 items-center justify-center bg-[#297858] px-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-[#1e5e44] disabled:cursor-not-allowed disabled:opacity-40"
+              className="inline-flex h-11 items-center justify-center rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a] disabled:cursor-not-allowed disabled:opacity-40"
             >
               {status === "loading" ? "Subscribing…" : "Subscribe"}
             </button>

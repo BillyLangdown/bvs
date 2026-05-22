@@ -74,14 +74,14 @@ export default function ControllerUpgradesPage() {
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
               Unlike AHU manufacturers who only supply controllers on the condition their engineers do the work, we offer fully independent supply, installation, and commissioning.
             </p>
-            <p className="mt-6 text-sm text-white/70">
-              Call us:{" "}
-              <a href="tel:01256518170" className="font-semibold text-white transition-colors hover:text-white/80">01256 518170</a>
-            </p>
+            <a href="tel:01256518170" className="mt-6 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
+              <PhoneIcon />
+              01256 518170
+            </a>
             <div className="mt-4 flex flex-wrap gap-3">
               <a
                 href="#assessment"
-                className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
+                className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
                 Request a controls assessment
                 <ArrowIcon />
@@ -313,7 +313,7 @@ export default function ControllerUpgradesPage() {
                 ].map((item) => (
                   <div key={item.protocol} className="border border-white/10 bg-white/5 p-5">
                     <div className="mb-2">
-                      <div className="inline-block bg-[#297858] px-2 py-0.5 text-[10px] font-bold text-white">{item.protocol}</div>
+                      <div className="inline-block rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-2 py-0.5 text-[10px] font-bold text-white">{item.protocol}</div>
                     </div>
                     <p className="text-xs leading-5 text-white/50">{item.detail}</p>
                   </div>

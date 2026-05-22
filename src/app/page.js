@@ -2,8 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import { getCaseStudies } from "@/lib/wordpress/api";
 import { AllServicesPanel } from "@/components/ui/AllServicesPanel";
+import { caseStudies } from "@/lib/caseStudyData";
+import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 /* ── DATA ───────────────────────────────────────────────────────────── */
 
@@ -160,44 +161,6 @@ const sectors = [
   { label: "Retail & Commercial", desc: "Around trading hours. Reactive support.", href: "/industries/retail", photo: "/mall.webp", photoAlt: "Shopping centre retail environment, BVS ventilation works around trading hours" },
 ];
 
-const casePlaceholders = [
-  {
-    type: "EC Fan Upgrade",
-    sector: "Leisure Centre",
-    bullets: [
-      "Pool hall AHU with recurring fan failures and humidity control issues",
-      "Direct-drive EC fans retrofitted into existing casing, no structural changes needed",
-      "Full airflow restored and ongoing belt-driven maintenance eliminated",
-    ],
-    photo: "/dorset-leisure-centre-case-study.webp",
-    photoAlt: "Dorset leisure centre AHU, EC fan upgrade carried out by BVS",
-    href: "/case-studies/leisure-centre-dorset-ec-fan-upgrade",
-  },
-  {
-    type: "AHU Refurbishment",
-    sector: "Healthcare",
-    bullets: [
-      "Multiple AHUs across a live NHS site requiring full condition refurbishment",
-      "Fan repairs, corrosion treatment, damper and component replacement throughout",
-      "Completed to full specification with no disruption to clinical services",
-    ],
-    photo: "/nhs-hammersmith-fulham-case-study.webp",
-    photoAlt: "NHS Hammersmith & Fulham, AHU refurbishment carried out by BVS",
-    href: "/case-studies/nhs-hammersmith-ahu-refurbishment",
-  },
-  {
-    type: "AHU Manufacturing",
-    sector: "Hotel",
-    bullets: [
-      "Custom-built pool hall AHU required to fit a constrained plantroom",
-      "Manufactured in flatpack sections, commissioned with a Trend controls panel",
-      "Single-contract delivery from survey and design through to handover",
-    ],
-    photo: "/warner-hotel-gunton-case-study.webp",
-    photoAlt: "Warner Leisure Hotel Gunton Hall, custom-built AHU manufactured and installed by BVS",
-    href: "/case-studies/warner-leisure-hotel-gunton-hall-ahu",
-  },
-];
 
 /* ── PAGE ───────────────────────────────────────────────────────────── */
 
@@ -254,23 +217,21 @@ export default function Home() {
               Trusted by NHS, Disney, and Marriott. Serving HVAC contractors, M&amp;E consultants, and estates teams UK-wide.
             </p>
             
-            <p className="mt-6 text-sm text-white/70">
-              Call us:{" "}
-              <a href="tel:01256518170" className="font-semibold text-white hover:text-white/80 transition-colors">
-                01256 518170
-              </a>
-            </p>
+            <a href="tel:01256518170" className="mt-6 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
+              <PhoneIcon />
+              01256 518170
+            </a>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[#297858] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
+                className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
                 Discuss your project
                 <ArrowIcon />
               </Link>
               <a
                 href="#services"
-                className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-xs bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
                 Our Services
                 <ArrowDownIcon />
@@ -500,22 +461,15 @@ export default function Home() {
   </Container>
 </section>
 
-      {/* ── 4. RECENT WORK ───────────────────────────────────────────── */}
-      <section id="our-work" className="bg-surface-2 py-20">
+      {/* ── 4. OUR PROJECTS ─────────────────────────────────────────── */}
+      <section id="our-work" className="bg-[#161b22] py-16 sm:py-20">
         <Container>
-          <ScrollReveal className="mb-10 flex flex-wrap items-baseline justify-between gap-4">
-            <div>
-              <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">Evidence of Work</p>
-              <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                Recent Projects
-              </h2>
-              <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
-            </div>
-            <Link href="/case-studies" className="shrink-0 text-xs font-semibold text-slate-500 underline underline-offset-4 hover:text-[#297858]">
-              View all case studies →
-            </Link>
+          <ScrollReveal className="mb-8">
+            <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-white/45">Our Projects</p>
+            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">Recent Work</h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
           </ScrollReveal>
-          <CaseStudiesBlock />
+          <CaseStudyCarousel studies={caseStudies} />
         </Container>
       </section>
 
@@ -550,7 +504,7 @@ export default function Home() {
           <a
             href="/bvs-brochure.webp"
             download="BVS-AHU-Specialists-Brochure"
-            className="inline-flex items-center gap-2.5 bg-[#297858] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#1d5c42]"
+            className="inline-flex items-center gap-2.5 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-bold tracking-wide text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
           >
             <DownloadIcon />
             Download Brochure
@@ -646,7 +600,7 @@ export default function Home() {
             <ScrollReveal delay={100} className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-[#297858] px-7 py-4 text-sm font-bold  tracking-wide text-white transition-colors hover:bg-[#1d5c42]"
+                className="inline-flex items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-4 text-sm font-bold tracking-wide text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
                 Discuss your project
                 <ArrowIcon />
@@ -668,87 +622,6 @@ export default function Home() {
   );
 }
 
-/* ── CASE STUDIES (async) ────────────────────────────────────────────── */
-async function CaseStudiesBlock() {
-  let caseStudies = [];
-  try {
-    caseStudies = await getCaseStudies({ perPage: 3, revalidate: 300 });
-  } catch {
-    // WordPress not configured - use placeholders
-  }
-
-  const items = caseStudies.length ? caseStudies.slice(0, 3) : casePlaceholders;
-
-  return (
-    <ScrollReveal delay={80}>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((item, i) => {
-          const isWp = !!item.id;
-          return (
-            <Link
-              key={isWp ? item.id : item.type + i}
-              href={isWp ? `/case-studies/${item.slug}` : (item.href || "/case-studies")}
-              className="group flex flex-col overflow-hidden border border-slate-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-slate-200 hover:shadow-[0_20px_50px_rgba(0,0,0,0.09)]"
-            >
-              {/* IMAGE */}
-              <div className="relative h-56 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
-                {item.photo && (
-                  <Image
-                    src={item.photo}
-                    alt={item.photoAlt || item.type}
-                    fill
-                    unoptimized
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                {/* TAGS */}
-                <div className="absolute left-5 top-5 flex flex-wrap gap-2">
-                  <span className="bg-[#297858] px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.18em] text-white">
-                    {isWp ? "Case Study" : item.type}
-                  </span>
-                  {item.sector && (
-                    <span className="border border-white/30 bg-white/10 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wide text-white/80 backdrop-blur-sm">
-                      {item.sector}
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              {/* BODY */}
-              <div className="flex flex-1 flex-col p-6">
-                {isWp ? (
-                  <p className="flex-1 text-sm leading-7 text-slate-600">
-                    {item.title?.rendered}
-                  </p>
-                ) : (
-                  <ul className="flex-1 space-y-3">
-                    {item.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-3 text-[13px] leading-6 text-slate-600">
-                        <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#297858]" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
-                    {isWp ? "Case Study" : item.sector}
-                  </span>
-                  <span className="flex items-center gap-1.5 text-xs font-semibold text-[#297858] transition-all duration-200 group-hover:gap-2.5">
-                    Read more <ArrowIcon />
-                  </span>
-                </div>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
-    </ScrollReveal>
-  );
-}
 
 /* ── ICONS ───────────────────────────────────────────────────────────── */
 

@@ -290,7 +290,7 @@ export function Navigation() {
           </a>
           <Link
             href="/contact"
-            className="inline-flex h-10 items-center uppercase justify-center bg-[#297858] px-5 text-xs font-bold  tracking-wider text-white transition-colors hover:bg-[#1d5c42] whitespace-nowrap"
+            className="inline-flex h-10 items-center uppercase justify-center rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-5 text-xs font-bold tracking-wider text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_4px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a] whitespace-nowrap"
           >
            Contact 
           </Link>
