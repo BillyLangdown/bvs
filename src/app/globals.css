@@ -31,12 +31,6 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 
-  --animate-marquee: marquee 40s linear infinite;
-
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
 }
 html {
   scroll-behavior: smooth;
@@ -102,7 +96,13 @@ a {
   display: block;
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-50% - 1.75rem)); }
+}
+
 .animate-marquee {
+  animation: marquee 40s linear infinite;
   will-change: transform;
 }
 

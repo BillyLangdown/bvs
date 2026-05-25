@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { InfiniteMarquee } from "@/components/ui/InfiniteMarquee";
 import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { AllServicesPanel } from "@/components/ui/AllServicesPanel";
@@ -164,9 +165,40 @@ const sectors = [
 
 /* ── PAGE ───────────────────────────────────────────────────────────── */
 
+export const metadata = {
+  title: {
+    absolute: "BVS | AHU Specialists | Building Ventilation Solutions",
+  },
+  description:
+    "AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls. 40+ years experience. Trusted by NHS, Disney, and Marriott. UK nationwide.",
+  openGraph: {
+    title: "BVS | AHU Specialists | Building Ventilation Solutions",
+    description:
+      "AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls. 40+ years experience. Trusted by NHS, Disney, and Marriott. UK nationwide.",
+    url: "https://www.bvs-ltd.co.uk",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "BVS Building Ventilation Solutions",
+  url: "https://www.bvs-ltd.co.uk",
+  logo: "https://www.bvs-ltd.co.uk/bvs-logo.webp",
+  telephone: "01256518170",
+  email: "info@bvs-ltd.co.uk",
+  areaServed: { "@type": "Country", name: "United Kingdom" },
+  description:
+    "AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls. 40+ years experience. UK nationwide.",
+};
+
 export default function Home() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* ── 1. HERO ──────────────────────────────────────────────────── */}
       <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
@@ -209,7 +241,7 @@ export default function Home() {
               className="text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-           Better airflow,<br/> lower Energy Costs.
+           Better airflow,<br/> lower energy costs.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
@@ -267,8 +299,8 @@ export default function Home() {
         <div className="relative overflow-hidden">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-white to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-white to-transparent" />
-          <div className="flex w-max animate-marquee items-center gap-x-14">
-            {[...clientLogos, ...clientLogos].map((logo, i) => (
+          <InfiniteMarquee>
+            {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((logo, i) => (
               <Image
                 key={i}
                 src={logo.src}
@@ -279,7 +311,7 @@ export default function Home() {
                 className="h-11 w-auto shrink-0 object-contain opacity-80 transition-opacity duration-300 hover:opacity-100"
               />
             ))}
-          </div>
+          </InfiniteMarquee>
         </div>
       </section>
 
