@@ -69,21 +69,23 @@ export function CaseStudyCarousel({ studies, intro }) {
                 </h3>
                 <div className="mt-2.5 h-[3px] w-7 bg-[#297858]" />
                 {study.relevantIf?.length > 0 && (
-                  <ul className="mt-3 space-y-1.5">
-                    {study.relevantIf.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-[12px] leading-[1.4] text-white/60">
-                        <span className="mt-[4px] h-1.5 w-1.5 flex-shrink-0 bg-[#297858]" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="mt-3 text-[12px] leading-[1.5] text-white/60">
+                    <span className="font-semibold text-white/35 uppercase tracking-[0.15em] text-[10px]">Relevant if: </span>
+                    {study.relevantIf.join(", ")}
+                  </p>
                 )}
-                <div className="mt-4">
+                <div className="mt-4 flex flex-wrap gap-2.5">
                   <Link
                     href={`/case-studies/${study.slug}`}
                     className="inline-flex items-center gap-1.5 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-4 py-2 text-xs font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
                   >
                     Read case study →
+                  </Link>
+                  <Link
+                    href="/case-studies"
+                    className="inline-flex items-center gap-1.5 border border-white/20 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-white/10"
+                  >
+                    View all projects
                   </Link>
                 </div>
               </div>
