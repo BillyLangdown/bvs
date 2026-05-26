@@ -28,7 +28,7 @@ export default function RingwoodLeisureAHUControllerUpgradeCaseStudy() {
             Case Study · Leisure · Controller Upgrade
           </p>
           <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-            Ringwood Leisure<br />Centre<br />AHU Controller Upgrade
+            Ringwood Leisure<br />Centre<br />AHU controller upgrade.
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 

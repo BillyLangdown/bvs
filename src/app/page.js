@@ -218,37 +218,60 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 via-[45%] to-transparent" />
 
         <Container className="relative flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
-        <div className="max-w-3xl lg:max-w-5xl">
-            {/* Stacked text */}
-
-
-           
+        {/* Mobile hero */}
+        <div className="sm:hidden max-w-3xl text-center">
+            <h1
+              className="text-3xl font-extrabold leading-[1.08] text-white"
+              style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
+            >
+              Better airflow,<br/> lower energy costs.
+            </h1>
+            <div className="mt-4 mx-auto h-[3px] w-14 bg-[#297858]" />
+            <p className="mt-5 text-sm leading-6 text-white" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
+              AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls.
+            </p>
+            <a href="tel:01256518170" className="mt-6 inline-flex items-center justify-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
+              <PhoneIcon />
+              01256 518170
+            </a>
+            <div className="mt-4 flex flex-wrap justify-center gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
+              >
+                Discuss your project
+                <ArrowIcon />
+              </Link>
+              <a
+                href="#services"
+                className="inline-flex items-center gap-2 rounded-xs bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+              >
+                Our Services
+                <ArrowDownIcon />
+              </a>
+            </div>
+          </div>
+        {/* Desktop hero */}
+        <div className="hidden sm:block max-w-3xl lg:max-w-5xl">
             <div className="flex items-center gap-4 mb-6">
-
-{/* Divider */}
-<div className="hidden sm:block h-15 w-px bg-white/30" />
-
-{/* Stacked brand text */}
-<span className="hidden sm:flex flex-col text-[18px] leading-[1.1] uppercase tracking-[0.15em] text-white">
-  <span>Building</span>
-  <span>Ventilation</span>
-  <span>Solutions</span>
-</span>
-
-</div>
-          
+              <div className="h-15 w-px bg-white/30" />
+              <span className="flex flex-col text-[18px] leading-[1.1] uppercase tracking-[0.15em] text-white">
+                <span>Building</span>
+                <span>Ventilation</span>
+                <span>Solutions</span>
+              </span>
+            </div>
             <h1
               className="text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-           Better airflow,<br/> lower energy costs.
+              Better airflow,<br/> lower energy costs.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
               AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls. <br/>
               Trusted by NHS, Disney, and Marriott. Serving HVAC contractors, M&amp;E consultants, and estates teams UK-wide.
             </p>
-            
             <a href="tel:01256518170" className="mt-6 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
               <PhoneIcon />
               01256 518170

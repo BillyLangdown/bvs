@@ -47,7 +47,7 @@ export default function AhuSolutionsPage() {
               Building Ventilation Solutions
             </p>
             <h1 className="text-4xl font-extrabold leading-none text-white sm:text-5xl">
-              AHU Solutions
+              AHU solutions.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-emerald-500" />
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/75">

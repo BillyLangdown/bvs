@@ -100,7 +100,7 @@ export default function AboutPage() {
       </p>
 
       <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
-        Engineering-Led<br />for Over 40 Years
+        Engineering-led<br />for over 40 years.
       </h1>
 
       <div className="mt-5 h-[3px] w-14 bg-[#297858]" />

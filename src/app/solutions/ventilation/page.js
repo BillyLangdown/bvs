@@ -31,7 +31,7 @@ export default function VentilationServicesPage() {
               Building Ventilation Solutions
             </p>
             <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
-              Ventilation Services
+              Ventilation services.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-emerald-500" />
             <p className="mt-6 max-w-2xl text-base leading-7 text-white/75">

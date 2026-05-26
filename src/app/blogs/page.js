@@ -117,7 +117,7 @@ export default async function BlogsPage() {
               Blogs
             </p>
             <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-5xl">
-              Practical AHU Guidance
+              Practical AHU guidance.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/75">

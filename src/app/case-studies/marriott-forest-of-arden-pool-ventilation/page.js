@@ -35,7 +35,7 @@ export default function MarriottForestOfArdenCaseStudy() {
             Case Study · Hotel · AHU Troubleshooting
           </p>
           <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-            Forest of Arden<br />Swimming Pool<br />Ventilation Troubleshooting
+            Forest of Arden<br />Swimming pool<br />Ventilation troubleshooting.
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 

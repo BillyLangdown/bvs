@@ -28,7 +28,7 @@ export default function NewtonMearnsAHURefurbishmentPipeworkCaseStudy() {
             Case Study · Commercial · AHU Refurbishment & Pipework
           </p>
           <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-            Newton Mearns<br />Shopping Centre<br />AHU Refurbishment
+            Newton Mearns<br />Shopping Centre<br />AHU refurbishment.
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 

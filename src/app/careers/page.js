@@ -36,9 +36,9 @@ export default function CareersPage() {
       </p>
 
       <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-5xl">
-        Opportunities At
+        Opportunities at
     
-       BVS
+       BVS.
       </h1>
 
       <div className="mt-4 h-[3px] w-14 bg-[#297858]" />

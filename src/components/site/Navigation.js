@@ -300,9 +300,9 @@ export function Navigation() {
         <div className="flex flex-1 items-center justify-end gap-2 lg:hidden">
           <Link
             href="/contact"
-            className="inline-flex h-9 items-center justify-center bg-emerald-700 px-4 text-xs font-bold uppercase tracking-wide text-white"
+            className="inline-flex h-9 items-center justify-center rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-4 text-xs font-bold uppercase tracking-wide text-white shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_4px_rgba(0,0,0,0.2)] transition-all hover:from-[#1e5038] hover:to-[#133f2a]"
           >
-            Enquire
+            Contact
           </Link>
           <button
             type="button"
@@ -433,10 +433,10 @@ export function Navigation() {
             <div className="p-6 flex flex-col gap-3">
               <Link
                 href="/contact"
-                className="flex h-11 w-full items-center justify-center bg-emerald-700 text-sm font-bold uppercase tracking-wide text-white"
+                className="flex h-11 w-full items-center justify-center rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] text-sm font-bold uppercase tracking-wide text-white shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_4px_rgba(0,0,0,0.2)] transition-all hover:from-[#1e5038] hover:to-[#133f2a]"
                 onClick={() => setMobileOpen(false)}
               >
-                Enquire
+                Contact
               </Link>
               <a
                 href="tel:01256518170"

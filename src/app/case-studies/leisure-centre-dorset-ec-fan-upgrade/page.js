@@ -28,7 +28,7 @@ export default function LeisureCentreDorsetECFanUpgradeCaseStudy() {
             Case Study · Leisure · EC Fan Upgrade
           </p>
           <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-            Leisure Centre<br />Dorset<br />Swimming Pool EC Fan Upgrade
+            Leisure Centre<br />Dorset<br />Swimming pool EC fan upgrade.
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 

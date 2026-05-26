@@ -28,7 +28,7 @@ export default function RedDistilleryAhuRefurbishment() {
             Case Study · Manufacturing · AHU Refurbishment
           </p>
           <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-            Red English Group<br />Distillery<br />AHU Refurbishment
+            Red English Group<br />Distillery<br />AHU refurbishment.
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 

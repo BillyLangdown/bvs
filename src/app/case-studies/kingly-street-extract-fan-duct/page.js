@@ -28,7 +28,7 @@ export default function KinglyStreetExtractFanDuct() {
             Case Study · Commercial · Extract Fan & Ductwork
           </p>
           <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-            60 Kingly Street<br />London<br />Extract Fan & Duct
+            60 Kingly Street<br />London<br />Extract fan & duct.
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 

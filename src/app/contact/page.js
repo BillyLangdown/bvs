@@ -41,7 +41,7 @@ export default function ContactPage() {
           </p>
   
           <h1 className="text-3xl font-extrabold leading-[1.02] text-white sm:text-5xl">
-            Speak Directly With An AHU Specialist
+            Speak directly with an AHU specialist.
           </h1>
   
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />

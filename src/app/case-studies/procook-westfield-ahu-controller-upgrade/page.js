@@ -28,7 +28,7 @@ export default function ProcookWestfieldAHUControllerUpgradeCaseStudy() {
             Case Study · Retail · Controller Upgrade
           </p>
           <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-            Procook<br />Westfield<br />AHU Controller Upgrade
+            Procook<br />Westfield<br />AHU controller upgrade.
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 

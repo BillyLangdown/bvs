@@ -64,7 +64,7 @@ export default function ResourcesPage() {
     </p>
 
     <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-5xl">
-      Technical Articles<br />& Guides
+      Technical articles<br />& guides.
     </h1>
 
     <div className="mt-4 h-[3px] w-14 bg-[#297858]" />

@@ -28,7 +28,7 @@ export default function PharmaceuticalLabCoilReplacement() {
             Case Study · Pharmaceutical · Coil Replacement
           </p>
           <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-            Pharmaceutical<br />Manufacturer<br />AHU Coil Replacement
+            Pharmaceutical<br />manufacturer<br />AHU coil replacement.
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 

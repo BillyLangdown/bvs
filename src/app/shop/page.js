@@ -76,7 +76,7 @@ export default async function ShopPage() {
                 Shop
               </p>
               <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl">
-                HVAC Components<br />&amp; Parts
+                HVAC components<br />&amp; parts.
               </h1>
               <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-5 max-w-lg text-[15px] leading-7 text-white/65">

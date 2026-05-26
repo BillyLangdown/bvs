@@ -113,13 +113,51 @@ export default function CoilReplacementPage() {
 </div>
 
 <Container className="relative z-10 flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
-  <div className="max-w-3xl">
+  {/* Mobile hero */}
+  <div className="sm:hidden max-w-3xl text-center">
+    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
+      AHU Coil Replacement
+    </p>
+
+    <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white">
+      Coils matched <br/> to your system.
+    </h1>
+
+    <div className="mt-5 mx-auto h-[3px] w-14 bg-[#297858]" />
+
+    <p className="mt-6 max-w-xl text-sm leading-6 text-white">
+      Replacement coils measured on site and manufactured to your AHU's exact specification.
+    </p>
+    <a href="tel:01256518170" className="mt-6 inline-flex items-center justify-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
+      <PhoneIcon />
+      01256 518170
+    </a>
+    <div className="mt-4 flex flex-wrap justify-center gap-3">
+      <a
+        href="#enquire"
+        className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
+      >
+        Discuss your replacement options
+        <ArrowIcon />
+      </a>
+
+      <a
+        href="#our-projects"
+        className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+      >
+        Our Projects
+        <ArrowDownIcon className="h-4 w-4" />
+      </a>
+    </div>
+  </div>
+  {/* Desktop hero */}
+  <div className="hidden sm:block max-w-3xl">
     <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
       AHU Coil Replacement
     </p>
 
     <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
-      Coils Matched <br/> to Your System
+      Coils matched <br/> to your system.
     </h1>
 
     <div className="mt-5 h-[3px] w-14 bg-[#297858]" />

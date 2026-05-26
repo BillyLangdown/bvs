@@ -81,7 +81,7 @@ export default function ValidationSurveysPage() {
               Ventilation Solutions
             </p>
             <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
-              Validation Surveys
+              Validation surveys.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-lg text-base leading-7 text-white/75">

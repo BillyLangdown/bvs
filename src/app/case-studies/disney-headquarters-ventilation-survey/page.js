@@ -28,7 +28,7 @@ export default function DisneyHeadquartersVentilationSurvey() {
             Case Study · Corporate · Ventilation Survey
           </p>
           <h1 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-            EU Disney<br />Headquarters<br />Ventilation Survey
+            EU Disney<br />Headquarters<br />Ventilation survey.
           </h1>
           <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
 
