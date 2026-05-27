@@ -65,9 +65,9 @@ export default function AHUManufacturingInstallationPage() {
         <div className="absolute inset-0 bg-black/60 sm:hidden" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 via-[35%] to-transparent" />
 
-        <Container className="relative flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
+        <Container className="relative flex min-h-[620px] items-center py-14 pb-16 sm:min-h-[600px] sm:py-20 sm:pb-28">
           {/* Mobile hero */}
-          <div className="sm:hidden max-w-3xl text-center">
+          <div className="sm:hidden max-w-3xl">
             <p
               className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
@@ -80,28 +80,28 @@ export default function AHUManufacturingInstallationPage() {
             >
               Manufacturing &amp; installation,<br />under one contract.
             </h1>
-            <div className="mt-4 mx-auto h-[3px] w-14 bg-[#297858]" />
+            <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
+            <a href="tel:01256518170" className="mt-5 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
+              <PhoneIcon />
+              01256 518170
+            </a>
             <p
-              className="mt-5 max-w-xl text-sm leading-6 text-white"
+              className="mt-3 max-w-xl text-sm leading-6 text-white"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
             >
               Custom air handling units manufactured at our UK facility and installed end-to-end under a single contract.
             </p>
-            <a href="tel:01256518170" className="mt-6 inline-flex items-center justify-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
-              <PhoneIcon />
-              01256 518170
-            </a>
-            <div className="mt-4 flex flex-wrap justify-center gap-3">
+            <div className="mt-6 flex flex-col gap-3">
               <a
                 href="#brief"
-                className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
                 Discuss Your Requirements
                 <ArrowIcon />
               </a>
               <a
                 href="#our-projects"
-                className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+                className="inline-flex w-full items-center justify-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
                 Our Projects
                 <ArrowDownIcon />
@@ -482,107 +482,48 @@ export default function AHUManufacturingInstallationPage() {
         </Container>
       </section>
 
-      {/* ── OFFER ── no-obligation review ─────────────────────────────── */}
-      <section className="bg-[#f7f6f5] py-14">
+      {/* ── FINAL CTA ── light section with form ──────────────────────── */}
+      <section id="brief" className="bg-[#f7f6f5] py-16 sm:py-20">
         <Container>
-          <ScrollReveal>
-            <div className="border-2 border-[#297858] bg-white p-8 sm:p-10">
-              <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-                    No-obligation offer
-                  </p>
-                  <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                    Design Brief Review<br />&amp; Feasibility Assessment
-                  </h2>
-                  <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-                  <p className="mt-4 text-sm leading-6 text-slate-600">
-                    Before any commitment, we review your airflow requirements, space constraints, and sector context, and produce a practical feasibility assessment with indicative lead time and budget.
-                  </p>
-                  <ul className="mt-5 space-y-2.5">
-                    {[
-                      "Feasibility confirmed against space and performance requirements",
-                      "Indicative lead time and budget range provided",
-                      "Specification options discussed, full packaged or mechanical only",
-                      "Access and installation programme assessed",
-                      "No obligation to proceed",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">
-                        <CheckIcon className="mt-0.5" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex flex-col gap-3 lg:min-w-[200px]">
-                  <a
-                    href="#brief"
-                    className="inline-flex items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-8 py-4 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
-                  >
-                    Submit your brief
-                  </a>
-                  <a
-                    href="tel:01256518170"
-                    className="inline-flex items-center justify-center gap-2 border border-slate-300 px-8 py-4 text-sm font-semibold text-slate-900 transition-colors hover:border-[#297858]"
-                  >
-                    <PhoneIcon /> 01256 518170
-                  </a>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </Container>
-      </section>
-
-      {/* ── FINAL CTA ── dark section with form ──────────────────────── */}
-      <section id="brief" className="bg-[#111418] py-20">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
             <ScrollReveal>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/40">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
                 Get in touch
               </p>
-              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+              <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
                 Discuss Your<br />Manufacturing Brief
               </h2>
-              <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
-              <p className="mt-5 text-sm leading-7 text-white/60">
-                Tell us the airflow requirements, available space envelope, any access constraints, and the sector. We&apos;ll provide a practical view on feasibility and lead time before you commit to anything.
+              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-4 text-sm leading-6 text-slate-600">
+                Tell us the airflow requirements, available space, any access constraints, and sector. We respond within one working day with a practical view on feasibility and lead time.
               </p>
-              <div className="mt-6 space-y-2.5 border-l border-white/10 pl-5">
-                <p className="text-sm text-white/50">40+ years manufacturing experience, not a recent addition to the service range</p>
-                <p className="text-sm text-white/50">UK facility, accessible for client or third-party pre-delivery inspection</p>
-                <p className="text-sm text-white/50">Full scope: manufacture, installation, commissioning, documentation</p>
-              </div>
-              <div className="mt-7 flex flex-col gap-3 border-t border-white/10 pt-6">
-                <a href="tel:01256518170" className="inline-flex items-center gap-3 text-sm text-white/55 transition-colors hover:text-white">
+              <ul className="mt-5 space-y-2.5">
+                {[
+                  "Feasibility confirmed against space and performance requirements",
+                  "Indicative lead time and budget range provided",
+                  "Specification options discussed, full packaged or mechanical only",
+                  "Access and installation programme assessed",
+                  "No obligation to proceed",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">
+                    <CheckIcon className="mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 border border-[#297858]/20 bg-[#297858]/5 p-5">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#297858]">Call us directly</p>
+                <a href="tel:01256518170" className="mt-3 flex items-center gap-3 text-2xl font-extrabold text-slate-900 transition-colors hover:text-[#297858]">
                   <PhoneIcon /> 01256 518170
-                </a>
-                <a href="mailto:info@bvs-ltd.co.uk" className="inline-flex items-center gap-3 text-sm text-white/55 transition-colors hover:text-white">
-                  <MailIcon /> info@bvs-ltd.co.uk
                 </a>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={80}>
-              <div className="border border-slate-200 bg-white p-8">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">
-                  Enquiry
-                </p>
-                <p className="mt-3 text-sm leading-6 text-slate-500">
-                  Send us your airflow requirements, space constraints, and sector. We&apos;ll respond with a practical view on specification and lead time within 24 hours.
-                </p>
-                <div className="mt-6"><QuickQuoteForm defaultService="AHU Manufacturing & Installation" /></div>
-                <div className="mt-5 flex flex-col gap-2 border-t border-slate-100 pt-4">
-                  <div className="flex items-center gap-2 text-[11px] text-slate-400">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                    Response within 24 hours
-                  </div>
-                  <div className="flex items-center gap-2 text-[11px] text-slate-400">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                    Lead time and feasibility confirmed at quotation stage
-                  </div>
-                </div>
+              <div className="border border-slate-200 bg-white p-7">
+                <p className="mb-1 text-xs font-bold uppercase tracking-[0.2em] text-[#297858]">Enquiry</p>
+                <p className="mb-5 text-xs text-slate-500">We will aim to respond within 24 hours</p>
+                <QuickQuoteForm defaultService="AHU Manufacturing & Installation" />
               </div>
             </ScrollReveal>
           </div>

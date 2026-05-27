@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import { flushSync } from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -26,17 +25,17 @@ function ChevronIcon({ open }) {
 
 export function AllServicesPanel({ services, additionalServices }) {
   const [open, setOpen] = useState(false);
-
   const totalCount = services.length + additionalServices.length;
 
   function handleToggle() {
-    if (!open) {
-      const y = window.scrollY;
-      flushSync(() => setOpen(true));
-      window.scrollTo(0, y);
-    } else {
-      setOpen(false);
-    }
+    // Scroll anchoring fires on every layout frame throughout the animation,
+    // not just once — so one-time corrections always lose. Disable it on the
+    // page scroll container for the full animation window, then restore.
+    document.documentElement.style.overflowAnchor = 'none';
+    setOpen(prev => !prev);
+    setTimeout(() => {
+      document.documentElement.style.overflowAnchor = '';
+    }, 500);
   }
 
   return (
@@ -54,8 +53,22 @@ export function AllServicesPanel({ services, additionalServices }) {
         <ChevronIcon open={open} />
       </button>
 
-      {/* PANEL */}
-      {open && (
+      {/* PANEL — grid-rows trick animates height from 0 to auto without JS measurement */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateRows: open ? '1fr' : '0fr',
+          transition: 'grid-template-rows 0.45s cubic-bezier(0.4, 0, 0.2, 1)',
+        }}
+      >
+        <div style={{ overflow: 'hidden' }}>
+        <div
+          style={{
+            opacity: open ? 1 : 0,
+            transition: 'opacity 0.35s ease',
+            transitionDelay: open ? '0.1s' : '0s',
+          }}
+        >
         <div className="mt-10 space-y-12">
 
           {/* Full service capability */}
@@ -133,7 +146,9 @@ export function AllServicesPanel({ services, additionalServices }) {
           </div>
 
         </div>
-      )}
+        </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -84,9 +84,9 @@ export default function ECFanUpgradesPage() {
         <div className="absolute inset-0 bg-black/60 sm:hidden" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 via-[35%] to-transparent" />
 
-        <Container className="relative flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
+        <Container className="relative flex min-h-[620px] items-center py-14 pb-16 sm:min-h-[600px] sm:py-20 sm:pb-20">
           {/* Mobile hero */}
-          <div className="sm:hidden max-w-3xl text-center">
+          <div className="sm:hidden max-w-3xl">
             <p
               className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
@@ -99,28 +99,28 @@ export default function ECFanUpgradesPage() {
             >
               Lower energy use<br />and better reliability.
             </h1>
-            <div className="mt-4 mx-auto h-[3px] w-14 bg-[#297858]" />
+            <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
+            <a href="tel:01256518170" className="mt-5 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
+              <PhoneIcon />
+              01256 518170
+            </a>
             <p
-              className="mt-5 max-w-xl text-sm leading-6 text-white"
+              className="mt-3 max-w-xl text-sm leading-6 text-white"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
             >
               EC fan retrofits improve efficiency, reliability, and control without full unit replacement.
             </p>
-            <a href="tel:01256518170" className="mt-6 inline-flex items-center justify-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
-              <PhoneIcon />
-              01256 518170
-            </a>
-            <div className="mt-4 flex flex-wrap justify-center gap-3">
+            <div className="mt-6 flex flex-col gap-3">
               <a
                 href="#upgrade"
-                className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
                 Discuss Your Upgrade
                 <ArrowIcon />
               </a>
               <a
                 href="#our-projects"
-                className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+                className="inline-flex w-full items-center justify-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
                 Our Projects
                 <ArrowDownIcon />
