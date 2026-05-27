@@ -62,7 +62,7 @@ export default function AHUManufacturingInstallationPage() {
           className="object-cover object-center scale-[1.02]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/60 sm:hidden" />
+        <div className="absolute inset-0 bg-black/10 sm:hidden" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 via-[35%] to-transparent" />
 
         <Container className="relative flex min-h-[620px] items-center py-14 pb-16 sm:min-h-[600px] sm:py-20 sm:pb-28">
@@ -158,11 +158,11 @@ export default function AHUManufacturingInstallationPage() {
               {[
                 { stat: "40+", label: "Years Experience" },
                 { stat: "UK", label: "Manufactured" },
-                { stat: "One", label: "Contract, Full Scope" },
+                { stat: "One", label: "Contract" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
                   <p className="font-display text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
-                  <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
+                  <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label === "Years Experience" ? <><span className="sm:hidden">Yrs Experience</span><span className="hidden sm:block">Years Experience</span></> : s.label}</p>
                 </div>
               ))}
             </div>

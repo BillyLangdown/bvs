@@ -42,10 +42,10 @@ const faqs = [
 
 export default function EducationPage() {
   return (
-    <div>
+    <div className="pb-20 lg:pb-0">
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[580px] w-full overflow-hidden bg-slate-900">
+      <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
         <Image
           src="/school.webp"
           alt="School building, BVS delivers AHU refurbishment and ventilation works around academic calendars"
@@ -53,42 +53,72 @@ export default function EducationPage() {
           priority
           placeholder="blur"
           blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
+          unoptimized
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/50 sm:hidden" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 via-[50%] to-black/20" />
+        <div className="absolute inset-0 bg-black/60 sm:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 via-[35%] to-transparent" />
 
-        <Container className="relative flex min-h-[520px] items-center py-14 pb-28 sm:min-h-[580px] sm:py-20 sm:pb-20">
-          <div className="max-w-3xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
+        <Container className="relative flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
+          {/* Mobile hero */}
+          <div className="sm:hidden max-w-3xl">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               Education
             </p>
-            <h1
-              className="text-2xl font-extrabold leading-[1.08] text-white sm:text-5xl"
-              style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
-            >
-              AHU projects timed around term dates.
+            <h1 className="text-3xl font-extrabold leading-[1.08] text-white">
+              AHU projects timed<br />around term dates.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
-            <p className="mt-5 text-[15px] leading-7 text-white/85" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
-              Educational buildings demand a specific kind of planning. Works must fit the academic calendar, respect safeguarding obligations, and deliver value in a sector where capital budgets are always under pressure.
+            <a href="tel:01256518170" className="mt-5 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
+              <PhoneIcon />
+              01256 518170
+            </a>
+            <p className="mt-3 text-sm leading-6 text-white">
+              Works delivered within holiday windows. Budget-aware, lifecycle-first approach for schools and universities.
+            </p>
+            <div className="mt-6 flex flex-col gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
+              >
+                Discuss your estate <ArrowIcon />
+              </Link>
+              <a
+                href="#services"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+              >
+                Learn more <ArrowDownIcon />
+              </a>
+            </div>
+          </div>
+          {/* Desktop hero */}
+          <div className="hidden sm:block max-w-3xl">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
+              Education
+            </p>
+            <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
+              AHU projects timed<br />around term dates.
+            </h1>
+            <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
+            <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
+              Educational buildings demand specific planning. Works must fit the academic calendar, respect safeguarding obligations, and deliver value in a sector where capital budgets are always under pressure.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
-                Get in touch
+                Discuss your estate
                 <ArrowIcon />
               </Link>
-              <Link
+              <a
                 href="#services"
                 className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
-                Services
-                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 11l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </Link>
+                Learn more
+                <ArrowDownIcon />
+              </a>
             </div>
           </div>
         </Container>
@@ -97,9 +127,9 @@ export default function EducationPage() {
           <Container>
             <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
               {[
-                { stat: "Holiday Window", label: "Delivery Programme" },
-                { stat: "Budget Aware", label: "Lifecycle Approach" },
-                { stat: "UK Nationwide", label: "Any Estate Type" },
+                { stat: "Term-Break", label: "Delivery" },
+                { stat: "Budget-Aware", label: "Lifecycle" },
+                { stat: "Nationwide", label: "Coverage" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
                   <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
@@ -406,6 +436,13 @@ function ArrowIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
       <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function ArrowDownIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

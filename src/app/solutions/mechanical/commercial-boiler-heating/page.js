@@ -84,11 +84,43 @@ export default function CommercialBoilerHeatingPage() {
           unoptimized
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/60 sm:hidden" />
+        <div className="absolute inset-0 bg-black/30 sm:hidden" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 via-[35%] to-transparent" />
 
         <Container className="relative flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
-          <div className="max-w-3xl">
+          {/* Mobile hero */}
+          <div className="sm:hidden max-w-3xl">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
+              Mechanical Solutions
+            </p>
+            <h1 className="text-3xl font-extrabold leading-[1.08] text-white">
+              Commercial boiler<br />&amp; heating.
+            </h1>
+            <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
+            <a href="tel:01256518170" className="mt-5 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
+              <PhoneIcon />
+              01256 518170
+            </a>
+            <p className="mt-3 text-sm leading-6 text-white">
+              Gas Safe registered installation, servicing, and repair of commercial boilers and heating plant across the UK.
+            </p>
+            <div className="mt-6 flex flex-col gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
+              >
+                Discuss your project <ArrowIcon />
+              </Link>
+              <a
+                href="#overview"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+              >
+                Learn more <ArrowDownIcon />
+              </a>
+            </div>
+          </div>
+          {/* Desktop hero */}
+          <div className="hidden sm:block max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               Mechanical Solutions
             </p>
@@ -123,13 +155,13 @@ export default function CommercialBoilerHeatingPage() {
           <Container>
             <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
               {[
-                { stat: "Gas Safe", label: "Registered Engineers" },
-                { stat: "UK Wide", label: "Nationwide Coverage" },
+                { stat: "Gas Safe", label: "Registered" },
+                { stat: "UK Wide", label: "Coverage" },
                 { stat: "40+", label: "Years Experience" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
                   <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
-                  <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
+                  <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label === "Years Experience" ? <><span className="sm:hidden">Yrs Experience</span><span className="hidden sm:block">Years Experience</span></> : s.label}</p>
                 </div>
               ))}
             </div>
@@ -243,31 +275,39 @@ export default function CommercialBoilerHeatingPage() {
                   <PhoneIcon /> 01256 518170
                 </a>
               </div>
-              <div className="mt-8 border-t border-slate-200 pt-6">
-                <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
-                  Related services
-                </p>
-                <div className="flex flex-col gap-2">
-                  {[
-                    { href: "/solutions/mechanical/industrial-pipework", label: "Commercial Pipework" },
-                    { href: "/solutions/mechanical/mechanical-electrical", label: "Mechanical & Electrical" },
-                    { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
-                  ].map((l) => (
-                    <Link
-                      key={l.href}
-                      href={l.href}
-                      className="flex items-center justify-between border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-900 transition-colors hover:border-[#297858]/30 hover:bg-slate-50"
-                    >
-                      {l.label}
-                      <span className="ml-3 shrink-0 text-[#297858]">→</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
             </div>
             <div className="border border-slate-200 bg-white p-8">
+              <p className="mb-1 text-xs font-bold uppercase tracking-[0.2em] text-[#297858]">Enquiry</p>
+              <p className="mb-5 text-xs text-slate-500">We will aim to respond within 24 hours</p>
               <QuickQuoteForm />
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── RELATED SERVICES ─────────────────────────────────────────── */}
+      <section className="border-t border-slate-100 bg-white py-12">
+        <Container>
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-slate-400">Related services</p>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { href: "/solutions/mechanical/industrial-pipework", label: "Commercial Pipework" },
+              { href: "/solutions/mechanical/mechanical-electrical", label: "Mechanical & Electrical" },
+              { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
+              { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },
+            ].map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="group flex items-center justify-between border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-900 transition-all hover:border-[#297858] hover:bg-slate-50"
+              >
+                <span className="flex items-center gap-3">
+                  <span className="h-2 w-2 rounded-full bg-slate-300 transition-colors group-hover:bg-[#297858]" />
+                  {l.label}
+                </span>
+                <span className="text-slate-300 transition-all group-hover:translate-x-1 group-hover:text-[#297858]">→</span>
+              </Link>
+            ))}
           </div>
         </Container>
       </section>

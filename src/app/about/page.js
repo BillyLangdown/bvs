@@ -178,14 +178,14 @@ export default function AboutPage() {
             <ScrollReveal delay={100}>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { stat: "40+", label: "Years in operation" },
-                  { stat: "1000s", label: "AHUs surveyed and worked on" },
-                  { stat: "UK", label: "Nationwide coverage" },
-                  { stat: "6", label: "Sectors served as standard" },
+                  { stat: "40+", label: "Years Experience" },
+                  { stat: "1000s", label: "AHUs" },
+                  { stat: "UK", label: "Nationwide" },
+                  { stat: "6", label: "Sectors" },
                 ].map((item) => (
                   <div key={item.label} className="border border-white/10 bg-white/5 p-6">
                     <p className="text-3xl font-extrabold text-[#297858]">{item.stat}</p>
-                    <p className="mt-1 text-xs text-white/55">{item.label}</p>
+                    <p className="mt-1 text-xs text-white/55">{item.label === "Years Experience" ? <><span className="sm:hidden">Yrs Experience</span><span className="hidden sm:block">Years Experience</span></> : item.label}</p>
                   </div>
                 ))}
               </div>
