@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
 
 /* ── Shared input styles ───────────────────────────────────────────────── */
@@ -100,6 +100,22 @@ function FileUpload({ value, onChange }) {
   );
 }
 
+/* ── Mobile step indicator ─────────────────────────────────────────────── */
+
+function StepIndicator({ step, stepTwoLabel }) {
+  return (
+    <div className="flex items-center gap-3 sm:hidden">
+      <div className="flex gap-1">
+        <span className={`h-[3px] w-8 rounded-full transition-colors duration-200 ${step === 1 ? "bg-[#297858]" : "bg-slate-200"}`} />
+        <span className={`h-[3px] w-8 rounded-full transition-colors duration-200 ${step === 2 ? "bg-[#297858]" : "bg-slate-200"}`} />
+      </div>
+      <span className="text-[11px] text-slate-400">
+        {step === 1 ? "Your details" : stepTwoLabel}
+      </span>
+    </div>
+  );
+}
+
 /* ── Contact fields (shared across all forms) ──────────────────────────── */
 
 function ContactFields({ v, set }) {
@@ -119,19 +135,39 @@ function ContactFields({ v, set }) {
 
 /* ── Submit row ────────────────────────────────────────────────────────── */
 
-function SubmitRow({ canSubmit, status, errorMsg }) {
+function SubmitRow({ canSubmit, status, errorMsg, step, onBack }) {
   return (
     <>
       {errorMsg && status === "error" && (
         <p className="border-l-2 border-red-500 pl-3 text-sm text-red-600">{errorMsg}</p>
       )}
-      <div className="flex items-center justify-between gap-4 pt-1">
+      <div className={`flex-col gap-3 pt-1 sm:flex sm:flex-row sm:items-center sm:justify-between sm:gap-4${step === 1 ? " hidden" : " flex"}`}>
         <p className="text-xs text-slate-400">Response within one working day.</p>
-        <button type="submit" disabled={!canSubmit} className="inline-flex shrink-0 items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a] disabled:opacity-50">
-          {status === "loading" ? "Sending…" : (<>Send Enquiry <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></>)}
-        </button>
+        <div className="flex items-center gap-4">
+          <button type="button" onClick={onBack} className="sm:hidden text-[11px] text-slate-400 underline underline-offset-2">
+            Back
+          </button>
+          <button type="submit" disabled={!canSubmit} className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a] disabled:opacity-50">
+            {status === "loading" ? "Sending…" : (<>Send Enquiry <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></>)}
+          </button>
+        </div>
       </div>
     </>
+  );
+}
+
+/* ── Mobile Next button ────────────────────────────────────────────────── */
+
+function NextButton({ canNext, onNext, label = "Next: Specification →" }) {
+  return (
+    <button
+      type="button"
+      onClick={onNext}
+      disabled={!canNext}
+      className="sm:hidden w-full border border-slate-200 bg-slate-50 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-700 transition-colors hover:bg-slate-100 disabled:opacity-40"
+    >
+      {label}
+    </button>
   );
 }
 
@@ -190,7 +226,9 @@ function useSubmit({ type, buildPayload, requiredFields }) {
 
 function CoilForm() {
   const [v, setV] = useState({ firstName: "", lastName: "", email: "", phone: "", coilType: "", faceHeight: "", faceWidth: "", rows: "", finSpacing: "", connections: "", notes: "", image: null });
+  const [step, setStep] = useState(1);
   const set = (k, val) => setV((p) => ({ ...p, [k]: val }));
+  const canNext = v.firstName.trim() && v.lastName.trim() && v.email.trim() && v.phone.trim();
 
   const { status, errorMsg, canSubmit, onSubmit } = useSubmit({
     type: "coil",
@@ -216,26 +254,33 @@ function CoilForm() {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-4 p-6 sm:p-8">
-      <ContactFields v={v} set={set} />
+      <StepIndicator step={step} stepTwoLabel="Specification" />
 
-      <Field label="Coil type" required>
-        <Select value={v.coilType} onChange={(val) => set("coilType", val)} placeholder="Select coil type…" options={["Hot water", "Chilled water", "DX refrigerant", "Steam", "Heat recovery"]} />
-      </Field>
+      <div className={step === 2 ? "hidden sm:contents" : "contents"}>
+        <ContactFields v={v} set={set} />
+      </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Face height (mm)" optional><Input type="number" min="1" placeholder="e.g. 600" value={v.faceHeight} onChange={(val) => set("faceHeight", val)} /></Field>
-        <Field label="Face width (mm)" optional><Input type="number" min="1" placeholder="e.g. 400" value={v.faceWidth} onChange={(val) => set("faceWidth", val)} /></Field>
+      <div className={step === 1 ? "hidden sm:contents" : "contents"}>
+        <Field label="Coil type" required>
+          <Select value={v.coilType} onChange={(val) => set("coilType", val)} placeholder="Select coil type…" options={["Hot water", "Chilled water", "DX refrigerant", "Steam", "Heat recovery"]} />
+        </Field>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Face height (mm)" optional><Input type="number" min="1" placeholder="e.g. 600" value={v.faceHeight} onChange={(val) => set("faceHeight", val)} /></Field>
+          <Field label="Face width (mm)" optional><Input type="number" min="1" placeholder="e.g. 400" value={v.faceWidth} onChange={(val) => set("faceWidth", val)} /></Field>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Number of rows" optional><Select value={v.rows} onChange={(val) => set("rows", val)} placeholder="Select…" options={["1","2","3","4","5","6","7","8"]} /></Field>
+          <Field label="Fin spacing" optional><Select value={v.finSpacing} onChange={(val) => set("finSpacing", val)} placeholder="Select…" options={["2.0 mm","2.5 mm","3.0 mm","3.5 mm","4.0 mm"]} /></Field>
+        </div>
+        <Field label="Connection size / arrangement" optional><Input placeholder="e.g. 1½″ BSP, flow top left" value={v.connections} onChange={(val) => set("connections", val)} /></Field>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Additional notes" optional><Textarea value={v.notes} onChange={(val) => set("notes", val)} placeholder="Capacity, flow rate, working pressure…" /></Field>
+          <Field label="Photo of existing coil" optional><FileUpload value={v.image} onChange={(val) => set("image", val)} /></Field>
+        </div>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Number of rows" optional><Select value={v.rows} onChange={(val) => set("rows", val)} placeholder="Select…" options={["1","2","3","4","5","6","7","8"]} /></Field>
-        <Field label="Fin spacing" optional><Select value={v.finSpacing} onChange={(val) => set("finSpacing", val)} placeholder="Select…" options={["2.0 mm","2.5 mm","3.0 mm","3.5 mm","4.0 mm"]} /></Field>
-      </div>
-      <Field label="Connection size / arrangement" optional><Input placeholder="e.g. 1½″ BSP, flow top left" value={v.connections} onChange={(val) => set("connections", val)} /></Field>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Additional notes" optional><Textarea value={v.notes} onChange={(val) => set("notes", val)} placeholder="Capacity, flow rate, working pressure…" /></Field>
-        <Field label="Photo of existing coil" optional><FileUpload value={v.image} onChange={(val) => set("image", val)} /></Field>
-      </div>
-      <SubmitRow canSubmit={canSubmit} status={status} errorMsg={errorMsg} />
+
+      {step === 1 && <NextButton canNext={canNext} onNext={() => setStep(2)} />}
+      <SubmitRow canSubmit={canSubmit} status={status} errorMsg={errorMsg} step={step} onBack={() => setStep(1)} />
     </form>
   );
 }
@@ -246,7 +291,9 @@ function CoilForm() {
 
 function BatteryForm() {
   const [v, setV] = useState({ firstName: "", lastName: "", email: "", phone: "", phase: "", kw: "", voltage: "", faceHeight: "", faceWidth: "", ahuModel: "", controlType: "", notes: "", image: null });
+  const [step, setStep] = useState(1);
   const set = (k, val) => setV((p) => ({ ...p, [k]: val }));
+  const canNext = v.firstName.trim() && v.lastName.trim() && v.email.trim() && v.phone.trim();
 
   const { status, errorMsg, canSubmit, onSubmit } = useSubmit({
     type: "battery",
@@ -273,37 +320,47 @@ function BatteryForm() {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-4 p-6 sm:p-8">
-      <ContactFields v={v} set={set} />
+      <StepIndicator step={step} stepTwoLabel="Specification" />
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Phase" required><Select value={v.phase} onChange={(val) => set("phase", val)} placeholder="Select phase…" options={["Single phase","Three phase"]} /></Field>
-        <Field label="Supply voltage" optional><Select value={v.voltage} onChange={(val) => set("voltage", val)} placeholder="Select…" options={["230 V","400 V","415 V"]} /></Field>
+      <div className={step === 2 ? "hidden sm:contents" : "contents"}>
+        <ContactFields v={v} set={set} />
       </div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="kW rating required" optional><Input type="number" min="0.1" step="0.1" placeholder="e.g. 6" value={v.kw} onChange={(val) => set("kw", val)} /></Field>
-        <Field label="Control type" optional><Select value={v.controlType} onChange={(val) => set("controlType", val)} placeholder="Select…" options={["On/Off","Staged (2 or 3 stage)","0–10 V proportional","Modbus"]} /></Field>
+
+      <div className={step === 1 ? "hidden sm:contents" : "contents"}>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Phase" required><Select value={v.phase} onChange={(val) => set("phase", val)} placeholder="Select phase…" options={["Single phase","Three phase"]} /></Field>
+          <Field label="Supply voltage" optional><Select value={v.voltage} onChange={(val) => set("voltage", val)} placeholder="Select…" options={["230 V","400 V","415 V"]} /></Field>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="kW rating required" optional><Input type="number" min="0.1" step="0.1" placeholder="e.g. 6" value={v.kw} onChange={(val) => set("kw", val)} /></Field>
+          <Field label="Control type" optional><Select value={v.controlType} onChange={(val) => set("controlType", val)} placeholder="Select…" options={["On/Off","Staged (2 or 3 stage)","0–10 V proportional","Modbus"]} /></Field>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Face height (mm)" optional><Input type="number" min="1" placeholder="e.g. 500" value={v.faceHeight} onChange={(val) => set("faceHeight", val)} /></Field>
+          <Field label="Face width (mm)" optional><Input type="number" min="1" placeholder="e.g. 300" value={v.faceWidth} onChange={(val) => set("faceWidth", val)} /></Field>
+        </div>
+        <Field label="AHU / duct make & model" optional><Input placeholder="e.g. Daikin AHU-32 or 600×400 mm duct" value={v.ahuModel} onChange={(val) => set("ahuModel", val)} /></Field>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Additional notes" optional><Textarea value={v.notes} onChange={(val) => set("notes", val)} placeholder="Installation constraints, safety requirements…" /></Field>
+          <Field label="Photo of existing unit" optional><FileUpload value={v.image} onChange={(val) => set("image", val)} /></Field>
+        </div>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Face height (mm)" optional><Input type="number" min="1" placeholder="e.g. 500" value={v.faceHeight} onChange={(val) => set("faceHeight", val)} /></Field>
-        <Field label="Face width (mm)" optional><Input type="number" min="1" placeholder="e.g. 300" value={v.faceWidth} onChange={(val) => set("faceWidth", val)} /></Field>
-      </div>
-      <Field label="AHU / duct make & model" optional><Input placeholder="e.g. Daikin AHU-32 or 600×400 mm duct" value={v.ahuModel} onChange={(val) => set("ahuModel", val)} /></Field>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Additional notes" optional><Textarea value={v.notes} onChange={(val) => set("notes", val)} placeholder="Installation constraints, safety requirements…" /></Field>
-        <Field label="Photo of existing unit" optional><FileUpload value={v.image} onChange={(val) => set("image", val)} /></Field>
-      </div>
-      <SubmitRow canSubmit={canSubmit} status={status} errorMsg={errorMsg} />
+
+      {step === 1 && <NextButton canNext={canNext} onNext={() => setStep(2)} />}
+      <SubmitRow canSubmit={canSubmit} status={status} errorMsg={errorMsg} step={step} onBack={() => setStep(1)} />
     </form>
   );
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   EC FAN / AXIAL FAN FORM  (fanType pre-set by caller)
+   EC FAN / AXIAL FAN FORM
 ══════════════════════════════════════════════════════════════════════════ */
 
 function FanForm({ fanType }) {
   const [v, setV] = useState({ firstName: "", lastName: "", email: "", phone: "", duty: "Supply", airflow: "", airflowUnit: "m³/h", staticPressure: "", fanDiameter: "", speedControl: "", supplyVoltage: "", notes: "", image: null });
+  const [step, setStep] = useState(1);
   const set = (k, val) => setV((p) => ({ ...p, [k]: val }));
+  const canNext = v.firstName.trim() && v.lastName.trim() && v.email.trim() && v.phone.trim();
 
   const { status, errorMsg, canSubmit, onSubmit } = useSubmit({
     type: fanType === "EC" ? "ec-fan" : "axial-fan",
@@ -330,38 +387,42 @@ function FanForm({ fanType }) {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-4 p-6 sm:p-8">
-      <ContactFields v={v} set={set} />
+      <StepIndicator step={step} stepTwoLabel="Specification" />
 
-      <Field label="Duty" required>
-        <RadioGroup value={v.duty} onChange={(val) => set("duty", val)} options={["Supply", "Extract"]} />
-      </Field>
+      <div className={step === 2 ? "hidden sm:contents" : "contents"}>
+        <ContactFields v={v} set={set} />
+      </div>
 
-      <div className="grid gap-4 sm:grid-cols-[1fr_auto]">
-        <Field label="Airflow required" optional>
-          <div className="flex gap-2">
-            <input type="number" min="1" placeholder="e.g. 2500" className={`${inputClass} flex-1`} value={v.airflow} onChange={(e) => set("airflow", e.target.value)} />
-            <select className="h-11 border border-slate-200 bg-white px-3 text-sm text-slate-900 outline-none focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors cursor-pointer" value={v.airflowUnit} onChange={(e) => set("airflowUnit", e.target.value)}>
-              <option>m³/h</option><option>l/s</option><option>CFM</option>
-            </select>
-          </div>
+      <div className={step === 1 ? "hidden sm:contents" : "contents"}>
+        <Field label="Duty" required>
+          <RadioGroup value={v.duty} onChange={(val) => set("duty", val)} options={["Supply", "Extract"]} />
         </Field>
-        <Field label="Static pressure (Pa)" optional><Input type="number" min="0" placeholder="e.g. 150" value={v.staticPressure} onChange={(val) => set("staticPressure", val)} /></Field>
+        <div className="grid gap-4 sm:grid-cols-[1fr_auto]">
+          <Field label="Airflow required" optional>
+            <div className="flex gap-2">
+              <input type="number" min="1" placeholder="e.g. 2500" className={`${inputClass} flex-1`} value={v.airflow} onChange={(e) => set("airflow", e.target.value)} />
+              <select className="h-11 border border-slate-200 bg-white px-3 text-sm text-slate-900 outline-none focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors cursor-pointer" value={v.airflowUnit} onChange={(e) => set("airflowUnit", e.target.value)}>
+                <option>m³/h</option><option>l/s</option><option>CFM</option>
+              </select>
+            </div>
+          </Field>
+          <Field label="Static pressure (Pa)" optional><Input type="number" min="0" placeholder="e.g. 150" value={v.staticPressure} onChange={(val) => set("staticPressure", val)} /></Field>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Fan diameter (mm)" optional><Input type="number" min="1" placeholder="e.g. 630" value={v.fanDiameter} onChange={(val) => set("fanDiameter", val)} /></Field>
+          <Field label="Speed control" optional><Select value={v.speedControl} onChange={(val) => set("speedControl", val)} placeholder="Select…" options={["0–10 V","Modbus RTU","PWM","On/Off only"]} /></Field>
+        </div>
+        <Field label="Supply voltage" optional>
+          <Select value={v.supplyVoltage} onChange={(val) => set("supplyVoltage", val)} placeholder="Select…" options={["Single phase 230 V","Three phase 400 V"]} />
+        </Field>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Additional notes" optional><Textarea value={v.notes} onChange={(val) => set("notes", val)} placeholder="AHU make/model, blade angle, site constraints…" /></Field>
+          <Field label="Photo of existing fan" optional><FileUpload value={v.image} onChange={(val) => set("image", val)} /></Field>
+        </div>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Fan diameter (mm)" optional><Input type="number" min="1" placeholder="e.g. 630" value={v.fanDiameter} onChange={(val) => set("fanDiameter", val)} /></Field>
-        <Field label="Speed control" optional><Select value={v.speedControl} onChange={(val) => set("speedControl", val)} placeholder="Select…" options={["0–10 V","Modbus RTU","PWM","On/Off only"]} /></Field>
-      </div>
-
-      <Field label="Supply voltage" optional>
-        <Select value={v.supplyVoltage} onChange={(val) => set("supplyVoltage", val)} placeholder="Select…" options={["Single phase 230 V","Three phase 400 V"]} />
-      </Field>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Additional notes" optional><Textarea value={v.notes} onChange={(val) => set("notes", val)} placeholder="AHU make/model, blade angle, site constraints…" /></Field>
-        <Field label="Photo of existing fan" optional><FileUpload value={v.image} onChange={(val) => set("image", val)} /></Field>
-      </div>
-      <SubmitRow canSubmit={canSubmit} status={status} errorMsg={errorMsg} />
+      {step === 1 && <NextButton canNext={canNext} onNext={() => setStep(2)} />}
+      <SubmitRow canSubmit={canSubmit} status={status} errorMsg={errorMsg} step={step} onBack={() => setStep(1)} />
     </form>
   );
 }
@@ -379,6 +440,16 @@ const TYPES = [
 
 export function CustomBuildEnquiry({ typeImages = {} }) {
   const [active, setActive] = useState(null);
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    if (active && formRef.current && window.innerWidth < 640) {
+      setTimeout(() => {
+        const rect = formRef.current.getBoundingClientRect();
+        window.scrollBy({ top: rect.top - 80, behavior: "smooth" });
+      }, 50);
+    }
+  }, [active]);
 
   return (
     <div>
@@ -395,16 +466,9 @@ export function CustomBuildEnquiry({ typeImages = {} }) {
                 : "border-white/15 hover:border-white/30"
             }`}
           >
-            {/* Image area */}
             <div className={`relative h-28 ${active === t.id ? "bg-[#1d5c42]" : "bg-white/5"}`}>
               {typeImages[t.id] ? (
-                <Image
-                  src={typeImages[t.id]}
-                  alt={t.label}
-                  fill
-                  unoptimized
-                  className="object-cover"
-                />
+                <Image src={typeImages[t.id]} alt={t.label} fill unoptimized className="object-cover" />
               ) : (
                 <div className="flex h-full items-center justify-center">
                   <span className={`text-[10px] font-bold uppercase tracking-widest ${active === t.id ? "text-white/40" : "text-white/20"}`}>
@@ -413,7 +477,6 @@ export function CustomBuildEnquiry({ typeImages = {} }) {
                 </div>
               )}
             </div>
-            {/* Label area */}
             <div className={`px-4 py-3 ${active === t.id ? "bg-[#297858]" : "bg-white/5"}`}>
               <p className={`text-[11px] font-bold uppercase tracking-wide leading-snug ${active === t.id ? "text-white" : "text-white/70"}`}>
                 {t.label}
@@ -428,7 +491,7 @@ export function CustomBuildEnquiry({ typeImages = {} }) {
 
       {/* Active form */}
       {active && (
-        <div className="mt-6 overflow-hidden border border-white/10 bg-white">
+        <div ref={formRef} className="mt-6 overflow-hidden border border-white/10 bg-white">
           <div className="border-b border-slate-100 px-6 py-4 sm:px-8">
             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
               Custom Build Enquiry

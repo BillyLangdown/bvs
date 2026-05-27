@@ -50,59 +50,6 @@ export default function ContactPage() {
             Technical support, quotations, upgrades, replacements, and AHU project enquiries across the UK.
           </p>
   
-          {/* Quick actions */}
-         
-          {/* Fast contact */}
-          <div className="mt-8 grid gap-3 sm:grid-cols-2">
-
-            <a
-              href="tel:01256518170"
-              className="flex items-start gap-4 border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-colors hover:bg-white/10"
-            >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-[#297858]/15 text-[#297858]">
-                <PhoneIcon />
-              </span>
-
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
-                  Call us
-                </p>
-
-                <p className="mt-1 text-lg font-bold text-white">
-                  01256 518170
-                </p>
-
-                <p className="mt-1 text-xs text-white/50">
-                  Mon–Fri · 8am–5pm
-                </p>
-              </div>
-            </a>
-
-            <a
-              href="mailto:info@bvs-ltd.co.uk"
-              className="flex items-start gap-4 border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-colors hover:bg-white/10"
-            >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-[#297858]/15 text-[#297858]">
-                <EmailIcon />
-              </span>
-
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
-                  Email us
-                </p>
-
-                <p className="mt-1 text-base font-bold text-white break-all">
-                  info@bvs-ltd.co.uk
-                </p>
-
-                <p className="mt-1 text-xs text-white/50">
-                  Technical responses within one working day
-                </p>
-              </div>
-            </a>
-
-          </div>
-  
           {/* reassurance */}
           <div className="mt-8 border-l-2 border-[#297858] pl-5">
             <p className="text-sm leading-6 text-white/70">
@@ -115,7 +62,7 @@ export default function ContactPage() {
     </section>
   
     {/* FORM SECTION */}
-    <section className="bg-[#f7f6f5] py-14 sm:py-20">
+    <section id="enquiry" className="scroll-mt-24 bg-[#f7f6f5] py-14 sm:py-20">
   
       <Container>
   
@@ -151,6 +98,7 @@ export default function ContactPage() {
                   >
                     01256 518170
                   </a>
+                  <p className="mt-0.5 text-[11px] text-white/40">Mon–Fri · 8am–5pm</p>
                 </div>
   
                 <div>

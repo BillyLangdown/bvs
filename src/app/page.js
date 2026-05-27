@@ -244,7 +244,7 @@ export default function Home() {
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <Link
-                href="/contact"
+                href="/contact#enquiry"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
                 Discuss your project
@@ -286,7 +286,7 @@ export default function Home() {
             </a>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href="/contact"
+                href="/contact#enquiry"
                 className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
                 Discuss your project
@@ -378,7 +378,7 @@ export default function Home() {
       <p className="mt-3 text-xs leading-6 text-slate-500">
         Not sure which service applies, or need something not listed here?{" "}
         <Link
-          href="/contact"
+          href="/contact#enquiry"
           className="font-semibold text-[#297858] transition-colors hover:text-[#1d5c42]"
         >
           Speak to our team →
@@ -491,7 +491,7 @@ export default function Home() {
     <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
 
       {/* LEFT CONTENT */}
-      <div className="max-w-xl">
+      <div className="max-w-xl text-center lg:text-left">
         <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
           Accredited &amp; Approved
         </p>
@@ -500,7 +500,7 @@ export default function Home() {
           Certified for regulated HVAC <br/> and engineering works
         </h2>
 
-        <div className="mt-5 h-[2px] w-10 bg-[#297858]" />
+        <div className="mt-5 h-[2px] w-10 bg-[#297858] mx-auto lg:mx-0" />
 
         <p className="mt-5 text-sm leading-6 text-slate-500">
         Gas Safe registered, Constructionline Gold certified, and SafeContractor approved.
@@ -667,7 +667,7 @@ export default function Home() {
 
             <ScrollReveal delay={100} className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
               <Link
-                href="/contact"
+                href="/contact#enquiry"
                 className="inline-flex items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-4 text-sm font-bold tracking-wide text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
                 Discuss your project

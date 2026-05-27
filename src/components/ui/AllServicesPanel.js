@@ -62,13 +62,6 @@ export function AllServicesPanel({ services, additionalServices }) {
         }}
       >
         <div style={{ overflow: 'hidden' }}>
-        <div
-          style={{
-            opacity: open ? 1 : 0,
-            transition: 'opacity 0.35s ease',
-            transitionDelay: open ? '0.1s' : '0s',
-          }}
-        >
         <div className="mt-10 space-y-12">
 
           {/* Full service capability */}
@@ -145,7 +138,6 @@ export function AllServicesPanel({ services, additionalServices }) {
             </div>
           </div>
 
-        </div>
         </div>
         </div>
       </div>

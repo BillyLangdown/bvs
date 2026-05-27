@@ -19,6 +19,7 @@ const services = [
 export function ContactPageForm() {
   const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [step, setStep] = useState(1);
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -31,6 +32,8 @@ export function ContactPageForm() {
   function setField(field, val) {
     setValues((v) => ({ ...v, [field]: val }));
   }
+
+  const canNext = values.name.trim() && values.email.trim();
 
   const canSubmit = useMemo(
     () =>
@@ -76,7 +79,7 @@ export function ContactPageForm() {
         <div>
           <p className="text-lg font-extrabold text-slate-900">Message received</p>
           <p className="mt-2 text-sm leading-6 text-slate-600">
-            An engineer will review your enquiry and respond within one working day. No spam, no sales pipeline - just a practical reply.
+            An engineer will review your enquiry and respond within one working day. No spam, no sales pipeline — just a practical reply.
           </p>
         </div>
         <a
@@ -97,116 +100,159 @@ export function ContactPageForm() {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-4 p-6 sm:p-8">
-      <div className="grid gap-4 sm:grid-cols-2">
+
+      {/* Mobile step indicator */}
+      <div className="flex items-center gap-3 sm:hidden">
+        <div className="flex gap-1">
+          <span className={`h-[3px] w-8 rounded-full transition-colors duration-200 ${step === 1 ? "bg-[#297858]" : "bg-slate-200"}`} />
+          <span className={`h-[3px] w-8 rounded-full transition-colors duration-200 ${step === 2 ? "bg-[#297858]" : "bg-slate-200"}`} />
+        </div>
+        <span className="text-[11px] text-slate-400">
+          {step === 1 ? "Your details" : "Your project"}
+        </span>
+      </div>
+
+      {/* Step 1 fields: Name + Email + Phone + Company */}
+      {/* Hidden on mobile when step 2, always visible on desktop */}
+      <div className={step === 2 ? "hidden sm:contents" : "contents"}>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
+              Name <span className="text-[#297858]">*</span>
+            </label>
+            <input
+              className={inputClass}
+              placeholder="Your full name"
+              value={values.name}
+              onChange={(e) => setField("name", e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
+              Email <span className="text-[#297858]">*</span>
+            </label>
+            <input
+              className={inputClass}
+              type="email"
+              placeholder="your@email.com"
+              autoComplete="email"
+              value={values.email}
+              onChange={(e) => setField("email", e.target.value)}
+              required
+            />
+          </div>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
+              Phone{" "}
+              <span className="text-[10px] font-normal normal-case text-slate-400">(optional)</span>
+            </label>
+            <input
+              className={inputClass}
+              type="tel"
+              placeholder="Helps us respond faster"
+              value={values.phone}
+              onChange={(e) => setField("phone", e.target.value)}
+            />
+          </div>
+          <div>
+            <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
+              Company
+            </label>
+            <input
+              className={inputClass}
+              placeholder="Organisation name"
+              value={values.company}
+              onChange={(e) => setField("company", e.target.value)}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Step 2 fields: Service + Message */}
+      {/* Hidden on mobile when step 1, always visible on desktop */}
+      <div className={step === 1 ? "hidden sm:contents" : "contents"}>
         <div>
           <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
-            Name <span className="text-[#297858]">*</span>
+            What can we help with?
           </label>
-          <input
-            className={inputClass}
-            placeholder="Your full name"
-            value={values.name}
-            onChange={(e) => setField("name", e.target.value)}
+          <select
+            className={`${inputClass} cursor-pointer`}
+            value={values.service}
+            onChange={(e) => setField("service", e.target.value)}
+          >
+            <option value="">Select a service…</option>
+            {services.map((s) => (
+              <option key={s} value={s}>
+                {s}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
+            Tell us about your project <span className="text-[#297858]">*</span>
+          </label>
+          <textarea
+            className="min-h-[120px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors"
+            placeholder="Describe the site, the issue, or what you're looking to achieve…"
+            value={values.message}
+            onChange={(e) => setField("message", e.target.value)}
             required
           />
         </div>
-        <div>
-          <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
-            Email <span className="text-[#297858]">*</span>
-          </label>
-          <input
-            className={inputClass}
-            type="email"
-            placeholder="your@email.com"
-            autoComplete="email"
-            value={values.email}
-            onChange={(e) => setField("email", e.target.value)}
-            required
-          />
-        </div>
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
-            Phone{" "}
-            <span className="text-[10px] font-normal normal-case text-slate-400">(optional)</span>
-          </label>
-          <input
-            className={inputClass}
-            type="tel"
-            placeholder="Helps us respond faster"
-            value={values.phone}
-            onChange={(e) => setField("phone", e.target.value)}
-          />
-        </div>
-        <div>
-          <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
-            Company
-          </label>
-          <input
-            className={inputClass}
-            placeholder="Organisation name"
-            value={values.company}
-            onChange={(e) => setField("company", e.target.value)}
-          />
-        </div>
-      </div>
-
-      <div>
-        <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
-          What can we help with?
-        </label>
-        <select
-          className={`${inputClass} cursor-pointer`}
-          value={values.service}
-          onChange={(e) => setField("service", e.target.value)}
-        >
-          <option value="">Select a service…</option>
-          {services.map((s) => (
-            <option key={s} value={s}>
-              {s}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div>
-        <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
-          Tell us about your project <span className="text-[#297858]">*</span>
-        </label>
-        <textarea
-          className="min-h-[120px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors"
-          placeholder="Describe the site, the issue, or what you're looking to achieve…"
-          value={values.message}
-          onChange={(e) => setField("message", e.target.value)}
-          required
-        />
       </div>
 
       {errorMsg && status === "error" && (
         <p className="border-l-2 border-red-500 pl-3 text-sm text-red-600">{errorMsg}</p>
       )}
 
-      <div className="flex items-center justify-between gap-4 pt-1">
-        <p className="text-xs text-slate-400">No obligation. Response within one working day.</p>
+      {/* Mobile step 1: Next button */}
+      {step === 1 && (
         <button
-          type="submit"
-          disabled={!canSubmit}
-          className="inline-flex shrink-0 items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a] disabled:opacity-50"
+          type="button"
+          onClick={() => setStep(2)}
+          disabled={!canNext}
+          className="sm:hidden w-full border border-slate-200 bg-slate-50 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-700 transition-colors hover:bg-slate-100 disabled:opacity-40"
         >
-          {status === "loading" ? (
-            "Sending…"
-          ) : (
-            <>
-              Send Enquiry
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </>
-          )}
+          Next: Your Project →
         </button>
+      )}
+
+      {/* Submit row — hidden on mobile step 1 */}
+      <div className={`flex-col gap-3 pt-1 sm:flex sm:flex-row sm:items-center sm:justify-between sm:gap-4${step === 1 ? " hidden" : " flex"}`}>
+        <p className="text-xs text-slate-400">No obligation. Response within one working day.</p>
+        <div className="flex items-center gap-4">
+          <button
+            type="button"
+            onClick={() => setStep(1)}
+            className="sm:hidden text-[11px] text-slate-400 underline underline-offset-2"
+          >
+            Back
+          </button>
+          <button
+            type="submit"
+            disabled={!canSubmit}
+            className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a] disabled:opacity-50"
+          >
+            {status === "loading" ? (
+              "Sending…"
+            ) : (
+              <>
+                Send Enquiry
+                <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </>
+            )}
+          </button>
+        </div>
       </div>
+
     </form>
   );
 }

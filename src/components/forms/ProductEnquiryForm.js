@@ -8,6 +8,18 @@ const inputClass =
 const labelClass =
   "mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500";
 
+function StepIndicator({ step, label }) {
+  return (
+    <div className="flex items-center gap-3 sm:hidden">
+      <div className="flex gap-1">
+        <span className={`h-[3px] w-8 rounded-full transition-colors duration-200 ${step === 1 ? "bg-[#297858]" : "bg-slate-200"}`} />
+        <span className={`h-[3px] w-8 rounded-full transition-colors duration-200 ${step === 2 ? "bg-[#297858]" : "bg-slate-200"}`} />
+      </div>
+      <span className="text-[11px] text-slate-400">{label}</span>
+    </div>
+  );
+}
+
 export function ProductEnquiryForm({ productSlug, productName }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -19,6 +31,9 @@ export function ProductEnquiryForm({ productSlug, productName }) {
   );
   const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [step, setStep] = useState(1);
+
+  const canNext = firstName.trim() && lastName.trim() && email.trim() && phone.trim();
 
   const canSubmit =
     firstName.trim() &&
@@ -79,65 +94,91 @@ export function ProductEnquiryForm({ productSlug, productName }) {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-4 p-6 sm:p-8">
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label className={labelClass}>First Name <span className="text-[#297858]">*</span></label>
-          <input className={inputClass} placeholder="First name" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+
+      <StepIndicator step={step} label={step === 1 ? "Your details" : "Your enquiry"} />
+
+      {/* Step 1: contact details */}
+      <div className={step === 2 ? "hidden sm:contents" : "contents"}>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label className={labelClass}>First Name <span className="text-[#297858]">*</span></label>
+            <input className={inputClass} placeholder="First name" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+          </div>
+          <div>
+            <label className={labelClass}>Last Name <span className="text-[#297858]">*</span></label>
+            <input className={inputClass} placeholder="Last name" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
+          </div>
         </div>
-        <div>
-          <label className={labelClass}>Last Name <span className="text-[#297858]">*</span></label>
-          <input className={inputClass} placeholder="Last name" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label className={labelClass}>Email <span className="text-[#297858]">*</span></label>
+            <input className={inputClass} type="email" placeholder="your@email.com" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          </div>
+          <div>
+            <label className={labelClass}>Phone <span className="text-[#297858]">*</span></label>
+            <input className={inputClass} type="tel" placeholder="Your phone number" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+          </div>
         </div>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      {/* Step 2: product + message */}
+      <div className={step === 1 ? "hidden sm:contents" : "contents"}>
         <div>
-          <label className={labelClass}>Email <span className="text-[#297858]">*</span></label>
-          <input className={inputClass} type="email" placeholder="your@email.com" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <label className={labelClass}>Product</label>
+          <input className={inputClass} value={product} onChange={(e) => setProduct(e.target.value)} />
         </div>
         <div>
-          <label className={labelClass}>Phone <span className="text-[#297858]">*</span></label>
-          <input className={inputClass} type="tel" placeholder="Your phone number" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+          <label className={labelClass}>Brief Requirements / Message <span className="text-[#297858]">*</span></label>
+          <textarea
+            className="min-h-[120px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Tell us what you need…"
+            required
+          />
         </div>
-      </div>
-
-      <div>
-        <label className={labelClass}>Product</label>
-        <input className={inputClass} value={product} onChange={(e) => setProduct(e.target.value)} />
-      </div>
-
-      <div>
-        <label className={labelClass}>Brief Requirements / Message <span className="text-[#297858]">*</span></label>
-        <textarea
-          className="min-h-[120px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="Tell us what you need…"
-          required
-        />
       </div>
 
       {errorMsg && status === "error" && (
         <p className="border-l-2 border-red-500 pl-3 text-sm text-red-600">{errorMsg}</p>
       )}
 
-      <div className="flex items-center justify-between gap-4 pt-1">
-        <p className="text-xs text-slate-400">Response within one working day.</p>
+      {/* Mobile step 1: Next */}
+      {step === 1 && (
         <button
-          type="submit"
-          disabled={!canSubmit}
-          className="inline-flex shrink-0 items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a] disabled:opacity-50"
+          type="button"
+          onClick={() => setStep(2)}
+          disabled={!canNext}
+          className="sm:hidden w-full border border-slate-200 bg-slate-50 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-700 transition-colors hover:bg-slate-100 disabled:opacity-40"
         >
-          {status === "loading" ? "Sending…" : (
-            <>
-              Send Enquiry
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </>
-          )}
+          Next: Your Enquiry →
         </button>
+      )}
+
+      {/* Submit row — hidden on mobile step 1 */}
+      <div className={`flex-col gap-3 pt-1 sm:flex sm:flex-row sm:items-center sm:justify-between sm:gap-4${step === 1 ? " hidden" : " flex"}`}>
+        <p className="text-xs text-slate-400">Response within one working day.</p>
+        <div className="flex items-center gap-4">
+          <button type="button" onClick={() => setStep(1)} className="sm:hidden text-[11px] text-slate-400 underline underline-offset-2">
+            Back
+          </button>
+          <button
+            type="submit"
+            disabled={!canSubmit}
+            className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a] disabled:opacity-50"
+          >
+            {status === "loading" ? "Sending…" : (
+              <>
+                Send Enquiry
+                <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </>
+            )}
+          </button>
+        </div>
       </div>
+
     </form>
   );
 }

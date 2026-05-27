@@ -18,6 +18,7 @@ const SERVICE_OPTIONS = [
 export function QuickQuoteForm({ defaultService = "" }) {
   const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [step, setStep] = useState(1);
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -25,6 +26,8 @@ export function QuickQuoteForm({ defaultService = "" }) {
     service: defaultService,
     message: "",
   });
+
+  const canNext = values.name.trim() && values.email.trim() && values.mobile.trim();
 
   const canSubmit = useMemo(
     () =>
@@ -44,7 +47,6 @@ export function QuickQuoteForm({ defaultService = "" }) {
     e.preventDefault();
     setStatus("loading");
     setErrorMessage("");
-
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -61,6 +63,7 @@ export function QuickQuoteForm({ defaultService = "" }) {
       if (!res.ok) throw new Error(data?.error || "Message failed to send");
       setStatus("success");
       setValues({ name: "", email: "", mobile: "", service: defaultService, message: "" });
+      setStep(1);
     } catch (err) {
       setStatus("error");
       setErrorMessage(err?.message || "Something went wrong. Please call us on 01256 518170.");
@@ -92,66 +95,111 @@ export function QuickQuoteForm({ defaultService = "" }) {
     );
   }
 
+  const inputClass =
+    "h-11 w-full border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none focus:border-[#297858] focus:ring-1 focus:ring-[#297858]";
+
   return (
     <form onSubmit={onSubmit} className="grid gap-4">
-      <input
-        className="h-11 w-full border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none focus:border-[#297858] focus:ring-1 focus:ring-[#297858]"
-        placeholder="Your name"
-        value={values.name}
-        onChange={(e) => setField("name", e.target.value)}
-        required
-      />
-      <input
-        className="h-11 w-full border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none focus:border-[#297858] focus:ring-1 focus:ring-[#297858]"
-        placeholder="Email address"
-        type="email"
-        autoComplete="email"
-        value={values.email}
-        onChange={(e) => setField("email", e.target.value)}
-        required
-      />
-      <input
-        className="h-11 w-full border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none focus:border-[#297858] focus:ring-1 focus:ring-[#297858]"
-        placeholder="Mobile number"
-        type="tel"
-        autoComplete="tel"
-        value={values.mobile}
-        onChange={(e) => setField("mobile", e.target.value)}
-        required
-      />
-      <select
-        className="h-11 w-full border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none focus:border-[#297858] focus:ring-1 focus:ring-[#297858]"
-        value={values.service}
-        onChange={(e) => setField("service", e.target.value)}
-        required
-      >
-        <option value="" disabled>What service are you interested in?</option>
-        {SERVICE_OPTIONS.map((opt) => (
-          <option key={opt} value={opt}>{opt}</option>
-        ))}
-      </select>
 
-      <textarea
-        className="min-h-[100px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:ring-1 focus:ring-[#297858]"
-        placeholder="Tell us about your project or requirements (optional)"
-        value={values.message}
-        onChange={(e) => setField("message", e.target.value)}
-      />
+      {/* Mobile step indicator */}
+      <div className="flex items-center gap-3 sm:hidden">
+        <div className="flex gap-1">
+          <span className={`h-[3px] w-8 rounded-full transition-colors duration-200 ${step === 1 ? "bg-[#297858]" : "bg-slate-200"}`} />
+          <span className={`h-[3px] w-8 rounded-full transition-colors duration-200 ${step === 2 ? "bg-[#297858]" : "bg-slate-200"}`} />
+        </div>
+        <span className="text-[11px] text-slate-400">
+          {step === 1 ? "Your details" : "Your project"}
+        </span>
+      </div>
+
+      {/* Step 1: Name, Email, Mobile — hidden on mobile step 2, always on desktop */}
+      <div className={step === 2 ? "hidden sm:contents" : "contents"}>
+        <input
+          className={inputClass}
+          placeholder="Your name"
+          value={values.name}
+          onChange={(e) => setField("name", e.target.value)}
+          required
+        />
+        <input
+          className={inputClass}
+          placeholder="Email address"
+          type="email"
+          autoComplete="email"
+          value={values.email}
+          onChange={(e) => setField("email", e.target.value)}
+          required
+        />
+        <input
+          className={inputClass}
+          placeholder="Mobile number"
+          type="tel"
+          autoComplete="tel"
+          value={values.mobile}
+          onChange={(e) => setField("mobile", e.target.value)}
+          required
+        />
+      </div>
+
+      {/* Step 2: Service, Message — hidden on mobile step 1, always on desktop */}
+      <div className={step === 1 ? "hidden sm:contents" : "contents"}>
+        <select
+          className={`${inputClass} cursor-pointer`}
+          value={values.service}
+          onChange={(e) => setField("service", e.target.value)}
+          required
+        >
+          <option value="" disabled>What service are you interested in?</option>
+          {SERVICE_OPTIONS.map((opt) => (
+            <option key={opt} value={opt}>{opt}</option>
+          ))}
+        </select>
+
+        <textarea
+          className="min-h-[100px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:ring-1 focus:ring-[#297858]"
+          placeholder="Tell us about your project or requirements (optional)"
+          value={values.message}
+          onChange={(e) => setField("message", e.target.value)}
+        />
+      </div>
 
       {errorMessage && status === "error" && (
         <p className="text-sm text-red-600">{errorMessage}</p>
       )}
 
-      <div className="flex items-center justify-between gap-4">
-        <p className="text-xs text-slate-400">We will aim to respond within 24 hours.</p>
+      {/* Mobile step 1: Next button */}
+      {step === 1 && (
         <button
-          type="submit"
-          disabled={!canSubmit}
-          className="inline-flex h-10 shrink-0 items-center justify-center rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-8 text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a] disabled:opacity-50"
+          type="button"
+          onClick={() => setStep(2)}
+          disabled={!canNext}
+          className="sm:hidden w-full border border-slate-200 bg-slate-50 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-700 transition-colors hover:bg-slate-100 disabled:opacity-40"
         >
-          {status === "loading" ? "Sending…" : "Send"}
+          Next: Your Project →
         </button>
+      )}
+
+      {/* Submit row — hidden on mobile step 1 */}
+      <div className={`flex-col gap-3 sm:flex sm:flex-row sm:items-center sm:justify-between sm:gap-4${step === 1 ? " hidden" : " flex"}`}>
+        <p className="text-xs text-slate-400">We will aim to respond within 24 hours.</p>
+        <div className="flex items-center gap-4">
+          <button
+            type="button"
+            onClick={() => setStep(1)}
+            className="sm:hidden text-[11px] text-slate-400 underline underline-offset-2"
+          >
+            Back
+          </button>
+          <button
+            type="submit"
+            disabled={!canSubmit}
+            className="flex-1 sm:flex-none inline-flex h-10 items-center justify-center rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-8 text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a] disabled:opacity-50"
+          >
+            {status === "loading" ? "Sending…" : "Send"}
+          </button>
+        </div>
       </div>
+
     </form>
   );
 }

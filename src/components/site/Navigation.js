@@ -289,17 +289,17 @@ export function Navigation() {
             01256 518170
           </a>
           <Link
-            href="/contact"
+            href="/contact#enquiry"
             className="inline-flex h-10 items-center uppercase justify-center rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-5 text-xs font-bold tracking-wider text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_4px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a] whitespace-nowrap"
           >
-           Contact 
+           Contact
           </Link>
         </div>
 
         {/* Mobile: CTA + hamburger */}
         <div className="flex flex-1 items-center justify-end gap-2 lg:hidden">
           <Link
-            href="/contact"
+            href="/contact#enquiry"
             className="inline-flex h-9 items-center justify-center rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-4 text-xs font-bold uppercase tracking-wide text-white shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_4px_rgba(0,0,0,0.2)] transition-all hover:from-[#1e5038] hover:to-[#133f2a]"
           >
             Contact
