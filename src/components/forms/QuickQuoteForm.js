@@ -20,9 +20,9 @@ const SERVICE_OPTIONS = [
   "AHU Refurbishment",
   "AHU Manufacturing & Installation",
   "Controller Upgrades",
-  "Validation Survey",
-  "Ducting",
-  "Troubleshooting",
+  "Validation Surveys",
+  "Ducting Repair & Replacement",
+  "Ventilation Troubleshooting",
   "Boiler Services",
   "Other",
 ];

@@ -272,9 +272,11 @@ export function Navigation() {
                 onItemClick={closeDropdown}
               />
             ) : (
-              <Link key={item.href} href={item.href} className={`inline-flex items-center ${linkClass}`}>
-                {item.label}
-              </Link>
+              <div key={item.href} className="flex items-center">
+                <Link href={item.href} className={`inline-flex items-center whitespace-nowrap ${linkClass}`}>
+                  {item.label}
+                </Link>
+              </div>
             )
           )}
         </nav>
