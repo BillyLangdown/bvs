@@ -170,13 +170,18 @@ export default function EducationPage() {
               <div className="flex flex-col gap-4">
                 {[
                   {
-                    period: "Summer (6 weeks)",
+                    period: "Summer Holiday",
                     desc: "The primary window for AHU refurbishment, fan replacement, coil works, and controls upgrades. Full plant room access with no occupancy constraints.",
                     color: "border-[#297858]",
                   },
                   {
                     period: "Easter & Half-Term",
-                    desc: "Suitable for condition surveys, smaller-scope works, and preparation activities that don't create noise or dust in teaching areas.",
+                    desc: "Smaller-scope works and preparation activities that don't create noise or dust in teaching areas.",
+                    color: "border-white/20",
+                  },
+                  {
+                    period: "Term Time & Weekends",
+                    desc: "Condition surveys, inspections, and minor works. Minimal disruption — no noise or access to teaching areas required.",
                     color: "border-white/20",
                   },
                 ].map((item) => (
