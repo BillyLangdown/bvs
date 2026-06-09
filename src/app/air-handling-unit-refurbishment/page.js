@@ -552,9 +552,10 @@ export default function AHURefurbishmentPage() {
       {/* ── FAQ ────────────────────────────────────────────────────────── */}
       <FAQAccordion faqs={faqs} theme="dark" />
 
-      {/* ── FURTHER READING ────────────────────────────────────────────── */}
+      {/* ── FURTHER READING + RELATED ──────────────────────────────────── */}
       <section className="border-t border-slate-100 bg-[#f5f7f6] py-12">
         <Container>
+
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-slate-400">Further reading</p>
           <div className="grid gap-4 sm:grid-cols-3">
             {[
@@ -582,30 +583,28 @@ export default function AHURefurbishmentPage() {
               </Link>
             ))}
           </div>
-        </Container>
-      </section>
 
-      {/* ── RELATED ────────────────────────────────────────────────────── */}
-      <section className="border-t border-slate-100 bg-white py-12">
-        <Container>
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-slate-400">Related services</p>
-          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },
-              { href: "/air-handling-unit-coil-replacement", label: "Coil Replacement" },
-              { href: "/air-handling-unit-manufactoring-and-installation", label: "AHU Manufacturing & Installation" },
-              { href: "/air-handling-unit-controller-solutions-upgrades", label: "Controller Upgrades" },
-            ].map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="group flex items-center justify-between border border-slate-200 px-4 py-3 text-sm font-semibold text-slate-700 transition-all hover:border-[#297858] hover:text-[#297858]"
-              >
-                {l.label}
-                <span className="text-slate-300 group-hover:translate-x-1 group-hover:text-[#297858] transition-transform">→</span>
-              </Link>
-            ))}
+          <div className="mt-8 border-t border-slate-200 pt-8">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-slate-400">Related services</p>
+            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },
+                { href: "/air-handling-unit-coil-replacement", label: "Coil Replacement" },
+                { href: "/air-handling-unit-manufactoring-and-installation", label: "AHU Manufacturing & Installation" },
+                { href: "/air-handling-unit-controller-solutions-upgrades", label: "Controller Upgrades" },
+              ].map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="group flex items-center justify-between border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition-all hover:border-[#297858] hover:text-[#297858]"
+                >
+                  {l.label}
+                  <span className="text-slate-300 group-hover:translate-x-1 group-hover:text-[#297858] transition-transform">→</span>
+                </Link>
+              ))}
+            </div>
           </div>
+
         </Container>
       </section>
 
