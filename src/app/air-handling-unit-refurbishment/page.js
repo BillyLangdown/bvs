@@ -552,6 +552,39 @@ export default function AHURefurbishmentPage() {
       {/* ── FAQ ────────────────────────────────────────────────────────── */}
       <FAQAccordion faqs={faqs} theme="dark" />
 
+      {/* ── FURTHER READING ────────────────────────────────────────────── */}
+      <section className="border-t border-slate-100 bg-[#f5f7f6] py-12">
+        <Container>
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-slate-400">Further reading</p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                title: "When Does AHU Refurbishment Make More Sense Than Replacement?",
+                desc: "The decision is not simply cost — it involves structural life, compliance, energy targets, and programme constraints.",
+              },
+              {
+                title: "The Hidden Cost of Delaying AHU Coil Replacement",
+                desc: "A degraded coil underperforms gradually. What the delay actually costs in energy and air quality before it visibly fails.",
+              },
+              {
+                title: "EC Fan Upgrades: What the Energy Savings Actually Look Like",
+                desc: "Quoted savings range from 15% to 60%. Here is what we typically see in practice on commercial refurbishments.",
+              },
+            ].map((post) => (
+              <Link
+                key={post.title}
+                href="/blogs"
+                className="group flex flex-col gap-2 border border-slate-200 bg-white p-5 transition-all hover:border-[#297858]/40 hover:shadow-sm"
+              >
+                <p className="text-sm font-bold leading-snug text-slate-900 group-hover:text-[#297858] transition-colors">{post.title}</p>
+                <p className="text-xs leading-5 text-slate-500">{post.desc}</p>
+                <span className="mt-auto pt-2 text-[11px] font-semibold text-[#297858]">Read more →</span>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* ── RELATED ────────────────────────────────────────────────────── */}
       <section className="border-t border-slate-100 bg-white py-12">
         <Container>
