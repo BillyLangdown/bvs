@@ -84,7 +84,7 @@ export function Footer() {
               {/* SOCIALS */}
               <div className="mt-6 flex items-center justify-center gap-2 sm:justify-start">
                 <a
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/company/building-ventilation-solutions/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn"
@@ -94,7 +94,7 @@ export function Footer() {
                 </a>
 
                 <a
-                  href="https://www.facebook.com"
+                  href="https://www.facebook.com/buildingventilationsolutions/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Facebook"
