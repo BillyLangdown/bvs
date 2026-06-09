@@ -56,7 +56,7 @@ export default function PembrokeOfficesAhuRefurbishment() {
           </nav>
 
           {/* Title */}
-          <div className="flex items-start justify-between gap-4">
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
                 Case Study · Commercial · AHU Refurbishment
@@ -69,7 +69,7 @@ export default function PembrokeOfficesAhuRefurbishment() {
             <a
               href="/case-studies/Pembroke-Offices-AHU-Refurbishment-Case-Study.pdf"
               download
-              className="shrink-0 inline-flex items-center gap-2 bg-[#297858] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
+              className="inline-flex items-center gap-2 bg-[#297858] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#1d5c42]"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v13M7 11l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M4 20h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
               Download PDF

@@ -217,7 +217,7 @@ export default function Home() {
         {/* Desktop: left-to-right gradient, fades to transparent on right */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 via-[45%] to-transparent" />
 
-        <Container className="relative flex min-h-[620px] items-center py-14 pb-16 sm:min-h-[600px] sm:py-20 sm:pb-20">
+        <Container className="relative flex min-h-[620px] items-center py-14 pb-24 sm:min-h-[600px] sm:py-20 sm:pb-32">
         {/* Mobile hero */}
         <div className="sm:hidden max-w-3xl">
             <div className="flex items-center gap-3 mb-5">

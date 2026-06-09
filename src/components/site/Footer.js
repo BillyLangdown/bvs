@@ -36,10 +36,10 @@ export function Footer() {
       <div className="border-t border-white/5 bg-[#0b0d10]">
         <Container className="py-16">
 
-          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
 
             {/* BRAND */}
-            <div className="flex flex-col">
+            <div className="col-span-2 flex flex-col items-center text-center sm:items-start sm:text-left lg:col-span-1">
               <Link
                 href="/"
                 className="inline-block w-fit transition-opacity hover:opacity-80"
@@ -59,7 +59,7 @@ export function Footer() {
                 Supporting commercial and critical environments UK-wide.
               </p>
 
-              <div className="mt-6 flex flex-col gap-2 text-sm">
+              <div className="mt-6 flex flex-col gap-2 text-sm items-center sm:items-start">
                 <a
                   href="tel:01256518170"
                   className="text-zinc-300 transition-colors hover:text-white"
@@ -82,7 +82,7 @@ export function Footer() {
               </div>
 
               {/* SOCIALS */}
-              <div className="mt-6 flex items-center gap-2">
+              <div className="mt-6 flex items-center justify-center gap-2 sm:justify-start">
                 <a
                   href="https://www.linkedin.com"
                   target="_blank"
@@ -111,7 +111,7 @@ export function Footer() {
               { title: "Other Services", links: serviceLinks },
               { title: "Company", links: companyLinks },
             ].map((group) => (
-              <div key={group.title}>
+              <div key={group.title} className="col-span-1">
                 <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-500">
                   {group.title}
                 </p>
