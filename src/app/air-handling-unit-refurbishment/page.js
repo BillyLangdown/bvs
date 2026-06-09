@@ -560,15 +560,15 @@ export default function AHURefurbishmentPage() {
             {[
               {
                 title: "When Does AHU Refurbishment Make More Sense Than Replacement?",
-                desc: "The decision is not simply cost — it involves structural life, compliance, energy targets, and programme constraints.",
+                desc: "Cost is only part of the picture. Structural life, compliance, energy targets, and programme constraints all factor into the decision.",
               },
               {
                 title: "The Hidden Cost of Delaying AHU Coil Replacement",
-                desc: "A degraded coil underperforms gradually. What the delay actually costs in energy and air quality before it visibly fails.",
+                desc: "A degraded coil loses performance gradually, long before it stops working. The cost shows up in energy bills and air quality first.",
               },
               {
                 title: "EC Fan Upgrades: What the Energy Savings Actually Look Like",
-                desc: "Quoted savings range from 15% to 60%. Here is what we typically see in practice on commercial refurbishments.",
+                desc: "Quoted savings range from 15% to 60% depending on the source. We break down what the numbers look like on a real commercial job.",
               },
             ].map((post) => (
               <Link
