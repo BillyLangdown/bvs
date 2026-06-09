@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "How many years does it add to the unit's life?",
-    a: "Typically 10–20 years, confirmed at survey stage. If refurbishment isn't economically sound, we'll tell you honestly.",
+    a: "Typically 10–20+ years, confirmed at survey stage. If refurbishment isn't economically sound, we'll tell you honestly.",
   },
   {
     q: "Can refurbishment support Part L or net zero targets?",
@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "What maintenance is needed after refurbishment?",
-    a: "Regular filter changes and system inspections are essential to maintain the performance gains achieved during refurbishment. BVS offer planned maintenance contracts.",
+    a: "Regular filter changes and system inspections are essential to maintain the performance gains achieved during refurbishment.",
   },
   {
     q: "When is replacement the better option?",
@@ -91,7 +91,7 @@ export default function AHURefurbishmentPage() {
               className="mt-3 max-w-xl text-sm leading-6 text-white"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
             >
-              Extend your AHU&apos;s life by 10&ndash;20 years at around 40% of full replacement cost.
+              Extend your AHU&apos;s life by 10&ndash;20+ years at around 40% of full replacement cost.
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <Link
@@ -129,7 +129,7 @@ export default function AHURefurbishmentPage() {
               className="mt-5 max-w-xl text-[15px] leading-7 text-white"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
             >
-              Extend your AHU&apos;s life by 10&ndash;20 years at around 40% of full replacement cost. BVS survey, specify, and refurbish on-site with minimum disruption to your operations.
+              Extend your AHU&apos;s life by 10&ndash;20+ years at around 40% of full replacement cost. BVS survey, specify, and refurbish on-site with minimum disruption to your operations.
             </p>
             <a href="tel:01256518170" className="mt-6 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
               <PhoneIcon />
@@ -159,7 +159,7 @@ export default function AHURefurbishmentPage() {
             <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
               {[
                 { stat: "40+", label: "Years Experience" },
-                { stat: "All Makes", label: "Covered" },
+                { stat: "All Manufacturers", label: "Covered" },
                 { stat: "UK Wide", label: "Coverage" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
@@ -282,7 +282,7 @@ export default function AHURefurbishmentPage() {
               <div className="grid grid-cols-2 gap-3">
                 {[
                   { stat: "40%", label: "of replacement cost, typically" },
-                  { stat: "10–20", label: "additional years of asset life" },
+                  { stat: "10–20+", label: "additional years of asset life" },
                   { stat: "40+", label: "years of AHU experience" },
                   { stat: "0", label: "disruption preferred, phased works" },
                 ].map((item) => (
@@ -295,120 +295,6 @@ export default function AHURefurbishmentPage() {
             </ScrollReveal>
 
           </div>
-        </Container>
-      </section>
-
-      {/* ── SOLUTION ───────────────────────────────────────────────────── */}
-      <section className="bg-[#0f1216] py-14 sm:py-16">
-        <Container>
-
-          <ScrollReveal className="mb-8">
-            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              Our approach
-            </p>
-            <h2 className="text-xl font-extrabold text-white sm:text-2xl">
-              Component-Level Assessment with No Unnecessary Spend.
-            </h2>
-            <p className="mt-3 max-w-lg text-sm leading-6 text-white/65">
-              In most cases the existing air handling unit is structurally sound. We assess condition at component level to determine what can be retained, what needs replacing, and how performance is restored, without unnecessary full replacement or disruption.
-            </p>
-          </ScrollReveal>
-
-          <div className="grid gap-5 sm:grid-cols-3">
-            {[
-              {
-                title: "Retain structure",
-                body: "Casing, frames, and duct connections are assessed to confirm what can safely remain in service, keeping costs and footprint intact.",
-              },
-              {
-                title: "Targeted replacement",
-                body: "Only failed or degraded components, coils, fans, controls, seals, are replaced individually, not wholesale.",
-              },
-              {
-                title: "In-situ restoration",
-                body: "Works are completed within the existing unit footprint to minimise downtime, plant room access requirements, and operational disruption.",
-              },
-            ].map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 60}>
-                <div className="group relative h-full border border-white/10 bg-white/5 p-5 transition hover:bg-white/10">
-                  <div className="absolute left-0 top-0 h-full w-[2px] bg-[#297858]/40 transition group-hover:bg-[#297858]/70" />
-                  <p className="text-sm font-bold text-white">{item.title}</p>
-                  <p className="mt-2 text-xs leading-6 text-white/65">{item.body}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-        </Container>
-      </section>
-
-      {/* ── COMPARISON TABLE ───────────────────────────────────────────── */}
-      <section className="bg-white py-14 sm:py-16">
-        <Container>
-
-          <ScrollReveal className="mb-8 max-w-2xl">
-            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              Make the right call
-            </p>
-            <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
-              Refurbish vs Replace
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-            <p className="mt-4 text-sm leading-6 text-slate-500">
-              Both are valid routes. The right choice depends on the condition of your plant, your programme, and your budget, every project is different, and we assess each one on its own merits.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="overflow-hidden border border-slate-200 bg-white">
-
-              <div className="grid grid-cols-[1.4fr_1fr_1fr] border-b border-slate-200 bg-[#f5f7f6]">
-                <div className="border-r border-slate-200 px-4 py-3" />
-                <div className="border-r border-slate-200 px-4 py-3">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#297858]">
-                    Refurbishment
-                  </p>
-                </div>
-                <div className="px-4 py-3">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-600">
-                    Full Replacement
-                  </p>
-                </div>
-              </div>
-
-              {[
-                { label: "Disruption", refurb: "Generally lower, works carried out in-situ", replace: "Generally higher, full plant change-out" },
-                { label: "Life extension", refurb: "Significant, depending on scope", replace: "Full new asset life from new" },
-                { label: "Compliance", refurb: "Upgrades can be incorporated", replace: "Fresh compliance baseline from new" },
-                { label: "Right when", refurb: "Frame is structurally sound", replace: "Frame is beyond repair or end of life" },
-                { label: "Consider if", refurb: "Budget or programme is constrained", replace: "Full performance reset is the goal" },
-              ].map((row, i, arr) => (
-                <div
-                  key={row.label}
-                  className={`grid grid-cols-[1.4fr_1fr_1fr] ${i !== arr.length - 1 ? "border-b border-slate-200" : ""}`}
-                >
-                  <div className="border-r border-slate-200 px-4 py-4">
-                    <p className="text-xs font-medium text-slate-700">{row.label}</p>
-                  </div>
-                  <div className="border-r border-slate-200 px-4 py-4">
-                    <p className="text-xs font-medium text-[#297858]">{row.refurb}</p>
-                  </div>
-                  <div className="px-4 py-4">
-                    <p className="text-xs font-medium text-slate-600">{row.replace}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-
-          <p className="mt-4 text-xs text-slate-500">
-            Every project varies, so{" "}
-            <Link href="/contact" className="font-semibold text-[#297858] underline underline-offset-2 hover:text-[#1d5c42]">
-              speak to our team
-            </Link>{" "}
-            and we&apos;ll give you an honest assessment of which route makes sense for your site. No commitment required.
-          </p>
-
         </Container>
       </section>
 
@@ -454,7 +340,7 @@ export default function AHURefurbishmentPage() {
               {
                 icon: ClockIcon,
                 title: "Extended Asset Life",
-                body: "This approach effectively extends the unit's working life by another 10–20 years, deferring the capital cost of full replacement.",
+                body: "This approach effectively extends the unit's working life by another 10–20+ years, deferring the capital cost of full replacement.",
               },
               {
                 icon: BoltIcon,

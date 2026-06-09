@@ -17,7 +17,7 @@ export const metadata = {
 const faqs = [
   {
     q: "Can you work in live clinical environments?",
-    a: "Yes. The majority of our healthcare work takes place in occupied buildings. We plan all works with phased shutdown windows, temporary ventilation where required, and infection control measures appropriate to the clinical environment.",
+    a: "Yes. The majority of our healthcare work takes place in occupied buildings. We plan all works with phased shutdown windows and work closely with your estates and site teams throughout.",
   },
   {
     q: "Do you understand clinical ventilation requirements?",
@@ -26,14 +26,6 @@ const faqs = [
   {
     q: "Can you validate AHU performance?",
     a: "We carry out airflow validation surveys that confirm performance against the relevant parameters for the clinical environment: air change rates, pressure differentials, filter conditions, and temperature. We produce a formal report suitable for estates records.",
-  },
-  {
-    q: "How do you manage infection control during works?",
-    a: "We follow site-specific infection control protocols including dustless working, appropriate PPE, and co-ordination with IPC teams on site. Access to sensitive areas is agreed with the estates team before works begin.",
-  },
-  {
-    q: "Can you replace AHUs without shutting down a ward or theatre?",
-    a: "In most cases, yes. We manage phased works so ventilation continues during replacement, using temporary supply arrangements where necessary. Where a planned shutdown is unavoidable, we work within agreed maintenance windows.",
   },
   {
     q: "Do you work with NHS Trusts directly or through main contractors?",
@@ -66,10 +58,10 @@ export default function HospitalPage() {
           {/* Mobile hero */}
           <div className="sm:hidden max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
-              Healthcare &amp; NHS
+              Hospital and Healthcare
             </p>
             <h1 className="text-3xl font-extrabold leading-[1.08] text-white">
-              Clinical ventilation.
+              Ventilation solutions for healthcare.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <a href="tel:01256518170" className="mt-5 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
@@ -97,14 +89,14 @@ export default function HospitalPage() {
           {/* Desktop hero */}
           <div className="hidden sm:block max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
-              Healthcare &amp; NHS
+              Hospital and Healthcare
             </p>
             <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
-              Ventilation works in<br />live clinical environments.
+              Ventilation solutions<br />for healthcare.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
-              Healthcare ventilation operates under some of the most demanding conditions in the built environment. We understand clinical environments, how to work in live hospitals, and what it means when AHU plant fails.
+              Healthcare ventilation operates under some of the most demanding conditions in the built environment. We understand healthcare environments, how to work in live hospitals, and what it means when AHU plant fails.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -152,14 +144,14 @@ export default function HospitalPage() {
 
             <ScrollReveal>
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
-                The clinical environment
+                The healthcare environment
               </p>
               <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
-                Clinical Environments<br />Demand Different.
+                Healthcare Environments<br />Demand Different.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/55">
-                When AHU plant fails in a hospital, the consequences are immediate and clinical. A failed theatre circuit means a cancelled list. A loss of negative pressure in an isolation room creates an infection risk. Inadequate air change rates on a ward are a patient safety issue.
+                When healthcare ventilation systems fail, the impact can be immediate. Our team understands the demands of live hospital environments and delivers practical AHU solutions that prioritise reliability, compliance and continuity of service.
               </p>
               <div className="mt-7">
                 <Link
@@ -176,15 +168,15 @@ export default function HospitalPage() {
                 {[
                   {
                     label: "Theatres & Clean Rooms",
-                    body: "Positive pressure, HEPA H14 filtration, 20+ air changes per hour. Any AHU failure in a theatre circuit creates an immediate clinical risk and planned list cancellation.",
+                    body: "Any AHU failure in a theatre creates an immediate clinical and health risk.",
                   },
                   {
-                    label: "Isolation Rooms",
-                    body: "Negative pressure relative to adjacent spaces, sealed ductwork transitions, and independent exhaust. Systems require regular pressure verification.",
+                    label: "Isolation Rooms, Pharmacy & Labs",
+                    body: "Controlled environments where ventilation performance is critical to maintaining air quality, temperature stability and operational compliance.",
                   },
                   {
                     label: "General Wards & Departments",
-                    body: "Comfort ventilation with documented air change rates, humidity control, and temperature compliance. Older wards are frequently running on AHUs installed in the original build.",
+                    body: "Older wards are frequently running on originally installed AHU systems.",
                   },
                 ].map((item) => (
                   <div key={item.label} className="border-l-2 border-[#297858] bg-white/5 px-5 py-4">
@@ -238,8 +230,8 @@ export default function HospitalPage() {
                 desc: "Standalone controllers with no fault logging, no alarms, and no connection to building management systems. Problems go undetected.",
               },
               {
-                title: "Insulation and ductwork deterioration",
-                desc: "Deteriorating duct insulation creating condensation risk and potential for mould growth, particularly in older plant rooms.",
+                title: "Corroded coils and fan sections",
+                desc: "Years of condensate exposure, poor water treatment, or frost damage leaving coils and internal components in poor condition with reduced capacity and reliability.",
               },
             ].map((item) => (
               <div key={item.title} className="border-l-2 border-[#297858] bg-white p-5">
@@ -277,12 +269,12 @@ export default function HospitalPage() {
                     desc: "Works are sequenced so ventilation is never fully lost. Planned downtime agreed with estates and clinical teams in advance.",
                   },
                   {
-                    title: "Temporary ventilation",
-                    desc: "Where shutdown of a clinical circuit is unavoidable, temporary supply is assessed and arranged before works commence.",
+                    title: "Working with your teams",
+                    desc: "We co-ordinate directly with your estates, clinical, and site teams to plan works around operational requirements. No disruption without prior agreement.",
                   },
                   {
-                    title: "Infection control co-ordination",
-                    desc: "Dustless working methods, sealed access routes, and co-ordination with IPC leads before any access to sensitive areas.",
+                    title: "Any make or model",
+                    desc: "We work across all AHU manufacturers with no dependency on original suppliers. Replacement components are sourced directly or manufactured to suit.",
                   },
                   {
                     title: "Post-works validation",
@@ -413,7 +405,7 @@ export default function HospitalPage() {
                     Tell us about your healthcare estate, plant age, compliance concerns, or a specific project requirement. We&apos;ll respond within one working day.
                   </p>
                   <div className="mt-7">
-                    <QuickQuoteForm />
+                    <QuickQuoteForm defaultService="Healthcare & NHS" />
                   </div>
                   <div className="mt-6 flex flex-col gap-2 border-t border-slate-100 pt-5">
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">

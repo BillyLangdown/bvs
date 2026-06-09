@@ -7,6 +7,7 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
+import { getShopProducts, getProductCategories } from "@/lib/wordpress/api";
 
 function Zap({ className, strokeWidth = 2 }) {
   return (
@@ -64,8 +65,26 @@ const faqs = [
   },
 ];
 
-export default function ECFanUpgradesPage() {
+export default async function ECFanUpgradesPage() {
   const studies = caseStudies.filter((s) => s.services.includes("ec-fan"));
+
+  let ecFanProducts = [];
+  try {
+    const [products, categories] = await Promise.all([
+      getShopProducts({ revalidate: 300 }),
+      getProductCategories({ revalidate: 600 }),
+    ]);
+    const ecCatIds = new Set(
+      categories
+        .filter((c) => c.name.toLowerCase().includes("ec fan"))
+        .map((c) => c.id)
+    );
+    ecFanProducts = products
+      .filter((p) => p.categories.some((id) => ecCatIds.has(id)))
+      .slice(0, 4);
+  } catch {
+    // WordPress unavailable — section hidden gracefully
+  }
   return (
     <div>
 
@@ -396,7 +415,7 @@ export default function ECFanUpgradesPage() {
         How it works
       </p>
       <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
-        From inital appointment to<br />Return to Service
+        From initial appointment to<br />restored operations
       </h2>
       <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
     </ScrollReveal>
@@ -456,6 +475,86 @@ export default function ECFanUpgradesPage() {
     </div>
   </Container>
 </section>
+
+      {/* ── EC FAN PRODUCTS ── shop showcase ─────────────────────────── */}
+      {ecFanProducts.length > 0 && (
+        <section className="bg-white py-16 sm:py-20">
+          <Container>
+            <ScrollReveal className="mb-10">
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+                From the shop
+              </p>
+              <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
+                EC Fans Available to Order
+              </h2>
+              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-4 max-w-xl text-sm leading-7 text-slate-500">
+                Units we supply for retrofit projects. Need help selecting the right fan for your system? Our engineers can advise before you order.
+              </p>
+            </ScrollReveal>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {ecFanProducts.map((product, i) => (
+                <ScrollReveal key={product.id} delay={i * 60}>
+                  <Link
+                    href={`/shop/${product.slug}`}
+                    className="group flex flex-col border border-slate-200 bg-white transition-all hover:border-[#297858] hover:shadow-sm"
+                  >
+                    <div className="relative aspect-square overflow-hidden bg-slate-50">
+                      {product.imageUrl ? (
+                        <Image
+                          src={product.imageUrl}
+                          alt={product.title}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                          className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="flex h-full items-center justify-center">
+                          <span className="text-[10px] uppercase tracking-widest text-slate-300">No image</span>
+                        </div>
+                      )}
+                      {product.stockBadge && (
+                        <span className="absolute left-3 top-3 bg-[#297858] px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-white">
+                          {product.stockBadge}
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex flex-1 flex-col p-4">
+                      <p className="text-xs font-semibold leading-5 text-slate-900 group-hover:text-[#297858]">
+                        {product.title}
+                      </p>
+                      {product.excerpt && (
+                        <p className="mt-1.5 line-clamp-2 text-[11px] leading-4 text-slate-400">
+                          {product.excerpt}
+                        </p>
+                      )}
+                      <div className="mt-3 flex items-center gap-1.5 text-[11px] font-semibold text-[#297858]">
+                        View product
+                        <svg width="10" height="10" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                          <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+
+            <div className="mt-8 text-center">
+              <Link
+                href="/shop"
+                className="inline-flex items-center gap-2 border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition-all hover:border-[#297858] hover:text-[#297858]"
+              >
+                View all shop products
+                <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* ── OUR PROJECTS ── case study carousel ───────────────────────── */}
       <section id="our-projects" className="bg-[#111418] py-14 sm:py-20">

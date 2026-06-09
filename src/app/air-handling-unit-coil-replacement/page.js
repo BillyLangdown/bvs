@@ -431,6 +431,77 @@ export default function CoilReplacementPage() {
   </Container>
 </section> 
 
+      {/* ── FREEZE DAMAGE ── winter health check CTA ─────────────────── */}
+      <section className="bg-[#f7f6f5] py-16 sm:py-20">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <ScrollReveal>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+                A common cause of failure
+              </p>
+              <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">
+                Frost damage from<br />control failure
+              </h2>
+              <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-6 text-sm leading-7 text-slate-600">
+                The most common cause of coil damage is freezing due to control failure. When frost protection controls fail or are incorrectly set, chilled water and LTHW coils can sustain serious internal damage that is not always visible until the system is returned to service.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-slate-600">
+                In addition to replacing a damaged coil, we can inspect and modify the controls that allowed the freeze to occur, reducing the risk of a repeat failure.
+              </p>
+              <div className="mt-8 border border-[#297858]/20 bg-[#297858]/5 p-6">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#297858]">Book a winter health check</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Before temperatures drop, we can inspect your coil condition and frost protection controls and advise on any remedial work needed.
+                </p>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <a
+                    href="#enquire"
+                    className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-6 py-3 text-sm font-semibold text-white shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] transition-all hover:from-[#1e5038] hover:to-[#133f2a]"
+                  >
+                    Book a winter health check
+                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                      <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </a>
+                  <a
+                    href="tel:01256518170"
+                    className="inline-flex items-center gap-2 border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition-all hover:border-[#297858] hover:text-[#297858]"
+                  >
+                    <PhoneIcon />
+                    01256 518170
+                  </a>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={80}>
+              <div className="grid gap-4">
+                {[
+                  {
+                    heading: "Failed frost protection",
+                    body: "Frost stats and freeze protection controls that are incorrectly set, faulty, or bypassed are the most frequent cause of coil freeze damage in commercial AHUs.",
+                  },
+                  {
+                    heading: "Split tubes and header damage",
+                    body: "Expanding ice causes tube splits and header cracks. The damage often goes undetected until the coil leaks on restart, by which point the AHU section and insulation are also affected.",
+                  },
+                  {
+                    heading: "Controls inspection included",
+                    body: "When we replace a freeze-damaged coil, we can also inspect and modify the controls that led to the failure, not just replace the coil itself.",
+                  },
+                ].map((item, i) => (
+                  <div key={item.heading} className="border-l-2 border-[#297858] bg-white p-5 pl-6 shadow-sm">
+                    <h3 className="text-sm font-extrabold text-slate-900">{item.heading}</h3>
+                    <p className="mt-2 text-xs leading-5 text-slate-500">{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </Container>
+      </section>
+
       {/* ── OUR PROJECTS ── case study carousel ───────────────────────── */}
       <section id="our-projects" className="bg-[#111418] py-14 sm:py-20">
         <Container>

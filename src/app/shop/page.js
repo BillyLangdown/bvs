@@ -129,16 +129,16 @@ export default async function ShopPage() {
 
   <div className="mt-5 rounded-lg border border-[#297858]/20 bg-[#297858]/5 p-4">
     <p className="text-sm leading-6 text-slate-600">
-      Looking for something specific or made to specification?
+      Need help sourcing the right component? Ask the team.
     </p>
 
-    <a
-      href="#custom-build-enquiry"
+    <Link
+      href="/contact"
       className="mt-2 inline-flex items-center gap-2 text-sm font-bold text-[#297858] transition-colors hover:text-[#1d5c42]"
     >
-      Custom build enquiry
+      Get in touch
       <span className="transition-transform group-hover:translate-x-1">→</span>
-    </a>
+    </Link>
   </div>
 </ScrollReveal>
 

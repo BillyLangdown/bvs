@@ -52,52 +52,66 @@ export default function CaseStudiesGrid({ caseStudies }) {
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((cs, i) => (
               <ScrollReveal key={cs.slug} delay={i * 40}>
-                <Link
-                  href={`/case-studies/${cs.slug}`}
-                  className="group overflow-hidden border border-slate-200 bg-white transition hover:shadow-md"
-                >
-                  <div className="relative h-44 bg-slate-100">
-                    <Image
-                      src={cs.image || "/case-studies/aerial-fallback.webp"}
-                      alt={cs.title}
-                      fill
-                      unoptimized={!!cs.image}
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/10" />
-                    <div className="absolute left-3 top-3">
-                      <span
-                        className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 ${
-                          sectorColours[cs.sector] || "bg-slate-100 text-slate-700"
-                        }`}
-                      >
-                        {cs.sector}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="p-5">
-                    <h2 className="text-sm font-extrabold uppercase text-slate-900 group-hover:text-[#297858]">
-                      {cs.title}
-                    </h2>
-                    <p className="mt-3 text-sm leading-6 text-slate-500">
-                      {cs.summary}
-                    </p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {cs.tags.map((t) => (
+                <div className="flex flex-col overflow-hidden border border-slate-200 bg-white transition hover:shadow-md">
+                  <Link href={`/case-studies/${cs.slug}`} className="group">
+                    <div className="relative h-44 bg-slate-100">
+                      <Image
+                        src={cs.image || "/case-studies/aerial-fallback.webp"}
+                        alt={cs.title}
+                        fill
+                        unoptimized={!!cs.image}
+                        className="object-cover transition duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/10" />
+                      <div className="absolute left-3 top-3">
                         <span
-                          key={t}
-                          className="bg-slate-50 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500"
+                          className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 ${
+                            sectorColours[cs.sector] || "bg-slate-100 text-slate-700"
+                          }`}
                         >
-                          {t}
+                          {cs.sector}
                         </span>
-                      ))}
+                      </div>
                     </div>
-                    <p className="mt-5 text-xs font-semibold text-[#297858]">
+
+                    <div className="p-5 pb-4">
+                      <h2 className="text-sm font-extrabold uppercase text-slate-900 group-hover:text-[#297858]">
+                        {cs.title}
+                      </h2>
+                      <p className="mt-3 text-sm leading-6 text-slate-500">
+                        {cs.summary}
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {cs.tags.map((t) => (
+                          <span
+                            key={t}
+                            className="bg-slate-50 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </Link>
+                  <div className="mt-auto flex items-center justify-between border-t border-slate-100 px-5 py-4">
+                    <Link
+                      href={`/case-studies/${cs.slug}`}
+                      className="text-xs font-semibold text-[#297858] hover:text-[#1d5c42] transition-colors"
+                    >
                       Read case study →
-                    </p>
+                    </Link>
+                    {cs.pdfUrl && (
+                      <a
+                        href={cs.pdfUrl}
+                        download
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-[#297858] transition-colors"
+                      >
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v13M7 11l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M4 20h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
+                        Download PDF
+                      </a>
+                    )}
                   </div>
-                </Link>
+                </div>
               </ScrollReveal>
             ))}
           </div>

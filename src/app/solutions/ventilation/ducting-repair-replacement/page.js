@@ -6,14 +6,14 @@ import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
   title: "Ducting Repair & Replacement | BVS",
-  description: "Commercial ductwork repair, relining, and replacement across the UK. BVS manage the full scope from survey to reinstatement, minimum disruption, compliant finish.",
+  description: "Full ductwork installation, repair, relining, and replacement across the UK. BVS manage the complete scope from survey and specification through to installation and sign-off.",
 };
 
 const scope = [
+  "Full ductwork installation",
   "Ductwork survey and condition assessment",
-  "Leakage testing to BS EN 12237",
-  "Internal duct lining and relining",
   "Failed section removal and replacement",
+  "Internal duct lining and relining",
   "Flexible ductwork connections",
   "Fire damper access and reinstatement",
   "Insulation and vapour barrier application",
@@ -22,20 +22,20 @@ const scope = [
 
 const reasons = [
   {
-    title: "Leaking Ductwork Wastes Energy",
-    body: "Even small duct leaks cause significant energy waste, heated or cooled air failing to reach its destination. We identify and seal leakage points to restore system efficiency.",
+    title: "Full Installation Capability",
+    body: "We carry out complete ductwork installations, not just repairs. From new systems to full replacements, we manage the full scope from survey and specification through to installation and sign-off.",
   },
   {
-    title: "Compliance Standards Are Specific",
-    body: "Ductwork must meet leakage class requirements under BS EN 12237. We carry out leakage testing and provide documented evidence of compliance.",
+    title: "Leaking Ductwork Reduces Performance",
+    body: "Duct leaks cause heated or cooled air to fail to reach its destination, reducing system effectiveness and increasing energy use. We identify and seal leakage points to restore performance.",
   },
   {
     title: "Minimum Disruption Approach",
     body: "We plan all ducting works around your operational schedule. Night shifts, phased programmes, and temporary containment, whatever is needed to keep your building running.",
   },
   {
-    title: "Full Scope Capability",
-    body: "From a single failed section to a complete reline of a multi-storey riser, we manage the full scope, survey, specification, and delivery co-ordinated by BVS.",
+    title: "Bespoke to Your Building",
+    body: "Every installation is designed around the constraints of your building. Access limitations, plant room configurations, and service routes are all assessed before specification is agreed.",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function DuctingRepairPage() {
           {/* Mobile hero */}
           <div className="sm:hidden max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
-              Ventilation Solutions
+              Ducting Repair &amp; Replacement
             </p>
             <h1 className="text-3xl font-extrabold leading-[1.08] text-white">
               Ducting repair<br />&amp; replacement.
@@ -74,7 +74,7 @@ export default function DuctingRepairPage() {
               01256 518170
             </a>
             <p className="mt-3 text-sm leading-6 text-white">
-              Failed or leaking ductwork wastes energy and raises compliance issues. We survey, repair, reline, or replace with minimal disruption.
+              Full ductwork installation, repair, relining, and replacement. We manage the complete scope from survey to sign-off with minimal disruption.
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <Link
@@ -94,14 +94,14 @@ export default function DuctingRepairPage() {
           {/* Desktop hero */}
           <div className="hidden sm:block max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
-              Ventilation Solutions
+              Ducting Repair &amp; Replacement
             </p>
             <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
               Ducting repair<br />&amp; replacement.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
-              Failed or leaking ductwork reduces system performance, wastes energy, and can create compliance issues. We survey, repair, reline, or replace, with full documentation and minimum disruption.
+              Full ductwork installation, repair, relining, and replacement. Whether it is a new system, a failed section, or a complete reline, we manage the full scope from survey and specification through to installation and sign-off.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -127,9 +127,9 @@ export default function DuctingRepairPage() {
           <Container>
             <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
               {[
-                { stat: "BS EN 12237", label: "Compliant" },
                 { stat: "UK Wide", label: "Coverage" },
-                { stat: "40+", label: "Years Experience" },
+                { stat: "Bespoke", label: "Installations" },
+                { stat: "24hr", label: "Response" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
                   <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
@@ -285,7 +285,7 @@ export default function DuctingRepairPage() {
             <div className="border border-slate-200 bg-surface-2 p-8">
               <p className="mb-1 text-xs font-bold uppercase tracking-[0.2em] text-[#297858]">Enquiry</p>
               <p className="mb-5 text-xs text-slate-500">We will aim to respond within 24 hours</p>
-              <QuickQuoteForm />
+              <QuickQuoteForm defaultService="Ducting Repair & Replacement" />
             </div>
           </div>
         </Container>

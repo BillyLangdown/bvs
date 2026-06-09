@@ -11,7 +11,7 @@ import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 export const metadata = {
   title: "AHU Manufacturing & Installation | BVS Building Ventilation Solutions",
   description:
-    "Custom air handling unit manufacturing and end-to-end installation from our UK facility. Survey, design, manufacture, install, and commission under one contract. 40+ years experience.",
+    "Custom air handling unit manufacturing and end-to-end installation from our UK facility. Survey, design, manufacture, and install under one contract. 40+ years experience.",
 };
 
 const faqs = [
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Can you manage the full scope from manufacture through to installation?",
-    a: "Yes. This is the most common arrangement, particularly on replacement projects. We manage survey, specification, manufacture, delivery, installation, commissioning, and handover under one contract with a single point of accountability.",
+    a: "Yes. This is the most common arrangement, particularly on replacement projects. We manage survey, specification, manufacture, delivery, installation, and handover under one contract with a single point of accountability.",
   },
   {
     q: "Can you install AHUs in live occupied buildings?",
@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Do you handle access and cranage?",
-    a: "We manage the full installation including crane hire, temporary works, and access platforms where needed. This is co-ordinated through our project management team and included within the works programme.",
+    a: "Yes. We work alongside your lifting company to plan and co-ordinate access, cranage, and temporary works. Our project management team handles all programme co-ordination. Where a specialist lifting contractor is not already in place, we can advise on suitable options.",
   },
   {
     q: "Do you manufacture to HTM 03-01 for healthcare?",
@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "What size AHUs do you manufacture and install?",
-    a: "From small packaged units handling 500 l/s to large central plant in excess of 50,000 m3/h. We work across commercial, healthcare, education, laboratory, and industrial sectors.",
+    a: "We manufacture across a wide range of sizes for commercial, healthcare, education, laboratory, and industrial sectors. Speak to the team about your specific requirements.",
   },
 ];
 
@@ -127,7 +127,7 @@ export default function AHUManufacturingInstallationPage() {
               className="mt-5 max-w-xl text-[15px] leading-7 text-white"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
             >
-              Custom air handling units manufactured at our UK facility and installed end-to-end under a single contract. Survey, design, manufacture, install, and commission.
+              Custom air handling units manufactured at our UK facility and installed end-to-end under a single contract. Survey, design, manufacture, and install.
             </p>
             <a href="tel:01256518170" className="mt-6 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
               <PhoneIcon />
@@ -200,7 +200,7 @@ export default function AHUManufacturingInstallationPage() {
               {
                 n: "03",
                 heading: "Split Contractor Risk",
-                body: "Mechanical, electrical, and controls split between contractors causes co-ordination failures and programme overruns at commissioning.",
+                body: "Mechanical, electrical, and controls split between contractors causes co-ordination failures and programme overruns on site.",
               },
             ].map((item) => (
               <ScrollReveal key={item.n}>
@@ -261,12 +261,12 @@ export default function AHUManufacturingInstallationPage() {
               },
               {
                 n: "03",
-                title: "Install & Commission",
-                body: "Full mechanical, electrical, and controls installation managed under one contract. Airflow commissioning and handover pack included as standard.",
+                title: "Installation",
+                body: "Full mechanical, electrical, and controls installation managed under one contract. Airflow verification and handover pack included as standard.",
                 points: [
                   "Mechanical fixings, ductwork, and pipework installed",
                   "Electrical supply and controls wired and tested",
-                  "Airflow commissioning and full handover pack issued",
+                  "Airflow verification and full handover pack issued",
                 ],
               },
             ].map((step, i) => (
@@ -306,7 +306,7 @@ export default function AHUManufacturingInstallationPage() {
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
             <p className="mt-4 text-sm leading-7 text-white/50">
-              The specification below reflects our standard manufacturing capability. Most requirements fall within it.
+              The specification below reflects our standard manufacturing capability.
             </p>
           </ScrollReveal>
 
@@ -315,7 +315,7 @@ export default function AHUManufacturingInstallationPage() {
               <table className="w-full border-collapse text-sm">
                 <tbody>
                   {[
-                    { spec: "Airflow range", value: "500 l/s to 50,000+ m³/h" },
+                    { spec: "Airflow", value: "Any airflow to suit your requirements" },
                     { spec: "Casing configurations", value: "Horizontal, vertical, modular, split-casing" },
                     { spec: "Thermal sections", value: "LTHW/MTHW/HTHW heating, chilled water, DX, heat recovery, frost protection" },
                     { spec: "Fan types", value: "EC plug fans, EC axial fans, backward-curved centrifugal" },
@@ -353,7 +353,7 @@ export default function AHUManufacturingInstallationPage() {
               {
                 stat: "Full",
                 label: "Scope available",
-                detail: "Manufacture, delivery, installation and commissioning under one contract.",
+                detail: "Manufacture, delivery, and installation under one contract.",
               },
               {
                 stat: "Factory",
@@ -376,89 +376,6 @@ export default function AHUManufacturingInstallationPage() {
                 </div>
               </ScrollReveal>
             ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ── HOW IT WORKS ── 4-step process ───────────────────────────── */}
-      <section className="bg-white py-16 sm:py-20">
-        <Container>
-          <ScrollReveal className="mb-10">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              Build &amp; installation process
-            </p>
-            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
-              From Brief to<br />Commissioned Unit
-            </h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-            <p className="mt-3 text-sm text-slate-500">
-              The same sequence on every project. Every unit ships with factory test records and drawing pack.
-            </p>
-          </ScrollReveal>
-
-          <div className="mx-auto max-w-6xl">
-            <div className="grid gap-0 lg:grid-cols-4">
-              {[
-                {
-                  n: "01",
-                  title: "Design Brief",
-                  body: "Specification defined from site survey, performance requirements, and access constraints.",
-                  points: [
-                    "Airflow + thermal requirements agreed",
-                    "Space and access constraints captured",
-                    "Controls and BMS integration defined",
-                  ],
-                },
-                {
-                  n: "02",
-                  title: "Engineering & Approval",
-                  body: "Drawings produced and signed off before manufacture begins.",
-                  points: [
-                    "GA drawings issued",
-                    "Performance schedule confirmed",
-                    "Client approval before build",
-                  ],
-                },
-                {
-                  n: "03",
-                  title: "Manufacture & Test",
-                  body: "Built in UK facility and factory tested before dispatch.",
-                  points: [
-                    "In-house manufacture",
-                    "Fan and electrical testing",
-                    "Pre-delivery inspection available",
-                  ],
-                },
-                {
-                  n: "04",
-                  title: "Install & Commission",
-                  body: "Delivered, installed, and commissioned to full handover.",
-                  points: [
-                    "Mechanical and electrical install",
-                    "Airflow commissioning",
-                    "O&M documentation supplied",
-                  ],
-                },
-              ].map((step, i) => (
-                <ScrollReveal key={step.n} delay={i * 70}>
-                  <div className="flex h-full flex-col border-r border-slate-200 p-6 last:border-r-0">
-                    <div className="mb-4 flex h-8 w-8 items-center justify-center bg-[#111418]">
-                      <span className="text-xs font-bold text-white">{step.n}</span>
-                    </div>
-                    <h3 className="text-sm font-bold uppercase text-slate-900">{step.title}</h3>
-                    <p className="mt-2 text-xs text-slate-500">{step.body}</p>
-                    <ul className="mt-4 space-y-1.5">
-                      {step.points.map((p) => (
-                        <li key={p} className="flex gap-2 text-[10px] text-slate-400">
-                          <span className="mt-1 h-1 w-2 shrink-0 bg-[#297858]" />
-                          {p}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
           </div>
         </Container>
       </section>

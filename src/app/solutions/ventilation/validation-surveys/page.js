@@ -28,16 +28,12 @@ const deliverables = [
     body: "Every finding is documented with photographs and engineer notes, giving you a clear, evidence-based record of system condition.",
   },
   {
-    title: "Priority-Rated Defect Register",
-    body: "Defects are categorised by severity, immediate, short-term, and planned, so your maintenance team can act on what matters first.",
+    title: "Prioritised Recommendations",
+    body: "Findings are categorised by priority so your maintenance team can act on what matters most first. We can work within your budget and timeframes.",
   },
   {
     title: "Costed Remedial Recommendations",
     body: "Where works are required, we provide indicative costs alongside the findings, so you can plan budget and programme at the same time.",
-  },
-  {
-    title: "Independent Documented Record",
-    body: "The completed report stands as an independent record of system condition at the point of survey, a reliable reference for asset management, maintenance planning, and future works.",
   },
 ];
 
@@ -79,8 +75,8 @@ export default function ValidationSurveysPage() {
         <Container className="relative flex min-h-[620px] items-center py-14 pb-28 sm:min-h-[600px] sm:py-20 sm:pb-20">
           {/* Mobile hero */}
           <div className="sm:hidden max-w-3xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#297858]">
-              Ventilation Solutions
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
+              Validation Surveys
             </p>
             <h1 className="text-3xl font-extrabold leading-[1.08] text-white">
               Validation surveys.
@@ -110,8 +106,8 @@ export default function ValidationSurveysPage() {
           </div>
           {/* Desktop hero */}
           <div className="hidden sm:block max-w-2xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#297858]">
-              Ventilation Solutions
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
+              Validation Surveys
             </p>
             <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
               Validation surveys.
@@ -187,11 +183,11 @@ export default function ValidationSurveysPage() {
             Scope of assessment
           </p>
           <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
-            What every survey covers
+            What surveys can include
           </h2>
           <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
           <p className="mt-4 max-w-xl text-sm leading-7 text-slate-500">
-            Every AHU is assessed against the same rigorous checklist. Nothing is skipped and every finding is recorded.
+            We carry out surveys across all makes and models, including fault finding, condition assessment, and performance verification. Every finding is documented and all survey work is carried out on site by our engineers.
           </p>
           <div className="mt-10 grid gap-0 border border-slate-200 bg-white sm:grid-cols-2">
             {coverage.map((item, i) => (
@@ -267,7 +263,7 @@ export default function ValidationSurveysPage() {
             <div className="border border-slate-200 bg-white p-8">
               <p className="mb-1 text-xs font-bold uppercase tracking-[0.2em] text-[#297858]">Enquiry</p>
               <p className="mb-5 text-xs text-slate-500">We will aim to respond within 24 hours</p>
-              <QuickQuoteForm />
+              <QuickQuoteForm defaultService="Validation Surveys" />
             </div>
           </div>
         </Container>

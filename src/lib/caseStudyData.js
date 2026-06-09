@@ -6,6 +6,7 @@ export const caseStudies = [
     location: "Hammersmith, London",
     image: "/nhs-hammersmith-fulham-case-study.webp",
     headline: "NHS Trust AHU Refurbishment, Live Facility",
+    pdfUrl: "/case-studies/NHS-Hammersmith-Fulham-AHU-Refurbishment-Case-Study.pdf",
     relevantIf: [
       "Your AHU is in a live clinical facility that stays operational during works",
       "You need targeted component repair rather than full unit replacement",
@@ -21,6 +22,7 @@ export const caseStudies = [
     location: "Bath",
     image: "/private-hospital-bath-case-study.webp",
     headline: "Operating Theatre AHU Refurbishment with EC Upgrade",
+    pdfUrl: "/case-studies/Bath-Private-Hospital-AHU-Refurbishment-Case-Study.pdf",
     relevantIf: [
       "Theatre or clinical-grade air quality standards are required throughout",
       "Energy reduction is part of the refurbishment brief",
@@ -36,6 +38,7 @@ export const caseStudies = [
     location: "O2 Arena, London",
     image: "/toca-intereactive-arena-case-study.webp",
     headline: "AHU Refurbishment, High-Footfall Venue",
+    pdfUrl: "/case-studies/Toca-Football-O2-Arena-Case-Study-1-2.pdf",
     relevantIf: [
       "Your venue has limited maintenance windows between events or trading hours",
       "Works must be programmed tightly around the operational calendar",
@@ -51,6 +54,7 @@ export const caseStudies = [
     location: "UK",
     image: "/red-english-group-distillery-case-study.webp",
     headline: "AHU Refurbishment, Active Production Facility",
+    pdfUrl: "/case-studies/Red-Distillery-Case-Study-2.pdf",
     relevantIf: [
       "Your environment has specific temperature or humidity requirements tied to production",
       "Shutdown windows need to be planned around a production schedule",
@@ -66,6 +70,7 @@ export const caseStudies = [
     location: "Glasgow",
     image: "/newton-mearns-case-study.webp",
     headline: "Shopping Centre AHU Refurbishment & Gas Pipework",
+    pdfUrl: "/case-studies/The-Avenue-Newton-Mearns-AHU-Refurbishment-Pipework-Replacement-Case-Study.pdf",
     relevantIf: [
       "Your AHU serves a live retail or public environment that cannot close",
       "Belt-driven fans are overdue for upgrading",
@@ -81,6 +86,7 @@ export const caseStudies = [
     location: "London",
     image: "/gresham-street-office-case-study.webp",
     headline: "Full Internal Refurbishment, City Office AHU",
+    pdfUrl: "/case-studies/Gresham-Street-Office-AHU-Refurbishment-Case-Study.pdf",
     relevantIf: [
       "Multiple internal components have reached end of life at the same time",
       "Air volume requirements have changed since the original installation",
@@ -96,6 +102,7 @@ export const caseStudies = [
     location: "Forest of Arden",
     image: "/warner-hotel-forest-of-arden-case-study.webp",
     headline: "Pool Hall AHU Troubleshooting & Survey, Marriott",
+    pdfUrl: "/case-studies/Marriott-Hotel-Forest-of-Arden-Troubleshooting-Solutions-Case-Study-x-3-1.pdf",
     relevantIf: [
       "Your pool hall AHU is failing to reach target temperature or humidity",
       "The unit was recently installed or maintained but is still underperforming",
@@ -113,6 +120,7 @@ export const caseStudies = [
     location: "Dorset",
     image: "/dorset-leisure-centre-case-study.webp",
     headline: "EC Fan Retrofit, Swimming Pool AHU",
+    pdfUrl: "/case-studies/Case-Study-Leisure-Centre-Dorset-EC-Fan-Upgrade.pdf",
     relevantIf: [
       "Belt-driven fans in a pool hall or humid environment have failed or are near failure",
       "Humidity and temperature control has been lost or is unreliable",
@@ -130,6 +138,7 @@ export const caseStudies = [
     location: "Norfolk",
     image: "/warner-hotel-gunton-case-study.webp",
     headline: "Custom AHU Manufactured & Installed, Hotel Pool Hall",
+    pdfUrl: "/case-studies/Warner-Leisure-Hotel-Gunton-Hall-Case-Study-.pdf",
     relevantIf: [
       "Restricted plantroom access prevents a standard unit being delivered whole",
       "End-of-life AHU in a pool hall or glazed, humid environment",
@@ -145,6 +154,7 @@ export const caseStudies = [
     location: "UK",
     image: "/friary-meadow-case-study.webp",
     headline: "AHU Replacement, Continuously Occupied Retirement Village",
+    pdfUrl: "/case-studies/Friary-Meadow-Retirement-Village-Case-Study.pdf",
     relevantIf: [
       "The building is continuously occupied and cannot be vacated for works",
       "Resident comfort and air quality must be maintained throughout",
@@ -162,6 +172,7 @@ export const caseStudies = [
     location: "London",
     image: "/burlington-street-office-case-study.webp",
     headline: "Frost Coil Replacement, Restricted Plantroom Access",
+    pdfUrl: "/case-studies/Burlington-Street-Office-Coil-Replacement-Case-Study.pdf",
     relevantIf: [
       "Your frost or heating coil has failed and needs replacing",
       "Restricted access means a standard single-piece coil cannot reach the plant room",
@@ -177,6 +188,7 @@ export const caseStudies = [
     location: "UK",
     image: "/pharmaceutical-lab-case-study.webp",
     headline: "AHU Coil Replacement, Pharmaceutical Production",
+    pdfUrl: "/case-studies/Case-Study-Pharmaceutical-Manufacturers.pdf",
     relevantIf: [
       "Your process environment has strict temperature and humidity tolerances",
       "Coil replacement must match original performance exactly",
@@ -192,6 +204,7 @@ export const caseStudies = [
     location: "Farnborough",
     image: "/car-dealership-case-study.webp",
     headline: "Heating Coil & Pipework Replacement, Commercial Premises",
+    pdfUrl: "/case-studies/Car-Dealership-Coil-Replacement-Case-Study.pdf",
     relevantIf: [
       "Your heating coil has failed or is consistently underperforming",
       "Associated pipework also needs replacing at the same time",
@@ -209,6 +222,7 @@ export const caseStudies = [
     location: "Ringwood",
     image: "/ringwood-leisure-center-case-study.webp",
     headline: "Controller Upgrade: £100k AHU Replacement Avoided",
+    pdfUrl: "/case-studies/Case-Study-Ringwood-Leisure-AHU-Controls.pdf",
     relevantIf: [
       "You've been advised to replace AHUs that appear structurally sound",
       "Controls are failing but the mechanical structure of the unit is in good condition",
@@ -224,6 +238,7 @@ export const caseStudies = [
     location: "Westfield, London",
     image: "/procook-westfield-case-study.webp",
     headline: "AHU Controller Upgrade, Westfield Retail Store",
+    pdfUrl: "/case-studies/Case-Study-Procook-Westfield-AHU-Controls-5.pdf",
     relevantIf: [
       "AHU controls are obsolete or have failed and the system has stopped working",
       "You need automated scheduling aligned to your trading or operating hours",
@@ -234,3 +249,25 @@ export const caseStudies = [
     services: ["controller"],
   },
 ];
+
+export const caseStudyPDFs = {
+  "bath-private-hospital-ahu-refurbishment": "/case-studies/Bath-Private-Hospital-AHU-Refurbishment-Case-Study.pdf",
+  "nhs-hammersmith-ahu-refurbishment": "/case-studies/NHS-Hammersmith-Fulham-AHU-Refurbishment-Case-Study.pdf",
+  "friary-meadow-ahu-replacement": "/case-studies/Friary-Meadow-Retirement-Village-Case-Study.pdf",
+  "warner-leisure-hotel-gunton-hall-ahu": "/case-studies/Warner-Leisure-Hotel-Gunton-Hall-Case-Study-.pdf",
+  "marriott-forest-of-arden-pool-ventilation": "/case-studies/Marriott-Hotel-Forest-of-Arden-Troubleshooting-Solutions-Case-Study-x-3-1.pdf",
+  "leisure-centre-dorset-ec-fan-upgrade": "/case-studies/Case-Study-Leisure-Centre-Dorset-EC-Fan-Upgrade.pdf",
+  "ringwood-leisure-ahu-controller-upgrade": "/case-studies/Case-Study-Ringwood-Leisure-AHU-Controls.pdf",
+  "gresham-street-office-ahu-refurbishment": "/case-studies/Gresham-Street-Office-AHU-Refurbishment-Case-Study.pdf",
+  "pembroke-offices-ahu-refurbishment": "/case-studies/Pembroke-Offices-AHU-Refurbishment-Case-Study.pdf",
+  "burlington-street-office-coil-replacement": "/case-studies/Burlington-Street-Office-Coil-Replacement-Case-Study.pdf",
+  "kingly-street-extract-fan-duct": "/case-studies/Kingly-Street-Office-Extract-Fan-Duct-Case-Study.pdf",
+  "newton-mearns-ahu-refurbishment-pipework": "/case-studies/The-Avenue-Newton-Mearns-AHU-Refurbishment-Pipework-Replacement-Case-Study.pdf",
+  "disney-headquarters-ventilation-survey": "/case-studies/Disney-Headquarters-Hammersmith-Case-Study-Document-A4-Portrait-4.pdf",
+  "procook-westfield-ahu-controller-upgrade": "/case-studies/Case-Study-Procook-Westfield-AHU-Controls-5.pdf",
+  "toca-football-o2-ahu-refurbishment": "/case-studies/Toca-Football-O2-Arena-Case-Study-1-2.pdf",
+  "concorde-simulator-ventilation": "/case-studies/Concorde-Project-Case-Study.pdf",
+  "car-dealership-farnborough-coil-replacement": "/case-studies/Car-Dealership-Coil-Replacement-Case-Study.pdf",
+  "pharmaceutical-lab-coil-replacement": "/case-studies/Case-Study-Pharmaceutical-Manufacturers.pdf",
+  "red-distillery-ahu-refurbishment": "/case-studies/Red-Distillery-Case-Study-2.pdf",
+};

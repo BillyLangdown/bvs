@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { caseStudies } from "@/lib/caseStudyData";
+import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
   title: "Ventilation Troubleshooting | BVS",
@@ -50,12 +52,12 @@ const process = [
 const checks = [
   "Airflow measurement and rebalancing",
   "Fan and motor condition assessment",
+  "Controls, thermostats, and sensor calibration",
+  "BMS interface and fault code review",
   "Filter inspection and replacement",
   "Coil performance check",
   "Damper operation and actuation",
-  "Controls, thermostats, and sensor calibration",
   "Ductwork leak identification",
-  "BMS interface and fault code review",
 ];
 
 export default function TroubleshootingPage() {
@@ -82,7 +84,7 @@ export default function TroubleshootingPage() {
           {/* Mobile hero */}
           <div className="sm:hidden max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
-              Ventilation Solutions
+              Ventilation Troubleshooting
             </p>
             <h1 className="text-3xl font-extrabold leading-[1.08] text-white">
               Ventilation<br />troubleshooting.
@@ -113,7 +115,7 @@ export default function TroubleshootingPage() {
           {/* Desktop hero */}
           <div className="hidden sm:block max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
-              Ventilation Solutions
+              Ventilation Troubleshooting
             </p>
             <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
               Ventilation<br />troubleshooting.
@@ -146,9 +148,9 @@ export default function TroubleshootingPage() {
           <Container>
             <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
               {[
-                { stat: "Root Cause", label: "Focus" },
-                { stat: "Same Visit", label: "Fixes" },
-                { stat: "Written", label: "Report" },
+                { stat: "40+", label: "Years Experience" },
+                { stat: "24hr", label: "Response" },
+                { stat: "All Makes", label: "& Models" },
               ].map((s) => (
                 <div key={s.label} className="px-2 text-center sm:px-6">
                   <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
@@ -191,7 +193,7 @@ export default function TroubleshootingPage() {
               How we work
             </p>
             <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
-              From call-out to close-out
+              Survey to solutions
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
           </div>
@@ -215,7 +217,7 @@ export default function TroubleshootingPage() {
               Diagnostic scope
             </p>
             <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
-              What we assess on-site
+              What we can assess on site
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
           </div>
@@ -231,6 +233,46 @@ export default function TroubleshootingPage() {
           </div>
         </Container>
       </section>
+
+      {/* Director quote */}
+      <section className="bg-[#111418] py-14 sm:py-16">
+        <Container>
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-6 h-[3px] w-10 bg-[#297858]" />
+            <blockquote className="text-xl font-extrabold leading-snug text-white sm:text-2xl">
+              &ldquo;There&apos;s nothing we haven&apos;t seen in 40+ years. Whatever the system, whatever the problem, we&apos;ll get to the bottom of it.&rdquo;
+            </blockquote>
+            <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.25em] text-white/40">
+              BVS Director
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* Case studies */}
+      {(() => {
+        const studies = caseStudies.filter((s) => s.services.includes("troubleshooting"));
+        if (!studies.length) return null;
+        return (
+          <section className="bg-[#0b0d10] py-14 sm:py-20">
+            <Container>
+              <div className="mb-8">
+                <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+                  Our projects
+                </p>
+                <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
+                  Complex jobs we&apos;ve resolved
+                </h2>
+                <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+              </div>
+              <CaseStudyCarousel
+                studies={studies}
+                intro="Ventilation faults and system failures diagnosed and resolved across commercial and critical environments."
+              />
+            </Container>
+          </section>
+        );
+      })()}
 
       {/* Trust bar */}
       <TrustedByBar />
@@ -268,7 +310,7 @@ export default function TroubleshootingPage() {
             <div className="border border-slate-200 bg-white p-8">
               <p className="mb-1 text-xs font-bold uppercase tracking-[0.2em] text-[#297858]">Enquiry</p>
               <p className="mb-5 text-xs text-slate-500">We will aim to respond within 24 hours</p>
-              <QuickQuoteForm />
+              <QuickQuoteForm defaultService="Ventilation Troubleshooting" />
             </div>
           </div>
         </Container>

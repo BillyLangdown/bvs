@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "Do you offer BMS integration?",
-    a: "Yes. We can install and commission AHU controls into existing building management systems, including Trend and other leading platforms, to give you centralised monitoring and control.",
+    a: "Yes. We work with Trend, Tridium/Niagara, and other major BMS platforms. We can integrate new AHU controls into an existing BMS or migrate from one platform to another where required.",
   },
   {
     q: "What energy savings can a controls upgrade deliver?",
@@ -84,7 +84,7 @@ export default function ControllerUpgradesPage() {
                 href="#assessment"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
-                Request a controls assessment
+                Discuss your requirements
                 <ArrowIcon />
               </a>
               <a
@@ -117,7 +117,7 @@ export default function ControllerUpgradesPage() {
                 href="#assessment"
                 className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
-                Request a controls assessment
+                Discuss your requirements
                 <ArrowIcon />
               </a>
               <a
@@ -159,7 +159,7 @@ export default function ControllerUpgradesPage() {
               The problem
             </p>
             <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">
-              What Old Controls<br />Are Doing to You
+              What Problems<br />We Often See
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
           </ScrollReveal>
@@ -189,9 +189,8 @@ export default function ControllerUpgradesPage() {
             ].map((item, i) => (
               <ScrollReveal key={item.impact} delay={i * 60}>
                 <div className="flex flex-col border-l-4 border-slate-200 bg-[#f7f6f5] p-6">
-                  <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
+                  <div className="mb-3">
                     <h3 className="text-sm font-extrabold text-slate-900">{item.impact}</h3>
-                    <span className="shrink-0 bg-red-50 px-2 py-0.5 text-[10px] font-bold text-red-500/75">{item.badge}</span>
                   </div>
                   <p className="text-sm leading-6 text-slate-500">{item.detail}</p>
                 </div>
@@ -389,16 +388,16 @@ export default function ControllerUpgradesPage() {
                 detail: "Supply and installation of replacement PCBs to restore full control functionality.",
               },
               {
-                title: "Trend & BMS Integration",
-                detail: "Integration and commissioning of AHU controls within Trend or wider BMS platforms.",
+                title: "Trend, Tridium & BMS Integration",
+                detail: "Integration of AHU controls within Trend, Tridium/Niagara, and other BMS platforms. We can work with existing systems or migrate to a new platform.",
               },
               {
                 title: "AHU Controller Refurbishment",
                 detail: "Repair and upgrade of existing control systems to extend operational life.",
               },
               {
-                title: "Energy Optimisation & Sequences",
-                detail: "Optimisation of control sequences for improved energy efficiency and performance.",
+                title: "Control Sequence Optimisation",
+                detail: "Review and optimisation of control sequences to improve system performance and reduce unnecessary energy use.",
               },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 50} className="h-full">
@@ -494,7 +493,7 @@ export default function ControllerUpgradesPage() {
               How it works
             </p>
             <h2 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
-              Assessment to<br />Commissioned System
+              Initial Visit to<br />Reinstated Full System Operations
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
           </ScrollReveal>
@@ -503,15 +502,15 @@ export default function ControllerUpgradesPage() {
             {[
               {
                 n: "01",
-                title: "Controls Assessment",
-                body: "We survey the existing controls installation, hardware condition, sequence of operation, BMS integration, and energy performance, and identify what an upgrade would achieve.",
-                points: ["Existing controller, sensors, and actuators assessed", "Sequence of operation reviewed against current requirements", "Energy savings modelled from proposed upgrade specification"],
+                title: "Initial Visit",
+                body: "We survey the existing controls installation, hardware condition, sequence of operation, and BMS integration, and identify what an upgrade would achieve.",
+                points: ["Existing controller, sensors, and actuators reviewed", "Sequence of operation reviewed against current requirements", "Upgrade options and likely outcomes confirmed"],
               },
               {
                 n: "02",
                 title: "Specification & Panel Build",
-                body: "A controls specification is produced and agreed, new panels are built and tested off-site, and a commissioning programme is agreed before works begin on site.",
-                points: ["Full controls specification issued for approval", "Panels built, wired, and factory-tested before delivery", "Commissioning programme agreed around site occupation"],
+                body: "A controls specification is produced and agreed, new panels are built and tested off-site, and a works programme is agreed before installation begins on site.",
+                points: ["Full controls specification issued for approval", "Panels built, wired, and factory-tested before delivery", "Works programme agreed around site occupation"],
               },
               {
                 n: "03",
@@ -521,9 +520,9 @@ export default function ControllerUpgradesPage() {
               },
               {
                 n: "04",
-                title: "Commissioning & Handover",
-                body: "Sequences are loaded, tested, and tuned. BMS integration confirmed, energy performance verified, and full handover documentation issued.",
-                points: ["Control sequences tested against approved specification", "BMS integration confirmed and I/O verified", "O&M manuals, energy baseline, and ESOS documentation"],
+                title: "Verification & Handover",
+                body: "Sequences are loaded, tested, and tuned. BMS integration confirmed and full handover documentation issued.",
+                points: ["Control sequences tested against approved specification", "BMS integration confirmed and I/O verified", "O&M manuals and full handover documentation issued"],
               },
             ].map((step, i) => (
               <ScrollReveal key={step.n} delay={i * 70}>
@@ -578,18 +577,17 @@ export default function ControllerUpgradesPage() {
                 Get in touch
               </p>
               <h2 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">
-                Request a<br />Controls Assessment
+                Discuss Your<br />Controls Requirements
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-slate-600">
-                Tell us about the AHU, the existing controls hardware, and what you are trying to achieve. We will model the energy savings and confirm BMS integration capability before you commit to works.
+                Tell us about the AHU, the existing controls hardware, and what you are trying to achieve. We will confirm BMS integration capability and upgrade options before you commit to works.
               </p>
               <ul className="mt-5 space-y-2.5">
                 {[
                   "Open-protocol DDC as standard, no proprietary lock-in",
-                  "Energy model provided before commitment to works",
+                  "Works with Trend, Tridium/Niagara, and all major BMS platforms",
                   "Single units and multi-site estate programmes both handled",
-                  "ESOS documentation and energy baselines issued at handover",
                   "No obligation to proceed",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">

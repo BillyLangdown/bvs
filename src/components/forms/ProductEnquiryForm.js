@@ -2,6 +2,18 @@
 
 import { useState } from "react";
 
+const COUNTY_OPTIONS = [
+  "South",
+  "South West",
+  "Midlands",
+  "South East",
+  "North West",
+  "North East",
+  "London",
+  "Wales",
+  "Scotland",
+];
+
 const inputClass =
   "h-11 w-full border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors";
 
@@ -25,6 +37,7 @@ export function ProductEnquiryForm({ productSlug, productName }) {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [county, setCounty] = useState("");
   const [product, setProduct] = useState(productName || "");
   const [message, setMessage] = useState(
     productName ? `I'd like to enquire about: ${productName}\n\n` : "",
@@ -56,7 +69,12 @@ export function ProductEnquiryForm({ productSlug, productName }) {
           name: `${firstName.trim()} ${lastName.trim()}`,
           email: email.trim(),
           phone: phone.trim(),
-          enquiry: `Product: ${product}\n\n${message.trim()}`,
+          enquiry: [
+            `Product: ${product}`,
+            county ? `Region: ${county}` : "",
+            "",
+            message.trim(),
+          ].filter((l, i) => l !== "" || i === 2).join("\n"),
         }),
       });
       const data = await res.json().catch(() => null);
@@ -118,6 +136,21 @@ export function ProductEnquiryForm({ productSlug, productName }) {
             <label className={labelClass}>Phone <span className="text-[#297858]">*</span></label>
             <input className={inputClass} type="tel" placeholder="Your phone number" value={phone} onChange={(e) => setPhone(e.target.value)} required />
           </div>
+        </div>
+        <div>
+          <label className={labelClass}>
+            Region <span className="font-normal normal-case tracking-normal text-slate-400">(optional)</span>
+          </label>
+          <select
+            className={`${inputClass} cursor-pointer`}
+            value={county}
+            onChange={(e) => setCounty(e.target.value)}
+          >
+            <option value="">Select your region…</option>
+            {COUNTY_OPTIONS.map((o) => (
+              <option key={o} value={o}>{o}</option>
+            ))}
+          </select>
         </div>
       </div>
 

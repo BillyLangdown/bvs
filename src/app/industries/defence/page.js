@@ -4,8 +4,6 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
-import { caseStudies } from "@/lib/caseStudyData";
-import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
   title: "Defence & Government Ventilation | BVS Building Ventilation Solutions",
@@ -330,18 +328,6 @@ export default function DefencePage() {
               </Link>
             ))}
           </div>
-        </Container>
-      </section>
-
-      {/* ── OUR PROJECTS ─────────────────────────────────────────────── */}
-      <section id="our-projects" className="bg-[#111418] py-16 sm:py-20">
-        <Container>
-          <ScrollReveal className="mb-8">
-            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">Our projects</p>
-            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">Case Studies</h2>
-            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-          </ScrollReveal>
-          <CaseStudyCarousel studies={caseStudies} />
         </Container>
       </section>
 

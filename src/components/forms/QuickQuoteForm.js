@@ -2,6 +2,18 @@
 
 import { useMemo, useState } from "react";
 
+const COUNTY_OPTIONS = [
+  "South",
+  "South West",
+  "Midlands",
+  "South East",
+  "North West",
+  "North East",
+  "London",
+  "Wales",
+  "Scotland",
+];
+
 const SERVICE_OPTIONS = [
   "EC Fan Upgrades",
   "Coil Replacement",
@@ -23,6 +35,7 @@ export function QuickQuoteForm({ defaultService = "" }) {
     name: "",
     email: "",
     mobile: "",
+    county: "",
     service: defaultService,
     message: "",
   });
@@ -62,7 +75,7 @@ export function QuickQuoteForm({ defaultService = "" }) {
       const data = await res.json().catch(() => null);
       if (!res.ok) throw new Error(data?.error || "Message failed to send");
       setStatus("success");
-      setValues({ name: "", email: "", mobile: "", service: defaultService, message: "" });
+      setValues({ name: "", email: "", mobile: "", county: "", service: defaultService, message: "" });
       setStep(1);
     } catch (err) {
       setStatus("error");
@@ -139,6 +152,16 @@ export function QuickQuoteForm({ defaultService = "" }) {
           onChange={(e) => setField("mobile", e.target.value)}
           required
         />
+        <select
+          className={`${inputClass} cursor-pointer`}
+          value={values.county}
+          onChange={(e) => setField("county", e.target.value)}
+        >
+          <option value="">Region (optional)</option>
+          {COUNTY_OPTIONS.map((o) => (
+            <option key={o} value={o}>{o}</option>
+          ))}
+        </select>
       </div>
 
       {/* Step 2: Service, Message — hidden on mobile step 1, always on desktop */}
@@ -157,7 +180,7 @@ export function QuickQuoteForm({ defaultService = "" }) {
 
         <textarea
           className="min-h-[100px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:ring-1 focus:ring-[#297858]"
-          placeholder="Tell us about your project or requirements (optional)"
+          placeholder="Tell us about your project or requirements"
           value={values.message}
           onChange={(e) => setField("message", e.target.value)}
         />

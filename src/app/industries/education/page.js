@@ -15,16 +15,12 @@ export const metadata = {
 
 const faqs = [
   {
-    q: "Can you work during term time?",
-    a: "Most planned works are scheduled for school holiday periods to avoid disruption to teaching. Where works can be contained within plant rooms or non-teaching areas without creating noise or dust, limited term-time access is sometimes possible. We assess this case by case.",
-  },
-  {
     q: "How long does a typical school AHU refurbishment take?",
     a: "A single AHU refurbishment typically takes 3–5 days on site depending on scope. Where multiple units are being addressed, we programme works to make best use of the available holiday window, summer being the most common.",
   },
   {
     q: "Do you work in schools with children on site?",
-    a: "Where works are required during term time, we follow safeguarding protocols appropriate to the site, including enhanced DBS checks for engineers where required. All access is managed through the site's visitor procedures.",
+    a: "Yes. We follow safeguarding protocols appropriate to the site, including enhanced DBS checks for engineers where required. All access is managed through the site's visitor procedures.",
   },
   {
     q: "How do you approach budget constraints typical in education?",
@@ -32,7 +28,7 @@ const faqs = [
   },
   {
     q: "Can you survey the full estate and provide a prioritised programme?",
-    a: "Yes. We carry out condition surveys across multiple buildings and produce a prioritised programme report, rating units by condition, compliance risk, and energy performance, which supports capital planning and budget bids.",
+    a: "Yes. We carry out condition surveys across multiple buildings and produce a prioritised programme report, rating units by condition, compliance risk, and energy performance, which supports planning and budget bids.",
   },
   {
     q: "What age of buildings do you work in?",
@@ -75,7 +71,7 @@ export default function EducationPage() {
               01256 518170
             </a>
             <p className="mt-3 text-sm leading-6 text-white">
-              Works delivered within holiday windows. Budget-aware, lifecycle-first approach for schools and universities.
+              Works delivered within holiday windows. Budget-aware approach for schools and universities with prioritised programmes to suit your timeframes.
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <Link
@@ -102,7 +98,7 @@ export default function EducationPage() {
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
-              Educational buildings demand specific planning. Works must fit the academic calendar, respect safeguarding obligations, and deliver value in a sector where capital budgets are always under pressure.
+              Educational buildings demand specific planning. Works must fit the academic calendar, respect safeguarding obligations, and deliver value in a sector where budgets are always under pressure.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -158,7 +154,7 @@ export default function EducationPage() {
                 In education, the project window is fixed by the school year, not by contractor availability. The summer holidays, six weeks in most cases, are the primary delivery window for disruptive or noisy works. Easter and half-term windows allow limited access for smaller-scope tasks.
               </p>
               <p className="mt-4 text-sm leading-7 text-white/55">
-                This means programme planning matters more in education than almost any other sector. Delays cannot run into term time. Mobilisation, material lead times, and access arrangements all need to be in place before the holiday window opens.
+                Programme planning matters more in education than almost any other sector. Mobilisation, material lead times, and access arrangements all need to be in place before the holiday window opens.
               </p>
               <div className="mt-7">
                 <Link
@@ -182,11 +178,6 @@ export default function EducationPage() {
                     period: "Easter & Half-Term",
                     desc: "Suitable for condition surveys, smaller-scope works, and preparation activities that don't create noise or dust in teaching areas.",
                     color: "border-white/20",
-                  },
-                  {
-                    period: "Term Time",
-                    desc: "Limited to non-disruptive survey work and pre-works activities in contained plant areas only, subject to agreement with the estates team.",
-                    color: "border-white/10",
                   },
                 ].map((item) => (
                   <div key={item.period} className={`border-l-2 ${item.color} bg-white/5 px-5 py-4`}>
@@ -214,7 +205,7 @@ export default function EducationPage() {
               </h2>
               <div className="mx-auto mt-4 h-[3px] w-10 bg-[#297858]" />
               <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-500">
-                In education, the answer is almost always refurbish first. Capital budgets are under sustained pressure, procurement cycles are long, and a well-specified refurbishment can deliver another 10–15 years of reliable service at a fraction of full replacement cost.
+                In education, the answer is almost always refurbish first. Budgets are under sustained pressure, procurement cycles are long, and a well-specified refurbishment can deliver another 10–15 years of reliable service at a fraction of full replacement cost.
               </p>
             </ScrollReveal>
           </div>
@@ -228,7 +219,7 @@ export default function EducationPage() {
                 </p>
                 <div className="mt-4 space-y-3 text-sm text-slate-500">
                   <p>Long procurement lead times, often 3–6 months</p>
-                  <p>High capital cost, difficult to justify in education budgets</p>
+                  <p>High upfront cost, difficult to justify in education budgets</p>
                   <p>Plant room access and structural works frequently required</p>
                   <p>Decommissioning, disposal, and installation costs on top</p>
                 </div>
@@ -244,7 +235,7 @@ export default function EducationPage() {
                   <div className="mt-4 space-y-3 text-sm text-white/80">
                     <p>New fans, coils, and controls within the existing casing</p>
                     <p>Delivered within the summer holiday window</p>
-                    <p>Significantly lower capital cost, supportable within estate budgets</p>
+                    <p>Significantly lower cost, supportable within estate budgets</p>
                     <p>10–15 year life extension on plant that is structurally sound</p>
                   </div>
                   <p className="mt-6 text-sm font-semibold text-white">More deliverable. More affordable. Appropriate for most education estates.</p>
@@ -266,7 +257,7 @@ export default function EducationPage() {
                 What we find on site
               </p>
               <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
-                Common Problems in<br />Education Building Stock.
+                What We Frequently<br />See on Site.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/55">
@@ -381,7 +372,7 @@ export default function EducationPage() {
               </p>
               <div className="mt-7 space-y-3 border-l border-white/10 pl-5">
                 <p className="text-sm text-white/60">Holiday window delivery, programme planned around your calendar</p>
-                <p className="text-sm text-white/60">Condition surveys to support capital planning and budget bids</p>
+                <p className="text-sm text-white/60">Condition surveys to support planning and budget bids</p>
                 <p className="text-sm text-white/60">Schools, colleges, universities, and specialist estates</p>
                 <p className="text-sm text-white/60">Direct response, not sales handlers</p>
               </div>
@@ -408,7 +399,7 @@ export default function EducationPage() {
                     Tell us about your estate, the size of the programme, and when you need works completed. We&apos;ll respond within one working day.
                   </p>
                   <div className="mt-7">
-                    <QuickQuoteForm />
+                    <QuickQuoteForm defaultService="Education" />
                   </div>
                   <div className="mt-6 flex flex-col gap-2 border-t border-slate-100 pt-5">
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">

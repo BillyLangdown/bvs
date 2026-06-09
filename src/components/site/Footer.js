@@ -73,6 +73,12 @@ export function Footer() {
                 >
                   info@bvs-ltd.co.uk
                 </a>
+
+                <address className="not-italic text-zinc-500 leading-6">
+                  Unit 23, Sandleheath Industrial Estate<br />
+                  Old Brickyard Road, Sandleheath<br />
+                  Fordingbridge, SP6 1PA
+                </address>
               </div>
 
               {/* SOCIALS */}

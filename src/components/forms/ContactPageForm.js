@@ -16,6 +16,18 @@ const services = [
   "General Enquiry",
 ];
 
+const COUNTY_OPTIONS = [
+  "South",
+  "South West",
+  "Midlands",
+  "South East",
+  "North West",
+  "North East",
+  "London",
+  "Wales",
+  "Scotland",
+];
+
 export function ContactPageForm() {
   const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -25,6 +37,7 @@ export function ContactPageForm() {
     email: "",
     phone: "",
     company: "",
+    county: "",
     service: "",
     message: "",
   });
@@ -56,7 +69,13 @@ export function ContactPageForm() {
           name: values.name,
           email: values.email,
           company: values.company,
-          message: `${values.service ? `[${values.service}]\n\n` : ""}${values.message}${values.phone ? `\n\nPhone: ${values.phone}` : ""}`,
+          message: [
+            values.service ? `[${values.service}]` : "",
+            values.county ? `Region: ${values.county}` : "",
+            "",
+            values.message,
+            values.phone ? `\nPhone: ${values.phone}` : "",
+          ].filter((l, i) => l !== "" || i === 3).join("\n").trim(),
         }),
       });
       const data = await res.json().catch(() => null);
@@ -112,8 +131,7 @@ export function ContactPageForm() {
         </span>
       </div>
 
-      {/* Step 1 fields: Name + Email + Phone + Company */}
-      {/* Hidden on mobile when step 2, always visible on desktop */}
+      {/* Step 1: Name, Email, Phone, Company, County */}
       <div className={step === 2 ? "hidden sm:contents" : "contents"}>
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
@@ -170,10 +188,26 @@ export function ContactPageForm() {
             />
           </div>
         </div>
+
+        <div>
+          <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
+            Region{" "}
+            <span className="text-[10px] font-normal normal-case text-slate-400">(optional)</span>
+          </label>
+          <select
+            className={`${inputClass} cursor-pointer`}
+            value={values.county}
+            onChange={(e) => setField("county", e.target.value)}
+          >
+            <option value="">Select your region…</option>
+            {COUNTY_OPTIONS.map((o) => (
+              <option key={o} value={o}>{o}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
-      {/* Step 2 fields: Service + Message */}
-      {/* Hidden on mobile when step 1, always visible on desktop */}
+      {/* Step 2: Service + Message */}
       <div className={step === 1 ? "hidden sm:contents" : "contents"}>
         <div>
           <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
@@ -223,7 +257,7 @@ export function ContactPageForm() {
         </button>
       )}
 
-      {/* Submit row — hidden on mobile step 1 */}
+      {/* Submit row */}
       <div className={`flex-col gap-3 pt-1 sm:flex sm:flex-row sm:items-center sm:justify-between sm:gap-4${step === 1 ? " hidden" : " flex"}`}>
         <p className="text-xs text-slate-400">No obligation. Response within one working day.</p>
         <div className="flex items-center gap-4">

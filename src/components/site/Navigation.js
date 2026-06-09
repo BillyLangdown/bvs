@@ -26,26 +26,26 @@ const navItems = [
           {
             href: "/air-handling-unit-coil-replacement/",
             label: "Coil Replacement",
-            description: "Restore AHU efficiency without full replacement.",
+            description: "Restore AHU performance with a replacement coil.",
             icon: WrenchIcon,
           },
           {
             href: "/air-handling-unit-refurbishment/",
             label: "AHU Refurbishment",
-            description: "Extend asset life by 10–15 years. Condition reports with costed solutions.",
+            description: "Extend asset life by 10–20+ years. All manufacturers covered.",
             icon: RotateIcon,
           },
           {
             href: "/air-handling-unit-manufactoring-and-installation/",
             label: "AHU Manufacturing & Installation",
-            description: "Custom-built AHUs and end-to-end installation, from survey to commissioning.",
+            description: "Custom-built AHUs and end-to-end installation, from survey to completion.",
             icon: FactoryIcon,
           },
           {
-            href: "/air-handling-unit-controller-solutions-upgrades",
-            label: "Controller Solutions & Upgrades",
-            description: "Modernise obsolete AHU controls for energy efficiency and BMS integration.",
-            icon: CpuIcon,
+            href: "/solutions/ventilation/troubleshooting",
+            label: "Ventilation Troubleshooting",
+            description: "Diagnose and resolve ventilation performance issues across all makes and models.",
+            icon: SearchIcon,
           },
         ],
       },
@@ -64,10 +64,10 @@ const navItems = [
                 icon: ClipboardIcon,
               },
               {
-                href: "/solutions/ventilation/troubleshooting",
-                label: "Troubleshooting",
-                description: "Diagnose and resolve ventilation performance and compliance issues.",
-                icon: SearchIcon,
+                href: "/air-handling-unit-controller-solutions-upgrades",
+                label: "Controls",
+                description: "Modernise obsolete AHU controls and BMS integration.",
+                icon: CpuIcon,
               },
               {
                 href: "/solutions/ventilation/ducting-repair-replacement",
@@ -272,7 +272,7 @@ export function Navigation() {
                 onItemClick={closeDropdown}
               />
             ) : (
-              <Link key={item.href} href={item.href} className={linkClass}>
+              <Link key={item.href} href={item.href} className={`inline-flex items-center ${linkClass}`}>
                 {item.label}
               </Link>
             )

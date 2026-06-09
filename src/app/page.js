@@ -35,7 +35,7 @@ const services = [
     title: "EC Fan Upgrades",
     plain: "Retrofit EC fans into existing AHU casings without structural modification.",
     outcome: "Reduce fan energy use by 30–50%",
-    context: "Improves efficiency, enables variable speed control, and supports Part L compliance. Typical payback 2–3 years.",
+    context: "Improves efficiency, enables variable speed control, and reduces maintenance overhead. Typical payback 2–3 years.",
     signs: [
       "High fan energy use or failure to meet efficiency targets",
       "Lack of airflow or airflow error",
@@ -82,13 +82,13 @@ const services = [
   },
   {
     title: "AHU Manufacturing & Installation",
-    plain: "Custom-built AHUs manufactured in the UK and installed under a single contract, from survey to commissioning.",
+    plain: "Custom-built AHUs manufactured in the UK and installed under a single contract, from survey to handover.",
     outcome: "Full scope from design to handover, under one contract",
     context: "Managed delivery for new builds, full system replacements, or where off-the-shelf units do not fit.",
     signs: [
       "Non-standard size or access constraints require a custom-built unit",
       "Unit is beyond economic repair or no longer supported",
-      "Full project delivery needed, survey, manufacture, install, commission"
+      "Full project delivery needed, survey, manufacture, and install"
     ],
     href: "/air-handling-unit-manufactoring-and-installation",
     highlight: false,
@@ -98,12 +98,12 @@ const services = [
   },
   {
     title: "Controller Upgrades",
-    plain: "Upgrade obsolete AHU controls to modern energy-efficient systems.",
-    outcome: "Improved efficiency, control, and compliance capability",
-    context: "Supports energy reduction targets and integration with modern building management systems.",
+    plain: "Upgrade obsolete AHU controls to modern open-protocol systems with BMS integration.",
+    outcome: "Restored control, fault logging, and remote monitoring",
+    context: "Works with Trend, Tridium/Niagara, and all major BMS platforms. Migrate or integrate existing systems.",
     signs: [
       "Controls are outdated or failing",
-      "Energy usage is not optimised",
+      "No fault logging or BMS connection",
       "BMS integration is required"
     ],
     href: "/air-handling-unit-controller-solutions-upgrades",
@@ -154,12 +154,12 @@ const additionalServices = [
 ];
 
 const sectors = [
-  { label: "Healthcare & NHS", desc: "Active hospitals. Live clinical environments.", href: "/industries/hospital", photo: "/hospital.webp", photoAlt: "NHS hospital corridor, BVS ventilation works in live clinical environments" },
-  { label: "Education", desc: "Around term times. CIBSE-compliant.", href: "/industries/education", photo: "/school.webp", photoAlt: "School building, BVS AHU works scheduled around term times" },
-  { label: "Hotels", desc: "Out-of-hours. Minimum disruption to operations.", href: "/industries/hotel", photo: "/hotel.webp", photoAlt: "Hotel interior, BVS ventilation services with out-of-hours delivery" },
-  { label: "Defence", desc: "Security cleared. Restricted access sites.", href: "/industries/defence", photo: "/defence.webp", photoAlt: "Defence facility, BVS security-cleared engineers for restricted-access sites" },
-  { label: "Leisure Centres", desc: "High-humidity. Corrosion-resistant spec.", href: "/industries/leisure-centre", photo: "/swimming-pool.webp", photoAlt: "Swimming pool leisure centre, BVS high-humidity AHU specification" },
-  { label: "Retail & Commercial", desc: "Around trading hours. Reactive support.", href: "/industries/retail", photo: "/mall.webp", photoAlt: "Shopping centre retail environment, BVS ventilation works around trading hours" },
+  { label: "Healthcare & NHS", desc: "Active hospitals & Live clinical environments.", href: "/industries/hospital", photo: "/hospital.webp", photoAlt: "NHS hospital corridor, BVS ventilation works in live clinical environments" },
+  { label: "Education", desc: "Around term times &CIBSE-compliant.", href: "/industries/education", photo: "/school.webp", photoAlt: "School building, BVS AHU works scheduled around term times" },
+  { label: "Hotels", desc: "Out-of-hours & Minimum disruption to operations.", href: "/industries/hotel", photo: "/hotel.webp", photoAlt: "Hotel interior, BVS ventilation services with out-of-hours delivery" },
+  { label: "Defence", desc: "Security cleared & Restricted access sites.", href: "/industries/defence", photo: "/defence.webp", photoAlt: "Defence facility, BVS security-cleared engineers for restricted-access sites" },
+  { label: "Leisure Centres", desc: "High-humidity & Corrosion-resistant spec.", href: "/industries/leisure-centre", photo: "/swimming-pool.webp", photoAlt: "Swimming pool leisure centre, BVS high-humidity AHU specification" },
+  { label: "Retail & Commercial", desc: "Around trading hours & Reactive support.", href: "/industries/retail", photo: "/mall.webp", photoAlt: "Shopping centre retail environment, BVS ventilation works around trading hours" },
 ];
 
 
@@ -203,8 +203,8 @@ export default function Home() {
       {/* ── 1. HERO ──────────────────────────────────────────────────── */}
       <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
         <Image
-          src="/ahu-hero-temp.webp"
-          alt="BVS air handling unit rooftop installation"
+          src="/london-hero.webp"
+          alt="London rooftop skyline with industrial ventilation equipment"
           fill
           sizes="100vw"
           priority
@@ -221,18 +221,16 @@ export default function Home() {
         {/* Mobile hero */}
         <div className="sm:hidden max-w-3xl">
             <div className="flex items-center gap-3 mb-5">
-              <div className="h-12 w-px bg-white/30" />
-              <span className="flex flex-col text-[14px] leading-[1.15] uppercase tracking-[0.15em] text-white/80">
-                <span>Building</span>
-                <span>Ventilation</span>
-                <span>Solutions</span>
+              <div className="h-5 w-px bg-white/30" />
+              <span className="text-[12px] uppercase tracking-[0.2em] text-white/70 whitespace-nowrap">
+                Building Ventilation Solutions
               </span>
             </div>
             <h1
               className="text-3xl font-extrabold leading-[1.08] text-white"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-              Better airflow,<br/> lower energy costs.
+              Complete solutions for all air handling and ventilation problems.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <a href="tel:01256518170" className="mt-5 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
@@ -240,7 +238,7 @@ export default function Home() {
               01256 518170
             </a>
             <p className="mt-3 text-sm leading-6 text-white" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
-              AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls.
+              Over 40 years practical experience of commercial ventilation projects. In depth knowledge to offer you the most economical solution no matter how complex.
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <Link
@@ -262,23 +260,20 @@ export default function Home() {
         {/* Desktop hero */}
         <div className="hidden sm:block max-w-3xl lg:max-w-5xl">
             <div className="flex items-center gap-4 mb-6">
-              <div className="h-15 w-px bg-white/30" />
-              <span className="flex flex-col text-[18px] leading-[1.1] uppercase tracking-[0.15em] text-white">
-                <span>Building</span>
-                <span>Ventilation</span>
-                <span>Solutions</span>
+              <div className="h-5 w-px bg-white/30" />
+              <span className="text-[13px] uppercase tracking-[0.2em] text-white/70 whitespace-nowrap">
+                Building Ventilation Solutions
               </span>
             </div>
             <h1
               className="text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-              Better airflow,<br/> lower energy costs.
+              Complete solutions for all air handling and ventilation problems.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
-              AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls. <br/>
-              Trusted by NHS, Disney, and Marriott. Serving HVAC contractors, M&amp;E consultants, and estates teams UK-wide.
+              Over 40 years practical experience of commercial ventilation projects. <br/> In depth knowledge to offer you the most economical solution no matter how complex.
             </p>
             <a href="tel:01256518170" className="mt-6 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
               <PhoneIcon />

@@ -118,13 +118,23 @@ export default function ContactPage() {
                   <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
                     Response Time
                   </p>
-  
+
                   <p className="mt-1 text-sm text-white/70">
                     Typically within one working day
                   </p>
-                  
                 </div>
-  
+
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+                    Address
+                  </p>
+                  <address className="mt-1 not-italic text-sm leading-6 text-white/70">
+                    Unit 23, Sandleheath Industrial Estate<br />
+                    Old Brickyard Road, Sandleheath<br />
+                    Fordingbridge, SP6 1PA
+                  </address>
+                </div>
+
               </div>
             </div>
   
