@@ -62,6 +62,7 @@ export default async function ProductPage({ params }) {
                 <p className="mt-3 text-base font-semibold text-zinc-900">
                   {price}
                 </p>
+                <p className="mt-0.5 text-xs text-zinc-500">Price excluding VAT</p>
 
                 {product.short_description ? (
                   <div className="mt-4 text-sm leading-7 text-zinc-700">

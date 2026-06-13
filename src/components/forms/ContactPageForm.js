@@ -136,7 +136,7 @@ export function ContactPageForm() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
-              Name <span className="text-[#297858]">*</span>
+              Name <span className="text-red-500">*</span>
             </label>
             <input
               className={inputClass}
@@ -148,7 +148,7 @@ export function ContactPageForm() {
           </div>
           <div>
             <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
-              Email <span className="text-[#297858]">*</span>
+              Email <span className="text-red-500">*</span>
             </label>
             <input
               className={inputClass}
@@ -229,7 +229,7 @@ export function ContactPageForm() {
 
         <div>
           <label className="mb-1.5 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
-            Tell us about your project <span className="text-[#297858]">*</span>
+            Tell us about your project <span className="text-red-500">*</span>
           </label>
           <textarea
             className="min-h-[120px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors"

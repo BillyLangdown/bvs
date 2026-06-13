@@ -90,7 +90,7 @@ const services = [
       "Unit is beyond economic repair or no longer supported",
       "Full project delivery needed, survey, manufacture, and install"
     ],
-    href: "/air-handling-unit-manufactoring-and-installation",
+    href: "/air-handling-unit-manufacturing-and-installation",
     highlight: false,
     tag: null,
     photo: "/ahu-sparks.webp",
@@ -122,7 +122,7 @@ const services = [
       "Heating not meeting demand across the building",
       "Gas Safe compliance required",
     ],
-    href: "/solutions/mechanical/commercial-boiler-heating",
+    href: "/commercial-boiler-and-heating-services",
     highlight: false,
     tag: null,
     photo: "/Commercial-Gas-Works.webp",
@@ -134,7 +134,7 @@ const additionalServices = [
   {
     title: "Validation Surveys",
     desc: "Entire system condition assessment with a full documented report of findings and proposals, covering ductwork, coils, fans, controls, and insulation repair.",
-    href: "/solutions/ventilation/validation-surveys",
+    href: "/ahu-validation-ventilation-surveys",
   },
   {
     title: "Ducting Repair & Replacement",
@@ -144,22 +144,22 @@ const additionalServices = [
   {
     title: "Troubleshooting",
     desc: "40+ years of AHU experience means we've seen it before. We diagnose the root cause and give you a clear, practical fix, from insulation repair to controls failures.",
-    href: "/solutions/ventilation/troubleshooting",
+    href: "/air-handling-unit-troubleshooting",
   },
   {
     title: "Commercial Pipework",
     desc: "Installation, maintenance, and repair of commercial pipework systems, HVAC circuits, heating mains, and associated insulation.",
-    href: "/solutions/mechanical/industrial-pipework",
+    href: "/industrial-pipework-services",
   },
 ];
 
 const sectors = [
-  { label: "Healthcare & NHS", desc: "Active hospitals & Live clinical environments.", href: "/industries/hospital", photo: "/hospital.webp", photoAlt: "NHS hospital corridor, BVS ventilation works in live clinical environments" },
-  { label: "Education", desc: "Around term times &CIBSE-compliant.", href: "/industries/education", photo: "/school.webp", photoAlt: "School building, BVS AHU works scheduled around term times" },
-  { label: "Hotels", desc: "Out-of-hours & Minimum disruption to operations.", href: "/industries/hotel", photo: "/hotel.webp", photoAlt: "Hotel interior, BVS ventilation services with out-of-hours delivery" },
+  { label: "Healthcare & NHS", desc: "Active hospitals & Live clinical environments.", href: "/hospital-ventilation", photo: "/hospital.webp", photoAlt: "NHS hospital corridor, BVS ventilation works in live clinical environments" },
+  { label: "Education", desc: "Around term times & your budget", href: "/education-ventilation", photo: "/school.webp", photoAlt: "School building, BVS AHU works scheduled around term times" },
+  { label: "Hotels", desc: "Out-of-hours & Minimum disruption to operations.", href: "/hotel-leisure-ventilation", photo: "/hotel.webp", photoAlt: "Hotel interior, BVS ventilation services with out-of-hours delivery" },
   { label: "Defence", desc: "Security cleared & Restricted access sites.", href: "/industries/defence", photo: "/defence.webp", photoAlt: "Defence facility, BVS security-cleared engineers for restricted-access sites" },
-  { label: "Leisure Centres", desc: "High-humidity & Corrosion-resistant spec.", href: "/industries/leisure-centre", photo: "/swimming-pool.webp", photoAlt: "Swimming pool leisure centre, BVS high-humidity AHU specification" },
-  { label: "Retail & Commercial", desc: "Around trading hours & Reactive support.", href: "/industries/retail", photo: "/mall.webp", photoAlt: "Shopping centre retail environment, BVS ventilation works around trading hours" },
+  { label: "Leisure Centres", desc: "High-humidity & Corrosion-resistant spec.", href: "/sport-facility-ventilation", photo: "/swimming-pool.webp", photoAlt: "Swimming pool leisure centre, BVS high-humidity AHU specification" },
+  { label: "Retail & Commercial", desc: "around your trading hours & operational needs", href: "/retail-ventilation", photo: "/mall.webp", photoAlt: "Shopping centre retail environment, BVS ventilation works around trading hours" },
 ];
 
 
@@ -230,7 +230,7 @@ export default function Home() {
               className="text-3xl font-extrabold leading-[1.08] text-white"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-              Complete solutions for all air handling and ventilation problems.
+              Complete solutions for all your air handling and ventilation needs.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <a href="tel:01256518170" className="mt-5 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
@@ -269,7 +269,7 @@ export default function Home() {
               className="text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-              Complete solutions for all air handling and ventilation problems.
+              Complete solutions for all your air handling and ventilation needs.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>

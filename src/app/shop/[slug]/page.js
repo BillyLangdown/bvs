@@ -124,9 +124,12 @@ export default async function ProductPage({ params }) {
                   Custom built to specification.
                 </p>
               ) : product.price && (
-                <p className="mt-5 text-3xl font-extrabold text-slate-900">
-                  {product.price}
-                </p>
+                <div className="mt-5">
+                  <p className="text-3xl font-extrabold text-slate-900">
+                    {product.price}
+                  </p>
+                  <p className="mt-1 text-xs text-slate-400">Price excluding VAT</p>
+                </div>
               )}
 
               {/* Stock badge */}

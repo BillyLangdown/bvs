@@ -5,7 +5,7 @@ export function Input({ label, id, error, className = "", ...props }) {
     <label className="block">
       {label ? (
         <span className="mb-1 block text-sm font-medium text-zinc-900 dark:text-zinc-100">
-          {label}
+          {label}{props.required && <span className="ml-0.5 text-red-500">*</span>}
         </span>
       ) : null}
       <input

@@ -36,13 +36,13 @@ const navItems = [
             icon: RotateIcon,
           },
           {
-            href: "/air-handling-unit-manufactoring-and-installation/",
+            href: "/air-handling-unit-manufacturing-and-installation",
             label: "AHU Manufacturing & Installation",
             description: "Custom-built AHUs and end-to-end installation, from survey to completion.",
             icon: FactoryIcon,
           },
           {
-            href: "/solutions/ventilation/troubleshooting",
+            href: "/air-handling-unit-troubleshooting",
             label: "Ventilation Troubleshooting",
             description: "Diagnose and resolve ventilation performance issues across all makes and models.",
             icon: SearchIcon,
@@ -58,7 +58,7 @@ const navItems = [
             href: "/solutions/ventilation",
             items: [
               {
-                href: "/solutions/ventilation/validation-surveys",
+                href: "/ahu-validation-ventilation-surveys",
                 label: "Validation Surveys",
                 description: "Comprehensive AHU surveys with prioritised recommendations.",
                 icon: ClipboardIcon,
@@ -79,16 +79,16 @@ const navItems = [
           },
           {
             heading: "Commercial Boiler & Pipework",
-            href: "/solutions/mechanical",
+            href: "/mechanical-solutions",
             items: [
               {
-                href: "/solutions/mechanical/industrial-pipework",
+                href: "/industrial-pipework-services",
                 label: "Commercial Pipework",
                 description: "Installation, maintenance, and repair of commercial pipework systems.",
                 icon: ToolsIcon,
               },
               {
-                href: "/solutions/mechanical/commercial-boiler-heating",
+                href: "/commercial-boiler-and-heating-services",
                 label: "Commercial Boiler Services",
                 description: "Gas Safe registered boiler installation, servicing, and repair.",
                 icon: FlameIcon,
@@ -104,19 +104,19 @@ const navItems = [
     label: "Industries",
     children: [
       {
-        href: "/industries/hospital",
+        href: "/hospital-ventilation",
         label: "Hospital & Healthcare",
         description: "Critical environment ventilation for NHS and private healthcare.",
         icon: HealthIcon,
       },
       {
-        href: "/industries/education",
+        href: "/education-ventilation",
         label: "Education",
         description: "Ventilation and AHU services for schools, colleges, and universities.",
         icon: EducationIcon,
       },
       {
-        href: "/industries/hotel",
+        href: "/hotel-leisure-ventilation",
         label: "Hotels",
         description: "Maintaining guest comfort and air quality across hotel sites.",
         icon: HotelIcon,
@@ -128,13 +128,13 @@ const navItems = [
         icon: ShieldIcon,
       },
       {
-        href: "/industries/leisure-centre",
+        href: "/sport-facility-ventilation",
         label: "Leisure Centres",
         description: "High-humidity AHU and ventilation management for leisure facilities.",
         icon: LeisureIcon,
       },
       {
-        href: "/industries/retail",
+        href: "/retail-ventilation",
         label: "Retail",
         description: "Commercial HVAC for retail parks, supermarkets, and shopping centres.",
         icon: RetailIcon,
@@ -143,11 +143,11 @@ const navItems = [
   },
   { href: "/shop", label: "Shop" },
   {
-    href: "/about",
+    href: "/about-us",
     label: "About",
     children: [
       {
-        href: "/about",
+        href: "/about-us",
         label: "About BVS",
         description: "40+ years of AHU expertise. Who we are and how we work.",
         icon: IdCardIcon,
@@ -159,13 +159,13 @@ const navItems = [
         icon: ClipboardIcon,
       },
       {
-        href: "/blogs",
+        href: "/our-blogs",
         label: "Blog",
         description: "HVAC insights, guides, and industry news from our engineers.",
         icon: NewspaperIcon,
       },
       {
-        href: "/resources",
+        href: "/hvac-resources",
         label: "HVAC Resources",
         description: "Practical knowledge and technical guidance for facilities teams.",
         icon: BookIcon,
@@ -272,11 +272,9 @@ export function Navigation() {
                 onItemClick={closeDropdown}
               />
             ) : (
-              <div key={item.href} className="flex items-center">
-                <Link href={item.href} className={`inline-flex items-center whitespace-nowrap ${linkClass}`}>
-                  {item.label}
-                </Link>
-              </div>
+              <Link key={item.href} href={item.href} className={`inline-flex items-center whitespace-nowrap ${linkClass}`}>
+                {item.label}
+              </Link>
             )
           )}
         </nav>

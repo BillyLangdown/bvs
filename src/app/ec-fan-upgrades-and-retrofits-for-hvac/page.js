@@ -68,6 +68,8 @@ const faqs = [
 export default async function ECFanUpgradesPage() {
   const studies = caseStudies.filter((s) => s.services.includes("ec-fan"));
 
+  const FEATURED_MODELS = ["GR35I-ZID", "GR45I-ZID", "GR501-ZID", "GR50I-ZID", "GR561-ZID", "GR56I-ZID"];
+
   let ecFanProducts = [];
   try {
     const [products, categories] = await Promise.all([
@@ -79,9 +81,13 @@ export default async function ECFanUpgradesPage() {
         .filter((c) => c.name.toLowerCase().includes("ec fan"))
         .map((c) => c.id)
     );
-    ecFanProducts = products
-      .filter((p) => p.categories.some((id) => ecCatIds.has(id)))
-      .slice(0, 4);
+    const allEcProducts = products.filter((p) =>
+      p.categories.some((id) => ecCatIds.has(id))
+    );
+    const featured = allEcProducts.filter((p) =>
+      FEATURED_MODELS.some((m) => p.title.toUpperCase().includes(m.toUpperCase()))
+    );
+    ecFanProducts = featured.length > 0 ? featured.slice(0, 4) : allEcProducts.slice(0, 4);
   } catch {
     // WordPress unavailable — section hidden gracefully
   }
@@ -652,7 +658,7 @@ export default async function ECFanUpgradesPage() {
               { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
               { href: "/air-handling-unit-controller-solutions-upgrades", label: "Controller Upgrades" },
               { href: "/air-handling-unit-coil-replacement", label: "Coil Replacement" },
-              { href: "/air-handling-unit-manufactoring-and-installation", label: "AHU Manufacturing & Installation" },
+              { href: "/air-handling-unit-manufacturing-and-installation", label: "AHU Manufacturing & Installation" },
             ].map((l) => (
               <Link
                 key={l.href}

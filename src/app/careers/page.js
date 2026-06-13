@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/site/Container";
-import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { CareersForm } from "@/components/forms/CareersForm";
 import Image from "next/image";
 
 export const metadata = {
@@ -100,9 +100,10 @@ export default function CareersPage() {
                 Application
               </p>
               <p className="mb-6 text-xs text-slate-500">
-                Use the message field to tell us about your background and the kind of role you&apos;re looking for. Attach your CV by email to alex@bvs-ltd.co.uk.
+                Fill in the form below and attach your CV or cover letter. You can also feel free to email us directly at{" "}
+                <a href="mailto:info@bvs-ltd.co.uk" className="font-semibold text-[#297858] hover:underline">info@bvs-ltd.co.uk</a>.
               </p>
-              <QuickQuoteForm />
+              <CareersForm />
             </div>
 
           </div>

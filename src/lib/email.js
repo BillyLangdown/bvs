@@ -62,6 +62,28 @@ export async function sendContactEmail({ name, email, mobile, phone, company, se
   });
 }
 
+export async function sendCareersEmail({ name, email, mobile, message, attachment }) {
+  const rows = [
+    row("Name", name),
+    row("Email", email),
+    row("Mobile", mobile),
+  ].join("");
+
+  const emailData = {
+    from: FROM,
+    to: "info@bvs-ltd.co.uk",
+    replyTo: email,
+    subject: `Job Application: ${name}`,
+    html: layout("Job Application", rows, message || null),
+  };
+
+  if (attachment) {
+    emailData.attachments = [attachment];
+  }
+
+  await getResend().emails.send(emailData);
+}
+
 export async function sendProductEnquiryEmail({ productSlug, name, email, company, phone, enquiry, imageAttached }) {
   const rows = [
     row("Product", productSlug),

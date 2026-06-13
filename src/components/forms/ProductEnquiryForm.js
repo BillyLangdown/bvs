@@ -119,21 +119,21 @@ export function ProductEnquiryForm({ productSlug, productName }) {
       <div className={step === 2 ? "hidden sm:contents" : "contents"}>
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
-            <label className={labelClass}>First Name <span className="text-[#297858]">*</span></label>
+            <label className={labelClass}>First Name <span className="text-red-500">*</span></label>
             <input className={inputClass} placeholder="First name" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
           </div>
           <div>
-            <label className={labelClass}>Last Name <span className="text-[#297858]">*</span></label>
+            <label className={labelClass}>Last Name <span className="text-red-500">*</span></label>
             <input className={inputClass} placeholder="Last name" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
           </div>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
-            <label className={labelClass}>Email <span className="text-[#297858]">*</span></label>
+            <label className={labelClass}>Email <span className="text-red-500">*</span></label>
             <input className={inputClass} type="email" placeholder="your@email.com" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
           <div>
-            <label className={labelClass}>Phone <span className="text-[#297858]">*</span></label>
+            <label className={labelClass}>Phone <span className="text-red-500">*</span></label>
             <input className={inputClass} type="tel" placeholder="Your phone number" value={phone} onChange={(e) => setPhone(e.target.value)} required />
           </div>
         </div>
@@ -161,7 +161,7 @@ export function ProductEnquiryForm({ productSlug, productName }) {
           <input className={inputClass} value={product} onChange={(e) => setProduct(e.target.value)} />
         </div>
         <div>
-          <label className={labelClass}>Brief Requirements / Message <span className="text-[#297858]">*</span></label>
+          <label className={labelClass}>Brief Requirements / Message <span className="text-red-500">*</span></label>
           <textarea
             className="min-h-[120px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#297858] focus:ring-1 focus:ring-[#297858] transition-colors"
             value={message}

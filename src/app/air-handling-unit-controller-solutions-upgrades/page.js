@@ -520,7 +520,7 @@ export default function ControllerUpgradesPage() {
               },
               {
                 n: "04",
-                title: "Verification & Handover",
+                title: "Commissioning & Handover",
                 body: "Sequences are loaded, tested, and tuned. BMS integration confirmed and full handover documentation issued.",
                 points: ["Control sequences tested against approved specification", "BMS integration confirmed and I/O verified", "O&M manuals and full handover documentation issued"],
               },
@@ -640,7 +640,7 @@ export default function ControllerUpgradesPage() {
             {[
               { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
               { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },
-              { href: "/air-handling-unit-manufactoring-and-installation", label: "AHU Manufacturing & Installation" },
+              { href: "/air-handling-unit-manufacturing-and-installation", label: "AHU Manufacturing & Installation" },
             ].map((l) => (
               <Link
                 key={l.href}

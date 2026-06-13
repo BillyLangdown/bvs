@@ -18,6 +18,7 @@ const SERVICE_OPTIONS = [
   "EC Fan Upgrades",
   "Coil Replacement",
   "AHU Refurbishment",
+  "AHU Maintenance",
   "AHU Manufacturing & Installation",
   "Controller Upgrades",
   "Validation Surveys",
@@ -127,22 +128,32 @@ export function QuickQuoteForm({ defaultService = "" }) {
 
       {/* Step 1: Name, Email, Mobile — hidden on mobile step 2, always on desktop */}
       <div className={step === 2 ? "hidden sm:contents" : "contents"}>
-        <input
-          className={inputClass}
-          placeholder="Your name"
-          value={values.name}
-          onChange={(e) => setField("name", e.target.value)}
-          required
-        />
-        <input
-          className={inputClass}
-          placeholder="Email address"
-          type="email"
-          autoComplete="email"
-          value={values.email}
-          onChange={(e) => setField("email", e.target.value)}
-          required
-        />
+        <div>
+          <label className="mb-1 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
+            Name <span className="text-red-500">*</span>
+          </label>
+          <input
+            className={inputClass}
+            placeholder="Your name"
+            value={values.name}
+            onChange={(e) => setField("name", e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label className="mb-1 block text-[11px] font-bold uppercase tracking-wide text-slate-500">
+            Email address <span className="text-red-500">*</span>
+          </label>
+          <input
+            className={inputClass}
+            placeholder="Email address"
+            type="email"
+            autoComplete="email"
+            value={values.email}
+            onChange={(e) => setField("email", e.target.value)}
+            required
+          />
+        </div>
         <input
           className={inputClass}
           placeholder="Mobile number"
