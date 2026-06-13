@@ -389,7 +389,7 @@ export default function Home() {
     <ScrollReveal key={s.title}>
       <Link
         href={s.href}
-        className="group flex h-full flex-col overflow-hidden border border-black/5 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)]"
+        className="group flex h-full flex-col overflow-hidden rounded-md border border-black/5 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)]"
       >
         {/* IMAGE */}
         <div className="relative h-[300px] overflow-hidden">

@@ -43,7 +43,7 @@ export function AllServicesPanel({ services, additionalServices }) {
       {/* TOGGLE BUTTON */}
       <button
         onClick={handleToggle}
-        className="group flex w-full items-center justify-center gap-2.5 bg-white px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-600 transition-colors hover:border-[#297858]/40 hover:bg-slate-50 hover:text-slate-900"
+        className="group flex w-full items-center justify-center gap-2.5 rounded-md bg-white px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-600 transition-colors hover:border-[#297858]/40 hover:bg-slate-50 hover:text-slate-900"
         aria-expanded={open}
       >
         {open ? 'Hide all services' : `View all services`}
@@ -74,7 +74,7 @@ export function AllServicesPanel({ services, additionalServices }) {
                 <Link
                   key={s.title}
                   href={s.href}
-                  className="group flex h-full flex-col overflow-hidden border border-black/5 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-md border border-black/5 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
                 >
                   <div className="relative h-44 overflow-hidden">
                     <Image
@@ -124,7 +124,7 @@ export function AllServicesPanel({ services, additionalServices }) {
                 <Link
                   key={s.title}
                   href={s.href}
-                  className="group flex w-full items-center gap-4 border border-black/10 bg-white p-4 transition-colors hover:border-[#297858]/40 hover:bg-slate-50"
+                  className="group flex w-full items-center gap-4 rounded-md border border-black/10 bg-white p-4 transition-colors hover:border-[#297858]/40 hover:bg-slate-50"
                 >
                   <div className="flex-1">
                     <p className="text-sm font-bold text-slate-900">{s.title}</p>
