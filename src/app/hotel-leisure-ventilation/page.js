@@ -4,49 +4,53 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { caseStudies } from "@/lib/caseStudyData";
+import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
-  title: "Defence & Government Ventilation | BVS Building Ventilation Solutions",
+  title: "Hotel Ventilation Services | BVS Building Ventilation Solutions",
   description:
-    "AHU refurbishment and ventilation services for defence and government facilities. Secure site experience. Programme compliance. UK nationwide.",
+    "AHU refurbishment, EC fan upgrades, and coil replacement for hotels. Out-of-hours delivery. Minimum disruption. UK nationwide.",
 };
 
 const faqs = [
   {
-    q: "Do your engineers hold security clearances?",
-    a: "We have engineers who have worked on sites requiring enhanced security vetting. The clearance level required depends on the specific site and access classification. We discuss this at enquiry stage and confirm capability before committing to a programme.",
+    q: "Can you work while guests are in the hotel?",
+    a: "Yes. This is the standard arrangement. We schedule noisy, disruptive, or access-intensive works overnight or during low-occupancy periods. Daytime works in contained plant rooms are often possible without any impact on guest areas.",
   },
   {
-    q: "Can you work within strict access and programme requirements?",
-    a: "Yes. We are experienced working within site access protocols including escorted access, tool and material manifests, and pre-approved works programmes. Compliance with site rules is treated as a non-negotiable part of the contract.",
+    q: "How do you minimise noise during works?",
+    a: "Works requiring demolition, drilling, or heavy equipment are confined to agreed overnight windows. During daytime works in plant rooms, we use dustless methods and keep access routes through guest areas to a minimum.",
   },
   {
-    q: "Do you work on live operational sites?",
-    a: "Yes. Most defence and government sites remain operational during maintenance and refurbishment works. We plan around operational requirements, agree shutdown windows in advance, and deliver to programme without unplanned disruption.",
+    q: "What if an AHU fails during a busy period?",
+    a: "We handle reactive callouts and prioritise response for clients where loss of AHU performance directly affects guest comfort or a function space. Contact us directly to discuss what a reactive support arrangement looks like for your property.",
   },
   {
-    q: "Can you manage the documentation requirements on these contracts?",
-    a: "Yes. We produce the quality, technical, and commissioning documentation typically required on government and defence contracts, including as-fitted drawings, commissioning records, risk assessments, and method statements to the required standard.",
+    q: "Can you work across a group of hotel properties?",
+    a: "Yes. We manage multi-site programmes for hotel groups and FM companies, with consistent scope, documentation standard, and delivery approach across the estate.",
   },
   {
-    q: "Do you work directly with the MoD or through prime contractors?",
-    a: "Both. We work as specialist sub-contractors on managed defence contracts and directly with estates teams where that route is appropriate. We are experienced with both procurement routes.",
+    q: "Do EC fan upgrades make sense in hotels?",
+    a: "Very often, yes. Hotel AHUs running 24 hours a day through the year accumulate significant energy consumption. EC fan upgrades typically pay back within 2–3 years through energy savings, and reduce noise at part load, which matters in guest bedroom zones.",
   },
   {
-    q: "What AHU services are most relevant to defence estates?",
-    a: "Refurbishment and life extension of ageing plant is the most common requirement. EC fan upgrades and controller replacements are also frequently delivered where energy reduction targets or obsolete controls are the trigger.",
+    q: "Do you handle kitchen extract and specialist AHUs?",
+    a: "Yes. We work across kitchen extract, fresh air, heat recovery, and comfort ventilation AHUs within hotel properties, not just the central plant.",
   },
 ];
 
-export default function DefencePage() {
+export default function HotelPage() {
+  const studies = caseStudies.filter((s) => s.sector.includes("Hotel"));
   return (
     <div className="pb-20 lg:pb-0">
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
         <Image
-          src="/defence.webp"
-          alt="Defence facility, BVS delivers ventilation services on secure government and MoD sites"
+          src="/hotel.webp"
+          alt="Hotel interior, BVS delivers AHU works out of hours to protect guest experience"
           fill
           priority
           placeholder="blur"
@@ -62,10 +66,10 @@ export default function DefencePage() {
           {/* Mobile hero */}
           <div className="sm:hidden max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
-              Defence &amp; Government
+              Hotels
             </p>
             <h1 className="text-3xl font-extrabold leading-[1.08] text-white">
-              Specialists for secure<br />&amp; government sites.
+              AHU works planned<br />around hotel occupancy.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <a href="tel:01256518170" className="mt-5 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
@@ -73,14 +77,14 @@ export default function DefencePage() {
               01256 518170
             </a>
             <p className="mt-3 text-sm leading-6 text-white">
-              Security vetted, programme compliant. We work within access protocols and documentation requirements as standard.
+              Out-of-hours delivery, minimum disruption. Rooms and function spaces kept trading throughout.
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <Link
                 href="/contact"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
-                Discuss your requirements <ArrowIcon />
+                Discuss your property <ArrowIcon />
               </Link>
               <a
                 href="#services"
@@ -93,21 +97,21 @@ export default function DefencePage() {
           {/* Desktop hero */}
           <div className="hidden sm:block max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
-              Defence &amp; Government
+              Hotels
             </p>
             <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
-              Specialists for secure<br />&amp; government sites.
+              AHU works planned<br />around hotel occupancy.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
-              Defence and government facilities operate within access protocols, security requirements, and programme obligations that most contractors are not equipped to meet. Experienced on secure sites, working within the rules, to programme.
+              In hotels, HVAC failure is a guest experience problem with immediate revenue consequences. We plan all works around occupancy, operate out of hours, and keep rooms and function spaces trading throughout.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
-                Discuss your requirements
+                Discuss your property
                 <ArrowIcon />
               </Link>
               <a
@@ -123,14 +127,13 @@ export default function DefencePage() {
 
         <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-black/60 backdrop-blur-sm">
           <Container>
-            <div className="grid grid-cols-2 py-2 sm:grid-cols-4 sm:py-3">
+            <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
               {[
-                { stat: "VIVO", label: "Approved" },
-                { stat: "Secure Site", label: "Access" },
-                { stat: "Programme", label: "Compliant" },
-                { stat: "Nationwide", label: "Coverage" },
-              ].map((s, i) => (
-                <div key={s.label} className={`px-2 text-center sm:px-6 ${i === 1 || i === 3 ? "border-l border-white/15" : ""} ${i === 2 ? "sm:border-l sm:border-white/15" : ""}`}>
+                { stat: "Out-of-Hours", label: "Works" },
+                { stat: "Guest-First", label: "Planning" },
+                { stat: "Marriott", label: "& More" },
+              ].map((s) => (
+                <div key={s.label} className="px-2 text-center sm:px-6">
                   <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
                   <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
                 </div>
@@ -140,141 +143,102 @@ export default function DefencePage() {
         </div>
       </section>
 
-      {/* ── THE OPERATING ENVIRONMENT ─────────────────────────────────── */}
+      <TrustedByBar />
+
+      {/* ── WHAT HVAC FAILURE MEANS IN HOTELS ────────────────────────── */}
       <section className="bg-[#111418] py-16 sm:py-20">
         <Container>
           <div className="grid gap-14 lg:grid-cols-[1.1fr_1fr] lg:items-start">
 
             <ScrollReveal>
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
-                The operating environment
+                The operational reality
               </p>
               <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
-                What Makes Defence<br />Estates Different.
+                HVAC Failure Is<br />a Revenue Event.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/55">
-                Security vetting, escorted access, tool manifests, and pre-approved method statements are standard requirements on defence and government sites. These are not obstacles, they are the baseline expectation.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-white/55">
-                Operational continuity is non-negotiable. Works cannot run over programme without site management approval. Unplanned disruption is not acceptable. The contractor that works on these sites understands this from the outset.
+                A failed AHU in a bedroom wing means complaints, refunds, and reviews. A failed kitchen extract unit means service cannot run. An event space with inadequate ventilation means a booking that doesn&apos;t come back.
               </p>
               <div className="mt-7">
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] hover:text-[#1d5c42]"
                 >
-                  Discuss your requirements →
+                  Discuss a planned programme →
                 </Link>
               </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={80}>
-              <ul className="flex flex-col gap-3">
-                {[
-                  "Security vetting requirements confirmed and met before site attendance",
-                  "Works programmes submitted and approved in advance, no ad hoc access",
-                  "Tool and material manifests produced for each site visit",
-                  "Escorted access procedures followed without exception",
-                  "Risk assessments and method statements to the required format and standard",
-                  "Site-specific rules briefed and signed off before works commence",
-                ].map((item) => (
-                  <li key={item} className="flex gap-3 border-l-2 border-[#297858] bg-white/5 px-4 py-3">
-                    <CheckIcon className="mt-1 shrink-0" />
-                    <span className="text-sm leading-6 text-white/80">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </ScrollReveal>
-
-          </div>
-        </Container>
-      </section>
-
-      {/* ── VIVO APPROVED ─────────────────────────────────────────────── */}
-      <section className="bg-white py-16 sm:py-20">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-            <ScrollReveal>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-                Approved status
-              </p>
-              <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                VIVO Approved<br />Contractor
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-6 text-sm leading-7 text-slate-500">
-                BVS holds approved contractor status with VIVO, the organisation responsible for managing and maintaining the UK&apos;s defence housing and built estate on behalf of the Ministry of Defence.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-slate-500">
-                VIVO approval means BVS has been vetted, assessed, and authorised to deliver mechanical services on MOD-managed estates. This removes a significant barrier to mobilisation and confirms we meet the compliance and quality standards required to work on these sites.
-              </p>
-            </ScrollReveal>
-
-            <ScrollReveal delay={80}>
-              <div className="flex flex-col gap-3">
-                {[
-                  "Vetted and authorised to work on MOD-managed estates",
-                  "Compliance and quality standards assessed and confirmed",
-                  "Faster mobilisation on VIVO-managed contracts",
-                  "Experience across defence housing and operational estates",
-                ].map((item) => (
-                  <div key={item} className="flex gap-3 border-l-2 border-[#297858] bg-[#f7f6f5] px-4 py-3">
-                    <CheckIcon className="mt-1 shrink-0" />
-                    <span className="text-sm leading-6 text-slate-700">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* ── INFRASTRUCTURE CHALLENGES ─────────────────────────────────── */}
-      <section className="bg-surface-2 py-16 sm:py-20">
-        <Container>
-          <div className="grid gap-14 lg:grid-cols-2 lg:items-start">
-
-            <ScrollReveal>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-                The infrastructure challenge
-              </p>
-              <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                Ageing MoD Plant<br />in Demanding Environments.
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-6 text-sm leading-6 text-slate-500">
-                Much of the UK defence estate was built in the post-war period and expanded through the 1970s and 1980s. Mechanical plant in many of these buildings is well past its design life but continues to operate due to budget cycles, procurement timelines, and operational continuity requirements.
-              </p>
-              <p className="mt-4 text-sm leading-6 text-slate-500">
-                Refurbishment and life extension, rather than full replacement, is often the most practical option. It avoids lengthy procurement programmes, reduces plant room disruption, and can significantly extend useful asset life.
-              </p>
             </ScrollReveal>
 
             <ScrollReveal delay={80}>
               <div className="flex flex-col gap-4">
                 {[
                   {
-                    title: "Life extension over replacement",
-                    body: "Where plant is structurally sound, targeted refurbishment, new fans, coils, and controls within the existing casing, can add 10–15 years at a fraction of full replacement cost.",
+                    title: "Bedroom wings",
+                    body: "Guest comfort, temperature, humidity, and noise, is directly linked to AHU performance. Failing fans and choked filters produce exactly the conditions that generate negative reviews.",
                   },
                   {
-                    title: "Obsolete controls replacement",
-                    body: "Standalone controllers with no BMS connection are common in older defence buildings. Modern open-protocol replacements add monitoring, fault logging, and energy visibility without major plant works.",
+                    title: "Kitchens and F&B",
+                    body: "Kitchen extract AHUs operate in the harshest environment in the building, grease, heat, and continuous operation. Failure interrupts food service with immediate revenue impact.",
                   },
                   {
-                    title: "EC fan upgrades",
-                    body: "Belt-driven fans running at fixed speed are a standard finding. EC retrofits reduce energy consumption and eliminate the maintenance overhead of belts and pulleys, within the original AHU casing.",
+                    title: "Conference and event spaces",
+                    body: "Inadequate ventilation in a full conference room is immediately noticeable and directly affects the event experience. CO2 levels rise, comfort drops, and complaints follow.",
                   },
                 ].map((item) => (
-                  <div key={item.title} className="border border-slate-200 bg-white p-5">
-                    <p className="text-sm font-bold text-slate-900">{item.title}</p>
-                    <p className="mt-2 text-xs leading-5 text-slate-500">{item.body}</p>
+                  <div key={item.title} className="border-l-2 border-[#297858] bg-white/5 px-5 py-4">
+                    <p className="text-sm font-bold text-white">{item.title}</p>
+                    <p className="mt-1 text-xs leading-5 text-white/55">{item.body}</p>
                   </div>
                 ))}
               </div>
             </ScrollReveal>
 
+          </div>
+        </Container>
+      </section>
+
+      {/* ── HOW WE WORK IN HOTELS ─────────────────────────────────────── */}
+      <section className="bg-surface-2 py-16 sm:py-20">
+        <Container>
+          <ScrollReveal className="mb-10 max-w-2xl">
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              Our approach
+            </p>
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
+              Works Planned Around<br />Your Occupancy.
+            </h2>
+            <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
+            <p className="mt-4 text-sm leading-6 text-slate-500">
+              Every hotel property operates differently. Our programme planning starts with your occupancy calendar, not ours.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                title: "Occupancy-first scheduling",
+                desc: "Works programmed around your occupancy data, high periods avoided, shutdown windows agreed with the GM and engineering teams.",
+              },
+              {
+                title: "Overnight and out-of-hours delivery",
+                desc: "Noisy or disruptive works completed overnight. Engineers mobilised, works completed, and areas reinstated before the morning shift.",
+              },
+              {
+                title: "Access route management",
+                desc: "Routes through guest areas kept to a minimum. Where access through front-of-house is unavoidable, this is agreed in advance and managed carefully.",
+              },
+              {
+                title: "Noise and dust control",
+                desc: "Dustless working methods in plant rooms. Acoustic hoarding where required. No power tools in areas adjacent to guest bedrooms during quiet hours.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="border-l-2 border-[#297858] bg-white p-5">
+                <p className="text-sm font-bold text-slate-900">{item.title}</p>
+                <p className="mt-1 text-xs leading-5 text-slate-500">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
@@ -284,10 +248,10 @@ export default function DefencePage() {
         <Container>
           <ScrollReveal className="mb-10 max-w-2xl">
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              What we deliver on defence estates
+              What we deliver in hotels
             </p>
             <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
-              Services for Defence &amp; Government
+              Services for Hotels
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
           </ScrollReveal>
@@ -297,22 +261,22 @@ export default function DefencePage() {
               {
                 href: "/air-handling-unit-refurbishment",
                 label: "AHU Refurbishment",
-                desc: "Life extension of existing plant. Condition surveys with costed options, no commitment required before survey.",
-              },
-              {
-                href: "/air-handling-unit-manufacturing-and-installation",
-                label: "AHU Manufacturing & Installation",
-                desc: "Made-to-specification replacement AHUs where like-for-like sourcing is not possible.",
+                desc: "Extend service life of hotel plant. Condition survey and costed options before any commitment to works.",
               },
               {
                 href: "/ec-fan-upgrades-and-retrofits-for-hvac",
                 label: "EC Fan Upgrades",
-                desc: "Replace belt-driven fans within existing casings. Energy savings and maintenance reduction.",
+                desc: "Quieter, more efficient fans for bedroom zones. 30–50% energy savings, significant for properties with high fan energy consumption.",
+              },
+              {
+                href: "/air-handling-unit-coil-replacement",
+                label: "Coil Replacement",
+                desc: "Restore heating and cooling capacity. Includes kitchen extract coils, measured, sourced, and replaced within the existing unit.",
               },
               {
                 href: "/air-handling-unit-controller-solutions-upgrades",
                 label: "Controller Upgrades",
-                desc: "Replace obsolete standalone controls with open-protocol BMS-integrated systems.",
+                desc: "Demand-controlled ventilation for function spaces. BMS integration with fault logging and remote monitoring.",
               },
             ].map((s) => (
               <Link
@@ -331,8 +295,20 @@ export default function DefencePage() {
         </Container>
       </section>
 
+      {/* ── OUR PROJECTS ─────────────────────────────────────────────── */}
+      <section id="our-projects" className="bg-[#111418] py-16 sm:py-20">
+        <Container>
+          <ScrollReveal className="mb-8">
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">Our projects</p>
+            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">Case Studies</h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          </ScrollReveal>
+          <CaseStudyCarousel studies={studies} />
+        </Container>
+      </section>
+
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
-      <FAQAccordion faqs={faqs} theme="dark" />
+      <FAQAccordion faqs={faqs} />
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}
       <section className="bg-[#111418] py-20">
@@ -344,16 +320,16 @@ export default function DefencePage() {
                 Get in touch
               </p>
               <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                Discuss Your<br />Defence Estate
+                Discuss Your<br />Hotel Property
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-white/65">
-                Tell us about the site, the plant, and any access or clearance requirements. We&apos;ll confirm our capability and what the practical approach looks like before any visit is arranged.
+                Tell us about the property, the plant, and any occupancy constraints. We&apos;ll confirm what&apos;s achievable and what an out-of-hours programme looks like for your site.
               </p>
               <div className="mt-7 space-y-3 border-l border-white/10 pl-5">
-                <p className="text-sm text-white/60">Secure site access experience as standard</p>
-                <p className="text-sm text-white/60">Programme compliance, works delivered within agreed windows</p>
-                <p className="text-sm text-white/60">Full documentation to the required standard</p>
+                <p className="text-sm text-white/60">Occupancy-first programme planning</p>
+                <p className="text-sm text-white/60">Overnight and out-of-hours delivery as standard</p>
+                <p className="text-sm text-white/60">Hotels and serviced apartments</p>
                 <p className="text-sm text-white/60">Direct response, not sales handlers</p>
               </div>
               <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6">
@@ -376,7 +352,7 @@ export default function DefencePage() {
                   <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">Enquiry</p>
                   <div className="mt-3 h-[2px] w-10 bg-[#297858]" />
                   <p className="mt-5 text-sm leading-6 text-slate-500">
-                    Tell us about the site and the requirement. We treat all enquiries from defence and government estates with appropriate confidentiality.
+                    Tell us the property type, the plant condition, and any upcoming works window. We&apos;ll respond within one working day.
                   </p>
                   <div className="mt-7">
                     <QuickQuoteForm />
@@ -388,7 +364,7 @@ export default function DefencePage() {
                     </div>
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                      All enquiries treated in confidence
+                      No obligation, practical advice from the first call
                     </div>
                   </div>
                 </div>
@@ -414,13 +390,6 @@ function ArrowDownIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-function CheckIcon({ className = "" }) {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" className={`shrink-0 text-[#297858] ${className}`}>
-      <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

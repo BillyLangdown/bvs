@@ -40,9 +40,9 @@ export default function MechanicalElectricalPage() {
         },
       ]}
       relatedLinks={[
-        { href: "/solutions/mechanical/industrial-pipework", label: "Industrial Pipework" },
-        { href: "/solutions/mechanical/commercial-boiler-heating", label: "Commercial Boiler & Heating" },
-        { href: "/air-handling-unit-manufactoring-and-installation", label: "AHU Manufacturing & Installation" },
+        { href: "/industrial-pipework-services", label: "Industrial Pipework" },
+        { href: "/commercial-boiler-and-heating-services", label: "Commercial Boiler & Heating" },
+        { href: "/air-handling-unit-manufacturing-and-installation", label: "AHU Manufacturing & Installation" },
         { href: "/air-handling-unit-controller-solutions-upgrades", label: "Controller Solutions" },
         { href: "/solutions/ahu", label: "AHU Solutions" },
         { href: "/contact", label: "Contact Us" },

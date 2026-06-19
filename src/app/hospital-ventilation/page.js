@@ -4,49 +4,45 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { caseStudies } from "@/lib/caseStudyData";
+import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
-  title: "Defence & Government Ventilation | BVS Building Ventilation Solutions",
+  title: "Healthcare & NHS Ventilation | BVS Building Ventilation Solutions",
   description:
-    "AHU refurbishment and ventilation services for defence and government facilities. Secure site experience. Programme compliance. UK nationwide.",
+    "AHU refurbishment, EC fan upgrades, and validation surveys for NHS and private healthcare. Live clinical environments managed as standard. UK nationwide.",
 };
 
 const faqs = [
   {
-    q: "Do your engineers hold security clearances?",
-    a: "We have engineers who have worked on sites requiring enhanced security vetting. The clearance level required depends on the specific site and access classification. We discuss this at enquiry stage and confirm capability before committing to a programme.",
+    q: "Can you work in live clinical environments?",
+    a: "Yes. The majority of our healthcare work takes place in occupied buildings. We plan all works with phased shutdown windows and work closely with your estates and site teams throughout.",
   },
   {
-    q: "Can you work within strict access and programme requirements?",
-    a: "Yes. We are experienced working within site access protocols including escorted access, tool and material manifests, and pre-approved works programmes. Compliance with site rules is treated as a non-negotiable part of the contract.",
+    q: "Do you understand clinical ventilation requirements?",
+    a: "We have worked in NHS and private healthcare environments for over 40 years. We are familiar with the ventilation requirements for different clinical settings: theatres, wards, isolation rooms, and critical care. We commission and document works to the standards appropriate for each area.",
   },
   {
-    q: "Do you work on live operational sites?",
-    a: "Yes. Most defence and government sites remain operational during maintenance and refurbishment works. We plan around operational requirements, agree shutdown windows in advance, and deliver to programme without unplanned disruption.",
+    q: "Can you validate AHU performance?",
+    a: "We carry out airflow validation surveys that confirm performance against the relevant parameters for the clinical environment: air change rates, pressure differentials, filter conditions, and temperature. We produce a formal report suitable for estates records.",
   },
   {
-    q: "Can you manage the documentation requirements on these contracts?",
-    a: "Yes. We produce the quality, technical, and commissioning documentation typically required on government and defence contracts, including as-fitted drawings, commissioning records, risk assessments, and method statements to the required standard.",
-  },
-  {
-    q: "Do you work directly with the MoD or through prime contractors?",
-    a: "Both. We work as specialist sub-contractors on managed defence contracts and directly with estates teams where that route is appropriate. We are experienced with both procurement routes.",
-  },
-  {
-    q: "What AHU services are most relevant to defence estates?",
-    a: "Refurbishment and life extension of ageing plant is the most common requirement. EC fan upgrades and controller replacements are also frequently delivered where energy reduction targets or obsolete controls are the trigger.",
+    q: "Do you work with NHS Trusts directly or through main contractors?",
+    a: "Both. We work as specialist sub-contractors on major refurbishment programmes and directly with NHS estates teams on planned maintenance and lifecycle replacement projects.",
   },
 ];
 
-export default function DefencePage() {
+export default function HospitalPage() {
+  const studies = caseStudies.filter((s) => s.sector.includes("Healthcare"));
   return (
     <div className="pb-20 lg:pb-0">
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section className="relative min-h-[600px] w-full overflow-hidden bg-slate-900">
         <Image
-          src="/defence.webp"
-          alt="Defence facility, BVS delivers ventilation services on secure government and MoD sites"
+          src="/hospital.webp"
+          alt="NHS hospital corridor, BVS works in live clinical environments"
           fill
           priority
           placeholder="blur"
@@ -62,10 +58,10 @@ export default function DefencePage() {
           {/* Mobile hero */}
           <div className="sm:hidden max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
-              Defence &amp; Government
+              Hospital and Healthcare
             </p>
             <h1 className="text-3xl font-extrabold leading-[1.08] text-white">
-              Specialists for secure<br />&amp; government sites.
+              Ventilation solutions for healthcare.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <a href="tel:01256518170" className="mt-5 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
@@ -73,14 +69,14 @@ export default function DefencePage() {
               01256 518170
             </a>
             <p className="mt-3 text-sm leading-6 text-white">
-              Security vetted, programme compliant. We work within access protocols and documentation requirements as standard.
+              AHU refurbishment, surveys, and compliance for NHS and private healthcare. Live clinical environments managed as standard.
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <Link
                 href="/contact"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
-                Discuss your requirements <ArrowIcon />
+                Discuss your estate <ArrowIcon />
               </Link>
               <a
                 href="#services"
@@ -93,21 +89,21 @@ export default function DefencePage() {
           {/* Desktop hero */}
           <div className="hidden sm:block max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
-              Defence &amp; Government
+              Hospital and Healthcare
             </p>
             <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
-              Specialists for secure<br />&amp; government sites.
+              Ventilation solutions<br />for healthcare.
             </h1>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
-              Defence and government facilities operate within access protocols, security requirements, and programme obligations that most contractors are not equipped to meet. Experienced on secure sites, working within the rules, to programme.
+              Healthcare ventilation operates under some of the most demanding conditions in the built environment. We understand healthcare environments, how to work in live hospitals, and what it means when AHU plant fails.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
               >
-                Discuss your requirements
+                Discuss your estate
                 <ArrowIcon />
               </Link>
               <a
@@ -123,14 +119,13 @@ export default function DefencePage() {
 
         <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-black/60 backdrop-blur-sm">
           <Container>
-            <div className="grid grid-cols-2 py-2 sm:grid-cols-4 sm:py-3">
+            <div className="grid grid-cols-3 divide-x divide-white/15 py-2 sm:py-3">
               {[
-                { stat: "VIVO", label: "Approved" },
-                { stat: "Secure Site", label: "Access" },
-                { stat: "Programme", label: "Compliant" },
-                { stat: "Nationwide", label: "Coverage" },
-              ].map((s, i) => (
-                <div key={s.label} className={`px-2 text-center sm:px-6 ${i === 1 || i === 3 ? "border-l border-white/15" : ""} ${i === 2 ? "sm:border-l sm:border-white/15" : ""}`}>
+                { stat: "Clinical", label: "Environments" },
+                { stat: "24/7", label: "Live Sites" },
+                { stat: "NHS", label: "& Private" },
+              ].map((s) => (
+                <div key={s.label} className="px-2 text-center sm:px-6">
                   <p className="text-sm font-extrabold text-white sm:text-lg">{s.stat}</p>
                   <p className="mt-0.5 text-[8px] uppercase tracking-wide text-white/55 sm:text-[10px]">{s.label}</p>
                 </div>
@@ -140,136 +135,155 @@ export default function DefencePage() {
         </div>
       </section>
 
-      {/* ── THE OPERATING ENVIRONMENT ─────────────────────────────────── */}
+      <TrustedByBar />
+
+      {/* ── THE CLINICAL ENVIRONMENT ──────────────────────────────────── */}
       <section className="bg-[#111418] py-16 sm:py-20">
         <Container>
           <div className="grid gap-14 lg:grid-cols-[1.1fr_1fr] lg:items-start">
 
             <ScrollReveal>
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
-                The operating environment
+                The healthcare environment
               </p>
               <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
-                What Makes Defence<br />Estates Different.
+                Healthcare Environments<br />Demand Different.
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-7 text-white/55">
-                Security vetting, escorted access, tool manifests, and pre-approved method statements are standard requirements on defence and government sites. These are not obstacles, they are the baseline expectation.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-white/55">
-                Operational continuity is non-negotiable. Works cannot run over programme without site management approval. Unplanned disruption is not acceptable. The contractor that works on these sites understands this from the outset.
+                When healthcare ventilation systems fail, the impact can be immediate. Our team understands the demands of live hospital environments and delivers practical AHU solutions that prioritise reliability, compliance and continuity of service.
               </p>
               <div className="mt-7">
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-[#297858] hover:text-[#1d5c42]"
                 >
-                  Discuss your requirements →
+                  Discuss your estate →
                 </Link>
               </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={80}>
-              <ul className="flex flex-col gap-3">
-                {[
-                  "Security vetting requirements confirmed and met before site attendance",
-                  "Works programmes submitted and approved in advance, no ad hoc access",
-                  "Tool and material manifests produced for each site visit",
-                  "Escorted access procedures followed without exception",
-                  "Risk assessments and method statements to the required format and standard",
-                  "Site-specific rules briefed and signed off before works commence",
-                ].map((item) => (
-                  <li key={item} className="flex gap-3 border-l-2 border-[#297858] bg-white/5 px-4 py-3">
-                    <CheckIcon className="mt-1 shrink-0" />
-                    <span className="text-sm leading-6 text-white/80">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </ScrollReveal>
-
-          </div>
-        </Container>
-      </section>
-
-      {/* ── VIVO APPROVED ─────────────────────────────────────────────── */}
-      <section className="bg-white py-16 sm:py-20">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-            <ScrollReveal>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-                Approved status
-              </p>
-              <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                VIVO Approved<br />Contractor
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-6 text-sm leading-7 text-slate-500">
-                BVS holds approved contractor status with VIVO, the organisation responsible for managing and maintaining the UK&apos;s defence housing and built estate on behalf of the Ministry of Defence.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-slate-500">
-                VIVO approval means BVS has been vetted, assessed, and authorised to deliver mechanical services on MOD-managed estates. This removes a significant barrier to mobilisation and confirms we meet the compliance and quality standards required to work on these sites.
-              </p>
-            </ScrollReveal>
-
-            <ScrollReveal delay={80}>
-              <div className="flex flex-col gap-3">
-                {[
-                  "Vetted and authorised to work on MOD-managed estates",
-                  "Compliance and quality standards assessed and confirmed",
-                  "Faster mobilisation on VIVO-managed contracts",
-                  "Experience across defence housing and operational estates",
-                ].map((item) => (
-                  <div key={item} className="flex gap-3 border-l-2 border-[#297858] bg-[#f7f6f5] px-4 py-3">
-                    <CheckIcon className="mt-1 shrink-0" />
-                    <span className="text-sm leading-6 text-slate-700">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* ── INFRASTRUCTURE CHALLENGES ─────────────────────────────────── */}
-      <section className="bg-surface-2 py-16 sm:py-20">
-        <Container>
-          <div className="grid gap-14 lg:grid-cols-2 lg:items-start">
-
-            <ScrollReveal>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-                The infrastructure challenge
-              </p>
-              <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                Ageing MoD Plant<br />in Demanding Environments.
-              </h2>
-              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
-              <p className="mt-6 text-sm leading-6 text-slate-500">
-                Much of the UK defence estate was built in the post-war period and expanded through the 1970s and 1980s. Mechanical plant in many of these buildings is well past its design life but continues to operate due to budget cycles, procurement timelines, and operational continuity requirements.
-              </p>
-              <p className="mt-4 text-sm leading-6 text-slate-500">
-                Refurbishment and life extension, rather than full replacement, is often the most practical option. It avoids lengthy procurement programmes, reduces plant room disruption, and can significantly extend useful asset life.
-              </p>
             </ScrollReveal>
 
             <ScrollReveal delay={80}>
               <div className="flex flex-col gap-4">
                 {[
                   {
-                    title: "Life extension over replacement",
-                    body: "Where plant is structurally sound, targeted refurbishment, new fans, coils, and controls within the existing casing, can add 10–15 years at a fraction of full replacement cost.",
+                    label: "Theatres & Clean Rooms",
+                    body: "Any AHU failure in a theatre creates an immediate clinical and health risk.",
                   },
                   {
-                    title: "Obsolete controls replacement",
-                    body: "Standalone controllers with no BMS connection are common in older defence buildings. Modern open-protocol replacements add monitoring, fault logging, and energy visibility without major plant works.",
+                    label: "Isolation Rooms, Pharmacy & Labs",
+                    body: "Controlled environments where ventilation performance is critical to maintaining air quality, temperature stability and operational compliance.",
                   },
                   {
-                    title: "EC fan upgrades",
-                    body: "Belt-driven fans running at fixed speed are a standard finding. EC retrofits reduce energy consumption and eliminate the maintenance overhead of belts and pulleys, within the original AHU casing.",
+                    label: "General Wards & Departments",
+                    body: "Older wards are frequently running on originally installed AHU systems.",
                   },
                 ].map((item) => (
-                  <div key={item.title} className="border border-slate-200 bg-white p-5">
-                    <p className="text-sm font-bold text-slate-900">{item.title}</p>
-                    <p className="mt-2 text-xs leading-5 text-slate-500">{item.body}</p>
+                  <div key={item.label} className="border-l-2 border-[#297858] bg-white/5 px-5 py-4">
+                    <p className="text-sm font-bold text-white">{item.label}</p>
+                    <p className="mt-1 text-xs leading-5 text-white/55">{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+
+          </div>
+        </Container>
+      </section>
+
+      {/* ── THE AGEING ESTATE ─────────────────────────────────────────── */}
+      <section className="bg-surface-2 py-16 sm:py-20">
+        <Container>
+          <ScrollReveal className="mb-10 max-w-2xl">
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+              What we find on site
+            </p>
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
+              The Reality of Ageing<br />NHS Plant
+            </h2>
+            <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
+            <p className="mt-4 text-sm leading-6 text-slate-500">
+              Much of the UK NHS estate was built between 1960 and 1990. The AHU plant installed in those buildings was designed for a 20–25 year life. Many are still running. When we arrive on site, we typically encounter the same issues across trusts.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Belt-driven fans past service life",
+                desc: "Running at fixed speed regardless of demand. Bearing wear, belt slip, and increasing energy consumption, with no variable speed capability.",
+              },
+              {
+                title: "Filter banks overdue for replacement",
+                desc: "Pressure drop across filter sections rising above permissible limits. In clinical areas, this directly affects declared air change rates.",
+              },
+              {
+                title: "Coils corroded or fouled",
+                desc: "Water chemistry treatment failures, aggressive condensate, or frost damage leading to loss of heating or cooling capacity.",
+              },
+              {
+                title: "No commissioning records",
+                desc: "Original handover documentation lost or never produced. Estates teams cannot confirm current performance against the design specification.",
+              },
+              {
+                title: "Obsolete controls and no BMS",
+                desc: "Standalone controllers with no fault logging, no alarms, and no connection to building management systems. Problems go undetected.",
+              },
+              {
+                title: "Corroded coils and fan sections",
+                desc: "Years of condensate exposure, poor water treatment, or frost damage leaving coils and internal components in poor condition with reduced capacity and reliability.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="border-l-2 border-[#297858] bg-white p-5">
+                <p className="text-sm font-bold text-slate-900">{item.title}</p>
+                <p className="mt-1 text-xs leading-5 text-slate-500">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ── HOW WE WORK IN CLINICAL ENVIRONMENTS ─────────────────────── */}
+      <section className="bg-[#111418] py-16 sm:py-20">
+        <Container>
+          <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:items-start">
+
+            <ScrollReveal>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">
+                Our approach
+              </p>
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
+                Planned Around<br />Clinical Operations.
+              </h2>
+              <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-6 text-sm leading-7 text-white/55">
+                Healthcare projects are different from commercial refurbishments. The operational environment, the compliance obligations, and the consequences of disruption require a different kind of contractor, one that plans works around the hospital, not the other way around.
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={80}>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {[
+                  {
+                    title: "Phased shutdown windows",
+                    desc: "Works are sequenced so ventilation is never fully lost. Planned downtime agreed with estates and clinical teams in advance.",
+                  },
+                  {
+                    title: "Working with your teams",
+                    desc: "We co-ordinate directly with your estates, clinical, and site teams to plan works around operational requirements. No disruption without prior agreement.",
+                  },
+                  {
+                    title: "Any make or model",
+                    desc: "We work across all AHU manufacturers with no dependency on original suppliers. Replacement components are sourced directly or manufactured to suit.",
+                  },
+                  {
+                    title: "Post-works validation",
+                    desc: "Airflow performance confirmed and documented on completion. Full commissioning record issued for estates files.",
+                  },
+                ].map((item) => (
+                  <div key={item.title} className="bg-white/5 p-5">
+                    <p className="text-sm font-bold text-white">{item.title}</p>
+                    <p className="mt-1 text-xs leading-5 text-white/55">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -284,10 +298,10 @@ export default function DefencePage() {
         <Container>
           <ScrollReveal className="mb-10 max-w-2xl">
             <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
-              What we deliver on defence estates
+              What we deliver in healthcare
             </p>
             <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
-              Services for Defence &amp; Government
+              Services for NHS &amp; Private Healthcare
             </h2>
             <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
           </ScrollReveal>
@@ -297,22 +311,22 @@ export default function DefencePage() {
               {
                 href: "/air-handling-unit-refurbishment",
                 label: "AHU Refurbishment",
-                desc: "Life extension of existing plant. Condition surveys with costed options, no commitment required before survey.",
-              },
-              {
-                href: "/air-handling-unit-manufacturing-and-installation",
-                label: "AHU Manufacturing & Installation",
-                desc: "Made-to-specification replacement AHUs where like-for-like sourcing is not possible.",
+                desc: "Extend the service life of clinical AHUs. Condition survey with costed options before any commitment to works.",
               },
               {
                 href: "/ec-fan-upgrades-and-retrofits-for-hvac",
                 label: "EC Fan Upgrades",
-                desc: "Replace belt-driven fans within existing casings. Energy savings and maintenance reduction.",
+                desc: "Replace belt-driven fans with EC direct-drive within existing AHU casings. Energy savings and reduced maintenance overhead.",
+              },
+              {
+                href: "/air-handling-unit-coil-replacement",
+                label: "Coil Replacement",
+                desc: "Restore heating and cooling performance. Any make or model, measured on site and replaced within the existing casing.",
               },
               {
                 href: "/air-handling-unit-controller-solutions-upgrades",
                 label: "Controller Upgrades",
-                desc: "Replace obsolete standalone controls with open-protocol BMS-integrated systems.",
+                desc: "Replace obsolete controls with open-protocol BMS-integrated systems. Fault logging and remote monitoring enabled.",
               },
             ].map((s) => (
               <Link
@@ -331,8 +345,20 @@ export default function DefencePage() {
         </Container>
       </section>
 
+      {/* ── OUR PROJECTS ─────────────────────────────────────────────── */}
+      <section id="our-projects" className="bg-[#111418] py-16 sm:py-20">
+        <Container>
+          <ScrollReveal className="mb-8">
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/45">Our projects</p>
+            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">Case Studies</h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+          </ScrollReveal>
+          <CaseStudyCarousel studies={studies} />
+        </Container>
+      </section>
+
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
-      <FAQAccordion faqs={faqs} theme="dark" />
+      <FAQAccordion faqs={faqs} />
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}
       <section className="bg-[#111418] py-20">
@@ -344,16 +370,16 @@ export default function DefencePage() {
                 Get in touch
               </p>
               <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                Discuss Your<br />Defence Estate
+                Discuss Your<br />Healthcare Estate
               </h2>
               <div className="mt-3 h-[3px] w-12 bg-[#297858]" />
               <p className="mt-5 text-sm leading-7 text-white/65">
-                Tell us about the site, the plant, and any access or clearance requirements. We&apos;ll confirm our capability and what the practical approach looks like before any visit is arranged.
+                Tell us about your estate, the age and condition of the plant, and any compliance concerns. We&apos;ll confirm what the practical options are and how we can work around your clinical operations.
               </p>
               <div className="mt-7 space-y-3 border-l border-white/10 pl-5">
-                <p className="text-sm text-white/60">Secure site access experience as standard</p>
-                <p className="text-sm text-white/60">Programme compliance, works delivered within agreed windows</p>
-                <p className="text-sm text-white/60">Full documentation to the required standard</p>
+                <p className="text-sm text-white/60">Validation and documentation as standard on all clinical works</p>
+                <p className="text-sm text-white/60">Live clinical environments managed routinely</p>
+                <p className="text-sm text-white/60">NHS Trusts, private healthcare, and specialist facilities</p>
                 <p className="text-sm text-white/60">Direct response, not sales handlers</p>
               </div>
               <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6">
@@ -376,10 +402,10 @@ export default function DefencePage() {
                   <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#297858]">Enquiry</p>
                   <div className="mt-3 h-[2px] w-10 bg-[#297858]" />
                   <p className="mt-5 text-sm leading-6 text-slate-500">
-                    Tell us about the site and the requirement. We treat all enquiries from defence and government estates with appropriate confidentiality.
+                    Tell us about your healthcare estate, plant age, compliance concerns, or a specific project requirement. We&apos;ll respond within one working day.
                   </p>
                   <div className="mt-7">
-                    <QuickQuoteForm />
+                    <QuickQuoteForm defaultService="Healthcare & NHS" />
                   </div>
                   <div className="mt-6 flex flex-col gap-2 border-t border-slate-100 pt-5">
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
@@ -388,7 +414,7 @@ export default function DefencePage() {
                     </div>
                     <div className="flex items-center gap-2 text-[11px] text-slate-400">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#297858]" />
-                      All enquiries treated in confidence
+                      No obligation, practical advice from the first call
                     </div>
                   </div>
                 </div>
@@ -417,9 +443,9 @@ function ArrowDownIcon() {
     </svg>
   );
 }
-function CheckIcon({ className = "" }) {
+function CheckIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" className={`shrink-0 text-[#297858] ${className}`}>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="shrink-0 text-[#297858]">
       <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );

@@ -25,12 +25,12 @@ export const metadata = {
 
 const services = [
   {
-    href: "/solutions/ventilation/troubleshooting",
+    href: "/air-handling-unit-troubleshooting",
     title: "Troubleshooting & Solutions",
     body: "Our engineers identify the root cause of performance issues quickly - airflow imbalance, component failure, controls faults - and restore your system with minimal disruption.",
   },
   {
-    href: "/solutions/ventilation/validation-surveys",
+    href: "/ahu-validation-ventilation-surveys",
     title: "Validation & Surveys",
     body: "Detailed condition surveys of your AHU assets with prioritised, costed recommendations. Know exactly what your plant needs and plan maintenance budgets with confidence.",
   },
@@ -178,7 +178,7 @@ export default function VentilationServicesPage() {
             {[
               { href: "/solutions/ahu", label: "AHU Solutions" },
               { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
-              { href: "/solutions/mechanical", label: "Mechanical Solutions" },
+              { href: "/mechanical-solutions", label: "Mechanical Solutions" },
               { href: "/case-studies", label: "Case Studies" },
             ].map((l) => (
               <Link

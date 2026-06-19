@@ -275,7 +275,7 @@ export default function ValidationSurveysPage() {
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-slate-400">Related services</p>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { href: "/solutions/ventilation/troubleshooting", label: "Ventilation Troubleshooting" },
+              { href: "/air-handling-unit-troubleshooting", label: "Ventilation Troubleshooting" },
               { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
               { href: "/air-handling-unit-coil-replacement", label: "Coil Replacement" },
               { href: "/solutions/ventilation/ducting-repair-replacement", label: "Ducting Repair & Replacement" },

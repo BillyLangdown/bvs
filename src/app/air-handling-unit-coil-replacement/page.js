@@ -593,7 +593,7 @@ export default function CoilReplacementPage() {
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
-              { href: "/air-handling-unit-manufactoring-and-installation", label: "AHU Manufacturing & Installation" },
+              { href: "/air-handling-unit-manufacturing-and-installation", label: "AHU Manufacturing & Installation" },
               { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },
               { href: "/air-handling-unit-controller-solutions-upgrades", label: "Controller Upgrades" },
             ].map((l) => (

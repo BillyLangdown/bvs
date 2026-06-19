@@ -4,25 +4,25 @@ import { Container } from "./Container";
 
 const ahuLinks = [
   { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
-  { href: "/air-handling-unit-manufactoring-and-installation", label: "Manufacturing & Installation" },
+  { href: "/air-handling-unit-manufacturing-and-installation", label: "Manufacturing & Installation" },
   { href: "/air-handling-unit-coil-replacement", label: "Coil Replacement" },
   { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },
   { href: "/air-handling-unit-controller-solutions-upgrades", label: "Controller Solutions" },
 ];
 
 const serviceLinks = [
-  { href: "/solutions/ventilation/troubleshooting", label: "Ventilation Troubleshooting" },
-  { href: "/solutions/ventilation/validation-surveys", label: "Validation & Surveys" },
+  { href: "/air-handling-unit-troubleshooting", label: "Ventilation Troubleshooting" },
+  { href: "/ahu-validation-ventilation-surveys", label: "Validation & Surveys" },
   { href: "/solutions/mechanical/mechanical-electrical", label: "Mechanical & Electrical" },
-  { href: "/solutions/mechanical/industrial-pipework", label: "Industrial Pipework" },
-  { href: "/solutions/mechanical/commercial-boiler-heating", label: "Boiler & Heating" },
+  { href: "/industrial-pipework-services", label: "Industrial Pipework" },
+  { href: "/commercial-boiler-and-heating-services", label: "Boiler & Heating" },
 ];
 
 const companyLinks = [
-  { href: "/about", label: "About Us" },
+  { href: "/about-us", label: "About Us" },
   { href: "/case-studies", label: "Case Studies" },
-  { href: "/blogs", label: "Blog" },
-  { href: "/resources", label: "HVAC Resources" },
+  { href: "/our-blogs", label: "Blog" },
+  { href: "/hvac-resources", label: "HVAC Resources" },
   { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact Us" },
 ];

@@ -16,7 +16,7 @@ const services = [
     body: "Extend the life of your existing AHU by 10–15+ years at a fraction of replacement cost. We survey, specify, and refurbish on-site with minimal disruption.",
   },
   {
-    href: "/air-handling-unit-manufactoring-and-installation",
+    href: "/air-handling-unit-manufacturing-and-installation",
     title: "AHU Manufacturing & Installation",
     body: "Custom-built AHUs manufactured in the UK and installed under a single contract, from survey and design through to commissioning and handover.",
   },
@@ -110,7 +110,7 @@ export default function AhuSolutionsPage() {
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { href: "/solutions/ventilation", label: "Ventilation Services" },
-              { href: "/solutions/mechanical", label: "Mechanical Solutions" },
+              { href: "/mechanical-solutions", label: "Mechanical Solutions" },
               { href: "/case-studies", label: "Case Studies" },
               { href: "/contact", label: "Contact Us" },
             ].map((l) => (

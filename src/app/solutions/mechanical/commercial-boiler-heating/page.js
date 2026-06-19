@@ -291,7 +291,7 @@ export default function CommercialBoilerHeatingPage() {
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-slate-400">Related services</p>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { href: "/solutions/mechanical/industrial-pipework", label: "Commercial Pipework" },
+              { href: "/industrial-pipework-services", label: "Commercial Pipework" },
               { href: "/solutions/mechanical/mechanical-electrical", label: "Mechanical & Electrical" },
               { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
               { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },

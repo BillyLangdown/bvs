@@ -294,6 +294,24 @@ export const allCaseStudies = [
     services: ["coil"],
   },
   {
+    slug: "blackfriars-office-bloom-development-ahu-manufacturing",
+    title: "Blackfriars Bloom Office Development, AHU Manufacturing & Installation",
+    headline: "Custom AHU Design, Manufacture & Installation, Blackfriars Office",
+    sector: "Commercial",
+    location: "Blackfriars, London",
+    image: "/case-studies/images/blackfriars-office-bloom-development-ahu-manufacturing/blackfriars-ahu-street-crane.jpg",
+    summary:
+      "BVS designed, manufactured, and installed two custom AHUs for the Dorset Rise Bloom office development at Blackfriars, London, including crane lifts with road closures and full ductwork integration.",
+    tags: ["AHU Manufacturing", "Commercial", "London"],
+    relevantIf: [
+      "Your project requires a custom-designed AHU rather than a standard catalogue unit",
+      "You need design, manufacture, installation, and commissioning managed under one contract",
+      "Ductwork integration needs to be coordinated with the AHU installation",
+    ],
+    pdfUrl: "https://www.bvs-ltd.co.uk/wp-content/uploads/2023/10/Blackfriars-Office-Bloom-Development-Case-Study.pdf",
+    services: ["manufacturing"],
+  },
+  {
     slug: "red-distillery-ahu-refurbishment",
     title: "Red English Group Distillery, AHU Refurbishment",
     headline: "AHU Refurbishment, Active Production Facility",

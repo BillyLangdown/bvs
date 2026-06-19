@@ -290,9 +290,9 @@ export default function IndustrialPipeworkPage() {
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-slate-400">Related services</p>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { href: "/solutions/mechanical/commercial-boiler-heating", label: "Commercial Boiler & Heating" },
+              { href: "/commercial-boiler-and-heating-services", label: "Commercial Boiler & Heating" },
               { href: "/solutions/mechanical/mechanical-electrical", label: "Mechanical & Electrical" },
-              { href: "/air-handling-unit-manufactoring-and-installation", label: "AHU Manufacturing & Installation" },
+              { href: "/air-handling-unit-manufacturing-and-installation", label: "AHU Manufacturing & Installation" },
               { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
             ].map((l) => (
               <Link

@@ -574,7 +574,7 @@ export default function AHURefurbishmentPage() {
             ].map((post) => (
               <Link
                 key={post.title}
-                href="/blogs"
+                href="/our-blogs"
                 className="group flex flex-col gap-2 border border-slate-200 bg-white p-5 transition-all hover:border-[#297858]/40 hover:shadow-sm"
               >
                 <p className="text-sm font-bold leading-snug text-slate-900 group-hover:text-[#297858] transition-colors">{post.title}</p>
@@ -590,7 +590,7 @@ export default function AHURefurbishmentPage() {
               {[
                 { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },
                 { href: "/air-handling-unit-coil-replacement", label: "Coil Replacement" },
-                { href: "/air-handling-unit-manufactoring-and-installation", label: "AHU Manufacturing & Installation" },
+                { href: "/air-handling-unit-manufacturing-and-installation", label: "AHU Manufacturing & Installation" },
                 { href: "/air-handling-unit-controller-solutions-upgrades", label: "Controller Upgrades" },
               ].map((l) => (
                 <Link

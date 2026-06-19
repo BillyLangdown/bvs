@@ -297,8 +297,8 @@ export default function DuctingRepairPage() {
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-slate-400">Related services</p>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { href: "/solutions/ventilation/validation-surveys", label: "Validation Surveys" },
-              { href: "/solutions/ventilation/troubleshooting", label: "Ventilation Troubleshooting" },
+              { href: "/ahu-validation-ventilation-surveys", label: "Validation Surveys" },
+              { href: "/air-handling-unit-troubleshooting", label: "Ventilation Troubleshooting" },
               { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
               { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },
             ].map((l) => (

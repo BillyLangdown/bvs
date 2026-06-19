@@ -8,29 +8,31 @@ export default function sitemap() {
     // Core service pages
     { url: `${BASE}/air-handling-unit-refurbishment`, priority: 0.9, changeFrequency: "monthly" },
     { url: `${BASE}/air-handling-unit-coil-replacement`, priority: 0.9, changeFrequency: "monthly" },
-    { url: `${BASE}/air-handling-unit-manufactoring-and-installation`, priority: 0.9, changeFrequency: "monthly" },
+    { url: `${BASE}/air-handling-unit-manufacturing-and-installation`, priority: 0.9, changeFrequency: "monthly" },
+    { url: `${BASE}/air-handling-unit-maintenance`, priority: 0.9, changeFrequency: "monthly" },
     { url: `${BASE}/air-handling-unit-controller-solutions-upgrades`, priority: 0.9, changeFrequency: "monthly" },
     { url: `${BASE}/ec-fan-upgrades-and-retrofits-for-hvac`, priority: 0.9, changeFrequency: "monthly" },
 
-    // Solutions
+    // Solutions (new pages without old equivalents)
     { url: `${BASE}/solutions/ahu`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/solutions/ventilation`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/solutions/ventilation/ducting-repair-replacement`, priority: 0.8, changeFrequency: "monthly" },
-    { url: `${BASE}/solutions/ventilation/troubleshooting`, priority: 0.8, changeFrequency: "monthly" },
-    { url: `${BASE}/solutions/ventilation/validation-surveys`, priority: 0.8, changeFrequency: "monthly" },
-    { url: `${BASE}/solutions/mechanical`, priority: 0.8, changeFrequency: "monthly" },
-    { url: `${BASE}/solutions/mechanical/commercial-boiler-heating`, priority: 0.8, changeFrequency: "monthly" },
-    { url: `${BASE}/solutions/mechanical/industrial-pipework`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/solutions/mechanical/mechanical-electrical`, priority: 0.8, changeFrequency: "monthly" },
 
-    // Industries
-    { url: `${BASE}/industries`, priority: 0.8, changeFrequency: "monthly" },
-    { url: `${BASE}/industries/hospital`, priority: 0.8, changeFrequency: "monthly" },
-    { url: `${BASE}/industries/hotel`, priority: 0.8, changeFrequency: "monthly" },
+    // Established service pages (old URLs preserved)
+    { url: `${BASE}/air-handling-unit-troubleshooting`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${BASE}/ahu-validation-ventilation-surveys`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${BASE}/mechanical-solutions`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${BASE}/commercial-boiler-and-heating-services`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${BASE}/industrial-pipework-services`, priority: 0.8, changeFrequency: "monthly" },
+
+    // Industries (old URLs preserved)
+    { url: `${BASE}/hospital-ventilation`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${BASE}/hotel-leisure-ventilation`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/industries/defence`, priority: 0.8, changeFrequency: "monthly" },
-    { url: `${BASE}/industries/education`, priority: 0.8, changeFrequency: "monthly" },
-    { url: `${BASE}/industries/leisure-centre`, priority: 0.8, changeFrequency: "monthly" },
-    { url: `${BASE}/industries/retail`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${BASE}/education-ventilation`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${BASE}/sport-facility-ventilation`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${BASE}/retail-ventilation`, priority: 0.8, changeFrequency: "monthly" },
 
     // Case studies
     { url: `${BASE}/case-studies`, priority: 0.7, changeFrequency: "monthly" },
@@ -53,14 +55,15 @@ export default function sitemap() {
     { url: `${BASE}/case-studies/ringwood-leisure-ahu-controller-upgrade`, priority: 0.7, changeFrequency: "yearly" },
     { url: `${BASE}/case-studies/toca-football-o2-ahu-refurbishment`, priority: 0.7, changeFrequency: "yearly" },
     { url: `${BASE}/case-studies/warner-leisure-hotel-gunton-hall-ahu`, priority: 0.7, changeFrequency: "yearly" },
+    { url: `${BASE}/case-studies/blackfriars-office-bloom-development-ahu-manufacturing`, priority: 0.7, changeFrequency: "yearly" },
 
     // Supporting pages
-    { url: `${BASE}/about`, priority: 0.6, changeFrequency: "monthly" },
+    { url: `${BASE}/about-us`, priority: 0.6, changeFrequency: "monthly" },
     { url: `${BASE}/contact`, priority: 0.7, changeFrequency: "monthly" },
     { url: `${BASE}/get-a-quote`, priority: 0.7, changeFrequency: "monthly" },
     { url: `${BASE}/careers`, priority: 0.5, changeFrequency: "monthly" },
-    { url: `${BASE}/blogs`, priority: 0.6, changeFrequency: "weekly" },
-    { url: `${BASE}/resources`, priority: 0.5, changeFrequency: "monthly" },
+    { url: `${BASE}/our-blogs`, priority: 0.6, changeFrequency: "weekly" },
+    { url: `${BASE}/hvac-resources`, priority: 0.5, changeFrequency: "monthly" },
     { url: `${BASE}/shop`, priority: 0.6, changeFrequency: "weekly" },
     { url: `${BASE}/products`, priority: 0.6, changeFrequency: "weekly" },
   ];
