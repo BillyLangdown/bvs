@@ -1,8 +1,15 @@
 import { sendCareersEmail } from "@/lib/email";
+import { verifyRecaptcha } from "@/lib/recaptcha";
 
 export async function POST(req) {
   try {
     const formData = await req.formData();
+
+    const recaptchaToken = String(formData.get("recaptchaToken") || "")
+    const isHuman = await verifyRecaptcha(recaptchaToken)
+    if (!isHuman) {
+      return Response.json({ error: "reCAPTCHA check failed. Please try again." }, { status: 400 })
+    }
 
     const name = String(formData.get("name") || "").trim();
     const email = String(formData.get("email") || "").trim();

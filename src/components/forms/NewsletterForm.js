@@ -1,25 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 
-export function NewsletterForm({ source = "newsletter_page", compact = false }) {
+function NewsletterFormInner({ source = "newsletter_page", compact = false }) {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
 
-  async function onSubmit(e) {
+  const onSubmit = useCallback(async (e) => {
     e.preventDefault();
+    if (!executeRecaptcha) return;
     setStatus("loading");
     setMessage("");
 
     try {
+      const recaptchaToken = await executeRecaptcha("newsletter_form");
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source }),
+        body: JSON.stringify({ email, source, recaptchaToken }),
       });
       const data = await res.json().catch(() => null);
       if (!res.ok) throw new Error(data?.error || "Signup failed");
@@ -31,7 +35,7 @@ export function NewsletterForm({ source = "newsletter_page", compact = false }) 
       setStatus("error");
       setMessage(err?.message || "Something went wrong.");
     }
-  }
+  }, [executeRecaptcha, email, source]);
 
   return (
     <form
@@ -115,3 +119,10 @@ export function NewsletterForm({ source = "newsletter_page", compact = false }) 
   );
 }
 
+export function NewsletterForm({ source = "newsletter_page", compact = false }) {
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""}>
+      <NewsletterFormInner source={source} compact={compact} />
+    </GoogleReCaptchaProvider>
+  );
+}

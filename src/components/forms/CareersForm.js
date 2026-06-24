@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
-export function CareersForm() {
+function CareersFormInner() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [values, setValues] = useState({ name: "", email: "", mobile: "", message: "" });
@@ -33,16 +35,19 @@ export function CareersForm() {
     setFile(f);
   }
 
-  async function onSubmit(e) {
+  const onSubmit = useCallback(async (e) => {
     e.preventDefault();
+    if (!executeRecaptcha) return;
     setStatus("loading");
     setErrorMessage("");
 
+    const recaptchaToken = await executeRecaptcha("careers_form");
     const formData = new FormData();
     formData.set("name", values.name);
     formData.set("email", values.email);
     formData.set("mobile", values.mobile);
     formData.set("message", values.message);
+    formData.set("recaptchaToken", recaptchaToken);
     if (file) formData.set("cv", file);
 
     try {
@@ -56,7 +61,7 @@ export function CareersForm() {
       setStatus("error");
       setErrorMessage(err?.message || "Something went wrong. Please call us on 01256 518170.");
     }
-  }
+  }, [executeRecaptcha, values, file]);
 
   if (status === "success") {
     return (
@@ -164,5 +169,13 @@ export function CareersForm() {
         </button>
       </div>
     </form>
+  );
+}
+
+export function CareersForm() {
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""}>
+      <CareersFormInner />
+    </GoogleReCaptchaProvider>
   );
 }

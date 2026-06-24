@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 /* ── Shared input styles ───────────────────────────────────────────────── */
 
@@ -194,19 +195,22 @@ function SuccessView() {
 /* ── Shared submit hook ────────────────────────────────────────────────── */
 
 function useSubmit({ type, buildPayload, requiredFields }) {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const canSubmit = status !== "loading" && requiredFields.every((v) => String(v).trim());
 
-  async function onSubmit(e) {
+  const onSubmit = useCallback(async (e) => {
     e.preventDefault();
+    if (!executeRecaptcha) return;
     setStatus("loading");
     setErrorMsg("");
     try {
+      const recaptchaToken = await executeRecaptcha("custom_build_form");
       const res = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ productSlug: `custom-build-${type}`, ...buildPayload() }),
+        body: JSON.stringify({ productSlug: `custom-build-${type}`, recaptchaToken, ...buildPayload() }),
       });
       const data = await res.json().catch(() => null);
       if (!res.ok) throw new Error(data?.error || "Failed to send");
@@ -215,7 +219,7 @@ function useSubmit({ type, buildPayload, requiredFields }) {
       setStatus("error");
       setErrorMsg(err?.message || "Something went wrong. Please try calling us.");
     }
-  }
+  }, [executeRecaptcha, type, buildPayload]);
 
   return { status, errorMsg, canSubmit, onSubmit };
 }
@@ -438,7 +442,7 @@ const TYPES = [
   { id: "battery",   label: "Electric Heater Battery" },
 ];
 
-export function CustomBuildEnquiry({ typeImages = {} }) {
+function CustomBuildEnquiryInner({ typeImages = {} }) {
   const [active, setActive] = useState(null);
   const formRef = useRef(null);
 
@@ -507,5 +511,13 @@ export function CustomBuildEnquiry({ typeImages = {} }) {
         </div>
       )}
     </div>
+  );
+}
+
+export function CustomBuildEnquiry({ typeImages = {} }) {
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""}>
+      <CustomBuildEnquiryInner typeImages={typeImages} />
+    </GoogleReCaptchaProvider>
   );
 }

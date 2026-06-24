@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const COUNTY_OPTIONS = [
   "South",
@@ -32,7 +33,8 @@ function StepIndicator({ step, label }) {
   );
 }
 
-export function ProductEnquiryForm({ productSlug, productName }) {
+function ProductEnquiryFormInner({ productSlug, productName }) {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -56,16 +58,19 @@ export function ProductEnquiryForm({ productSlug, productName }) {
     message.trim() &&
     status !== "loading";
 
-  async function onSubmit(e) {
+  const onSubmit = useCallback(async (e) => {
     e.preventDefault();
+    if (!executeRecaptcha) return;
     setStatus("loading");
     setErrorMsg("");
     try {
+      const recaptchaToken = await executeRecaptcha("product_enquiry_form");
       const res = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           productSlug,
+          recaptchaToken,
           name: `${firstName.trim()} ${lastName.trim()}`,
           email: email.trim(),
           phone: phone.trim(),
@@ -84,7 +89,7 @@ export function ProductEnquiryForm({ productSlug, productName }) {
       setStatus("error");
       setErrorMsg(err?.message || "Something went wrong. Please try calling us.");
     }
-  }
+  }, [executeRecaptcha, productSlug, firstName, lastName, email, phone, county, product, message]);
 
   if (status === "success") {
     return (
@@ -213,5 +218,13 @@ export function ProductEnquiryForm({ productSlug, productName }) {
       </div>
 
     </form>
+  );
+}
+
+export function ProductEnquiryForm({ productSlug, productName }) {
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""}>
+      <ProductEnquiryFormInner productSlug={productSlug} productName={productName} />
+    </GoogleReCaptchaProvider>
   );
 }

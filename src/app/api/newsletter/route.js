@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { verifyRecaptcha } from "@/lib/recaptcha";
 
 const FROM = process.env.EMAIL_FROM || "BVS Website <forms@bvs-ltd.co.uk>";
 
@@ -11,6 +12,11 @@ export async function POST(req) {
     const body = await req.json();
     const email = String(body?.email || "").trim();
     const source = String(body?.source || "website").trim();
+
+    const isHuman = await verifyRecaptcha(body?.recaptchaToken)
+    if (!isHuman) {
+      return Response.json({ error: "reCAPTCHA check failed. Please try again." }, { status: 400 })
+    }
 
     if (!email || !email.includes("@")) {
       return Response.json({ error: "Please enter a valid email." }, { status: 400 });

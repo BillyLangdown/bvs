@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useCallback } from "react";
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const services = [
   "AHU Refurbishment",
@@ -28,7 +29,8 @@ const COUNTY_OPTIONS = [
   "Scotland",
 ];
 
-export function ContactPageForm() {
+function ContactPageFormInner() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [step, setStep] = useState(1);
@@ -57,11 +59,13 @@ export function ContactPageForm() {
     [values, status],
   );
 
-  async function onSubmit(e) {
+  const onSubmit = useCallback(async (e) => {
     e.preventDefault();
+    if (!executeRecaptcha) return;
     setStatus("loading");
     setErrorMsg("");
     try {
+      const recaptchaToken = await executeRecaptcha("contact_form");
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -69,6 +73,7 @@ export function ContactPageForm() {
           name: values.name,
           email: values.email,
           company: values.company,
+          recaptchaToken,
           message: [
             values.service ? `[${values.service}]` : "",
             values.county ? `Region: ${values.county}` : "",
@@ -85,7 +90,7 @@ export function ContactPageForm() {
       setStatus("error");
       setErrorMsg(err?.message || "Something went wrong. Please try calling us.");
     }
-  }
+  }, [executeRecaptcha, values]);
 
   if (status === "success") {
     return (
@@ -288,5 +293,13 @@ export function ContactPageForm() {
       </div>
 
     </form>
+  );
+}
+
+export function ContactPageForm() {
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""}>
+      <ContactPageFormInner />
+    </GoogleReCaptchaProvider>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useCallback } from "react";
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const COUNTY_OPTIONS = [
   "South",
@@ -28,7 +29,8 @@ const SERVICE_OPTIONS = [
   "Other",
 ];
 
-export function QuickQuoteForm({ defaultService = "" }) {
+function QuickQuoteFormInner({ defaultService = "" }) {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [step, setStep] = useState(1);
@@ -57,11 +59,13 @@ export function QuickQuoteForm({ defaultService = "" }) {
     setValues((v) => ({ ...v, [field]: value }));
   }
 
-  async function onSubmit(e) {
+  const onSubmit = useCallback(async (e) => {
     e.preventDefault();
+    if (!executeRecaptcha) return;
     setStatus("loading");
     setErrorMessage("");
     try {
+      const recaptchaToken = await executeRecaptcha("quick_quote_form");
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -71,6 +75,7 @@ export function QuickQuoteForm({ defaultService = "" }) {
           mobile: values.mobile,
           service: values.service,
           message: values.message,
+          recaptchaToken,
         }),
       });
       const data = await res.json().catch(() => null);
@@ -82,7 +87,7 @@ export function QuickQuoteForm({ defaultService = "" }) {
       setStatus("error");
       setErrorMessage(err?.message || "Something went wrong. Please call us on 01256 518170.");
     }
-  }
+  }, [executeRecaptcha, values, defaultService]);
 
   if (status === "success") {
     return (
@@ -235,5 +240,13 @@ export function QuickQuoteForm({ defaultService = "" }) {
       </div>
 
     </form>
+  );
+}
+
+export function QuickQuoteForm({ defaultService = "" }) {
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""}>
+      <QuickQuoteFormInner defaultService={defaultService} />
+    </GoogleReCaptchaProvider>
   );
 }

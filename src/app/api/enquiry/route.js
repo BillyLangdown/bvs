@@ -1,4 +1,5 @@
 import { sendProductEnquiryEmail } from "@/lib/email";
+import { verifyRecaptcha } from "@/lib/recaptcha";
 
 async function postToWebhook(payload) {
   const webhookUrl = process.env.FORMS_WEBHOOK_URL;
@@ -13,6 +14,11 @@ async function postToWebhook(payload) {
 export async function POST(req) {
   try {
     const body = await req.json();
+
+    const isHuman = await verifyRecaptcha(body?.recaptchaToken)
+    if (!isHuman) {
+      return Response.json({ error: "reCAPTCHA check failed. Please try again." }, { status: 400 })
+    }
 
     // Honeypot — bots fill hidden fields, humans don't
     if (body?.hp) {
