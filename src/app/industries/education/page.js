@@ -181,7 +181,7 @@ export default function EducationPage() {
                   },
                   {
                     period: "Term Time & Weekends",
-                    desc: "Condition surveys, inspections, and minor works. Minimal disruption — no noise or access to teaching areas required.",
+                    desc: "Condition surveys, inspections, and minor works. Minimal disruption, with no noise or access to teaching areas required.",
                     color: "border-white/20",
                   },
                 ].map((item) => (

@@ -204,7 +204,7 @@ export default function RetailPage() {
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
               <p className="mt-6 text-sm leading-6 text-slate-500">
-                Commercial property operators face growing pressure on energy performance. EPC ratings affect asset value and lease terms. AHU plant — particularly ageing belt-driven fan sets — is typically one of the largest energy consumers in the building. Targeted upgrades to EC fans and demand-controlled ventilation deliver measurable reduction at predictable cost.
+                Commercial property operators face growing pressure on energy performance. EPC ratings affect asset value and lease terms. AHU plant, particularly ageing belt-driven fan sets, is typically one of the largest energy consumers in the building. Targeted upgrades to EC fans and demand-controlled ventilation deliver measurable reduction at predictable cost.
               </p>
             </ScrollReveal>
 

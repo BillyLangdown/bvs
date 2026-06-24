@@ -42,7 +42,7 @@ export async function POST(req) {
     </table>
   </div>
   <div style="padding:16px 28px;border-top:1px solid #e2e8f0;background:#f8fafc;">
-    <p style="margin:0;font-size:11px;color:#94a3b8;">Subscription — sent from bvs-ltd.co.uk</p>
+    <p style="margin:0;font-size:11px;color:#94a3b8;">Subscription, sent from bvs-ltd.co.uk</p>
   </div>
 </div>
 </body>
