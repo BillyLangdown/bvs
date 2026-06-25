@@ -266,6 +266,7 @@ export default function AHUMaintenancePage() {
                   src="/two-workers.webp"
                   alt="BVS engineers carrying out AHU maintenance inspection on site"
                   fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
                 />
               </div>
@@ -342,6 +343,7 @@ export default function AHUMaintenancePage() {
                   src="/person-working.webp"
                   alt="BVS engineer carrying out AHU service works"
                   fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
                 />
               </div>

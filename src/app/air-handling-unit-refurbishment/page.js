@@ -475,6 +475,7 @@ export default function AHURefurbishmentPage() {
                   src="/ahu-refurbishment-hero2.webp"
                   alt="BVS engineer carrying out AHU refurbishment works"
                   fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
                 />
               </div>
