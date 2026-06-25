@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { FormPrivacyNote } from "./FormPrivacyNote";
 
 function CareersFormInner() {
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -159,7 +160,10 @@ function CareersFormInner() {
       )}
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
-        <p className="text-xs text-slate-400">We will aim to respond within 24 hours.</p>
+        <div className="flex flex-col gap-1">
+          <p className="text-xs text-slate-400">We will aim to respond within 24 hours.</p>
+          <FormPrivacyNote />
+        </div>
         <button
           type="submit"
           disabled={status === "loading" || !values.name.trim() || !values.email.trim() || !values.mobile.trim()}

@@ -2,7 +2,7 @@ import "./globals.css";
 import { Navigation } from "@/components/site/Navigation";
 import { Footer } from "@/components/site/Footer";
 import { NewsletterBand } from "@/components/site/NewsletterBand";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { AnalyticsLoader } from "@/components/site/AnalyticsLoader";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -13,9 +13,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  metadataBase: process.env.WP_BASE_URL
-    ? new URL(process.env.WP_BASE_URL)
-    : new URL("https://www.bvs-ltd.co.uk"),
+  metadataBase: new URL("https://www.bvs-ltd.co.uk"),
   title: {
     default: "BVS | Building Ventilation Solutions",
     template: "%s | BVS",
@@ -44,9 +42,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable}>
-      {process.env.NEXT_PUBLIC_GA_ID && (
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
-      )}
       <body className="antialiased" suppressHydrationWarning>
         <div className="min-h-dvh bg-white text-slate-900">
           <Navigation />
@@ -54,6 +49,7 @@ export default function RootLayout({ children }) {
           <NewsletterBand />
           <Footer />
         </div>
+        <AnalyticsLoader gaId={process.env.NEXT_PUBLIC_GA_ID} />
       </body>
     </html>
   );

@@ -21,8 +21,21 @@ export async function POST(req) {
       return Response.json({ error: "Please complete all required fields." }, { status: 400 });
     }
 
+    const ALLOWED_MIME = [
+      "application/pdf",
+      "application/msword",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    ];
+    const MAX_FILE_SIZE = 10 * 1024 * 1024;
+
     let attachment = null;
     if (file && file.size > 0) {
+      if (!ALLOWED_MIME.includes(file.type)) {
+        return Response.json({ error: "Only PDF or Word documents are accepted." }, { status: 400 });
+      }
+      if (file.size > MAX_FILE_SIZE) {
+        return Response.json({ error: "File must be under 10 MB." }, { status: 400 });
+      }
       const buffer = Buffer.from(await file.arrayBuffer());
       attachment = { filename: file.name, content: buffer };
     }

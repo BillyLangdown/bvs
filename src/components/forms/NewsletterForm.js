@@ -11,6 +11,7 @@ function NewsletterFormInner({ source = "newsletter_page", compact = false }) {
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
+  const canSubmit = email.trim() && consent && status !== "loading";
 
   const onSubmit = useCallback(async (e) => {
     e.preventDefault();
@@ -72,7 +73,7 @@ function NewsletterFormInner({ source = "newsletter_page", compact = false }) {
               className="mt-0.5 h-4 w-4 shrink-0 accent-[#297858]"
             />
             <span className="text-xs leading-relaxed text-slate-500">
-              I agree to receive occasional email updates from BVS. You can unsubscribe at any time.{" "}
+              I agree to receive occasional email updates from BVS. You can unsubscribe at any time by contacting us.{" "}
               <a href="/privacy-policy" className="underline hover:text-slate-700">
                 Privacy Policy
               </a>
@@ -92,8 +93,25 @@ function NewsletterFormInner({ source = "newsletter_page", compact = false }) {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+          <div className="sm:col-span-2">
+            <label className="flex cursor-pointer items-start gap-3">
+              <input
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-[#297858]"
+              />
+              <span className="text-xs leading-relaxed text-slate-500">
+                I agree to receive occasional email updates from BVS. You can unsubscribe at any time by contacting us.{" "}
+                <a href="/privacy-policy" className="underline hover:text-slate-700">
+                  Privacy Policy
+                </a>
+                .
+              </span>
+            </label>
+          </div>
           <div className="sm:pt-6">
-            <Button type="submit" disabled={status === "loading"}>
+            <Button type="submit" disabled={!canSubmit}>
               {status === "loading" ? "Subscribing…" : "Subscribe"}
             </Button>
           </div>
