@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { FormPrivacyNote } from "./FormPrivacyNote";
 
 /* ── Shared input styles ───────────────────────────────────────────────── */
 
@@ -143,7 +144,10 @@ function SubmitRow({ canSubmit, status, errorMsg, step, onBack }) {
         <p className="border-l-2 border-red-500 pl-3 text-sm text-red-600">{errorMsg}</p>
       )}
       <div className={`flex-col gap-3 pt-1 sm:flex sm:flex-row sm:items-center sm:justify-between sm:gap-4${step === 1 ? " hidden" : " flex"}`}>
-        <p className="text-xs text-slate-400">Response within one working day.</p>
+        <div className="flex flex-col gap-1">
+          <p className="text-xs text-slate-400">Response within one working day.</p>
+          <FormPrivacyNote />
+        </div>
         <div className="flex items-center gap-4">
           <button type="button" onClick={onBack} className="sm:hidden text-[11px] text-slate-400 underline underline-offset-2">
             Back

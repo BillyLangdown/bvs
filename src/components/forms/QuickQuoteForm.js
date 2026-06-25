@@ -2,6 +2,7 @@
 
 import { useMemo, useState, useCallback } from "react";
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { FormPrivacyNote } from "./FormPrivacyNote";
 
 const COUNTY_OPTIONS = [
   "South",
@@ -220,7 +221,10 @@ function QuickQuoteFormInner({ defaultService = "" }) {
 
       {/* Submit row — hidden on mobile step 1 */}
       <div className={`flex-col gap-3 sm:flex sm:flex-row sm:items-center sm:justify-between sm:gap-4${step === 1 ? " hidden" : " flex"}`}>
-        <p className="text-xs text-slate-400">We will aim to respond within 24 hours.</p>
+        <div className="flex flex-col gap-1">
+          <p className="text-xs text-slate-400">We will aim to respond within 24 hours.</p>
+          <FormPrivacyNote />
+        </div>
         <div className="flex items-center gap-4">
           <button
             type="button"

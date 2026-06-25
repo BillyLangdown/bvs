@@ -199,6 +199,7 @@ export default function DuctingRepairPage() {
             src="/hotel.webp"
             alt="Marriott Forest of Arden swimming pool, BVS ductwork troubleshooting"
             fill
+            sizes="100vw"
             className="object-cover opacity-80 scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#111418] via-[#111418]/50 to-[#111418]/40" />

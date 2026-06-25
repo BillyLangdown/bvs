@@ -2,6 +2,7 @@
 
 import { useMemo, useState, useCallback } from "react";
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { FormPrivacyNote } from "./FormPrivacyNote";
 
 const services = [
   "AHU Refurbishment",
@@ -264,7 +265,10 @@ function ContactPageFormInner() {
 
       {/* Submit row */}
       <div className={`flex-col gap-3 pt-1 sm:flex sm:flex-row sm:items-center sm:justify-between sm:gap-4${step === 1 ? " hidden" : " flex"}`}>
-        <p className="text-xs text-slate-400">No obligation. Response within one working day.</p>
+        <div className="flex flex-col gap-1">
+          <p className="text-xs text-slate-400">No obligation. Response within one working day.</p>
+          <FormPrivacyNote />
+        </div>
         <div className="flex items-center gap-4">
           <button
             type="button"
