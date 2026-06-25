@@ -1,8 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useCallback } from "react";
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Button } from "@/components/ui/Button";
 import { Input, Textarea } from "@/components/ui/Input";
+import { FormPrivacyNote } from "./FormPrivacyNote";
 
 const COUNTY_OPTIONS = [
   "South",
@@ -16,8 +18,9 @@ const COUNTY_OPTIONS = [
   "Scotland",
 ];
 
-export function ContactForm() {
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+function ContactFormInner() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
   const [values, setValues] = useState({
     name: "",
@@ -40,16 +43,18 @@ export function ContactForm() {
     setValues((v) => ({ ...v, [field]: value }));
   }
 
-  async function onSubmit(e) {
+  const onSubmit = useCallback(async (e) => {
     e.preventDefault();
+    if (!executeRecaptcha) return;
     setStatus("loading");
     setMessage("");
 
     try {
+      const recaptchaToken = await executeRecaptcha("contact_form");
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        body: JSON.stringify({ ...values, recaptchaToken }),
       });
       const data = await res.json().catch(() => null);
       if (!res.ok) throw new Error(data?.error || "Message failed to send");
@@ -61,7 +66,7 @@ export function ContactForm() {
       setStatus("error");
       setMessage(err?.message || "Something went wrong.");
     }
-  }
+  }, [executeRecaptcha, values]);
 
   return (
     <form onSubmit={onSubmit} className="grid gap-4">
@@ -118,20 +123,27 @@ export function ContactForm() {
         required
       />
 
-      <div className="flex items-center gap-3">
-        <Button type="submit" disabled={!canSubmit}>
-          {status === "loading" ? "Sending…" : "Send message"}
-        </Button>
-        {message ? (
-          <p
-            className={`text-sm ${
-              status === "error" ? "text-red-600" : "text-zinc-600"
-            }`}
-          >
-            {message}
-          </p>
-        ) : null}
+      <div className="flex flex-col gap-3">
+        <div className="flex items-center gap-3">
+          <Button type="submit" disabled={!canSubmit}>
+            {status === "loading" ? "Sending…" : "Send message"}
+          </Button>
+          {message ? (
+            <p className={`text-sm ${status === "error" ? "text-red-600" : "text-zinc-600"}`}>
+              {message}
+            </p>
+          ) : null}
+        </div>
+        <FormPrivacyNote />
       </div>
     </form>
+  );
+}
+
+export function ContactForm() {
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""}>
+      <ContactFormInner />
+    </GoogleReCaptchaProvider>
   );
 }
