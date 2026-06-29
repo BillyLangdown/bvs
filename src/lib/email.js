@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 
 const FROM = process.env.EMAIL_FROM || "BVS Enquiries <forms@bvs-ltd.co.uk>";
-const TO = process.env.EMAIL_TO || "enquiries@bvs-ltd.co.uk";
+const TO = process.env.EMAIL_TO || "info@bvs-ltd.co.uk";
 
 function getResend() {
   return new Resend(process.env.RESEND_API_KEY);
