@@ -71,6 +71,44 @@ const nextConfig = {
       { source: "/resources",                                destination: "/hvac-resources",                          permanent: true },
       { source: "/resources/",                               destination: "/hvac-resources",                          permanent: true },
 
+      // ── Old sport/gym/leisure pages ─────────────────────────────────
+      { source: "/indoor-gym-ventilation",                   destination: "/sport-facility-ventilation",              permanent: true },
+      { source: "/indoor-gym-ventilation/",                  destination: "/sport-facility-ventilation",              permanent: true },
+      { source: "/gym-ventilation",                          destination: "/sport-facility-ventilation",              permanent: true },
+      { source: "/gym-ventilation/",                         destination: "/sport-facility-ventilation",              permanent: true },
+      { source: "/sport-facilities-ventilation",             destination: "/sport-facility-ventilation",              permanent: true },
+      { source: "/sport-facilities-ventilation/",            destination: "/sport-facility-ventilation",              permanent: true },
+
+      // ── Old boiler/kitchen pages ─────────────────────────────────────
+      { source: "/boiler-installation-commissioning",        destination: "/commercial-boiler-and-heating-services",  permanent: true },
+      { source: "/boiler-installation-commissioning/",       destination: "/commercial-boiler-and-heating-services",  permanent: true },
+      { source: "/commercial-kitchen-ventilation",           destination: "/hotel-leisure-ventilation",               permanent: true },
+      { source: "/commercial-kitchen-ventilation/",          destination: "/hotel-leisure-ventilation",               permanent: true },
+
+      // ── Old event/venue page ─────────────────────────────────────────
+      { source: "/event-venue-ventilation",                  destination: "/retail-ventilation",                      permanent: true },
+      { source: "/event-venue-ventilation/",                 destination: "/retail-ventilation",                      permanent: true },
+
+      // ── Misc old pages → homepage ────────────────────────────────────
+      { source: "/corona-virus-guidlines",                   destination: "/",                                        permanent: true },
+      { source: "/corona-virus-guidlines/",                  destination: "/",                                        permanent: true },
+      { source: "/how-were-helping-unlock-uk-buildings-through-safe-ventilation", destination: "/", permanent: true },
+      { source: "/how-were-helping-unlock-uk-buildings-through-safe-ventilation/", destination: "/", permanent: true },
+      { source: "/thank-you",                                destination: "/",                                        permanent: true },
+      { source: "/thank-you/",                               destination: "/",                                        permanent: true },
+
+      // ── Jobs page ────────────────────────────────────────────────────
+      { source: "/job-vacancy",                              destination: "/careers",                                 permanent: true },
+      { source: "/job-vacancy/",                             destination: "/careers",                                 permanent: true },
+
+      // ── Old blog URLs ────────────────────────────────────────────────
+      { source: "/our-blogs-2",                              destination: "/our-blogs",                               permanent: true },
+      { source: "/our-blogs-2/",                             destination: "/our-blogs",                               permanent: true },
+      { source: "/our-blogs/page/:page",                     destination: "/our-blogs",                               permanent: true },
+      { source: "/our-blogs-page-:page",                     destination: "/our-blogs",                               permanent: true },
+      { source: "/our-blogs-page-:page/",                    destination: "/our-blogs",                               permanent: true },
+      { source: "/category/:slug*",                          destination: "/our-blogs",                               permanent: true },
+
       // ── Old site pages being dropped → nearest equivalent ────────────
       { source: "/ventilation-consultants",                  destination: "/air-handling-unit-troubleshooting",       permanent: true },
       { source: "/ventilation-consultants/",                 destination: "/air-handling-unit-troubleshooting",       permanent: true },
@@ -119,15 +157,9 @@ const nextConfig = {
       { source: "/education-ventilation-2",                  destination: "/education-ventilation",                   permanent: true },
       { source: "/education-ventilation-2/",                 destination: "/education-ventilation",                   permanent: true },
 
-      // ── Dropped WooCommerce filter products → shop ───────────────────
-      { source: "/product/bespoke_filter_selection",         destination: "/shop",                                    permanent: true },
-      { source: "/product/bespoke_filter_selection/",        destination: "/shop",                                    permanent: true },
-      { source: "/product/rigid-bag-filters",                destination: "/shop",                                    permanent: true },
-      { source: "/product/rigid-bag-filters/",               destination: "/shop",                                    permanent: true },
-      { source: "/product/pleated-panel-filters",            destination: "/shop",                                    permanent: true },
-      { source: "/product/pleated-panel-filters/",           destination: "/shop",                                    permanent: true },
-      { source: "/product/disposable-bag-filters",           destination: "/shop",                                    permanent: true },
-      { source: "/product/disposable-bag-filters/",          destination: "/shop",                                    permanent: true },
+      // ── WooCommerce products and categories → shop (catch-all) ─────────
+      { source: "/product/:slug*",                           destination: "/shop",                                    permanent: true },
+      { source: "/product-category/:slug*",                  destination: "/shop",                                    permanent: true },
 
       // ── Collapse old redirect chains to single hops ───────────────────
       { source: "/hvac-maintenance",                         destination: "/air-handling-unit-maintenance",           permanent: true },
