@@ -151,22 +151,26 @@ export async function getProductCategories({ revalidate = 600 } = {}) {
 
 export async function getShopProductBySlug(slug, { revalidate = 300 } = {}) {
   const [wpItems, storeProduct] = await Promise.all([
+    // WP REST API product CPT may require auth or may not be publicly registered.
+    // Catch so a 401/403 doesn't kill the whole request — Store API is the fallback.
     wpFetch("product", {
       query: {
         slug,
         _fields: "id,slug,title,excerpt,link,featured_media,product_cat,meta,product_badge",
       },
       next: { revalidate },
-    }),
+    }).catch(() => []),
     getStoreProductBySlug(slug, { revalidate }).catch(() => null),
   ]);
 
-  const p = wpItems?.[0];
-  if (!p) return null;
+  const p = wpItems?.[0] ?? null;
+
+  // Must have at least one data source
+  if (!p && !storeProduct) return null;
 
   // Resolve featured image — prefer WP media API, fall back to Store API image
   let imageUrl = storeProduct?.images?.[0]?.src || null;
-  if (p.featured_media) {
+  if (p?.featured_media) {
     try {
       const media = await wpFetch(`media/${p.featured_media}`, {
         query: { _fields: "id,source_url,media_details" },
@@ -181,7 +185,7 @@ export async function getShopProductBySlug(slug, { revalidate = 300 } = {}) {
   }
 
   // _et_pb_old_content holds clean HTML written before the Divi builder took over
-  const rawContent = p.meta?._et_pb_old_content || "";
+  const rawContent = p?.meta?._et_pb_old_content || "";
   const content = rawContent
     .replace(/\s+data-(?:start|end)="[^"]*"/g, "")
     .replace(/\[[\w/][^\]]*\]/g, "")
@@ -208,14 +212,17 @@ export async function getShopProductBySlug(slug, { revalidate = 300 } = {}) {
       })}`
     : null;
 
+  const wpTitle = p ? stripHtml(p.title?.rendered || "") : "";
+  const wpExcerpt = p ? (p.excerpt?.rendered || "") : "";
+
   return {
-    id: p.id,
-    slug: p.slug,
-    title: decodeHtmlEntities(stripHtml(p.title?.rendered || "")),
-    excerpt: stripHtml(p.excerpt?.rendered || ""),
+    id: p?.id ?? storeProduct?.id,
+    slug: p?.slug ?? storeProduct?.slug ?? slug,
+    title: decodeHtmlEntities(wpTitle || storeProduct?.name || ""),
+    excerpt: stripHtml(wpExcerpt || storeProduct?.short_description || ""),
     content: content || null,
-    link: p.link || "",
-    categories: p.product_cat || [],
+    link: p?.link || storeProduct?.permalink || "",
+    categories: p?.product_cat || [],
     imageUrl,
     images: (storeProduct?.images || []).map((img) => ({
       src: img.src,
@@ -234,8 +241,8 @@ export async function getShopProductBySlug(slug, { revalidate = 300 } = {}) {
       terms: (a.terms || []).map((t) => t.name),
     })),
     // Stock: YITH product_badge is the sole source of truth. No fallback.
-    stockBadge: p.product_badge || null,
-    stockClass: p.product_badge
+    stockBadge: p?.product_badge || null,
+    stockClass: p?.product_badge
       ? p.product_badge.toLowerCase().replace(/\s+/g, "-")
       : null,
   };
