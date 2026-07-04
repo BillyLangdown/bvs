@@ -3,11 +3,9 @@ import { Container } from "@/components/site/Container";
 import { WpContent } from "@/components/content/WpContent";
 import { getPostBySlug, getPosts, stripHtml } from "@/lib/wordpress/api";
 
-export const revalidate = 300;
-
 export async function generateStaticParams() {
   try {
-    const posts = await getPosts({ perPage: 100, revalidate: 3600 });
+    const posts = await getPosts({ perPage: 50, revalidate: 3600 });
     return posts.map((p) => ({ slug: p.slug }));
   } catch {
     return [];
