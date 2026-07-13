@@ -1,10 +1,23 @@
-import DOMPurify from "isomorphic-dompurify";
+import sanitizeHtml from "sanitize-html";
+
+const ALLOWED_TAGS = [
+  ...sanitizeHtml.defaults.allowedTags,
+  "h1", "h2", "figure", "figcaption", "span", "div", "img", "u", "s",
+];
+
+const ALLOWED_ATTRIBUTES = {
+  ...sanitizeHtml.defaults.allowedAttributes,
+  a: ["href", "name", "target", "rel", "title", "class"],
+  img: ["src", "alt", "title", "width", "height", "loading", "class"],
+  "*": ["class", "id"],
+};
 
 export function WpContent({ html, className = "" }) {
   if (!html) return null;
-  const clean = DOMPurify.sanitize(html, {
-    USE_PROFILES: { html: true },
-    ADD_ATTR: ["target", "rel"],
+  const clean = sanitizeHtml(html, {
+    allowedTags: ALLOWED_TAGS,
+    allowedAttributes: ALLOWED_ATTRIBUTES,
+    allowedSchemes: ["http", "https", "mailto", "tel"],
   });
   return (
     <div
