@@ -3,7 +3,7 @@ import { ContactPageForm } from "@/components/forms/ContactPageForm";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Contact Us | BVS Building Ventilation Solutions",
+  title: "Contact Us",
   description:
     "Speak directly with an AHU specialist. Tell us about your project and we'll respond with practical options within one working day.",
 };

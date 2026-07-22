@@ -7,7 +7,7 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
-  title: "AHU Maintenance | Air Handling Unit Servicing | BVS",
+  title: "AHU Maintenance | Air Handling Unit Servicing",
   description:
     "Planned and reactive AHU maintenance services from BVS. Keep your air handling units running efficiently with regular servicing, filter changes, and condition checks. UK nationwide.",
 };

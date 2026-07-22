@@ -158,7 +158,7 @@ const nextConfig = {
       { source: "/education-ventilation-2/",                 destination: "/education-ventilation",                   permanent: true },
 
       // ── WooCommerce products and categories → shop (catch-all) ─────────
-      { source: "/product/:slug*",                           destination: "/shop",                                    permanent: true },
+      { source: "/product/:slug*",                           destination: "/shop/:slug*",                             permanent: true },
       { source: "/product-category/:slug*",                  destination: "/shop",                                    permanent: true },
 
       // ── Collapse old redirect chains to single hops ───────────────────

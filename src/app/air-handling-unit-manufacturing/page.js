@@ -7,7 +7,7 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
-  title: "AHU Manufacturing | BVS Building Ventilation Solutions",
+  title: "AHU Manufacturing",
   description:
     "Custom air handling unit manufacturing from our UK facility. Custom AHUs designed to specification, any size, any configuration, 5–7 week lead time. 40+ years manufacturing experience.",
 };

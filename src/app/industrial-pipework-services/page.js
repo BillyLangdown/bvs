@@ -5,7 +5,7 @@ import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
-  title: "Commercial Pipework | BVS",
+  title: "Commercial Pipework",
   description:
     "Commercial and industrial pipework installation, maintenance, and repair from BVS. Supporting HVAC, heating, and process pipework across the UK.",
 };

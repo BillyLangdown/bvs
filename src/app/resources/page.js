@@ -3,7 +3,7 @@ import { Container } from "@/components/site/Container";
 import Image from "next/image";
 
 export const metadata = {
-  title: "HVAC Resources | BVS Building Ventilation Solutions",
+  title: "HVAC Resources",
   description:
     "Technical articles and guides on air volume calculation, humidity, and cooling and heating loads from the BVS engineering team.",
 };

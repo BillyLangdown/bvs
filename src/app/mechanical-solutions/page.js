@@ -6,7 +6,7 @@ import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
-  title: "Mechanical Solutions | Commercial Mechanical Services | BVS",
+  title: "Mechanical Solutions | Commercial Mechanical Services",
   description:
     "Commercial mechanical solutions from BVS - mechanical & electrical works, industrial pipework, and commercial boiler & heating services. Gas Safe registered. UK nationwide.",
 };

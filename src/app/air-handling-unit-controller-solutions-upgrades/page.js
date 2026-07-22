@@ -9,7 +9,7 @@ import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
-  title: "AHU Controller Solutions & Upgrades | BVS Building Ventilation Solutions",
+  title: "AHU Controller Solutions & Upgrades",
   description:
     "Independent AHU controller supply, installation, and commissioning across the UK. Fault-finding, BMS integration, PCB replacements, and Trend controls, no manufacturer tie-in.",
 };

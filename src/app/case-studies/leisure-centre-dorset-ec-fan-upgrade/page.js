@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Leisure Centre Dorset EC Fan Upgrade | BVS Case Study",
+  title: "Leisure Centre Dorset EC Fan Upgrade Case Study",
   description:
     "BVS upgraded a failing swimming pool AHU at a Dorset leisure centre, replacing belt-driven fans with Ziehl-Abegg GR561-ZID EC fans to restore airflow, humidity control, and protect the building fabric.",
 };

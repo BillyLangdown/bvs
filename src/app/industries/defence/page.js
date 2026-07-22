@@ -6,7 +6,7 @@ import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 
 export const metadata = {
-  title: "Defence & Government Ventilation | BVS Building Ventilation Solutions",
+  title: "Defence & Government Ventilation",
   description:
     "AHU refurbishment and ventilation services for defence and government facilities. Secure site experience. Programme compliance. UK nationwide.",
 };

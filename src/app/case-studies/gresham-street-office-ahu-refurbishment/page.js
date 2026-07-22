@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Gresham Street Office AHU Refurbishment | BVS Case Study",
+  title: "Gresham Street Office AHU Refurbishment Case Study",
   description:
     "BVS refurbished the AHU at a Gresham Street office in London, replacing frost coil, cooling coil, heating coil, filters, fan assembly, and inverter to meet reduced air volume requirements.",
 };

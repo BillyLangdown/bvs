@@ -8,7 +8,7 @@ import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
-  title: "Leisure Centre Ventilation | BVS Building Ventilation Solutions",
+  title: "Leisure Centre Ventilation",
   description:
     "AHU refurbishment, EC fan upgrades, and pool hall ventilation for leisure centres and aquatic facilities. Corrosion-resistant specification. High-humidity environments. UK nationwide.",
 };

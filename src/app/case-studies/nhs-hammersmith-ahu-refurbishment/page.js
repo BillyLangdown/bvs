@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "NHS Hammersmith & Fulham AHU Refurbishment | BVS Case Study",
+  title: "NHS Hammersmith & Fulham AHU Refurbishment Case Study",
   description:
     "BVS carried out a targeted AHU refurbishment at NHS West London Hospital, extending the life of the unit through new components, corrosion treatment, fan repairs, and fresh air damper replacement.",
 };

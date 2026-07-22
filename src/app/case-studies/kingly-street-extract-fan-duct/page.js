@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Kingly Street Office Extract Fan & Duct Installation | BVS Case Study",
+  title: "Kingly Street Office Extract Fan & Duct Installation Case Study",
   description:
     "BVS installed new boiler room ventilation at a Kingly Street office plant room, fitting a 0.752 m³/s supply fan and 0.361 m³/s extract fan with BMS-integrated automatic controls.",
 };

@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Concorde Simulator Ventilation | BVS Case Study",
+  title: "Concorde Simulator Ventilation Case Study",
   description:
     "BVS engineered a heat recovery ventilation solution for the Concorde flight simulator at Brooklands Museum, surpassing promised air volume delivery by over 50% while maintaining CO2 levels well below 800 PPM.",
 };

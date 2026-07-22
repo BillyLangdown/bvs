@@ -5,7 +5,7 @@ import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
-  title: "Validation Surveys | BVS",
+  title: "Validation Surveys",
   description:
     "Entire system condition assessments with a full documented report of findings and proposals. Prioritised, costed recommendations for your ventilation assets.",
 };

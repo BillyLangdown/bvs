@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "TOCA Football O2 Arena AHU Refurbishment | BVS Case Study",
+  title: "TOCA Football O2 Arena AHU Refurbishment Case Study",
   description:
     "BVS refurbished three AHUs at the TOCA Social O2 Arena, repurposing units to meet the air volume requirements for the world's first interactive football and dining experience.",
 };
