@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Blackfriars Office Bloom Development AHU Manufacturing | BVS Case Study",
+  title: "Blackfriars Office Bloom Development AHU Manufacturing Case Study",
   description:
     "BVS designed, manufactured, and installed two bespoke air handling units for the Dorset Rise Bloom office development at Blackfriars, London - including crane lifts, road closures, and full ductwork integration.",
 };

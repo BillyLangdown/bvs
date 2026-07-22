@@ -9,7 +9,7 @@ import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
-  title: "AHU Manufacturing & Installation | BVS Building Ventilation Solutions",
+  title: "AHU Manufacturing & Installation",
   description:
     "Custom air handling unit manufacturing and end-to-end installation from our UK facility. Survey, design, manufacture, and install under one contract. 40+ years experience.",
 };

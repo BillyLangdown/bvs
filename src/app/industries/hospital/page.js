@@ -9,7 +9,7 @@ import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
-  title: "Healthcare & NHS Ventilation | BVS Building Ventilation Solutions",
+  title: "Healthcare & NHS Ventilation",
   description:
     "AHU refurbishment, EC fan upgrades, and validation surveys for NHS and private healthcare. Live clinical environments managed as standard. UK nationwide.",
 };

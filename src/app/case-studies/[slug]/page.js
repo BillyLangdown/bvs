@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
   const local = allCaseStudies.find((cs) => cs.slug === slug);
   if (!local) return {};
   return {
-    title: `${local.title} | BVS Case Study`,
+    title: `${local.title} Case Study`,
     description: local.summary,
   };
 }

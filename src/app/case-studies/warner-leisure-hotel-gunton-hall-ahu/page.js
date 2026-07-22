@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Warner Leisure Hotel Gunton Hall AHU Manufacturing | BVS Case Study",
+  title: "Warner Leisure Hotel Gunton Hall AHU Manufacturing Case Study",
   description:
     "BVS designed, manufactured, and installed a bespoke pool hall AHU at Warner Leisure Hotel Gunton Hall, replacing an end-of-life unit with a tailor-made, corrosion-resistant unit fitted with a plate heat exchanger and Trend controls.",
 };

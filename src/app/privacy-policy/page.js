@@ -1,7 +1,7 @@
 import { Container } from "@/components/site/Container";
 
 export const metadata = {
-  title: "Privacy Policy | BVS Building Ventilation Solutions",
+  title: "Privacy Policy",
   description: "Privacy Policy for BVS Building Ventilation Solutions Ltd — how we collect, use, and protect your personal data.",
 };
 

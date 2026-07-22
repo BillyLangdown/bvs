@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Ringwood Leisure AHU Controls Refurbishment | BVS Case Study",
+  title: "Ringwood Leisure AHU Controls Refurbishment Case Study",
   description:
     "BVS saved a leisure centre from a £100,000 AHU replacement by refurbishing the control systems instead. New Trend controllers, sensors, and full commissioning restored reliable automated operation.",
 };

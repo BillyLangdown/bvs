@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Burlington Street Office Coil Replacement | BVS Case Study",
+  title: "Burlington Street Office Coil Replacement Case Study",
   description:
     "BVS designed, manufactured, and installed a replacement frost coil at the Burlington Street Office, splitting the coil into two sections to overcome plantroom access constraints.",
 };

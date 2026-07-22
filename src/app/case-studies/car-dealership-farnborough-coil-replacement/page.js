@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Car Dealership Farnborough Frost Coil Replacement | BVS Case Study",
+  title: "Car Dealership Farnborough Frost Coil Replacement Case Study",
   description:
     "BVS designed, manufactured, and installed a replacement frost coil for an AHU at a car dealership in Farnborough, including removal of the existing coil, new pipework, insulation, and commissioning.",
 };

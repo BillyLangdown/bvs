@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/site/Container";
 
 export const metadata = {
-  title: "Industries We Serve | BVS Building Ventilation Solutions",
+  title: "Industries We Serve",
   description:
     "BVS delivers AHU refurbishment, EC fan upgrades, and ventilation services across healthcare, defence, education, hotels, leisure, and retail. 40+ years experience.",
 };

@@ -4,7 +4,7 @@ import CaseStudiesGrid from "./CaseStudiesGrid";
 import { allCaseStudies } from "@/lib/allCaseStudiesData";
 
 export const metadata = {
-  title: "Case Studies | BVS Building Ventilation Solutions",
+  title: "Case Studies",
   description:
     "Real projects from BVS. AHU refurbishment, EC fan upgrades, coil replacement, and controller programmes across healthcare, hotels, education, and more.",
 };

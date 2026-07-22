@@ -26,9 +26,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const product = await getShopProductBySlug(slug).catch(() => null);
-  if (!product) return { title: "Product Not Found | BVS Shop" };
+  if (!product) return { title: "Product Not Found" };
   return {
-    title: `${product.title} | BVS Shop`,
+    title: `${product.title} | Shop`,
     description: product.excerpt?.slice(0, 160) || "",
   };
 }

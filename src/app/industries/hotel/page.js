@@ -9,7 +9,7 @@ import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
-  title: "Hotel Ventilation Services | BVS Building Ventilation Solutions",
+  title: "Hotel Ventilation Services",
   description:
     "AHU refurbishment, EC fan upgrades, and coil replacement for hotels. Out-of-hours delivery. Minimum disruption. UK nationwide.",
 };

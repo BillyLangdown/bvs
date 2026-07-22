@@ -8,7 +8,7 @@ import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
-  title: "Education Sector Ventilation | BVS Building Ventilation Solutions",
+  title: "Education Sector Ventilation",
   description:
     "AHU refurbishment, EC fan upgrades, and ventilation services for schools, colleges, and universities. Delivered around academic calendars. UK nationwide.",
 };
