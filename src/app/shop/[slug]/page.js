@@ -25,7 +25,10 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const product = await getShopProductBySlug(slug).catch(() => null);
+  // Not caught here: getShopProductBySlug only resolves to null for a confirmed
+  // "no such product". A thrown error means the backend request itself failed, and
+  // should propagate rather than be treated as "not found" (see api.js for why).
+  const product = await getShopProductBySlug(slug);
   if (!product) return { title: "Product Not Found | BVS Shop" };
   return {
     title: `${product.title} | BVS Shop`,
@@ -36,8 +39,12 @@ export async function generateMetadata({ params }) {
 export default async function ProductPage({ params }) {
   const { slug } = await params;
 
+  // getShopProductBySlug is intentionally not caught: a thrown error means the
+  // product lookup itself failed (network/timeout/rate limit), not that the product
+  // doesn't exist. Letting it propagate keeps Next.js serving the last good ISR-cached
+  // page instead of overwriting it with a false 404 (see api.js for details).
   const [product, allProducts, categories] = await Promise.all([
-    getShopProductBySlug(slug).catch(() => null),
+    getShopProductBySlug(slug),
     getShopProducts({ revalidate: 300 }).catch(() => []),
     getProductCategories({ revalidate: 600 }).catch(() => []),
   ]);

@@ -150,9 +150,20 @@ export async function getProductCategories({ revalidate = 600 } = {}) {
 }
 
 export async function getShopProductBySlug(slug, { revalidate = 300 } = {}) {
+  // WP REST API product CPT is a supplementary source (title/excerpt/badge) that may
+  // require auth or not be publicly registered on this install. Any failure here —
+  // auth, network, timeout — just means "no WP data", never a reason to treat the
+  // product as missing, so it's always safe to swallow.
+  //
+  // The Store API below is the authoritative source for whether the product exists.
+  // Its failures are intentionally NOT swallowed: if it throws (network error, timeout,
+  // rate limit) rather than resolving to "no match", that error propagates out of this
+  // function so an ISR revalidation fails loudly instead of silently returning null.
+  // A silent null here reads as "product doesn't exist" to the page component below,
+  // which overwrites a perfectly good cached page with a false 404 that only heals on
+  // the next revalidation window. Letting the fetch failure throw instead means Next.js
+  // keeps serving the last good cached page and retries later.
   const [wpItems, storeProduct] = await Promise.all([
-    // WP REST API product CPT may require auth or may not be publicly registered.
-    // Catch so a 401/403 doesn't kill the whole request — Store API is the fallback.
     wpFetch("product", {
       query: {
         slug,
@@ -160,7 +171,7 @@ export async function getShopProductBySlug(slug, { revalidate = 300 } = {}) {
       },
       next: { revalidate },
     }).catch(() => []),
-    getStoreProductBySlug(slug, { revalidate }).catch(() => null),
+    getStoreProductBySlug(slug, { revalidate }),
   ]);
 
   const p = wpItems?.[0] ?? null;
