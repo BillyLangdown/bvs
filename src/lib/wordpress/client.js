@@ -39,6 +39,19 @@ export class WordpressApiError extends Error {
   }
 }
 
+// Thrown when required env vars aren't set at all — a permanent configuration problem
+// (e.g. running locally without WP env vars), not a transient backend failure. Callers
+// that need to keep building/rendering without a WP backend configured (e.g. a page
+// rendered at build time with no separate params-generation safety net) can catch
+// specifically this and fall back gracefully, while still letting real request
+// failures (network, timeout, rate limit) propagate uncaught.
+export class WpConfigError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "WpConfigError";
+  }
+}
+
 export function getWpConfig() {
   const apiBase = process.env.WP_API_BASE;
   const baseUrl = process.env.WP_BASE_URL;
@@ -46,7 +59,7 @@ export function getWpConfig() {
 
   if (!apiBase) {
     debugLog("Missing WP_API_BASE env var");
-    throw new Error(
+    throw new WpConfigError(
       "Missing WP_API_BASE. Set it in your environment (see .env.example).",
     );
   }

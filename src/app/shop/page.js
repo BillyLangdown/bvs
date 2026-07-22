@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { getShopProducts, getProductCategories } from "@/lib/wordpress/api";
+import { WpConfigError } from "@/lib/wordpress/client";
 import { ShopGrid } from "@/components/shop/ShopGrid";
 import { CustomBuildEnquiry } from "@/components/forms/CustomBuildEnquiry";
 
@@ -16,13 +17,23 @@ export default async function ShopPage() {
   let products = [];
   let categories = [];
 
+  // Only a WpConfigError (WP env vars not set at all — a permanent config problem, e.g.
+  // building locally without them) falls back to an empty state here. Any other error
+  // means the backend request itself failed (network, timeout, rate limit), not that
+  // there are genuinely no products, so it's left to propagate uncaught. Swallowing
+  // those too used to render exactly the same "products unavailable" state as a real
+  // empty catalog, and that render then got cached by ISR for 5 minutes, silently
+  // replacing a working product listing with a false empty state on any transient
+  // backend hiccup. Letting a real failure propagate keeps Next.js serving the last
+  // good cached listing instead (getProductCategories already tolerates failure
+  // internally and is safe to keep swallowing, it's supplementary).
   try {
     [products, categories] = await Promise.all([
       getShopProducts({ revalidate: 300 }),
       getProductCategories({ revalidate: 600 }),
     ]);
-  } catch {
-    // WordPress unavailable - renders empty state
+  } catch (err) {
+    if (!(err instanceof WpConfigError)) throw err;
   }
 
   // Exclude air filter products — we don't surface those in the shop
