@@ -1,4 +1,4 @@
-import { getWpConfig, wpFetch } from "./client";
+import { getWpConfig, wpFetch, WpConfigError } from "./client";
 
 function joinUrl(base, path) {
   const b = String(base || "").replace(/\/+$/, "");
@@ -9,7 +9,7 @@ function joinUrl(base, path) {
 export function getStoreApiBase() {
   const { baseUrl } = getWpConfig();
   if (!baseUrl) {
-    throw new Error("Missing WP_BASE_URL. Set it in your environment.");
+    throw new WpConfigError("Missing WP_BASE_URL. Set it in your environment.");
   }
   return joinUrl(baseUrl, "wp-json/wc/store/v1");
 }
