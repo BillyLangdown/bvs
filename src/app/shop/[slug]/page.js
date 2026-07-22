@@ -29,9 +29,9 @@ export async function generateMetadata({ params }) {
   // "no such product". A thrown error means the backend request itself failed, and
   // should propagate rather than be treated as "not found" (see api.js for why).
   const product = await getShopProductBySlug(slug);
-  if (!product) return { title: "Product Not Found | BVS Shop" };
+  if (!product) return { title: "Product Not Found" };
   return {
-    title: `${product.title} | BVS Shop`,
+    title: `${product.title} | Shop`,
     description: product.excerpt?.slice(0, 160) || "",
   };
 }

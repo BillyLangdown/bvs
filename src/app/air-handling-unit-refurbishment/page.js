@@ -9,7 +9,7 @@ import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
-  title: "AHU Refurbishment | BVS Building Ventilation Solutions",
+  title: "AHU Refurbishment",
   description:
     "Restore and extend your air handling unit's life by 10–20 years at around 40% of replacement cost. BVS survey, specify, and refurbish on-site. UK nationwide.",
 };

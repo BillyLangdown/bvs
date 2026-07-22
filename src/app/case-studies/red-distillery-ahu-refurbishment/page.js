@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "RED Distillery AHU Refurbishment | BVS Case Study",
+  title: "RED Distillery AHU Refurbishment Case Study",
   description:
     "BVS designed and installed a new extract ventilation system at RED Distillery for AU Vodka, including spiral ductwork, fire dampers, and an extract fan achieving 6 air changes per hour.",
 };

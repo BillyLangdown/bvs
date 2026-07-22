@@ -5,7 +5,7 @@ import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
-  title: "Ducting Repair & Replacement | BVS",
+  title: "Ducting Repair & Replacement",
   description: "Full ductwork installation, repair, relining, and replacement across the UK. BVS manage the complete scope from survey and specification through to installation and sign-off.",
 };
 

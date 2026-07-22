@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Pembroke Offices AHU Refurbishment | BVS Case Study",
+  title: "Pembroke Offices AHU Refurbishment Case Study",
   description:
     "BVS refurbished the rooftop AHUs at 50 Pembroke Court, replacing coils, supply fans, and electric heater batteries with new EC fans and a reverse cycle coil to improve efficiency and air quality for office tenants.",
 };

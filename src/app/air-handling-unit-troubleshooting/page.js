@@ -7,7 +7,7 @@ import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
-  title: "Ventilation Troubleshooting | BVS",
+  title: "Ventilation Troubleshooting",
   description:
     "Expert diagnosis and resolution of ventilation system problems. BVS identify root causes quickly and restore full performance, with a written report included.",
 };

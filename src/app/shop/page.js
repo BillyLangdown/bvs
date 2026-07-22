@@ -8,7 +8,7 @@ import { ShopGrid } from "@/components/shop/ShopGrid";
 import { CustomBuildEnquiry } from "@/components/forms/CustomBuildEnquiry";
 
 export const metadata = {
-  title: "Shop - HVAC Components & Parts | BVS Building Ventilation Solutions",
+  title: "Shop - HVAC Components & Parts",
   description:
     "EC fans, filters, heating & cooling coils, and heater batteries. HVAC components sourced and supplied by BVS for commercial and industrial applications.",
 };

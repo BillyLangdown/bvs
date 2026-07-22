@@ -5,7 +5,7 @@ import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
-  title: "Commercial Boiler & Heating Services | BVS",
+  title: "Commercial Boiler & Heating Services",
   description:
     "Commercial boiler installation, servicing, and repair from BVS. Gas Safe registered engineers covering businesses across the UK.",
 };

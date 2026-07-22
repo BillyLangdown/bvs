@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Bath Private Hospital AHU Refurbishment | BVS Case Study",
+  title: "Bath Private Hospital AHU Refurbishment Case Study",
   description:
     "BVS refurbished an AHU supplying operating theatres at a private hospital in Bath. EC fans, a custom cubic heat exchanger, and new fan bulkheads delivered significant energy savings with minimal clinical disruption.",
 };

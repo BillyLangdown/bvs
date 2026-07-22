@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Disney Headquarters Hammersmith AHU Validation & Survey | BVS Case Study",
+  title: "Disney Headquarters Hammersmith AHU Validation & Survey Case Study",
   description:
     "BVS conducted a comprehensive AHU validation and ventilation survey across nine air handling units at Disney HQ in Hammersmith, assessing condition, performance, weatherproofing, and recommending refurbishment or replacement.",
 };

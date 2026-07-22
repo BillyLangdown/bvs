@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 
 export const metadata = {
-  title: "About BVS | Building Ventilation Solutions",
+  title: "About Us",
   description:
     "BVS has been refurbishing, upgrading, and maintaining air handling units across the UK for over 40 years. Engineering-led. In-house delivery. Every sector.",
 };

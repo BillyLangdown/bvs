@@ -8,7 +8,7 @@ import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
 export const metadata = {
-  title: "Retail & Commercial Ventilation | BVS Building Ventilation Solutions",
+  title: "Retail & Commercial Ventilation",
   description:
     "AHU refurbishment, EC fan upgrades, and coil replacement for retail parks, supermarkets, and commercial buildings. Planned around trading hours. UK nationwide.",
 };

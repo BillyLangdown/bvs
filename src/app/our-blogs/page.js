@@ -5,7 +5,7 @@ import { getPosts, stripHtml } from "@/lib/wordpress/api";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Insights | BVS Building Ventilation Solutions",
+  title: "Insights",
   description:
     "Technical guidance, project thinking, and sector updates from the BVS engineering team. AHU refurbishment, EC fans, compliance, and energy efficiency.",
 };

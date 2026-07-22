@@ -8,7 +8,7 @@ import { TrustedByBar } from "@/components/site/TrustedByBar";
 import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 export const metadata = {
-  title: "AHU Coil Replacement | BVS Building Ventilation Solutions",
+  title: "AHU Coil Replacement",
   description:
     "Measure-to-fit AHU coil replacement for any make or model. Heating, cooling, heat recovery, and frost coils sourced or manufactured and installed across the UK.",
 };

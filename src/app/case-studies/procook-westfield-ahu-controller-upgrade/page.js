@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "ProCook Westfield AHU Controls Upgrade | BVS Case Study",
+  title: "ProCook Westfield AHU Controls Upgrade Case Study",
   description:
     "BVS restored ventilation at ProCook's Westfield store by replacing a failed supply fan motor and outdated controls with a new Trend BMS controller, delivering full automation and smart scheduling.",
 };

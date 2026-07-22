@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 
 export const metadata = {
-  title: "Pharmaceutical Manufacturers AHU Heating Coil Replacement | BVS Case Study",
+  title: "Pharmaceutical Manufacturers AHU Heating Coil Replacement Case Study",
   description:
     "BVS replaced the heating coil on an AHU at a pharmaceutical manufacturing facility, including removal of water from the flooded unit, coil uninstallation, new coil installation, pipework connections, insulation, and commissioning.",
 };
