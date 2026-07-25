@@ -29,7 +29,7 @@ export default async function ShopPage() {
   // internally and is safe to keep swallowing, it's supplementary).
   try {
     [products, categories] = await Promise.all([
-      getShopProducts({ revalidate: 300 }),
+      getShopProducts({ revalidate: 3600 }),
       getProductCategories({ revalidate: 600 }),
     ]);
   } catch (err) {

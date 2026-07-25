@@ -22,7 +22,7 @@ function decodeHtmlEntities(str) {
 }
 
 // Pages
-export async function getPageBySlug(slug, { revalidate = 300 } = {}) {
+export async function getPageBySlug(slug, { revalidate = 3600 } = {}) {
   const pages = await wpFetch("pages", {
     query: { slug, _fields: "id,slug,title,content,excerpt,yoast_head_json" },
     next: { revalidate },
@@ -30,14 +30,14 @@ export async function getPageBySlug(slug, { revalidate = 300 } = {}) {
   return pages?.[0] || null;
 }
 
-export async function getPages({ perPage = 100, revalidate = 300 } = {}) {
+export async function getPages({ perPage = 100, revalidate = 3600 } = {}) {
   return wpFetch("pages", {
     query: { per_page: perPage, _fields: "id,slug,title,excerpt" },
     next: { revalidate },
   });
 }
 
-export async function getCaseStudyPages({ perPage = 20, revalidate = 300 } = {}) {
+export async function getCaseStudyPages({ perPage = 20, revalidate = 3600 } = {}) {
   // Case studies on this site are implemented as pages (often with slug ending in -case-study).
   const pages = await wpFetch("pages", {
     query: {
@@ -57,7 +57,7 @@ export async function getCaseStudyPages({ perPage = 20, revalidate = 300 } = {})
 }
 
 // Posts
-export async function getPosts({ perPage = 20, revalidate = 300 } = {}) {
+export async function getPosts({ perPage = 20, revalidate = 3600 } = {}) {
   return wpFetch("posts", {
     query: {
       per_page: perPage,
@@ -67,7 +67,7 @@ export async function getPosts({ perPage = 20, revalidate = 300 } = {}) {
   });
 }
 
-export async function getPostBySlug(slug, { revalidate = 300 } = {}) {
+export async function getPostBySlug(slug, { revalidate = 3600 } = {}) {
   const items = await wpFetch("posts", {
     query: {
       slug,
@@ -79,7 +79,7 @@ export async function getPostBySlug(slug, { revalidate = 300 } = {}) {
 }
 
 // Case studies (expects a WP custom post type registered as "case-studies")
-export async function getCaseStudies({ perPage = 50, revalidate = 300 } = {}) {
+export async function getCaseStudies({ perPage = 50, revalidate = 3600 } = {}) {
   return wpFetch("case-studies", {
     query: {
       per_page: perPage,
@@ -89,7 +89,7 @@ export async function getCaseStudies({ perPage = 50, revalidate = 300 } = {}) {
   });
 }
 
-export async function getCaseStudyBySlug(slug, { revalidate = 300 } = {}) {
+export async function getCaseStudyBySlug(slug, { revalidate = 3600 } = {}) {
   const items = await wpFetch("case-studies", {
     query: {
       slug,
@@ -101,7 +101,7 @@ export async function getCaseStudyBySlug(slug, { revalidate = 300 } = {}) {
   return items?.[0] || null;
 }
 
-export async function getShopProducts({ revalidate = 300 } = {}) {
+export async function getShopProducts({ revalidate = 3600 } = {}) {
   const [storeProducts, wpProducts] = await Promise.all([
     storeFetch("products", {
       query: { per_page: 100 },
@@ -149,7 +149,7 @@ export async function getProductCategories({ revalidate = 600 } = {}) {
   }
 }
 
-export async function getShopProductBySlug(slug, { revalidate = 300 } = {}) {
+export async function getShopProductBySlug(slug, { revalidate = 3600 } = {}) {
   // WP REST API product CPT is a supplementary source (title/excerpt/badge) that may
   // require auth or not be publicly registered on this install. Any failure here —
   // auth, network, timeout — just means "no WP data", never a reason to treat the

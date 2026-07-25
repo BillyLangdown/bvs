@@ -77,7 +77,7 @@ export default async function BlogsPage() {
   let posts = [];
 
   try {
-    posts = await getPosts({ perPage: 30, revalidate: 300 });
+    posts = await getPosts({ perPage: 30, revalidate: 3600 });
   } catch {
     // WordPress not configured, placeholder posts shown below
   }
