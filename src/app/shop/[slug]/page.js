@@ -12,7 +12,7 @@ import { ProductEnquiryForm } from "@/components/forms/ProductEnquiryForm";
 import { ProductGallery } from "@/components/shop/ProductGallery";
 import { ProductTabs } from "@/components/shop/ProductTabs";
 
-export const revalidate = 300;
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   try {
@@ -45,7 +45,7 @@ export default async function ProductPage({ params }) {
   // page instead of overwriting it with a false 404 (see api.js for details).
   const [product, allProducts, categories] = await Promise.all([
     getShopProductBySlug(slug),
-    getShopProducts({ revalidate: 300 }).catch(() => []),
+    getShopProducts({ revalidate: 3600 }).catch(() => []),
     getProductCategories({ revalidate: 600 }).catch(() => []),
   ]);
 

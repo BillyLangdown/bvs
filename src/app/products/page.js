@@ -14,7 +14,7 @@ export default async function ProductsPage() {
   let error = null;
 
   try {
-    products = await getStoreProducts({ perPage: 24, revalidate: 300 });
+    products = await getStoreProducts({ perPage: 24, revalidate: 3600 });
   } catch (e) {
     error = e;
   }
