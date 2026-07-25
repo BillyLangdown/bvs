@@ -43,7 +43,7 @@ export async function storeFetch(path, { query, next } = {}) {
   return body;
 }
 
-export async function getStoreProducts({ perPage = 24, revalidate = 300 } = {}) {
+export async function getStoreProducts({ perPage = 24, revalidate = 3600 } = {}) {
   return storeFetch("products", {
     query: { per_page: perPage },
     next: { revalidate },
@@ -59,7 +59,7 @@ export async function getStoreCategories({ perPage = 100, revalidate = 3600 } = 
 
 export async function getStoreProductsByCategorySlug(
   slug,
-  { perPage = 24, revalidate = 300 } = {},
+  { perPage = 24, revalidate = 3600 } = {},
 ) {
   const categories = await getStoreCategories({ perPage: 100, revalidate });
   const cat = categories?.find((c) => c?.slug === slug);
@@ -71,7 +71,7 @@ export async function getStoreProductsByCategorySlug(
   });
 }
 
-export async function getStoreProductBySlug(slug, { revalidate = 300 } = {}) {
+export async function getStoreProductBySlug(slug, { revalidate = 3600 } = {}) {
   const items = await storeFetch("products", {
     query: { slug, per_page: 1 },
     next: { revalidate },

@@ -40,7 +40,7 @@ export default async function ProductCategoryPage({ params }) {
 
   const products = await getStoreProductsByCategorySlug(slug, {
     perPage: 24,
-    revalidate: 300,
+    revalidate: 3600,
   }).catch(() => []);
 
   return (

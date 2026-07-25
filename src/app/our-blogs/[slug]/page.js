@@ -3,7 +3,7 @@ import { Container } from "@/components/site/Container";
 import { WpContent } from "@/components/content/WpContent";
 import { getPostBySlug, getPosts, stripHtml } from "@/lib/wordpress/api";
 
-export const revalidate = 300;
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   try {
