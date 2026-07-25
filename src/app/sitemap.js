@@ -65,7 +65,6 @@ export default function sitemap() {
     { url: `${BASE}/our-blogs`, priority: 0.6, changeFrequency: "weekly" },
     { url: `${BASE}/hvac-resources`, priority: 0.5, changeFrequency: "monthly" },
     { url: `${BASE}/shop`, priority: 0.6, changeFrequency: "weekly" },
-    { url: `${BASE}/products`, priority: 0.6, changeFrequency: "weekly" },
   ];
 
   return routes.map((r) => ({

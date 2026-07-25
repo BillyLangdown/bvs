@@ -161,6 +161,13 @@ const nextConfig = {
       { source: "/product/:slug*",                           destination: "/shop/:slug*",                             permanent: true },
       { source: "/product-category/:slug*",                  destination: "/shop",                                    permanent: true },
 
+      // ── /products route retired: duplicated /shop with no unique content,
+      //    consolidating onto one canonical product catalog ───────────────
+      { source: "/products/category/:slug*",                 destination: "/shop",                                    permanent: true },
+      { source: "/products/:slug",                           destination: "/shop/:slug",                              permanent: true },
+      { source: "/products",                                 destination: "/shop",                                    permanent: true },
+      { source: "/products/",                                destination: "/shop",                                    permanent: true },
+
       // ── Collapse old redirect chains to single hops ───────────────────
       { source: "/hvac-maintenance",                         destination: "/air-handling-unit-maintenance",           permanent: true },
       { source: "/hvac-maintenance/",                        destination: "/air-handling-unit-maintenance",           permanent: true },
