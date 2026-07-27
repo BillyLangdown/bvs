@@ -4,6 +4,7 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { faqJsonLd } from "@/lib/seo";
 import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
@@ -359,6 +360,10 @@ export default function LeisureCentrePage() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }}
+      />
       <FAQAccordion faqs={faqs} />
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}
