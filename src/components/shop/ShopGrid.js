@@ -26,12 +26,9 @@ export function ShopGrid({ products, categories, initialCategory = null }) {
           <span className="mr-1 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
             Filter
           </span>
-          <Link
-            href="/shop"
-            onClick={(e) => {
-              e.preventDefault();
-              setActiveCategory(null);
-            }}
+          <button
+            type="button"
+            onClick={() => setActiveCategory(null)}
             className={`border px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide transition-colors ${
               activeCategory === null
                 ? "border-[#297858] bg-[#297858] text-white"
@@ -39,15 +36,11 @@ export function ShopGrid({ products, categories, initialCategory = null }) {
             }`}
           >
             All
-          </Link>
+          </button>
           {populatedCategories.map((c) => (
             <Link
               key={c.id}
               href={`/shop/category/${c.slug}`}
-              onClick={(e) => {
-                e.preventDefault();
-                setActiveCategory(activeCategory === c.id ? null : c.id);
-              }}
               className={`border px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide transition-colors ${
                 activeCategory === c.id
                   ? "border-[#297858] bg-[#297858] text-white"
