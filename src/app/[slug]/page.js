@@ -67,7 +67,7 @@ export default async function WordpressPageBySlug({ params }) {
         <section className="relative min-h-[420px] w-full overflow-hidden bg-zinc-900">
           <Image
             src={hero.imageUrl}
-            alt=""
+            alt={title}
             fill
             priority
             placeholder="blur"
@@ -120,7 +120,7 @@ export default async function WordpressPageBySlug({ params }) {
                         {img ? (
                           <Image
                             src={img}
-                            alt=""
+                            alt={cs.title?.rendered || "Case study"}
                             fill
                             className="object-cover"
                             sizes="(min-width: 768px) 50vw, 100vw"

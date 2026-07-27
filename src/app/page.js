@@ -182,12 +182,20 @@ export const metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "HVACBusiness",
   name: "BVS Building Ventilation Solutions",
   url: "https://www.bvs-ltd.co.uk",
   logo: "https://www.bvs-ltd.co.uk/bvs-logo.webp",
+  image: "https://www.bvs-ltd.co.uk/bvs-logo.webp",
   telephone: "01256518170",
   email: "info@bvs-ltd.co.uk",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Unit 23, Sandleheath Industrial Estate, Old Brickyard Road, Sandleheath",
+    addressLocality: "Fordingbridge",
+    postalCode: "SP6 1PA",
+    addressCountry: "GB",
+  },
   areaServed: { "@type": "Country", name: "United Kingdom" },
   description:
     "AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls. 40+ years experience. UK nationwide.",
