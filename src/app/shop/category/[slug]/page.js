@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -69,47 +70,97 @@ export default async function ShopCategoryPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems)) }}
       />
 
-      {/* ── BREADCRUMB ──────────────────────────────────────────────── */}
-      <section className="border-b border-white/10 bg-[#111418] py-8 sm:py-10">
-        <Container>
-          <nav
-            className="flex flex-wrap items-center gap-1.5 text-xs text-white/40"
-            aria-label="Breadcrumb"
-          >
-            <Link href="/" className="transition-colors hover:text-white/70">
-              Home
-            </Link>
-            <span>/</span>
-            <Link href="/shop" className="transition-colors hover:text-white/70">
-              Shop
-            </Link>
-            <span>/</span>
-            <span className="text-white/80">{category.name}</span>
-          </nav>
-        </Container>
-      </section>
+      {/* ── HERO (identical structure to /shop, so both pages share the same
+           layout height and scroll position — only the heading, description,
+           and pre-selected category differ) ─────────────────────────────── */}
+      <section className="relative overflow-hidden bg-[#111418] pb-0 pt-14 sm:pt-16">
+        <Image
+          src="/crate-in-air.webp"
+          alt="Crane lifting a ventilation unit against a clear blue sky"
+          fill
+          sizes="100vw"
+          unoptimized
+          priority
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoIAAUABUB8JZwAA3AA/u/9mXgQAA=="
+          className="object-cover object-[70%_center]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#111418] via-[#111418]/55 to-[#111418]/10" />
+        <div className="relative">
+          <Container>
+            <div className="pb-12 sm:pb-14 max-w-2xl">
+              <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
+                Shop
+              </p>
+              <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl">
+                {category.name}
+              </h1>
+              <div className="mt-4 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-5 max-w-lg text-[15px] leading-7 text-white/65">
+                Sourced and supplied by BVS engineers for commercial and industrial HVAC
+                applications.
+              </p>
+              <p className="mt-4 text-sm text-white/40">
+                Need help specifying the right component?{" "}
+                <Link href="/contact" className="text-[#297858] underline-offset-2 hover:underline">
+                  Ask the team.
+                </Link>
+              </p>
+            </div>
+          </Container>
 
-      {/* ── HEADER ──────────────────────────────────────────────────── */}
-      <section className="bg-[#111418] pb-10 pt-6 sm:pb-14">
-        <Container>
-          <ScrollReveal>
-            <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
-              Shop
-            </p>
-            <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl">
-              {category.name}
-            </h1>
-            <p className="mt-4 max-w-lg text-[15px] leading-7 text-white/65">
-              Sourced and supplied by BVS engineers for commercial and industrial HVAC
-              applications.
-            </p>
-          </ScrollReveal>
-        </Container>
+          {/* Stats strip */}
+          <div className="border-t border-white/10 bg-black/30">
+            <Container>
+              <div className="grid grid-cols-3 divide-x divide-white/10 py-3">
+                {[
+                  { stat: "UK", label: "Delivery" },
+                  { stat: "Fast", label: "Dispatch" },
+                  { stat: "Expert", label: "Sourcing" },
+                ].map((s) => (
+                  <div key={s.label} className="px-3 text-center sm:px-6">
+                    <p className="text-base font-extrabold text-white sm:text-lg">{s.stat}</p>
+                    <p className="mt-0.5 text-[10px] uppercase tracking-wide text-white/50">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            </Container>
+          </div>
+        </div>
       </section>
 
       {/* ── PRODUCTS ────────────────────────────────────────────────── */}
       <section className="bg-surface-2 py-14 sm:py-20">
         <Container>
+
+          {/* Section intro (mirrors /shop's intro block so the grid below
+               starts at the same vertical offset on both pages) */}
+          <ScrollReveal className="mb-10">
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">
+              Components &amp; Parts
+            </p>
+
+            <h2 className="mt-2 text-2xl font-extrabold text-slate-900">
+              {category.name}
+            </h2>
+
+            <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
+
+            <div className="mt-5 rounded-lg border border-[#297858]/20 bg-[#297858]/5 p-4">
+              <p className="text-sm leading-6 text-slate-600">
+                Need help sourcing the right component? Ask the team.
+              </p>
+
+              <Link
+                href="/contact"
+                className="mt-2 inline-flex items-center gap-2 text-sm font-bold text-[#297858] transition-colors hover:text-[#1d5c42]"
+              >
+                Get in touch
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </Link>
+            </div>
+          </ScrollReveal>
+
           <ShopGrid products={shopProducts} categories={shopCategories} initialCategory={category.id} />
         </Container>
       </section>
