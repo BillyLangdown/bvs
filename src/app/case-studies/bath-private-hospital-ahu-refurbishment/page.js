@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Bath Private Hospital AHU Refurbishment Case Study",
-  description:
-    "BVS refurbished an AHU supplying operating theatres at a private hospital in Bath. EC fans, a custom cubic heat exchanger, and new fan bulkheads delivered significant energy savings with minimal clinical disruption.",
-};
+  description: "BVS refurbished an AHU supplying operating theatres at a private hospital in Bath. EC fans, a custom cubic heat exchanger, and new fan bulkheads delivered significant energy savings with minimal clinical disruption.",
+  path: "/case-studies/bath-private-hospital-ahu-refurbishment",
+});
 
 const workItems = [
   {

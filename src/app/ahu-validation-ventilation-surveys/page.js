@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Validation Surveys",
-  description:
-    "Entire system condition assessments with a full documented report of findings and proposals. Prioritised, costed recommendations for your ventilation assets.",
-};
+  description: "Entire system condition assessments with a full documented report of findings and proposals. Prioritised, costed recommendations for your ventilation assets.",
+  path: "/ahu-validation-ventilation-surveys",
+});
 
 const coverage = [
   "Fan condition, bearings, and motor performance",
@@ -109,9 +110,9 @@ export default function ValidationSurveysPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               Validation Surveys
             </p>
-            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
+            <p className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
               Validation surveys.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-lg text-base leading-7 text-white/75">
               An entire system condition assessment with a full documented report of findings and proposals. Know exactly what your assets need, with prioritised, costed recommendations you can act on.

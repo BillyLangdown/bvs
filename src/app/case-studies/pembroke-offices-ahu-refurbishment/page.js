@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Pembroke Offices AHU Refurbishment Case Study",
-  description:
-    "BVS refurbished the rooftop AHUs at 50 Pembroke Court, replacing coils, supply fans, and electric heater batteries with new EC fans and a reverse cycle coil to improve efficiency and air quality for office tenants.",
-};
+  description: "BVS refurbished the rooftop AHUs at 50 Pembroke Court, replacing coils, supply fans, and electric heater batteries with new EC fans and a reverse cycle coil to improve efficiency and air quality for office tenants.",
+  path: "/case-studies/pembroke-offices-ahu-refurbishment",
+});
 
 const workItems = [
   {

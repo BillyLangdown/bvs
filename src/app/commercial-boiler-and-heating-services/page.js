@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Commercial Boiler & Heating Services",
-  description:
-    "Commercial boiler installation, servicing, and repair from BVS. Gas Safe registered engineers covering businesses across the UK.",
-};
+  description: "Commercial boiler installation, servicing, and repair from BVS. Gas Safe registered engineers covering businesses across the UK.",
+  path: "/commercial-boiler-and-heating-services",
+});
 
 const scope = [
   "Commercial boiler installation",
@@ -129,9 +130,9 @@ export default function CommercialBoilerHeatingPage() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               Mechanical Solutions
             </p>
-            <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
+            <p className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
               Commercial boiler<br />&amp; heating.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
               Keeping your building warm and your energy bills in check starts with a well-maintained commercial heating system. Our Gas Safe registered engineers install, service, and repair commercial boilers and heating plant across the UK.

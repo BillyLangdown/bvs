@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import Image from "next/image";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "HVAC Resources",
-  description:
-    "Technical articles and guides on air volume calculation, humidity, and cooling and heating loads from the BVS engineering team.",
-};
+  description: "Technical articles and guides on air volume calculation, humidity, and cooling and heating loads from the BVS engineering team.",
+  path: "/hvac-resources",
+});
 
 const articles = [
   {

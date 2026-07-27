@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/site/Container";
+import { pageMetadata } from "@/lib/seo";
 
 function PhoneIcon() {
   return (
@@ -17,11 +18,11 @@ function ArrowIcon() {
   );
 }
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Ventilation Services",
-  description:
-    "Expert ventilation services from BVS - troubleshooting, validation surveys, and consultancy to keep your HVAC systems performing at their best.",
-};
+  description: "Expert ventilation services from BVS - troubleshooting, validation surveys, and consultancy to keep your HVAC systems performing at their best.",
+  path: "/solutions/ventilation",
+});
 
 const services = [
   {
@@ -78,9 +79,9 @@ export default function VentilationServicesPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400">
               Building Ventilation Solutions
             </p>
-            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
+            <p className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
               Ventilation services.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-emerald-500" />
             <p className="mt-6 max-w-2xl text-base leading-7 text-white/75">
               From fault diagnosis to formal validation surveys, our ventilation

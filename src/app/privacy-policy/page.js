@@ -1,9 +1,11 @@
 import { Container } from "@/components/site/Container";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Privacy Policy",
   description: "Privacy Policy for BVS Building Ventilation Solutions Ltd — how we collect, use, and protect your personal data.",
-};
+  path: "/privacy-policy",
+});
 
 export default function PrivacyPolicyPage() {
   return (

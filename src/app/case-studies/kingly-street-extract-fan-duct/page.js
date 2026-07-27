@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Kingly Street Office Extract Fan & Duct Installation Case Study",
-  description:
-    "BVS installed new boiler room ventilation at a Kingly Street office plant room, fitting a 0.752 m³/s supply fan and 0.361 m³/s extract fan with BMS-integrated automatic controls.",
-};
+  description: "BVS installed new boiler room ventilation at a Kingly Street office plant room, fitting a 0.752 m³/s supply fan and 0.361 m³/s extract fan with BMS-integrated automatic controls.",
+  path: "/case-studies/kingly-street-extract-fan-duct",
+});
 
 export default function KinglyStreetExtractFanDuct() {
   return (

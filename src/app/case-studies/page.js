@@ -2,12 +2,13 @@ import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import CaseStudiesGrid from "./CaseStudiesGrid";
 import { allCaseStudies } from "@/lib/allCaseStudiesData";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Case Studies",
-  description:
-    "Real projects from BVS. AHU refurbishment, EC fan upgrades, coil replacement, and controller programmes across healthcare, hotels, education, and more.",
-};
+  description: "Real projects from BVS. AHU refurbishment, EC fan upgrades, coil replacement, and controller programmes across healthcare, hotels, education, and more.",
+  path: "/case-studies",
+});
 
 export default function CaseStudiesPage() {
   return (

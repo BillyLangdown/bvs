@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Newton Mearns AHU Refurbishment & Pipework Replacement Case Study",
-  description:
-    "BVS carried out a comprehensive refurbishment of three weatherproof AHUs at Newton Mearns Shopping Centre, replacing fans, gas burners, filters, and the full gas distribution pipework to extend service life by 10-15 years.",
-};
+  description: "BVS carried out a comprehensive refurbishment of three weatherproof AHUs at Newton Mearns Shopping Centre, replacing fans, gas burners, filters, and the full gas distribution pipework to extend service life by 10-15 years.",
+  path: "/case-studies/newton-mearns-ahu-refurbishment-pipework",
+});
 
 const workItems = [
   {

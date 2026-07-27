@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Gresham Street Office AHU Refurbishment Case Study",
-  description:
-    "BVS refurbished the AHU at a Gresham Street office in London, replacing frost coil, cooling coil, heating coil, filters, fan assembly, and inverter to meet reduced air volume requirements.",
-};
+  description: "BVS refurbished the AHU at a Gresham Street office in London, replacing frost coil, cooling coil, heating coil, filters, fan assembly, and inverter to meet reduced air volume requirements.",
+  path: "/case-studies/gresham-street-office-ahu-refurbishment",
+});
 
 const workItems = [
   {

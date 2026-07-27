@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Ringwood Leisure AHU Controls Refurbishment Case Study",
-  description:
-    "BVS saved a leisure centre from a £100,000 AHU replacement by refurbishing the control systems instead. New Trend controllers, sensors, and full commissioning restored reliable automated operation.",
-};
+  description: "BVS saved a leisure centre from a £100,000 AHU replacement by refurbishing the control systems instead. New Trend controllers, sensors, and full commissioning restored reliable automated operation.",
+  path: "/case-studies/ringwood-leisure-ahu-controller-upgrade",
+});
 
 export default function RingwoodLeisureCaseStudy() {
   return (

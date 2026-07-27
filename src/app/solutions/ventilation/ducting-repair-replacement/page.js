@@ -3,11 +3,13 @@ import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Ducting Repair & Replacement",
   description: "Full ductwork installation, repair, relining, and replacement across the UK. BVS manage the complete scope from survey and specification through to installation and sign-off.",
-};
+  path: "/solutions/ventilation/ducting-repair-replacement",
+});
 
 const scope = [
   "Full ductwork installation",
@@ -96,9 +98,9 @@ export default function DuctingRepairPage() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               Ducting Repair &amp; Replacement
             </p>
-            <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
+            <p className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
               Ducting repair<br />&amp; replacement.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
               Full ductwork installation, repair, relining, and replacement. Whether it is a new system, a failed section, or a complete reline, we manage the full scope from survey and specification through to installation and sign-off.

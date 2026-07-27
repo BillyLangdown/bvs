@@ -4,15 +4,16 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { faqJsonLd, pageMetadata } from "@/lib/seo";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "AHU Refurbishment",
-  description:
-    "Restore and extend your air handling unit's life by 10–20 years at around 40% of replacement cost. BVS survey, specify, and refurbish on-site. UK nationwide.",
-};
+  description: "Restore and extend your air handling unit's life by 10–20 years at around 40% of replacement cost. BVS survey, specify, and refurbish on-site. UK nationwide.",
+  path: "/air-handling-unit-refurbishment",
+});
 
 const faqs = [
   {
@@ -118,12 +119,12 @@ export default function AHURefurbishmentPage() {
             >
               AHU Refurbishment
             </p>
-            <h1
+            <p
               className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
               Restore &amp; extend<br />your air handling units.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p
               className="mt-5 max-w-xl text-[15px] leading-7 text-white"
@@ -551,6 +552,10 @@ export default function AHURefurbishmentPage() {
       </section>
 
       {/* ── FAQ ────────────────────────────────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }}
+      />
       <FAQAccordion faqs={faqs} theme="dark" />
 
       {/* ── FURTHER READING + RELATED ──────────────────────────────────── */}

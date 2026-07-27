@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/site/Container";
 import { WpContent } from "@/components/content/WpContent";
 import { getPostBySlug, getPosts, stripHtml } from "@/lib/wordpress/api";
+import { pageMetadata, truncateDescription, breadcrumbJsonLd } from "@/lib/seo";
 
 export const revalidate = 3600;
 
@@ -14,14 +15,22 @@ export async function generateStaticParams() {
   }
 }
 
+function featuredImage(post) {
+  return post?._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
+}
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug).catch(() => null);
   if (!post) return {};
-  return {
-    title: post.title?.rendered || "Post",
-    description: stripHtml(post.excerpt?.rendered) || "Blog post",
-  };
+  const title = post.title?.rendered || "Post";
+  return pageMetadata({
+    title,
+    description: truncateDescription(stripHtml(post.excerpt?.rendered || "")) || `${title} | BVS Insights.`,
+    path: `/our-blogs/${slug}`,
+    image: featuredImage(post),
+    imageAlt: title,
+  });
 }
 
 export default async function BlogPostPage({ params }) {
@@ -29,8 +38,37 @@ export default async function BlogPostPage({ params }) {
   const post = await getPostBySlug(slug).catch(() => null);
   if (!post) notFound();
 
+  const breadcrumbItems = [
+    { name: "Home", path: "/" },
+    { name: "Insights", path: "/our-blogs" },
+    { name: post.title?.rendered || "Post", path: `/our-blogs/${slug}` },
+  ];
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title?.rendered,
+    datePublished: post.date,
+    dateModified: post.date,
+    image: featuredImage(post) ? [featuredImage(post)] : undefined,
+    author: { "@type": "Organization", name: "BVS Building Ventilation Solutions" },
+    publisher: {
+      "@type": "Organization",
+      name: "BVS Building Ventilation Solutions",
+      logo: { "@type": "ImageObject", url: "https://www.bvs-ltd.co.uk/bvs-logo.webp" },
+    },
+  };
+
   return (
     <Container className="py-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <div className="mx-auto max-w-3xl bg-white p-8 shadow-sm">
         <h1 className="text-3xl font-extrabold tracking-tight text-zinc-900">
           {post.title?.rendered}

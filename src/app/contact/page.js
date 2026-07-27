@@ -1,12 +1,13 @@
 import { Container } from "@/components/site/Container";
 import { ContactPageForm } from "@/components/forms/ContactPageForm";
 import Image from "next/image";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Contact Us",
-  description:
-    "Speak directly with an AHU specialist. Tell us about your project and we'll respond with practical options within one working day.",
-};
+  description: "Speak directly with an AHU specialist. Tell us about your project and we'll respond with practical options within one working day.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

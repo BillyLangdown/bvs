@@ -4,12 +4,13 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { faqJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Defence & Government Ventilation",
-  description:
-    "AHU refurbishment and ventilation services for defence and government facilities. Secure site experience. Programme compliance. UK nationwide.",
-};
+  description: "AHU refurbishment and ventilation services for defence and government facilities. Secure site experience. Programme compliance. UK nationwide.",
+  path: "/industries/defence",
+});
 
 const faqs = [
   {
@@ -95,9 +96,9 @@ export default function DefencePage() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               Defence &amp; Government
             </p>
-            <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
+            <p className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
               Specialists for secure<br />&amp; government sites.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
               Defence and government facilities operate within access protocols, security requirements, and programme obligations that most contractors are not equipped to meet. Experienced on secure sites, working within the rules, to programme.
@@ -332,6 +333,10 @@ export default function DefencePage() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }}
+      />
       <FAQAccordion faqs={faqs} theme="dark" />
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}

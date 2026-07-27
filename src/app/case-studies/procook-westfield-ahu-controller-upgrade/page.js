@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "ProCook Westfield AHU Controls Upgrade Case Study",
-  description:
-    "BVS restored ventilation at ProCook's Westfield store by replacing a failed supply fan motor and outdated controls with a new Trend BMS controller, delivering full automation and smart scheduling.",
-};
+  description: "BVS restored ventilation at ProCook's Westfield store by replacing a failed supply fan motor and outdated controls with a new Trend BMS controller, delivering full automation and smart scheduling.",
+  path: "/case-studies/procook-westfield-ahu-controller-upgrade",
+});
 
 const workItems = [
   {

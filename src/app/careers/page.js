@@ -2,12 +2,13 @@ import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import { CareersForm } from "@/components/forms/CareersForm";
 import Image from "next/image";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Careers",
-  description:
-    "Join BVS, a fast-growing HVAC specialist driven by practical problem-solving. Send your CV and cover letter to be considered for current and future roles.",
-};
+  description: "Join BVS, a fast-growing HVAC specialist driven by practical problem-solving. Send your CV and cover letter to be considered for current and future roles.",
+  path: "/careers",
+});
 
 export default function CareersPage() {
   return (

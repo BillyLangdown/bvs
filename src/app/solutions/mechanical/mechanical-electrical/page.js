@@ -1,10 +1,11 @@
 import { ServiceSubPage } from "@/components/pages/ServiceSubPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Mechanical & Electrical Solutions",
-  description:
-    "Commercial mechanical and electrical services from BVS. From HVAC-associated M&E works to full project management on commercial sites.",
-};
+  description: "Commercial mechanical and electrical services from BVS. From HVAC-associated M&E works to full project management on commercial sites.",
+  path: "/solutions/mechanical/mechanical-electrical",
+});
 
 export default function MechanicalElectricalPage() {
   return (

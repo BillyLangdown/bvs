@@ -5,6 +5,7 @@ import { Container } from "@/components/site/Container";
 import { WpContent } from "@/components/content/WpContent";
 import { getCaseStudyBySlug, getCaseStudies } from "@/lib/wordpress/api";
 import { allCaseStudies } from "@/lib/allCaseStudiesData";
+import { pageMetadata, truncateDescription, breadcrumbJsonLd } from "@/lib/seo";
 
 export async function generateStaticParams() {
   const localSlugs = allCaseStudies.map((cs) => ({ slug: cs.slug }));
@@ -25,10 +26,13 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const local = allCaseStudies.find((cs) => cs.slug === slug);
   if (!local) return {};
-  return {
+  return pageMetadata({
     title: `${local.title} Case Study`,
-    description: local.summary,
-  };
+    description: truncateDescription(local.summary),
+    path: `/case-studies/${slug}`,
+    image: local.image,
+    imageAlt: local.title,
+  });
 }
 
 export default async function CaseStudyPage({ params }) {
@@ -41,8 +45,19 @@ export default async function CaseStudyPage({ params }) {
   const wp = await getCaseStudyBySlug(slug).catch(() => null);
   const wpBody = wp?.content?.rendered || null;
 
+  const breadcrumbItems = [
+    { name: "Home", path: "/" },
+    { name: "Case Studies", path: "/case-studies" },
+    { name: local.title, path: `/case-studies/${slug}` },
+  ];
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems)) }}
+      />
+
       {/* HERO */}
       <section className="relative h-64 overflow-hidden bg-[#111418] sm:h-80">
         <Image

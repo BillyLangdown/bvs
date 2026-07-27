@@ -4,15 +4,16 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { faqJsonLd, pageMetadata } from "@/lib/seo";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Healthcare & NHS Ventilation",
-  description:
-    "AHU refurbishment, EC fan upgrades, and validation surveys for NHS and private healthcare. Live clinical environments managed as standard. UK nationwide.",
-};
+  description: "AHU refurbishment, EC fan upgrades, and validation surveys for NHS and private healthcare. Live clinical environments managed as standard. UK nationwide.",
+  path: "/hospital-ventilation",
+});
 
 const faqs = [
   {
@@ -91,9 +92,9 @@ export default function HospitalPage() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               Hospital and Healthcare
             </p>
-            <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
+            <p className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
               Ventilation solutions<br />for healthcare.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
               Healthcare ventilation operates under some of the most demanding conditions in the built environment. We understand healthcare environments, how to work in live hospitals, and what it means when AHU plant fails.
@@ -358,6 +359,10 @@ export default function HospitalPage() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }}
+      />
       <FAQAccordion faqs={faqs} />
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}

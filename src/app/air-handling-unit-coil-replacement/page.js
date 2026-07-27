@@ -4,14 +4,15 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { faqJsonLd, pageMetadata } from "@/lib/seo";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
-export const metadata = {
+export const metadata = pageMetadata({
   title: "AHU Coil Replacement",
-  description:
-    "Measure-to-fit AHU coil replacement for any make or model. Heating, cooling, heat recovery, and frost coils sourced or manufactured and installed across the UK.",
-};
+  description: "Measure-to-fit AHU coil replacement for any make or model. Heating, cooling, heat recovery, and frost coils sourced or manufactured and installed across the UK.",
+  path: "/air-handling-unit-coil-replacement",
+});
 
 const faqs = [
   {
@@ -155,9 +156,9 @@ export default function CoilReplacementPage() {
       AHU Coil Replacement
     </p>
 
-    <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
+    <p className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
       Coils matched <br/> to your system.
-    </h1>
+    </p>
 
     <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
 
@@ -584,6 +585,10 @@ export default function CoilReplacementPage() {
       </section>
 
       {/* ── 8. FAQ ───────────────────────────────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }}
+      />
       <FAQAccordion faqs={faqs} theme="dark" />
 
       {/* ── RELATED SERVICES ─────────────────────────────────────────────── */}

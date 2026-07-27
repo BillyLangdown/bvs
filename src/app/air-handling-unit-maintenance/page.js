@@ -4,13 +4,14 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { faqJsonLd, pageMetadata } from "@/lib/seo";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "AHU Maintenance | Air Handling Unit Servicing",
-  description:
-    "Planned and reactive AHU maintenance services from BVS. Keep your air handling units running efficiently with regular servicing, filter changes, and condition checks. UK nationwide.",
-};
+  description: "Planned and reactive AHU maintenance services from BVS. Keep your air handling units running efficiently with regular servicing, filter changes, and condition checks. UK nationwide.",
+  path: "/air-handling-unit-maintenance",
+});
 
 const faqs = [
   {
@@ -104,12 +105,12 @@ export default function AHUMaintenancePage() {
             >
               AHU Maintenance
             </p>
-            <h1
+            <p
               className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
               Keep your AHUs<br />running at their best.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p
               className="mt-5 max-w-xl text-[15px] leading-7 text-white"
@@ -400,6 +401,10 @@ export default function AHUMaintenancePage() {
       </section>
 
       {/* ── FAQ ────────────────────────────────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }}
+      />
       <FAQAccordion faqs={faqs} theme="dark" />
 
       {/* ── RELATED SERVICES ───────────────────────────────────────────── */}

@@ -171,6 +171,7 @@ export const metadata = {
   },
   description:
     "AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls. 40+ years experience. Trusted by NHS, Disney, and Marriott. UK nationwide.",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "BVS | AHU Specialists | Building Ventilation Solutions",
     description:
@@ -181,12 +182,20 @@ export const metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "HVACBusiness",
   name: "BVS Building Ventilation Solutions",
   url: "https://www.bvs-ltd.co.uk",
   logo: "https://www.bvs-ltd.co.uk/bvs-logo.webp",
+  image: "https://www.bvs-ltd.co.uk/bvs-logo.webp",
   telephone: "01256518170",
   email: "info@bvs-ltd.co.uk",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Unit 23, Sandleheath Industrial Estate, Old Brickyard Road, Sandleheath",
+    addressLocality: "Fordingbridge",
+    postalCode: "SP6 1PA",
+    addressCountry: "GB",
+  },
   areaServed: { "@type": "Country", name: "United Kingdom" },
   description:
     "AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls. 40+ years experience. UK nationwide.",
@@ -265,12 +274,12 @@ export default function Home() {
                 Building Ventilation Solutions
               </span>
             </div>
-            <h1
+            <p
               className="text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
               Complete solutions for all your air handling and ventilation needs.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
               Over 40 years practical experience of commercial ventilation projects. <br/> In depth knowledge to offer you the most economical solution no matter how complex.

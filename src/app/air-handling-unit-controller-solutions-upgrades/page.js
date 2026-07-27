@@ -4,15 +4,16 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { faqJsonLd, pageMetadata } from "@/lib/seo";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "AHU Controller Solutions & Upgrades",
-  description:
-    "Independent AHU controller supply, installation, and commissioning across the UK. Fault-finding, BMS integration, PCB replacements, and Trend controls, no manufacturer tie-in.",
-};
+  description: "Independent AHU controller supply, installation, and commissioning across the UK. Fault-finding, BMS integration, PCB replacements, and Trend controls, no manufacturer tie-in.",
+  path: "/air-handling-unit-controller-solutions-upgrades",
+});
 
 const faqs = [
   {
@@ -101,9 +102,9 @@ export default function ControllerUpgradesPage() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               AHU Controller Solutions &amp; Upgrades
             </p>
-            <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
+            <p className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
               Independent AHU<br />controller solutions.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
               Unlike AHU manufacturers who only supply controllers on the condition their engineers do the work, we offer fully independent supply, installation, and commissioning.
@@ -630,6 +631,10 @@ export default function ControllerUpgradesPage() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }}
+      />
       <FAQAccordion faqs={faqs} theme="dark" />
 
       {/* ── RELATED SERVICES ─────────────────────────────────────────────── */}

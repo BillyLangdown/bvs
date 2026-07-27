@@ -3,12 +3,13 @@ import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "About Us",
-  description:
-    "BVS has been refurbishing, upgrading, and maintaining air handling units across the UK for over 40 years. Engineering-led. In-house delivery. Every sector.",
-};
+  description: "BVS has been refurbishing, upgrading, and maintaining air handling units across the UK for over 40 years. Engineering-led. In-house delivery. Every sector.",
+  path: "/about-us",
+});
 
 const values = [
   {

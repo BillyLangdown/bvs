@@ -4,6 +4,7 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { faqJsonLd, pageMetadata } from "@/lib/seo";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
@@ -34,11 +35,11 @@ function ClipboardCheck({ className, strokeWidth = 2 }) {
 }
 function CloseIcon({ className = "" }) {  return (    <svg      width="14"      height="14"      viewBox="0 0 24 24"      fill="none"      className={className}      aria-hidden="true"    >      <path        d="M6 6l12 12M18 6L6 18"        stroke="currentColor"        strokeWidth="2"        strokeLinecap="round"      />    </svg>  );}
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "EC Fan Upgrades & Retrofits for Existing AHUs",
-  description:
-    "EC fan retrofits for existing air handling units. Reduce energy consumption, improve reliability, and support decarbonisation targets, without full AHU replacement.",
-};
+  description: "EC fan retrofits for existing air handling units. Reduce energy consumption, improve reliability, and support decarbonisation targets, without full AHU replacement.",
+  path: "/ec-fan-upgrades-and-retrofits-for-hvac",
+});
 
 
 
@@ -160,12 +161,12 @@ export default async function ECFanUpgradesPage() {
             >
               EC Fan Upgrades &amp; Retrofits
             </p>
-            <h1
+            <p
               className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
               Lower energy use<br />and better reliability.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p
               className="mt-5 max-w-xl text-[15px] leading-7 text-white"
@@ -647,6 +648,10 @@ export default async function ECFanUpgradesPage() {
       </section>
 
       {/* ── 9. FAQ ── surface-2 ───────────────────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }}
+      />
       <FAQAccordion faqs={faqs} theme="dark" />
 
       {/* ── RELATED SERVICES ── white ────────────────────────────────────── */}

@@ -71,7 +71,8 @@ export async function getPostBySlug(slug, { revalidate = 3600 } = {}) {
   const items = await wpFetch("posts", {
     query: {
       slug,
-      _fields: "id,slug,title,content,excerpt,date,yoast_head_json",
+      _embed: "wp:featuredmedia",
+      _fields: "id,slug,title,content,excerpt,date,_links,_embedded,yoast_head_json",
     },
     next: { revalidate },
   });
@@ -213,11 +214,11 @@ export async function getShopProductBySlug(slug, { revalidate = 3600 } = {}) {
 
   // Format price from prices object (minor units) — avoids HTML entity issues in price_html
   const pricesObj = storeProduct?.prices;
-  const priceDisplay = pricesObj?.price
-    ? `${pricesObj.currency_prefix || "£"}${(
-        parseInt(pricesObj.price, 10) /
-        Math.pow(10, pricesObj.currency_minor_unit ?? 2)
-      ).toLocaleString("en-GB", {
+  const priceAmount = pricesObj?.price
+    ? parseInt(pricesObj.price, 10) / Math.pow(10, pricesObj.currency_minor_unit ?? 2)
+    : null;
+  const priceDisplay = priceAmount !== null
+    ? `${pricesObj.currency_prefix || "£"}${priceAmount.toLocaleString("en-GB", {
         minimumFractionDigits: pricesObj.currency_minor_unit ?? 2,
         maximumFractionDigits: pricesObj.currency_minor_unit ?? 2,
       })}`
@@ -242,6 +243,8 @@ export async function getShopProductBySlug(slug, { revalidate = 3600 } = {}) {
     })),
     // WooCommerce Store API fields
     price: priceDisplay,
+    priceAmount,
+    priceCurrency: pricesObj?.currency_code || "GBP",
     sku: storeProduct?.sku || null,
     weight: storeProduct?.weight || null,
     dimensions: storeProduct?.dimensions || null,

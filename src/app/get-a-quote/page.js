@@ -1,10 +1,13 @@
 import { Container } from "@/components/site/Container";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Get a quote",
-  description: "Request a quote",
-};
+export const metadata = pageMetadata({
+  title: "Get a Quote | AHU & Ventilation Services",
+  description:
+    "Request a quote for AHU refurbishment, EC fan upgrades, coil replacement, or ventilation maintenance. We respond with practical options within one working day.",
+  path: "/get-a-quote",
+});
 
 export default function GetAQuotePage() {
   return (

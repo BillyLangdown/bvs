@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Commercial Pipework",
-  description:
-    "Commercial and industrial pipework installation, maintenance, and repair from BVS. Supporting HVAC, heating, and process pipework across the UK.",
-};
+  description: "Commercial and industrial pipework installation, maintenance, and repair from BVS. Supporting HVAC, heating, and process pipework across the UK.",
+  path: "/industrial-pipework-services",
+});
 
 const scope = [
   "HVAC chilled and hot water pipework",
@@ -128,9 +129,9 @@ export default function IndustrialPipeworkPage() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               Mechanical Solutions
             </p>
-            <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
+            <p className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
               Commercial pipework.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
               Reliable pipework is the backbone of any heating, cooling, or ventilation system. Our engineers install, maintain, and repair commercial and industrial pipework systems to the highest standards.

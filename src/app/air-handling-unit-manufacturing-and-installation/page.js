@@ -4,15 +4,16 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { faqJsonLd, pageMetadata } from "@/lib/seo";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "AHU Manufacturing & Installation",
-  description:
-    "Custom air handling unit manufacturing and end-to-end installation from our UK facility. Survey, design, manufacture, and install under one contract. 40+ years experience.",
-};
+  description: "Custom air handling unit manufacturing and end-to-end installation from our UK facility. Survey, design, manufacture, and install under one contract. 40+ years experience.",
+  path: "/air-handling-unit-manufacturing-and-installation",
+});
 
 const faqs = [
   {
@@ -116,12 +117,12 @@ export default function AHUManufacturingInstallationPage() {
             >
               AHU Manufacturing &amp; Installation
             </p>
-            <h1
+            <p
               className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
               Manufacturing &amp; installation,<br />under one contract.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p
               className="mt-5 max-w-xl text-[15px] leading-7 text-white"
@@ -448,6 +449,10 @@ export default function AHUManufacturingInstallationPage() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }}
+      />
       <FAQAccordion faqs={faqs} />
 
       {/* ── RELATED SERVICES ─────────────────────────────────────────── */}

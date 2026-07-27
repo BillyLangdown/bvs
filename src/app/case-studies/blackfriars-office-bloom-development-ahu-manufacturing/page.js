@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Blackfriars Office Bloom Development AHU Manufacturing Case Study",
-  description:
-    "BVS designed, manufactured, and installed two bespoke air handling units for the Dorset Rise Bloom office development at Blackfriars, London - including crane lifts, road closures, and full ductwork integration.",
-};
+  description: "BVS designed, manufactured, and installed two bespoke air handling units for the Dorset Rise Bloom office development at Blackfriars, London - including crane lifts, road closures, and full ductwork integration.",
+  path: "/case-studies/blackfriars-office-bloom-development-ahu-manufacturing",
+});
 
 const slug = "blackfriars-office-bloom-development-ahu-manufacturing";
 const imgBase = `/case-studies/images/${slug}`;
