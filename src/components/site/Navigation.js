@@ -580,17 +580,18 @@ function MegaDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen, 
 function NavDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen, onItemClick }) {
   return (
     <div className="static" onMouseEnter={onOpen} onMouseLeave={onClose}>
-      <button
-        type="button"
+      <Link
+        href={item.href}
         className={`inline-flex items-center gap-1 whitespace-nowrap ${linkClass}`}
         aria-haspopup="menu"
         aria-expanded={isActive ? "true" : "false"}
         onFocus={onOpen}
         onBlur={onClose}
+        onClick={onItemClick}
       >
         {item.label}
         <ChevronIcon />
-      </button>
+      </Link>
 
       <div
         className={`absolute left-0 right-0 top-full z-50 pt-2 transition duration-150 ${

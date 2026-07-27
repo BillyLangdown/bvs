@@ -1,6 +1,8 @@
+import { getPosts, getShopProducts, getProductCategories } from "@/lib/wordpress/api";
+
 const BASE = "https://www.bvs-ltd.co.uk";
 
-export default function sitemap() {
+export default async function sitemap() {
   const routes = [
     // Homepage
     { url: BASE, priority: 1.0, changeFrequency: "weekly" },
@@ -26,7 +28,8 @@ export default function sitemap() {
     { url: `${BASE}/commercial-boiler-and-heating-services`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/industrial-pipework-services`, priority: 0.8, changeFrequency: "monthly" },
 
-    // Industries (old URLs preserved)
+    // Industries
+    { url: `${BASE}/industries`, priority: 0.7, changeFrequency: "monthly" },
     { url: `${BASE}/hospital-ventilation`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/hotel-leisure-ventilation`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/industries/defence`, priority: 0.8, changeFrequency: "monthly" },
@@ -64,8 +67,50 @@ export default function sitemap() {
     { url: `${BASE}/careers`, priority: 0.5, changeFrequency: "monthly" },
     { url: `${BASE}/our-blogs`, priority: 0.6, changeFrequency: "weekly" },
     { url: `${BASE}/hvac-resources`, priority: 0.5, changeFrequency: "monthly" },
+    { url: `${BASE}/privacy-policy`, priority: 0.3, changeFrequency: "yearly" },
+    { url: `${BASE}/newsletter`, priority: 0.3, changeFrequency: "yearly" },
     { url: `${BASE}/shop`, priority: 0.6, changeFrequency: "weekly" },
   ];
+
+  // Dynamic: individual blog posts
+  try {
+    const posts = await getPosts({ perPage: 100, revalidate: 3600 });
+    for (const post of posts || []) {
+      if (!post?.slug) continue;
+      routes.push({
+        url: `${BASE}/our-blogs/${post.slug}`,
+        priority: 0.5,
+        changeFrequency: "yearly",
+      });
+    }
+  } catch {}
+
+  // Dynamic: individual shop products + categories
+  try {
+    const [products, categories] = await Promise.all([
+      getShopProducts({ revalidate: 3600 }),
+      getProductCategories({ revalidate: 600 }),
+    ]);
+    const filterCategoryIds = new Set(
+      (categories || []).filter((c) => c.name.toLowerCase().includes("filter")).map((c) => c.id),
+    );
+    for (const product of products || []) {
+      if (!product?.slug || product.categories?.some((id) => filterCategoryIds.has(id))) continue;
+      routes.push({
+        url: `${BASE}/shop/${product.slug}`,
+        priority: 0.6,
+        changeFrequency: "weekly",
+      });
+    }
+    for (const category of categories || []) {
+      if (filterCategoryIds.has(category.id)) continue;
+      routes.push({
+        url: `${BASE}/shop/category/${category.slug}`,
+        priority: 0.5,
+        changeFrequency: "weekly",
+      });
+    }
+  } catch {}
 
   return routes.map((r) => ({
     url: r.url,
