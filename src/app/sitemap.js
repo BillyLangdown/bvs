@@ -1,5 +1,7 @@
 import { getPosts, getShopProducts, getProductCategories } from "@/lib/wordpress/api";
 
+export const revalidate = 3600;
+
 const BASE = "https://www.bvs-ltd.co.uk";
 
 export default async function sitemap() {
