@@ -3,11 +3,13 @@ import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Ducting Repair & Replacement",
   description: "Full ductwork installation, repair, relining, and replacement across the UK. BVS manage the complete scope from survey and specification through to installation and sign-off.",
-};
+  path: "/solutions/ventilation/ducting-repair-replacement",
+});
 
 const scope = [
   "Full ductwork installation",

@@ -4,15 +4,15 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
-import { faqJsonLd } from "@/lib/seo";
+import { faqJsonLd, pageMetadata } from "@/lib/seo";
 import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Education Sector Ventilation",
-  description:
-    "AHU refurbishment, EC fan upgrades, and ventilation services for schools, colleges, and universities. Delivered around academic calendars. UK nationwide.",
-};
+  description: "AHU refurbishment, EC fan upgrades, and ventilation services for schools, colleges, and universities. Delivered around academic calendars. UK nationwide.",
+  path: "/education-ventilation",
+});
 
 const faqs = [
   {

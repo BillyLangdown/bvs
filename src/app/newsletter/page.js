@@ -1,10 +1,13 @@
 import { Container } from "@/components/site/Container";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Newsletter",
-  description: "Subscribe to the BVS newsletter",
-};
+export const metadata = pageMetadata({
+  title: "Newsletter Signup",
+  description:
+    "Get AHU maintenance tips, EC fan upgrade guidance, and ventilation sector updates from the BVS engineering team, straight to your inbox.",
+  path: "/newsletter",
+});
 
 export default function NewsletterPage() {
   return (

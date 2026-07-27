@@ -171,6 +171,7 @@ export const metadata = {
   },
   description:
     "AHU refurbishment, EC fan upgrades, coil replacement, new installation, and controls. 40+ years experience. Trusted by NHS, Disney, and Marriott. UK nationwide.",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "BVS | AHU Specialists | Building Ventilation Solutions",
     description:

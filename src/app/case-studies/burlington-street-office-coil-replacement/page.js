@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Burlington Street Office Coil Replacement Case Study",
-  description:
-    "BVS designed, manufactured, and installed a replacement frost coil at the Burlington Street Office, splitting the coil into two sections to overcome plantroom access constraints.",
-};
+  description: "BVS designed, manufactured, and installed a replacement frost coil at the Burlington Street Office, splitting the coil into two sections to overcome plantroom access constraints.",
+  path: "/case-studies/burlington-street-office-coil-replacement",
+});
 
 const workItems = [
   {

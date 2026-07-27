@@ -5,12 +5,13 @@ import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Ventilation Troubleshooting",
-  description:
-    "Expert diagnosis and resolution of ventilation system problems. BVS identify root causes quickly and restore full performance, with a written report included.",
-};
+  description: "Expert diagnosis and resolution of ventilation system problems. BVS identify root causes quickly and restore full performance, with a written report included.",
+  path: "/air-handling-unit-troubleshooting",
+});
 
 const symptoms = [
   {

@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "RED Distillery AHU Refurbishment Case Study",
-  description:
-    "BVS designed and installed a new extract ventilation system at RED Distillery for AU Vodka, including spiral ductwork, fire dampers, and an extract fan achieving 6 air changes per hour.",
-};
+  description: "BVS designed and installed a new extract ventilation system at RED Distillery for AU Vodka, including spiral ductwork, fire dampers, and an extract fan achieving 6 air changes per hour.",
+  path: "/case-studies/red-distillery-ahu-refurbishment",
+});
 
 const workItems = [
   {

@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Friary Meadows Kitchen AHU Refurbishment Case Study",
-  description:
-    "BVS resolved overheating and noise issues at Friary Meadows Retirement Village by surveying a poorly designed make-up air system and implementing retrofit solutions that improved kitchen extraction and reduced noise.",
-};
+  description: "BVS resolved overheating and noise issues at Friary Meadows Retirement Village by surveying a poorly designed make-up air system and implementing retrofit solutions that improved kitchen extraction and reduced noise.",
+  path: "/case-studies/friary-meadow-ahu-replacement",
+});
 
 export default function FriaryMeadowAhuReplacement() {
   return (

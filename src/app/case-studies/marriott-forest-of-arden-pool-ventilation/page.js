@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Marriott Forest of Arden Pool Ventilation Troubleshooting Case Study",
-  description:
-    "BVS investigated and resolved pool hall ventilation issues at the Marriott Forest of Arden hotel, identifying AHU and ductwork faults preventing the hall from reaching its required 31°C temperature.",
-};
+  description: "BVS investigated and resolved pool hall ventilation issues at the Marriott Forest of Arden hotel, identifying AHU and ductwork faults preventing the hall from reaching its required 31°C temperature.",
+  path: "/case-studies/marriott-forest-of-arden-pool-ventilation",
+});
 
 const workItems = [
   {

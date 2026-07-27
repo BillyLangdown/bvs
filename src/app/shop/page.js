@@ -6,12 +6,13 @@ import { getShopProducts, getProductCategories } from "@/lib/wordpress/api";
 import { WpConfigError } from "@/lib/wordpress/client";
 import { ShopGrid } from "@/components/shop/ShopGrid";
 import { CustomBuildEnquiry } from "@/components/forms/CustomBuildEnquiry";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Shop - HVAC Components & Parts",
-  description:
-    "EC fans, filters, heating & cooling coils, and heater batteries. HVAC components sourced and supplied by BVS for commercial and industrial applications.",
-};
+  description: "EC fans, filters, heating & cooling coils, and heater batteries. HVAC components sourced and supplied by BVS for commercial and industrial applications.",
+  path: "/shop",
+});
 
 export default async function ShopPage() {
   let products = [];

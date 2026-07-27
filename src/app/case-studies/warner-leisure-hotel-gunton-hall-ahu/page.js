@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Warner Leisure Hotel Gunton Hall AHU Manufacturing Case Study",
-  description:
-    "BVS designed, manufactured, and installed a bespoke pool hall AHU at Warner Leisure Hotel Gunton Hall, replacing an end-of-life unit with a tailor-made, corrosion-resistant unit fitted with a plate heat exchanger and Trend controls.",
-};
+  description: "BVS designed, manufactured, and installed a bespoke pool hall AHU at Warner Leisure Hotel Gunton Hall, replacing an end-of-life unit with a tailor-made, corrosion-resistant unit fitted with a plate heat exchanger and Trend controls.",
+  path: "/case-studies/warner-leisure-hotel-gunton-hall-ahu",
+});
 
 const workItems = [
   {

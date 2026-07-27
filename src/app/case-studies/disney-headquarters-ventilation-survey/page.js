@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Disney Headquarters Hammersmith AHU Validation & Survey Case Study",
-  description:
-    "BVS conducted a comprehensive AHU validation and ventilation survey across nine air handling units at Disney HQ in Hammersmith, assessing condition, performance, weatherproofing, and recommending refurbishment or replacement.",
-};
+  description: "BVS conducted a comprehensive AHU validation and ventilation survey across nine air handling units at Disney HQ in Hammersmith, assessing condition, performance, weatherproofing, and recommending refurbishment or replacement.",
+  path: "/case-studies/disney-headquarters-ventilation-survey",
+});
 
 const workItems = [
   {

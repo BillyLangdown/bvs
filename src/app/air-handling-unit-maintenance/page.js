@@ -4,14 +4,14 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import FAQAccordion from "@/components/ui/FAQAccordion";
-import { faqJsonLd } from "@/lib/seo";
+import { faqJsonLd, pageMetadata } from "@/lib/seo";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "AHU Maintenance | Air Handling Unit Servicing",
-  description:
-    "Planned and reactive AHU maintenance services from BVS. Keep your air handling units running efficiently with regular servicing, filter changes, and condition checks. UK nationwide.",
-};
+  description: "Planned and reactive AHU maintenance services from BVS. Keep your air handling units running efficiently with regular servicing, filter changes, and condition checks. UK nationwide.",
+  path: "/air-handling-unit-maintenance",
+});
 
 const faqs = [
   {

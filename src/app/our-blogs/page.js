@@ -3,12 +3,13 @@ import Link from "next/link";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { getPosts, stripHtml } from "@/lib/wordpress/api";
 import Image from "next/image";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Insights",
-  description:
-    "Technical guidance, project thinking, and sector updates from the BVS engineering team. AHU refurbishment, EC fans, compliance, and energy efficiency.",
-};
+  description: "Technical guidance, project thinking, and sector updates from the BVS engineering team. AHU refurbishment, EC fans, compliance, and energy efficiency.",
+  path: "/our-blogs",
+});
 
 const placeholderPosts = [
   {

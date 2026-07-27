@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Leisure Centre Dorset EC Fan Upgrade Case Study",
-  description:
-    "BVS upgraded a failing swimming pool AHU at a Dorset leisure centre, replacing belt-driven fans with Ziehl-Abegg GR561-ZID EC fans to restore airflow, humidity control, and protect the building fabric.",
-};
+  description: "BVS upgraded a failing swimming pool AHU at a Dorset leisure centre, replacing belt-driven fans with Ziehl-Abegg GR561-ZID EC fans to restore airflow, humidity control, and protect the building fabric.",
+  path: "/case-studies/leisure-centre-dorset-ec-fan-upgrade",
+});
 
 const workItems = [
   {

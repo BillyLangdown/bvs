@@ -4,12 +4,13 @@ import { Container } from "@/components/site/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
 import { TrustedByBar } from "@/components/site/TrustedByBar";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Mechanical Solutions | Commercial Mechanical Services",
-  description:
-    "Commercial mechanical solutions from BVS - mechanical & electrical works, industrial pipework, and commercial boiler & heating services. Gas Safe registered. UK nationwide.",
-};
+  description: "Commercial mechanical solutions from BVS - mechanical & electrical works, industrial pipework, and commercial boiler & heating services. Gas Safe registered. UK nationwide.",
+  path: "/mechanical-solutions",
+});
 
 const services = [
   {

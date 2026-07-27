@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Industries We Serve",
-  description:
-    "BVS delivers AHU refurbishment, EC fan upgrades, and ventilation services across healthcare, defence, education, hotels, leisure, and retail. 40+ years experience.",
-};
+  description: "BVS delivers AHU refurbishment, EC fan upgrades, and ventilation services across healthcare, defence, education, hotels, leisure, and retail. 40+ years experience.",
+  path: "/industries",
+});
 
 const sectors = [
   {

@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "TOCA Football O2 Arena AHU Refurbishment Case Study",
-  description:
-    "BVS refurbished three AHUs at the TOCA Social O2 Arena, repurposing units to meet the air volume requirements for the world's first interactive football and dining experience.",
-};
+  description: "BVS refurbished three AHUs at the TOCA Social O2 Arena, repurposing units to meet the air volume requirements for the world's first interactive football and dining experience.",
+  path: "/case-studies/toca-football-o2-ahu-refurbishment",
+});
 
 const workItems = [
   {

@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Concorde Simulator Ventilation Case Study",
-  description:
-    "BVS engineered a heat recovery ventilation solution for the Concorde flight simulator at Brooklands Museum, surpassing promised air volume delivery by over 50% while maintaining CO2 levels well below 800 PPM.",
-};
+  description: "BVS engineered a heat recovery ventilation solution for the Concorde flight simulator at Brooklands Museum, surpassing promised air volume delivery by over 50% while maintaining CO2 levels well below 800 PPM.",
+  path: "/case-studies/concorde-simulator-ventilation",
+});
 
 export default function ConcrodeSimulatorVentilation() {
   return (

@@ -2,12 +2,13 @@ import Link from "next/link";
 import { Container } from "@/components/site/Container";
 import { TrustBar } from "@/components/site/TrustBar";
 import { ClientBar } from "@/components/site/ClientBar";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "AHU Solutions",
-  description:
-    "Complete air handling unit solutions from BVS - refurbishment, manufacturing, installation, coil replacement, EC fan upgrades, and controller solutions. 40+ years experience, UK nationwide.",
-};
+  description: "Complete air handling unit solutions from BVS - refurbishment, manufacturing, installation, coil replacement, EC fan upgrades, and controller solutions. 40+ years experience, UK nationwide.",
+  path: "/solutions/ahu",
+});
 
 const services = [
   {

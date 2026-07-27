@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { QuickQuoteForm } from "@/components/forms/QuickQuoteForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Pharmaceutical Manufacturers AHU Heating Coil Replacement Case Study",
-  description:
-    "BVS replaced the heating coil on an AHU at a pharmaceutical manufacturing facility, including removal of water from the flooded unit, coil uninstallation, new coil installation, pipework connections, insulation, and commissioning.",
-};
+  description: "BVS replaced the heating coil on an AHU at a pharmaceutical manufacturing facility, including removal of water from the flooded unit, coil uninstallation, new coil installation, pipework connections, insulation, and commissioning.",
+  path: "/case-studies/pharmaceutical-lab-coil-replacement",
+});
 
 const workItems = [
   {
