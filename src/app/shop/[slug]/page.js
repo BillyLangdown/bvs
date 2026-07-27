@@ -11,6 +11,7 @@ import {
 import { ProductEnquiryForm } from "@/components/forms/ProductEnquiryForm";
 import { ProductGallery } from "@/components/shop/ProductGallery";
 import { ProductTabs } from "@/components/shop/ProductTabs";
+import { pageMetadata, truncateDescription, breadcrumbJsonLd, productJsonLd } from "@/lib/seo";
 
 export const revalidate = 3600;
 
@@ -30,10 +31,17 @@ export async function generateMetadata({ params }) {
   // should propagate rather than be treated as "not found" (see api.js for why).
   const product = await getShopProductBySlug(slug);
   if (!product) return { title: "Product Not Found" };
-  return {
-    title: `${product.title} | Shop`,
-    description: product.excerpt?.slice(0, 160) || "",
-  };
+  const categories = await getProductCategories({ revalidate: 600 }).catch(() => []);
+  const categoryName = categories.find((c) => product.categories.includes(c.id))?.name || "";
+  return pageMetadata({
+    title: `${product.title}${categoryName ? ` | ${categoryName}` : ""} | Shop`,
+    description: truncateDescription(
+      product.excerpt || `${product.title}, supplied by BVS for commercial and industrial HVAC applications.`,
+    ),
+    path: `/shop/${product.slug}`,
+    image: product.imageUrl,
+    imageAlt: product.title,
+  });
 }
 
 export default async function ProductPage({ params }) {
@@ -68,8 +76,26 @@ export default async function ProductPage({ params }) {
   const stockIsIn = product.stockClass === "in-stock";
   const hasStock = !!product.stockBadge;
 
+  const productUrl = `/shop/${product.slug}`;
+  const breadcrumbItems = [
+    { name: "Home", path: "/" },
+    { name: "Shop", path: "/shop" },
+    ...(categoryName ? [{ name: categoryName, path: `/shop/category/${categories.find((c) => c.id === product.categories[0])?.slug || ""}` }] : []),
+    { name: product.title, path: productUrl },
+  ];
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productJsonLd(product, { categoryName, url: productUrl })),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems)) }}
+      />
 
       {/* ── BREADCRUMB ──────────────────────────────────────────────── */}
       <section className="border-b border-white/10 bg-[#111418] py-8 sm:py-10">

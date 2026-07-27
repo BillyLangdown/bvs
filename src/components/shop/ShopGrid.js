@@ -4,8 +4,8 @@ import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export function ShopGrid({ products, categories }) {
-  const [activeCategory, setActiveCategory] = useState(null);
+export function ShopGrid({ products, categories, initialCategory = null }) {
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
 
   const filtered = useMemo(() => {
     if (!activeCategory) return products;
@@ -26,9 +26,12 @@ export function ShopGrid({ products, categories }) {
           <span className="mr-1 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
             Filter
           </span>
-          <button
-            type="button"
-            onClick={() => setActiveCategory(null)}
+          <Link
+            href="/shop"
+            onClick={(e) => {
+              e.preventDefault();
+              setActiveCategory(null);
+            }}
             className={`border px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide transition-colors ${
               activeCategory === null
                 ? "border-[#297858] bg-[#297858] text-white"
@@ -36,12 +39,15 @@ export function ShopGrid({ products, categories }) {
             }`}
           >
             All
-          </button>
+          </Link>
           {populatedCategories.map((c) => (
-            <button
+            <Link
               key={c.id}
-              type="button"
-              onClick={() => setActiveCategory(activeCategory === c.id ? null : c.id)}
+              href={`/shop/category/${c.slug}`}
+              onClick={(e) => {
+                e.preventDefault();
+                setActiveCategory(activeCategory === c.id ? null : c.id);
+              }}
               className={`border px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide transition-colors ${
                 activeCategory === c.id
                   ? "border-[#297858] bg-[#297858] text-white"
@@ -49,7 +55,7 @@ export function ShopGrid({ products, categories }) {
               }`}
             >
               {c.name}
-            </button>
+            </Link>
           ))}
         </div>
       )}
