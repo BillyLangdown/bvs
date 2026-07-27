@@ -156,9 +156,9 @@ export default function CoilReplacementPage() {
       AHU Coil Replacement
     </p>
 
-    <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
+    <p className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
       Coils matched <br/> to your system.
-    </h1>
+    </p>
 
     <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
 

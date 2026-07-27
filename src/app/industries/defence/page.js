@@ -96,9 +96,9 @@ export default function DefencePage() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               Defence &amp; Government
             </p>
-            <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
+            <p className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
               Specialists for secure<br />&amp; government sites.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
               Defence and government facilities operate within access protocols, security requirements, and programme obligations that most contractors are not equipped to meet. Experienced on secure sites, working within the rules, to programme.

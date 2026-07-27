@@ -99,9 +99,9 @@ export default function RetailPage() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               Retail &amp; Commercial
             </p>
-            <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
+            <p className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
               AHU works planned around<br />your trading hours.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
               Retail and commercial buildings operate on commercial timelines, trading hours, lease obligations, and EPC targets. AHU works have to fit around all of them. We plan around your calendar, not ours.

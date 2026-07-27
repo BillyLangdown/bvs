@@ -79,9 +79,9 @@ export default function VentilationServicesPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400">
               Building Ventilation Solutions
             </p>
-            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
+            <p className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
               Ventilation services.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-emerald-500" />
             <p className="mt-6 max-w-2xl text-base leading-7 text-white/75">
               From fault diagnosis to formal validation surveys, our ventilation

@@ -266,12 +266,12 @@ export default function Home() {
                 Building Ventilation Solutions
               </span>
             </div>
-            <h1
+            <p
               className="text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
               Complete solutions for all your air handling and ventilation needs.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 text-[15px] leading-7 text-white" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
               Over 40 years practical experience of commercial ventilation projects. <br/> In depth knowledge to offer you the most economical solution no matter how complex.

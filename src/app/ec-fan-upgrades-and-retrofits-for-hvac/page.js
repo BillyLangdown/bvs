@@ -161,12 +161,12 @@ export default async function ECFanUpgradesPage() {
             >
               EC Fan Upgrades &amp; Retrofits
             </p>
-            <h1
+            <p
               className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
               Lower energy use<br />and better reliability.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p
               className="mt-5 max-w-xl text-[15px] leading-7 text-white"

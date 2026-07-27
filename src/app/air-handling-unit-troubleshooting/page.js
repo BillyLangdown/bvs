@@ -118,9 +118,9 @@ export default function TroubleshootingPage() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               Ventilation Troubleshooting
             </p>
-            <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
+            <p className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
               Ventilation<br />troubleshooting.
-            </h1>
+            </p>
             <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white">
               Ventilation problems affect comfort, air quality, and energy costs. Our engineers get to the root cause quickly, diagnosing faults, resolving what can be fixed on the day, and reporting everything with costed next steps.
