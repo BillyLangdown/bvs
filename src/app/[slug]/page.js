@@ -4,6 +4,7 @@ import { Container } from "@/components/site/Container";
 import { WpContent } from "@/components/content/WpContent";
 import { getCaseStudyPages, getPageBySlug, getPages, stripHtml } from "@/lib/wordpress/api";
 import { cleanWpHtml, extractDiviHero } from "@/lib/wordpress/format";
+import { pageMetadata, truncateDescription } from "@/lib/seo";
 
 export async function generateStaticParams() {
   try {
@@ -35,10 +36,13 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const page = await getPageBySlug(slug).catch(() => null);
   if (!page) return {};
-  return {
-    title: page.title?.rendered || "Page",
-    description: stripHtml(page.excerpt?.rendered) || "Page",
-  };
+  const title = page.title?.rendered || "Page";
+  const excerpt = stripHtml(page.excerpt?.rendered || "") || stripHtml(page.content?.rendered || "");
+  return pageMetadata({
+    title,
+    description: truncateDescription(excerpt) || `${title} | BVS Building Ventilation Solutions.`,
+    path: `/${slug}`,
+  });
 }
 
 export default async function WordpressPageBySlug({ params }) {

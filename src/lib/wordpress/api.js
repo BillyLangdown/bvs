@@ -71,7 +71,8 @@ export async function getPostBySlug(slug, { revalidate = 3600 } = {}) {
   const items = await wpFetch("posts", {
     query: {
       slug,
-      _fields: "id,slug,title,content,excerpt,date,yoast_head_json",
+      _embed: "wp:featuredmedia",
+      _fields: "id,slug,title,content,excerpt,date,_links,_embedded,yoast_head_json",
     },
     next: { revalidate },
   });
