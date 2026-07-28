@@ -1,5 +1,6 @@
 import { wpFetch } from "./client";
 import { storeFetch, getStoreProductBySlug } from "./store";
+import { fixWpContentUrls } from "./fixWpContentUrls";
 
 function stripHtml(html) {
   if (!html) return "";
@@ -198,10 +199,12 @@ export async function getShopProductBySlug(slug, { revalidate = 3600 } = {}) {
 
   // _et_pb_old_content holds clean HTML written before the Divi builder took over
   const rawContent = p?.meta?._et_pb_old_content || "";
-  const content = rawContent
-    .replace(/\s+data-(?:start|end)="[^"]*"/g, "")
-    .replace(/\[[\w/][^\]]*\]/g, "")
-    .trim();
+  const content = fixWpContentUrls(
+    rawContent
+      .replace(/\s+data-(?:start|end)="[^"]*"/g, "")
+      .replace(/\[[\w/][^\]]*\]/g, "")
+      .trim()
+  );
 
   // Extract brand — prefer the dedicated brands taxonomy returned by the Store API,
   // fall back to a WC attribute named "brand" / taxonomy "pa_brand"

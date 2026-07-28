@@ -1,4 +1,5 @@
 import sanitizeHtml from "sanitize-html";
+import { fixWpContentUrls } from "@/lib/wordpress/fixWpContentUrls";
 
 const ALLOWED_TAGS = [
   ...sanitizeHtml.defaults.allowedTags,
@@ -14,7 +15,7 @@ const ALLOWED_ATTRIBUTES = {
 
 export function WpContent({ html, className = "" }) {
   if (!html) return null;
-  const clean = sanitizeHtml(html, {
+  const clean = sanitizeHtml(fixWpContentUrls(html), {
     allowedTags: ALLOWED_TAGS,
     allowedAttributes: ALLOWED_ATTRIBUTES,
     allowedSchemes: ["http", "https", "mailto", "tel"],
