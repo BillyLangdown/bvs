@@ -1,4 +1,5 @@
 import sanitizeHtml from "sanitize-html";
+import { fixWpContentUrls } from "@/lib/wordpress/fixWpContentUrls";
 
 const ALLOWED_TAGS = [
   ...sanitizeHtml.defaults.allowedTags,
@@ -11,17 +12,6 @@ const ALLOWED_ATTRIBUTES = {
   img: ["src", "alt", "title", "width", "height", "loading", "class"],
   "*": ["class", "id"],
 };
-
-// Old post content still links to media on the primary domain
-// (https://www.bvs-ltd.co.uk/wp-content/...), which is blocked by
-// Vercel's default bot protection. The real WordPress media lives on
-// the headless CMS subdomain, so point wp-content URLs there instead.
-function fixWpContentUrls(html) {
-  return html.replace(
-    /https?:\/\/(?:www\.)?bvs-ltd\.co\.uk\/wp-content\//g,
-    "https://cms.bvs-ltd.co.uk/wp-content/"
-  );
-}
 
 export function WpContent({ html, className = "" }) {
   if (!html) return null;
