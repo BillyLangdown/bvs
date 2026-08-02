@@ -19,6 +19,12 @@ const PATHS_BY_TYPE = {
 
 const SLUG_FIELD_CANDIDATES = ["slug", "post_slug", "post_name", "name"];
 
+// WordPress's own post_type values (post/page/product) map directly onto
+// our PATHS_BY_TYPE keys, so a plugin that sends the raw post object
+// (e.g. WP Webhooks: { post: { post_type, post_name, ... } }) needs no
+// translation, just picking the field out.
+const NESTED_POST_FIELD_CANDIDATES = ["post", "post_data", "data"];
+
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX = 20;
 const requestLog = new Map();
@@ -65,10 +71,27 @@ async function parseBody(request) {
   }
 }
 
+// Finds the nested WordPress post object, if the payload wraps it
+// (e.g. WP Webhooks sends { post: { post_name, post_type, ... } }).
+function findNestedPost(body) {
+  for (const key of NESTED_POST_FIELD_CANDIDATES) {
+    if (body?.[key] && typeof body[key] === "object") return body[key];
+  }
+  return null;
+}
+
 function findSlug(body) {
   for (const key of SLUG_FIELD_CANDIDATES) {
     if (body?.[key]) return body[key];
   }
+  const nested = findNestedPost(body);
+  if (nested?.post_name) return nested.post_name;
+  return null;
+}
+
+function findType(body) {
+  const nested = findNestedPost(body);
+  if (nested?.post_type && PATHS_BY_TYPE[nested.post_type]) return nested.post_type;
   return null;
 }
 
@@ -114,7 +137,7 @@ export async function POST(request) {
     return NextResponse.json({ error: "Invalid secret" }, { status: 401 });
   }
 
-  const type = params.get("type") || body?.type || "post";
+  const type = params.get("type") || body?.type || findType(body) || "post";
   const slug = params.get("slug") || findSlug(body);
 
   if (!slug) {
