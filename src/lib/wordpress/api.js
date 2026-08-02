@@ -207,13 +207,17 @@ export async function getShopProductBySlug(slug, { revalidate = 3600 } = {}) {
   );
 
   // Extract brand — prefer the dedicated brands taxonomy returned by the Store API,
-  // fall back to a WC attribute named "brand" / taxonomy "pa_brand"
+  // fall back to a WC attribute named "brand" / taxonomy "pa_brand". Custom-built items
+  // (e.g. coils built to spec) have no third-party manufacturer, so fall back to "BVS"
+  // rather than leaving brand empty — BVS is the genuine maker/supplier of those, and
+  // Google's Merchant listings check flags products with no brand/gtin as missing a
+  // global identifier.
   const attributes = storeProduct?.attributes || [];
   const brand =
     storeProduct?.brands?.[0]?.name ||
     attributes.find((a) => a.name?.toLowerCase() === "brand" || a.taxonomy === "pa_brand")
       ?.terms?.[0]?.name ||
-    null;
+    "BVS";
 
   // Format price from prices object (minor units) — avoids HTML entity issues in price_html
   const pricesObj = storeProduct?.prices;
