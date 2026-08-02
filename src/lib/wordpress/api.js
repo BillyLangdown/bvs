@@ -207,18 +207,27 @@ export async function getShopProductBySlug(slug, { revalidate = 3600 } = {}) {
   );
 
   // Extract brand — prefer the dedicated brands taxonomy returned by the Store API,
-  // fall back to a WC attribute named "brand" / taxonomy "pa_brand"
+  // fall back to a WC attribute named "brand" / taxonomy "pa_brand". Custom-built items
+  // (e.g. coils built to spec) have no third-party manufacturer, so fall back to "BVS"
+  // rather than leaving brand empty — BVS is the genuine maker/supplier of those, and
+  // Google's Merchant listings check flags products with no brand/gtin as missing a
+  // global identifier.
   const attributes = storeProduct?.attributes || [];
   const brand =
     storeProduct?.brands?.[0]?.name ||
     attributes.find((a) => a.name?.toLowerCase() === "brand" || a.taxonomy === "pa_brand")
       ?.terms?.[0]?.name ||
-    null;
+    "BVS";
 
-  // Format price from prices object (minor units) — avoids HTML entity issues in price_html
+  // Format price from prices object (minor units) — avoids HTML entity issues in price_html.
+  // A raw price of "0" means WooCommerce has no fixed price set (custom/quote-only items
+  // like made-to-spec coils), not a genuine £0 product, so it's treated the same as no
+  // price at all rather than surfaced as £0.00 in the UI or, worse, in Product schema
+  // (which was leaking price: "0.00" into structured data before this fix).
   const pricesObj = storeProduct?.prices;
-  const priceAmount = pricesObj?.price
-    ? parseInt(pricesObj.price, 10) / Math.pow(10, pricesObj.currency_minor_unit ?? 2)
+  const rawPrice = pricesObj?.price ? parseInt(pricesObj.price, 10) : 0;
+  const priceAmount = rawPrice > 0
+    ? rawPrice / Math.pow(10, pricesObj.currency_minor_unit ?? 2)
     : null;
   const priceDisplay = priceAmount !== null
     ? `${pricesObj.currency_prefix || "£"}${priceAmount.toLocaleString("en-GB", {
