@@ -95,6 +95,24 @@ function findType(body) {
   return null;
 }
 
+// WooCommerce's native webhooks (Settings > Advanced > Webhooks, no plugin
+// needed) send the raw product resource as the body, so its own "type"
+// field means product type (simple/variable/grouped), not ours, and must
+// never be trusted directly. The X-WC-Webhook-Resource header ("product",
+// "order", etc.) is WooCommerce's own unambiguous signal instead.
+function findTypeFromHeaders(request) {
+  const resource = request.headers.get("x-wc-webhook-resource");
+  if (resource && PATHS_BY_TYPE[resource]) return resource;
+  return null;
+}
+
+// Only trust a body-supplied "type" if it's actually one of ours, so an
+// unrelated same-named field (like WooCommerce's product type) can't leak
+// through and produce a confusing 400.
+function validType(value) {
+  return value && PATHS_BY_TYPE[value] ? value : null;
+}
+
 function revalidate(type, slug) {
   const buildPaths = PATHS_BY_TYPE[type];
   if (!buildPaths) {
@@ -137,7 +155,12 @@ export async function POST(request) {
     return NextResponse.json({ error: "Invalid secret" }, { status: 401 });
   }
 
-  const type = params.get("type") || body?.type || findType(body) || "post";
+  const type =
+    validType(params.get("type")) ||
+    findTypeFromHeaders(request) ||
+    findType(body) ||
+    validType(body?.type) ||
+    "post";
   const slug = params.get("slug") || findSlug(body);
 
   if (!slug) {
