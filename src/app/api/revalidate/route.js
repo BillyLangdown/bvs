@@ -16,6 +16,35 @@ const PATHS_BY_TYPE = {
   page: (slug) => [`/${slug}`],
 };
 
+// In-memory rate limit: not distributed across regions/cold starts like a
+// real Firewall rule would be, but blunts a basic flood at zero cost. No
+// Vercel Firewall custom rules on the current plan, so this is the fallback.
+// Legitimate traffic here is a single WordPress site's webhook, so the limit
+// is generous but well below anything a real editor would ever trigger.
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX = 20;
+const requestLog = new Map();
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  const recent = (requestLog.get(ip) || []).filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
+  recent.push(now);
+  requestLog.set(ip, recent);
+
+  // Bound memory: an in-memory Map on a long-lived warm instance could
+  // otherwise grow unbounded under a distributed flood from many IPs.
+  if (requestLog.size > 500) {
+    const oldestKey = requestLog.keys().next().value;
+    requestLog.delete(oldestKey);
+  }
+
+  return recent.length > RATE_LIMIT_MAX;
+}
+
+function getClientIp(request) {
+  return request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+}
+
 function doRevalidate({ secret, type, slug }) {
   if (secret !== process.env.REVALIDATE_SECRET) {
     return NextResponse.json({ error: "Invalid secret" }, { status: 401 });
@@ -36,6 +65,9 @@ function doRevalidate({ secret, type, slug }) {
 }
 
 export async function GET(request) {
+  if (isRateLimited(getClientIp(request))) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
   const params = request.nextUrl.searchParams;
   return doRevalidate({
     secret: params.get("secret"),
@@ -45,6 +77,9 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
+  if (isRateLimited(getClientIp(request))) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
   const body = await request.json().catch(() => null);
   return doRevalidate({
     secret: body?.secret,
