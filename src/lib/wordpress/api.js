@@ -219,10 +219,15 @@ export async function getShopProductBySlug(slug, { revalidate = 3600 } = {}) {
       ?.terms?.[0]?.name ||
     "BVS";
 
-  // Format price from prices object (minor units) — avoids HTML entity issues in price_html
+  // Format price from prices object (minor units) — avoids HTML entity issues in price_html.
+  // A raw price of "0" means WooCommerce has no fixed price set (custom/quote-only items
+  // like made-to-spec coils), not a genuine £0 product, so it's treated the same as no
+  // price at all rather than surfaced as £0.00 in the UI or, worse, in Product schema
+  // (which was leaking price: "0.00" into structured data before this fix).
   const pricesObj = storeProduct?.prices;
-  const priceAmount = pricesObj?.price
-    ? parseInt(pricesObj.price, 10) / Math.pow(10, pricesObj.currency_minor_unit ?? 2)
+  const rawPrice = pricesObj?.price ? parseInt(pricesObj.price, 10) : 0;
+  const priceAmount = rawPrice > 0
+    ? rawPrice / Math.pow(10, pricesObj.currency_minor_unit ?? 2)
     : null;
   const priceDisplay = priceAmount !== null
     ? `${pricesObj.currency_prefix || "£"}${priceAmount.toLocaleString("en-GB", {
