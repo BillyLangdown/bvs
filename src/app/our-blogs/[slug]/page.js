@@ -4,11 +4,11 @@ import { WpContent } from "@/components/content/WpContent";
 import { getPostBySlug, getPosts, stripHtml } from "@/lib/wordpress/api";
 import { pageMetadata, truncateDescription, breadcrumbJsonLd } from "@/lib/seo";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export async function generateStaticParams() {
   try {
-    const posts = await getPosts({ perPage: 100, revalidate: 3600 });
+    const posts = await getPosts({ perPage: 100, revalidate: 86400 });
     return posts.map((p) => ({ slug: p.slug }));
   } catch {
     return [];

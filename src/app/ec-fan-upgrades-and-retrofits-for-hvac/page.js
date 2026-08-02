@@ -74,8 +74,8 @@ export default async function ECFanUpgradesPage() {
   let ecFanProducts = [];
   try {
     const [products, categories] = await Promise.all([
-      getShopProducts({ revalidate: 3600 }),
-      getProductCategories({ revalidate: 600 }),
+      getShopProducts({ revalidate: 86400 }),
+      getProductCategories({ revalidate: 86400 }),
     ]);
     const ecCatIds = new Set(
       categories

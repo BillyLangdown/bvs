@@ -7,12 +7,12 @@ import { getShopProducts, getProductCategories } from "@/lib/wordpress/api";
 import { ShopGrid } from "@/components/shop/ShopGrid";
 import { pageMetadata, truncateDescription, breadcrumbJsonLd } from "@/lib/seo";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 async function getCategoryData(slug) {
   const [products, categories] = await Promise.all([
-    getShopProducts({ revalidate: 3600 }).catch(() => []),
-    getProductCategories({ revalidate: 600 }).catch(() => []),
+    getShopProducts({ revalidate: 86400 }).catch(() => []),
+    getProductCategories({ revalidate: 86400 }).catch(() => []),
   ]);
 
   const filterCategoryIds = new Set(
@@ -27,7 +27,7 @@ async function getCategoryData(slug) {
 
 export async function generateStaticParams() {
   try {
-    const categories = await getProductCategories({ revalidate: 600 });
+    const categories = await getProductCategories({ revalidate: 86400 });
     return categories
       .filter((c) => !c.name.toLowerCase().includes("filter"))
       .map((c) => ({ slug: c.slug }));

@@ -43,7 +43,7 @@ export async function storeFetch(path, { query, next } = {}) {
   return body;
 }
 
-export async function getStoreProductBySlug(slug, { revalidate = 3600 } = {}) {
+export async function getStoreProductBySlug(slug, { revalidate = 86400 } = {}) {
   const items = await storeFetch("products", {
     query: { slug, per_page: 1 },
     next: { revalidate },

@@ -13,11 +13,11 @@ import { ProductGallery } from "@/components/shop/ProductGallery";
 import { ProductTabs } from "@/components/shop/ProductTabs";
 import { pageMetadata, truncateDescription, breadcrumbJsonLd, productJsonLd } from "@/lib/seo";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export async function generateStaticParams() {
   try {
-    const products = await getShopProducts({ revalidate: 3600 });
+    const products = await getShopProducts({ revalidate: 86400 });
     return products.map((p) => ({ slug: p.slug }));
   } catch {
     return [];
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }) {
   // should propagate rather than be treated as "not found" (see api.js for why).
   const product = await getShopProductBySlug(slug);
   if (!product) return { title: "Product Not Found" };
-  const categories = await getProductCategories({ revalidate: 600 }).catch(() => []);
+  const categories = await getProductCategories({ revalidate: 86400 }).catch(() => []);
   const categoryName = categories.find((c) => product.categories.includes(c.id))?.name || "";
   return pageMetadata({
     title: `${product.title}${categoryName ? ` | ${categoryName}` : ""} | Shop`,
@@ -53,8 +53,8 @@ export default async function ProductPage({ params }) {
   // page instead of overwriting it with a false 404 (see api.js for details).
   const [product, allProducts, categories] = await Promise.all([
     getShopProductBySlug(slug),
-    getShopProducts({ revalidate: 3600 }).catch(() => []),
-    getProductCategories({ revalidate: 600 }).catch(() => []),
+    getShopProducts({ revalidate: 86400 }).catch(() => []),
+    getProductCategories({ revalidate: 86400 }).catch(() => []),
   ]);
 
   if (!product) notFound();

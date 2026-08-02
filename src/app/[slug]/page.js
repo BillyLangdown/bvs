@@ -8,7 +8,7 @@ import { pageMetadata, truncateDescription } from "@/lib/seo";
 
 export async function generateStaticParams() {
   try {
-    const pages = await getPages({ perPage: 100, revalidate: 3600 });
+    const pages = await getPages({ perPage: 100, revalidate: 86400 });
     // Avoid generating for known app routes (they exist as explicit routes).
     const reserved = new Set([
       "blogs",
@@ -58,7 +58,7 @@ export default async function WordpressPageBySlug({ params }) {
     slug?.includes("mechanical");
 
   const related = showRelated
-    ? await getCaseStudyPages({ perPage: 6, revalidate: 600 }).catch(() => [])
+    ? await getCaseStudyPages({ perPage: 6, revalidate: 86400 }).catch(() => [])
     : [];
 
   return (
