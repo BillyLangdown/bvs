@@ -10,7 +10,7 @@ import { pageMetadata, truncateDescription, breadcrumbJsonLd } from "@/lib/seo";
 export async function generateStaticParams() {
   const localSlugs = allCaseStudies.map((cs) => ({ slug: cs.slug }));
   try {
-    const wpItems = await getCaseStudies({ perPage: 50, revalidate: 3600 });
+    const wpItems = await getCaseStudies({ perPage: 50, revalidate: 86400 });
     const wpSlugs = wpItems.map((cs) => ({ slug: cs.slug }));
     const merged = [...localSlugs];
     for (const wp of wpSlugs) {

@@ -30,8 +30,8 @@ export default async function ShopPage() {
   // internally and is safe to keep swallowing, it's supplementary).
   try {
     [products, categories] = await Promise.all([
-      getShopProducts({ revalidate: 3600 }),
-      getProductCategories({ revalidate: 600 }),
+      getShopProducts({ revalidate: 86400 }),
+      getProductCategories({ revalidate: 86400 }),
     ]);
   } catch (err) {
     if (!(err instanceof WpConfigError)) throw err;

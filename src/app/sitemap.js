@@ -1,6 +1,6 @@
 import { getPosts, getShopProducts, getProductCategories } from "@/lib/wordpress/api";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 const BASE = "https://www.bvs-ltd.co.uk";
 
@@ -76,7 +76,7 @@ export default async function sitemap() {
 
   // Dynamic: individual blog posts
   try {
-    const posts = await getPosts({ perPage: 100, revalidate: 3600 });
+    const posts = await getPosts({ perPage: 100, revalidate: 86400 });
     for (const post of posts || []) {
       if (!post?.slug) continue;
       routes.push({
@@ -90,8 +90,8 @@ export default async function sitemap() {
   // Dynamic: individual shop products + categories
   try {
     const [products, categories] = await Promise.all([
-      getShopProducts({ revalidate: 3600 }),
-      getProductCategories({ revalidate: 600 }),
+      getShopProducts({ revalidate: 86400 }),
+      getProductCategories({ revalidate: 86400 }),
     ]);
     const filterCategoryIds = new Set(
       (categories || []).filter((c) => c.name.toLowerCase().includes("filter")).map((c) => c.id),
