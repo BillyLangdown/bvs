@@ -17,10 +17,16 @@ export async function GET(request) {
   const authHeader = request.headers.get("authorization");
   if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
     // Temporary diagnostic: cron-job.org keeps sending a header that fails
-    // this check for a reason not yet identified. Reports back (without
-    // leaking the real secret) whether a header arrived at all, its length,
-    // and a masked preview, so the mismatch is visible from cron-job.org's
-    // own execution log instead of guessing blind. Remove once resolved.
+    // this check for a reason not yet identified. Logs to Vercel (visible
+    // via `vercel logs` regardless of what cron-job.org's own UI shows) and
+    // reports back (without leaking the real secret) whether a header
+    // arrived at all, its length, and a masked preview. Remove once resolved.
+    console.log("[cron-auth-fail]", {
+      headerReceived: authHeader !== null,
+      headerLength: authHeader?.length ?? 0,
+      headerPreview: authHeader ? JSON.stringify(authHeader) : null,
+      userAgent: request.headers.get("user-agent"),
+    });
     return NextResponse.json(
       {
         error: "Unauthorized",
