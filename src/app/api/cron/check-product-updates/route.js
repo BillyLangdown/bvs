@@ -16,7 +16,26 @@ const LOOKBACK_MINUTES = 45;
 export async function GET(request) {
   const authHeader = request.headers.get("authorization");
   if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    // Temporary diagnostic: cron-job.org keeps sending a header that fails
+    // this check for a reason not yet identified. Reports back (without
+    // leaking the real secret) whether a header arrived at all, its length,
+    // and a masked preview, so the mismatch is visible from cron-job.org's
+    // own execution log instead of guessing blind. Remove once resolved.
+    return NextResponse.json(
+      {
+        error: "Unauthorized",
+        debug: {
+          headerReceived: authHeader !== null,
+          headerLength: authHeader?.length ?? 0,
+          headerPreview: authHeader
+            ? `${authHeader.slice(0, 10)}...${authHeader.slice(-4)}`
+            : null,
+          expectedLength: `Bearer ${process.env.CRON_SECRET}`.length,
+          secretConfigured: Boolean(process.env.CRON_SECRET),
+        },
+      },
+      { status: 401 }
+    );
   }
 
   const since = new Date(Date.now() - LOOKBACK_MINUTES * 60_000).toISOString();
