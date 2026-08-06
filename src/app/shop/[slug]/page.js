@@ -84,14 +84,16 @@ export default async function ProductPage({ params }) {
     { name: product.title, path: productUrl },
   ];
 
+  const productLd = productJsonLd(product, { categoryName, url: productUrl });
+
   return (
     <div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(productJsonLd(product, { categoryName, url: productUrl })),
-        }}
-      />
+      {productLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems)) }}
