@@ -42,3 +42,6 @@ next-env.d.ts
 
 # accidentally created directories
 https:/
+
+# Claude Code local tooling config (not part of the app)
+.claude/
