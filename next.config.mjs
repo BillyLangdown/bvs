@@ -41,6 +41,9 @@ const nextConfig = {
       { source: "/wp-content/uploads/2024/06/Picton-AHU-Refurbishment-1.pdf", destination: "/case-studies", permanent: true },
       { source: "/wp-content/uploads/2023/07/AHU-Contracting-Installation-Service-Brochure.pdf", destination: "/air-handling-unit-manufacturing-and-installation", permanent: true },
       { source: "/wp-content/uploads/2023/12/BVS-AHU-Coil-Replacement.pdf", destination: "/air-handling-unit-coil-replacement", permanent: true },
+      { source: "/wp-content/uploads/2025/02/GR56I-116908.A01.pdf", destination: "/shop/gr561-zid-gl-cr-116908-a01-ziehl-abegg", permanent: true },
+      { source: "/wp-content/uploads/2026/05/GR35I-116892.A01.pdf", destination: "/shop/gr35i-zid-dc-cr-116892-a01-ziehl-abegg", permanent: true },
+      { source: "/wp-content/uploads/2025/02/GR50I-116904.A01.pdf", destination: "/shop/gr501-zid-gg-cr-116904-a01-ziehl-abegg", permanent: true },
 
       // ── Remaining legacy WP media URLs (product datasheets, general
       //    brochures) still indexed against the old self-hosted domain →
