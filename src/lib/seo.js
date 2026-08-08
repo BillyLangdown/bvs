@@ -55,8 +55,14 @@ export function faqJsonLd(faqs) {
   };
 }
 
+// Google requires a Product to carry offers, review, or aggregateRating to be
+// eligible for rich results. Enquire/POA products have none of those, so we
+// return null rather than emit markup Google will flag as invalid.
 export function productJsonLd(product, { categoryName, url } = {}) {
-  const json = {
+  if (product.priceAmount === null || product.priceAmount === undefined) {
+    return null;
+  }
+  return {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.title,
@@ -66,9 +72,7 @@ export function productJsonLd(product, { categoryName, url } = {}) {
     category: categoryName || undefined,
     image: product.imageUrl ? [product.imageUrl] : undefined,
     url: url ? `${SITE_URL}${url}` : undefined,
-  };
-  if (product.priceAmount !== null && product.priceAmount !== undefined) {
-    json.offers = {
+    offers: {
       "@type": "Offer",
       price: product.priceAmount.toFixed(2),
       priceCurrency: product.priceCurrency || "GBP",
@@ -77,9 +81,8 @@ export function productJsonLd(product, { categoryName, url } = {}) {
           ? "https://schema.org/OutOfStock"
           : "https://schema.org/InStock",
       url: url ? `${SITE_URL}${url}` : undefined,
-    };
-  }
-  return json;
+    },
+  };
 }
 
 export { SITE_URL };
