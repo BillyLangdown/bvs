@@ -30,6 +30,10 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // ── Legacy WP media URLs still indexed/linked against the old
+      //    self-hosted domain → real files live on the headless CMS now ──
+      { source: "/wp-content/uploads/:path*", destination: "https://cms.bvs-ltd.co.uk/wp-content/uploads/:path*", permanent: true },
+
       // ── WordPress date-based blog URLs → new React blog URLs ─────────
       { source: "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug", destination: "/our-blogs/:slug", permanent: true },
       { source: "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug/", destination: "/our-blogs/:slug", permanent: true },
