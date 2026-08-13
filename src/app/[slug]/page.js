@@ -44,7 +44,7 @@ export async function generateMetadata({ params }) {
   // authoredTitle() bypasses the root layout's "%s | BVS" template — AIOSEO
   // titles are complete SERP titles already, often already branded, so
   // applying the template on top would double up the brand suffix.
-  const authored = authoredTitle(seo.title);
+  const authored = authoredTitle(seo.title, fallbackTitle);
   const title = authored || fallbackTitle;
   const titleText = authored ? seo.title : fallbackTitle;
   const excerpt = stripHtml(page.excerpt?.rendered || "") || stripHtml(page.content?.rendered || "");

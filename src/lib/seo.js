@@ -33,17 +33,24 @@ export function pageMetadata({ title, description, path, image, imageAlt }) {
   };
 }
 
-const BRAND_ONLY_TITLE = /^[\s\-–—|:]*(bvs|building ventilation solutions)[\s\-–—|:]*$/i;
+const BRAND_SUFFIX = /[\s\-–—|:]*(bvs|building ventilation solutions?)[\s\-–—|:]*$/i;
 
-// AIOSEO authors complete SERP titles (often already including the brand
-// name in some form), so they must bypass the "%s | BVS" template entirely
-// rather than have it appended a second time. Returns null for degenerate
-// titles — e.g. a page whose actual title text was deleted, leaving only a
-// separator and the site name — so callers fall back to an auto-generated
-// title instead of shipping a title that's just the brand name.
-export function authoredTitle(title) {
-  if (!title || BRAND_ONLY_TITLE.test(title.trim())) return null;
-  return { absolute: title };
+// AIOSEO authors complete SERP titles, but when nothing custom is set for a
+// page it falls back to its own default template (post title + separator +
+// site name) rather than leaving the field empty. That default output is
+// longer than this site's own "%s | BVS" template with no added targeting,
+// so it isn't treated as "authored" — only a title that still differs from
+// the raw WordPress title once the brand suffix is stripped is genuinely
+// optimised and worth using verbatim (bypassing the "%s | BVS" template,
+// which it would otherwise double up with its own brand suffix). Also
+// covers the degenerate case where a title is just a separator + brand name
+// with nothing left after stripping.
+export function authoredTitle(aioseoTitle, wpTitle) {
+  if (!aioseoTitle) return null;
+  const stripped = aioseoTitle.replace(BRAND_SUFFIX, "").trim();
+  if (!stripped) return null;
+  if (stripped.toLowerCase() === (wpTitle || "").trim().toLowerCase()) return null;
+  return { absolute: aioseoTitle };
 }
 
 export function breadcrumbJsonLd(items) {
