@@ -12,14 +12,17 @@ export function truncateDescription(text, maxLen = 160) {
 
 // Standard per-page metadata: canonical (via metadataBase) + tailored OG/Twitter.
 // path must start with "/". image is an absolute or metadataBase-relative URL.
+// title may be a plain string (runs through the root layout's "%s | BVS"
+// template) or { absolute } to bypass that template entirely.
 export function pageMetadata({ title, description, path, image, imageAlt }) {
+  const titleText = typeof title === "object" && title !== null ? title.absolute : title;
   const og = {
-    title,
+    title: titleText,
     description,
     url: path,
   };
   if (image) {
-    og.images = [{ url: image, width: 1200, height: 630, alt: imageAlt || title }];
+    og.images = [{ url: image, width: 1200, height: 630, alt: imageAlt || titleText }];
   }
   return {
     title,
@@ -28,6 +31,19 @@ export function pageMetadata({ title, description, path, image, imageAlt }) {
     openGraph: og,
     twitter: image ? { card: "summary_large_image", images: [image] } : undefined,
   };
+}
+
+const BRAND_ONLY_TITLE = /^[\s\-–—|:]*(bvs|building ventilation solutions)[\s\-–—|:]*$/i;
+
+// AIOSEO authors complete SERP titles (often already including the brand
+// name in some form), so they must bypass the "%s | BVS" template entirely
+// rather than have it appended a second time. Returns null for degenerate
+// titles — e.g. a page whose actual title text was deleted, leaving only a
+// separator and the site name — so callers fall back to an auto-generated
+// title instead of shipping a title that's just the brand name.
+export function authoredTitle(title) {
+  if (!title || BRAND_ONLY_TITLE.test(title.trim())) return null;
+  return { absolute: title };
 }
 
 export function breadcrumbJsonLd(items) {
