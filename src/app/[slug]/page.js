@@ -2,9 +2,9 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { WpContent } from "@/components/content/WpContent";
-import { getCaseStudyPages, getPageBySlug, getPages, stripHtml } from "@/lib/wordpress/api";
+import { getCaseStudyPages, getPageBySlug, getPages, stripHtml, decodeHtmlEntities } from "@/lib/wordpress/api";
 import { cleanWpHtml, extractDiviHero } from "@/lib/wordpress/format";
-import { pageMetadata, truncateDescription } from "@/lib/seo";
+import { pageMetadata, truncateDescription, authoredTitle } from "@/lib/seo";
 
 export async function generateStaticParams() {
   try {
@@ -23,6 +23,10 @@ export async function generateStaticParams() {
       "careers",
       "solutions",
       "api",
+      "heating-cooling-coils",
+      "axial-fan-shop",
+      "ec-fan-shop",
+      "electric-heater-battery-shop",
     ]);
     return pages
       .filter((p) => p?.slug && !reserved.has(p.slug))
@@ -36,11 +40,24 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const page = await getPageBySlug(slug).catch(() => null);
   if (!page) return {};
-  const title = page.title?.rendered || "Page";
+  // AIOSEO-authored title/description take priority when present. Note:
+  // aioseo_head_json.canonical_url is deliberately never used here, since it
+  // points at the CMS hostname rather than the primary domain.
+  const seo = page.aioseo_head_json || {};
+  const fallbackTitle = decodeHtmlEntities(page.title?.rendered || "Page");
+  // authoredTitle() bypasses the root layout's "%s | BVS" template — AIOSEO
+  // titles are complete SERP titles already, often already branded, so
+  // applying the template on top would double up the brand suffix.
+  const authored = authoredTitle(seo.title, page.title?.rendered);
+  const title = authored || fallbackTitle;
+  const titleText = authored ? authored.absolute : fallbackTitle;
   const excerpt = stripHtml(page.excerpt?.rendered || "") || stripHtml(page.content?.rendered || "");
   return pageMetadata({
     title,
-    description: truncateDescription(excerpt) || `${title} | BVS Building Ventilation Solutions.`,
+    description:
+      seo.description ||
+      truncateDescription(excerpt) ||
+      `${titleText} | BVS Building Ventilation Solutions.`,
     path: `/${slug}`,
   });
 }

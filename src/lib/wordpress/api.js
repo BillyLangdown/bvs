@@ -9,7 +9,7 @@ function stripHtml(html) {
 
 // Decode common HTML entities so titles are safe to render as plain text
 // (avoids dangerouslySetInnerHTML entity-normalisation hydration mismatches)
-function decodeHtmlEntities(str) {
+export function decodeHtmlEntities(str) {
   if (!str) return "";
   return String(str)
     .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n, 10)))
@@ -22,13 +22,75 @@ function decodeHtmlEntities(str) {
     .replace(/&nbsp;/g, " ");
 }
 
+// Some Divi pages end with an embedded contact form (superseded by this
+// site's own quote form elsewhere on the page) — everything from the form's
+// heading onward is just the form markup and its config script, nothing
+// worth keeping.
+// FAQ content sometimes links to the embedded form by its in-page anchor
+// (e.g. "#ecfanform") — now removed along with the rest of that section, so
+// point these at this site's own quote form instead of a dead link.
+function fixFormAnchors(html) {
+  return html.replace(/href="#\w*form"/gi, 'href="#enquire"');
+}
+
+function stripTrailingContactForm(html) {
+  const idx = html.indexOf("et_pb_contact_main_title");
+  if (idx === -1) return html;
+  const headingStart = html.lastIndexOf("<h", idx);
+  return headingStart === -1 ? html : html.slice(0, headingStart);
+}
+
+// Some FAQ answers were pasted directly from an AI chat interface, carrying
+// over its own UI wrapper markup (avatar/chat-bubble divs) whose class names
+// collide with this site's own Tailwind utilities and break the layout.
+// Strips just the class attribute off these specific known wrapper divs
+// (rather than trying to remove the divs entirely, which would need
+// matching balanced closing tags around arbitrarily nested content) so
+// they become inert, unstyled wrappers instead of broken layout artifacts.
+function unwrapPastedChatUI(html) {
+  return html
+    .replace(/<div class="flex-shrink-0 flex flex-col relative items-end">/g, "<div>")
+    .replace(/<div class="pt-0">/g, "<div>")
+    .replace(/<div class="gizmo-bot-avatar[^"]*">/g, "<div>");
+}
+
+// Some Divi pages repeat the page title and tagline at the top of the body
+// content, duplicating what the page's own hero section already shows.
+// Trims everything before the first FAQ heading, if there is one.
+function trimToFaqHeading(html) {
+  const m = html.match(/<h[1-6][^>]*>[^<]*FAQ[^<]*<\/h[1-6]>/i);
+  return m ? html.slice(m.index + m[0].length) : html;
+}
+
+// Divi builder pages/products store their real rendered HTML in a meta field
+// (_et_pb_old_content) rather than the standard content.rendered, which
+// stays as raw, unprocessed shortcode markup (e.g. "[et_pb_section]...").
+function cleanDiviContent(rawContent) {
+  return fixWpContentUrls(
+    (rawContent || "")
+      .replace(/\s+data-(?:start|end)="[^"]*"/g, "")
+      .replace(/\[[\w/][^\]]*\]/g, "")
+      .trim()
+  );
+}
+
 // Pages
 export async function getPageBySlug(slug, { revalidate = 86400 } = {}) {
   const pages = await wpFetch("pages", {
-    query: { slug, _fields: "id,slug,title,content,excerpt,yoast_head_json" },
+    query: { slug, _fields: "id,slug,title,content,excerpt,meta,aioseo_head_json" },
     next: { revalidate },
   });
-  return pages?.[0] || null;
+  const page = pages?.[0] || null;
+  if (!page) return null;
+  // Prefer the pre-Divi content snapshot when one exists, but most Divi
+  // pages were built natively and have no such snapshot — in that case
+  // content.rendered is itself raw shortcode markup ("[et_pb_section]...")
+  // and needs the same cleaning, not a pass-through.
+  const rawContent = page.meta?._et_pb_old_content || page.content?.rendered || "";
+  const cleaned = trimToFaqHeading(
+    unwrapPastedChatUI(fixFormAnchors(stripTrailingContactForm(cleanDiviContent(rawContent))))
+  );
+  return { ...page, content: { ...page.content, rendered: cleaned } };
 }
 
 export async function getPages({ perPage = 100, revalidate = 86400 } = {}) {
@@ -73,7 +135,7 @@ export async function getPostBySlug(slug, { revalidate = 86400 } = {}) {
     query: {
       slug,
       _embed: "wp:featuredmedia",
-      _fields: "id,slug,title,content,excerpt,date,_links,_embedded,yoast_head_json",
+      _fields: "id,slug,title,content,excerpt,date,_links,_embedded,aioseo_head_json",
     },
     next: { revalidate },
   });
@@ -85,7 +147,7 @@ export async function getCaseStudies({ perPage = 50, revalidate = 86400 } = {}) 
   return wpFetch("case-studies", {
     query: {
       per_page: perPage,
-      _fields: "id,slug,title,excerpt,featured_media,date,yoast_head_json",
+      _fields: "id,slug,title,excerpt,featured_media,date,aioseo_head_json",
     },
     next: { revalidate },
   });
@@ -96,7 +158,7 @@ export async function getCaseStudyBySlug(slug, { revalidate = 86400 } = {}) {
     query: {
       slug,
       _fields:
-        "id,slug,title,content,excerpt,featured_media,date,yoast_head_json",
+        "id,slug,title,content,excerpt,featured_media,date,aioseo_head_json",
     },
     next: { revalidate },
   });
@@ -197,14 +259,7 @@ export async function getShopProductBySlug(slug, { revalidate = 86400 } = {}) {
     } catch {}
   }
 
-  // _et_pb_old_content holds clean HTML written before the Divi builder took over
-  const rawContent = p?.meta?._et_pb_old_content || "";
-  const content = fixWpContentUrls(
-    rawContent
-      .replace(/\s+data-(?:start|end)="[^"]*"/g, "")
-      .replace(/\[[\w/][^\]]*\]/g, "")
-      .trim()
-  );
+  const content = cleanDiviContent(p?.meta?._et_pb_old_content);
 
   // Extract brand — prefer the dedicated brands taxonomy returned by the Store API,
   // fall back to a WC attribute named "brand" / taxonomy "pa_brand". Custom-built items

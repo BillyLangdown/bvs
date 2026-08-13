@@ -30,6 +30,14 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // ── Orphaned WordPress "pages" with no real content, leaking through
+      //    the generic [slug] catch-all with no branding ─────────────────
+      { source: "/ahu-refurbishment-2-0", destination: "/air-handling-unit-refurbishment", permanent: true },
+      { source: "/case-study-template", destination: "/case-studies", permanent: true },
+      { source: "/plantroom-refurbishment-2", destination: "/mechanical-solutions", permanent: true },
+      { source: "/cart", destination: "/shop", permanent: true },
+      { source: "/layout", destination: "/", permanent: true },
+
       // ── Legacy WP case-study PDFs → the real PDF file, already hosted
       //    locally in /public/case-studies (not the HTML page — GSC data
       //    showed the PDF itself still outranks its HTML replacement) ─────
