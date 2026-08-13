@@ -30,25 +30,30 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // ── Legacy WP case-study/brochure PDFs → the page that replaced them
-      //    (checked before the generic wp-content catch-all below) ────────
-      { source: "/wp-content/uploads/2023/07/Disney-Headquarters-Hammersmith-Case-Study-Document-A4-Portrait-4.pdf", destination: "/case-studies/disney-headquarters-ventilation-survey", permanent: true },
-      { source: "/wp-content/uploads/2026/03/Pembroke-Offices-AHU-Refurbishment-Case-Study.pdf", destination: "/case-studies/pembroke-offices-ahu-refurbishment", permanent: true },
-      { source: "/wp-content/uploads/2025/04/Case-Study-Burlington-Street-Office.pdf", destination: "/case-studies/burlington-street-office-coil-replacement", permanent: true },
-      { source: "/wp-content/uploads/2023/08/Toca-Football-O2-Arena-Case-Study-.pdf", destination: "/case-studies/toca-football-o2-ahu-refurbishment", permanent: true },
-      { source: "/wp-content/uploads/2026/03/NHS-Hammersmith-Fulham-AHU-Refurbishment-Case-Study.pdf", destination: "/case-studies/nhs-hammersmith-ahu-refurbishment", permanent: true },
-      { source: "/wp-content/uploads/2025/04/Case-Study-Operating-Theatre-AHU-Refurbishment.pdf", destination: "/case-studies/bath-private-hospital-ahu-refurbishment", permanent: true },
+      // ── Legacy WP case-study PDFs → the real PDF file, already hosted
+      //    locally in /public/case-studies (not the HTML page — GSC data
+      //    showed the PDF itself still outranks its HTML replacement) ─────
+      { source: "/wp-content/uploads/2023/07/Disney-Headquarters-Hammersmith-Case-Study-Document-A4-Portrait-4.pdf", destination: "/case-studies/Disney-Headquarters-Hammersmith-Case-Study-Document-A4-Portrait-4.pdf", permanent: true },
+      { source: "/wp-content/uploads/2026/03/Pembroke-Offices-AHU-Refurbishment-Case-Study.pdf", destination: "/case-studies/Pembroke-Offices-AHU-Refurbishment-Case-Study.pdf", permanent: true },
+      { source: "/wp-content/uploads/2025/04/Case-Study-Burlington-Street-Office.pdf", destination: "/case-studies/Burlington-Street-Office-Coil-Replacement-Case-Study.pdf", permanent: true },
+      { source: "/wp-content/uploads/2023/08/Toca-Football-O2-Arena-Case-Study-.pdf", destination: "/case-studies/Toca-Football-O2-Arena-Case-Study-1-2.pdf", permanent: true },
+      { source: "/wp-content/uploads/2026/03/NHS-Hammersmith-Fulham-AHU-Refurbishment-Case-Study.pdf", destination: "/case-studies/NHS-Hammersmith-Fulham-AHU-Refurbishment-Case-Study.pdf", permanent: true },
+      { source: "/wp-content/uploads/2025/04/Case-Study-Operating-Theatre-AHU-Refurbishment.pdf", destination: "/case-studies/Bath-Private-Hospital-AHU-Refurbishment-Case-Study.pdf", permanent: true },
       { source: "/wp-content/uploads/2024/06/Picton-AHU-Refurbishment-1.pdf", destination: "/case-studies", permanent: true },
       { source: "/wp-content/uploads/2023/07/AHU-Contracting-Installation-Service-Brochure.pdf", destination: "/air-handling-unit-manufacturing-and-installation", permanent: true },
       { source: "/wp-content/uploads/2023/12/BVS-AHU-Coil-Replacement.pdf", destination: "/air-handling-unit-coil-replacement", permanent: true },
-      { source: "/wp-content/uploads/2025/02/GR56I-116908.A01.pdf", destination: "/shop/gr561-zid-gl-cr-116908-a01-ziehl-abegg", permanent: true },
       { source: "/wp-content/uploads/2026/05/GR35I-116892.A01.pdf", destination: "/shop/gr35i-zid-dc-cr-116892-a01-ziehl-abegg", permanent: true },
-      { source: "/wp-content/uploads/2025/02/GR50I-116904.A01.pdf", destination: "/shop/gr501-zid-gg-cr-116904-a01-ziehl-abegg", permanent: true },
+      // GR50I-116904.A01.pdf and GR56I-116908.A01.pdf: no redirect — real
+      // files now live at /public/wp-content/uploads/2025/02/, served as-is.
+
+      // ── Stray CMS "page" content leaking through the generic [slug]
+      //    catch-all with no real content of its own ─────────────────────
+      { source: "/home", destination: "/", permanent: true },
 
       // ── Remaining legacy WP media URLs (product datasheets, general
       //    brochures) still indexed against the old self-hosted domain →
       //    real files live on the headless CMS now ──────────────────────
-      { source: "/wp-content/uploads/:path*", destination: "https://cms.bvs-ltd.co.uk/wp-content/uploads/:path*", permanent: true },
+      { source: "/wp-content/uploads/:path((?!2025/02/GR50I-116904\\.A01\\.pdf$|2025/02/GR56I-116908\\.A01\\.pdf$).*)", destination: "https://cms.bvs-ltd.co.uk/wp-content/uploads/:path", permanent: true },
 
       // ── WordPress date-based blog URLs → new React blog URLs ─────────
       { source: "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug", destination: "/our-blogs/:slug", permanent: true },
