@@ -138,7 +138,7 @@ export default async function BlogsPage() {
                 const featuredImg =
                   cleanPosts[0]._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes?.large?.source_url ||
                   cleanPosts[0]._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-                  cleanPosts[0].yoast_head_json?.og_image?.[0]?.url ||
+                  cleanPosts[0].aioseo_head_json?.og_image?.[0]?.url ||
                   null;
                 return (
                   <ScrollReveal className="mb-10">
@@ -188,7 +188,7 @@ export default async function BlogsPage() {
                   const img =
                     p._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes?.medium_large?.source_url ||
                     p._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-                    p.yoast_head_json?.og_image?.[0]?.url ||
+                    p.aioseo_head_json?.og_image?.[0]?.url ||
                     null;
                   return (
                     <ScrollReveal key={p.id} delay={i * 60}>

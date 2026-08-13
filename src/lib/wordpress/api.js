@@ -25,7 +25,7 @@ function decodeHtmlEntities(str) {
 // Pages
 export async function getPageBySlug(slug, { revalidate = 86400 } = {}) {
   const pages = await wpFetch("pages", {
-    query: { slug, _fields: "id,slug,title,content,excerpt,yoast_head_json" },
+    query: { slug, _fields: "id,slug,title,content,excerpt,aioseo_head_json" },
     next: { revalidate },
   });
   return pages?.[0] || null;
@@ -73,7 +73,7 @@ export async function getPostBySlug(slug, { revalidate = 86400 } = {}) {
     query: {
       slug,
       _embed: "wp:featuredmedia",
-      _fields: "id,slug,title,content,excerpt,date,_links,_embedded,yoast_head_json",
+      _fields: "id,slug,title,content,excerpt,date,_links,_embedded,aioseo_head_json",
     },
     next: { revalidate },
   });
@@ -85,7 +85,7 @@ export async function getCaseStudies({ perPage = 50, revalidate = 86400 } = {}) 
   return wpFetch("case-studies", {
     query: {
       per_page: perPage,
-      _fields: "id,slug,title,excerpt,featured_media,date,yoast_head_json",
+      _fields: "id,slug,title,excerpt,featured_media,date,aioseo_head_json",
     },
     next: { revalidate },
   });
@@ -96,7 +96,7 @@ export async function getCaseStudyBySlug(slug, { revalidate = 86400 } = {}) {
     query: {
       slug,
       _fields:
-        "id,slug,title,content,excerpt,featured_media,date,yoast_head_json",
+        "id,slug,title,content,excerpt,featured_media,date,aioseo_head_json",
     },
     next: { revalidate },
   });

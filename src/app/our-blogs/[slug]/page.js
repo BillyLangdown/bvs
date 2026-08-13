@@ -23,10 +23,18 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug).catch(() => null);
   if (!post) return {};
-  const title = post.title?.rendered || "Post";
+  // AIOSEO-authored title/description take priority when present — falls
+  // back to the post title / an auto-generated excerpt otherwise. Note:
+  // aioseo_head_json.canonical_url is deliberately never used here, since it
+  // points at the CMS hostname rather than the primary domain.
+  const seo = post.aioseo_head_json || {};
+  const title = seo.title || post.title?.rendered || "Post";
   return pageMetadata({
     title,
-    description: truncateDescription(stripHtml(post.excerpt?.rendered || "")) || `${title} | BVS Insights.`,
+    description:
+      seo.description ||
+      truncateDescription(stripHtml(post.excerpt?.rendered || "")) ||
+      `${title} | BVS Insights.`,
     path: `/our-blogs/${slug}`,
     image: featuredImage(post),
     imageAlt: title,

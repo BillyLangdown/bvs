@@ -36,11 +36,18 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const page = await getPageBySlug(slug).catch(() => null);
   if (!page) return {};
-  const title = page.title?.rendered || "Page";
+  // AIOSEO-authored title/description take priority when present. Note:
+  // aioseo_head_json.canonical_url is deliberately never used here, since it
+  // points at the CMS hostname rather than the primary domain.
+  const seo = page.aioseo_head_json || {};
+  const title = seo.title || page.title?.rendered || "Page";
   const excerpt = stripHtml(page.excerpt?.rendered || "") || stripHtml(page.content?.rendered || "");
   return pageMetadata({
     title,
-    description: truncateDescription(excerpt) || `${title} | BVS Building Ventilation Solutions.`,
+    description:
+      seo.description ||
+      truncateDescription(excerpt) ||
+      `${title} | BVS Building Ventilation Solutions.`,
     path: `/${slug}`,
   });
 }
