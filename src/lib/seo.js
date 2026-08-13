@@ -1,3 +1,5 @@
+import { decodeHtmlEntities } from "./wordpress/api";
+
 const SITE_URL = "https://www.bvs-ltd.co.uk";
 
 // Truncates on a word boundary near maxLen instead of cutting mid-word/mid-sentence.
@@ -45,12 +47,26 @@ const BRAND_SUFFIX = /[\s\-–—|:]*(bvs|building ventilation solutions?)[\s\-�
 // which it would otherwise double up with its own brand suffix). Also
 // covers the degenerate case where a title is just a separator + brand name
 // with nothing left after stripping.
+//
+// wp.title.rendered comes HTML-entity-encoded ("Heating &amp; Cooling
+// Coils"); aioseo_head_json.title does not ("Heating & Cooling Coils"). Both
+// sides are decoded before comparing, or every title containing an
+// ampersand/entity would wrongly compare as different and ship as
+// "authored" even when it's just AIOSEO's default template.
+function normTitle(s) {
+  return decodeHtmlEntities(s || "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
 export function authoredTitle(aioseoTitle, wpTitle) {
   if (!aioseoTitle) return null;
-  const stripped = aioseoTitle.replace(BRAND_SUFFIX, "").trim();
+  const decoded = decodeHtmlEntities(aioseoTitle);
+  const stripped = decoded.replace(BRAND_SUFFIX, "").trim();
   if (!stripped) return null;
-  if (stripped.toLowerCase() === (wpTitle || "").trim().toLowerCase()) return null;
-  return { absolute: aioseoTitle };
+  if (normTitle(stripped) === normTitle(wpTitle)) return null;
+  return { absolute: decoded };
 }
 
 export function breadcrumbJsonLd(items) {

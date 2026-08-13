@@ -9,7 +9,7 @@ function stripHtml(html) {
 
 // Decode common HTML entities so titles are safe to render as plain text
 // (avoids dangerouslySetInnerHTML entity-normalisation hydration mismatches)
-function decodeHtmlEntities(str) {
+export function decodeHtmlEntities(str) {
   if (!str) return "";
   return String(str)
     .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n, 10)))

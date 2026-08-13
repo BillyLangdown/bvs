@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Container } from "@/components/site/Container";
 import { WpContent } from "@/components/content/WpContent";
-import { getCaseStudyPages, getPageBySlug, getPages, stripHtml } from "@/lib/wordpress/api";
+import { getCaseStudyPages, getPageBySlug, getPages, stripHtml, decodeHtmlEntities } from "@/lib/wordpress/api";
 import { cleanWpHtml, extractDiviHero } from "@/lib/wordpress/format";
 import { pageMetadata, truncateDescription, authoredTitle } from "@/lib/seo";
 
@@ -40,13 +40,13 @@ export async function generateMetadata({ params }) {
   // aioseo_head_json.canonical_url is deliberately never used here, since it
   // points at the CMS hostname rather than the primary domain.
   const seo = page.aioseo_head_json || {};
-  const fallbackTitle = page.title?.rendered || "Page";
+  const fallbackTitle = decodeHtmlEntities(page.title?.rendered || "Page");
   // authoredTitle() bypasses the root layout's "%s | BVS" template — AIOSEO
   // titles are complete SERP titles already, often already branded, so
   // applying the template on top would double up the brand suffix.
-  const authored = authoredTitle(seo.title, fallbackTitle);
+  const authored = authoredTitle(seo.title, page.title?.rendered);
   const title = authored || fallbackTitle;
-  const titleText = authored ? seo.title : fallbackTitle;
+  const titleText = authored ? authored.absolute : fallbackTitle;
   const excerpt = stripHtml(page.excerpt?.rendered || "") || stripHtml(page.content?.rendered || "");
   return pageMetadata({
     title,
