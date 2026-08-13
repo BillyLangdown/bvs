@@ -23,6 +23,10 @@ export async function generateStaticParams() {
       "careers",
       "solutions",
       "api",
+      "heating-cooling-coils",
+      "axial-fan-shop",
+      "ec-fan-shop",
+      "electric-heater-battery-shop",
     ]);
     return pages
       .filter((p) => p?.slug && !reserved.has(p.slug))
