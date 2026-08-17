@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { wpFetch } from "./client";
 import { storeFetch, getStoreProductBySlug } from "./store";
 import { fixWpContentUrls } from "./fixWpContentUrls";
@@ -75,7 +76,15 @@ function cleanDiviContent(rawContent) {
 }
 
 // Pages
-export async function getPageBySlug(slug, { revalidate = 86400 } = {}) {
+//
+// Wrapped in React's cache() because every page under src/app/[slug]/page.js
+// calls this twice per render — once from generateMetadata, once from the
+// page component, with the same slug — and the HTML-cleaning below (several
+// regex passes over the full Divi page content) is real CPU work that
+// shouldn't run twice for the same output. cache() dedupes same-argument
+// calls within a single request/render, so the second call reuses the
+// first's result instead of recomputing it.
+export const getPageBySlug = cache(async function getPageBySlug(slug, { revalidate = 86400 } = {}) {
   const pages = await wpFetch("pages", {
     query: { slug, _fields: "id,slug,title,content,excerpt,meta,aioseo_head_json" },
     next: { revalidate },
@@ -91,7 +100,7 @@ export async function getPageBySlug(slug, { revalidate = 86400 } = {}) {
     unwrapPastedChatUI(fixFormAnchors(stripTrailingContactForm(cleanDiviContent(rawContent))))
   );
   return { ...page, content: { ...page.content, rendered: cleaned } };
-}
+});
 
 export async function getPages({ perPage = 100, revalidate = 86400 } = {}) {
   return wpFetch("pages", {
@@ -130,7 +139,10 @@ export async function getPosts({ perPage = 20, revalidate = 86400 } = {}) {
   });
 }
 
-export async function getPostBySlug(slug, { revalidate = 86400 } = {}) {
+// Wrapped in cache() for the same reason as getPageBySlug above — the blog
+// post route calls this twice per render (generateMetadata + page
+// component) with the same slug.
+export const getPostBySlug = cache(async function getPostBySlug(slug, { revalidate = 86400 } = {}) {
   const items = await wpFetch("posts", {
     query: {
       slug,
@@ -140,7 +152,7 @@ export async function getPostBySlug(slug, { revalidate = 86400 } = {}) {
     next: { revalidate },
   });
   return items?.[0] || null;
-}
+});
 
 // Case studies (expects a WP custom post type registered as "case-studies")
 export async function getCaseStudies({ perPage = 50, revalidate = 86400 } = {}) {
@@ -213,7 +225,11 @@ export async function getProductCategories({ revalidate = 86400 } = {}) {
   }
 }
 
-export async function getShopProductBySlug(slug, { revalidate = 86400 } = {}) {
+// Wrapped in cache() for the same reason as getPageBySlug above — the
+// product page route calls this twice per render (generateMetadata + page
+// component) with the same slug, and this function does several network
+// calls plus cleanDiviContent() on the product body each time.
+export const getShopProductBySlug = cache(async function getShopProductBySlug(slug, { revalidate = 86400 } = {}) {
   // WP REST API product CPT is a supplementary source (title/excerpt/badge) that may
   // require auth or not be publicly registered on this install. Any failure here —
   // auth, network, timeout — just means "no WP data", never a reason to treat the
@@ -327,7 +343,7 @@ export async function getShopProductBySlug(slug, { revalidate = 86400 } = {}) {
       ? p.product_badge.toLowerCase().replace(/\s+/g, "-")
       : null,
   };
-}
+});
 
 export { stripHtml };
 
