@@ -2,6 +2,7 @@ import { Container } from "@/components/site/Container";
 import Link from "next/link";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { getPosts, stripHtml } from "@/lib/wordpress/api";
+import { WpConfigError } from "@/lib/wordpress/client";
 import Image from "next/image";
 import { pageMetadata } from "@/lib/seo";
 
@@ -79,8 +80,16 @@ export default async function BlogsPage() {
 
   try {
     posts = await getPosts({ perPage: 30, revalidate: 86400 });
-  } catch {
-    // WordPress not configured, placeholder posts shown below
+  } catch (err) {
+    // WpConfigError means WordPress isn't set up at all (e.g. local dev with
+    // no env vars) — a permanent state, so the placeholder posts below are
+    // the right thing to show. Any other error (network, timeout, a bad
+    // moment on the WordPress host) is transient, and re-throwing it here
+    // instead of swallowing it means Next.js keeps serving the last
+    // successfully-generated version of this page instead of overwriting a
+    // real, working blog index with an empty "coming soon" placeholder for
+    // the next 24 hours.
+    if (!(err instanceof WpConfigError)) throw err;
   }
 
   const cleanPosts = (posts || []).filter((p) => {

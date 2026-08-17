@@ -129,11 +129,22 @@ export async function getCaseStudyPages({ perPage = 20, revalidate = 86400 } = {
 }
 
 // Posts
+//
+// _fields is deliberately restricted here (unlike a bare listing request)
+// because this is used to build post listings (blog index, sitemap,
+// generateStaticParams) that only ever read slug/title/excerpt/featured
+// image — without it, WordPress returns full content.rendered (the entire
+// article body) for every post in the list, which made a 30-post request
+// ~1.5MB and pushed it close to the fetch timeout on cold builds. _links and
+// _embedded must stay in the list even though nothing reads them directly:
+// dropping them makes WordPress strip the _embed data (the featured image)
+// out of the response entirely.
 export async function getPosts({ perPage = 20, revalidate = 86400 } = {}) {
   return wpFetch("posts", {
     query: {
       per_page: perPage,
       _embed: "wp:featuredmedia",
+      _fields: "id,slug,title,excerpt,_links,_embedded,aioseo_head_json",
     },
     next: { revalidate },
   });

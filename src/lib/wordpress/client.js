@@ -29,6 +29,24 @@ async function fetchWithTimeout(url, init, timeoutMs = DEFAULT_TIMEOUT_MS) {
   }
 }
 
+// The CMS host (cms.bvs-ltd.co.uk) is known to be intermittently slow or
+// rate-limited — a single blip here otherwise surfaces as a permanent
+// failure to whichever page happened to be building or revalidating at that
+// moment (see WpConfigError's callers). One retry after a short delay lets a
+// transient blip clear without giving up outright. Only retried for
+// failures that look transient: network/timeout errors, and HTTP responses
+// that indicate temporary trouble (403/429/5xx) rather than a genuine
+// "this doesn't exist" (404) or a real client-side mistake (other 4xx).
+const RETRY_DELAY_MS = 1500;
+
+function isRetryableStatus(status) {
+  return status === 403 || status === 429 || status >= 500;
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 export class WordpressApiError extends Error {
   constructor(message, { status, url, body } = {}) {
     super(message);
@@ -73,27 +91,7 @@ export function getWpConfig() {
   return { apiBase, baseUrl, authHeader };
 }
 
-export async function wpFetch(path, { query, init, next, timeoutMs } = {}) {
-  const { apiBase, authHeader } = getWpConfig();
-
-  const url = new URL(joinUrl(apiBase, path));
-  if (query) {
-    Object.entries(query).forEach(([k, v]) => {
-      if (v === undefined || v === null || v === "") return;
-      url.searchParams.set(k, String(v));
-    });
-  }
-
-  const headers = new Headers(init?.headers || {});
-  headers.set("Accept", "application/json");
-  if (authHeader) headers.set("Authorization", authHeader);
-
-  debugLog("Request", {
-    url: url.toString(),
-    method: init?.method || "GET",
-    revalidate: next?.revalidate ?? null,
-  });
-
+async function wpFetchAttempt(url, headers, init, next, timeoutMs) {
   const res = await fetchWithTimeout(
     url.toString(),
     {
@@ -124,5 +122,39 @@ export async function wpFetch(path, { query, init, next, timeoutMs } = {}) {
 
   debugLog("Response ok", { status: res.status, url: url.toString() });
   return body;
+}
+
+export async function wpFetch(path, { query, init, next, timeoutMs } = {}) {
+  const { apiBase, authHeader } = getWpConfig();
+
+  const url = new URL(joinUrl(apiBase, path));
+  if (query) {
+    Object.entries(query).forEach(([k, v]) => {
+      if (v === undefined || v === null || v === "") return;
+      url.searchParams.set(k, String(v));
+    });
+  }
+
+  const headers = new Headers(init?.headers || {});
+  headers.set("Accept", "application/json");
+  if (authHeader) headers.set("Authorization", authHeader);
+
+  debugLog("Request", {
+    url: url.toString(),
+    method: init?.method || "GET",
+    revalidate: next?.revalidate ?? null,
+  });
+
+  try {
+    return await wpFetchAttempt(url, headers, init, next, timeoutMs);
+  } catch (err) {
+    const isRetryableError =
+      err instanceof WordpressApiError ? isRetryableStatus(err.status) : true;
+    if (!isRetryableError) throw err;
+
+    debugLog("Retrying after transient failure", { url: url.toString(), error: err.message });
+    await delay(RETRY_DELAY_MS);
+    return wpFetchAttempt(url, headers, init, next, timeoutMs);
+  }
 }
 
