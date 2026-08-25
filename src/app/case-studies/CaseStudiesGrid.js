@@ -52,8 +52,8 @@ export default function CaseStudiesGrid({ caseStudies }) {
         <Container>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((cs, i) => (
-              <ScrollReveal key={cs.slug} delay={i * 40}>
-                <div className="flex flex-col overflow-hidden border border-slate-200 bg-white transition hover:shadow-md">
+              <ScrollReveal key={cs.slug} delay={i * 40} className="h-full">
+                <div className="flex h-full flex-col overflow-hidden border border-slate-200 bg-white transition hover:shadow-md">
                   <Link href={`/case-studies/${cs.slug}`} className="group">
                     <div className="relative h-44 bg-slate-100">
                       <Image
