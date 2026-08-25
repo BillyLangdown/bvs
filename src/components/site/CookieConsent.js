@@ -82,7 +82,12 @@ export function CookieBanner({ onAccept, onDecline }) {
         </div>
 
         <p className="mt-4 text-center text-[11px] text-slate-400">
-          <Link href="/privacy-policy" className="underline hover:text-slate-600">
+          <Link
+            href="/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-slate-600"
+          >
             Read our Privacy Policy
           </Link>
         </p>
