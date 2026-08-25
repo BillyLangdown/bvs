@@ -30,35 +30,62 @@ export function useCookieConsent() {
   return { consent, accept, decline };
 }
 
+const REASONS = [
+  "Shows us which pages and services people actually find useful, so we know what to improve",
+  "Only anonymous, aggregated usage data — no personal details, never sold or shared with third parties",
+  "Helps us keep this site fast, relevant, and genuinely useful for visitors like you",
+];
+
 export function CookieBanner({ onAccept, onDecline }) {
   return (
     <div
       role="dialog"
+      aria-modal="true"
       aria-label="Cookie consent"
-      className="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white shadow-[0_-4px_24px_rgba(0,0,0,0.08)]"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#111418]/60 p-4 backdrop-blur-sm"
     >
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-        <p className="text-xs leading-5 text-slate-600">
-          We use cookies to analyse site traffic via Google Analytics. No personal data is sold or shared with third parties.{" "}
-          <Link href="/privacy-policy" className="underline hover:text-slate-900">
-            Privacy Policy
-          </Link>
-          .
+      <div className="w-full max-w-md border border-slate-200 bg-white p-6 shadow-2xl sm:p-8">
+        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">Before you continue</p>
+        <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
+
+        <h2 className="mt-4 text-xl font-extrabold text-slate-900 sm:text-2xl">
+          We use cookies to make this site better
+        </h2>
+
+        <p className="mt-3 text-sm leading-6 text-slate-600">
+          We use a small number of cookies to analyse site traffic via Google Analytics. No personal data is sold or
+          shared with third parties, and nothing is tracked unless you accept.
         </p>
-        <div className="flex shrink-0 gap-2">
-          <button
-            onClick={onDecline}
-            className="inline-flex h-8 items-center justify-center border border-slate-300 px-4 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-600 transition-colors hover:border-slate-400 hover:text-slate-900"
-          >
-            Decline
-          </button>
+
+        <ul className="mt-5 space-y-2.5">
+          {REASONS.map((reason) => (
+            <li key={reason} className="flex items-start gap-2.5 text-[13px] leading-5 text-slate-600">
+              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 bg-[#297858]" />
+              {reason}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-6 flex flex-col gap-2 sm:flex-row">
           <button
             onClick={onAccept}
-            className="inline-flex h-8 items-center justify-center bg-[#297858] px-4 text-[11px] font-semibold uppercase tracking-[0.15em] text-white transition-colors hover:bg-[#1e5038]"
+            className="inline-flex h-11 flex-1 items-center justify-center bg-[#297858] px-4 text-xs font-semibold uppercase tracking-[0.15em] text-white transition-colors hover:bg-[#1e5038]"
           >
             Accept
           </button>
+          <button
+            onClick={onDecline}
+            className="inline-flex h-11 flex-1 items-center justify-center border border-slate-300 px-4 text-xs font-semibold uppercase tracking-[0.15em] text-slate-600 transition-colors hover:border-slate-400 hover:text-slate-900"
+          >
+            Decline
+          </button>
         </div>
+
+        <p className="mt-4 text-center text-[11px] text-slate-400">
+          <Link href="/privacy-policy" className="underline hover:text-slate-600">
+            Read our Privacy Policy
+          </Link>
+        </p>
       </div>
     </div>
   );

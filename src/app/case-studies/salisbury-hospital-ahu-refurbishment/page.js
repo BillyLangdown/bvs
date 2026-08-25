@@ -87,8 +87,8 @@ export default function SalisburyHospitalCaseStudy() {
           {/* Hero image */}
           <div className="mt-8 relative h-96 overflow-hidden bg-slate-100 sm:h-[28rem]">
             <Image
-              src="/case-studies/images/salisbury-hospital-ahu-refurbishment/ahu-filters-before-refurbishment.jpg"
-              alt="Dirty AHU filter panel removed prior to the AHU refurbishment at Salisbury Hospital"
+              src="/case-studies/images/salisbury-hospital-ahu-refurbishment/ahu-unit-after-refurbishment.jpg"
+              alt="Refurbished AHU at Salisbury Hospital, upgraded with new EC fans and coils"
               fill
               unoptimized
               className="object-cover"

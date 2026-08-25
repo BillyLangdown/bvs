@@ -38,6 +38,7 @@ const faqs = [
 ];
 
 export default function EducationPage() {
+  const studies = caseStudies.filter((s) => s.sector.includes("Education"));
   return (
     <div className="pb-20 lg:pb-0">
 
@@ -353,7 +354,7 @@ export default function EducationPage() {
             <h2 className="text-2xl font-extrabold text-white sm:text-3xl">Case Studies</h2>
             <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
           </ScrollReveal>
-          <CaseStudyCarousel studies={caseStudies} />
+          <CaseStudyCarousel studies={studies} />
         </Container>
       </section>
 
