@@ -32,7 +32,7 @@ export function useCookieConsent() {
 
 const REASONS = [
   "Shows us which pages and services people actually find useful, so we know what to improve",
-  "Only anonymous, aggregated usage data — no personal details, never sold or shared with third parties",
+  "Only anonymous, aggregated usage data. No personal details, never sold or shared with third parties",
   "Helps us keep this site fast, relevant, and genuinely useful for visitors like you",
 ];
 
@@ -42,7 +42,7 @@ export function CookieBanner({ onAccept, onDecline }) {
       role="dialog"
       aria-modal="true"
       aria-label="Cookie consent"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[#111418]/60 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#111418]/25 p-4"
     >
       <div className="w-full max-w-md border border-slate-200 bg-white p-6 shadow-2xl sm:p-8">
         <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#297858]">Before you continue</p>
@@ -68,16 +68,16 @@ export function CookieBanner({ onAccept, onDecline }) {
 
         <div className="mt-6 flex flex-col gap-2 sm:flex-row">
           <button
-            onClick={onAccept}
-            className="inline-flex h-11 flex-1 items-center justify-center bg-[#297858] px-4 text-xs font-semibold uppercase tracking-[0.15em] text-white transition-colors hover:bg-[#1e5038]"
-          >
-            Accept
-          </button>
-          <button
             onClick={onDecline}
             className="inline-flex h-11 flex-1 items-center justify-center border border-slate-300 px-4 text-xs font-semibold uppercase tracking-[0.15em] text-slate-600 transition-colors hover:border-slate-400 hover:text-slate-900"
           >
             Decline
+          </button>
+          <button
+            onClick={onAccept}
+            className="inline-flex h-11 flex-1 items-center justify-center bg-[#297858] px-4 text-xs font-semibold uppercase tracking-[0.15em] text-white transition-colors hover:bg-[#1e5038]"
+          >
+            Accept
           </button>
         </div>
 
