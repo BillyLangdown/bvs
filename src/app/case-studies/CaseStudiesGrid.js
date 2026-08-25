@@ -12,6 +12,7 @@ const sectorColours = {
   Commercial: "bg-slate-100 text-slate-700",
   Leisure: "bg-teal-50 text-teal-700",
   Manufacturing: "bg-orange-50 text-orange-700",
+  Education: "bg-indigo-50 text-indigo-700",
 };
 
 export default function CaseStudiesGrid({ caseStudies }) {

@@ -1,5 +1,59 @@
 export const allCaseStudies = [
   {
+    slug: "salisbury-hospital-ahu-refurbishment",
+    title: "Salisbury Hospital, AHU Refurbishment",
+    headline: "Supply & Extract AHU Refurbishment, Increased Airflow",
+    sector: "Healthcare",
+    location: "Salisbury",
+    image: "/case-studies/images/salisbury-hospital-ahu-refurbishment/ahu-unit-after-refurbishment.jpg",
+    summary:
+      "BVS upgraded the supply and extract AHUs at Salisbury Hospital, new EC plug fans, frost and heating coils, and refurbished internals raised airflow from 1.1 to 1.7 m³/s and improved energy efficiency.",
+    tags: ["AHU Refurbishment", "EC Fan", "Healthcare"],
+    relevantIf: [
+      "Ageing belt-driven fans can't support an increase in required airflow",
+      "LPHW coils and internal components need renewing alongside a fan upgrade",
+      "Works must be completed with minimal disruption to a live hospital",
+    ],
+    pdfUrl: "/case-studies/Salisbury-Hospital-AHU-Refurbishment-Case-Study.pdf",
+    services: ["refurbishment", "ec-fan"],
+  },
+  {
+    slug: "plymouth-hotel-kitchen-extract-refurbishment",
+    title: "Plymouth Hotel, Kitchen Extract & AHU Refurbishment",
+    headline: "Kitchen Extract Fan Replacement, Noise & Vibration Eliminated",
+    sector: "Hotel",
+    location: "Plymouth",
+    image: "/case-studies/images/plymouth-hotel-kitchen-extract-refurbishment/finished-ahu-unit.jpg",
+    summary:
+      "A failing kitchen extract fan was causing noise and vibration in bedrooms above at a Plymouth hotel. BVS surveyed the system to DW172 standard, replaced the extract fan, and refurbished the ageing supply AHU.",
+    tags: ["Extract Fan Replacement", "Hotel", "Kitchen Ventilation"],
+    relevantIf: [
+      "Kitchen extract noise or vibration is affecting occupied rooms above",
+      "Extract and supply air volumes haven't been measured against DW172",
+      "An ageing AHU is underperforming due to clogged filters or a dirty coil",
+    ],
+    pdfUrl: "/case-studies/Plymouth-Hotel-Kitchen-Extract-Case-Study.pdf",
+    services: ["refurbishment"],
+  },
+  {
+    slug: "east-london-academy-ahu-refurbishment",
+    title: "East London Academy, Theatre & Drama AHU Refurbishment",
+    headline: "Non-Operational Theatre & Drama AHUs Restored",
+    sector: "Education",
+    location: "East London",
+    image: "/case-studies/images/east-london-academy-ahu-refurbishment/finished-refurbished-ahu.jpg",
+    summary:
+      "Both Theatre and Drama AHUs at an East London academy had sat non-operational for years. BVS refurbished the mechanical cores, keeping the sound casings, restoring heating, cooling and fresh air at a fraction of the cost of full replacement.",
+    tags: ["AHU Refurbishment", "Education", "EC Fan"],
+    relevantIf: [
+      "An ageing AHU has been non-operational for an extended period",
+      "Core components are obsolete but the casing remains structurally sound",
+      "Full replacement cost and disruption need to be avoided",
+    ],
+    pdfUrl: "/case-studies/East-London-Academy-AHU-Refurbishment-Case-Study.pdf",
+    services: ["refurbishment", "ec-fan"],
+  },
+  {
     slug: "bath-private-hospital-ahu-refurbishment",
     title: "Private Hospital Bath, Operating Theatre AHU Refurbishment",
     headline: "Operating Theatre AHU Refurbishment with EC Upgrade",
