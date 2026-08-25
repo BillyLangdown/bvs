@@ -61,6 +61,9 @@ export default async function sitemap() {
     { url: `${BASE}/case-studies/toca-football-o2-ahu-refurbishment`, priority: 0.7, changeFrequency: "yearly" },
     { url: `${BASE}/case-studies/warner-leisure-hotel-gunton-hall-ahu`, priority: 0.7, changeFrequency: "yearly" },
     { url: `${BASE}/case-studies/blackfriars-office-bloom-development-ahu-manufacturing`, priority: 0.7, changeFrequency: "yearly" },
+    { url: `${BASE}/case-studies/salisbury-hospital-ahu-refurbishment`, priority: 0.7, changeFrequency: "yearly" },
+    { url: `${BASE}/case-studies/plymouth-hotel-kitchen-extract-refurbishment`, priority: 0.7, changeFrequency: "yearly" },
+    { url: `${BASE}/case-studies/east-london-academy-ahu-refurbishment`, priority: 0.7, changeFrequency: "yearly" },
 
     // Supporting pages
     { url: `${BASE}/about-us`, priority: 0.6, changeFrequency: "monthly" },

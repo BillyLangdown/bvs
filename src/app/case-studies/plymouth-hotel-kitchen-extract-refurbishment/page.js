@@ -8,6 +8,8 @@ export const metadata = pageMetadata({
   title: "Plymouth Hotel Kitchen Extract Refurbishment Case Study",
   description: "A failing kitchen extract fan was causing noise and vibration in bedrooms above at a Plymouth hotel. BVS surveyed the system to DW172 standard, replaced the extract fan, and refurbished the ageing supply AHU.",
   path: "/case-studies/plymouth-hotel-kitchen-extract-refurbishment",
+  image: "/case-studies/images/plymouth-hotel-kitchen-extract-refurbishment/finished-ahu-unit.jpg",
+  imageAlt: "Plymouth Hotel Kitchen Extract Refurbishment",
 });
 
 const workItems = [

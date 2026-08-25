@@ -8,6 +8,8 @@ export const metadata = pageMetadata({
   title: "East London Academy AHU Refurbishment Case Study",
   description: "Both Theatre and Drama AHUs at an East London academy had sat non-operational for years. BVS refurbished the mechanical cores, keeping the sound casings, at a fraction of the cost of full replacement.",
   path: "/case-studies/east-london-academy-ahu-refurbishment",
+  image: "/case-studies/images/east-london-academy-ahu-refurbishment/finished-refurbished-ahu.jpg",
+  imageAlt: "East London Academy AHU Refurbishment",
 });
 
 const workItems = [

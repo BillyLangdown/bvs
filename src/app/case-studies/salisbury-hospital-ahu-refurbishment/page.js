@@ -8,6 +8,8 @@ export const metadata = pageMetadata({
   title: "Salisbury Hospital AHU Refurbishment Case Study",
   description: "BVS upgraded the supply and extract AHUs at Salisbury Hospital, new EC plug fans, frost and heating coils, and refurbished internals raised airflow from 1.1 to 1.7 m³/s and improved energy efficiency.",
   path: "/case-studies/salisbury-hospital-ahu-refurbishment",
+  image: "/case-studies/images/salisbury-hospital-ahu-refurbishment/ahu-unit-after-refurbishment.jpg",
+  imageAlt: "Salisbury Hospital AHU Refurbishment",
 });
 
 const workItems = [

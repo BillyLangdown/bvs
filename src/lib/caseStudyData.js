@@ -1,6 +1,54 @@
 export const caseStudies = [
   // ── REFURBISHMENT ────────────────────────────────────────────────────────
   {
+    slug: "salisbury-hospital-ahu-refurbishment",
+    sector: "Healthcare / NHS",
+    location: "Salisbury",
+    image: "/case-studies/images/salisbury-hospital-ahu-refurbishment/ahu-unit-after-refurbishment.jpg",
+    headline: "Supply & Extract AHU Refurbishment, Increased Airflow",
+    pdfUrl: "/case-studies/Salisbury-Hospital-AHU-Refurbishment-Case-Study.pdf",
+    relevantIf: [
+      "Ageing belt-driven fans can't support an increase in required airflow",
+      "LPHW coils and internal components need renewing alongside a fan upgrade",
+      "Works must be completed with minimal disruption to a live hospital",
+    ],
+    summary:
+      "New EC plug fans, frost and heating coils, and refurbished internals raised supply air volume from 1.1 to 1.7 m³/s. Delivered with no disruption to hospital operations.",
+    services: ["refurbishment", "ec-fan"],
+  },
+  {
+    slug: "plymouth-hotel-kitchen-extract-refurbishment",
+    sector: "Hotel / Leisure",
+    location: "Plymouth",
+    image: "/case-studies/images/plymouth-hotel-kitchen-extract-refurbishment/finished-ahu-unit.jpg",
+    headline: "Kitchen Extract Fan Replacement, Noise & Vibration Eliminated",
+    pdfUrl: "/case-studies/Plymouth-Hotel-Kitchen-Extract-Case-Study.pdf",
+    relevantIf: [
+      "Kitchen extract noise or vibration is affecting occupied rooms above",
+      "Extract and supply air volumes haven't been measured against DW172",
+      "An ageing AHU is underperforming due to clogged filters or a dirty coil",
+    ],
+    summary:
+      "A failing kitchen extract fan causing bedroom noise and vibration was replaced, and the 40-year-old supply AHU refurbished. Airflow restored to design standard, running costs reduced.",
+    services: ["refurbishment"],
+  },
+  {
+    slug: "east-london-academy-ahu-refurbishment",
+    sector: "Education",
+    location: "East London",
+    image: "/case-studies/images/east-london-academy-ahu-refurbishment/finished-refurbished-ahu.jpg",
+    headline: "Non-Operational Theatre & Drama AHUs Restored",
+    pdfUrl: "/case-studies/East-London-Academy-AHU-Refurbishment-Case-Study.pdf",
+    relevantIf: [
+      "An ageing AHU has been non-operational for an extended period",
+      "Core components are obsolete but the casing remains structurally sound",
+      "Full replacement cost and disruption need to be avoided",
+    ],
+    summary:
+      "Two AHUs that had sat non-operational for years were refurbished around their sound casings, new EC fans, DX coils, and Trend IQ4 controls, at a fraction of the cost of full replacement.",
+    services: ["refurbishment", "ec-fan"],
+  },
+  {
     slug: "nhs-hammersmith-ahu-refurbishment",
     sector: "Healthcare / NHS",
     location: "Hammersmith, London",
@@ -251,6 +299,9 @@ export const caseStudies = [
 ];
 
 export const caseStudyPDFs = {
+  "salisbury-hospital-ahu-refurbishment": "/case-studies/Salisbury-Hospital-AHU-Refurbishment-Case-Study.pdf",
+  "plymouth-hotel-kitchen-extract-refurbishment": "/case-studies/Plymouth-Hotel-Kitchen-Extract-Case-Study.pdf",
+  "east-london-academy-ahu-refurbishment": "/case-studies/East-London-Academy-AHU-Refurbishment-Case-Study.pdf",
   "bath-private-hospital-ahu-refurbishment": "/case-studies/Bath-Private-Hospital-AHU-Refurbishment-Case-Study.pdf",
   "nhs-hammersmith-ahu-refurbishment": "/case-studies/NHS-Hammersmith-Fulham-AHU-Refurbishment-Case-Study.pdf",
   "friary-meadow-ahu-replacement": "/case-studies/Friary-Meadow-Retirement-Village-Case-Study.pdf",
