@@ -14,11 +14,11 @@ export const metadata = pageMetadata({
 
 const workItems = [
   {
-    photo: "kitchen-extract-supply-survey.jpg",
-    label: "On-Site Survey",
-    heading: "Kitchen Extract & Supply Survey",
-    body: "A two-day site survey measured extract and supply air volumes against DW172 industry standards to establish true performance against design requirements.",
-    alt: "Engineer surveying kitchen extract and supply system at Plymouth hotel",
+    photo: "engineers-fitting-kitchen-extract-unit.jpg",
+    label: "On-Site Installation",
+    heading: "Kitchen Extract Unit Fitted",
+    body: "Following the DW172 site survey, engineers fitted and connected the new kitchen extract unit as part of the ventilation upgrade.",
+    alt: "Engineers fitting the new kitchen extract unit during the ventilation upgrade at a Plymouth hotel",
   },
   {
     photo: "new-extract-fan-bulkhead-mounted.jpg",
@@ -88,7 +88,7 @@ export default function PlymouthHotelCaseStudy() {
           <div className="mt-8 relative h-96 overflow-hidden bg-slate-100 sm:h-[28rem]">
             <Image
               src="/case-studies/images/plymouth-hotel-kitchen-extract-refurbishment/ahu-interior-before-refurbishment.jpg"
-              alt="Interior of ageing supply AHU prior to refurbishment at Plymouth hotel"
+              alt="Interior of the AHU casing before the new kitchen extract fan was fitted at a Plymouth hotel"
               fill
               unoptimized
               className="object-cover"

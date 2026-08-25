@@ -15,17 +15,17 @@ export const metadata = pageMetadata({
 const workItems = [
   {
     photo: "new-ec-plug-fan-installed.jpg",
-    label: "New EC Plug Fan Installed",
-    heading: "EC Fan Installation",
+    label: "New EC Fan – Supply AHU",
+    heading: "Supply AHU EC Fan Installation",
     body: "The original belt-driven fans were removed and replaced with high-efficiency EC plug fans, increasing the supply air volume from 1.1 m³/s to 1.7 m³/s.",
-    alt: "New high-efficiency EC plug fan installed in AHU at Salisbury Hospital",
+    alt: "New high-efficiency EC plug fan installed in the supply AHU during refurbishment at Salisbury Hospital",
   },
   {
-    photo: "fan-bulkhead-casework-modification.jpg",
-    label: "Casework & Bulkhead Modifications",
-    heading: "Casework Modifications",
-    body: "The AHU casework was modified and new bulkheads installed to accommodate the new EC fans and optimise internal airflow.",
-    alt: "Modified AHU casework and new fan bulkhead at Salisbury Hospital",
+    photo: "new-ec-fan-extract-ahu.jpg",
+    label: "New EC Fan – Extract AHU",
+    heading: "Extract AHU Fan Replacement",
+    body: "The extract AHU received the same EC fan upgrade as the supply side, fitted within a protective guard inside the existing casework.",
+    alt: "New EC fan fitted in the extract AHU during the refurbishment at Salisbury Hospital",
   },
   {
     photo: "new-lphw-coils-installed.jpg",
@@ -88,7 +88,7 @@ export default function SalisburyHospitalCaseStudy() {
           <div className="mt-8 relative h-96 overflow-hidden bg-slate-100 sm:h-[28rem]">
             <Image
               src="/case-studies/images/salisbury-hospital-ahu-refurbishment/ahu-filters-before-refurbishment.jpg"
-              alt="AHU filter section prior to refurbishment at Salisbury Hospital"
+              alt="Dirty AHU filter panel removed prior to the AHU refurbishment at Salisbury Hospital"
               fill
               unoptimized
               className="object-cover"

@@ -14,32 +14,32 @@ export const metadata = pageMetadata({
 
 const workItems = [
   {
-    photo: "gas-pipework-decommissioning.jpg",
-    label: "Gas Pipework Removed",
-    heading: "Gas Burner Decommissioning & Removal",
-    body: "The redundant gas burner assemblies were safely isolated, purged and removed from both AHUs, clearing the way for the new refrigeration-based heating system.",
-    alt: "Redundant gas pipework removed during AHU refurbishment at East London academy",
+    photo: "old-condenser-unit-before-replacement.jpg",
+    label: "Old Plant Removed",
+    heading: "Gas Burner & Old Plant Decommissioning",
+    body: "The redundant gas burner assemblies and ageing condenser plant were safely isolated and removed from both AHUs, clearing the way for the new refrigeration-based heating system.",
+    alt: "Old, weathered condenser unit removed during the AHU refurbishment at the East London academy",
   },
   {
-    photo: "original-fan-assembly-before-ec-replacement.jpg",
-    label: "Original Fan Assembly",
+    photo: "new-ec-fans-ziehl-abegg-installed.jpg",
+    label: "New Ziehl-Abegg EC Fans",
     heading: "EC Fan Replacement",
-    body: "New high-efficiency EC fans were installed in place of the original assemblies, each sized to its unit's exact duty for better efficiency and control.",
-    alt: "Original fan assembly prior to EC fan replacement at East London academy AHU",
+    body: "New high-efficiency Ziehl-Abegg EC fans were installed in place of the original assemblies, each sized to its unit's exact duty for better efficiency and control.",
+    alt: "New Ziehl-Abegg EC fans installed in the AHU during the EC fan upgrade at the East London academy",
   },
   {
-    photo: "new-dx-coils-condensers.jpg",
-    label: "New DX Coils Installed",
+    photo: "new-daikin-condensers-installed.jpg",
+    label: "New Roof-Mounted Condensers",
     heading: "New DX Coils & Condensers",
-    body: "New DX heating coils and roof-mounted condensers were craned into position and connected via a fully insulated refrigeration pipework network.",
-    alt: "New DX heating coils installed in AHU at East London academy",
+    body: "New DX heating coils and roof-mounted Daikin condensers were craned into position and connected via a fully insulated refrigeration pipework network.",
+    alt: "New Daikin roof-mounted condenser units installed during the AHU refurbishment at the East London academy",
   },
   {
     photo: "new-trend-iq4-controls.jpg",
-    label: "New Trend IQ4 Panel",
+    label: "New Controls Panel",
     heading: "New Trend IQ4 Controls",
     body: "A modern Trend IQ4 controls platform was installed across both units, replacing outdated, unsupported controls with a fully supported, future-proofed system.",
-    alt: "New Trend IQ4 controls platform installed at East London academy AHU",
+    alt: "New electrical controls panel installed for the AHU at the East London academy",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function EastLondonAcademyCaseStudy() {
           <div className="mt-8 relative h-96 overflow-hidden bg-slate-100 sm:h-[28rem]">
             <Image
               src="/case-studies/images/east-london-academy-ahu-refurbishment/ahu-non-operational-before-refurbishment.jpg"
-              alt="Non-operational Theatre AHU prior to refurbishment at East London academy"
+              alt="Rooftop air handling units before the AHU refurbishment at the East London academy"
               fill
               unoptimized
               className="object-cover"
