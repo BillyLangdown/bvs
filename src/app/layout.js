@@ -49,7 +49,10 @@ export default function RootLayout({ children }) {
           <NewsletterBand />
           <Footer />
         </div>
-        <AnalyticsLoader gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        <AnalyticsLoader
+          gaId={process.env.NEXT_PUBLIC_GA_ID}
+          gtmId={process.env.NEXT_PUBLIC_GTM_ID}
+        />
       </body>
     </html>
   );
