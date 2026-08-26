@@ -80,7 +80,7 @@ export default async function BlogsPage() {
   let fetchFailed = false;
 
   try {
-    posts = await getPosts({ perPage: 15, revalidate: 86400 });
+    posts = await getPosts({ perPage: 30, revalidate: 86400 });
   } catch (err) {
     if (err instanceof WpConfigError) {
       // WordPress isn't set up at all (e.g. local dev with no env vars) — a
