@@ -74,6 +74,7 @@ export function AllServicesPanel({ services, additionalServices }) {
                 <Link
                   key={s.title}
                   href={s.href}
+                  prefetch={false}
                   className="group flex h-full flex-col overflow-hidden rounded-md border border-black/5 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
                 >
                   <div className="relative h-44 overflow-hidden">
@@ -124,6 +125,7 @@ export function AllServicesPanel({ services, additionalServices }) {
                 <Link
                   key={s.title}
                   href={s.href}
+                  prefetch={false}
                   className="group flex w-full items-center gap-4 rounded-md border border-black/10 bg-white p-4 transition-colors hover:border-[#297858]/40 hover:bg-slate-50"
                 >
                   <div className="flex-1">

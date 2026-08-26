@@ -379,6 +379,7 @@ export function Navigation() {
                                           <Link
                                             key={child.href}
                                             href={child.href}
+                                            prefetch={false}
                                             className="flex items-start gap-3 border-b border-slate-100 py-3 last:border-0"
                                             onClick={() => setMobileOpen(false)}
                                           >
@@ -400,6 +401,7 @@ export function Navigation() {
                                           <Link
                                             key={child.href}
                                             href={child.href}
+                                            prefetch={false}
                                             className="flex items-start gap-3 border-b border-slate-100 py-3 last:border-0"
                                             onClick={() => setMobileOpen(false)}
                                           >
@@ -421,6 +423,7 @@ export function Navigation() {
                                 <Link
                                   key={child.href}
                                   href={child.href}
+                                  prefetch={false}
                                   className="flex items-start gap-3 border-b border-slate-100 py-3 last:border-0"
                                   onClick={() => setMobileOpen(false)}
                                 >
@@ -512,6 +515,7 @@ function MegaDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen, 
                           <Link
                             key={child.href}
                             href={child.href}
+                            prefetch={false}
                             className="group flex items-start gap-3 border-l-2 border-transparent px-3 py-3 transition-all hover:border-[#297858] hover:bg-slate-50"
                             onClick={onItemClick}
                           >
@@ -544,6 +548,7 @@ function MegaDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen, 
                               <Link
                                 key={child.href}
                                 href={child.href}
+                                prefetch={false}
                                 className="group flex items-start gap-3 border-l-2 border-transparent px-3 py-3 transition-all hover:border-[#297858] hover:bg-slate-50"
                                 onClick={onItemClick}
                               >
@@ -607,6 +612,7 @@ function NavDropdown({ item, linkClass, isActive, onOpen, onClose, onKeepOpen, o
                 <Link
                   key={child.href}
                   href={child.href}
+                  prefetch={false}
                   className="group flex w-full min-w-0 items-start gap-3 overflow-hidden border-l-2 border-transparent px-4 py-4 transition-all hover:border-[#297858] hover:bg-slate-50 md:px-5"
                   onClick={onItemClick}
                 >

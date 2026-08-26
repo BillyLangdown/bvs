@@ -121,6 +121,7 @@ export function Footer() {
                     <li key={l.href}>
                       <Link
                         href={l.href}
+                        prefetch={false}
                         className="text-sm text-zinc-400 transition-colors hover:text-white"
                       >
                         {l.label}
@@ -143,11 +144,11 @@ export function Footer() {
             </p>
 
             <div className="flex gap-5">
-              <Link href="/privacy-policy" className="hover:text-zinc-400">
+              <Link href="/privacy-policy" prefetch={false} className="hover:text-zinc-400">
                 Privacy Policy
               </Link>
 
-              <Link href="/terms" className="hover:text-zinc-400">
+              <Link href="/terms" prefetch={false} className="hover:text-zinc-400">
                 Terms
               </Link>
             </div>

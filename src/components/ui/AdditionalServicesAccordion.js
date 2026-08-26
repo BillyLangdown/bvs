@@ -34,6 +34,7 @@ export function AdditionalServicesAccordion({ services }) {
         <Link
           key={s.title}
           href={s.href}
+          prefetch={false}
           className="group flex w-full items-center gap-4 border border-black/10 bg-white p-4 transition-colors hover:border-[#297858]/40 hover:bg-slate-50"
         >
           <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-black/10 bg-[#f5f3ef]">
