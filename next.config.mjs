@@ -6,6 +6,16 @@ const nextConfig = {
   // of the single hop those redirects were written to be. This hands
   // trailing-slash handling entirely to the redirects list instead.
   skipTrailingSlashRedirect: true,
+  // Static generation spins up one page-generation worker per CPU by
+  // default (3 on Vercel's 4-core build machine). Each worker independently
+  // hits the WordPress backend with no coordination between them, and that
+  // shared-hosting backend has a hard concurrency ceiling well below what
+  // 3 workers can produce together (see the per-worker request cap in
+  // src/lib/wordpress/client.js). Capping worker count too keeps the
+  // combined load under that ceiling instead of just the per-worker slice.
+  experimental: {
+    cpus: 2,
+  },
   async headers() {
     return [
       {

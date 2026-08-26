@@ -37,7 +37,7 @@ async function fetchWithTimeout(url, init, timeoutMs = DEFAULT_TIMEOUT_MS) {
 // retried for failures that look transient: network/timeout errors, and
 // HTTP responses that indicate temporary trouble (403/429/5xx) rather than a
 // genuine "this doesn't exist" (404) or a real client-side mistake (other 4xx).
-const RETRY_DELAYS_MS = [1500, 3000, 6000];
+const RETRY_DELAYS_MS = [1500, 3000, 6000, 10000];
 
 function isRetryableStatus(status) {
   return status === 403 || status === 429 || status >= 500;
@@ -50,13 +50,17 @@ function delay(ms) {
 // Next.js's static build spins up several page-generation workers, each
 // free to fire off WordPress requests with no coordination — dozens of
 // pages resolving in parallel can mean dozens of simultaneous hits to a
-// modest shared-hosting WP install, which is what actually trips its
-// resource limit (a single request in isolation is fine). Capping how many
-// requests this process has in flight at once smooths that burst out
-// without needing the host's limits raised. Each of Next's build workers is
-// a separate process, so this only caps concurrency per-worker, not
-// globally — still a meaningful cut versus fully unthrottled.
-const MAX_CONCURRENT_REQUESTS = 4;
+// modest shared-hosting WP install. Measured directly against this host:
+// 4 concurrent requests to a single heavy endpoint all succeed (just
+// slower), but 8 concurrent requests all time out completely with nothing
+// returned — there's a hard concurrency ceiling somewhere in between.
+// Capping how many requests this process has in flight at once keeps
+// bursts under that ceiling without needing the host's limits raised. Each
+// of Next's build workers is a separate process, so this only caps
+// concurrency per-worker — pair with `cpus` in next.config.mjs to keep the
+// number of workers themselves low enough that the combined total also
+// stays under the ceiling.
+const MAX_CONCURRENT_REQUESTS = 3;
 let activeRequests = 0;
 const waiters = [];
 
