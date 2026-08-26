@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Next's default trailing-slash normalization runs before the custom
+  // redirects below ever get a chance to match, turning every trailing-slash
+  // legacy URL (WooCommerce's default format) into a two-hop chain instead
+  // of the single hop those redirects were written to be. This hands
+  // trailing-slash handling entirely to the redirects list instead.
+  skipTrailingSlashRedirect: true,
   async headers() {
     return [
       {
@@ -191,13 +197,22 @@ const nextConfig = {
       { source: "/education-ventilation-2/",                 destination: "/education-ventilation",                   permanent: true },
 
       // ── WooCommerce products and categories → shop (catch-all) ─────────
+      // Trailing-slash variants included: WooCommerce's default URLs always
+      // had one, and without a matching rule here Next's own trailing-slash
+      // normalization redirects it to the no-slash form first, turning what
+      // should be a single hop to /shop into a two-hop chain (flagged by
+      // Google Search Console as a "Redirect error" on /product/dx-cooling-coils/).
       { source: "/product/:slug*",                           destination: "/shop/:slug*",                             permanent: true },
+      { source: "/product/:slug*/",                          destination: "/shop/:slug*",                             permanent: true },
       { source: "/product-category/:slug*",                  destination: "/shop",                                    permanent: true },
+      { source: "/product-category/:slug*/",                 destination: "/shop",                                    permanent: true },
 
       // ── /products route retired: duplicated /shop with no unique content,
       //    consolidating onto one canonical product catalog ───────────────
       { source: "/products/category/:slug*",                 destination: "/shop",                                    permanent: true },
+      { source: "/products/category/:slug*/",                destination: "/shop",                                    permanent: true },
       { source: "/products/:slug",                           destination: "/shop/:slug",                              permanent: true },
+      { source: "/products/:slug/",                          destination: "/shop/:slug",                              permanent: true },
       { source: "/products",                                 destination: "/shop",                                    permanent: true },
       { source: "/products/",                                destination: "/shop",                                    permanent: true },
 
