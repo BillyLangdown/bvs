@@ -1,4 +1,4 @@
-import { getWpConfig, wpFetch, WpConfigError } from "./client";
+import { getWpConfig, resilientJsonRequest, WpConfigError } from "./client";
 
 function joinUrl(base, path) {
   const b = String(base || "").replace(/\/+$/, "");
@@ -24,23 +24,15 @@ export async function storeFetch(path, { query, next } = {}) {
     });
   }
 
-  // Reuse wpFetch transport for timeout + optional debug logging, but pass full URL.
-  // wpFetch expects a path relative to WP_API_BASE, so we call it via direct fetch if needed.
-  // Easiest: use wpFetch with absolute URL by temporarily using init.url? Not supported.
-  // So: just call fetch with Next caching options.
-  const res = await fetch(url.toString(), {
+  // Shares the same concurrency-limited, retrying transport as wpFetch —
+  // this hits the same physical WordPress host, just a different API
+  // surface (WooCommerce's Store API instead of core WP REST), so it needs
+  // the same protection against overloading that host's resource limits.
+  return resilientJsonRequest(url, {
     headers: { Accept: "application/json" },
     next,
+    errorMessage: "WooCommerce Store API request failed",
   });
-  const body = await res.json().catch(() => null);
-  if (!res.ok) {
-    const err = new Error("WooCommerce Store API request failed");
-    err.status = res.status;
-    err.url = url.toString();
-    err.body = body;
-    throw err;
-  }
-  return body;
 }
 
 export async function getStoreProductBySlug(slug, { revalidate = 86400 } = {}) {

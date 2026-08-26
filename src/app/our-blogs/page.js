@@ -77,19 +77,31 @@ const placeholderPosts = [
 
 export default async function BlogsPage() {
   let posts = [];
+  let fetchFailed = false;
 
   try {
     posts = await getPosts({ perPage: 30, revalidate: 86400 });
   } catch (err) {
-    // WpConfigError means WordPress isn't set up at all (e.g. local dev with
-    // no env vars) — a permanent state, so the placeholder posts below are
-    // the right thing to show. Any other error (network, timeout, a bad
-    // moment on the WordPress host) is transient, and re-throwing it here
-    // instead of swallowing it means Next.js keeps serving the last
-    // successfully-generated version of this page instead of overwriting a
-    // real, working blog index with an empty "coming soon" placeholder for
-    // the next 24 hours.
-    if (!(err instanceof WpConfigError)) throw err;
+    if (err instanceof WpConfigError) {
+      // WordPress isn't set up at all (e.g. local dev with no env vars) — a
+      // permanent state, so the placeholder posts below are the right thing
+      // to show.
+    } else if (process.env.NEXT_PHASE === "phase-production-build") {
+      // A live request failed during the initial static build (as opposed
+      // to a later background ISR revalidation of an already-deployed
+      // page). There's no "last successfully-generated version" to fall
+      // back to yet in this case — re-throwing here would fail the entire
+      // deployment over one page. wpFetch already retries transient errors
+      // several times with backoff, so getting here at all means the
+      // WordPress host stayed unreachable through all of them.
+      fetchFailed = true;
+    } else {
+      // Any other context is a background ISR revalidation of a page that's
+      // already live. Re-throwing here means Next.js keeps serving the last
+      // successfully-generated version instead of overwriting real, working
+      // content with an empty state for the next 24 hours.
+      throw err;
+    }
   }
 
   const cleanPosts = (posts || []).filter((p) => {
@@ -239,6 +251,19 @@ export default async function BlogsPage() {
                 })}
               </div>
             </>
+          ) : fetchFailed ? (
+            <ScrollReveal className="mb-3">
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#297858]">
+                Temporarily unavailable
+              </p>
+              <h2 className="mt-2 text-2xl font-extrabold text-slate-900">
+                Our blog couldn&apos;t load
+              </h2>
+              <div className="mt-2 h-[3px] w-10 bg-[#297858]" />
+              <p className="mt-4 max-w-xl text-sm leading-6 text-slate-500">
+                We are having trouble reaching our articles right now. Please check back shortly, or get in touch if you had a specific question in mind.
+              </p>
+            </ScrollReveal>
           ) : (
             <>
               <ScrollReveal className="mb-3">
