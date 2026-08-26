@@ -196,6 +196,19 @@ const nextConfig = {
       { source: "/education-ventilation-2",                  destination: "/education-ventilation",                   permanent: true },
       { source: "/education-ventilation-2/",                 destination: "/education-ventilation",                   permanent: true },
 
+      // ── WordPress RSS feed URLs for individual products → the product
+      //    page itself, not a literal (nonexistent) /shop/:slug/feed page.
+      //    Must come before the generic catch-all below, which would
+      //    otherwise treat "feed" as part of the slug and 404. ───────────
+      { source: "/product/:slug/feed",                       destination: "/shop/:slug",                              permanent: true },
+      { source: "/product/:slug/feed/",                      destination: "/shop/:slug",                              permanent: true },
+
+      // ── Discontinued products with no equivalent /shop slug → the
+      //    closest current replacement, not a 404. Must come before the
+      //    generic catch-all below. ────────────────────────────────────
+      { source: "/product/electric-heater-battery-400mm-x-400mm-6kw-9kw-12kw-415v",  destination: "/shop/bespoke-electric-heater-batteries", permanent: true },
+      { source: "/product/electric-heater-battery-400mm-x-400mm-6kw-9kw-12kw-415v/", destination: "/shop/bespoke-electric-heater-batteries", permanent: true },
+
       // ── WooCommerce products and categories → shop (catch-all) ─────────
       // Trailing-slash variants included: WooCommerce's default URLs always
       // had one, and without a matching rule here Next's own trailing-slash
