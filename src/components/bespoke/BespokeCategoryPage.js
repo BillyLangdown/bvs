@@ -94,6 +94,7 @@ export function BespokeCategoryPage({
               {servicePagePath && (
                 <Link
                   href={servicePagePath}
+                  prefetch={false}
                   className="inline-flex items-center gap-2 rounded-xs border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
                 >
                   {servicePageLabel} →
@@ -101,6 +102,7 @@ export function BespokeCategoryPage({
               )}
               <Link
                 href="/shop"
+                prefetch={false}
                 className="inline-flex items-center gap-2 rounded-xs border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
               >
                 Browse the full shop →

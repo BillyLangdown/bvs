@@ -28,6 +28,7 @@ export function ShopGrid({ products, categories, initialCategory = null }) {
           </span>
           <Link
             href="/shop"
+            prefetch={false}
             onClick={(e) => {
               e.preventDefault();
               setActiveCategory(null);
@@ -45,6 +46,7 @@ export function ShopGrid({ products, categories, initialCategory = null }) {
             <Link
               key={c.id}
               href={`/shop/category/${c.slug}`}
+              prefetch={false}
               onClick={(e) => {
                 e.preventDefault();
                 const next = activeCategory === c.id ? null : c.id;

@@ -121,6 +121,7 @@ export function ServiceSubPage({
                 <Link
                   key={l.href}
                   href={l.href}
+                  prefetch={false}
                   className="flex items-center justify-between border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-900 transition-colors hover:border-emerald-200 hover:bg-emerald-50"
                 >
                   {l.label}

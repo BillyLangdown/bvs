@@ -77,12 +77,14 @@ export function CaseStudyCarousel({ studies, intro }) {
                 <div className="mt-4 flex flex-wrap gap-2.5">
                   <Link
                     href={`/case-studies/${study.slug}`}
+                    prefetch={false}
                     className="inline-flex items-center gap-1.5 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-4 py-2 text-xs font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
                   >
                     Read case study →
                   </Link>
                   <Link
                     href="/case-studies"
+                    prefetch={false}
                     className="inline-flex items-center gap-1.5 border border-white/20 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-white/10"
                   >
                     View all projects
@@ -120,12 +122,14 @@ export function CaseStudyCarousel({ studies, intro }) {
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Link
                     href={`/case-studies/${study.slug}`}
+                    prefetch={false}
                     className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-5 py-2.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
                   >
                     Read case study →
                   </Link>
                   <Link
                     href="/case-studies"
+                    prefetch={false}
                     className="inline-flex items-center gap-2 border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
                   >
                     View all projects

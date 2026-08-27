@@ -86,6 +86,7 @@ export function CookieBanner({ onAccept, onDecline }) {
             href="/privacy-policy"
             target="_blank"
             rel="noopener noreferrer"
+            prefetch={false}
             className="underline hover:text-slate-600"
           >
             Read our Privacy Policy
