@@ -9,7 +9,7 @@ import { TrustedByBar } from "@/components/site/TrustedByBar";
 import { caseStudies } from "@/lib/caseStudyData";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 export const metadata = pageMetadata({
-  title: "AHU Coil Replacement",
+  title: "AHU Coil Replacement | Any Make & Model",
   description: "Measure-to-fit AHU coil replacement for any make or model. Heating, cooling, heat recovery, and frost coils sourced or manufactured and installed across the UK.",
   path: "/air-handling-unit-coil-replacement",
 });
@@ -114,77 +114,71 @@ export default function CoilReplacementPage() {
 </div>
 
 <Container className="relative z-10 flex min-h-[620px] items-center py-14 pb-16 sm:min-h-[600px] sm:py-20 sm:pb-20">
-  {/* Mobile hero */}
-  <div className="sm:hidden max-w-3xl">
+  <div className="max-w-3xl">
     <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
       AHU Coil Replacement
     </p>
 
-    <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white">
+    <h1 className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
       Coils matched <br/> to your system.
     </h1>
 
-    <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
+    {/* Mobile hero */}
+    <div className="sm:hidden">
+      <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
 
-    <a href="tel:01256518170" className="mt-5 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
-      <PhoneIcon />
-      01256 518170
-    </a>
-    <p className="mt-3 max-w-xl text-sm leading-6 text-white">
-      Replacement coils measured on site and manufactured to your AHU's exact specification.
-    </p>
-    <div className="mt-6 flex flex-col gap-3">
-      <a
-        href="#enquire"
-        className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
-      >
-        Discuss your replacement options
-        <ArrowIcon />
+      <a href="tel:01256518170" className="mt-5 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
+        <PhoneIcon />
+        01256 518170
       </a>
-      <a
-        href="#our-projects"
-        className="inline-flex w-full items-center justify-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
-      >
-        Our Projects
-        <ArrowDownIcon className="h-4 w-4" />
-      </a>
+      <p className="mt-3 max-w-xl text-sm leading-6 text-white">
+        Replacement coils measured on site and manufactured to your AHU's exact specification.
+      </p>
+      <div className="mt-6 flex flex-col gap-3">
+        <a
+          href="#enquire"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
+        >
+          Discuss your replacement options
+          <ArrowIcon />
+        </a>
+        <a
+          href="#our-projects"
+          className="inline-flex w-full items-center justify-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+        >
+          Our Projects
+          <ArrowDownIcon className="h-4 w-4" />
+        </a>
+      </div>
     </div>
-  </div>
-  {/* Desktop hero */}
-  <div className="hidden sm:block max-w-3xl">
-    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
-      AHU Coil Replacement
-    </p>
+    {/* Desktop hero */}
+    <div className="hidden sm:block">
+      <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
 
-    <p className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl">
-      Coils matched <br/> to your system.
-    </p>
-
-    <div className="mt-5 h-[3px] w-14 bg-[#297858]" />
-
-    <p className="mt-6 max-w-xl text-[15px] leading-7 text-white">
-      Replacement coils measured on site and manufactured to your AHU's exact specification. Any make, any model, including obsolete units where the original manufacturer no longer supports the equipment.
-    </p>
-    <a href="tel:01256518170" className="mt-6 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
-      <PhoneIcon />
-      01256 518170
-    </a>
-    <div className="mt-4 flex flex-wrap gap-3">
-      <a
-        href="#enquire"
-        className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
-      >
-        Discuss your replacement options
-        <ArrowIcon />
+      <p className="mt-6 max-w-xl text-[15px] leading-7 text-white">
+        Replacement coils measured on site and manufactured to your AHU's exact specification. Any make, any model, including obsolete units where the original manufacturer no longer supports the equipment.
+      </p>
+      <a href="tel:01256518170" className="mt-6 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
+        <PhoneIcon />
+        01256 518170
       </a>
+      <div className="mt-4 flex flex-wrap gap-3">
+        <a
+          href="#enquire"
+          className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
+        >
+          Discuss your replacement options
+          <ArrowIcon />
+        </a>
 
-      <a
-        href="#our-projects"
-        className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
-      >
-        Our Projects
-        <ArrowDownIcon className="h-4 w-4" />
-      </a>
+        <a
+          href="#our-projects"
+          className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+        >
+          Our Projects
+          <ArrowDownIcon className="h-4 w-4" />
+        </a>
+      </div>
     </div>
   </div>
 </Container>

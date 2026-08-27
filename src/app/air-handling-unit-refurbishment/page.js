@@ -69,8 +69,7 @@ export default function AHURefurbishmentPage() {
         </div>
 
         <Container className="relative z-10 flex min-h-[620px] items-center py-14 pb-16 sm:min-h-[600px] sm:py-20 sm:pb-20">
-          {/* Mobile hero */}
-          <div className="sm:hidden max-w-3xl">
+          <div className="max-w-3xl">
             <p
               className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
@@ -78,79 +77,71 @@ export default function AHURefurbishmentPage() {
               AHU Refurbishment
             </p>
             <h1
-              className="font-display text-3xl font-extrabold leading-[1.08] text-white"
-              style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
-            >
-              Restore &amp; extend<br />your air handling units.
-            </h1>
-            <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
-            <a href="tel:01256518170" className="mt-5 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
-              <PhoneIcon />
-              01256 518170
-            </a>
-            <p
-              className="mt-3 max-w-xl text-sm leading-6 text-white"
-              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
-            >
-              Extend your AHU&apos;s life by 10&ndash;20+ years at around 40% of full replacement cost.
-            </p>
-            <div className="mt-6 flex flex-col gap-3">
-              <Link
-                href="/contact"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
-              >
-                Book a condition survey
-                <ArrowIcon />
-              </Link>
-              <a
-                href="#our-projects"
-                className="inline-flex w-full items-center justify-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
-              >
-                Our Projects
-                <ArrowDownIcon />
-              </a>
-            </div>
-          </div>
-          {/* Desktop hero */}
-          <div className="hidden sm:block max-w-3xl">
-            <p
-              className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55"
-              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
-            >
-              AHU Refurbishment
-            </p>
-            <p
               className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
               Restore &amp; extend<br />your air handling units.
-            </p>
-            <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
-            <p
-              className="mt-5 max-w-xl text-[15px] leading-7 text-white"
-              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
-            >
-              Extend your AHU&apos;s life by 10&ndash;20+ years at around 40% of full replacement cost. BVS survey, specify, and refurbish on-site with minimum disruption to your operations.
-            </p>
-            <a href="tel:01256518170" className="mt-6 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
-              <PhoneIcon />
-              01256 518170
-            </a>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
-              >
-                Book a condition survey
-                <ArrowIcon />
-              </Link>
-              <a
-                href="#our-projects"
-                className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
-              >
-                Our Projects
-                <ArrowDownIcon />
+            </h1>
+
+            {/* Mobile hero */}
+            <div className="sm:hidden">
+              <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
+              <a href="tel:01256518170" className="mt-5 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
+                <PhoneIcon />
+                01256 518170
               </a>
+              <p
+                className="mt-3 max-w-xl text-sm leading-6 text-white"
+                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
+              >
+                Extend your AHU&apos;s life by 10&ndash;20+ years at around 40% of full replacement cost.
+              </p>
+              <div className="mt-6 flex flex-col gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
+                >
+                  Book a condition survey
+                  <ArrowIcon />
+                </Link>
+                <a
+                  href="#our-projects"
+                  className="inline-flex w-full items-center justify-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+                >
+                  Our Projects
+                  <ArrowDownIcon />
+                </a>
+              </div>
+            </div>
+            {/* Desktop hero */}
+            <div className="hidden sm:block">
+              <div className="mt-4 h-[3px] w-14 bg-[#297858]" />
+              <p
+                className="mt-5 max-w-xl text-[15px] leading-7 text-white"
+                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
+              >
+                Extend your AHU&apos;s life by 10&ndash;20+ years at around 40% of full replacement cost. BVS survey, specify, and refurbish on-site with minimum disruption to your operations.
+              </p>
+              <a href="tel:01256518170" className="mt-6 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
+                <PhoneIcon />
+                01256 518170
+              </a>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-xs bg-gradient-to-b from-[#22694a] to-[#1a5438] px-7 py-3.5 text-sm font-semibold text-white transition-all shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_6px_rgba(0,0,0,0.2)] hover:from-[#1e5038] hover:to-[#133f2a]"
+                >
+                  Book a condition survey
+                  <ArrowIcon />
+                </Link>
+                <a
+                  href="#our-projects"
+                  className="inline-flex items-center gap-2 bg-black/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+                >
+                  Our Projects
+                  <ArrowDownIcon />
+                </a>
+              </div>
             </div>
           </div>
         </Container>
@@ -566,21 +557,24 @@ export default function AHURefurbishmentPage() {
           <div className="grid gap-4 sm:grid-cols-3">
             {[
               {
-                title: "When Does AHU Refurbishment Make More Sense Than Replacement?",
-                desc: "Cost is only part of the picture. Structural life, compliance, energy targets, and programme constraints all factor into the decision.",
+                slug: "ahu-refurbishment-or-replacement-key-considerations",
+                title: "AHU Refurbishment or Replacement – Key Considerations",
+                desc: "A practical comparison of cost, lifespan, regulations and efficiency to help decide between refurbishing or replacing an AHU.",
               },
               {
-                title: "The Hidden Cost of Delaying AHU Coil Replacement",
-                desc: "A degraded coil loses performance gradually, long before it stops working. The cost shows up in energy bills and air quality first.",
+                slug: "extending-ahu-lifespan-maintenance-tips-for-longevity",
+                title: "Extending AHU Lifespan: Maintenance Tips for Longevity",
+                desc: "Maintenance practices that extend AHU service life, optimise performance, and reduce long-term running costs.",
               },
               {
-                title: "EC Fan Upgrades: What the Energy Savings Actually Look Like",
-                desc: "Quoted savings range from 15% to 60% depending on the source. We break down what the numbers look like on a real commercial job.",
+                slug: "why-ec-fan-upgrades-outperform-belt-drives-for-energy-savings",
+                title: "Why EC Fan Upgrades Outperform Belt Drives for Energy Savings",
+                desc: "How EC fan retrofits cut energy use and maintenance costs compared with belt-driven fans, a common addition to a refurbishment scope.",
               },
             ].map((post) => (
               <Link
-                key={post.title}
-                href="/our-blogs"
+                key={post.slug}
+                href={`/our-blogs/${post.slug}`}
                 className="group flex flex-col gap-2 border border-slate-200 bg-white p-5 transition-all hover:border-[#297858]/40 hover:shadow-sm"
               >
                 <p className="text-sm font-bold leading-snug text-slate-900 group-hover:text-[#297858] transition-colors">{post.title}</p>
