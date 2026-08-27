@@ -327,6 +327,7 @@ export default function TroubleshootingPage() {
               { href: "/air-handling-unit-refurbishment", label: "AHU Refurbishment" },
               { href: "/solutions/ventilation/ducting-repair-replacement", label: "Ducting Repair & Replacement" },
               { href: "/ec-fan-upgrades-and-retrofits-for-hvac", label: "EC Fan Upgrades" },
+              { href: "/air-handling-unit-coil-replacement", label: "Coil Replacement" },
             ].map((l) => (
               <Link
                 key={l.href}
