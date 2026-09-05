@@ -164,7 +164,7 @@ export default async function BlogsPage() {
                 return (
                   <ScrollReveal className="mb-10">
                     <Link
-                      href={`/blogs/${cleanPosts[0].slug}`}
+                      href={`/our-blogs/${cleanPosts[0].slug}`}
                       className="group block overflow-hidden border border-slate-200 bg-white transition-all duration-200 hover:border-[#297858] hover:shadow-md"
                     >
                       <div className="relative h-64 w-full sm:h-80 bg-slate-100">
@@ -214,7 +214,7 @@ export default async function BlogsPage() {
                   return (
                     <ScrollReveal key={p.id} delay={i * 60}>
                       <Link
-                        href={`/blogs/${p.slug}`}
+                        href={`/our-blogs/${p.slug}`}
                         className="group flex h-full flex-col overflow-hidden border border-slate-200 bg-white transition-all duration-200 hover:border-[#297858] hover:shadow-md"
                       >
                         <div className="relative h-44 w-full shrink-0 bg-slate-100">

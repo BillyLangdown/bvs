@@ -12,6 +12,7 @@ import { ProductEnquiryForm } from "@/components/forms/ProductEnquiryForm";
 import { ProductGallery } from "@/components/shop/ProductGallery";
 import { ProductTabs } from "@/components/shop/ProductTabs";
 import { pageMetadata, truncateDescription, breadcrumbJsonLd, productJsonLd } from "@/lib/seo";
+import { BESPOKE_CATEGORY_PATHS } from "@/lib/bespokeCategoryMap";
 
 export const revalidate = 86400;
 
@@ -77,10 +78,12 @@ export default async function ProductPage({ params }) {
   const hasStock = !!product.stockBadge;
 
   const productUrl = `/shop/${product.slug}`;
+  const primaryCategorySlug = categories.find((c) => c.id === product.categories[0])?.slug || "";
+  const categoryPath = BESPOKE_CATEGORY_PATHS[primaryCategorySlug] || `/shop/category/${primaryCategorySlug}`;
   const breadcrumbItems = [
     { name: "Home", path: "/" },
     { name: "Shop", path: "/shop" },
-    ...(categoryName ? [{ name: categoryName, path: `/shop/category/${categories.find((c) => c.id === product.categories[0])?.slug || ""}` }] : []),
+    ...(categoryName ? [{ name: categoryName, path: categoryPath }] : []),
     { name: product.title, path: productUrl },
   ];
 
