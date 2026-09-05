@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { BESPOKE_CATEGORY_PATHS } from "@/lib/bespokeCategoryMap";
 
 export function ShopGrid({ products, categories, initialCategory = null }) {
   const [activeCategory, setActiveCategory] = useState(initialCategory);
@@ -42,26 +43,37 @@ export function ShopGrid({ products, categories, initialCategory = null }) {
           >
             All
           </Link>
-          {populatedCategories.map((c) => (
-            <Link
-              key={c.id}
-              href={`/shop/category/${c.slug}`}
-              prefetch={false}
-              onClick={(e) => {
-                e.preventDefault();
-                const next = activeCategory === c.id ? null : c.id;
-                setActiveCategory(next);
-                window.history.pushState(null, "", next ? `/shop/category/${c.slug}` : "/shop");
-              }}
-              className={`border px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide transition-colors ${
-                activeCategory === c.id
-                  ? "border-[#297858] bg-[#297858] text-white"
-                  : "border-slate-200 bg-slate-50 text-slate-500 hover:border-slate-300"
-              }`}
-            >
-              {c.name}
-            </Link>
-          ))}
+          {populatedCategories.map((c) => {
+            // Categories with a dedicated landing page navigate there for
+            // real, instead of filtering this grid in place — that page is
+            // the canonical URL for the category now (see
+            // src/lib/bespokeCategoryMap.js).
+            const bespokePath = BESPOKE_CATEGORY_PATHS[c.slug];
+            return (
+              <Link
+                key={c.id}
+                href={bespokePath || `/shop/category/${c.slug}`}
+                prefetch={false}
+                onClick={
+                  bespokePath
+                    ? undefined
+                    : (e) => {
+                        e.preventDefault();
+                        const next = activeCategory === c.id ? null : c.id;
+                        setActiveCategory(next);
+                        window.history.pushState(null, "", next ? `/shop/category/${c.slug}` : "/shop");
+                      }
+                }
+                className={`border px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide transition-colors ${
+                  activeCategory === c.id
+                    ? "border-[#297858] bg-[#297858] text-white"
+                    : "border-slate-200 bg-slate-50 text-slate-500 hover:border-slate-300"
+                }`}
+              >
+                {c.name}
+              </Link>
+            );
+          })}
         </div>
       )}
 

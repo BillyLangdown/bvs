@@ -1,4 +1,5 @@
 import { getPosts, getShopProducts, getProductCategories } from "@/lib/wordpress/api";
+import { BESPOKE_CATEGORY_PATHS } from "@/lib/bespokeCategoryMap";
 
 export const revalidate = 86400;
 
@@ -75,6 +76,16 @@ export default async function sitemap() {
     { url: `${BASE}/privacy-policy`, priority: 0.3, changeFrequency: "yearly" },
     { url: `${BASE}/newsletter`, priority: 0.3, changeFrequency: "yearly" },
     { url: `${BASE}/shop`, priority: 0.6, changeFrequency: "weekly" },
+
+    // Bespoke shop category landing pages — canonical over their generated
+    // /shop/category/<slug> equivalents (see BESPOKE_CATEGORY_PATHS; those
+    // slugs are excluded from the dynamic category loop below and redirected
+    // to these pages in next.config.mjs).
+    ...Object.values(BESPOKE_CATEGORY_PATHS).map((path) => ({
+      url: `${BASE}${path}`,
+      priority: 0.7,
+      changeFrequency: "weekly",
+    })),
   ];
 
   // Dynamic: individual blog posts
@@ -108,7 +119,7 @@ export default async function sitemap() {
       });
     }
     for (const category of categories || []) {
-      if (filterCategoryIds.has(category.id)) continue;
+      if (filterCategoryIds.has(category.id) || BESPOKE_CATEGORY_PATHS[category.slug]) continue;
       routes.push({
         url: `${BASE}/shop/category/${category.slug}`,
         priority: 0.5,

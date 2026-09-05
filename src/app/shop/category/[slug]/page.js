@@ -6,6 +6,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { getShopProducts, getProductCategories } from "@/lib/wordpress/api";
 import { ShopGrid } from "@/components/shop/ShopGrid";
 import { pageMetadata, truncateDescription, breadcrumbJsonLd } from "@/lib/seo";
+import { BESPOKE_CATEGORY_PATHS } from "@/lib/bespokeCategoryMap";
 
 export const revalidate = 86400;
 
@@ -29,7 +30,7 @@ export async function generateStaticParams() {
   try {
     const categories = await getProductCategories({ revalidate: 86400 });
     return categories
-      .filter((c) => !c.name.toLowerCase().includes("filter"))
+      .filter((c) => !c.name.toLowerCase().includes("filter") && !BESPOKE_CATEGORY_PATHS[c.slug])
       .map((c) => ({ slug: c.slug }));
   } catch {
     return [];

@@ -206,6 +206,18 @@ const nextConfig = {
       { source: "/education-ventilation-2",                  destination: "/education-ventilation",                   permanent: true },
       { source: "/education-ventilation-2/",                 destination: "/education-ventilation",                   permanent: true },
 
+      // ── Generic /shop/category pages for categories that have a richer,
+      //    dedicated landing page instead → that page. Keep in sync with
+      //    src/lib/bespokeCategoryMap.js (can't import it here — this file
+      //    loads as its own ESM module before Next's bundler resolves .js
+      //    imports). Without this, the generated category template and the
+      //    bespoke page were near-duplicate content, and the generated one
+      //    got the internal links + sitemap entry instead of the better page.
+      { source: "/shop/category/ec-fans",                    destination: "/ec-fan-shop",                              permanent: true },
+      { source: "/shop/category/axial-fans",                 destination: "/axial-fan-shop",                           permanent: true },
+      { source: "/shop/category/heating-cooling-coils",      destination: "/heating-cooling-coils",                    permanent: true },
+      { source: "/shop/category/electric-heater-battery",    destination: "/electric-heater-battery-shop",             permanent: true },
+
       // ── WooCommerce products and categories → shop (catch-all) ─────────
       // Trailing-slash variants included: WooCommerce's default URLs always
       // had one, and without a matching rule here Next's own trailing-slash
