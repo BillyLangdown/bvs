@@ -265,6 +265,15 @@ const nextConfig = {
       { source: "/supermarket-ventilation/",                 destination: "/retail-ventilation",                     permanent: true },
       { source: "/hospital-ventilation-refurbishment",       destination: "/hospital-ventilation",                   permanent: true },
       { source: "/hospital-ventilation-refurbishment/",      destination: "/hospital-ventilation",                   permanent: true },
+
+      // ── Catch-all: strip a trailing slash from any URL not already
+      //    handled above. With skipTrailingSlashRedirect on, Next no longer
+      //    does this itself, so every current route was also being served
+      //    at its own trailing-slash form as a live 200 page whose canonical
+      //    pointed elsewhere — GSC flagged these as "Alternate page with
+      //    proper canonical tag" (e.g. /about-us/, /sport-facility-ventilation/).
+      //    Must stay last so it only fires when nothing more specific matched.
+      { source: "/:path+/",                                  destination: "/:path*",                                  permanent: true },
     ];
   },
   images: {
