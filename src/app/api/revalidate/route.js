@@ -163,6 +163,13 @@ export async function POST(request) {
     "post";
   const slug = params.get("slug") || findSlug(body);
 
+  // WooCommerce sends a ping containing only webhook_id when a webhook is
+  // saved, and refuses to save it unless the delivery URL answers 2xx.
+  // Nothing to revalidate for a ping, so acknowledge it.
+  if (!slug && body?.webhook_id && Object.keys(body).length === 1) {
+    return NextResponse.json({ ping: true });
+  }
+
   if (!slug) {
     // Diagnostic response: shows exactly what fields were received, so a
     // webhook plugin's "send demo/test" feature can be used to find the
