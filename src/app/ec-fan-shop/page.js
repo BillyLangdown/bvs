@@ -18,7 +18,7 @@ export async function generateMetadata() {
     description:
       seo.description ||
       truncateDescription(page?.excerpt?.rendered) ||
-      `Ziehl-Abegg ${HEADING}, up to 50% more efficient with drastically reduced maintenance costs. Off-the-shelf or custom-built to your specification.`,
+      `${HEADING} in stock from Ziehl-Abegg and ebm-papst. We can source any EC fan or replacement fan, with lower energy consumption and lower maintenance.`,
     path: `/${PAGE_SLUG}`,
   });
 }
@@ -29,7 +29,7 @@ export default async function EcFanShopPage() {
     <BespokeCategoryPage
       heading={HEADING}
       eyebrow="Fans"
-      heroDescription="Ziehl-Abegg EC fans with integrated VSD as standard: highly efficient, drastically reduced maintenance costs, always-on inverter control."
+      heroDescription="EC fans offer lower energy consumption and lower maintenance. We stock Ziehl-Abegg and ebm-papst, and can source any EC fan or replacement fan for your air handling unit."
       path={`/${PAGE_SLUG}`}
       page={page}
       products={products}

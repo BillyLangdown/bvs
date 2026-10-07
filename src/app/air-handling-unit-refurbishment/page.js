@@ -362,6 +362,27 @@ export default function AHURefurbishmentPage() {
         </Container>
       </section>
 
+      {/* ── EFFICIENCY ── */}
+      <section className="border-b border-slate-100 bg-white py-14 sm:py-16">
+        <Container>
+          <ScrollReveal className="mx-auto max-w-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
+              Improving Efficiency in Existing Units
+            </h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+            <p className="mt-5 text-[15px] leading-7 text-slate-600">
+              Older air handling units often run on fans, motors and controls that use more energy
+              than current equipment. Refurbishment lets us upgrade those components within the
+              existing unit, improving energy efficiency while extending its useful life.
+            </p>
+            <p className="mt-4 text-[15px] leading-7 text-slate-600">
+              Lower energy use means lower operational carbon, which can support an
+              organisation&apos;s wider decarbonisation targets.
+            </p>
+          </ScrollReveal>
+        </Container>
+      </section>
+
       {/* ── INDUSTRIES SERVED ──────────────────────────────────────────── */}
       <section className="bg-white py-14 sm:py-16">
         <Container>

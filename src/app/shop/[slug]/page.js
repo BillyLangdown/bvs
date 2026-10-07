@@ -119,7 +119,9 @@ export default async function ProductPage({ params }) {
             {categoryName && (
               <>
                 <ChevronRight />
-                <span className="text-white/60">{categoryName}</span>
+                <Link href={categoryPath} className="transition-colors hover:text-white/70">
+                  {categoryName}
+                </Link>
               </>
             )}
             <ChevronRight />

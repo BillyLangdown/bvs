@@ -132,6 +132,7 @@ export function BespokeCategoryPage({
               products={products.filter((p) => p.categories.includes(category.id))}
               categories={[category]}
               initialCategory={category.id}
+              countLabel={heading}
             />
           ) : (
             <p className="text-sm text-slate-500">No products currently listed in this category.</p>
