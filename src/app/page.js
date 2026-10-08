@@ -68,7 +68,7 @@ const services = [
     title: "AHU Refurbishment",
     plain: "On-site refurbishment improving performance without full system replacement.",
     outcome: "Extend asset life and reduce replacement cost",
-    context: "Supports efficiency improvements, compliance targets, and decarbonisation goals.",
+    context: "Extends the life of existing equipment while improving energy efficiency.",
     signs: [
       "Unit is ageing or underperforming",
       "Replacement has been quoted but structure is sound",

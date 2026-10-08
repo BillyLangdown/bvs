@@ -188,6 +188,31 @@ export async function getCaseStudyBySlug(slug, { revalidate = 86400 } = {}) {
   return items?.[0] || null;
 }
 
+// Brand names come through the WooCommerce brands taxonomy with inconsistent
+// spelling ("Ziehl Abegg" vs "Ziehl-Abegg"), which would split the shop brand
+// filter in two, so known variants are collapsed to one canonical name.
+function normaliseBrand(name) {
+  if (!name) return name;
+  if (/^ziehl[\s-]?abegg$/i.test(name.trim())) return "Ziehl-Abegg";
+  return name.trim();
+}
+
+// Fan impeller diameter in mm, used for sorting/filtering fans on the shop.
+// Prefers a structured "Diameter" attribute if the product has one, otherwise
+// falls back to the "355 mm" style figure in the short description. Only
+// applied to EC fans, where that figure is the impeller size.
+function extractFanDiameter(storeProduct, shortDescription) {
+  // EC fans only: axial fan descriptions carry no size, and other categories
+  // use different dimensions entirely.
+  const isEcFan = (storeProduct.categories || []).some((c) => c.slug === "ec-fans");
+  if (!isEcFan) return null;
+  const attr = (storeProduct.attributes || []).find((a) => /diameter/i.test(a.name || ""));
+  const attrVal = attr?.terms?.length === 1 ? attr.terms[0].name.match(/\d{2,4}/) : null;
+  if (attrVal) return parseInt(attrVal[0], 10);
+  const m = shortDescription.match(/(\d{3,4})\s?mm/i);
+  return m ? parseInt(m[1], 10) : null;
+}
+
 export async function getShopProducts({ revalidate = 86400 } = {}) {
   const [storeProducts, wpProducts] = await Promise.all([
     storeFetch("products", {
@@ -208,13 +233,20 @@ export async function getShopProducts({ revalidate = 86400 } = {}) {
 
   return (storeProducts || []).map((p) => {
     const badge = badgeBySlug[p.slug] || null;
+    const shortDescription = stripHtml(p.short_description || "");
+    const rawPrice = p.prices?.price ? parseInt(p.prices.price, 10) : 0;
     return {
       id: p.id,
       slug: p.slug,
       title: decodeHtmlEntities(p.name || ""),
-      excerpt: stripHtml(p.short_description || ""),
+      excerpt: shortDescription,
       link: p.permalink || "",
       categories: (p.categories || []).map((c) => c.id),
+      sku: p.sku || null,
+      brand: normaliseBrand(p.brands?.[0]?.name) || "BVS",
+      // 0 means no fixed price (POA), same convention as getShopProductBySlug
+      priceAmount: rawPrice > 0 ? rawPrice / Math.pow(10, p.prices.currency_minor_unit ?? 2) : null,
+      diameter: extractFanDiameter(p, shortDescription),
       imageUrl: p.images?.[0]?.src || null,
       stockBadge: badge || null,
       stockClass: badge ? badge.toLowerCase().replace(/\s+/g, "-") : null,
@@ -296,7 +328,7 @@ export const getShopProductBySlug = cache(async function getShopProductBySlug(sl
   // global identifier.
   const attributes = storeProduct?.attributes || [];
   const brand =
-    storeProduct?.brands?.[0]?.name ||
+    normaliseBrand(storeProduct?.brands?.[0]?.name) ||
     attributes.find((a) => a.name?.toLowerCase() === "brand" || a.taxonomy === "pa_brand")
       ?.terms?.[0]?.name ||
     "BVS";

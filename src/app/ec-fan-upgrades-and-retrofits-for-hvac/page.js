@@ -37,7 +37,7 @@ function CloseIcon({ className = "" }) {  return (    <svg      width="14"      
 
 export const metadata = pageMetadata({
   title: "EC Fan Upgrades & Retrofits for Existing AHUs",
-  description: "EC fan retrofits for existing air handling units. Reduce energy consumption, improve reliability, and support decarbonisation targets, without full AHU replacement.",
+  description: "EC fan retrofits for existing air handling units. Reduce energy consumption, lower maintenance, and support decarbonisation targets, without full AHU replacement.",
   path: "/ec-fan-upgrades-and-retrofits-for-hvac",
 });
 
@@ -122,7 +122,7 @@ export default async function ECFanUpgradesPage() {
               className="font-display text-3xl font-extrabold leading-[1.08] text-white sm:text-4xl lg:text-6xl"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.6)" }}
             >
-              Lower energy use<br />and better reliability.
+              Lower energy use<br />and lower maintenance.
             </h1>
 
             {/* Mobile hero */}
@@ -136,7 +136,7 @@ export default async function ECFanUpgradesPage() {
                 className="mt-3 max-w-xl text-sm leading-6 text-white"
                 style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
               >
-                EC fan retrofits improve efficiency, reliability, and control without full unit replacement.
+                EC fan retrofits improve efficiency, lower maintenance, and control without full unit replacement.
               </p>
               <div className="mt-6 flex flex-col gap-3">
                 <a
@@ -162,7 +162,7 @@ export default async function ECFanUpgradesPage() {
                 className="mt-5 max-w-xl text-[15px] leading-7 text-white"
                 style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
               >
-                EC fan retrofits upgrade existing AHU fan systems to improve efficiency, reliability, and control without full unit replacement, reducing energy use and carbon output.
+                EC fan retrofits upgrade existing AHU fan systems to improve efficiency, lower maintenance, and control without full unit replacement, reducing energy use and operational carbon.
               </p>
               <a href="tel:01256518170" className="mt-6 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white">
                 <PhoneIcon />
@@ -234,8 +234,8 @@ export default async function ECFanUpgradesPage() {
           body: "Higher efficiency EC motors reduce energy consumption. Savings can be modelled against existing systems before upgrade.",
         },
         {
-          heading: "Higher Reliability",
-          body: "No belts or pulleys. Fewer moving parts means fewer failures and lower maintenance.",
+          heading: "Lower Maintenance",
+          body: "No belts or pulleys. Fewer moving parts means fewer failures and less time spent on servicing.",
         },
         {
           heading: "Better Control",
@@ -404,6 +404,27 @@ export default async function ECFanUpgradesPage() {
   </Container>
 </section>
 
+
+      {/* ── DECARBONISATION ── */}
+      <section className="bg-white py-14 sm:py-18">
+        <Container>
+          <ScrollReveal className="mx-auto max-w-3xl">
+            <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
+              Supporting Decarbonisation Targets
+            </h2>
+            <div className="mt-3 h-[3px] w-10 bg-[#297858]" />
+            <p className="mt-5 text-[15px] leading-7 text-slate-600">
+              Older belt-driven and AC fan systems draw more electrical power than modern EC fans.
+              Retrofitting EC fans into an existing air handling unit reduces that electrical demand,
+              and with it the operational carbon associated with running the building.
+            </p>
+            <p className="mt-4 text-[15px] leading-7 text-slate-600">
+              For organisations working towards decarbonisation and net zero targets, this can
+              contribute towards wider reduction plans.
+            </p>
+          </ScrollReveal>
+        </Container>
+      </section>
 
       {/* ── 6. HOW IT WORKS ── surface-2 ─────────────────────────────────── */}
       <section className="bg-[#f7f6f5] py-16 sm:py-20">
