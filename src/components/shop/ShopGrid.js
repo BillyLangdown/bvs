@@ -5,6 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { BESPOKE_CATEGORY_PATHS } from "@/lib/bespokeCategoryMap";
 
+// Product types that have reliable diameter data. Axial fans have none yet
+// (their descriptions carry no size), and coils, heater batteries and the
+// mixed "All" view must not offer it. Add a slug here once its products
+// carry diameter properly in WooCommerce.
+const DIAMETER_CATEGORY_SLUGS = new Set(["ec-fans"]);
+
 const SORT_OPTIONS = [
   { value: "newest", label: "Newest" },
   { value: "name-asc", label: "Name A-Z" },
@@ -128,10 +134,10 @@ export function ShopGrid({ products, categories, initialCategory = null, countLa
     [inCategory],
   );
 
-  // Diameter only describes fans (coils and filters are sized width x height),
-  // so it is offered only once a fan type is selected, never on the mixed "All" view.
+  // Diameter is contextual: offered only for product types listed in
+  // DIAMETER_CATEGORY_SLUGS, never on the mixed "All" view.
   const activeCategorySlug = categories.find((c) => c.id === activeCategory)?.slug || "";
-  const diameterApplies = /fan/i.test(activeCategorySlug);
+  const diameterApplies = DIAMETER_CATEGORY_SLUGS.has(activeCategorySlug);
 
   // A selection that no longer exists after changing product type simply drops out
   const brand = brandOptions.some((o) => o.value === activeBrand) ? activeBrand : null;
@@ -161,6 +167,9 @@ export function ShopGrid({ products, categories, initialCategory = null, countLa
 
   function selectCategory(id) {
     setActiveCategory(id);
+    // Leaving a type that supports diameter clears it, so no hidden filter lingers
+    const next = categories.find((c) => c.id === id);
+    if (!next || !DIAMETER_CATEGORY_SLUGS.has(next.slug)) setActiveDiameter(null);
     // Keep the address bar honest for the in-place filter; generated category
     // pages keep their own URL, everything else sits on /shop.
     const cat = categories.find((c) => c.id === id);

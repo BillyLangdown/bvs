@@ -200,10 +200,12 @@ function normaliseBrand(name) {
 // Fan impeller diameter in mm, used for sorting/filtering fans on the shop.
 // Prefers a structured "Diameter" attribute if the product has one, otherwise
 // falls back to the "355 mm" style figure in the short description. Only
-// applied to fan categories, where that figure is the impeller size.
+// applied to EC fans, where that figure is the impeller size.
 function extractFanDiameter(storeProduct, shortDescription) {
-  const isFan = (storeProduct.categories || []).some((c) => /fan/i.test(c.slug || ""));
-  if (!isFan) return null;
+  // EC fans only: axial fan descriptions carry no size, and other categories
+  // use different dimensions entirely.
+  const isEcFan = (storeProduct.categories || []).some((c) => c.slug === "ec-fans");
+  if (!isEcFan) return null;
   const attr = (storeProduct.attributes || []).find((a) => /diameter/i.test(a.name || ""));
   const attrVal = attr?.terms?.length === 1 ? attr.terms[0].name.match(/\d{2,4}/) : null;
   if (attrVal) return parseInt(attrVal[0], 10);
