@@ -1,4 +1,4 @@
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 
 // Called whenever a post, product, or page is published or updated, so pages
@@ -120,6 +120,8 @@ function revalidate(type, slug) {
   }
   const paths = buildPaths(slug);
   paths.forEach((path) => revalidatePath(path));
+  // Shop grid data is one shared cached list, so refresh it when a product changes
+  if (type === "product") revalidateTag("shop-products", "max");
   return NextResponse.json({ revalidated: true, paths });
 }
 

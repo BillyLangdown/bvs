@@ -214,14 +214,16 @@ function extractFanDiameter(storeProduct, shortDescription) {
 }
 
 export async function getShopProducts({ revalidate = 86400 } = {}) {
+  // No caching in local dev, so WordPress edits show on the grid straight away
+  if (process.env.NODE_ENV === "development") revalidate = 0;
   const [storeProducts, wpProducts] = await Promise.all([
     storeFetch("products", {
       query: { per_page: 100 },
-      next: { revalidate },
+      next: { revalidate, tags: ["shop-products"] },
     }),
     wpFetch("product", {
       query: { per_page: 100, _fields: "id,slug,product_badge" },
-      next: { revalidate },
+      next: { revalidate, tags: ["shop-products"] },
     }).catch(() => []),
   ]);
 

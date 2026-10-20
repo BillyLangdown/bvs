@@ -347,6 +347,13 @@ function ProductCard({ product, categories }) {
               Out of Stock
             </span>
           )}
+          {product.stockBadge &&
+            product.stockClass !== "in-stock" &&
+            product.stockClass !== "out-of-stock" && (
+              <span className="border border-amber-500 bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-amber-600">
+                {product.stockBadge}
+              </span>
+            )}
         </div>
       </Link>
 
